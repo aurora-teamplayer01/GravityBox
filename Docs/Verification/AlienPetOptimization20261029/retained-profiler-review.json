@@ -1,0 +1,3550 @@
+{
+  "generatedUtc": "2026-10-29T08:42:19.737014+00:00",
+  "source": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/comparison/comparison.json",
+  "sourceGeneratedUtc": "2026-10-29T08:38:41.033181+00:00",
+  "sourceAudit": [
+    {
+      "run": "after-profiler-1",
+      "level": 2,
+      "source": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/native-after/analysis/after-profiler-1-level-02",
+      "uniqueExport": true,
+      "summaryInput": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/native-after/after-profiler-1-level-02.raw",
+      "exportedUtc": "2026-10-29T08:36:35.4942950Z",
+      "frames": 311,
+      "window": "complete author route",
+      "rejectedNavigationMarkers": []
+    },
+    {
+      "run": "after-profiler-1",
+      "level": 7,
+      "source": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/native-after/analysis/after-profiler-1-level-07",
+      "uniqueExport": true,
+      "summaryInput": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/native-after/after-profiler-1-level-07.raw",
+      "exportedUtc": "2026-10-29T08:36:38.4083530Z",
+      "frames": 642,
+      "window": "complete author route",
+      "rejectedNavigationMarkers": []
+    },
+    {
+      "run": "after-profiler-1",
+      "level": 23,
+      "source": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/native-after/analysis/after-profiler-1-level-23",
+      "uniqueExport": true,
+      "summaryInput": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/native-after/after-profiler-1-level-23.raw",
+      "exportedUtc": "2026-10-29T08:36:43.6691730Z",
+      "frames": 382,
+      "window": "complete author route",
+      "rejectedNavigationMarkers": []
+    },
+    {
+      "run": "after-profiler-1",
+      "level": 53,
+      "source": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/native-after/analysis/after-profiler-1-level-53",
+      "uniqueExport": true,
+      "summaryInput": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/native-after/after-profiler-1-level-53.raw",
+      "exportedUtc": "2026-10-29T08:36:46.7235490Z",
+      "frames": 627,
+      "window": "fixed-duration route prefix",
+      "rejectedNavigationMarkers": []
+    },
+    {
+      "run": "after-profiler-1",
+      "level": 65,
+      "source": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/native-after/analysis/after-profiler-1-level-65",
+      "uniqueExport": true,
+      "summaryInput": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/native-after/after-profiler-1-level-65.raw",
+      "exportedUtc": "2026-10-29T08:36:52.0896980Z",
+      "frames": 678,
+      "window": "fixed-duration route prefix",
+      "rejectedNavigationMarkers": []
+    },
+    {
+      "run": "after-profiler-2",
+      "level": 2,
+      "source": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/native-after/analysis/after-profiler-2-level-02",
+      "uniqueExport": true,
+      "summaryInput": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/native-after/after-profiler-2-level-02.raw",
+      "exportedUtc": "2026-10-29T08:36:57.6770600Z",
+      "frames": 308,
+      "window": "complete author route",
+      "rejectedNavigationMarkers": []
+    },
+    {
+      "run": "after-profiler-2",
+      "level": 7,
+      "source": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/native-after/analysis/after-profiler-2-level-07",
+      "uniqueExport": true,
+      "summaryInput": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/native-after/after-profiler-2-level-07.raw",
+      "exportedUtc": "2026-10-29T08:37:00.1490520Z",
+      "frames": 643,
+      "window": "complete author route",
+      "rejectedNavigationMarkers": []
+    },
+    {
+      "run": "after-profiler-2",
+      "level": 23,
+      "source": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/native-after/analysis/after-profiler-2-level-23",
+      "uniqueExport": true,
+      "summaryInput": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/native-after/after-profiler-2-level-23.raw",
+      "exportedUtc": "2026-10-29T08:37:05.4410450Z",
+      "frames": 381,
+      "window": "complete author route",
+      "rejectedNavigationMarkers": []
+    },
+    {
+      "run": "after-profiler-2",
+      "level": 53,
+      "source": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/native-after/analysis/after-profiler-2-level-53",
+      "uniqueExport": true,
+      "summaryInput": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/native-after/after-profiler-2-level-53.raw",
+      "exportedUtc": "2026-10-29T08:37:08.4832340Z",
+      "frames": 609,
+      "window": "fixed-duration route prefix",
+      "rejectedNavigationMarkers": []
+    },
+    {
+      "run": "after-profiler-2",
+      "level": 65,
+      "source": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/native-after/analysis/after-profiler-2-level-65",
+      "uniqueExport": true,
+      "summaryInput": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/native-after/after-profiler-2-level-65.raw",
+      "exportedUtc": "2026-10-29T08:37:13.6746900Z",
+      "frames": 668,
+      "window": "fixed-duration route prefix",
+      "rejectedNavigationMarkers": []
+    },
+    {
+      "run": "after-profiler-3",
+      "level": 2,
+      "source": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/native-after/analysis/after-profiler-3-level-02",
+      "uniqueExport": true,
+      "summaryInput": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/native-after/after-profiler-3-level-02.raw",
+      "exportedUtc": "2026-10-29T08:37:19.2437220Z",
+      "frames": 303,
+      "window": "complete author route",
+      "rejectedNavigationMarkers": []
+    },
+    {
+      "run": "after-profiler-3",
+      "level": 7,
+      "source": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/native-after/analysis/after-profiler-3-level-07",
+      "uniqueExport": true,
+      "summaryInput": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/native-after/after-profiler-3-level-07.raw",
+      "exportedUtc": "2026-10-29T08:37:21.6534110Z",
+      "frames": 659,
+      "window": "complete author route",
+      "rejectedNavigationMarkers": []
+    },
+    {
+      "run": "after-profiler-3",
+      "level": 23,
+      "source": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/native-after/analysis/after-profiler-3-level-23",
+      "uniqueExport": true,
+      "summaryInput": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/native-after/after-profiler-3-level-23.raw",
+      "exportedUtc": "2026-10-29T08:37:27.2012630Z",
+      "frames": 384,
+      "window": "complete author route",
+      "rejectedNavigationMarkers": []
+    },
+    {
+      "run": "after-profiler-3",
+      "level": 53,
+      "source": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/native-after/analysis/after-profiler-3-level-53",
+      "uniqueExport": true,
+      "summaryInput": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/native-after/after-profiler-3-level-53.raw",
+      "exportedUtc": "2026-10-29T08:37:30.2812610Z",
+      "frames": 608,
+      "window": "fixed-duration route prefix",
+      "rejectedNavigationMarkers": []
+    },
+    {
+      "run": "after-profiler-3",
+      "level": 65,
+      "source": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/native-after/analysis/after-profiler-3-level-65",
+      "uniqueExport": true,
+      "summaryInput": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/native-after/after-profiler-3-level-65.raw",
+      "exportedUtc": "2026-10-29T08:37:35.4747270Z",
+      "frames": 671,
+      "window": "fixed-duration route prefix",
+      "rejectedNavigationMarkers": []
+    },
+    {
+      "run": "before-profiler-1",
+      "level": 2,
+      "source": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/native-before/analysis/before-profiler-1-level-02",
+      "uniqueExport": true,
+      "summaryInput": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/native-before/before-profiler-1-level-02.raw",
+      "exportedUtc": "2026-10-29T06:35:56.9228570Z",
+      "frames": 248,
+      "window": "complete author route",
+      "rejectedNavigationMarkers": []
+    },
+    {
+      "run": "before-profiler-1",
+      "level": 7,
+      "source": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/native-before/analysis/before-profiler-1-level-07",
+      "uniqueExport": true,
+      "summaryInput": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/native-before/before-profiler-1-level-07.raw",
+      "exportedUtc": "2026-10-29T06:35:59.9934620Z",
+      "frames": 631,
+      "window": "complete author route",
+      "rejectedNavigationMarkers": []
+    },
+    {
+      "run": "before-profiler-1",
+      "level": 23,
+      "source": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/native-before/analysis/before-profiler-1-level-23",
+      "uniqueExport": true,
+      "summaryInput": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/native-before/before-profiler-1-level-23.raw",
+      "exportedUtc": "2026-10-29T06:36:05.3602450Z",
+      "frames": 375,
+      "window": "complete author route",
+      "rejectedNavigationMarkers": []
+    },
+    {
+      "run": "before-profiler-1",
+      "level": 53,
+      "source": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/native-before/analysis/before-profiler-1-level-53",
+      "uniqueExport": true,
+      "summaryInput": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/native-before/before-profiler-1-level-53.raw",
+      "exportedUtc": "2026-10-29T06:36:08.4118610Z",
+      "frames": 593,
+      "window": "fixed-duration route prefix",
+      "rejectedNavigationMarkers": []
+    },
+    {
+      "run": "before-profiler-1",
+      "level": 65,
+      "source": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/native-before/analysis/before-profiler-1-level-65",
+      "uniqueExport": true,
+      "summaryInput": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/native-before/before-profiler-1-level-65.raw",
+      "exportedUtc": "2026-10-29T06:36:13.5071580Z",
+      "frames": 669,
+      "window": "fixed-duration route prefix",
+      "rejectedNavigationMarkers": []
+    },
+    {
+      "run": "before-profiler-2",
+      "level": 2,
+      "source": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/native-before/analysis/before-profiler-2-level-02",
+      "uniqueExport": true,
+      "summaryInput": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/native-before/before-profiler-2-level-02.raw",
+      "exportedUtc": "2026-10-29T06:36:18.9578050Z",
+      "frames": 297,
+      "window": "complete author route",
+      "rejectedNavigationMarkers": []
+    },
+    {
+      "run": "before-profiler-2",
+      "level": 7,
+      "source": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/native-before/analysis/before-profiler-2-level-07",
+      "uniqueExport": true,
+      "summaryInput": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/native-before/before-profiler-2-level-07.raw",
+      "exportedUtc": "2026-10-29T06:36:21.4564470Z",
+      "frames": 630,
+      "window": "complete author route",
+      "rejectedNavigationMarkers": []
+    },
+    {
+      "run": "before-profiler-2",
+      "level": 23,
+      "source": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/native-before/analysis/before-profiler-2-level-23",
+      "uniqueExport": true,
+      "summaryInput": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/native-before/before-profiler-2-level-23.raw",
+      "exportedUtc": "2026-10-29T06:36:26.7210430Z",
+      "frames": 371,
+      "window": "complete author route",
+      "rejectedNavigationMarkers": []
+    },
+    {
+      "run": "before-profiler-2",
+      "level": 53,
+      "source": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/native-before/analysis/before-profiler-2-level-53",
+      "uniqueExport": true,
+      "summaryInput": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/native-before/before-profiler-2-level-53.raw",
+      "exportedUtc": "2026-10-29T06:36:29.7214920Z",
+      "frames": 560,
+      "window": "fixed-duration route prefix",
+      "rejectedNavigationMarkers": []
+    },
+    {
+      "run": "before-profiler-2",
+      "level": 65,
+      "source": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/native-before/analysis/before-profiler-2-level-65",
+      "uniqueExport": true,
+      "summaryInput": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/native-before/before-profiler-2-level-65.raw",
+      "exportedUtc": "2026-10-29T06:36:34.6535820Z",
+      "frames": 654,
+      "window": "fixed-duration route prefix",
+      "rejectedNavigationMarkers": []
+    },
+    {
+      "run": "before-profiler-3",
+      "level": 2,
+      "source": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/native-before/analysis/before-profiler-3-level-02",
+      "uniqueExport": true,
+      "summaryInput": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/native-before/before-profiler-3-level-02.raw",
+      "exportedUtc": "2026-10-29T06:36:40.2045290Z",
+      "frames": 288,
+      "window": "complete author route",
+      "rejectedNavigationMarkers": []
+    },
+    {
+      "run": "before-profiler-3",
+      "level": 7,
+      "source": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/native-before/analysis/before-profiler-3-level-07",
+      "uniqueExport": true,
+      "summaryInput": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/native-before/before-profiler-3-level-07.raw",
+      "exportedUtc": "2026-10-29T06:36:42.6514910Z",
+      "frames": 611,
+      "window": "complete author route",
+      "rejectedNavigationMarkers": []
+    },
+    {
+      "run": "before-profiler-3",
+      "level": 23,
+      "source": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/native-before/analysis/before-profiler-3-level-23",
+      "uniqueExport": true,
+      "summaryInput": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/native-before/before-profiler-3-level-23.raw",
+      "exportedUtc": "2026-10-29T06:36:47.8491800Z",
+      "frames": 365,
+      "window": "complete author route",
+      "rejectedNavigationMarkers": []
+    },
+    {
+      "run": "before-profiler-3",
+      "level": 53,
+      "source": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/native-before/analysis/before-profiler-3-level-53",
+      "uniqueExport": true,
+      "summaryInput": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/native-before/before-profiler-3-level-53.raw",
+      "exportedUtc": "2026-10-29T06:36:50.8054480Z",
+      "frames": 557,
+      "window": "fixed-duration route prefix",
+      "rejectedNavigationMarkers": []
+    },
+    {
+      "run": "before-profiler-3",
+      "level": 65,
+      "source": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/native-before/analysis/before-profiler-3-level-65",
+      "uniqueExport": true,
+      "summaryInput": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/native-before/before-profiler-3-level-65.raw",
+      "exportedUtc": "2026-10-29T06:36:55.7511000Z",
+      "frames": 641,
+      "window": "fixed-duration route prefix",
+      "rejectedNavigationMarkers": []
+    }
+  ],
+  "restoredSource": {
+    "Assets/_Game/Venom/Runtime/VenomCampaignMotion.cs": {
+      "currentSha256": "884aed0890267fb1165b2b7834a35ecad73586044ca85f2e6a5001616b430107",
+      "baselineSha256": "884aed0890267fb1165b2b7834a35ecad73586044ca85f2e6a5001616b430107",
+      "equal": true
+    },
+    "Assets/_Game/Venom/Runtime/VenomNavigationSnapshot.cs": {
+      "currentSha256": "fe0c1cc66e47a2ec4ca8ac75c5937213bc656a49ab81b14629ca14cb72021941",
+      "baselineSha256": "fe0c1cc66e47a2ec4ca8ac75c5937213bc656a49ab81b14629ca14cb72021941",
+      "equal": true
+    }
+  },
+  "runs": [
+    {
+      "name": "after-profiler-1",
+      "side": "after",
+      "metadata": {
+        "device": "OPPO CPH2591",
+        "unity": "6000.3.19f1",
+        "gpu": "Mali-G52 MC2",
+        "api": "Vulkan",
+        "width": 720,
+        "height": 1612,
+        "graphicProfile": "Current",
+        "buildGuid": "2b746a81138342559d29b3aa95321b18",
+        "utc": "2026-10-29T08:25:42.4461100Z",
+        "execution": "Development player Unity Profiler binary capture; normal touch/physics; no screenshots; Deep Profile and Script Debugging off. Diagnostic timings include profiler overhead.",
+        "declaredBuildKind": "profiler"
+      },
+      "reportSource": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/after-profiler-1/proof/20261029T082542Z/run.json",
+      "evidence": {
+        "imageFileCount": 0,
+        "imageExamples": [],
+        "screenshotsDisabledDeclared": true,
+        "androidDebuggable": true,
+        "installedLastUpdateTime": "2026-10-29 15:21:49",
+        "state": "complete",
+        "releaseRequested": false,
+        "saveProtection": "Harness source disables VenomCampaignSave.PersistenceEnabled before scene loading; not a per-run save checksum verification",
+        "saveProtectionSource": "Assets/_Game/Venom/Runtime/ChapterProof/COgheViewProofPlayer.cs:54"
+      },
+      "health": {
+        "source": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/after-profiler-1/health.jsonl",
+        "scope": "whole run; health elapsed times are not aligned to individual level captures",
+        "healthSamples": 7,
+        "batteryC": {
+          "samples": 7,
+          "first": 36.0,
+          "last": 37.0,
+          "min": 36.0,
+          "max": 37.0,
+          "mean": 36.857142857142854
+        },
+        "oemPhoneC": {
+          "samples": 7,
+          "first": 39.0,
+          "last": 40.0,
+          "min": 39.0,
+          "max": 40.0,
+          "mean": 39.42857142857143
+        },
+        "thermalStatuses": [
+          1
+        ],
+        "maxThermalStatus": 1,
+        "currentHalC": {
+          "CPU": {
+            "samples": 7,
+            "first": 54.1,
+            "last": 62.3,
+            "min": 54.1,
+            "max": 62.3,
+            "mean": 60.08571428571429
+          },
+          "GPU": {
+            "samples": 7,
+            "first": 54.1,
+            "last": 62.3,
+            "min": 54.1,
+            "max": 62.3,
+            "mean": 60.08571428571429
+          },
+          "BATTERY": {
+            "samples": 7,
+            "first": 36.0,
+            "last": 37.0,
+            "min": 36.0,
+            "max": 37.0,
+            "mean": 36.75
+          },
+          "SKIN": {
+            "samples": 7,
+            "first": 14.0,
+            "last": 16.0,
+            "min": 14.0,
+            "max": 16.0,
+            "mean": 15.0
+          },
+          "POWER_AMPLIFIER": {
+            "samples": 7,
+            "first": 11.0,
+            "last": 12.0,
+            "min": 11.0,
+            "max": 12.0,
+            "mean": 11.857142857142858
+          },
+          "NPU": {
+            "samples": 7,
+            "first": 54.1,
+            "last": 62.3,
+            "min": 54.1,
+            "max": 62.3,
+            "mean": 60.08571428571429
+          },
+          "TPU": {
+            "samples": 7,
+            "first": 54.1,
+            "last": 62.3,
+            "min": 54.1,
+            "max": 62.3,
+            "mean": 60.08571428571429
+          },
+          "SOC": {
+            "samples": 7,
+            "first": 54.1,
+            "last": 62.3,
+            "min": 54.1,
+            "max": 62.3,
+            "mean": 60.08571428571429
+          }
+        },
+        "powerStates": [
+          {
+            "AC": false,
+            "USB": true,
+            "Wireless": false,
+            "Dock": false
+          }
+        ],
+        "processMemory": {
+          "pssMiB": {
+            "samples": 7,
+            "first": 369.25,
+            "last": 524.9208984375,
+            "min": 369.25,
+            "max": 560.2685546875,
+            "mean": 507.72293526785717
+          },
+          "rssMiB": {
+            "samples": 7,
+            "first": 479.15234375,
+            "last": 575.62109375,
+            "min": 479.15234375,
+            "max": 631.94921875,
+            "mean": 575.8722098214286
+          },
+          "swapPssMiB": {
+            "samples": 7,
+            "first": 1.0400390625,
+            "last": 61.818359375,
+            "min": 1.0400390625,
+            "max": 61.818359375,
+            "mean": 48.337193080357146
+          },
+          "graphicsPssMiB": {
+            "samples": 7,
+            "first": 39.6484375,
+            "last": 135.546875,
+            "min": 39.6484375,
+            "max": 135.546875,
+            "mean": 110.69698660714286
+          }
+        },
+        "telemetryErrors": [],
+        "batteryBeforeC": 36.0,
+        "batteryAfterC": 37.0
+      }
+    },
+    {
+      "name": "after-profiler-2",
+      "side": "after",
+      "metadata": {
+        "device": "OPPO CPH2591",
+        "unity": "6000.3.19f1",
+        "gpu": "Mali-G52 MC2",
+        "api": "Vulkan",
+        "width": 720,
+        "height": 1612,
+        "graphicProfile": "Current",
+        "buildGuid": "2b746a81138342559d29b3aa95321b18",
+        "utc": "2026-10-29T08:29:20.1657790Z",
+        "execution": "Development player Unity Profiler binary capture; normal touch/physics; no screenshots; Deep Profile and Script Debugging off. Diagnostic timings include profiler overhead.",
+        "declaredBuildKind": "profiler"
+      },
+      "reportSource": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/after-profiler-2/proof/20261029T082920Z/run.json",
+      "evidence": {
+        "imageFileCount": 0,
+        "imageExamples": [],
+        "screenshotsDisabledDeclared": true,
+        "androidDebuggable": true,
+        "installedLastUpdateTime": "2026-10-29 15:21:49",
+        "state": "complete",
+        "releaseRequested": false,
+        "saveProtection": "Harness source disables VenomCampaignSave.PersistenceEnabled before scene loading; not a per-run save checksum verification",
+        "saveProtectionSource": "Assets/_Game/Venom/Runtime/ChapterProof/COgheViewProofPlayer.cs:54"
+      },
+      "health": {
+        "source": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/after-profiler-2/health.jsonl",
+        "scope": "whole run; health elapsed times are not aligned to individual level captures",
+        "healthSamples": 7,
+        "batteryC": {
+          "samples": 7,
+          "first": 37.0,
+          "last": 38.0,
+          "min": 37.0,
+          "max": 38.0,
+          "mean": 37.857142857142854
+        },
+        "oemPhoneC": {
+          "samples": 7,
+          "first": 40.0,
+          "last": 41.0,
+          "min": 40.0,
+          "max": 41.0,
+          "mean": 40.42857142857143
+        },
+        "thermalStatuses": [
+          1,
+          2
+        ],
+        "maxThermalStatus": 2,
+        "currentHalC": {
+          "CPU": {
+            "samples": 7,
+            "first": 61.8,
+            "last": 60.8,
+            "min": 59.6,
+            "max": 61.8,
+            "mean": 60.92857142857143
+          },
+          "GPU": {
+            "samples": 7,
+            "first": 61.8,
+            "last": 60.8,
+            "min": 59.6,
+            "max": 61.8,
+            "mean": 60.92857142857143
+          },
+          "BATTERY": {
+            "samples": 7,
+            "first": 37.0,
+            "last": 38.0,
+            "min": 37.0,
+            "max": 38.0,
+            "mean": 37.785714285714285
+          },
+          "SKIN": {
+            "samples": 7,
+            "first": 15.0,
+            "last": 16.0,
+            "min": 15.0,
+            "max": 16.0,
+            "mean": 15.571428571428571
+          },
+          "POWER_AMPLIFIER": {
+            "samples": 7,
+            "first": 12.0,
+            "last": 13.0,
+            "min": 12.0,
+            "max": 13.0,
+            "mean": 12.714285714285714
+          },
+          "NPU": {
+            "samples": 7,
+            "first": 61.8,
+            "last": 60.8,
+            "min": 59.6,
+            "max": 61.8,
+            "mean": 60.92857142857143
+          },
+          "TPU": {
+            "samples": 7,
+            "first": 61.8,
+            "last": 60.8,
+            "min": 59.6,
+            "max": 61.8,
+            "mean": 60.92857142857143
+          },
+          "SOC": {
+            "samples": 7,
+            "first": 61.8,
+            "last": 60.8,
+            "min": 59.6,
+            "max": 61.8,
+            "mean": 60.92857142857143
+          }
+        },
+        "powerStates": [
+          {
+            "AC": false,
+            "USB": true,
+            "Wireless": false,
+            "Dock": false
+          }
+        ],
+        "processMemory": {
+          "pssMiB": {
+            "samples": 7,
+            "first": 359.669921875,
+            "last": 515.3876953125,
+            "min": 359.669921875,
+            "max": 515.3876953125,
+            "mean": 486.46205357142856
+          },
+          "rssMiB": {
+            "samples": 7,
+            "first": 466.40234375,
+            "last": 588.5703125,
+            "min": 466.40234375,
+            "max": 597.828125,
+            "mean": 567.2075892857143
+          },
+          "swapPssMiB": {
+            "samples": 7,
+            "first": 0.822265625,
+            "last": 51.7529296875,
+            "min": 0.822265625,
+            "max": 52.02734375,
+            "mean": 43.358956473214285
+          },
+          "graphicsPssMiB": {
+            "samples": 7,
+            "first": 39.6484375,
+            "last": 133.4296875,
+            "min": 39.6484375,
+            "max": 133.4296875,
+            "mean": 108.62667410714286
+          }
+        },
+        "telemetryErrors": [],
+        "batteryBeforeC": 37.0,
+        "batteryAfterC": 38.0
+      }
+    },
+    {
+      "name": "after-profiler-3",
+      "side": "after",
+      "metadata": {
+        "device": "OPPO CPH2591",
+        "unity": "6000.3.19f1",
+        "gpu": "Mali-G52 MC2",
+        "api": "Vulkan",
+        "width": 720,
+        "height": 1612,
+        "graphicProfile": "Current",
+        "buildGuid": "2b746a81138342559d29b3aa95321b18",
+        "utc": "2026-10-29T08:32:57.6150920Z",
+        "execution": "Development player Unity Profiler binary capture; normal touch/physics; no screenshots; Deep Profile and Script Debugging off. Diagnostic timings include profiler overhead.",
+        "declaredBuildKind": "profiler"
+      },
+      "reportSource": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/after-profiler-3/proof/20261029T083257Z/run.json",
+      "evidence": {
+        "imageFileCount": 0,
+        "imageExamples": [],
+        "screenshotsDisabledDeclared": true,
+        "androidDebuggable": true,
+        "installedLastUpdateTime": "2026-10-29 15:21:49",
+        "state": "complete",
+        "releaseRequested": false,
+        "saveProtection": "Harness source disables VenomCampaignSave.PersistenceEnabled before scene loading; not a per-run save checksum verification",
+        "saveProtectionSource": "Assets/_Game/Venom/Runtime/ChapterProof/COgheViewProofPlayer.cs:54"
+      },
+      "health": {
+        "source": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/after-profiler-3/health.jsonl",
+        "scope": "whole run; health elapsed times are not aligned to individual level captures",
+        "healthSamples": 7,
+        "batteryC": {
+          "samples": 7,
+          "first": 38.0,
+          "last": 38.0,
+          "min": 38.0,
+          "max": 38.0,
+          "mean": 38.0
+        },
+        "oemPhoneC": {
+          "samples": 7,
+          "first": 40.0,
+          "last": 41.0,
+          "min": 40.0,
+          "max": 41.0,
+          "mean": 40.57142857142857
+        },
+        "thermalStatuses": [
+          2
+        ],
+        "maxThermalStatus": 2,
+        "currentHalC": {
+          "CPU": {
+            "samples": 7,
+            "first": 53.2,
+            "last": 62.6,
+            "min": 53.2,
+            "max": 62.6,
+            "mean": 60.15714285714286
+          },
+          "GPU": {
+            "samples": 7,
+            "first": 53.2,
+            "last": 62.6,
+            "min": 53.2,
+            "max": 62.6,
+            "mean": 60.15714285714286
+          },
+          "BATTERY": {
+            "samples": 7,
+            "first": 38.0,
+            "last": 38.0,
+            "min": 38.0,
+            "max": 38.0,
+            "mean": 38.0
+          },
+          "SKIN": {
+            "samples": 7,
+            "first": 15.0,
+            "last": 16.0,
+            "min": 15.0,
+            "max": 16.0,
+            "mean": 15.714285714285714
+          },
+          "POWER_AMPLIFIER": {
+            "samples": 7,
+            "first": 13.0,
+            "last": 13.0,
+            "min": 13.0,
+            "max": 13.0,
+            "mean": 13.0
+          },
+          "NPU": {
+            "samples": 7,
+            "first": 53.2,
+            "last": 62.6,
+            "min": 53.2,
+            "max": 62.6,
+            "mean": 60.15714285714286
+          },
+          "TPU": {
+            "samples": 7,
+            "first": 53.2,
+            "last": 62.6,
+            "min": 53.2,
+            "max": 62.6,
+            "mean": 60.15714285714286
+          },
+          "SOC": {
+            "samples": 7,
+            "first": 53.2,
+            "last": 62.6,
+            "min": 53.2,
+            "max": 62.6,
+            "mean": 60.15714285714286
+          }
+        },
+        "powerStates": [
+          {
+            "AC": false,
+            "USB": true,
+            "Wireless": false,
+            "Dock": false
+          }
+        ],
+        "processMemory": {
+          "pssMiB": {
+            "samples": 7,
+            "first": 351.8349609375,
+            "last": 571.4580078125,
+            "min": 351.8349609375,
+            "max": 571.4580078125,
+            "mean": 531.1139787946429
+          },
+          "rssMiB": {
+            "samples": 7,
+            "first": 461.4453125,
+            "last": 626.91015625,
+            "min": 461.4453125,
+            "max": 691.375,
+            "mean": 634.2003348214286
+          },
+          "swapPssMiB": {
+            "samples": 7,
+            "first": 1.0546875,
+            "last": 69.890625,
+            "min": 0.1875,
+            "max": 70.1171875,
+            "mean": 20.258928571428573
+          },
+          "graphicsPssMiB": {
+            "samples": 7,
+            "first": 39.5234375,
+            "last": 136.0859375,
+            "min": 39.5234375,
+            "max": 136.0859375,
+            "mean": 110.85212053571429
+          }
+        },
+        "telemetryErrors": [],
+        "batteryBeforeC": 38.0,
+        "batteryAfterC": 38.0
+      }
+    },
+    {
+      "name": "before-profiler-1",
+      "side": "before",
+      "metadata": {
+        "device": "OPPO CPH2591",
+        "unity": "6000.3.19f1",
+        "gpu": "Mali-G52 MC2",
+        "api": "Vulkan",
+        "width": 720,
+        "height": 1612,
+        "graphicProfile": "Current",
+        "buildGuid": "c48b29afedde48c49088542434e318da",
+        "utc": "2026-10-29T06:12:14.6584960Z",
+        "execution": "Development player Unity Profiler binary capture; normal touch/physics; no screenshots; Deep Profile and Script Debugging off. Diagnostic timings include profiler overhead.",
+        "declaredBuildKind": "profiler"
+      },
+      "reportSource": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/before-profiler-1/proof/run.json",
+      "evidence": {
+        "imageFileCount": 0,
+        "imageExamples": [],
+        "screenshotsDisabledDeclared": true,
+        "androidDebuggable": true,
+        "installedLastUpdateTime": "2026-10-29 13:11:18",
+        "state": null,
+        "releaseRequested": null,
+        "saveProtection": "Harness source disables VenomCampaignSave.PersistenceEnabled before scene loading; not a per-run save checksum verification",
+        "saveProtectionSource": "Assets/_Game/Venom/Runtime/ChapterProof/COgheViewProofPlayer.cs:54"
+      },
+      "health": {
+        "source": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/before-profiler-1/health.jsonl",
+        "scope": "whole run; health elapsed times are not aligned to individual level captures",
+        "healthSamples": 7,
+        "batteryC": {
+          "samples": 7,
+          "first": 39.0,
+          "last": 40.0,
+          "min": 39.0,
+          "max": 40.0,
+          "mean": 39.285714285714285
+        },
+        "oemPhoneC": {
+          "samples": 7,
+          "first": 40.0,
+          "last": 43.0,
+          "min": 40.0,
+          "max": 43.0,
+          "mean": 41.714285714285715
+        },
+        "thermalStatuses": [
+          2
+        ],
+        "maxThermalStatus": 2,
+        "currentHalC": {
+          "CPU": {
+            "samples": 7,
+            "first": 53.1,
+            "last": 63.8,
+            "min": 53.1,
+            "max": 63.8,
+            "mean": 61.24285714285714
+          },
+          "GPU": {
+            "samples": 7,
+            "first": 53.1,
+            "last": 63.8,
+            "min": 53.1,
+            "max": 63.8,
+            "mean": 61.24285714285714
+          },
+          "BATTERY": {
+            "samples": 7,
+            "first": 39.0,
+            "last": 39.75,
+            "min": 39.0,
+            "max": 39.75,
+            "mean": 39.142857142857146
+          },
+          "SKIN": {
+            "samples": 7,
+            "first": 15.0,
+            "last": 18.0,
+            "min": 15.0,
+            "max": 18.0,
+            "mean": 16.857142857142858
+          },
+          "POWER_AMPLIFIER": {
+            "samples": 7,
+            "first": 13.0,
+            "last": 14.0,
+            "min": 13.0,
+            "max": 14.0,
+            "mean": 13.714285714285714
+          },
+          "NPU": {
+            "samples": 7,
+            "first": 53.1,
+            "last": 63.8,
+            "min": 53.1,
+            "max": 63.8,
+            "mean": 61.24285714285714
+          },
+          "TPU": {
+            "samples": 7,
+            "first": 53.1,
+            "last": 63.8,
+            "min": 53.1,
+            "max": 63.8,
+            "mean": 61.24285714285714
+          },
+          "SOC": {
+            "samples": 7,
+            "first": 53.1,
+            "last": 63.8,
+            "min": 53.1,
+            "max": 63.8,
+            "mean": 61.24285714285714
+          }
+        },
+        "powerStates": [
+          {
+            "AC": false,
+            "USB": true,
+            "Wireless": false,
+            "Dock": false
+          }
+        ],
+        "processMemory": {
+          "pssMiB": {
+            "samples": 7,
+            "first": 296.6513671875,
+            "last": 492.55078125,
+            "min": 296.6513671875,
+            "max": 505.00390625,
+            "mean": 464.0053013392857
+          },
+          "rssMiB": {
+            "samples": 7,
+            "first": 389.3671875,
+            "last": 483.49609375,
+            "min": 389.3671875,
+            "max": 544.51953125,
+            "mean": 488.49051339285717
+          },
+          "swapPssMiB": {
+            "samples": 7,
+            "first": 0.6845703125,
+            "last": 110.7841796875,
+            "min": 0.6845703125,
+            "max": 110.7841796875,
+            "mean": 79.74665178571429
+          },
+          "graphicsPssMiB": {
+            "samples": 7,
+            "first": 36.06640625,
+            "last": 137.13671875,
+            "min": 36.06640625,
+            "max": 137.13671875,
+            "mean": 110.72209821428571
+          }
+        },
+        "telemetryErrors": [],
+        "batteryBeforeC": 39.0,
+        "batteryAfterC": 40.0
+      }
+    },
+    {
+      "name": "before-profiler-2",
+      "side": "before",
+      "metadata": {
+        "device": "OPPO CPH2591",
+        "unity": "6000.3.19f1",
+        "gpu": "Mali-G52 MC2",
+        "api": "Vulkan",
+        "width": 720,
+        "height": 1612,
+        "graphicProfile": "Current",
+        "buildGuid": "c48b29afedde48c49088542434e318da",
+        "utc": "2026-10-29T06:15:54.6641980Z",
+        "execution": "Development player Unity Profiler binary capture; normal touch/physics; no screenshots; Deep Profile and Script Debugging off. Diagnostic timings include profiler overhead.",
+        "declaredBuildKind": "profiler"
+      },
+      "reportSource": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/before-profiler-2/proof/run.json",
+      "evidence": {
+        "imageFileCount": 0,
+        "imageExamples": [],
+        "screenshotsDisabledDeclared": true,
+        "androidDebuggable": true,
+        "installedLastUpdateTime": "2026-10-29 13:11:18",
+        "state": null,
+        "releaseRequested": null,
+        "saveProtection": "Harness source disables VenomCampaignSave.PersistenceEnabled before scene loading; not a per-run save checksum verification",
+        "saveProtectionSource": "Assets/_Game/Venom/Runtime/ChapterProof/COgheViewProofPlayer.cs:54"
+      },
+      "health": {
+        "source": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/before-profiler-2/health.jsonl",
+        "scope": "whole run; health elapsed times are not aligned to individual level captures",
+        "healthSamples": 7,
+        "batteryC": {
+          "samples": 7,
+          "first": 40.0,
+          "last": 40.0,
+          "min": 40.0,
+          "max": 40.0,
+          "mean": 40.0
+        },
+        "oemPhoneC": {
+          "samples": 7,
+          "first": 42.0,
+          "last": 43.0,
+          "min": 42.0,
+          "max": 43.0,
+          "mean": 42.42857142857143
+        },
+        "thermalStatuses": [
+          2
+        ],
+        "maxThermalStatus": 2,
+        "currentHalC": {
+          "CPU": {
+            "samples": 7,
+            "first": 58.8,
+            "last": 64.3,
+            "min": 58.8,
+            "max": 64.3,
+            "mean": 62.51428571428572
+          },
+          "GPU": {
+            "samples": 7,
+            "first": 58.8,
+            "last": 64.3,
+            "min": 58.8,
+            "max": 64.3,
+            "mean": 62.51428571428572
+          },
+          "BATTERY": {
+            "samples": 7,
+            "first": 40.0,
+            "last": 40.0,
+            "min": 40.0,
+            "max": 40.0,
+            "mean": 40.0
+          },
+          "SKIN": {
+            "samples": 7,
+            "first": 17.0,
+            "last": 18.0,
+            "min": 17.0,
+            "max": 18.0,
+            "mean": 17.285714285714285
+          },
+          "POWER_AMPLIFIER": {
+            "samples": 7,
+            "first": 14.0,
+            "last": 15.0,
+            "min": 14.0,
+            "max": 15.0,
+            "mean": 14.142857142857142
+          },
+          "NPU": {
+            "samples": 7,
+            "first": 58.8,
+            "last": 64.3,
+            "min": 58.8,
+            "max": 64.3,
+            "mean": 62.51428571428572
+          },
+          "TPU": {
+            "samples": 7,
+            "first": 58.8,
+            "last": 64.3,
+            "min": 58.8,
+            "max": 64.3,
+            "mean": 62.51428571428572
+          },
+          "SOC": {
+            "samples": 7,
+            "first": 58.8,
+            "last": 64.3,
+            "min": 58.8,
+            "max": 64.3,
+            "mean": 62.51428571428572
+          }
+        },
+        "powerStates": [
+          {
+            "AC": false,
+            "USB": true,
+            "Wireless": false,
+            "Dock": false
+          }
+        ],
+        "processMemory": {
+          "pssMiB": {
+            "samples": 7,
+            "first": 370.349609375,
+            "last": 548.169921875,
+            "min": 370.349609375,
+            "max": 567.1015625,
+            "mean": 527.4698660714286
+          },
+          "rssMiB": {
+            "samples": 7,
+            "first": 472.58984375,
+            "last": 621.4296875,
+            "min": 472.58984375,
+            "max": 681.53515625,
+            "mean": 619.390625
+          },
+          "swapPssMiB": {
+            "samples": 7,
+            "first": 0.6552734375,
+            "last": 40.79296875,
+            "min": 0.171875,
+            "max": 40.79296875,
+            "mean": 22.982003348214285
+          },
+          "graphicsPssMiB": {
+            "samples": 7,
+            "first": 39.5234375,
+            "last": 138.2109375,
+            "min": 39.5234375,
+            "max": 138.2109375,
+            "mean": 110.84877232142857
+          }
+        },
+        "telemetryErrors": [],
+        "batteryBeforeC": 40.0,
+        "batteryAfterC": 40.0
+      }
+    },
+    {
+      "name": "before-profiler-3",
+      "side": "before",
+      "metadata": {
+        "device": "OPPO CPH2591",
+        "unity": "6000.3.19f1",
+        "gpu": "Mali-G52 MC2",
+        "api": "Vulkan",
+        "width": 720,
+        "height": 1612,
+        "graphicProfile": "Current",
+        "buildGuid": "c48b29afedde48c49088542434e318da",
+        "utc": "2026-10-29T06:19:35.6267070Z",
+        "execution": "Development player Unity Profiler binary capture; normal touch/physics; no screenshots; Deep Profile and Script Debugging off. Diagnostic timings include profiler overhead.",
+        "declaredBuildKind": "profiler"
+      },
+      "reportSource": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/before-profiler-3/proof/20261029T061935Z/run.json",
+      "evidence": {
+        "imageFileCount": 0,
+        "imageExamples": [],
+        "screenshotsDisabledDeclared": true,
+        "androidDebuggable": true,
+        "installedLastUpdateTime": "2026-10-29 13:11:18",
+        "state": "complete",
+        "releaseRequested": false,
+        "saveProtection": "Harness source disables VenomCampaignSave.PersistenceEnabled before scene loading; not a per-run save checksum verification",
+        "saveProtectionSource": "Assets/_Game/Venom/Runtime/ChapterProof/COgheViewProofPlayer.cs:54"
+      },
+      "health": {
+        "source": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/before-profiler-3/health.jsonl",
+        "scope": "whole run; health elapsed times are not aligned to individual level captures",
+        "healthSamples": 7,
+        "batteryC": {
+          "samples": 7,
+          "first": 41.0,
+          "last": 41.0,
+          "min": 40.0,
+          "max": 41.0,
+          "mean": 40.857142857142854
+        },
+        "oemPhoneC": {
+          "samples": 7,
+          "first": 43.0,
+          "last": 43.0,
+          "min": 42.0,
+          "max": 43.0,
+          "mean": 42.857142857142854
+        },
+        "thermalStatuses": [
+          2
+        ],
+        "maxThermalStatus": 2,
+        "currentHalC": {
+          "CPU": {
+            "samples": 7,
+            "first": 58.4,
+            "last": 63.1,
+            "min": 58.4,
+            "max": 63.5,
+            "mean": 61.957142857142856
+          },
+          "GPU": {
+            "samples": 7,
+            "first": 58.4,
+            "last": 63.1,
+            "min": 58.4,
+            "max": 63.5,
+            "mean": 61.957142857142856
+          },
+          "BATTERY": {
+            "samples": 7,
+            "first": 40.25,
+            "last": 41.0,
+            "min": 40.25,
+            "max": 41.0,
+            "mean": 40.67857142857143
+          },
+          "SKIN": {
+            "samples": 7,
+            "first": 17.0,
+            "last": 18.0,
+            "min": 17.0,
+            "max": 18.0,
+            "mean": 17.714285714285715
+          },
+          "POWER_AMPLIFIER": {
+            "samples": 7,
+            "first": 15.0,
+            "last": 15.0,
+            "min": 14.0,
+            "max": 15.0,
+            "mean": 14.857142857142858
+          },
+          "NPU": {
+            "samples": 7,
+            "first": 58.4,
+            "last": 63.1,
+            "min": 58.4,
+            "max": 63.5,
+            "mean": 61.957142857142856
+          },
+          "TPU": {
+            "samples": 7,
+            "first": 58.4,
+            "last": 63.1,
+            "min": 58.4,
+            "max": 63.5,
+            "mean": 61.957142857142856
+          },
+          "SOC": {
+            "samples": 7,
+            "first": 58.4,
+            "last": 63.1,
+            "min": 58.4,
+            "max": 63.5,
+            "mean": 61.957142857142856
+          }
+        },
+        "powerStates": [
+          {
+            "AC": false,
+            "USB": true,
+            "Wireless": false,
+            "Dock": false
+          }
+        ],
+        "processMemory": {
+          "pssMiB": {
+            "samples": 7,
+            "first": 347.4697265625,
+            "last": 535.8671875,
+            "min": 347.4697265625,
+            "max": 563.0341796875,
+            "mean": 521.2737165178571
+          },
+          "rssMiB": {
+            "samples": 7,
+            "first": 449.90234375,
+            "last": 584.234375,
+            "min": 449.90234375,
+            "max": 669.3046875,
+            "mean": 587.6662946428571
+          },
+          "swapPssMiB": {
+            "samples": 7,
+            "first": 0.5908203125,
+            "last": 62.8896484375,
+            "min": 0.5908203125,
+            "max": 65.1845703125,
+            "mean": 47.364536830357146
+          },
+          "graphicsPssMiB": {
+            "samples": 7,
+            "first": 39.6484375,
+            "last": 132.703125,
+            "min": 39.6484375,
+            "max": 132.703125,
+            "mean": 109.84933035714286
+          }
+        },
+        "telemetryErrors": [],
+        "batteryBeforeC": 40.0,
+        "batteryAfterC": 41.0
+      }
+    }
+  ],
+  "levels": [
+    {
+      "level": 2,
+      "before": {
+        "fps": {
+          "values": [
+            35.82720879258663,
+            41.79856749324017,
+            41.48422589055161
+          ],
+          "median": 41.48422589055161,
+          "min": 35.82720879258663,
+          "max": 41.79856749324017
+        },
+        "p99Ms": {
+          "values": [
+            46.2760009765625,
+            42.37361526489258,
+            40.570152282714844
+          ],
+          "median": 42.37361526489258,
+          "min": 40.570152282714844,
+          "max": 46.2760009765625
+        },
+        "fullRouteTaps": [
+          3,
+          3,
+          3
+        ],
+        "markers": {
+          "COghe.Skin.Rebuild": {
+            "perCall": {
+              "values": [
+                4.040648968113579,
+                4.366565708373044,
+                4.366088689411974
+              ],
+              "median": 4.366088689411974,
+              "min": 4.040648968113579,
+              "max": 4.366565708373044
+            },
+            "perCaptureFrame": {
+              "values": [
+                4.024356028726024,
+                4.351863466930711,
+                4.350928659240405
+              ],
+              "median": 4.350928659240405,
+              "min": 4.024356028726024,
+              "max": 4.351863466930711
+            },
+            "calls": [
+              247,
+              296,
+              287
+            ],
+            "largestCallMs": 6.203999996185303,
+            "largestAccumulatedFrameMs": 6.203999996185303,
+            "runMaximumAccumulatedFrameMs": {
+              "values": [
+                6.203999996185303,
+                6.071384906768799,
+                5.889537811279297
+              ],
+              "median": 6.071384906768799,
+              "min": 5.889537811279297,
+              "max": 6.203999996185303
+            }
+          },
+          "COghe.Navigation.BuildGraph": null,
+          "COghe.Gameplay.Step": {
+            "perCall": {
+              "values": [
+                0.6221361776144934,
+                0.6033951429862998,
+                0.5815318328199894
+              ],
+              "median": 0.6033951429862998,
+              "min": 0.5815318328199894,
+              "max": 0.6221361776144934
+            },
+            "perCaptureFrame": {
+              "values": [
+                2.0746234632547824,
+                1.724856822880029,
+                1.6678656038517754
+              ],
+              "median": 1.724856822880029,
+              "min": 1.6678656038517754,
+              "max": 2.0746234632547824
+            },
+            "calls": [
+              827,
+              849,
+              826
+            ],
+            "largestCallMs": 18.755615234375,
+            "largestAccumulatedFrameMs": 19.538615226745605,
+            "runMaximumAccumulatedFrameMs": {
+              "values": [
+                19.538615226745605,
+                6.638845860958099,
+                6.401382952928543
+              ],
+              "median": 6.638845860958099,
+              "min": 6.401382952928543,
+              "max": 19.538615226745605
+            }
+          },
+          "Physics.Simulate": {
+            "perCall": {
+              "values": [
+                1.8016164687337148,
+                1.2697623254132355,
+                1.1907508782411025
+              ],
+              "median": 1.2697623254132355,
+              "min": 1.1907508782411025,
+              "max": 1.8016164687337148
+            },
+            "perCaptureFrame": {
+              "values": [
+                6.0078097566241215,
+                3.6297246271913703,
+                3.4151396716220512
+              ],
+              "median": 3.6297246271913703,
+              "min": 3.4151396716220512,
+              "max": 6.0078097566241215
+            },
+            "calls": [
+              827,
+              849,
+              826
+            ],
+            "largestCallMs": 14.98976993560791,
+            "largestAccumulatedFrameMs": 26.703152775764465,
+            "runMaximumAccumulatedFrameMs": {
+              "values": [
+                26.703152775764465,
+                14.996306657791138,
+                11.098230123519897
+              ],
+              "median": 14.996306657791138,
+              "min": 11.098230123519897,
+              "max": 26.703152775764465
+            }
+          }
+        }
+      },
+      "after": {
+        "fps": {
+          "values": [
+            44.312533480114325,
+            43.713948951242706,
+            43.1974349976274
+          ],
+          "median": 43.713948951242706,
+          "min": 43.1974349976274,
+          "max": 44.312533480114325
+        },
+        "p99Ms": {
+          "values": [
+            35.96900177001953,
+            37.84153747558594,
+            36.036617279052734
+          ],
+          "median": 36.036617279052734,
+          "min": 35.96900177001953,
+          "max": 37.84153747558594
+        },
+        "fullRouteTaps": [
+          3,
+          3,
+          3
+        ],
+        "markers": {
+          "COghe.Skin.Rebuild": {
+            "perCall": {
+              "values": [
+                3.198270192453938,
+                3.355649458857235,
+                3.5567860287546322
+              ],
+              "median": 3.355649458857235,
+              "min": 3.198270192453938,
+              "max": 3.5567860287546322
+            },
+            "perCaptureFrame": {
+              "values": [
+                3.187986365468556,
+                3.3447544930817243,
+                3.5450474610029667
+              ],
+              "median": 3.3447544930817243,
+              "min": 3.187986365468556,
+              "max": 3.5450474610029667
+            },
+            "calls": [
+              310,
+              307,
+              302
+            ],
+            "largestCallMs": 6.2329230308532715,
+            "largestAccumulatedFrameMs": 6.2329230308532715,
+            "runMaximumAccumulatedFrameMs": {
+              "values": [
+                5.280307769775391,
+                5.423923015594482,
+                6.2329230308532715
+              ],
+              "median": 5.423923015594482,
+              "min": 5.280307769775391,
+              "max": 6.2329230308532715
+            }
+          },
+          "COghe.Navigation.BuildGraph": null,
+          "COghe.Gameplay.Step": {
+            "perCall": {
+              "values": [
+                0.5044516582622256,
+                0.5196064658710177,
+                0.5665366333886077
+              ],
+              "median": 0.5196064658710177,
+              "min": 0.5044516582622256,
+              "max": 0.5665366333886077
+            },
+            "perCaptureFrame": {
+              "values": [
+                1.3641281176801663,
+                1.4238566792049965,
+                1.572466365279931
+              ],
+              "median": 1.4238566792049965,
+              "min": 1.3641281176801663,
+              "max": 1.572466365279931
+            },
+            "calls": [
+              841,
+              844,
+              841
+            ],
+            "largestCallMs": 5.918152809143066,
+            "largestAccumulatedFrameMs": 6.433306813240051,
+            "runMaximumAccumulatedFrameMs": {
+              "values": [
+                6.433306813240051,
+                4.823996990919113,
+                4.808151930570602
+              ],
+              "median": 4.823996990919113,
+              "min": 4.808151930570602,
+              "max": 6.433306813240051
+            }
+          },
+          "Physics.Simulate": {
+            "perCall": {
+              "values": [
+                1.1243920265990404,
+                1.1444188848279098,
+                1.207167324072966
+              ],
+              "median": 1.1444188848279098,
+              "min": 1.1243920265990404,
+              "max": 1.207167324072966
+            },
+            "perCaptureFrame": {
+              "values": [
+                3.040558502796762,
+                3.13600499608687,
+                3.3505865331530176
+              ],
+              "median": 3.13600499608687,
+              "min": 3.040558502796762,
+              "max": 3.3505865331530176
+            },
+            "calls": [
+              841,
+              844,
+              841
+            ],
+            "largestCallMs": 8.586691856384277,
+            "largestAccumulatedFrameMs": 14.507771134376526,
+            "runMaximumAccumulatedFrameMs": {
+              "values": [
+                13.632306814193726,
+                13.061999797821045,
+                14.507771134376526
+              ],
+              "median": 13.632306814193726,
+              "min": 13.061999797821045,
+              "max": 14.507771134376526
+            }
+          }
+        }
+      }
+    },
+    {
+      "level": 7,
+      "before": {
+        "fps": {
+          "values": [
+            29.497816050436416,
+            29.76807656794473,
+            28.82192640112233
+          ],
+          "median": 29.497816050436416,
+          "min": 28.82192640112233,
+          "max": 29.76807656794473
+        },
+        "p99Ms": {
+          "values": [
+            60.95238494873047,
+            54.57469177246094,
+            53.470149993896484
+          ],
+          "median": 54.57469177246094,
+          "min": 53.470149993896484,
+          "max": 60.95238494873047
+        },
+        "fullRouteTaps": [
+          6,
+          6,
+          6
+        ],
+        "markers": {
+          "COghe.Skin.Rebuild": {
+            "perCall": {
+              "values": [
+                4.574557374015687,
+                4.611545654093708,
+                5.276012196697173
+              ],
+              "median": 4.611545654093708,
+              "min": 4.574557374015687,
+              "max": 5.276012196697173
+            },
+            "perCaptureFrame": {
+              "values": [
+                4.56730767928666,
+                4.604225740357051,
+                5.267377152185393
+              ],
+              "median": 4.604225740357051,
+              "min": 4.56730767928666,
+              "max": 5.267377152185393
+            },
+            "calls": [
+              630,
+              629,
+              610
+            ],
+            "largestCallMs": 10.939000129699707,
+            "largestAccumulatedFrameMs": 10.939000129699707,
+            "runMaximumAccumulatedFrameMs": {
+              "values": [
+                10.939000129699707,
+                9.069231033325195,
+                9.296923637390137
+              ],
+              "median": 9.296923637390137,
+              "min": 9.069231033325195,
+              "max": 10.939000129699707
+            }
+          },
+          "COghe.Navigation.BuildGraph": {
+            "perCall": {
+              "values": [
+                22.00767707824707,
+                21.62081527709961,
+                23.27050666809082
+              ],
+              "median": 22.00767707824707,
+              "min": 21.62081527709961,
+              "max": 23.27050666809082
+            },
+            "perCaptureFrame": {
+              "values": [
+                0.17438729855980245,
+                0.1715937720404731,
+                0.19042967813494943
+              ],
+              "median": 0.17438729855980245,
+              "min": 0.1715937720404731,
+              "max": 0.19042967813494943
+            },
+            "calls": [
+              5,
+              5,
+              5
+            ],
+            "largestCallMs": 35.60153579711914,
+            "largestAccumulatedFrameMs": 35.60153579711914,
+            "runMaximumAccumulatedFrameMs": {
+              "values": [
+                29.687000274658203,
+                32.92430877685547,
+                35.60153579711914
+              ],
+              "median": 32.92430877685547,
+              "min": 29.687000274658203,
+              "max": 35.60153579711914
+            }
+          },
+          "COghe.Gameplay.Step": {
+            "perCall": {
+              "values": [
+                0.9103579173834412,
+                0.9200101881420198,
+                0.9882230148183027
+              ],
+              "median": 0.9200101881420198,
+              "min": 0.9103579173834412,
+              "max": 0.9882230148183027
+            },
+            "perCaptureFrame": {
+              "values": [
+                3.6962551257311826,
+                3.7034060906796227,
+                4.106543755521556
+              ],
+              "median": 3.7034060906796227,
+              "min": 3.6962551257311826,
+              "max": 4.106543755521556
+            },
+            "calls": [
+              2562,
+              2536,
+              2539
+            ],
+            "largestCallMs": 34.009307861328125,
+            "largestAccumulatedFrameMs": 37.66584533452988,
+            "runMaximumAccumulatedFrameMs": {
+              "values": [
+                37.66584533452988,
+                35.67061486840248,
+                24.711077570915222
+              ],
+              "median": 35.67061486840248,
+              "min": 24.711077570915222,
+              "max": 37.66584533452988
+            }
+          },
+          "Physics.Simulate": {
+            "perCall": {
+              "values": [
+                1.6499152461082838,
+                1.580630088148621,
+                1.6298115132079438
+              ],
+              "median": 1.6298115132079438,
+              "min": 1.580630088148621,
+              "max": 1.6499152461082838
+            },
+            "perCaptureFrame": {
+              "values": [
+                6.699021965973729,
+                6.3626633389601635,
+                6.772653734918117
+              ],
+              "median": 6.699021965973729,
+              "min": 6.3626633389601635,
+              "max": 6.772653734918117
+            },
+            "calls": [
+              2562,
+              2536,
+              2539
+            ],
+            "largestCallMs": 8.503384590148926,
+            "largestAccumulatedFrameMs": 24.3800790309906,
+            "runMaximumAccumulatedFrameMs": {
+              "values": [
+                24.3800790309906,
+                17.390459895133972,
+                17.416613817214966
+              ],
+              "median": 17.416613817214966,
+              "min": 17.390459895133972,
+              "max": 24.3800790309906
+            }
+          }
+        }
+      },
+      "after": {
+        "fps": {
+          "values": [
+            29.87857932996694,
+            29.624918446989096,
+            29.865069549929263
+          ],
+          "median": 29.865069549929263,
+          "min": 29.624918446989096,
+          "max": 29.87857932996694
+        },
+        "p99Ms": {
+          "values": [
+            56.502769470214844,
+            55.20192337036133,
+            55.65715026855469
+          ],
+          "median": 55.65715026855469,
+          "min": 55.20192337036133,
+          "max": 56.502769470214844
+        },
+        "fullRouteTaps": [
+          6,
+          6,
+          6
+        ],
+        "markers": {
+          "COghe.Skin.Rebuild": {
+            "perCall": {
+              "values": [
+                3.995489746099701,
+                4.256167113223922,
+                4.155122517814752
+              ],
+              "median": 4.155122517814752,
+              "min": 3.995489746099701,
+              "max": 4.256167113223922
+            },
+            "perCaptureFrame": {
+              "values": [
+                3.9892662418222873,
+                4.249547879766342,
+                4.148817324312757
+              ],
+              "median": 4.148817324312757,
+              "min": 3.9892662418222873,
+              "max": 4.249547879766342
+            },
+            "calls": [
+              641,
+              642,
+              658
+            ],
+            "largestCallMs": 10.722153663635254,
+            "largestAccumulatedFrameMs": 10.722153663635254,
+            "runMaximumAccumulatedFrameMs": {
+              "values": [
+                10.722153663635254,
+                8.958999633789062,
+                6.923999786376953
+              ],
+              "median": 8.958999633789062,
+              "min": 6.923999786376953,
+              "max": 10.722153663635254
+            }
+          },
+          "COghe.Navigation.BuildGraph": {
+            "perCall": {
+              "values": [
+                17.938076972961426,
+                20.17920036315918,
+                17.752046203613283
+              ],
+              "median": 17.938076972961426,
+              "min": 17.752046203613283,
+              "max": 20.17920036315918
+            },
+            "perCaptureFrame": {
+              "values": [
+                0.13970464932212948,
+                0.15691446627650996,
+                0.1346892731685378
+              ],
+              "median": 0.13970464932212948,
+              "min": 0.1346892731685378,
+              "max": 0.15691446627650996
+            },
+            "calls": [
+              5,
+              5,
+              5
+            ],
+            "largestCallMs": 24.903615951538086,
+            "largestAccumulatedFrameMs": 24.903615951538086,
+            "runMaximumAccumulatedFrameMs": {
+              "values": [
+                24.903615951538086,
+                23.631383895874023,
+                20.579076766967773
+              ],
+              "median": 23.631383895874023,
+              "min": 20.579076766967773,
+              "max": 24.903615951538086
+            }
+          },
+          "COghe.Gameplay.Step": {
+            "perCall": {
+              "values": [
+                0.8844832436511327,
+                0.9126707463596545,
+                0.8778492189028313
+              ],
+              "median": 0.8844832436511327,
+              "min": 0.8778492189028313,
+              "max": 0.9126707463596545
+            },
+            "perCaptureFrame": {
+              "values": [
+                3.5489545726562586,
+                3.6890066404179502,
+                3.523385711681318
+              ],
+              "median": 3.5489545726562586,
+              "min": 3.523385711681318,
+              "max": 3.6890066404179502
+            },
+            "calls": [
+              2576,
+              2599,
+              2645
+            ],
+            "largestCallMs": 26.235923767089844,
+            "largestAccumulatedFrameMs": 29.368308782577515,
+            "runMaximumAccumulatedFrameMs": {
+              "values": [
+                29.368308782577515,
+                28.432921648025513,
+                23.67569214105606
+              ],
+              "median": 28.432921648025513,
+              "min": 23.67569214105606,
+              "max": 29.368308782577515
+            }
+          },
+          "Physics.Simulate": {
+            "perCall": {
+              "values": [
+                1.6019717853585755,
+                1.638767891477832,
+                1.5581963926046691
+              ],
+              "median": 1.6019717853585755,
+              "min": 1.5581963926046691,
+              "max": 1.638767891477832
+            },
+            "perCaptureFrame": {
+              "values": [
+                6.427849406672415,
+                6.6238845255845815,
+                6.254065946038468
+              ],
+              "median": 6.427849406672415,
+              "min": 6.254065946038468,
+              "max": 6.6238845255845815
+            },
+            "calls": [
+              2576,
+              2599,
+              2645
+            ],
+            "largestCallMs": 4.422691822052002,
+            "largestAccumulatedFrameMs": 21.985769987106323,
+            "runMaximumAccumulatedFrameMs": {
+              "values": [
+                16.957540035247803,
+                21.985769987106323,
+                17.68392312526703
+              ],
+              "median": 17.68392312526703,
+              "min": 16.957540035247803,
+              "max": 21.985769987106323
+            }
+          }
+        }
+      }
+    },
+    {
+      "level": 23,
+      "before": {
+        "fps": {
+          "values": [
+            29.465225503555978,
+            29.040797488331005,
+            28.331751626860413
+          ],
+          "median": 29.040797488331005,
+          "min": 28.331751626860413,
+          "max": 29.465225503555978
+        },
+        "p99Ms": {
+          "values": [
+            53.9338493347168,
+            57.529232025146484,
+            60.7298469543457
+          ],
+          "median": 57.529232025146484,
+          "min": 53.9338493347168,
+          "max": 60.7298469543457
+        },
+        "fullRouteTaps": [
+          5,
+          5,
+          5
+        ],
+        "markers": {
+          "COghe.Skin.Rebuild": {
+            "perCall": {
+              "values": [
+                9.262924693484996,
+                10.001549653104833,
+                10.657427693461324
+              ],
+              "median": 10.001549653104833,
+              "min": 9.262924693484996,
+              "max": 10.657427693461324
+            },
+            "perCaptureFrame": {
+              "values": [
+                9.238223560969034,
+                9.974591298244713,
+                10.628229261424444
+              ],
+              "median": 9.974591298244713,
+              "min": 9.238223560969034,
+              "max": 10.628229261424444
+            },
+            "calls": [
+              374,
+              370,
+              364
+            ],
+            "largestCallMs": 21.28884506225586,
+            "largestAccumulatedFrameMs": 21.28884506225586,
+            "runMaximumAccumulatedFrameMs": {
+              "values": [
+                14.267999649047852,
+                15.445769309997559,
+                21.28884506225586
+              ],
+              "median": 15.445769309997559,
+              "min": 14.267999649047852,
+              "max": 21.28884506225586
+            }
+          },
+          "COghe.Navigation.BuildGraph": {
+            "perCall": {
+              "values": [
+                16.096507263183593,
+                17.769661712646485,
+                17.82315330505371
+              ],
+              "median": 17.769661712646485,
+              "min": 16.096507263183593,
+              "max": 17.82315330505371
+            },
+            "perCaptureFrame": {
+              "values": [
+                0.21462009684244793,
+                0.2394833114911925,
+                0.24415278500073576
+              ],
+              "median": 0.2394833114911925,
+              "min": 0.21462009684244793,
+              "max": 0.24415278500073576
+            },
+            "calls": [
+              5,
+              5,
+              5
+            ],
+            "largestCallMs": 18.442768096923828,
+            "largestAccumulatedFrameMs": 35.211076736450195,
+            "runMaximumAccumulatedFrameMs": {
+              "values": [
+                32.160075187683105,
+                35.211076736450195,
+                35.03053855895996
+              ],
+              "median": 35.03053855895996,
+              "min": 32.160075187683105,
+              "max": 35.211076736450195
+            }
+          },
+          "COghe.Gameplay.Step": {
+            "perCall": {
+              "values": [
+                0.8824302004144016,
+                0.9166762807664343,
+                0.9477630610690868
+              ],
+              "median": 0.9166762807664343,
+              "min": 0.8824302004144016,
+              "max": 0.9477630610690868
+            },
+            "perCaptureFrame": {
+              "values": [
+                3.593255776087443,
+                3.792717226351689,
+                4.019554023383415
+              ],
+              "median": 3.792717226351689,
+              "min": 3.593255776087443,
+              "max": 4.019554023383415
+            },
+            "calls": [
+              1527,
+              1535,
+              1548
+            ],
+            "largestCallMs": 36.60807418823242,
+            "largestAccumulatedFrameMs": 38.18730616569519,
+            "runMaximumAccumulatedFrameMs": {
+              "values": [
+                35.09869256615639,
+                38.18730616569519,
+                37.821848690509796
+              ],
+              "median": 37.821848690509796,
+              "min": 35.09869256615639,
+              "max": 38.18730616569519
+            }
+          },
+          "Physics.Simulate": {
+            "perCall": {
+              "values": [
+                1.225876279570499,
+                1.26948108502242,
+                1.2239351518240393
+              ],
+              "median": 1.225876279570499,
+              "min": 1.2239351518240393,
+              "max": 1.26948108502242
+            },
+            "perCaptureFrame": {
+              "values": [
+                4.991768210411072,
+                5.252435217006509,
+                5.190826342530446
+              ],
+              "median": 5.190826342530446,
+              "min": 4.991768210411072,
+              "max": 5.252435217006509
+            },
+            "calls": [
+              1527,
+              1535,
+              1548
+            ],
+            "largestCallMs": 5.428384780883789,
+            "largestAccumulatedFrameMs": 13.98407793045044,
+            "runMaximumAccumulatedFrameMs": {
+              "values": [
+                10.87938278913498,
+                13.98407793045044,
+                11.008769989013672
+              ],
+              "median": 11.008769989013672,
+              "min": 10.87938278913498,
+              "max": 13.98407793045044
+            }
+          }
+        }
+      },
+      "after": {
+        "fps": {
+          "values": [
+            29.8495440142182,
+            29.927452944774,
+            29.911462573300543
+          ],
+          "median": 29.911462573300543,
+          "min": 29.8495440142182,
+          "max": 29.927452944774
+        },
+        "p99Ms": {
+          "values": [
+            60.05754089355469,
+            56.30699920654297,
+            54.808692932128906
+          ],
+          "median": 56.30699920654297,
+          "min": 54.808692932128906,
+          "max": 60.05754089355469
+        },
+        "fullRouteTaps": [
+          5,
+          5,
+          5
+        ],
+        "markers": {
+          "COghe.Skin.Rebuild": {
+            "perCall": {
+              "values": [
+                6.5852283292555125,
+                6.894230970583464,
+                6.9198925358197085
+              ],
+              "median": 6.894230970583464,
+              "min": 6.5852283292555125,
+              "max": 6.9198925358197085
+            },
+            "perCaptureFrame": {
+              "values": [
+                6.56798951163966,
+                6.876135876172484,
+                6.901871982341011
+              ],
+              "median": 6.876135876172484,
+              "min": 6.56798951163966,
+              "max": 6.901871982341011
+            },
+            "calls": [
+              381,
+              380,
+              383
+            ],
+            "largestCallMs": 13.30276870727539,
+            "largestAccumulatedFrameMs": 13.30276870727539,
+            "runMaximumAccumulatedFrameMs": {
+              "values": [
+                11.572922706604004,
+                13.30276870727539,
+                12.153615951538086
+              ],
+              "median": 12.153615951538086,
+              "min": 11.572922706604004,
+              "max": 13.30276870727539
+            }
+          },
+          "COghe.Navigation.BuildGraph": {
+            "perCall": {
+              "values": [
+                17.905507850646973,
+                16.029907608032225,
+                16.015568923950195
+              ],
+              "median": 16.029907608032225,
+              "min": 16.015568923950195,
+              "max": 17.905507850646973
+            },
+            "perCaptureFrame": {
+              "values": [
+                0.23436528600323261,
+                0.21036624157522607,
+                0.20853605369726816
+              ],
+              "median": 0.21036624157522607,
+              "min": 0.20853605369726816,
+              "max": 0.23436528600323261
+            },
+            "calls": [
+              5,
+              5,
+              5
+            ],
+            "largestCallMs": 24.430540084838867,
+            "largestAccumulatedFrameMs": 32.20638370513916,
+            "runMaximumAccumulatedFrameMs": {
+              "values": [
+                30.38107681274414,
+                32.20638370513916,
+                31.64146137237549
+              ],
+              "median": 31.64146137237549,
+              "min": 30.38107681274414,
+              "max": 32.20638370513916
+            }
+          },
+          "COghe.Gameplay.Step": {
+            "perCall": {
+              "values": [
+                0.8480120079425844,
+                0.8761176811159631,
+                0.8722292599664115
+              ],
+              "median": 0.8722292599664115,
+              "min": 0.8480120079425844,
+              "max": 0.8761176811159631
+            },
+            "perCaptureFrame": {
+              "values": [
+                3.4120273722716026,
+                3.515968331827579,
+                3.5002741916881255
+              ],
+              "median": 3.5002741916881255,
+              "min": 3.4120273722716026,
+              "max": 3.515968331827579
+            },
+            "calls": [
+              1537,
+              1529,
+              1541
+            ],
+            "largestCallMs": 33.97315216064453,
+            "largestAccumulatedFrameMs": 36.712920159101486,
+            "runMaximumAccumulatedFrameMs": {
+              "values": [
+                33.60661408305168,
+                35.59500187635422,
+                36.712920159101486
+              ],
+              "median": 35.59500187635422,
+              "min": 33.60661408305168,
+              "max": 36.712920159101486
+            }
+          },
+          "Physics.Simulate": {
+            "perCall": {
+              "values": [
+                1.2353738220232837,
+                1.2700008721114608,
+                1.2521814420809614
+              ],
+              "median": 1.2521814420809614,
+              "min": 1.2353738220232837,
+              "max": 1.2700008721114608
+            },
+            "perCaptureFrame": {
+              "values": [
+                4.970600954057034,
+                5.0966701665575425,
+                5.025030214184274
+              ],
+              "median": 5.025030214184274,
+              "min": 4.970600954057034,
+              "max": 5.0966701665575425
+            },
+            "calls": [
+              1537,
+              1529,
+              1541
+            ],
+            "largestCallMs": 6.350153923034668,
+            "largestAccumulatedFrameMs": 12.849229097366333,
+            "runMaximumAccumulatedFrameMs": {
+              "values": [
+                12.73476791381836,
+                12.849229097366333,
+                12.846075892448425
+              ],
+              "median": 12.846075892448425,
+              "min": 12.73476791381836,
+              "max": 12.849229097366333
+            }
+          }
+        }
+      }
+    },
+    {
+      "level": 53,
+      "before": {
+        "fps": {
+          "values": [
+            23.59659779755275,
+            22.386752730619047,
+            22.277559810748045
+          ],
+          "median": 22.386752730619047,
+          "min": 22.277559810748045,
+          "max": 23.59659779755275
+        },
+        "p99Ms": {
+          "values": [
+            238.23077392578125,
+            260.1313171386719,
+            263.77630615234375
+          ],
+          "median": 260.1313171386719,
+          "min": 238.23077392578125,
+          "max": 263.77630615234375
+        },
+        "fullRouteTaps": [
+          13,
+          13,
+          13
+        ],
+        "markers": {
+          "COghe.Skin.Rebuild": {
+            "perCall": {
+              "values": [
+                8.137472714121277,
+                8.96595665807161,
+                9.275422778918589
+              ],
+              "median": 8.96595665807161,
+              "min": 8.137472714121277,
+              "max": 9.275422778918589
+            },
+            "perCaptureFrame": {
+              "values": [
+                8.123750163169976,
+                8.949946021182196,
+                9.25877031432448
+              ],
+              "median": 8.949946021182196,
+              "min": 8.123750163169976,
+              "max": 9.25877031432448
+            },
+            "calls": [
+              592,
+              559,
+              556
+            ],
+            "largestCallMs": 18.08123207092285,
+            "largestAccumulatedFrameMs": 18.08123207092285,
+            "runMaximumAccumulatedFrameMs": {
+              "values": [
+                16.686691284179688,
+                17.367691040039062,
+                18.08123207092285
+              ],
+              "median": 17.367691040039062,
+              "min": 16.686691284179688,
+              "max": 18.08123207092285
+            }
+          },
+          "COghe.Navigation.BuildGraph": {
+            "perCall": {
+              "values": [
+                197.5782455444336,
+                219.9456532796224,
+                221.59401109483508
+              ],
+              "median": 219.9456532796224,
+              "min": 197.5782455444336,
+              "max": 221.59401109483508
+            },
+            "perCaptureFrame": {
+              "values": [
+                3.331842252014057,
+                3.534840856279646,
+                3.580513644261249
+              ],
+              "median": 3.534840856279646,
+              "min": 3.331842252014057,
+              "max": 3.580513644261249
+            },
+            "calls": [
+              10,
+              9,
+              9
+            ],
+            "largestCallMs": 225.1959991455078,
+            "largestAccumulatedFrameMs": 436.75921630859375,
+            "runMaximumAccumulatedFrameMs": {
+              "values": [
+                201.10000610351562,
+                436.75921630859375,
+                225.1959991455078
+              ],
+              "median": 225.1959991455078,
+              "min": 201.10000610351562,
+              "max": 436.75921630859375
+            }
+          },
+          "COghe.Gameplay.Step": {
+            "perCall": {
+              "values": [
+                2.334729283953603,
+                2.4023814264868126,
+                2.4431693211474195
+              ],
+              "median": 2.4023814264868126,
+              "min": 2.334729283953603,
+              "max": 2.4431693211474195
+            },
+            "perCaptureFrame": {
+              "values": [
+                11.177565661288835,
+                12.037646933432136,
+                12.299186313280725
+              ],
+              "median": 12.037646933432136,
+              "min": 11.177565661288835,
+              "max": 12.299186313280725
+            },
+            "calls": [
+              2839,
+              2806,
+              2804
+            ],
+            "largestCallMs": 227.98646545410156,
+            "largestAccumulatedFrameMs": 455.2208496928215,
+            "runMaximumAccumulatedFrameMs": {
+              "values": [
+                217.46469432115555,
+                455.2208496928215,
+                249.14030784368515
+              ],
+              "median": 249.14030784368515,
+              "min": 217.46469432115555,
+              "max": 455.2208496928215
+            }
+          },
+          "Physics.Simulate": {
+            "perCall": {
+              "values": [
+                1.2224490298650432,
+                1.3142160953408213,
+                1.2431456870724913
+              ],
+              "median": 1.2431456870724913,
+              "min": 1.2224490298650432,
+              "max": 1.3142160953408213
+            },
+            "perCaptureFrame": {
+              "values": [
+                5.852500498797399,
+                6.585161363439901,
+                6.258133764005863
+              ],
+              "median": 6.258133764005863,
+              "min": 5.852500498797399,
+              "max": 6.585161363439901
+            },
+            "calls": [
+              2839,
+              2806,
+              2804
+            ],
+            "largestCallMs": 4.8920769691467285,
+            "largestAccumulatedFrameMs": 18.481537103652954,
+            "runMaximumAccumulatedFrameMs": {
+              "values": [
+                15.456843733787537,
+                18.481537103652954,
+                16.62076997756958
+              ],
+              "median": 16.62076997756958,
+              "min": 15.456843733787537,
+              "max": 18.481537103652954
+            }
+          }
+        }
+      },
+      "after": {
+        "fps": {
+          "values": [
+            25.0564796577296,
+            24.34922499794071,
+            24.29812038718238
+          ],
+          "median": 24.34922499794071,
+          "min": 24.29812038718238,
+          "max": 25.0564796577296
+        },
+        "p99Ms": {
+          "values": [
+            214.6634521484375,
+            228.8578338623047,
+            232.9360809326172
+          ],
+          "median": 228.8578338623047,
+          "min": 214.6634521484375,
+          "max": 232.9360809326172
+        },
+        "fullRouteTaps": [
+          13,
+          13,
+          13
+        ],
+        "markers": {
+          "COghe.Skin.Rebuild": {
+            "perCall": {
+              "values": [
+                5.900597675920675,
+                6.281641405663993,
+                6.318708770946773
+              ],
+              "median": 6.281641405663993,
+              "min": 5.900597675920675,
+              "max": 6.318708770946773
+            },
+            "perCaptureFrame": {
+              "values": [
+                5.891186834332285,
+                6.271326723552885,
+                6.308316157836663
+              ],
+              "median": 6.271326723552885,
+              "min": 5.891186834332285,
+              "max": 6.308316157836663
+            },
+            "calls": [
+              626,
+              608,
+              607
+            ],
+            "largestCallMs": 11.115154266357422,
+            "largestAccumulatedFrameMs": 11.115154266357422,
+            "runMaximumAccumulatedFrameMs": {
+              "values": [
+                10.655692100524902,
+                10.960615158081055,
+                11.115154266357422
+              ],
+              "median": 10.960615158081055,
+              "min": 10.655692100524902,
+              "max": 11.115154266357422
+            }
+          },
+          "COghe.Navigation.BuildGraph": {
+            "perCall": {
+              "values": [
+                185.79344685872397,
+                198.39024522569446,
+                198.53656344943576
+              ],
+              "median": 198.39024522569446,
+              "min": 185.79344685872397,
+              "max": 198.53656344943576
+            },
+            "perCaptureFrame": {
+              "values": [
+                2.6668915817041716,
+                2.931875545207307,
+                2.938863603692306
+              ],
+              "median": 2.931875545207307,
+              "min": 2.6668915817041716,
+              "max": 2.938863603692306
+            },
+            "calls": [
+              9,
+              9,
+              9
+            ],
+            "largestCallMs": 202.4459228515625,
+            "largestAccumulatedFrameMs": 397.43939208984375,
+            "runMaximumAccumulatedFrameMs": {
+              "values": [
+                187.36778259277344,
+                393.186767578125,
+                397.43939208984375
+              ],
+              "median": 393.186767578125,
+              "min": 187.36778259277344,
+              "max": 397.43939208984375
+            }
+          },
+          "COghe.Gameplay.Step": {
+            "perCall": {
+              "values": [
+                2.071654831063494,
+                2.204581752120083,
+                2.249294515623015
+              ],
+              "median": 2.204581752120083,
+              "min": 2.071654831063494,
+              "max": 2.249294515623015
+            },
+            "perCaptureFrame": {
+              "values": [
+                9.485998436974947,
+                10.269948162175165,
+                10.499174071279796
+              ],
+              "median": 10.269948162175165,
+              "min": 9.485998436974947,
+              "max": 10.499174071279796
+            },
+            "calls": [
+              2871,
+              2837,
+              2838
+            ],
+            "largestCallMs": 203.799072265625,
+            "largestAccumulatedFrameMs": 418.95645982027054,
+            "runMaximumAccumulatedFrameMs": {
+              "values": [
+                203.40460884571075,
+                418.95645982027054,
+                415.35537791252136
+              ],
+              "median": 415.35537791252136,
+              "min": 203.40460884571075,
+              "max": 418.95645982027054
+            }
+          },
+          "Physics.Simulate": {
+            "perCall": {
+              "values": [
+                1.165340965942654,
+                1.246417423558563,
+                1.2052862714763424
+              ],
+              "median": 1.2052862714763424,
+              "min": 1.165340965942654,
+              "max": 1.246417423558563
+            },
+            "perCaptureFrame": {
+              "values": [
+                5.336034949316362,
+                5.80638133109301,
+                5.625990852713585
+              ],
+              "median": 5.625990852713585,
+              "min": 5.336034949316362,
+              "max": 5.80638133109301
+            },
+            "calls": [
+              2871,
+              2837,
+              2838
+            ],
+            "largestCallMs": 5.420076847076416,
+            "largestAccumulatedFrameMs": 25.608460903167725,
+            "runMaximumAccumulatedFrameMs": {
+              "values": [
+                25.608460903167725,
+                16.856844782829285,
+                16.68330806493759
+              ],
+              "median": 16.856844782829285,
+              "min": 16.68330806493759,
+              "max": 25.608460903167725
+            }
+          }
+        }
+      }
+    },
+    {
+      "level": 65,
+      "before": {
+        "fps": {
+          "values": [
+            26.749155781798038,
+            26.158883329894962,
+            25.574413794181126
+          ],
+          "median": 26.158883329894962,
+          "min": 25.574413794181126,
+          "max": 26.749155781798038
+        },
+        "p99Ms": {
+          "values": [
+            70.57108306884766,
+            76.40030670166016,
+            78.21753692626953
+          ],
+          "median": 76.40030670166016,
+          "min": 70.57108306884766,
+          "max": 78.21753692626953
+        },
+        "fullRouteTaps": [
+          35,
+          35,
+          35
+        ],
+        "markers": {
+          "COghe.Skin.Rebuild": {
+            "perCall": {
+              "values": [
+                5.1430207134006976,
+                5.704191511659491,
+                5.87239768281579
+              ],
+              "median": 5.704191511659491,
+              "min": 5.1430207134006976,
+              "max": 5.87239768281579
+            },
+            "perCaptureFrame": {
+              "values": [
+                5.135333089015943,
+                5.695469506289981,
+                5.863236375978324
+              ],
+              "median": 5.695469506289981,
+              "min": 5.135333089015943,
+              "max": 5.863236375978324
+            },
+            "calls": [
+              668,
+              653,
+              640
+            ],
+            "largestCallMs": 9.359076499938965,
+            "largestAccumulatedFrameMs": 9.359076499938965,
+            "runMaximumAccumulatedFrameMs": {
+              "values": [
+                8.472616195678711,
+                7.888000011444092,
+                9.359076499938965
+              ],
+              "median": 8.472616195678711,
+              "min": 7.888000011444092,
+              "max": 9.359076499938965
+            }
+          },
+          "COghe.Navigation.BuildGraph": {
+            "perCall": {
+              "values": [
+                44.22002192905971,
+                49.45763669695173,
+                49.76319776262556
+              ],
+              "median": 49.45763669695173,
+              "min": 44.22002192905971,
+              "max": 49.76319776262556
+            },
+            "perCaptureFrame": {
+              "values": [
+                0.462690812411686,
+                0.5293630839123273,
+                0.5434358570021511
+              ],
+              "median": 0.5293630839123273,
+              "min": 0.462690812411686,
+              "max": 0.5434358570021511
+            },
+            "calls": [
+              7,
+              7,
+              7
+            ],
+            "largestCallMs": 51.58915328979492,
+            "largestAccumulatedFrameMs": 51.58915328979492,
+            "runMaximumAccumulatedFrameMs": {
+              "values": [
+                45.18061447143555,
+                51.58915328979492,
+                51.28369140625
+              ],
+              "median": 51.28369140625,
+              "min": 45.18061447143555,
+              "max": 51.58915328979492
+            }
+          },
+          "COghe.Gameplay.Step": {
+            "perCall": {
+              "values": [
+                1.7499796178954852,
+                1.9246876853312918,
+                1.9514814351022858
+              ],
+              "median": 1.9246876853312918,
+              "min": 1.7499796178954852,
+              "max": 1.9514814351022858
+            },
+            "perCaptureFrame": {
+              "values": [
+                7.842210604560036,
+                8.825899645731718,
+                9.154609477929132
+              ],
+              "median": 8.825899645731718,
+              "min": 7.842210604560036,
+              "max": 9.154609477929132
+            },
+            "calls": [
+              2998,
+              2999,
+              3007
+            ],
+            "largestCallMs": 55.04576873779297,
+            "largestAccumulatedFrameMs": 65.02530658245087,
+            "runMaximumAccumulatedFrameMs": {
+              "values": [
+                55.41969013214111,
+                65.02530658245087,
+                61.7236145734787
+              ],
+              "median": 61.7236145734787,
+              "min": 55.41969013214111,
+              "max": 65.02530658245087
+            }
+          },
+          "Physics.Simulate": {
+            "perCall": {
+              "values": [
+                1.4731608026221723,
+                1.5520193777747375,
+                1.5249273936773085
+              ],
+              "median": 1.5249273936773085,
+              "min": 1.4731608026221723,
+              "max": 1.5520193777747375
+            },
+            "perCaptureFrame": {
+              "values": [
+                6.601698185741812,
+                7.116981825606174,
+                7.153598553490899
+              ],
+              "median": 7.116981825606174,
+              "min": 6.601698185741812,
+              "max": 7.153598553490899
+            },
+            "calls": [
+              2998,
+              2999,
+              3007
+            ],
+            "largestCallMs": 7.037768840789795,
+            "largestAccumulatedFrameMs": 17.712077975273132,
+            "runMaximumAccumulatedFrameMs": {
+              "values": [
+                17.01038384437561,
+                16.170769095420837,
+                17.712077975273132
+              ],
+              "median": 17.01038384437561,
+              "min": 16.170769095420837,
+              "max": 17.712077975273132
+            }
+          }
+        }
+      },
+      "after": {
+        "fps": {
+          "values": [
+            27.05604948114663,
+            26.716459875427613,
+            26.814650957970986
+          ],
+          "median": 26.814650957970986,
+          "min": 26.716459875427613,
+          "max": 27.05604948114663
+        },
+        "p99Ms": {
+          "values": [
+            67.77253723144531,
+            71.41846466064453,
+            72.51107788085938
+          ],
+          "median": 71.41846466064453,
+          "min": 67.77253723144531,
+          "max": 72.51107788085938
+        },
+        "fullRouteTaps": [
+          33,
+          31,
+          35
+        ],
+        "markers": {
+          "COghe.Skin.Rebuild": {
+            "perCall": {
+              "values": [
+                4.502075221373024,
+                4.6704489491332595,
+                4.69888196276195
+              ],
+              "median": 4.6704489491332595,
+              "min": 4.502075221373024,
+              "max": 4.69888196276195
+            },
+            "perCaptureFrame": {
+              "values": [
+                4.495434992432946,
+                4.663457259089647,
+                4.691879158048445
+              ],
+              "median": 4.663457259089647,
+              "min": 4.495434992432946,
+              "max": 4.691879158048445
+            },
+            "calls": [
+              677,
+              667,
+              670
+            ],
+            "largestCallMs": 7.80853796005249,
+            "largestAccumulatedFrameMs": 7.80853796005249,
+            "runMaximumAccumulatedFrameMs": {
+              "values": [
+                6.310153961181641,
+                7.48376989364624,
+                7.80853796005249
+              ],
+              "median": 7.48376989364624,
+              "min": 6.310153961181641,
+              "max": 7.80853796005249
+            }
+          },
+          "COghe.Navigation.BuildGraph": {
+            "perCall": {
+              "values": [
+                43.07193538120815,
+                45.335208892822266,
+                47.137032645089285
+              ],
+              "median": 45.335208892822266,
+              "min": 43.07193538120815,
+              "max": 47.137032645089285
+            },
+            "perCaptureFrame": {
+              "values": [
+                0.44469549803607233,
+                0.4750695542661016,
+                0.4917425164167288
+              ],
+              "median": 0.4750695542661016,
+              "min": 0.44469549803607233,
+              "max": 0.4917425164167288
+            },
+            "calls": [
+              7,
+              7,
+              7
+            ],
+            "largestCallMs": 52.778385162353516,
+            "largestAccumulatedFrameMs": 52.778385162353516,
+            "runMaximumAccumulatedFrameMs": {
+              "values": [
+                46.44654083251953,
+                48.088077545166016,
+                52.778385162353516
+              ],
+              "median": 48.088077545166016,
+              "min": 46.44654083251953,
+              "max": 52.778385162353516
+            }
+          },
+          "COghe.Gameplay.Step": {
+            "perCall": {
+              "values": [
+                1.6485608128065277,
+                1.740033386886537,
+                1.7233734951192365
+              ],
+              "median": 1.7233734951192365,
+              "min": 1.6485608128065277,
+              "max": 1.740033386886537
+            },
+            "perCaptureFrame": {
+              "values": [
+                7.306674398943386,
+                7.817126038991763,
+                7.712802691271337
+              ],
+              "median": 7.712802691271337,
+              "min": 7.306674398943386,
+              "max": 7.817126038991763
+            },
+            "calls": [
+              3005,
+              3001,
+              3003
+            ],
+            "largestCallMs": 55.74307632446289,
+            "largestAccumulatedFrameMs": 62.401538252830505,
+            "runMaximumAccumulatedFrameMs": {
+              "values": [
+                60.95969200134277,
+                55.08815634250641,
+                62.401538252830505
+              ],
+              "median": 60.95969200134277,
+              "min": 55.08815634250641,
+              "max": 62.401538252830505
+            }
+          },
+          "Physics.Simulate": {
+            "perCall": {
+              "values": [
+                1.3626133908447926,
+                1.4659152455387097,
+                1.4245423864135336
+              ],
+              "median": 1.4245423864135336,
+              "min": 1.3626133908447926,
+              "max": 1.4659152455387097
+            },
+            "perCaptureFrame": {
+              "values": [
+                6.039311562667554,
+                6.585646185421658,
+                6.375411008047453
+              ],
+              "median": 6.375411008047453,
+              "min": 6.039311562667554,
+              "max": 6.585646185421658
+            },
+            "calls": [
+              3005,
+              3001,
+              3003
+            ],
+            "largestCallMs": 3.7493081092834473,
+            "largestAccumulatedFrameMs": 16.27846109867096,
+            "runMaximumAccumulatedFrameMs": {
+              "values": [
+                16.27846109867096,
+                15.978999733924866,
+                14.072383880615234
+              ],
+              "median": 15.978999733924866,
+              "min": 14.072383880615234,
+              "max": 16.27846109867096
+            }
+          }
+        }
+      }
+    }
+  ],
+  "compareSource": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/profile-analyzer-compare53.json",
+  "actualCompare": {
+    "success": true,
+    "utc": "2026-10-29T08:37:50.9853320Z",
+    "unity": "6000.3.19f1",
+    "packageVersion": "1.4.0",
+    "beforeInput": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/native-before/analysis/before-profiler-2-level-53/capture.pdata",
+    "afterInput": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/native-after/analysis/after-profiler-2-level-53/capture.pdata",
+    "error": "",
+    "activeTab": "Compare",
+    "thread": "1:Main Thread",
+    "timing": "Time",
+    "removeMarker": "ShowAll",
+    "leftDepth": -1,
+    "rightDepth": -1,
+    "unionPairings": 685,
+    "pairedMarkers": 667,
+    "onlyBeforeMarkers": 7,
+    "onlyAfterMarkers": 11,
+    "omittedMarkerRows": 0,
+    "before": {
+      "selectedPath": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/native-before/analysis/before-profiler-2-level-53/capture.pdata",
+      "dataPath": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/native-before/analysis/before-profiler-2-level-53/capture.pdata",
+      "dataFrames": 560,
+      "selectedFrames": 560,
+      "analyzedFrames": 560,
+      "firstDisplayFrame": 1,
+      "lastDisplayFrame": 560,
+      "meanElapsedMs": 44.669273376464844,
+      "medianElapsedMs": 38.65700149536133,
+      "maxElapsedMs": 492.3652038574219
+    },
+    "after": {
+      "selectedPath": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/native-after/analysis/after-profiler-2-level-53/capture.pdata",
+      "dataPath": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/native-after/analysis/after-profiler-2-level-53/capture.pdata",
+      "dataFrames": 609,
+      "selectedFrames": 609,
+      "analyzedFrames": 609,
+      "firstDisplayFrame": 1,
+      "lastDisplayFrame": 609,
+      "meanElapsedMs": 41.069068908691406,
+      "medianElapsedMs": 36.75938415527344,
+      "maxElapsedMs": 460.8360595703125
+    },
+    "markers": [
+      {
+        "name": "COghe.Gameplay.Intelligence",
+        "hasBefore": false,
+        "hasAfter": true,
+        "hasDifference": false,
+        "beforeCalls": 0,
+        "afterCalls": 2837,
+        "beforePresentFrames": 0,
+        "afterPresentFrames": 608,
+        "beforeAnalyzerMeanMs": 0.0,
+        "afterAnalyzerMeanMs": 0.0020734374411404133,
+        "analyzerMeanDiffMs": 0.0,
+        "beforeMsPerSelectedFrame": 0.0,
+        "afterMsPerSelectedFrame": 0.0020700328381122696,
+        "selectedFrameMeanDiffMs": 0.0
+      },
+      {
+        "name": "COghe.Gameplay.LegacyMechanisms",
+        "hasBefore": false,
+        "hasAfter": true,
+        "hasDifference": false,
+        "beforeCalls": 0,
+        "afterCalls": 2837,
+        "beforePresentFrames": 0,
+        "afterPresentFrames": 608,
+        "beforeAnalyzerMeanMs": 0.0,
+        "afterAnalyzerMeanMs": 0.013002504594624043,
+        "analyzerMeanDiffMs": 0.0,
+        "beforeMsPerSelectedFrame": 0.0,
+        "afterMsPerSelectedFrame": 0.012981154345746699,
+        "selectedFrameMeanDiffMs": 0.0
+      },
+      {
+        "name": "COghe.Gameplay.Matter",
+        "hasBefore": false,
+        "hasAfter": true,
+        "hasDifference": false,
+        "beforeCalls": 0,
+        "afterCalls": 2837,
+        "beforePresentFrames": 0,
+        "afterPresentFrames": 608,
+        "beforeAnalyzerMeanMs": 0.0,
+        "afterAnalyzerMeanMs": 0.9705682992935181,
+        "analyzerMeanDiffMs": 0.0,
+        "beforeMsPerSelectedFrame": 0.0,
+        "afterMsPerSelectedFrame": 0.968974600822859,
+        "selectedFrameMeanDiffMs": 0.0
+      },
+      {
+        "name": "COghe.Gameplay.Mechanisms",
+        "hasBefore": false,
+        "hasAfter": true,
+        "hasDifference": false,
+        "beforeCalls": 0,
+        "afterCalls": 2837,
+        "beforePresentFrames": 0,
+        "afterPresentFrames": 608,
+        "beforeAnalyzerMeanMs": 0.0,
+        "afterAnalyzerMeanMs": 3.231250286102295,
+        "analyzerMeanDiffMs": 0.0,
+        "beforeMsPerSelectedFrame": 0.0,
+        "afterMsPerSelectedFrame": 3.225944349135476,
+        "selectedFrameMeanDiffMs": 0.0
+      },
+      {
+        "name": "COghe.Gameplay.Motion",
+        "hasBefore": false,
+        "hasAfter": true,
+        "hasDifference": false,
+        "beforeCalls": 0,
+        "afterCalls": 2837,
+        "beforePresentFrames": 0,
+        "afterPresentFrames": 608,
+        "beforeAnalyzerMeanMs": 0.0,
+        "afterAnalyzerMeanMs": 5.6969099044799805,
+        "analyzerMeanDiffMs": 0.0,
+        "beforeMsPerSelectedFrame": 0.0,
+        "afterMsPerSelectedFrame": 5.687555465694327,
+        "selectedFrameMeanDiffMs": 0.0
+      },
+      {
+        "name": "COghe.Gameplay.Props",
+        "hasBefore": false,
+        "hasAfter": true,
+        "hasDifference": false,
+        "beforeCalls": 0,
+        "afterCalls": 2837,
+        "beforePresentFrames": 0,
+        "afterPresentFrames": 608,
+        "beforeAnalyzerMeanMs": 0.0,
+        "afterAnalyzerMeanMs": 0.14312121272087097,
+        "analyzerMeanDiffMs": 0.0,
+        "beforeMsPerSelectedFrame": 0.0,
+        "afterMsPerSelectedFrame": 0.14288619834140603,
+        "selectedFrameMeanDiffMs": 0.0
+      },
+      {
+        "name": "COghe.Gameplay.StateAndExit",
+        "hasBefore": false,
+        "hasAfter": true,
+        "hasDifference": false,
+        "beforeCalls": 0,
+        "afterCalls": 2837,
+        "beforePresentFrames": 0,
+        "afterPresentFrames": 608,
+        "beforeAnalyzerMeanMs": 0.0,
+        "afterAnalyzerMeanMs": 0.16865798830986023,
+        "analyzerMeanDiffMs": 0.0,
+        "beforeMsPerSelectedFrame": 0.0,
+        "afterMsPerSelectedFrame": 0.168381044277172,
+        "selectedFrameMeanDiffMs": 0.0
+      },
+      {
+        "name": "COghe.Gameplay.Step",
+        "hasBefore": true,
+        "hasAfter": true,
+        "hasDifference": true,
+        "beforeCalls": 2806,
+        "afterCalls": 2837,
+        "beforePresentFrames": 559,
+        "afterPresentFrames": 608,
+        "beforeAnalyzerMeanMs": 12.059181213378906,
+        "afterAnalyzerMeanMs": 10.286839485168457,
+        "analyzerMeanDiffMs": -1.7723417282104492,
+        "beforeMsPerSelectedFrame": 12.037646950142724,
+        "afterMsPerSelectedFrame": 10.26994820377118,
+        "selectedFrameMeanDiffMs": -1.7676987463715435
+      },
+      {
+        "name": "COghe.Navigation.BuildGraph",
+        "hasBefore": true,
+        "hasAfter": true,
+        "hasDifference": true,
+        "beforeCalls": 9,
+        "afterCalls": 9,
+        "beforePresentFrames": 8,
+        "afterPresentFrames": 8,
+        "beforeAnalyzerMeanMs": 247.43885803222656,
+        "afterAnalyzerMeanMs": 223.18902587890625,
+        "analyzerMeanDiffMs": -24.249832153320312,
+        "beforeMsPerSelectedFrame": 3.534840856279646,
+        "afterMsPerSelectedFrame": 2.931875545207307,
+        "selectedFrameMeanDiffMs": -0.6029653110723387
+      },
+      {
+        "name": "COghe.Navigation.BuildGraph.CaptureRevision",
+        "hasBefore": true,
+        "hasAfter": true,
+        "hasDifference": true,
+        "beforeCalls": 9,
+        "afterCalls": 9,
+        "beforePresentFrames": 8,
+        "afterPresentFrames": 8,
+        "beforeAnalyzerMeanMs": 0.39228835701942444,
+        "afterAnalyzerMeanMs": 0.37354812026023865,
+        "analyzerMeanDiffMs": -0.01874023675918579,
+        "beforeMsPerSelectedFrame": 0.005604119545647076,
+        "afterMsPerSelectedFrame": 0.004907036111468361,
+        "selectedFrameMeanDiffMs": -0.0006970834341787158
+      },
+      {
+        "name": "COghe.Navigation.BuildGraph.Edges",
+        "hasBefore": true,
+        "hasAfter": true,
+        "hasDifference": true,
+        "beforeCalls": 9,
+        "afterCalls": 9,
+        "beforePresentFrames": 8,
+        "afterPresentFrames": 8,
+        "beforeAnalyzerMeanMs": 243.28843688964844,
+        "afterAnalyzerMeanMs": 218.85801696777344,
+        "analyzerMeanDiffMs": -24.430419921875,
+        "beforeMsPerSelectedFrame": 3.475549180167062,
+        "afterMsPerSelectedFrame": 2.8749821855516857,
+        "selectedFrameMeanDiffMs": -0.6005669946153764
+      },
+      {
+        "name": "COghe.Navigation.BuildGraph.Nodes",
+        "hasBefore": true,
+        "hasAfter": true,
+        "hasDifference": true,
+        "beforeCalls": 9,
+        "afterCalls": 9,
+        "beforePresentFrames": 8,
+        "afterPresentFrames": 8,
+        "beforeAnalyzerMeanMs": 2.9135289192199707,
+        "afterAnalyzerMeanMs": 2.728346347808838,
+        "analyzerMeanDiffMs": -0.1851825714111328,
+        "beforeMsPerSelectedFrame": 0.04162184298038483,
+        "afterMsPerSelectedFrame": 0.03584034689541521,
+        "selectedFrameMeanDiffMs": -0.005781496084969619
+      },
+      {
+        "name": "COghe.Navigation.BuildGraph.Snapshot",
+        "hasBefore": true,
+        "hasAfter": true,
+        "hasDifference": true,
+        "beforeCalls": 9,
+        "afterCalls": 9,
+        "beforePresentFrames": 8,
+        "afterPresentFrames": 8,
+        "beforeAnalyzerMeanMs": 0.8180000185966492,
+        "afterAnalyzerMeanMs": 1.1830768585205078,
+        "analyzerMeanDiffMs": 0.36507683992385864,
+        "beforeMsPerSelectedFrame": 0.01168571433850697,
+        "afterMsPerSelectedFrame": 0.015541239618667829,
+        "selectedFrameMeanDiffMs": 0.0038555252801608583
+      },
+      {
+        "name": "COghe.Navigation.BuildGraph.SyncTransforms",
+        "hasBefore": true,
+        "hasAfter": true,
+        "hasDifference": true,
+        "beforeCalls": 9,
+        "afterCalls": 9,
+        "beforePresentFrames": 8,
+        "afterPresentFrames": 8,
+        "beforeAnalyzerMeanMs": 0.01622137427330017,
+        "afterAnalyzerMeanMs": 0.03477874770760536,
+        "analyzerMeanDiffMs": 0.01855737343430519,
+        "beforeMsPerSelectedFrame": 0.0002317339281684586,
+        "afterMsPerSelectedFrame": 0.00045686369541610405,
+        "selectedFrameMeanDiffMs": 0.00022512976724764545
+      },
+      {
+        "name": "COghe.Navigation.Search",
+        "hasBefore": true,
+        "hasAfter": true,
+        "hasDifference": true,
+        "beforeCalls": 13,
+        "afterCalls": 13,
+        "beforePresentFrames": 8,
+        "afterPresentFrames": 8,
+        "beforeAnalyzerMeanMs": 2.5289227962493896,
+        "afterAnalyzerMeanMs": 1.9545869827270508,
+        "analyzerMeanDiffMs": -0.5743358135223389,
+        "beforeMsPerSelectedFrame": 0.03612746787922723,
+        "afterMsPerSelectedFrame": 0.025676019281785086,
+        "selectedFrameMeanDiffMs": -0.010451448597442143
+      },
+      {
+        "name": "COghe.Skin.Field",
+        "hasBefore": false,
+        "hasAfter": true,
+        "hasDifference": false,
+        "beforeCalls": 0,
+        "afterCalls": 608,
+        "beforePresentFrames": 0,
+        "afterPresentFrames": 608,
+        "beforeAnalyzerMeanMs": 0.0,
+        "afterAnalyzerMeanMs": 0.35097822546958923,
+        "analyzerMeanDiffMs": 0.0,
+        "beforeMsPerSelectedFrame": 0.0,
+        "afterMsPerSelectedFrame": 0.3504019077677641,
+        "selectedFrameMeanDiffMs": 0.0
+      },
+      {
+        "name": "COghe.Skin.Polygonize",
+        "hasBefore": false,
+        "hasAfter": true,
+        "hasDifference": false,
+        "beforeCalls": 0,
+        "afterCalls": 608,
+        "beforePresentFrames": 0,
+        "afterPresentFrames": 608,
+        "beforeAnalyzerMeanMs": 0.0,
+        "afterAnalyzerMeanMs": 3.8500277996063232,
+        "analyzerMeanDiffMs": 0.0,
+        "beforeMsPerSelectedFrame": 0.0,
+        "afterMsPerSelectedFrame": 3.8437059242737117,
+        "selectedFrameMeanDiffMs": 0.0
+      },
+      {
+        "name": "COghe.Skin.PrepareConstraints",
+        "hasBefore": false,
+        "hasAfter": true,
+        "hasDifference": false,
+        "beforeCalls": 0,
+        "afterCalls": 1216,
+        "beforePresentFrames": 0,
+        "afterPresentFrames": 608,
+        "beforeAnalyzerMeanMs": 0.0,
+        "afterAnalyzerMeanMs": 0.5181410312652588,
+        "analyzerMeanDiffMs": 0.0,
+        "beforeMsPerSelectedFrame": 0.0,
+        "afterMsPerSelectedFrame": 0.5172902368168134,
+        "selectedFrameMeanDiffMs": 0.0
+      },
+      {
+        "name": "COghe.Skin.Rebuild",
+        "hasBefore": true,
+        "hasAfter": true,
+        "hasDifference": true,
+        "beforeCalls": 559,
+        "afterCalls": 608,
+        "beforePresentFrames": 559,
+        "afterPresentFrames": 608,
+        "beforeAnalyzerMeanMs": 8.965956687927246,
+        "afterAnalyzerMeanMs": 6.281641483306885,
+        "analyzerMeanDiffMs": -2.6843152046203613,
+        "beforeMsPerSelectedFrame": 8.949946021182196,
+        "afterMsPerSelectedFrame": 6.271326723552885,
+        "selectedFrameMeanDiffMs": -2.678619297629311
+      },
+      {
+        "name": "COghe.Skin.Upload",
+        "hasBefore": false,
+        "hasAfter": true,
+        "hasDifference": false,
+        "beforeCalls": 0,
+        "afterCalls": 608,
+        "beforePresentFrames": 0,
+        "afterPresentFrames": 608,
+        "beforeAnalyzerMeanMs": 0.0,
+        "afterAnalyzerMeanMs": 0.32595938444137573,
+        "analyzerMeanDiffMs": 0.0,
+        "beforeMsPerSelectedFrame": 0.0,
+        "afterMsPerSelectedFrame": 0.325424141753679,
+        "selectedFrameMeanDiffMs": 0.0
+      },
+      {
+        "name": "Physics.Simulate",
+        "hasBefore": true,
+        "hasAfter": true,
+        "hasDifference": true,
+        "beforeCalls": 2806,
+        "afterCalls": 2837,
+        "beforePresentFrames": 559,
+        "afterPresentFrames": 608,
+        "beforeAnalyzerMeanMs": 6.5969414710998535,
+        "afterAnalyzerMeanMs": 5.81593132019043,
+        "analyzerMeanDiffMs": -0.7810101509094238,
+        "beforeMsPerSelectedFrame": 6.585161375573703,
+        "afterMsPerSelectedFrame": 5.806381331484502,
+        "selectedFrameMeanDiffMs": -0.778780044089201
+      },
+      {
+        "name": "PlayerLoop",
+        "hasBefore": true,
+        "hasAfter": true,
+        "hasDifference": true,
+        "beforeCalls": 559,
+        "afterCalls": 608,
+        "beforePresentFrames": 559,
+        "afterPresentFrames": 608,
+        "beforeAnalyzerMeanMs": 44.57938766479492,
+        "afterAnalyzerMeanMs": 40.99726104736328,
+        "analyzerMeanDiffMs": -3.5821266174316406,
+        "beforeMsPerSelectedFrame": 44.49978092397962,
+        "afterMsPerSelectedFrame": 40.929941036431075,
+        "selectedFrameMeanDiffMs": -3.5698398875485466
+      },
+      {
+        "name": "WaitForTargetFPS",
+        "hasBefore": true,
+        "hasAfter": true,
+        "hasDifference": true,
+        "beforeCalls": 559,
+        "afterCalls": 608,
+        "beforePresentFrames": 559,
+        "afterPresentFrames": 608,
+        "beforeAnalyzerMeanMs": 1.8271198272705078,
+        "afterAnalyzerMeanMs": 4.2312703132629395,
+        "analyzerMeanDiffMs": 2.4041504859924316,
+        "beforeMsPerSelectedFrame": 1.823857112135738,
+        "afterMsPerSelectedFrame": 4.224322206620585,
+        "selectedFrameMeanDiffMs": 2.400465094484847
+      }
+    ],
+    "interpretation": "Actual Profile Analyzer CompareSync + CompareDone results. Full frame ranges, one exact thread, inclusive Time, all depths, no name/parent/remove filters. Analyzer msMean divides marker total by frames containing that marker (ProfileAnalysis.SetupMarkers), not by all selected frames; both normalizations are exported. Differences are after minus before and valid only when hasDifference=true; absent markers are unavailable, not zero. Frame elapsed times include waits and capture boundaries. Inclusive marker times overlap; do not add them. One pair is diagnostic, not the three-repeat acceptance report."
+  },
+  "releaseCompleteMarkerPresent": false
+}

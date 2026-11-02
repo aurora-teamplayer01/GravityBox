@@ -1,0 +1,20 @@
+{
+  "kind": "Illustrative Google Play feature key art; not a gameplay screenshot",
+  "generation_tool": "Built-in imagegen tool, invoked by coordinating root agent",
+  "source": "sources/feature-art-master.png",
+  "source_dimensions": {
+    "width": 1796,
+    "height": 876
+  },
+  "source_sha256": "ead33862d3340c91d094d48a7e6244ee511bad252938565ce3ba5788355c60a8",
+  "approved_reference_images": [
+    "Assets/_Game/Branding/COghe-AppIcon.png",
+    "Docs/Marketing/AlienPet/GooglePlay/2026-10-29/sources/native-puzzle4-switch.png"
+  ],
+  "prompt_summary": "Polished wide Google Play feature artwork for Alien Pet: Escape Puzzle using the approved icon C creature and native switch-puzzle screenshot as visual references. Warm ivory and mint laboratory, glossy playful dark alien, legible Alien Pet title with Escape Puzzle subtitle, friendly calm tone.",
+  "prompt_summary_note": "Descriptive production summary, not a verbatim prompt transcript. The coordinating agent owns the image-generation record.",
+  "review": "Coordinating agent reported visual approval of the generated master; mechanical export also inspected by layout agent.",
+  "export": "exports/feature-graphic.png",
+  "export_transform": "Whole image mechanically resampled to 1024x500 RGB PNG. No crop, retouch or new visual elements.",
+  "source_identity": "Approved text-free creature icon C retained unchanged as launcher/store icon; feature art does not replace that source."
+}

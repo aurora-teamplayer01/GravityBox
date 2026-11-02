@@ -1,0 +1,159 @@
+{
+  "date": "2026-10-29",
+  "status": "Prepared source inventory. Actual native stills have been extracted/copied, caption-framed and exported separately; publication status is tracked in the Console status record.",
+  "brand": {
+    "title": "Alien Pet: Escape Puzzle",
+    "character_name": "COghe",
+    "palette": "Existing Manrope / ivory / muted teal",
+    "authority": "/Users/mrk/GravityBox/Docs/ArtDirection/COghe/STYLE_RULES.md"
+  },
+  "approved_icon": {
+    "path": "/Users/mrk/GravityBox/Assets/_Game/Branding/COghe-AppIcon.png",
+    "width": 1254,
+    "height": 1254,
+    "reviewed_visually": true,
+    "notes": "Approved C. Preserve complete text-free image and design, no baked external rounded border. Gameplay body itself is not redesigned by this icon."
+  },
+  "primary_native_sources": [
+    {
+      "id": "gameplay",
+      "path": "/Users/mrk/GravityBox/Artifacts/AlienPetAds-2026-10-28/sources/gameplay-native.mp4",
+      "width": 1080,
+      "height": 1920,
+      "fps": 30,
+      "seconds": 37.866667,
+      "provenance": "Actual native Unity Product capture, normal touch commands and runtime physics; Home unlock uses an in-memory fixture, saves disabled.",
+      "marks": "/Users/mrk/GravityBox/Artifacts/AlienPetAds-2026-10-28/gameplay-frames/marks.txt",
+      "candidates": [
+        {
+          "seconds": 2.3,
+          "subject": "Display 4 switch operation",
+          "selection": "Select a clear operation frame in 1.1\u20134.5s; preserve switch/exit relationship."
+        },
+        {
+          "seconds": 16.5,
+          "subject": "Display 6 crate movement",
+          "selection": "Select a clear crate frame in 16.0\u201321.0s; actual exit is in floor under the red crate."
+        },
+        {
+          "seconds": 29.0,
+          "subject": "Home affection",
+          "selection": "Inspect 27.0\u201332.0s for the clearest smile/hearts and unoccluded body."
+        },
+        {
+          "seconds": 36.0,
+          "subject": "Current Alien Pet menu and live creature",
+          "selection": "Inspect 35.4\u201337.5s; potential supporting screenshot, weaker than gameplay as first slot."
+        }
+      ]
+    },
+    {
+      "id": "care",
+      "path": "/Users/mrk/GravityBox/Artifacts/AlienPetPetAd-2026-10-28/sources/pet-care-native.mp4",
+      "backup": "/Users/mrk/GravityBox/Docs/Marketing/AlienPet/AdsResources/Sources_C/sources/pet-care-native.mp4",
+      "width": 1080,
+      "height": 1920,
+      "fps": 30,
+      "seconds": 37.833333,
+      "provenance": "Actual Home petting, two consumed snacks, real Mint hold and three hats, recorded via native Unity Product. In-memory unlock/ownership fixture, no player saves.",
+      "marks": "/Users/mrk/GravityBox/Artifacts/AlienPetPetAd-2026-10-28/native-frames/marks.txt",
+      "candidates": [
+        {
+          "seconds": 3.4,
+          "subject": "Home affection close-up",
+          "selection": "Native body and actual interaction; inspect emotion frame."
+        },
+        {
+          "seconds": 7.7,
+          "subject": "Apple pie feeding",
+          "selection": "Prefer a frame where the pie and creature are both visible. Food selection is earlier at 6.7\u20137.6s."
+        },
+        {
+          "seconds": 13.9,
+          "subject": "Chilli snack reaction",
+          "selection": "Optional secondary reaction; avoid making a sour reaction the only pet-care visual."
+        },
+        {
+          "seconds": 21.5,
+          "subject": "Mint color customization",
+          "selection": "Inspect 19.8\u201323.2s; show the actual changed body and UI."
+        },
+        {
+          "seconds": 25.4,
+          "subject": "Mint body with flower crown",
+          "selection": "Actual Style screen."
+        },
+        {
+          "seconds": 28.2,
+          "subject": "Mint body with party hat",
+          "selection": "Actual Style screen."
+        },
+        {
+          "seconds": 30.2,
+          "subject": "Mint body with bee hat",
+          "selection": "Actual Style screen; can show a second look beside a separate actual capture if layout clearly reads as a collage."
+        }
+      ]
+    }
+  ],
+  "candidate_stills": [
+    {
+      "path": "/Users/mrk/GravityBox/Docs/Verification/AlienPetBrand/menu-540x960.png",
+      "width": 540,
+      "height": 960,
+      "role": "Current brand/menu fallback; direct native screenshot, lower resolution than video source."
+    },
+    {
+      "path": "/Users/mrk/GravityBox/Docs/Verification/COghePlaytestRefinement/media/flower-crown.png",
+      "width": 720,
+      "height": 960,
+      "reviewed_visually": true,
+      "role": "Real gameplay close-up of dark creature with flower crown. Clean Product UI; old 4:3 portrait ratio, possible supplementary crop."
+    },
+    {
+      "path": "/Users/mrk/GravityBox/Docs/Verification/AlienPetOptimization20261029/product/02-game.png",
+      "width": 720,
+      "height": 1612,
+      "reviewed_visually": true,
+      "role": "Recent OPPO Product gameplay; weaker marketing choice because tutorial covers upper scene and level 1 is empty."
+    },
+    {
+      "path": "/Users/mrk/GravityBox/Docs/Verification/AlienPetOptimization20261029/product/06-home.png",
+      "width": 720,
+      "height": 1612,
+      "reviewed_visually": true,
+      "role": "Recent OPPO Home; factual fallback, weak hero because body is tiny and room is empty."
+    },
+    {
+      "path": "/Users/mrk/GravityBox/Docs/Verification/AlienPetOptimization20261029/product/07-style.png",
+      "width": 720,
+      "height": 1612,
+      "reviewed_visually": true,
+      "role": "Recent OPPO Style; usable current UI reference but all inks shown locked and body black."
+    }
+  ],
+  "exclude_as_store_gameplay": [
+    {
+      "source": "Docs/Verification/COghePlaytestRefinement/media/level-31-assembled.png",
+      "reason": "Developer level chooser, old COghe product heading and Vietnamese developer copy; actual scene but unsuitable as final Product screenshot."
+    },
+    {
+      "source": "Docs/Marketing/AlienPet/2026-10-28/videos/AlienPet_A_ESCAPE_22s_1080x1920.mp4",
+      "reason": "Mixed-media final. Only documented native sections are actual gameplay; AI laboratory/person scenes must not be presented as screenshots."
+    },
+    {
+      "source": "Docs/Marketing/AlienPet/2026-10-28/videos/AlienPet_C_CUTE_PET_24s_1080x1920.mp4",
+      "reason": "Mixed-media final. Use clean care source for stills; not AI snack/cuddle shots."
+    }
+  ],
+  "production_notes": [
+    "Primary raw PNG frame sequences no longer exist locally; their metadata/marks remain. Extract stills from retained native source MP4s.",
+    "Suggested 6\u20138 slot balance: at least three actual puzzle views/actions, then Home feeding, color, hats and affection. A varied later-level Product capture would improve the set beyond repeated levels 4/6.",
+    "Use truthful native screen areas as the visual core; title/caption margins can follow approved ivory/teal branding.",
+    "Do not distort glass geometry, recolor surfaces, remove controls that imply a different mechanic, or add fabricated gameplay.",
+    "A 65-level feature caption refers to campaign content; latest device verification reports unresolved native routes and does not certify all 65 levels or sustained 60 FPS."
+  ],
+  "exported_still_audit": "/Users/mrk/GravityBox/Docs/Marketing/AlienPet/GooglePlay/2026-10-29/sources/native-still-audit.json",
+  "exported_stills_count": 9,
+  "export_notes": "Six direct ffmpeg frame exports and three byte-identical actual Unity scene PNG copies. All nine reviewed using view_image. No retouch or resize."
+}

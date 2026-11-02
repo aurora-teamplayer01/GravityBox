@@ -1,0 +1,51 @@
+{
+  "date": "2026-10-29",
+  "status": "published site-v1.0.4; HTTPS/content checks passed; game artifact/device validation tracked separately",
+  "source": "/tmp/codex-alien-pet-policy-20261029/site/alien-pet-privacy.html",
+  "sha256": "107c035aa3e079da9f7ab6ec63c11f9be47058d36c5296e511b43d57ef01f4e4",
+  "operator": "YoloStudioGlobal",
+  "publicContact": "support@suri.house",
+  "intendedUrl": "https://cj.suri.house/alien-pet-privacy",
+  "checks": {
+    "htmlParser": "passed",
+    "internalAnchors": "passed",
+    "noTrackingScripts": "Source has no scripts; existing Cloudflare host injects Web Analytics, now explicitly disclosed.",
+    "headingSections": 11,
+    "relativeAndUnsafeLinks": "none",
+    "responsiveViewport": "present",
+    "mobileMediaQuery": "present",
+    "ageBands": "under13 or unknown / 13-17 / adults18+"
+  },
+  "notYetVerified": [
+    "Eligible loaded-ad behavior after UMP publisher forms are configured",
+    "Self-service existing app-instance-ID/FID export is not implemented",
+    "Visual mobile browser screenshot of live page"
+  ],
+  "git": {
+    "worktree": "/tmp/codex-alien-pet-policy-20261029",
+    "branch": "codex/alien-pet-privacy",
+    "deploymentBase": "e7bc859",
+    "mirrorAhead": "e5d4cd2 (3 commits; fast-forward relationship)",
+    "pushed": true,
+    "deployed": true,
+    "commit": "597e9836d21d05626e225d3097b45675339d25a5",
+    "tag": "site-v1.0.4",
+    "pr": "https://github.com/aurora-teamplayer01/g005-color-drop/pull/1",
+    "prMerged": true,
+    "actions": "https://github.com/aurora-teamplayer01/g005-color-drop/actions/runs/40894025450",
+    "mainAfterMerge": "fdbc4f554e948ea2f446bddfb79a9aacfcd01976"
+  },
+  "liveChecksFile": "privacy-live-checks.json",
+  "futureDeploymentNote": "PR1 merged with linear history; main now contains the exact policy blob already deployed by site-v1.0.4. No extra deployment performed.",
+  "nativeVerification": {
+    "file": "native-privacy-results.json",
+    "artifact": "1.0.1 (2) signed release APK",
+    "result": "Age/consent gates observed passing on Android36 emulator; 10 privacy +4 UI tests passed. Bounds and UMP no-form issue remain recorded."
+  },
+  "analyticsRetention": {
+    "eventMonths": 2,
+    "userMonths": 14,
+    "resetOnNewActivity": true,
+    "verifiedBy": "GA dashboard audit relayed by root"
+  }
+}

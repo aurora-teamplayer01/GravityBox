@@ -11,15 +11,21 @@ namespace GravityBox.Services
     {
         public static async void Fetch()
         {
+            // Remote Config creates a Firebase installation identifier; it shares the adult opt-in gate.
+            if (!COghePrivacy.AnalyticsAllowed || !COgheGoogleServices.Ready) return;
+            int ticket = COghePrivacy.Revision;
             try
             {
                 var config = FirebaseRemoteConfig.DefaultInstance;
                 var defaults = COgheEconomy.RemoteDefaults();
                 await config.SetDefaultsAsync(defaults);
+                if (!COghePrivacy.AnalyticsPermitValid(ticket)) return;
                 await config.FetchAsync(TimeSpan.FromHours(1));
+                if (!COghePrivacy.AnalyticsPermitValid(ticket)) return;
                 if (config.Info.LastFetchStatus != LastFetchStatus.Success)
                 { Debug.LogWarning("[COghe config] Fetch unavailable; keeping current defaults/cache."); return; }
                 await config.ActivateAsync();
+                if (!COghePrivacy.AnalyticsPermitValid(ticket)) return;
                 var values = new Dictionary<string, string>();
                 foreach (var key in defaults.Keys) values[key] = config.GetValue(key).StringValue;
                 bool staged = COgheEconomy.StageRemote(values);

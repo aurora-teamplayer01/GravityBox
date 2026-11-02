@@ -1,0 +1,332 @@
+{
+  "auditDate": "2026-10-29",
+  "application": "Alien Pet: Escape Puzzle",
+  "package": "com.gravityboxlab.venom",
+  "sourceHead": "afc640dc",
+  "scope": "Read-only source, saved-scene and visual-evidence audit for the current Android release. No Assets or Console mutations. Suggested declarations are subject to the exact live questionnaire wording; this is not a compliance certificate or a final age rating.",
+  "audience": {
+    "knownUserInstruction": "User explicitly described children aged 4–15 when requesting ability-card design. This is a material child-audience signal and must not be silently replaced by an adult-only target.",
+    "repoPlan": "PLANS/COGHE_MONETIZATION_PLAN.md sections 0 and 12 leave final publishing audience unresolved. A historical UI brief and the final marketed age range may differ; the owner must resolve that distinction if necessary.",
+    "consoleAgeGroupsIfOwnerReconfirms4to15": [
+      "5 and under",
+      "6–8",
+      "9–12",
+      "13–15"
+    ],
+    "caveat": "Do not select these groups mechanically. Confirm that content and interaction design are appropriate for each group, especially preschool users, and resolve the runtime gaps below before asserting readiness. An IARC rating and a declared target audience are different fields."
+  },
+  "suggestedContentAnswers": [
+    {
+      "topic": "Category",
+      "suggestion": "Game; puzzle gameplay with pet-care/customisation features.",
+      "confidence": "high"
+    },
+    {
+      "topic": "Frightening imagery / horror / fear",
+      "suggestion": "Yes to a broad question about potentially frightening imagery; describe mild fantasy monster transformation. Do not claim graphic horror or constant terror.",
+      "evidence": [
+        "Assets/_Game/Venom/Runtime/VenomLifeAnimation.Monster.cs:24 — mound forms a monster head, bares fangs and unfurls tongue.",
+        "Assets/_Game/Venom/Runtime/Personality/COgheMonsterFace.cs:8 — sharp teeth and long tongue.",
+        "Docs/Verification/COgheMonsterHead/home-fangs.png — visually reviewed: dark creature, white pointed eyes, two rows of sharp teeth, red tongue, no blood."
+      ],
+      "confidence": "high"
+    },
+    {
+      "topic": "Violence / weapons",
+      "suggestion": "No combat, attacks, injury or blood were found in the inspected current game. The intro does depict armed soldiers holding rifles and a meteor impact/explosion. Answer Yes if the actual question explicitly includes weapons or threatening imagery. If it asks strictly about violent actions, assess the exact wording rather than treating possession of a rifle as a shooting scene.",
+      "evidence": [
+        "Assets/_Game/Venom/Resources/COgheIntro/S3_SOLDIERS.png — visually reviewed rifles held at rest.",
+        "Assets/_Game/Venom/Resources/COgheIntro/S5_SOLDIERS_REACT.png — visually reviewed soldiers recoil; no firing depicted.",
+        "Assets/_Game/Venom/Runtime/Intro/COgheIntro.cs:266,277,318 — impact layer, soldiers and flinch animation.",
+        "Current first 65 SpatialOrder scene files contain zero COgheGuillotine script GUID references. Historical blade classes remain in the repository but are not evidence of an active campaign guillotine."
+      ],
+      "confidence": "medium; live question wording required"
+    },
+    {
+      "topic": "Blood / gore / dismemberment",
+      "suggestion": "No blood or gore observed. The quantum machine divides a liquid fantasy creature into two living lobes that can recombine; it is a cooperative puzzle ability, not an injury scene. If a questionnaire broadly includes body separation, disclose that description rather than concealing it or describing realistic mutilation.",
+      "evidence": [
+        "Assets/_Game/Venom/Runtime/COgheQuantumSplitter.cs:5–9,113–162"
+      ],
+      "confidence": "high for no blood; wording-dependent for body separation"
+    },
+    {
+      "topic": "Sexual content / nudity / language / controlled substances / discrimination",
+      "suggestion": "No content found in the inspected runtime, intro and UI. Cosmetic ink injection and feeding are pet-care interactions, not drug consumption.",
+      "confidence": "medium; source/visual audit, not every possible frame captured"
+    },
+    {
+      "topic": "Gambling / simulated gambling / cash prizes",
+      "suggestion": "No wagering, casino simulation or cash-out functionality found. Mystery gifts below must still be disclosed when the questionnaire asks about random rewards.",
+      "confidence": "high"
+    },
+    {
+      "topic": "Random rewards",
+      "suggestion": "Yes if the question asks about random rewards in general. The game has mystery gifts containing cosmetic items or Drops. No for purchasable random items if the question specifically requires real-money purchases in this release: these gifts are opened via a rewarded ad or free when no ad is ready, with no current cash purchase route.",
+      "evidence": [
+        "Assets/_Game/Venom/Runtime/Product/COgheProductUI.MysteryBox.cs:193–205 — deterministic seeded roll: optional unowned cosmetic, otherwise 30/50/80 Drops; first gift is Bee hat.",
+        "Assets/_Game/Venom/Runtime/Product/COgheProductUI.MysteryBox.cs:225–231 — rewarded-ad path or free fallback.",
+        "Assets/_Game/Venom/Runtime/Product/COgheProductUI.MysteryBox.cs:262–266 — unknown gift contents, Watch an ad to open, Skip."
+      ],
+      "caveat": "Reassess purchase/random-item declarations if Plus, paid Drops or paid mystery access are enabled later. Do not label the present mystery gift system as absent merely because real billing is disabled.",
+      "confidence": "high"
+    },
+    {
+      "topic": "Real-money purchases",
+      "suggestion": "No in the uploaded production implementation. The planned Plus and No Ads products are not functional billing products yet. Virtual earned/ad-rewarded Drops buy cosmetics and snacks.",
+      "evidence": [
+        "Assets/_Game/Venom/Runtime/Shop/COgheEntitlements.cs:27–28 — production Store is null unless a provider is supplied; test provider only in test tools.",
+        "Assets/_Game/Venom/Runtime/Shop/COgheEntitlements.cs:41,50–63 — no purchase or restore without StoreAvailable.",
+        "Assets/_Game/Venom/Runtime/Product/COgheProductUI.Shop.cs:159,324,345 — production offers are gated or unavailable.",
+        "Packages/manifest.json and built Gradle dependency audit contain no Unity Purchasing/Google Billing SDK."
+      ],
+      "confidence": "high"
+    },
+    {
+      "topic": "Ads",
+      "suggestion": "Yes. Banner, interstitial and rewarded AdMob integration exists even though current UMP setup can prevent delivery.",
+      "evidence": [
+        "Assets/_Game/Venom/Services/COgheAdMob.cs",
+        "Assets/_Game/Venom/Runtime/Shop/COgheAds.cs"
+      ],
+      "confidence": "high"
+    },
+    {
+      "topic": "User interaction / UGC / multiplayer / chat / user profile exchange",
+      "suggestion": "No. No implemented player-to-player communication, sharing, multiplayer or user-uploaded content was found. Choosing the local pet appearance is not public UGC.",
+      "confidence": "high"
+    },
+    {
+      "topic": "Precise-location sharing / unrestricted web browsing",
+      "suggestion": "No. No app browser or location sharing feature found. Third-party ad click-through is distinct from unrestricted browsing. SDK-derived approximate location is a Data safety topic, not a player location-sharing feature.",
+      "confidence": "high"
+    },
+    {
+      "topic": "Login / restricted app access",
+      "suggestion": "No account login, membership or credentials required for the current game. Content unlocks through gameplay; do not claim every feature is immediately unlocked.",
+      "confidence": "high"
+    },
+    {
+      "topic": "Crude humor",
+      "suggestion": "Yes to the mucus/belching/flatulence category because Home includes a belly-drum burp bubble and a too-full hiccup/burp gag. This evidence establishes comic belching; it does not establish every example in the grouped category.",
+      "evidence": [
+        "Assets/_Game/Venom/Runtime/VenomLifeAnimation.Tricks.cs:150 — Belly drum ends with a burp bubble.",
+        "Assets/_Game/Venom/Runtime/Personality/COghePersonality.Toys.cs:626 — Hiccup gag: too full, two hiccups, then a burp bubble."
+      ],
+      "confidence": "high",
+      "consoleStatus": "Parent reported selected Yes and mucus/belching subcategory, then submitted with user action-time approval."
+    }
+  ],
+  "sdkEvidence": {
+    "googleMobileAdsUnity": "11.5.0 (Packages/manifest.json:42)",
+    "nativeGoogleMobileAds": "25.4.0 (Assets/Plugins/Android/mainTemplate.gradle:12; built dependency audit agrees)",
+    "ump": "4.0.0 (mainTemplate.gradle:14)",
+    "firebaseUnity": "13.17.0 (parallel data-safety audit)",
+    "firebaseAndroidAnalytics": "23.2.0 (parallel data-safety audit)",
+    "certifiedSdkVersionAssessment": "Google's current Families SDK list includes com.google.android.gms:play-services-ads 19.0.0 or later. Installed 25.4.0 satisfies that listed version range. This does not certify app configuration, creative content, account settings or other SDK data handling.",
+    "ageTreatmentApiAvailable": "Installed 11.5.0 package sample RequestConfigurationSnippets.cs:40,52,64 contains AgeRestrictedTreatment.Child/Teen/Unspecified; line86 MaxAdContentRating.G.",
+    "appAgeTreatment": "No app calls found for AgeRestrictedTreatment, RequestConfiguration, SetRequestConfiguration, TFCD, TFUA or MaxAdContentRating in Assets/_Game, Packages manifest or ProjectSettings source.",
+    "umpImplementation": "COgheGoogleServices.cs:73 uses new ConsentRequestParameters() with default underage treatment. Lines108–112 gate Initialize on CanRequestAds but do not add an age policy.",
+    "analyticsImplementation": "COgheGoogleServices.cs:51 unconditionally enables Firebase Analytics independently of ad consent. Queued app analytics are then sent; UMP does not itself establish an analytics/child-data policy.",
+    "identifierPermissions": "Built AAB manifest includes AD_ID and ACCESS_ADSERVICES_AD_ID/ATTRIBUTION/TOPICS (parallel data-safety audit). No app-level child/unknown-age branch suppressing identifiers was found.",
+    "privacyChoicesUi": "COgheProductUI.View.cs:189,210 exposes Privacy choices in Pause only when UMP reports required. No neutral age screen or parental authorization feature found.",
+    "externalLinks": "No Application.OpenURL/WebView use found in current Venom runtime/services. Ads and the SDK privacy form may open their own links."
+  },
+  "releaseBlockersOrUnverifiedItems": [
+    {
+      "id": "CHILD_AUDIENCE_DECISION",
+      "state": "owner confirmation may be required",
+      "detail": "Preserve the existing child-audience instruction. If final marketed age range is not identical to the prior 4–15 UI brief, ask rather than silently switching to 13+. Final target groups, countries and child-data treatment must agree."
+    },
+    {
+      "id": "CHILD_ADS_CONFIGURATION",
+      "state": "confirmed implementation gap for mixed child/older audience",
+      "detail": "Current source has neither neutral age screening nor a child/unknown-age request configuration. Native SDK certification alone does not resolve this."
+    },
+    {
+      "id": "CHILD_ANALYTICS_AND_IDENTIFIERS",
+      "state": "confirmed missing handling; legal basis and account settings unverified",
+      "detail": "Unconditional analytics start and identifier permissions require an explicit child/unknown-age policy and verified suppression before SDK collection. No code guard currently supplies that assurance. Do not state that adding an AdMob age flag automatically fixes Firebase."
+    },
+    {
+      "id": "UMP_DASHBOARD",
+      "state": "confirmed existing runtime warning",
+      "detail": "README/build-validation in this verification folder report native code3 publisher misconfiguration: no form(s) configured. Complete relevant account messages and test first-run/denied/changed choices rather than declaring production consent ready."
+    },
+    {
+      "id": "CHILD_AD_FORMATS",
+      "state": "not verified on production creatives",
+      "detail": "Verify clear ad labels, no accidental touch overlap, no simultaneous placements, and dismissal timing for child/unknown users. Existing pacing and opt-in rewarded logic are useful but do not establish Families format compliance."
+    },
+    {
+      "id": "MYSTERY_GIFT_COMMERCIAL_UI",
+      "state": "requires child-use review",
+      "detail": "Ad-gated hidden rewards are present. Review presentation, voluntary skip, no pressure, and exact questionnaire wording; no odds text was seen in the popup. Current gift code is not proof of simulated gambling, and no cash purchase path exists."
+    },
+    {
+      "id": "CONTENT_RATING_FINALIZATION",
+      "state": "exact live questions and generated rating pending",
+      "detail": "Disclose mild scary creature and armed intro imagery accurately. The audit cannot guarantee a particular IARC/PEGI/ESRB age classification or preschool suitability."
+    }
+  ],
+  "implementationOptionsForOwnerDecision": [
+    {
+      "option": "Mixed audience with child-safe branch",
+      "changes": [
+        "Collect neutral age information before any age-sensitive SDK startup; unknown defaults to the protected branch. Keep DOB/age local unless a justified disclosure explicitly requires otherwise.",
+        "Set global MobileAds RequestConfiguration before Initialize using installed AgeRestrictedTreatment.Child and MaxAdContentRating.G for protected requests. Do not combine deprecated flags blindly.",
+        "Set the UMP underage parameter separately; UMP does not forward it to GMA. Respect country-dependent consent thresholds.",
+        "Default analytics and advertising identifier collection off before SDK init, then enable only the reviewed branch/settings. Review Firebase settings independently of AdMob.",
+        "Fix UMP account messages and verify protected/older/unknown flows, reinstall, offline, consent revocation, rewarded dismiss and actual network privacy signals. Rebuild the AAB after code changes."
+      ]
+    },
+    {
+      "option": "Conservative children-focused release",
+      "changes": [
+        "Only after owner confirms this target, use a consistently child-directed configuration. Remove prohibited identifier permissions and disable associated collection; verify all included SDK uses.",
+        "If safe ad and analytics behaviour cannot yet be demonstrated, ship an explicitly approved no-ads/no-analytics release variant and adjust Console/privacy declarations to that actual binary. This changes monetization, so do not silently substitute it for the requested build.",
+        "Keep content-rating disclosures and visual suitability review even with SDKs removed."
+      ]
+    }
+  ],
+  "sceneAudit": {
+    "method": "Extract first65 keys from VenomCampaignBuilder.SpatialOrder, map to actual saved .unity files, search script GUIDs from COgheGuillotine.cs.meta and COgheQuantumSplitter.cs.meta.",
+    "missingScenes": [],
+    "guillotineLevels": [],
+    "quantumSplitterLevels": [
+      16,
+      17,
+      18,
+      21,
+      27,
+      29,
+      32,
+      42,
+      43,
+      47,
+      48,
+      49,
+      51,
+      52,
+      54,
+      56,
+      57,
+      58,
+      60,
+      62,
+      64,
+      65
+    ],
+    "limit": "Saved-scene/component audit, not a new full gameplay run."
+  },
+  "officialSources": [
+    {
+      "url": "https://support.google.com/googleplay/android-developer/answer/9893335?hl=en",
+      "usedFor": "Families audience accuracy, neutral age screen for mixed audiences, child/unknown identifier and ad restrictions, child ad format/dismissal requirements."
+    },
+    {
+      "url": "https://support.google.com/googleplay/android-developer/answer/12955712",
+      "usedFor": "Self-certified SDK version list: Google AdMob native19.0.0 or later."
+    },
+    {
+      "url": "https://developers.google.com/admob/unity/targeting",
+      "usedFor": "Current age-treatment API, global RequestConfiguration before initialization and maximum ad content rating. Page updated2026-10-28."
+    },
+    {
+      "url": "https://developers.google.com/admob/unity/privacy/gdpr",
+      "usedFor": "UMP underage signal and independent GMA age treatment, consent message configuration and privacy choices."
+    },
+    {
+      "url": "https://support.google.com/admob/answer/6223431?hl=en",
+      "usedFor": "AdMob Families treatment and mediation-source responsibility."
+    },
+    {
+      "url": "https://support.google.com/googleplay/android-developer/answer/9859655?hl=en",
+      "usedFor": "IARC questionnaire process; target audience and generated content rating are not interchangeable."
+    }
+  ],
+  "liveIarcViolenceReview": {
+    "reviewDate": "2026-10-29",
+    "question": "Does the game contain inferences, references or depictions of violence, blood or gory images, including violence directed at the player?",
+    "helpTextProvidedByConsole": "Please note that this section includes all forms of violence or blood, even mild combat action or avoidance of deliberate environmental hazards.",
+    "recommendedAnswer": "No",
+    "fearRecommendedAnswer": "Yes — mild fantasy monster-head transformation with prominent teeth and tongue; no graphic horror or attack.",
+    "rationale": [
+      "Reviewed intro soldier frames hold rifles lowered or across the chest. They do not aim at or fire at a character. Reaction frame shows a recoil/flinch, not injury.",
+      "Meteor impact is a blast with no person or animal depicted being harmed.",
+      "All first 65 active campaign scenes were checked for the guillotine script GUID: none use it. Historical implementation classes do not establish current gameplay content.",
+      "Slick materials, lifts and breakable glass are traversal obstacles. A fall leaves the creature alive; no damage, pain, health loss, injury or death is depicted. The documented deliberate-hazard clause does not itself turn an obstacle without depicted harm into violence.",
+      "Current campaign fail calls are boundary escape and exiting before merging. Failure stops motion and changes outcome, without an injury/death animation.",
+      "Quantum separation produces two living portions of a liquid creature, which recombine; no blood, wound or harmful attack is represented."
+    ],
+    "sourceEvidence": [
+      "Assets/_Game/Venom/Runtime/VenomCampaign.cs:237,487,525,550 — failure conditions and stop/outcome handling",
+      "Assets/_Game/Venom/Runtime/VenomLevelController.cs:195 — legacy out-of-bounds failure also only marks Lost and disables input",
+      "Assets/_Game/Venom/Runtime/COgheBreakableGlass.cs — pane/shard presentation and a fall, no damage/failure call",
+      "Assets/_Game/Venom/Runtime/COgheQuantumSplitter.cs — living equal-lobe separation",
+      "Assets/_Game/Venom/Resources/COgheIntro/S3_SOLDIERS.png",
+      "Assets/_Game/Venom/Resources/COgheIntro/S5_SOLDIERS_REACT.png"
+    ],
+    "limits": "Recommendation for the current inspected release and exact live question, not a rating certificate. A dedicated weapons-only question should disclose the held rifles. Reassess if weapons are aimed/fired, attacks, injuries, harmful traps or other active scenes are introduced.",
+    "officialHelp": "https://support.google.com/googleplay/android-developer/answer/11066426"
+  },
+  "submittedIarcOutcome": {
+    "date": "2026-10-29",
+    "provenance": "Live Console results reported by parent agent after user-approved submission; not independently generated by this audit.",
+    "answers": {
+      "violence": "No",
+      "fear": "Yes; scary content occurs rarely",
+      "crudeHumor": "Yes; mucus/belching category",
+      "digitalPurchases": "No current cash/IAP provider"
+    },
+    "ratings": {
+      "ESRB": {
+        "rating": "Everyone",
+        "descriptors": [
+          "Mild Fantasy Violence",
+          "Comic Mischief"
+        ]
+      },
+      "PEGI": {
+        "rating": "7",
+        "descriptors": [
+          "Fear"
+        ]
+      },
+      "Taiwan": {
+        "rating": "12",
+        "descriptors": [
+          "Horror"
+        ]
+      },
+      "USK": {
+        "rating": "6"
+      },
+      "Australia": {
+        "rating": "PG"
+      },
+      "OtherReportedRegions": {
+        "rating": "7",
+        "note": "Parent summary; use live certificate for the exact region-by-region list."
+      }
+    },
+    "interpretation": "Preserve generated ratings/descriptors as returned, even where a descriptor differs from questionnaire wording. Do not edit questionnaire answers merely to force a lower result."
+  },
+  "ageSuitabilityFollowUp": {
+    "date": "2026-10-29",
+    "knownAudienceStillApplies": "Historic child audience 4–15 remains a material owner instruction until the owner explicitly changes it. Do not silently declare teens/adults to avoid Families requirements.",
+    "preschoolAssessment": "Do not certify current unchanged runtime as suitable for Ages5-and-under. The observed monster head, armed intro, comic belching and multi-step spatial/control demands raise specific preschool suitability concerns.",
+    "sixToEightAssessment": "Requires explicit suitability/usability assessment for these children. Slapstick and collecting can fit, but current regional ratings and puzzle/control complexity warrant review; the audit cannot certify the whole age band.",
+    "olderChildrenAssessment": "A narrower older-child target may better match current puzzle demands, but this is a design recommendation, not an authorized target-audience change or a guarantee of regional age eligibility.",
+    "ratingVsAudience": "IARC ratings vary by region and are distinct from designed target audience. No primary-source rule was found that mechanically converts PEGI7 into one Console age-group selection. Taiwan12 must not be described as universally suitable from age7.",
+    "nextOwnerDecision": [
+      "Keep preschool as intended audience and revise content and interaction design, then reassess accurate ratings and suitability.",
+      "Explicitly retarget the current build to older children while retaining Families treatment for included under13 users and complying with applicable regional ratings."
+    ],
+    "officialSources": [
+      "https://support.google.com/googleplay/android-developer/answer/9867159?hl=en",
+      "https://support.google.com/googleplay/android-developer/answer/9859655?hl=en"
+    ],
+    "policyBoundary": "Google guidance says content may not be suitable for particular ages; this audit does not present that guidance as an automatic absolute ban or a legal age ruling."
+  }
+}

@@ -1,0 +1,4878 @@
+{
+  "generatedUtc": "2026-10-29T09:24:37.534794+00:00",
+  "protocolMarker": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/matched-release-abba-complete.json",
+  "protocolMarkerSha256": "f6f2cbdc2bfbc4a1d29c25115020fe481cd4e6d38a6d7294c62f282fcdc356ed",
+  "protocolSession": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/matched-release-pipeline/retained-final-calibrated",
+  "policy": {
+    "targetBatteryC": 37.0,
+    "toleranceC": 1.0,
+    "thermalStatus": 1,
+    "gateSeconds": 900,
+    "warmupLevels": "2,7,23",
+    "settleSeconds": 20,
+    "stabilitySamples": 2,
+    "pollSeconds": 15,
+    "clockMeasurements": "not recorded; matching battery/status does not prove identical CPU clocks"
+  },
+  "order": [
+    "before-release-1",
+    "after-release-1",
+    "after-release-2",
+    "before-release-2",
+    "before-release-3",
+    "after-release-3"
+  ],
+  "apkHashes": [
+    {
+      "side": "before",
+      "path": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/baseline/AlienPet-before-Release-matched.apk",
+      "recordedSha256": "0239994b0fdaaea74d2711dda94a5199486760bcbeba9052a6afdcadb51f536d",
+      "actualSha256": "0239994b0fdaaea74d2711dda94a5199486760bcbeba9052a6afdcadb51f536d",
+      "bytes": 59311788
+    },
+    {
+      "side": "after",
+      "path": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/optimized/AlienPet-after-Release.apk",
+      "recordedSha256": "26df2c98969cd38f500708e2c364e9a82dd9090bbb1407b5babdd6efe4e5fb39",
+      "actualSha256": "26df2c98969cd38f500708e2c364e9a82dd9090bbb1407b5babdd6efe4e5fb39",
+      "bytes": 59316804
+    }
+  ],
+  "runAudit": [
+    {
+      "name": "before-release-1",
+      "side": "before",
+      "buildGuid": "38a7643f0bc84fb7964db588724731e2",
+      "report": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/before-release-1/proof/20261029T085206Z/run.json",
+      "reportSha256": "49670499443d24c347951b682a2158d4da93fb6c4b6a6d88036cb15530155433",
+      "gateBatteryC": 36.0,
+      "gateThermalStatus": 1,
+      "stabilitySpacingSeconds": 15.179339170455933,
+      "warmupRuns": 1,
+      "gateSeconds": 111.92707470792811,
+      "wholeRunWithinBand": true,
+      "protocolHealth": {
+        "source": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/before-release-1/health.jsonl",
+        "samples": [
+          {
+            "utc": "2026-10-29T08:52:09.314856+00:00",
+            "elapsed": 7.1739701660117134,
+            "batteryC": 36.0,
+            "thermalStatus": 1,
+            "usbPowered": true,
+            "telemetryErrors": {}
+          },
+          {
+            "utc": "2026-10-29T08:52:40.383078+00:00",
+            "elapsed": 38.24152875004802,
+            "batteryC": 36.0,
+            "thermalStatus": 1,
+            "usbPowered": true,
+            "telemetryErrors": {}
+          },
+          {
+            "utc": "2026-10-29T08:53:11.249222+00:00",
+            "elapsed": 69.10701504105236,
+            "batteryC": 36.0,
+            "thermalStatus": 1,
+            "usbPowered": true,
+            "telemetryErrors": {}
+          },
+          {
+            "utc": "2026-10-29T08:53:42.319247+00:00",
+            "elapsed": 100.17641258297954,
+            "batteryC": 36.0,
+            "thermalStatus": 1,
+            "usbPowered": true,
+            "telemetryErrors": {}
+          },
+          {
+            "utc": "2026-10-29T08:54:13.266661+00:00",
+            "elapsed": 131.1231902500149,
+            "batteryC": 36.0,
+            "thermalStatus": 1,
+            "usbPowered": true,
+            "telemetryErrors": {}
+          },
+          {
+            "utc": "2026-10-29T08:54:44.048950+00:00",
+            "elapsed": 161.90477025008295,
+            "batteryC": 36.0,
+            "thermalStatus": 1,
+            "usbPowered": true,
+            "telemetryErrors": {}
+          },
+          {
+            "utc": "2026-10-29T08:55:10.133001+00:00",
+            "elapsed": null,
+            "batteryC": 37.0,
+            "thermalStatus": 1,
+            "usbPowered": true,
+            "telemetryErrors": {}
+          }
+        ],
+        "requiredTelemetryComplete": true,
+        "batteryRangeC": [
+          36.0,
+          37.0
+        ],
+        "thermalStatuses": [
+          1
+        ],
+        "wholeRunWithinBand": true
+      },
+      "observedHealth": {
+        "source": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/before-release-1/health.jsonl",
+        "scope": "whole run; health elapsed times are not aligned to individual level captures",
+        "healthSamples": 6,
+        "batteryC": {
+          "samples": 6,
+          "first": 36.0,
+          "last": 36.0,
+          "min": 36.0,
+          "max": 36.0,
+          "mean": 36.0
+        },
+        "oemPhoneC": {
+          "samples": 6,
+          "first": 37.0,
+          "last": 39.0,
+          "min": 37.0,
+          "max": 39.0,
+          "mean": 38.333333333333336
+        },
+        "thermalStatuses": [
+          1
+        ],
+        "maxThermalStatus": 1,
+        "currentHalC": {
+          "CPU": {
+            "samples": 6,
+            "first": 50.5,
+            "last": 61.7,
+            "min": 48.3,
+            "max": 61.7,
+            "mean": 56.38333333333333
+          },
+          "GPU": {
+            "samples": 6,
+            "first": 50.5,
+            "last": 61.7,
+            "min": 48.3,
+            "max": 61.7,
+            "mean": 56.38333333333333
+          },
+          "BATTERY": {
+            "samples": 6,
+            "first": 36.0,
+            "last": 36.0,
+            "min": 36.0,
+            "max": 36.0,
+            "mean": 36.0
+          },
+          "SKIN": {
+            "samples": 6,
+            "first": 10.0,
+            "last": 15.0,
+            "min": 10.0,
+            "max": 15.0,
+            "mean": 13.166666666666666
+          },
+          "POWER_AMPLIFIER": {
+            "samples": 6,
+            "first": 10.0,
+            "last": 11.0,
+            "min": 10.0,
+            "max": 11.0,
+            "mean": 10.5
+          },
+          "NPU": {
+            "samples": 6,
+            "first": 50.5,
+            "last": 61.7,
+            "min": 48.3,
+            "max": 61.7,
+            "mean": 56.38333333333333
+          },
+          "TPU": {
+            "samples": 6,
+            "first": 50.5,
+            "last": 61.7,
+            "min": 48.3,
+            "max": 61.7,
+            "mean": 56.38333333333333
+          },
+          "SOC": {
+            "samples": 6,
+            "first": 50.5,
+            "last": 61.7,
+            "min": 48.3,
+            "max": 61.7,
+            "mean": 56.38333333333333
+          }
+        },
+        "powerStates": [
+          {
+            "AC": false,
+            "USB": true,
+            "Wireless": false,
+            "Dock": false
+          }
+        ],
+        "processMemory": {
+          "pssMiB": {
+            "samples": 6,
+            "first": 384.3115234375,
+            "last": 512.0322265625,
+            "min": 384.3115234375,
+            "max": 521.4560546875,
+            "mean": 492.8359375
+          },
+          "rssMiB": {
+            "samples": 6,
+            "first": 482.796875,
+            "last": 624.69140625,
+            "min": 482.796875,
+            "max": 635.3359375,
+            "mean": 603.5032552083334
+          },
+          "swapPssMiB": {
+            "samples": 6,
+            "first": 0.9912109375,
+            "last": 0.2626953125,
+            "min": 0.2578125,
+            "max": 0.9912109375,
+            "mean": 0.3818359375
+          },
+          "graphicsPssMiB": {
+            "samples": 6,
+            "first": 89.3046875,
+            "last": 125.5859375,
+            "min": 89.3046875,
+            "max": 129.50390625,
+            "mean": 118.873046875
+          }
+        },
+        "telemetryErrors": [],
+        "batteryBeforeC": 36.0,
+        "batteryAfterC": 37.0
+      },
+      "selectionPassed": true
+    },
+    {
+      "name": "after-release-1",
+      "side": "after",
+      "buildGuid": "63a40fbb10a74a47a9b606b67cd721b4",
+      "report": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/after-release-1/proof/20261029T085728Z/run.json",
+      "reportSha256": "f7d32e5be84402c0a721f228affc040d2165e10c9a22cf23f04f15c0513b3068",
+      "gateBatteryC": 37.0,
+      "gateThermalStatus": 1,
+      "stabilitySpacingSeconds": 15.189061164855957,
+      "warmupRuns": 1,
+      "gateSeconds": 112.4410035830224,
+      "wholeRunWithinBand": true,
+      "protocolHealth": {
+        "source": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/after-release-1/health.jsonl",
+        "samples": [
+          {
+            "utc": "2026-10-29T08:57:31.355801+00:00",
+            "elapsed": 7.215172957978211,
+            "batteryC": 37.0,
+            "thermalStatus": 1,
+            "usbPowered": true,
+            "telemetryErrors": {}
+          },
+          {
+            "utc": "2026-10-29T08:58:02.250803+00:00",
+            "elapsed": 38.10946279100608,
+            "batteryC": 37.0,
+            "thermalStatus": 1,
+            "usbPowered": true,
+            "telemetryErrors": {}
+          },
+          {
+            "utc": "2026-10-29T08:58:33.228052+00:00",
+            "elapsed": 69.08613183302805,
+            "batteryC": 37.0,
+            "thermalStatus": 1,
+            "usbPowered": true,
+            "telemetryErrors": {}
+          },
+          {
+            "utc": "2026-10-29T08:59:04.329071+00:00",
+            "elapsed": 100.18650266597979,
+            "batteryC": 36.0,
+            "thermalStatus": 1,
+            "usbPowered": true,
+            "telemetryErrors": {}
+          },
+          {
+            "utc": "2026-10-29T08:59:35.252721+00:00",
+            "elapsed": 131.10950737504754,
+            "batteryC": 37.0,
+            "thermalStatus": 1,
+            "usbPowered": true,
+            "telemetryErrors": {}
+          },
+          {
+            "utc": "2026-10-29T09:00:06.083896+00:00",
+            "elapsed": 161.9400606660638,
+            "batteryC": 37.0,
+            "thermalStatus": 1,
+            "usbPowered": true,
+            "telemetryErrors": {}
+          },
+          {
+            "utc": "2026-10-29T09:00:37.185144+00:00",
+            "elapsed": null,
+            "batteryC": 37.0,
+            "thermalStatus": 1,
+            "usbPowered": true,
+            "telemetryErrors": {}
+          }
+        ],
+        "requiredTelemetryComplete": true,
+        "batteryRangeC": [
+          36.0,
+          37.0
+        ],
+        "thermalStatuses": [
+          1
+        ],
+        "wholeRunWithinBand": true
+      },
+      "observedHealth": {
+        "source": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/after-release-1/health.jsonl",
+        "scope": "whole run; health elapsed times are not aligned to individual level captures",
+        "healthSamples": 6,
+        "batteryC": {
+          "samples": 6,
+          "first": 37.0,
+          "last": 37.0,
+          "min": 36.0,
+          "max": 37.0,
+          "mean": 36.833333333333336
+        },
+        "oemPhoneC": {
+          "samples": 6,
+          "first": 38.0,
+          "last": 40.0,
+          "min": 38.0,
+          "max": 40.0,
+          "mean": 39.0
+        },
+        "thermalStatuses": [
+          1
+        ],
+        "maxThermalStatus": 1,
+        "currentHalC": {
+          "CPU": {
+            "samples": 6,
+            "first": 53.4,
+            "last": 61.9,
+            "min": 48.3,
+            "max": 61.9,
+            "mean": 57.43333333333334
+          },
+          "GPU": {
+            "samples": 6,
+            "first": 53.4,
+            "last": 61.9,
+            "min": 48.3,
+            "max": 61.9,
+            "mean": 57.43333333333334
+          },
+          "BATTERY": {
+            "samples": 6,
+            "first": 37.0,
+            "last": 37.0,
+            "min": 36.5,
+            "max": 37.0,
+            "mean": 36.708333333333336
+          },
+          "SKIN": {
+            "samples": 6,
+            "first": 11.0,
+            "last": 15.0,
+            "min": 11.0,
+            "max": 15.0,
+            "mean": 13.833333333333334
+          },
+          "POWER_AMPLIFIER": {
+            "samples": 6,
+            "first": 10.0,
+            "last": 12.0,
+            "min": 10.0,
+            "max": 12.0,
+            "mean": 11.0
+          },
+          "NPU": {
+            "samples": 6,
+            "first": 53.4,
+            "last": 61.9,
+            "min": 48.3,
+            "max": 61.9,
+            "mean": 57.43333333333334
+          },
+          "TPU": {
+            "samples": 6,
+            "first": 53.4,
+            "last": 61.9,
+            "min": 48.3,
+            "max": 61.9,
+            "mean": 57.43333333333334
+          },
+          "SOC": {
+            "samples": 6,
+            "first": 53.4,
+            "last": 61.9,
+            "min": 48.3,
+            "max": 61.9,
+            "mean": 57.43333333333334
+          }
+        },
+        "powerStates": [
+          {
+            "AC": false,
+            "USB": true,
+            "Wireless": false,
+            "Dock": false
+          }
+        ],
+        "processMemory": {
+          "pssMiB": {
+            "samples": 6,
+            "first": 378.927734375,
+            "last": 485.4189453125,
+            "min": 378.927734375,
+            "max": 495.4970703125,
+            "mean": 473.8299153645833
+          },
+          "rssMiB": {
+            "samples": 6,
+            "first": 483.35546875,
+            "last": 592.3828125,
+            "min": 483.35546875,
+            "max": 607.8671875,
+            "mean": 582.4401041666666
+          },
+          "swapPssMiB": {
+            "samples": 6,
+            "first": 0.849609375,
+            "last": 2.7294921875,
+            "min": 0.255859375,
+            "max": 4.5810546875,
+            "mean": 1.9674479166666667
+          },
+          "graphicsPssMiB": {
+            "samples": 6,
+            "first": 81.3125,
+            "last": 118.64453125,
+            "min": 81.3125,
+            "max": 124.2890625,
+            "mean": 115.49088541666667
+          }
+        },
+        "telemetryErrors": [],
+        "batteryBeforeC": 37.0,
+        "batteryAfterC": 37.0
+      },
+      "selectionPassed": true
+    },
+    {
+      "name": "after-release-2",
+      "side": "after",
+      "buildGuid": "63a40fbb10a74a47a9b606b67cd721b4",
+      "report": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/after-release-2/proof/20261029T090232Z/run.json",
+      "reportSha256": "62924c62af854de9036ff3dc4223920c4599038ce2aed4c0fad7f1e7ea6256b5",
+      "gateBatteryC": 37.0,
+      "gateThermalStatus": 1,
+      "stabilitySpacingSeconds": 15.207522869110107,
+      "warmupRuns": 1,
+      "gateSeconds": 111.60581350000575,
+      "wholeRunWithinBand": true,
+      "protocolHealth": {
+        "source": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/after-release-2/health.jsonl",
+        "samples": [
+          {
+            "utc": "2026-10-29T09:02:35.641624+00:00",
+            "elapsed": 6.614528375095688,
+            "batteryC": 37.0,
+            "thermalStatus": 1,
+            "usbPowered": true,
+            "telemetryErrors": {}
+          },
+          {
+            "utc": "2026-10-29T09:03:06.810710+00:00",
+            "elapsed": 37.78296108299401,
+            "batteryC": 37.0,
+            "thermalStatus": 1,
+            "usbPowered": true,
+            "telemetryErrors": {}
+          },
+          {
+            "utc": "2026-10-29T09:03:37.862254+00:00",
+            "elapsed": 68.8338767910609,
+            "batteryC": 37.0,
+            "thermalStatus": 1,
+            "usbPowered": true,
+            "telemetryErrors": {}
+          },
+          {
+            "utc": "2026-10-29T09:04:08.886969+00:00",
+            "elapsed": 99.85794550005812,
+            "batteryC": 37.0,
+            "thermalStatus": 1,
+            "usbPowered": true,
+            "telemetryErrors": {}
+          },
+          {
+            "utc": "2026-10-29T09:04:39.682363+00:00",
+            "elapsed": 130.65269887505565,
+            "batteryC": 37.0,
+            "thermalStatus": 1,
+            "usbPowered": true,
+            "telemetryErrors": {}
+          },
+          {
+            "utc": "2026-10-29T09:05:10.483603+00:00",
+            "elapsed": 161.45328770799097,
+            "batteryC": 37.0,
+            "thermalStatus": 1,
+            "usbPowered": true,
+            "telemetryErrors": {}
+          },
+          {
+            "utc": "2026-10-29T09:05:41.508589+00:00",
+            "elapsed": null,
+            "batteryC": 37.0,
+            "thermalStatus": 1,
+            "usbPowered": true,
+            "telemetryErrors": {}
+          }
+        ],
+        "requiredTelemetryComplete": true,
+        "batteryRangeC": [
+          37.0,
+          37.0
+        ],
+        "thermalStatuses": [
+          1
+        ],
+        "wholeRunWithinBand": true
+      },
+      "observedHealth": {
+        "source": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/after-release-2/health.jsonl",
+        "scope": "whole run; health elapsed times are not aligned to individual level captures",
+        "healthSamples": 6,
+        "batteryC": {
+          "samples": 6,
+          "first": 37.0,
+          "last": 37.0,
+          "min": 37.0,
+          "max": 37.0,
+          "mean": 37.0
+        },
+        "oemPhoneC": {
+          "samples": 6,
+          "first": 38.0,
+          "last": 40.0,
+          "min": 38.0,
+          "max": 40.0,
+          "mean": 39.333333333333336
+        },
+        "thermalStatuses": [
+          1
+        ],
+        "maxThermalStatus": 1,
+        "currentHalC": {
+          "CPU": {
+            "samples": 6,
+            "first": 48.9,
+            "last": 62.2,
+            "min": 48.8,
+            "max": 62.2,
+            "mean": 56.550000000000004
+          },
+          "GPU": {
+            "samples": 6,
+            "first": 48.9,
+            "last": 62.2,
+            "min": 48.8,
+            "max": 62.2,
+            "mean": 56.550000000000004
+          },
+          "BATTERY": {
+            "samples": 6,
+            "first": 37.0,
+            "last": 37.0,
+            "min": 37.0,
+            "max": 37.0,
+            "mean": 37.0
+          },
+          "SKIN": {
+            "samples": 6,
+            "first": 11.0,
+            "last": 16.0,
+            "min": 11.0,
+            "max": 16.0,
+            "mean": 14.166666666666666
+          },
+          "POWER_AMPLIFIER": {
+            "samples": 6,
+            "first": 10.0,
+            "last": 12.0,
+            "min": 10.0,
+            "max": 12.0,
+            "mean": 11.333333333333334
+          },
+          "NPU": {
+            "samples": 6,
+            "first": 48.9,
+            "last": 62.2,
+            "min": 48.8,
+            "max": 62.2,
+            "mean": 56.550000000000004
+          },
+          "TPU": {
+            "samples": 6,
+            "first": 48.9,
+            "last": 62.2,
+            "min": 48.8,
+            "max": 62.2,
+            "mean": 56.550000000000004
+          },
+          "SOC": {
+            "samples": 6,
+            "first": 48.9,
+            "last": 62.2,
+            "min": 48.8,
+            "max": 62.2,
+            "mean": 56.550000000000004
+          }
+        },
+        "powerStates": [
+          {
+            "AC": false,
+            "USB": true,
+            "Wireless": false,
+            "Dock": false
+          }
+        ],
+        "processMemory": {
+          "pssMiB": {
+            "samples": 6,
+            "first": 436.466796875,
+            "last": 426.1201171875,
+            "min": 417.1962890625,
+            "max": 468.79296875,
+            "mean": 432.5164388020833
+          },
+          "rssMiB": {
+            "samples": 6,
+            "first": 542.04296875,
+            "last": 497.703125,
+            "min": 474.79296875,
+            "max": 587.26953125,
+            "mean": 516.201171875
+          },
+          "swapPssMiB": {
+            "samples": 6,
+            "first": 0.9248046875,
+            "last": 27.3154296875,
+            "min": 0.2802734375,
+            "max": 46.5078125,
+            "mean": 20.98193359375
+          },
+          "graphicsPssMiB": {
+            "samples": 6,
+            "first": 114.75,
+            "last": 125.9140625,
+            "min": 114.75,
+            "max": 125.9140625,
+            "mean": 122.529296875
+          }
+        },
+        "telemetryErrors": [],
+        "batteryBeforeC": 37.0,
+        "batteryAfterC": 37.0
+      },
+      "selectionPassed": true
+    },
+    {
+      "name": "before-release-2",
+      "side": "before",
+      "buildGuid": "38a7643f0bc84fb7964db588724731e2",
+      "report": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/before-release-2/proof/20261029T090801Z/run.json",
+      "reportSha256": "44082ab26eb6788cf918465618255ecdc540f9fa947c0afbfff75dab4b37fc56",
+      "gateBatteryC": 37.0,
+      "gateThermalStatus": 1,
+      "stabilitySpacingSeconds": 15.17735481262207,
+      "warmupRuns": 1,
+      "gateSeconds": 113.42522508301772,
+      "wholeRunWithinBand": false,
+      "protocolHealth": {
+        "source": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/before-release-2/health.jsonl",
+        "samples": [
+          {
+            "utc": "2026-10-29T09:08:03.722306+00:00",
+            "elapsed": 7.041741708992049,
+            "batteryC": 37.0,
+            "thermalStatus": 1,
+            "usbPowered": true,
+            "telemetryErrors": {}
+          },
+          {
+            "utc": "2026-10-29T09:08:34.849033+00:00",
+            "elapsed": 38.16781041701324,
+            "batteryC": 37.0,
+            "thermalStatus": 1,
+            "usbPowered": true,
+            "telemetryErrors": {}
+          },
+          {
+            "utc": "2026-10-29T09:09:05.788712+00:00",
+            "elapsed": 69.1068400000222,
+            "batteryC": 37.0,
+            "thermalStatus": 1,
+            "usbPowered": true,
+            "telemetryErrors": {}
+          },
+          {
+            "utc": "2026-10-29T09:09:36.840036+00:00",
+            "elapsed": 100.1575290421024,
+            "batteryC": 37.0,
+            "thermalStatus": 1,
+            "usbPowered": true,
+            "telemetryErrors": {}
+          },
+          {
+            "utc": "2026-10-29T09:10:07.720090+00:00",
+            "elapsed": 131.03694208408706,
+            "batteryC": 38.0,
+            "thermalStatus": 1,
+            "usbPowered": true,
+            "telemetryErrors": {}
+          },
+          {
+            "utc": "2026-10-29T09:10:38.529818+00:00",
+            "elapsed": 161.84597070899326,
+            "batteryC": 37.0,
+            "thermalStatus": 2,
+            "usbPowered": true,
+            "telemetryErrors": {}
+          },
+          {
+            "utc": "2026-10-29T09:11:09.692179+00:00",
+            "elapsed": null,
+            "batteryC": 38.0,
+            "thermalStatus": 2,
+            "usbPowered": true,
+            "telemetryErrors": {}
+          }
+        ],
+        "requiredTelemetryComplete": true,
+        "batteryRangeC": [
+          37.0,
+          38.0
+        ],
+        "thermalStatuses": [
+          1,
+          2
+        ],
+        "wholeRunWithinBand": false
+      },
+      "observedHealth": {
+        "source": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/before-release-2/health.jsonl",
+        "scope": "whole run; health elapsed times are not aligned to individual level captures",
+        "healthSamples": 6,
+        "batteryC": {
+          "samples": 6,
+          "first": 37.0,
+          "last": 37.0,
+          "min": 37.0,
+          "max": 38.0,
+          "mean": 37.166666666666664
+        },
+        "oemPhoneC": {
+          "samples": 6,
+          "first": 38.0,
+          "last": 40.0,
+          "min": 38.0,
+          "max": 40.0,
+          "mean": 39.333333333333336
+        },
+        "thermalStatuses": [
+          1,
+          2
+        ],
+        "maxThermalStatus": 2,
+        "currentHalC": {
+          "CPU": {
+            "samples": 6,
+            "first": 50.1,
+            "last": 62.2,
+            "min": 49.4,
+            "max": 62.2,
+            "mean": 57.4
+          },
+          "GPU": {
+            "samples": 6,
+            "first": 50.1,
+            "last": 62.2,
+            "min": 49.4,
+            "max": 62.2,
+            "mean": 57.4
+          },
+          "BATTERY": {
+            "samples": 6,
+            "first": 37.25,
+            "last": 37.25,
+            "min": 37.0,
+            "max": 37.25,
+            "mean": 37.125
+          },
+          "SKIN": {
+            "samples": 6,
+            "first": 12.0,
+            "last": 16.0,
+            "min": 12.0,
+            "max": 16.0,
+            "mean": 14.5
+          },
+          "POWER_AMPLIFIER": {
+            "samples": 6,
+            "first": 11.0,
+            "last": 12.0,
+            "min": 11.0,
+            "max": 12.0,
+            "mean": 11.833333333333334
+          },
+          "NPU": {
+            "samples": 6,
+            "first": 50.1,
+            "last": 62.2,
+            "min": 49.4,
+            "max": 62.2,
+            "mean": 57.4
+          },
+          "TPU": {
+            "samples": 6,
+            "first": 50.1,
+            "last": 62.2,
+            "min": 49.4,
+            "max": 62.2,
+            "mean": 57.4
+          },
+          "SOC": {
+            "samples": 6,
+            "first": 50.1,
+            "last": 62.2,
+            "min": 49.4,
+            "max": 62.2,
+            "mean": 57.4
+          }
+        },
+        "powerStates": [
+          {
+            "AC": false,
+            "USB": true,
+            "Wireless": false,
+            "Dock": false
+          }
+        ],
+        "processMemory": {
+          "pssMiB": {
+            "samples": 6,
+            "first": 370.703125,
+            "last": 487.9453125,
+            "min": 370.703125,
+            "max": 504.1494140625,
+            "mean": 473.8603515625
+          },
+          "rssMiB": {
+            "samples": 6,
+            "first": 475.1640625,
+            "last": 560.1796875,
+            "min": 475.1640625,
+            "max": 617.9296875,
+            "mean": 563.7037760416666
+          },
+          "swapPssMiB": {
+            "samples": 6,
+            "first": 0.8916015625,
+            "last": 41.6875,
+            "min": 0.259765625,
+            "max": 43.0966796875,
+            "mean": 22.23486328125
+          },
+          "graphicsPssMiB": {
+            "samples": 6,
+            "first": 85.859375,
+            "last": 125.63671875,
+            "min": 85.859375,
+            "max": 128.33984375,
+            "mean": 118.47200520833333
+          }
+        },
+        "telemetryErrors": [],
+        "batteryBeforeC": 37.0,
+        "batteryAfterC": 38.0
+      },
+      "selectionPassed": true
+    },
+    {
+      "name": "before-release-3",
+      "side": "before",
+      "buildGuid": "38a7643f0bc84fb7964db588724731e2",
+      "report": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/before-release-3/proof/20261029T091335Z/run.json",
+      "reportSha256": "199fb6b9808c3c53a69b738a33ad6a64d0b75602cfde8032713540fa428cdf1f",
+      "gateBatteryC": 37.0,
+      "gateThermalStatus": 1,
+      "stabilitySpacingSeconds": 15.2243070602417,
+      "warmupRuns": 1,
+      "gateSeconds": 142.1502055830788,
+      "wholeRunWithinBand": false,
+      "protocolHealth": {
+        "source": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/before-release-3/health.jsonl",
+        "samples": [
+          {
+            "utc": "2026-10-29T09:13:38.675244+00:00",
+            "elapsed": 6.586413584067486,
+            "batteryC": 37.0,
+            "thermalStatus": 1,
+            "usbPowered": true,
+            "telemetryErrors": {}
+          },
+          {
+            "utc": "2026-10-29T09:14:09.715993+00:00",
+            "elapsed": 37.6266348749632,
+            "batteryC": 37.0,
+            "thermalStatus": 1,
+            "usbPowered": true,
+            "telemetryErrors": {}
+          },
+          {
+            "utc": "2026-10-29T09:14:40.730696+00:00",
+            "elapsed": 68.64085408404935,
+            "batteryC": 37.0,
+            "thermalStatus": 1,
+            "usbPowered": true,
+            "telemetryErrors": {}
+          },
+          {
+            "utc": "2026-10-29T09:15:11.610302+00:00",
+            "elapsed": 99.51995679200627,
+            "batteryC": 37.0,
+            "thermalStatus": 1,
+            "usbPowered": true,
+            "telemetryErrors": {}
+          },
+          {
+            "utc": "2026-10-29T09:15:42.410304+00:00",
+            "elapsed": 130.31943087500986,
+            "batteryC": 37.0,
+            "thermalStatus": 1,
+            "usbPowered": true,
+            "telemetryErrors": {}
+          },
+          {
+            "utc": "2026-10-29T09:16:13.533944+00:00",
+            "elapsed": 161.44257170904893,
+            "batteryC": 38.0,
+            "thermalStatus": 1,
+            "usbPowered": true,
+            "telemetryErrors": {}
+          },
+          {
+            "utc": "2026-10-29T09:16:39.568919+00:00",
+            "elapsed": null,
+            "batteryC": 38.0,
+            "thermalStatus": 2,
+            "usbPowered": true,
+            "telemetryErrors": {}
+          }
+        ],
+        "requiredTelemetryComplete": true,
+        "batteryRangeC": [
+          37.0,
+          38.0
+        ],
+        "thermalStatuses": [
+          1,
+          2
+        ],
+        "wholeRunWithinBand": false
+      },
+      "observedHealth": {
+        "source": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/before-release-3/health.jsonl",
+        "scope": "whole run; health elapsed times are not aligned to individual level captures",
+        "healthSamples": 6,
+        "batteryC": {
+          "samples": 6,
+          "first": 37.0,
+          "last": 38.0,
+          "min": 37.0,
+          "max": 38.0,
+          "mean": 37.166666666666664
+        },
+        "oemPhoneC": {
+          "samples": 6,
+          "first": 38.0,
+          "last": 40.0,
+          "min": 38.0,
+          "max": 40.0,
+          "mean": 39.333333333333336
+        },
+        "thermalStatuses": [
+          1
+        ],
+        "maxThermalStatus": 1,
+        "currentHalC": {
+          "CPU": {
+            "samples": 6,
+            "first": 48.5,
+            "last": 63.3,
+            "min": 48.5,
+            "max": 63.3,
+            "mean": 57.416666666666664
+          },
+          "GPU": {
+            "samples": 6,
+            "first": 48.5,
+            "last": 63.3,
+            "min": 48.5,
+            "max": 63.3,
+            "mean": 57.416666666666664
+          },
+          "BATTERY": {
+            "samples": 6,
+            "first": 37.0,
+            "last": 37.25,
+            "min": 37.0,
+            "max": 37.25,
+            "mean": 37.041666666666664
+          },
+          "SKIN": {
+            "samples": 6,
+            "first": 11.0,
+            "last": 16.0,
+            "min": 11.0,
+            "max": 16.0,
+            "mean": 14.166666666666666
+          },
+          "POWER_AMPLIFIER": {
+            "samples": 6,
+            "first": 10.0,
+            "last": 12.0,
+            "min": 10.0,
+            "max": 12.0,
+            "mean": 11.333333333333334
+          },
+          "NPU": {
+            "samples": 6,
+            "first": 48.5,
+            "last": 63.3,
+            "min": 48.5,
+            "max": 63.3,
+            "mean": 57.416666666666664
+          },
+          "TPU": {
+            "samples": 6,
+            "first": 48.5,
+            "last": 63.3,
+            "min": 48.5,
+            "max": 63.3,
+            "mean": 57.416666666666664
+          },
+          "SOC": {
+            "samples": 6,
+            "first": 48.5,
+            "last": 63.3,
+            "min": 48.5,
+            "max": 63.3,
+            "mean": 57.416666666666664
+          }
+        },
+        "powerStates": [
+          {
+            "AC": false,
+            "USB": true,
+            "Wireless": false,
+            "Dock": false
+          }
+        ],
+        "processMemory": {
+          "pssMiB": {
+            "samples": 6,
+            "first": 445.8525390625,
+            "last": 435.013671875,
+            "min": 435.013671875,
+            "max": 526.716796875,
+            "mean": 485.4537760416667
+          },
+          "rssMiB": {
+            "samples": 6,
+            "first": 553.109375,
+            "last": 535.61328125,
+            "min": 535.61328125,
+            "max": 652.34375,
+            "mean": 600.509765625
+          },
+          "swapPssMiB": {
+            "samples": 6,
+            "first": 1.068359375,
+            "last": 3.3369140625,
+            "min": 0.2744140625,
+            "max": 3.3369140625,
+            "mean": 1.2327473958333333
+          },
+          "graphicsPssMiB": {
+            "samples": 6,
+            "first": 119.27734375,
+            "last": 116.125,
+            "min": 116.125,
+            "max": 129.59765625,
+            "mean": 123.1796875
+          }
+        },
+        "telemetryErrors": [],
+        "batteryBeforeC": 37.0,
+        "batteryAfterC": 38.0
+      },
+      "selectionPassed": true
+    },
+    {
+      "name": "after-release-3",
+      "side": "after",
+      "buildGuid": "63a40fbb10a74a47a9b606b67cd721b4",
+      "report": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/after-release-3/proof/20261029T091914Z/run.json",
+      "reportSha256": "80799e7b51fb73576cec05e1552dd2904f5463b43c934ed93c6d310a0e2b6ef2",
+      "gateBatteryC": 38.0,
+      "gateThermalStatus": 1,
+      "stabilitySpacingSeconds": 15.202531814575195,
+      "warmupRuns": 1,
+      "gateSeconds": 127.62398795795161,
+      "wholeRunWithinBand": false,
+      "protocolHealth": {
+        "source": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/after-release-3/health.jsonl",
+        "samples": [
+          {
+            "utc": "2026-10-29T09:19:17.448953+00:00",
+            "elapsed": 7.045566000044346,
+            "batteryC": 37.0,
+            "thermalStatus": 1,
+            "usbPowered": true,
+            "telemetryErrors": {}
+          },
+          {
+            "utc": "2026-10-29T09:19:48.450952+00:00",
+            "elapsed": 38.04701175005175,
+            "batteryC": 37.0,
+            "thermalStatus": 1,
+            "usbPowered": true,
+            "telemetryErrors": {}
+          },
+          {
+            "utc": "2026-10-29T09:20:19.390424+00:00",
+            "elapsed": 68.98599229101092,
+            "batteryC": 37.0,
+            "thermalStatus": 1,
+            "usbPowered": true,
+            "telemetryErrors": {}
+          },
+          {
+            "utc": "2026-10-29T09:20:50.470171+00:00",
+            "elapsed": 100.06524383299984,
+            "batteryC": 37.0,
+            "thermalStatus": 1,
+            "usbPowered": true,
+            "telemetryErrors": {}
+          },
+          {
+            "utc": "2026-10-29T09:21:21.474301+00:00",
+            "elapsed": 131.06886079104152,
+            "batteryC": 37.0,
+            "thermalStatus": 1,
+            "usbPowered": true,
+            "telemetryErrors": {}
+          },
+          {
+            "utc": "2026-10-29T09:21:52.280159+00:00",
+            "elapsed": 161.87420445797034,
+            "batteryC": 38.0,
+            "thermalStatus": 2,
+            "usbPowered": true,
+            "telemetryErrors": {}
+          },
+          {
+            "utc": "2026-10-29T09:22:23.527931+00:00",
+            "elapsed": null,
+            "batteryC": 38.0,
+            "thermalStatus": 2,
+            "usbPowered": true,
+            "telemetryErrors": {}
+          }
+        ],
+        "requiredTelemetryComplete": true,
+        "batteryRangeC": [
+          37.0,
+          38.0
+        ],
+        "thermalStatuses": [
+          1,
+          2
+        ],
+        "wholeRunWithinBand": false
+      },
+      "observedHealth": {
+        "source": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/after-release-3/health.jsonl",
+        "scope": "whole run; health elapsed times are not aligned to individual level captures",
+        "healthSamples": 6,
+        "batteryC": {
+          "samples": 6,
+          "first": 37.0,
+          "last": 38.0,
+          "min": 37.0,
+          "max": 38.0,
+          "mean": 37.166666666666664
+        },
+        "oemPhoneC": {
+          "samples": 6,
+          "first": 39.0,
+          "last": 41.0,
+          "min": 39.0,
+          "max": 41.0,
+          "mean": 39.666666666666664
+        },
+        "thermalStatuses": [
+          1,
+          2
+        ],
+        "maxThermalStatus": 2,
+        "currentHalC": {
+          "CPU": {
+            "samples": 6,
+            "first": 46.8,
+            "last": 62.0,
+            "min": 46.8,
+            "max": 62.3,
+            "mean": 56.38333333333333
+          },
+          "GPU": {
+            "samples": 6,
+            "first": 46.8,
+            "last": 62.0,
+            "min": 46.8,
+            "max": 62.3,
+            "mean": 56.38333333333333
+          },
+          "BATTERY": {
+            "samples": 6,
+            "first": 37.75,
+            "last": 37.25,
+            "min": 37.0,
+            "max": 37.75,
+            "mean": 37.208333333333336
+          },
+          "SKIN": {
+            "samples": 6,
+            "first": 12.0,
+            "last": 16.0,
+            "min": 12.0,
+            "max": 16.0,
+            "mean": 14.333333333333334
+          },
+          "POWER_AMPLIFIER": {
+            "samples": 6,
+            "first": 11.0,
+            "last": 12.0,
+            "min": 11.0,
+            "max": 12.0,
+            "mean": 11.666666666666666
+          },
+          "NPU": {
+            "samples": 6,
+            "first": 46.8,
+            "last": 62.0,
+            "min": 46.8,
+            "max": 62.3,
+            "mean": 56.38333333333333
+          },
+          "TPU": {
+            "samples": 6,
+            "first": 46.8,
+            "last": 62.0,
+            "min": 46.8,
+            "max": 62.3,
+            "mean": 56.38333333333333
+          },
+          "SOC": {
+            "samples": 6,
+            "first": 46.8,
+            "last": 62.0,
+            "min": 46.8,
+            "max": 62.3,
+            "mean": 56.38333333333333
+          }
+        },
+        "powerStates": [
+          {
+            "AC": false,
+            "USB": true,
+            "Wireless": false,
+            "Dock": false
+          }
+        ],
+        "processMemory": {
+          "pssMiB": {
+            "samples": 6,
+            "first": 345.884765625,
+            "last": 509.591796875,
+            "min": 345.884765625,
+            "max": 509.591796875,
+            "mean": 478.5628255208333
+          },
+          "rssMiB": {
+            "samples": 6,
+            "first": 449.28125,
+            "last": 622.97265625,
+            "min": 449.28125,
+            "max": 624.1015625,
+            "mean": 590.6041666666666
+          },
+          "swapPssMiB": {
+            "samples": 6,
+            "first": 0.884765625,
+            "last": 0.2568359375,
+            "min": 0.251953125,
+            "max": 0.884765625,
+            "mean": 0.3590494791666667
+          },
+          "graphicsPssMiB": {
+            "samples": 6,
+            "first": 65.86328125,
+            "last": 123.16796875,
+            "min": 65.86328125,
+            "max": 123.16796875,
+            "mean": 110.20052083333333
+          }
+        },
+        "telemetryErrors": [],
+        "batteryBeforeC": 38.0,
+        "batteryAfterC": 38.0
+      },
+      "selectionPassed": true
+    }
+  ],
+  "coverage": [
+    {
+      "run": "before-release-1",
+      "side": "before",
+      "level": 2,
+      "framesDeclared": 318,
+      "frameSamples": 318,
+      "sampledSeconds": 6.77949090385437,
+      "routeWallSeconds": 6.945821285247803,
+      "intervalTimeCoveragePercent": 97.60531728988333,
+      "unrepresentedWallSeconds": 0.1663303813934327,
+      "reportedFps": 46.90618896484375,
+      "recomputedSampleFps": 46.90617695485162,
+      "taps": 3
+    },
+    {
+      "run": "before-release-1",
+      "side": "before",
+      "level": 7,
+      "framesDeclared": 617,
+      "frameSamples": 617,
+      "sampledSeconds": 20.763160375595092,
+      "routeWallSeconds": 21.122875213623047,
+      "intervalTimeCoveragePercent": 98.29703658053162,
+      "unrepresentedWallSeconds": 0.3597148380279549,
+      "reportedFps": 29.716079711914062,
+      "recomputedSampleFps": 29.7160927738736,
+      "taps": 6
+    },
+    {
+      "run": "before-release-1",
+      "side": "before",
+      "level": 23,
+      "framesDeclared": 359,
+      "frameSamples": 359,
+      "sampledSeconds": 12.121267541885375,
+      "routeWallSeconds": 12.41799545288086,
+      "intervalTimeCoveragePercent": 97.61050072758204,
+      "unrepresentedWallSeconds": 0.2967279109954841,
+      "reportedFps": 29.617355346679688,
+      "recomputedSampleFps": 29.617364583321468,
+      "taps": 5
+    },
+    {
+      "run": "before-release-1",
+      "side": "before",
+      "level": 53,
+      "framesDeclared": 812,
+      "frameSamples": 812,
+      "sampledSeconds": 29.780584615707397,
+      "routeWallSeconds": 30.79637908935547,
+      "intervalTimeCoveragePercent": 96.70157822547661,
+      "unrepresentedWallSeconds": 1.0157944736480715,
+      "reportedFps": 27.266084671020508,
+      "recomputedSampleFps": 27.266086629196685,
+      "taps": 13
+    },
+    {
+      "run": "before-release-1",
+      "side": "before",
+      "level": 65,
+      "framesDeclared": 2007,
+      "frameSamples": 2007,
+      "sampledSeconds": 69.23202678871155,
+      "routeWallSeconds": 71.45173645019531,
+      "intervalTimeCoveragePercent": 96.89341397177802,
+      "unrepresentedWallSeconds": 2.219709661483762,
+      "reportedFps": 28.98946762084961,
+      "recomputedSampleFps": 28.989473414163374,
+      "taps": 34
+    },
+    {
+      "run": "after-release-1",
+      "side": "after",
+      "level": 2,
+      "framesDeclared": 314,
+      "frameSamples": 314,
+      "sampledSeconds": 6.812098537445069,
+      "routeWallSeconds": 6.929543495178223,
+      "intervalTimeCoveragePercent": 98.3051559195079,
+      "unrepresentedWallSeconds": 0.117444957733154,
+      "reportedFps": 46.094444274902344,
+      "recomputedSampleFps": 46.09445947882136,
+      "taps": 3
+    },
+    {
+      "run": "after-release-1",
+      "side": "after",
+      "level": 7,
+      "framesDeclared": 609,
+      "frameSamples": 609,
+      "sampledSeconds": 20.61609872817993,
+      "routeWallSeconds": 21.051189422607422,
+      "intervalTimeCoveragePercent": 97.93317761912192,
+      "unrepresentedWallSeconds": 0.4350906944274904,
+      "reportedFps": 29.54001235961914,
+      "recomputedSampleFps": 29.540021515688814,
+      "taps": 6
+    },
+    {
+      "run": "after-release-1",
+      "side": "after",
+      "level": 23,
+      "framesDeclared": 364,
+      "frameSamples": 364,
+      "sampledSeconds": 12.1375534324646,
+      "routeWallSeconds": 12.47467041015625,
+      "intervalTimeCoveragePercent": 97.29758809966485,
+      "unrepresentedWallSeconds": 0.3371169776916503,
+      "reportedFps": 29.98956871032715,
+      "recomputedSampleFps": 29.989569316860894,
+      "taps": 5
+    },
+    {
+      "run": "after-release-1",
+      "side": "after",
+      "level": 53,
+      "framesDeclared": 846,
+      "frameSamples": 846,
+      "sampledSeconds": 30.793286344528198,
+      "routeWallSeconds": 31.639320373535156,
+      "intervalTimeCoveragePercent": 97.32600441786155,
+      "unrepresentedWallSeconds": 0.8460340290069581,
+      "reportedFps": 27.4735107421875,
+      "recomputedSampleFps": 27.473521030999983,
+      "taps": 13
+    },
+    {
+      "run": "after-release-1",
+      "side": "after",
+      "level": 65,
+      "framesDeclared": 2063,
+      "frameSamples": 2063,
+      "sampledSeconds": 71.3720321559906,
+      "routeWallSeconds": 73.50067138671875,
+      "intervalTimeCoveragePercent": 97.10391865738414,
+      "unrepresentedWallSeconds": 2.1286392307281545,
+      "reportedFps": 28.904842376708984,
+      "recomputedSampleFps": 28.904879652173985,
+      "taps": 34
+    },
+    {
+      "run": "after-release-2",
+      "side": "after",
+      "level": 2,
+      "framesDeclared": 306,
+      "frameSamples": 306,
+      "sampledSeconds": 6.7957406368255615,
+      "routeWallSeconds": 6.991851329803467,
+      "intervalTimeCoveragePercent": 97.19515356194769,
+      "unrepresentedWallSeconds": 0.1961106929779053,
+      "reportedFps": 45.02820587158203,
+      "recomputedSampleFps": 45.02820462891286,
+      "taps": 3
+    },
+    {
+      "run": "after-release-2",
+      "side": "after",
+      "level": 7,
+      "framesDeclared": 621,
+      "frameSamples": 621,
+      "sampledSeconds": 20.861013357162477,
+      "routeWallSeconds": 21.23794937133789,
+      "intervalTimeCoveragePercent": 98.22517698114436,
+      "unrepresentedWallSeconds": 0.37693601417541345,
+      "reportedFps": 29.768451690673828,
+      "recomputedSampleFps": 29.768448414649242,
+      "taps": 6
+    },
+    {
+      "run": "after-release-2",
+      "side": "after",
+      "level": 23,
+      "framesDeclared": 335,
+      "frameSamples": 335,
+      "sampledSeconds": 11.25558113861084,
+      "routeWallSeconds": 11.629653930664062,
+      "intervalTimeCoveragePercent": 96.78345723541351,
+      "unrepresentedWallSeconds": 0.37407279205322297,
+      "reportedFps": 29.763004302978516,
+      "recomputedSampleFps": 29.76301231136126,
+      "taps": 5
+    },
+    {
+      "run": "after-release-2",
+      "side": "after",
+      "level": 53,
+      "framesDeclared": 814,
+      "frameSamples": 814,
+      "sampledSeconds": 29.600855590820313,
+      "routeWallSeconds": 30.641616821289062,
+      "intervalTimeCoveragePercent": 96.60343892249949,
+      "unrepresentedWallSeconds": 1.0407612304687497,
+      "reportedFps": 27.499229431152344,
+      "recomputedSampleFps": 27.499205132855487,
+      "taps": 13
+    },
+    {
+      "run": "after-release-2",
+      "side": "after",
+      "level": 65,
+      "framesDeclared": 2059,
+      "frameSamples": 2059,
+      "sampledSeconds": 71.257940782547,
+      "routeWallSeconds": 73.47325134277344,
+      "intervalTimeCoveragePercent": 96.98487474048018,
+      "unrepresentedWallSeconds": 2.215310560226442,
+      "reportedFps": 28.89502716064453,
+      "recomputedSampleFps": 28.89502527561539,
+      "taps": 33
+    },
+    {
+      "run": "before-release-2",
+      "side": "before",
+      "level": 2,
+      "framesDeclared": 315,
+      "frameSamples": 315,
+      "sampledSeconds": 6.7630929889678955,
+      "routeWallSeconds": 6.902688503265381,
+      "intervalTimeCoveragePercent": 97.97766458342356,
+      "unrepresentedWallSeconds": 0.1395955142974854,
+      "reportedFps": 46.576316833496094,
+      "recomputedSampleFps": 46.5763224775757,
+      "taps": 3
+    },
+    {
+      "run": "before-release-2",
+      "side": "before",
+      "level": 7,
+      "framesDeclared": 613,
+      "frameSamples": 613,
+      "sampledSeconds": 20.681590272903442,
+      "routeWallSeconds": 21.06252098083496,
+      "intervalTimeCoveragePercent": 98.19142870752208,
+      "unrepresentedWallSeconds": 0.38093070793151895,
+      "reportedFps": 29.6398983001709,
+      "recomputedSampleFps": 29.639887064349153,
+      "taps": 6
+    },
+    {
+      "run": "before-release-2",
+      "side": "before",
+      "level": 23,
+      "framesDeclared": 362,
+      "frameSamples": 362,
+      "sampledSeconds": 12.202940795898437,
+      "routeWallSeconds": 12.523822784423828,
+      "intervalTimeCoveragePercent": 97.43782713913455,
+      "unrepresentedWallSeconds": 0.3208819885253913,
+      "reportedFps": 29.66498374938965,
+      "recomputedSampleFps": 29.66498043829507,
+      "taps": 5
+    },
+    {
+      "run": "before-release-2",
+      "side": "before",
+      "level": 53,
+      "framesDeclared": 823,
+      "frameSamples": 823,
+      "sampledSeconds": 30.35233539390564,
+      "routeWallSeconds": 31.41071319580078,
+      "intervalTimeCoveragePercent": 96.63051967238798,
+      "unrepresentedWallSeconds": 1.0583778018951406,
+      "reportedFps": 27.1148738861084,
+      "recomputedSampleFps": 27.11488224280916,
+      "taps": 13
+    },
+    {
+      "run": "before-release-2",
+      "side": "before",
+      "level": 65,
+      "framesDeclared": 2008,
+      "frameSamples": 2008,
+      "sampledSeconds": 70.24450020980835,
+      "routeWallSeconds": 72.4255599975586,
+      "intervalTimeCoveragePercent": 96.98854963934863,
+      "unrepresentedWallSeconds": 2.181059787750243,
+      "reportedFps": 28.58590316772461,
+      "recomputedSampleFps": 28.585867847339596,
+      "taps": 33
+    },
+    {
+      "run": "before-release-3",
+      "side": "before",
+      "level": 2,
+      "framesDeclared": 315,
+      "frameSamples": 315,
+      "sampledSeconds": 6.763269458770752,
+      "routeWallSeconds": 6.915950775146484,
+      "intervalTimeCoveragePercent": 97.79233078227774,
+      "unrepresentedWallSeconds": 0.15268131637573212,
+      "reportedFps": 46.57509231567383,
+      "recomputedSampleFps": 46.575107190428625,
+      "taps": 3
+    },
+    {
+      "run": "before-release-3",
+      "side": "before",
+      "level": 7,
+      "framesDeclared": 615,
+      "frameSamples": 615,
+      "sampledSeconds": 20.632230350494385,
+      "routeWallSeconds": 20.985008239746094,
+      "intervalTimeCoveragePercent": 98.31890516686319,
+      "unrepresentedWallSeconds": 0.3527778892517084,
+      "reportedFps": 29.807714462280273,
+      "recomputedSampleFps": 29.807732346554744,
+      "taps": 6
+    },
+    {
+      "run": "before-release-3",
+      "side": "before",
+      "level": 23,
+      "framesDeclared": 333,
+      "frameSamples": 333,
+      "sampledSeconds": 11.206647789001465,
+      "routeWallSeconds": 11.534477233886719,
+      "intervalTimeCoveragePercent": 97.15783005820033,
+      "unrepresentedWallSeconds": 0.32782944488525345,
+      "reportedFps": 29.71452522277832,
+      "recomputedSampleFps": 29.714505735320426,
+      "taps": 5
+    },
+    {
+      "run": "before-release-3",
+      "side": "before",
+      "level": 53,
+      "framesDeclared": 809,
+      "frameSamples": 809,
+      "sampledSeconds": 29.84574971008301,
+      "routeWallSeconds": 30.883270263671875,
+      "intervalTimeCoveragePercent": 96.6405094255536,
+      "unrepresentedWallSeconds": 1.037520553588866,
+      "reportedFps": 27.106046676635742,
+      "recomputedSampleFps": 27.10603713622545,
+      "taps": 13
+    },
+    {
+      "run": "before-release-3",
+      "side": "before",
+      "level": 65,
+      "framesDeclared": 2045,
+      "frameSamples": 2045,
+      "sampledSeconds": 70.91452740478516,
+      "routeWallSeconds": 73.131591796875,
+      "intervalTimeCoveragePercent": 96.96839035276601,
+      "unrepresentedWallSeconds": 2.2170643920898385,
+      "reportedFps": 28.837587356567383,
+      "recomputedSampleFps": 28.83753265853405,
+      "taps": 33
+    },
+    {
+      "run": "after-release-3",
+      "side": "after",
+      "level": 2,
+      "framesDeclared": 311,
+      "frameSamples": 311,
+      "sampledSeconds": 6.795740020751953,
+      "routeWallSeconds": 6.941801071166992,
+      "intervalTimeCoveragePercent": 97.89591996489632,
+      "unrepresentedWallSeconds": 0.1460610504150388,
+      "reportedFps": 45.76396179199219,
+      "recomputedSampleFps": 45.76396375528027,
+      "taps": 3
+    },
+    {
+      "run": "after-release-3",
+      "side": "after",
+      "level": 7,
+      "framesDeclared": 623,
+      "frameSamples": 623,
+      "sampledSeconds": 20.942798780441283,
+      "routeWallSeconds": 21.2790470123291,
+      "intervalTimeCoveragePercent": 98.41981536253482,
+      "unrepresentedWallSeconds": 0.3362482318878186,
+      "reportedFps": 29.747709274291992,
+      "recomputedSampleFps": 29.747695450420252,
+      "taps": 6
+    },
+    {
+      "run": "after-release-3",
+      "side": "after",
+      "level": 23,
+      "framesDeclared": 337,
+      "frameSamples": 337,
+      "sampledSeconds": 11.288196670532226,
+      "routeWallSeconds": 11.706954956054688,
+      "intervalTimeCoveragePercent": 96.4229956714245,
+      "unrepresentedWallSeconds": 0.4187582855224612,
+      "reportedFps": 29.85418128967285,
+      "recomputedSampleFps": 29.85419282069532,
+      "taps": 5
+    },
+    {
+      "run": "after-release-3",
+      "side": "after",
+      "level": 53,
+      "framesDeclared": 820,
+      "frameSamples": 820,
+      "sampledSeconds": 30.00915974998474,
+      "routeWallSeconds": 30.85503387451172,
+      "intervalTimeCoveragePercent": 97.25855389442393,
+      "unrepresentedWallSeconds": 0.8458741245269792,
+      "reportedFps": 27.32499122619629,
+      "recomputedSampleFps": 27.32499033067452,
+      "taps": 13
+    },
+    {
+      "run": "after-release-3",
+      "side": "after",
+      "level": 65,
+      "framesDeclared": 2060,
+      "frameSamples": 2060,
+      "sampledSeconds": 71.78032772064209,
+      "routeWallSeconds": 73.93511962890625,
+      "intervalTimeCoveragePercent": 97.08556377662002,
+      "unrepresentedWallSeconds": 2.1547919082641585,
+      "reportedFps": 28.698698043823242,
+      "recomputedSampleFps": 28.698670867277183,
+      "taps": 34
+    }
+  ],
+  "coveragePercent": {
+    "values": [
+      97.60531728988333,
+      98.29703658053162,
+      97.61050072758204,
+      96.70157822547661,
+      96.89341397177802,
+      98.3051559195079,
+      97.93317761912192,
+      97.29758809966485,
+      97.32600441786155,
+      97.10391865738414,
+      97.19515356194769,
+      98.22517698114436,
+      96.78345723541351,
+      96.60343892249949,
+      96.98487474048018,
+      97.97766458342356,
+      98.19142870752208,
+      97.43782713913455,
+      96.63051967238798,
+      96.98854963934863,
+      97.79233078227774,
+      98.31890516686319,
+      97.15783005820033,
+      96.6405094255536,
+      96.96839035276601,
+      97.89591996489632,
+      98.41981536253482,
+      96.4229956714245,
+      97.25855389442393,
+      97.08556377662002
+    ],
+    "median": 97.27807099704438,
+    "min": 96.4229956714245,
+    "max": 98.41981536253482
+  },
+  "allWholeRunWithinBand": false,
+  "priorCalibrationStops": [
+    {
+      "source": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/matched-release-pipeline/retained-final-37/state.json",
+      "measuredRuns": 0,
+      "updatedUtc": "2026-10-29T08:46:32.861846+00:00",
+      "reason": "Repeated common warmups remained36C/status1, with batteryfull. No measured before/after run started. Use a pre-measurement common36\u201338C band with Androidstatus1, and report actual per-run ranges; no exactthermalmatchclaim."
+    },
+    {
+      "source": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/matched-release-pipeline/retained-final/state.json",
+      "measuredRuns": 0,
+      "updatedUtc": "2026-10-29T08:42:57.515979+00:00",
+      "reason": "Battery is full; two identical warmups remained36C/status1. No measured route started. Recalibrate common start gate37C/status1 before collecting either side; no outcome selection."
+    }
+  ],
+  "releaseCpu": {
+    "generatedUtc": "2026-10-29T09:24:37.424231+00:00",
+    "root": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29",
+    "expectedRepeats": 3,
+    "interpretation": "Release benchmark APK author replays only. Primary groups require complete passing screenshot-free runs using the common integrity checks. CPU timers are Stopwatch wall durations per harness sampled frame, not native CPU busy time. Parent/child timers can overlap; never add skin/Step/graph/route columns. maxGraphMs is the maximum per-frame accumulated graph timer, not the longest individual graph call. peakAllocatedBytes is the sampled peak of Unity Profiler.GetTotalAllocatedMemoryLong, not allocation traffic, RSS or PSS. gcCollections is the route-wide GC.CollectionCount(0) difference, not bytes. Medians/ranges summarize runs; no invented missing/zero samples.",
+    "runs": [
+      {
+        "name": "after-release-1",
+        "side": "after",
+        "metadata": {
+          "device": "OPPO CPH2591",
+          "unity": "6000.3.19f1",
+          "gpu": "Mali-G52 MC2",
+          "api": "Vulkan",
+          "width": 720,
+          "height": 1612,
+          "graphicProfile": "Current",
+          "buildGuid": "63a40fbb10a74a47a9b606b67cd721b4",
+          "utc": "2026-10-29T08:57:28.7308050Z",
+          "execution": "Normal author replay with screenshot capture disabled; not novice evidence.",
+          "declaredBuildKind": "release"
+        },
+        "reportSource": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/after-release-1/proof/20261029T085728Z/run.json",
+        "reportComplete": true,
+        "evidence": {
+          "imageFileCount": 0,
+          "imageExamples": [],
+          "screenshotsDisabledDeclared": true,
+          "androidDebuggable": false,
+          "installedLastUpdateTime": "2026-10-29 15:55:23",
+          "state": "complete",
+          "releaseRequested": true,
+          "saveProtection": "Harness source disables VenomCampaignSave.PersistenceEnabled before scene loading; not a per-run save checksum verification",
+          "saveProtectionSource": "Assets/_Game/Venom/Runtime/ChapterProof/COgheViewProofPlayer.cs:54"
+        },
+        "eligibleForPrimary": true,
+        "exclusionReasons": [],
+        "warnings": []
+      },
+      {
+        "name": "after-release-2",
+        "side": "after",
+        "metadata": {
+          "device": "OPPO CPH2591",
+          "unity": "6000.3.19f1",
+          "gpu": "Mali-G52 MC2",
+          "api": "Vulkan",
+          "width": 720,
+          "height": 1612,
+          "graphicProfile": "Current",
+          "buildGuid": "63a40fbb10a74a47a9b606b67cd721b4",
+          "utc": "2026-10-29T09:02:32.6339580Z",
+          "execution": "Normal author replay with screenshot capture disabled; not novice evidence.",
+          "declaredBuildKind": "release"
+        },
+        "reportSource": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/after-release-2/proof/20261029T090232Z/run.json",
+        "reportComplete": true,
+        "evidence": {
+          "imageFileCount": 0,
+          "imageExamples": [],
+          "screenshotsDisabledDeclared": true,
+          "androidDebuggable": false,
+          "installedLastUpdateTime": "2026-10-29 15:55:23",
+          "state": "complete",
+          "releaseRequested": true,
+          "saveProtection": "Harness source disables VenomCampaignSave.PersistenceEnabled before scene loading; not a per-run save checksum verification",
+          "saveProtectionSource": "Assets/_Game/Venom/Runtime/ChapterProof/COgheViewProofPlayer.cs:54"
+        },
+        "eligibleForPrimary": true,
+        "exclusionReasons": [],
+        "warnings": []
+      },
+      {
+        "name": "after-release-3",
+        "side": "after",
+        "metadata": {
+          "device": "OPPO CPH2591",
+          "unity": "6000.3.19f1",
+          "gpu": "Mali-G52 MC2",
+          "api": "Vulkan",
+          "width": 720,
+          "height": 1612,
+          "graphicProfile": "Current",
+          "buildGuid": "63a40fbb10a74a47a9b606b67cd721b4",
+          "utc": "2026-10-29T09:19:14.9501880Z",
+          "execution": "Normal author replay with screenshot capture disabled; not novice evidence.",
+          "declaredBuildKind": "release"
+        },
+        "reportSource": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/after-release-3/proof/20261029T091914Z/run.json",
+        "reportComplete": true,
+        "evidence": {
+          "imageFileCount": 0,
+          "imageExamples": [],
+          "screenshotsDisabledDeclared": true,
+          "androidDebuggable": false,
+          "installedLastUpdateTime": "2026-10-29 16:16:53",
+          "state": "complete",
+          "releaseRequested": true,
+          "saveProtection": "Harness source disables VenomCampaignSave.PersistenceEnabled before scene loading; not a per-run save checksum verification",
+          "saveProtectionSource": "Assets/_Game/Venom/Runtime/ChapterProof/COgheViewProofPlayer.cs:54"
+        },
+        "eligibleForPrimary": true,
+        "exclusionReasons": [],
+        "warnings": []
+      },
+      {
+        "name": "before-release-1",
+        "side": "before",
+        "metadata": {
+          "device": "OPPO CPH2591",
+          "unity": "6000.3.19f1",
+          "gpu": "Mali-G52 MC2",
+          "api": "Vulkan",
+          "width": 720,
+          "height": 1612,
+          "graphicProfile": "Current",
+          "buildGuid": "38a7643f0bc84fb7964db588724731e2",
+          "utc": "2026-10-29T08:52:06.7394590Z",
+          "execution": "Normal author replay with screenshot capture disabled; not novice evidence.",
+          "declaredBuildKind": "release"
+        },
+        "reportSource": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/before-release-1/proof/20261029T085206Z/run.json",
+        "reportComplete": true,
+        "evidence": {
+          "imageFileCount": 0,
+          "imageExamples": [],
+          "screenshotsDisabledDeclared": true,
+          "androidDebuggable": false,
+          "installedLastUpdateTime": "2026-10-29 15:50:01",
+          "state": "complete",
+          "releaseRequested": true,
+          "saveProtection": "Harness source disables VenomCampaignSave.PersistenceEnabled before scene loading; not a per-run save checksum verification",
+          "saveProtectionSource": "Assets/_Game/Venom/Runtime/ChapterProof/COgheViewProofPlayer.cs:54"
+        },
+        "eligibleForPrimary": true,
+        "exclusionReasons": [],
+        "warnings": []
+      },
+      {
+        "name": "before-release-2",
+        "side": "before",
+        "metadata": {
+          "device": "OPPO CPH2591",
+          "unity": "6000.3.19f1",
+          "gpu": "Mali-G52 MC2",
+          "api": "Vulkan",
+          "width": 720,
+          "height": 1612,
+          "graphicProfile": "Current",
+          "buildGuid": "38a7643f0bc84fb7964db588724731e2",
+          "utc": "2026-10-29T09:08:01.1678920Z",
+          "execution": "Normal author replay with screenshot capture disabled; not novice evidence.",
+          "declaredBuildKind": "release"
+        },
+        "reportSource": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/before-release-2/proof/20261029T090801Z/run.json",
+        "reportComplete": true,
+        "evidence": {
+          "imageFileCount": 0,
+          "imageExamples": [],
+          "screenshotsDisabledDeclared": true,
+          "androidDebuggable": false,
+          "installedLastUpdateTime": "2026-10-29 16:05:54",
+          "state": "complete",
+          "releaseRequested": true,
+          "saveProtection": "Harness source disables VenomCampaignSave.PersistenceEnabled before scene loading; not a per-run save checksum verification",
+          "saveProtectionSource": "Assets/_Game/Venom/Runtime/ChapterProof/COgheViewProofPlayer.cs:54"
+        },
+        "eligibleForPrimary": true,
+        "exclusionReasons": [],
+        "warnings": []
+      },
+      {
+        "name": "before-release-3",
+        "side": "before",
+        "metadata": {
+          "device": "OPPO CPH2591",
+          "unity": "6000.3.19f1",
+          "gpu": "Mali-G52 MC2",
+          "api": "Vulkan",
+          "width": 720,
+          "height": 1612,
+          "graphicProfile": "Current",
+          "buildGuid": "38a7643f0bc84fb7964db588724731e2",
+          "utc": "2026-10-29T09:13:35.6327360Z",
+          "execution": "Normal author replay with screenshot capture disabled; not novice evidence.",
+          "declaredBuildKind": "release"
+        },
+        "reportSource": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/before-release-3/proof/20261029T091335Z/run.json",
+        "reportComplete": true,
+        "evidence": {
+          "imageFileCount": 0,
+          "imageExamples": [],
+          "screenshotsDisabledDeclared": true,
+          "androidDebuggable": false,
+          "installedLastUpdateTime": "2026-10-29 16:05:54",
+          "state": "complete",
+          "releaseRequested": true,
+          "saveProtection": "Harness source disables VenomCampaignSave.PersistenceEnabled before scene loading; not a per-run save checksum verification",
+          "saveProtectionSource": "Assets/_Game/Venom/Runtime/ChapterProof/COgheViewProofPlayer.cs:54"
+        },
+        "eligibleForPrimary": true,
+        "exclusionReasons": [],
+        "warnings": []
+      }
+    ],
+    "records": [
+      {
+        "run": "after-release-1",
+        "side": "after",
+        "level": 2,
+        "eligible": true,
+        "source": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/after-release-1/proof/20261029T085728Z/run.json",
+        "buildGuid": "63a40fbb10a74a47a9b606b67cd721b4",
+        "passed": true,
+        "batteryBeforeC": 37.0,
+        "batteryAfterC": 37.0,
+        "thermalStatuses": [
+          1
+        ],
+        "fps": 46.094444274902344,
+        "p50Ms": 16.33710289001465,
+        "p95Ms": 32.680519104003906,
+        "p99Ms": 32.696266174316406,
+        "maxMs": 65.35260009765625,
+        "skinMs": 3.2695605095541405,
+        "gameStepMs": 1.2731372611464975,
+        "graphMs": 0.0,
+        "routeMs": 0.011036624203821656,
+        "maxGraphMs": 0.0,
+        "peakAllocatedBytes": 98857942.0,
+        "gcCollections": 2.0,
+        "frames": 314.0,
+        "seconds": 6.929543495178223,
+        "taps": 3.0
+      },
+      {
+        "run": "after-release-1",
+        "side": "after",
+        "level": 7,
+        "eligible": true,
+        "source": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/after-release-1/proof/20261029T085728Z/run.json",
+        "buildGuid": "63a40fbb10a74a47a9b606b67cd721b4",
+        "passed": true,
+        "batteryBeforeC": 37.0,
+        "batteryAfterC": 37.0,
+        "thermalStatuses": [
+          1
+        ],
+        "fps": 29.54001235961914,
+        "p50Ms": 32.669857025146484,
+        "p95Ms": 49.00860595703125,
+        "p99Ms": 49.0764045715332,
+        "maxMs": 114.35480499267578,
+        "skinMs": 5.802345812807892,
+        "gameStepMs": 4.498800656814446,
+        "graphMs": 0.17584991789819376,
+        "routeMs": 0.03832610837438424,
+        "maxGraphMs": 32.3187,
+        "peakAllocatedBytes": 99983190.0,
+        "gcCollections": 5.0,
+        "frames": 609.0,
+        "seconds": 21.051189422607422,
+        "taps": 6.0
+      },
+      {
+        "run": "after-release-1",
+        "side": "after",
+        "level": 23,
+        "eligible": true,
+        "source": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/after-release-1/proof/20261029T085728Z/run.json",
+        "buildGuid": "63a40fbb10a74a47a9b606b67cd721b4",
+        "passed": true,
+        "batteryBeforeC": 37.0,
+        "batteryAfterC": 37.0,
+        "thermalStatuses": [
+          1
+        ],
+        "fps": 29.98956871032715,
+        "p50Ms": 32.670501708984375,
+        "p95Ms": 49.006526947021484,
+        "p99Ms": 65.33065032958984,
+        "maxMs": 81.67282104492188,
+        "skinMs": 8.887754945054953,
+        "gameStepMs": 4.3310337912087915,
+        "graphMs": 0.2968711538461538,
+        "routeMs": 0.02141785714285714,
+        "maxGraphMs": 46.581199999999995,
+        "peakAllocatedBytes": 100431442.0,
+        "gcCollections": 3.0,
+        "frames": 364.0,
+        "seconds": 12.47467041015625,
+        "taps": 5.0
+      },
+      {
+        "run": "after-release-1",
+        "side": "after",
+        "level": 53,
+        "eligible": true,
+        "source": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/after-release-1/proof/20261029T085728Z/run.json",
+        "buildGuid": "63a40fbb10a74a47a9b606b67cd721b4",
+        "passed": true,
+        "batteryBeforeC": 37.0,
+        "batteryAfterC": 37.0,
+        "thermalStatuses": [
+          1
+        ],
+        "fps": 27.4735107421875,
+        "p50Ms": 32.6695671081543,
+        "p95Ms": 49.01967239379883,
+        "p99Ms": 196.07882690429688,
+        "maxMs": 228.6775665283203,
+        "skinMs": 5.84829468085106,
+        "gameStepMs": 8.028396335697403,
+        "graphMs": 2.1597255319148934,
+        "routeMs": 0.01755118203309693,
+        "maxGraphMs": 187.8671,
+        "peakAllocatedBytes": 103118865.0,
+        "gcCollections": 8.0,
+        "frames": 846.0,
+        "seconds": 31.639320373535156,
+        "taps": 13.0
+      },
+      {
+        "run": "after-release-1",
+        "side": "after",
+        "level": 65,
+        "eligible": true,
+        "source": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/after-release-1/proof/20261029T085728Z/run.json",
+        "buildGuid": "63a40fbb10a74a47a9b606b67cd721b4",
+        "passed": true,
+        "batteryBeforeC": 37.0,
+        "batteryAfterC": 37.0,
+        "thermalStatuses": [
+          1
+        ],
+        "fps": 28.904842376708984,
+        "p50Ms": 32.67033004760742,
+        "p95Ms": 49.01500701904297,
+        "p99Ms": 65.35189056396484,
+        "maxMs": 97.96256256103516,
+        "skinMs": 5.6600510906447,
+        "gameStepMs": 5.479820455647117,
+        "graphMs": 0.7301510421715947,
+        "routeMs": 0.019362481822588463,
+        "maxGraphMs": 47.8776,
+        "peakAllocatedBytes": 103207618.0,
+        "gcCollections": 20.0,
+        "frames": 2063.0,
+        "seconds": 73.50067138671875,
+        "taps": 34.0
+      },
+      {
+        "run": "after-release-2",
+        "side": "after",
+        "level": 2,
+        "eligible": true,
+        "source": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/after-release-2/proof/20261029T090232Z/run.json",
+        "buildGuid": "63a40fbb10a74a47a9b606b67cd721b4",
+        "passed": true,
+        "batteryBeforeC": 37.0,
+        "batteryAfterC": 37.0,
+        "thermalStatuses": [
+          1
+        ],
+        "fps": 45.02820587158203,
+        "p50Ms": 16.33756446838379,
+        "p95Ms": 32.68372344970703,
+        "p99Ms": 49.0024299621582,
+        "maxMs": 81.73404693603516,
+        "skinMs": 3.277018300653594,
+        "gameStepMs": 1.3112359477124185,
+        "graphMs": 0.0,
+        "routeMs": 0.00957156862745098,
+        "maxGraphMs": 0.0,
+        "peakAllocatedBytes": 98918258.0,
+        "gcCollections": 2.0,
+        "frames": 306.0,
+        "seconds": 6.991851329803467,
+        "taps": 3.0
+      },
+      {
+        "run": "after-release-2",
+        "side": "after",
+        "level": 7,
+        "eligible": true,
+        "source": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/after-release-2/proof/20261029T090232Z/run.json",
+        "buildGuid": "63a40fbb10a74a47a9b606b67cd721b4",
+        "passed": true,
+        "batteryBeforeC": 37.0,
+        "batteryAfterC": 37.0,
+        "thermalStatuses": [
+          1
+        ],
+        "fps": 29.768451690673828,
+        "p50Ms": 32.66999053955078,
+        "p95Ms": 49.008296966552734,
+        "p99Ms": 49.09156799316406,
+        "maxMs": 98.02518463134766,
+        "skinMs": 5.5761743961352686,
+        "gameStepMs": 4.346866988727854,
+        "graphMs": 0.19380048309178743,
+        "routeMs": 0.033520933977455716,
+        "maxGraphMs": 28.76,
+        "peakAllocatedBytes": 100051010.0,
+        "gcCollections": 5.0,
+        "frames": 621.0,
+        "seconds": 21.23794937133789,
+        "taps": 6.0
+      },
+      {
+        "run": "after-release-2",
+        "side": "after",
+        "level": 23,
+        "eligible": true,
+        "source": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/after-release-2/proof/20261029T090232Z/run.json",
+        "buildGuid": "63a40fbb10a74a47a9b606b67cd721b4",
+        "passed": true,
+        "batteryBeforeC": 37.0,
+        "batteryAfterC": 37.0,
+        "thermalStatuses": [
+          1
+        ],
+        "fps": 29.763004302978516,
+        "p50Ms": 32.66716384887695,
+        "p95Ms": 49.01057815551758,
+        "p99Ms": 65.32084655761719,
+        "maxMs": 65.46576690673828,
+        "skinMs": 9.143579402985077,
+        "gameStepMs": 4.4738364179104435,
+        "graphMs": 0.3519116417910448,
+        "routeMs": 0.01661582089552239,
+        "maxGraphMs": 48.3457,
+        "peakAllocatedBytes": 100456938.0,
+        "gcCollections": 2.0,
+        "frames": 335.0,
+        "seconds": 11.629653930664062,
+        "taps": 5.0
+      },
+      {
+        "run": "after-release-2",
+        "side": "after",
+        "level": 53,
+        "eligible": true,
+        "source": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/after-release-2/proof/20261029T090232Z/run.json",
+        "buildGuid": "63a40fbb10a74a47a9b606b67cd721b4",
+        "passed": true,
+        "batteryBeforeC": 37.0,
+        "batteryAfterC": 37.0,
+        "thermalStatuses": [
+          1
+        ],
+        "fps": 27.499229431152344,
+        "p50Ms": 32.670997619628906,
+        "p95Ms": 49.011409759521484,
+        "p99Ms": 212.3292236328125,
+        "maxMs": 228.8629608154297,
+        "skinMs": 5.9987054054054045,
+        "gameStepMs": 8.379055896805895,
+        "graphMs": 2.3565264127764127,
+        "routeMs": 0.028705773955773953,
+        "maxGraphMs": 199.0743,
+        "peakAllocatedBytes": 103006821.0,
+        "gcCollections": 7.0,
+        "frames": 814.0,
+        "seconds": 30.641616821289062,
+        "taps": 13.0
+      },
+      {
+        "run": "after-release-2",
+        "side": "after",
+        "level": 65,
+        "eligible": true,
+        "source": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/after-release-2/proof/20261029T090232Z/run.json",
+        "buildGuid": "63a40fbb10a74a47a9b606b67cd721b4",
+        "passed": true,
+        "batteryBeforeC": 37.0,
+        "batteryAfterC": 37.0,
+        "thermalStatuses": [
+          1
+        ],
+        "fps": 28.89502716064453,
+        "p50Ms": 32.670448303222656,
+        "p95Ms": 49.02484893798828,
+        "p99Ms": 65.34129333496094,
+        "maxMs": 114.37928009033203,
+        "skinMs": 5.629716318601258,
+        "gameStepMs": 5.544869936862564,
+        "graphMs": 0.7034998057309374,
+        "routeMs": 0.018744779018941234,
+        "maxGraphMs": 50.8797,
+        "peakAllocatedBytes": 103549602.0,
+        "gcCollections": 20.0,
+        "frames": 2059.0,
+        "seconds": 73.47325134277344,
+        "taps": 33.0
+      },
+      {
+        "run": "after-release-3",
+        "side": "after",
+        "level": 2,
+        "eligible": true,
+        "source": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/after-release-3/proof/20261029T091914Z/run.json",
+        "buildGuid": "63a40fbb10a74a47a9b606b67cd721b4",
+        "passed": true,
+        "batteryBeforeC": 38.0,
+        "batteryAfterC": 38.0,
+        "thermalStatuses": [
+          1,
+          2
+        ],
+        "fps": 45.76396179199219,
+        "p50Ms": 16.338420867919922,
+        "p95Ms": 32.69650650024414,
+        "p99Ms": 48.9542236328125,
+        "maxMs": 65.3277359008789,
+        "skinMs": 3.2108524115755626,
+        "gameStepMs": 1.236933440514469,
+        "graphMs": 0.0,
+        "routeMs": 0.009990353697749196,
+        "maxGraphMs": 0.0,
+        "peakAllocatedBytes": 98763662.0,
+        "gcCollections": 2.0,
+        "frames": 311.0,
+        "seconds": 6.941801071166992,
+        "taps": 3.0
+      },
+      {
+        "run": "after-release-3",
+        "side": "after",
+        "level": 7,
+        "eligible": true,
+        "source": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/after-release-3/proof/20261029T091914Z/run.json",
+        "buildGuid": "63a40fbb10a74a47a9b606b67cd721b4",
+        "passed": true,
+        "batteryBeforeC": 38.0,
+        "batteryAfterC": 38.0,
+        "thermalStatuses": [
+          1,
+          2
+        ],
+        "fps": 29.747709274291992,
+        "p50Ms": 32.66907501220703,
+        "p95Ms": 49.00715255737305,
+        "p99Ms": 49.06467819213867,
+        "maxMs": 98.11000061035156,
+        "skinMs": 5.45501894060995,
+        "gameStepMs": 4.410861797752806,
+        "graphMs": 0.1641027287319422,
+        "routeMs": 0.03349727126805779,
+        "maxGraphMs": 26.7887,
+        "peakAllocatedBytes": 99988530.0,
+        "gcCollections": 5.0,
+        "frames": 623.0,
+        "seconds": 21.2790470123291,
+        "taps": 6.0
+      },
+      {
+        "run": "after-release-3",
+        "side": "after",
+        "level": 23,
+        "eligible": true,
+        "source": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/after-release-3/proof/20261029T091914Z/run.json",
+        "buildGuid": "63a40fbb10a74a47a9b606b67cd721b4",
+        "passed": true,
+        "batteryBeforeC": 38.0,
+        "batteryAfterC": 38.0,
+        "thermalStatuses": [
+          1,
+          2
+        ],
+        "fps": 29.85418128967285,
+        "p50Ms": 32.67066192626953,
+        "p95Ms": 49.0074348449707,
+        "p99Ms": 49.08652877807617,
+        "maxMs": 65.33966827392578,
+        "skinMs": 8.92676557863501,
+        "gameStepMs": 4.383198219584571,
+        "graphMs": 0.31254362017804155,
+        "routeMs": 0.015992878338278935,
+        "maxGraphMs": 49.994200000000006,
+        "peakAllocatedBytes": 100414470.0,
+        "gcCollections": 2.0,
+        "frames": 337.0,
+        "seconds": 11.706954956054688,
+        "taps": 5.0
+      },
+      {
+        "run": "after-release-3",
+        "side": "after",
+        "level": 53,
+        "eligible": true,
+        "source": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/after-release-3/proof/20261029T091914Z/run.json",
+        "buildGuid": "63a40fbb10a74a47a9b606b67cd721b4",
+        "passed": true,
+        "batteryBeforeC": 38.0,
+        "batteryAfterC": 38.0,
+        "thermalStatuses": [
+          1,
+          2
+        ],
+        "fps": 27.32499122619629,
+        "p50Ms": 32.669437408447266,
+        "p95Ms": 49.027225494384766,
+        "p99Ms": 212.2720184326172,
+        "maxMs": 408.25750732421875,
+        "skinMs": 5.983859512195124,
+        "gameStepMs": 8.055022195121957,
+        "graphMs": 2.101500731707317,
+        "routeMs": 0.024045853658536582,
+        "maxGraphMs": 379.74559999999997,
+        "peakAllocatedBytes": 103083897.0,
+        "gcCollections": 7.0,
+        "frames": 820.0,
+        "seconds": 30.85503387451172,
+        "taps": 13.0
+      },
+      {
+        "run": "after-release-3",
+        "side": "after",
+        "level": 65,
+        "eligible": true,
+        "source": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/after-release-3/proof/20261029T091914Z/run.json",
+        "buildGuid": "63a40fbb10a74a47a9b606b67cd721b4",
+        "passed": true,
+        "batteryBeforeC": 38.0,
+        "batteryAfterC": 38.0,
+        "thermalStatuses": [
+          1,
+          2
+        ],
+        "fps": 28.698698043823242,
+        "p50Ms": 32.67094039916992,
+        "p95Ms": 49.01723861694336,
+        "p99Ms": 65.35431671142578,
+        "maxMs": 98.03993225097656,
+        "skinMs": 5.848700873786405,
+        "gameStepMs": 5.775464611650497,
+        "graphMs": 0.7691889805825243,
+        "routeMs": 0.019450728155339807,
+        "maxGraphMs": 53.8934,
+        "peakAllocatedBytes": 102636538.0,
+        "gcCollections": 20.0,
+        "frames": 2060.0,
+        "seconds": 73.93511962890625,
+        "taps": 34.0
+      },
+      {
+        "run": "before-release-1",
+        "side": "before",
+        "level": 2,
+        "eligible": true,
+        "source": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/before-release-1/proof/20261029T085206Z/run.json",
+        "buildGuid": "38a7643f0bc84fb7964db588724731e2",
+        "passed": true,
+        "batteryBeforeC": 36.0,
+        "batteryAfterC": 37.0,
+        "thermalStatuses": [
+          1
+        ],
+        "fps": 46.90618896484375,
+        "p50Ms": 16.33677101135254,
+        "p95Ms": 32.67876434326172,
+        "p99Ms": 32.70184326171875,
+        "maxMs": 81.67156982421875,
+        "skinMs": 3.49258144654088,
+        "gameStepMs": 1.195509748427673,
+        "graphMs": 0.0,
+        "routeMs": 0.014859748427672955,
+        "maxGraphMs": 0.0,
+        "peakAllocatedBytes": 98807022.0,
+        "gcCollections": 2.0,
+        "frames": 318.0,
+        "seconds": 6.945821285247803,
+        "taps": 3.0
+      },
+      {
+        "run": "before-release-1",
+        "side": "before",
+        "level": 7,
+        "eligible": true,
+        "source": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/before-release-1/proof/20261029T085206Z/run.json",
+        "buildGuid": "38a7643f0bc84fb7964db588724731e2",
+        "passed": true,
+        "batteryBeforeC": 36.0,
+        "batteryAfterC": 37.0,
+        "thermalStatuses": [
+          1
+        ],
+        "fps": 29.716079711914062,
+        "p50Ms": 32.668521881103516,
+        "p95Ms": 49.00709915161133,
+        "p99Ms": 65.33780670166016,
+        "maxMs": 81.73622131347656,
+        "skinMs": 5.959977147487845,
+        "gameStepMs": 4.52135640194489,
+        "graphMs": 0.2157842787682334,
+        "routeMs": 0.022855915721231766,
+        "maxGraphMs": 38.0993,
+        "peakAllocatedBytes": 99769302.0,
+        "gcCollections": 5.0,
+        "frames": 617.0,
+        "seconds": 21.122875213623047,
+        "taps": 6.0
+      },
+      {
+        "run": "before-release-1",
+        "side": "before",
+        "level": 23,
+        "eligible": true,
+        "source": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/before-release-1/proof/20261029T085206Z/run.json",
+        "buildGuid": "38a7643f0bc84fb7964db588724731e2",
+        "passed": true,
+        "batteryBeforeC": 36.0,
+        "batteryAfterC": 37.0,
+        "thermalStatuses": [
+          1
+        ],
+        "fps": 29.617355346679688,
+        "p50Ms": 32.669795989990234,
+        "p95Ms": 49.011016845703125,
+        "p99Ms": 65.33525848388672,
+        "maxMs": 81.76203155517578,
+        "skinMs": 10.790295543175487,
+        "gameStepMs": 4.044262952646237,
+        "graphMs": 0.25904150417827293,
+        "routeMs": 0.011520891364902504,
+        "maxGraphMs": 40.770799999999994,
+        "peakAllocatedBytes": 100429454.0,
+        "gcCollections": 4.0,
+        "frames": 359.0,
+        "seconds": 12.41799545288086,
+        "taps": 5.0
+      },
+      {
+        "run": "before-release-1",
+        "side": "before",
+        "level": 53,
+        "eligible": true,
+        "source": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/before-release-1/proof/20261029T085206Z/run.json",
+        "buildGuid": "38a7643f0bc84fb7964db588724731e2",
+        "passed": true,
+        "batteryBeforeC": 36.0,
+        "batteryAfterC": 37.0,
+        "thermalStatuses": [
+          1
+        ],
+        "fps": 27.266084671020508,
+        "p50Ms": 32.67063522338867,
+        "p95Ms": 49.01860427856445,
+        "p99Ms": 212.3573760986328,
+        "maxMs": 228.74253845214844,
+        "skinMs": 7.3317983990147795,
+        "gameStepMs": 8.19340073891625,
+        "graphMs": 2.4491050492610835,
+        "routeMs": 0.021763793103448278,
+        "maxGraphMs": 184.9046,
+        "peakAllocatedBytes": 103522849.0,
+        "gcCollections": 9.0,
+        "frames": 812.0,
+        "seconds": 30.79637908935547,
+        "taps": 13.0
+      },
+      {
+        "run": "before-release-1",
+        "side": "before",
+        "level": 65,
+        "eligible": true,
+        "source": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/before-release-1/proof/20261029T085206Z/run.json",
+        "buildGuid": "38a7643f0bc84fb7964db588724731e2",
+        "passed": true,
+        "batteryBeforeC": 36.0,
+        "batteryAfterC": 37.0,
+        "thermalStatuses": [
+          1
+        ],
+        "fps": 28.98946762084961,
+        "p50Ms": 32.67000961303711,
+        "p95Ms": 49.01685333251953,
+        "p99Ms": 65.36624908447266,
+        "maxMs": 98.03512573242188,
+        "skinMs": 5.975853064275042,
+        "gameStepMs": 5.368130293971111,
+        "graphMs": 0.6949794220229197,
+        "routeMs": 0.01829357249626308,
+        "maxGraphMs": 46.1215,
+        "peakAllocatedBytes": 103085986.0,
+        "gcCollections": 23.0,
+        "frames": 2007.0,
+        "seconds": 71.45173645019531,
+        "taps": 34.0
+      },
+      {
+        "run": "before-release-2",
+        "side": "before",
+        "level": 2,
+        "eligible": true,
+        "source": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/before-release-2/proof/20261029T090801Z/run.json",
+        "buildGuid": "38a7643f0bc84fb7964db588724731e2",
+        "passed": true,
+        "batteryBeforeC": 37.0,
+        "batteryAfterC": 38.0,
+        "thermalStatuses": [
+          1,
+          2
+        ],
+        "fps": 46.576316833496094,
+        "p50Ms": 16.338483810424805,
+        "p95Ms": 32.68984603881836,
+        "p99Ms": 32.89478302001953,
+        "maxMs": 65.35371398925781,
+        "skinMs": 3.466816190476192,
+        "gameStepMs": 1.2367952380952383,
+        "graphMs": 0.0,
+        "routeMs": 0.011234920634920636,
+        "maxGraphMs": 0.0,
+        "peakAllocatedBytes": 98778922.0,
+        "gcCollections": 2.0,
+        "frames": 315.0,
+        "seconds": 6.902688503265381,
+        "taps": 3.0
+      },
+      {
+        "run": "before-release-2",
+        "side": "before",
+        "level": 7,
+        "eligible": true,
+        "source": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/before-release-2/proof/20261029T090801Z/run.json",
+        "buildGuid": "38a7643f0bc84fb7964db588724731e2",
+        "passed": true,
+        "batteryBeforeC": 37.0,
+        "batteryAfterC": 38.0,
+        "thermalStatuses": [
+          1,
+          2
+        ],
+        "fps": 29.6398983001709,
+        "p50Ms": 32.66978073120117,
+        "p95Ms": 49.0088996887207,
+        "p99Ms": 49.10465621948242,
+        "maxMs": 130.69143676757812,
+        "skinMs": 6.153898858075036,
+        "gameStepMs": 4.51594241435563,
+        "graphMs": 0.1965931484502447,
+        "routeMs": 0.044953996737357255,
+        "maxGraphMs": 35.832,
+        "peakAllocatedBytes": 100022738.0,
+        "gcCollections": 5.0,
+        "frames": 613.0,
+        "seconds": 21.06252098083496,
+        "taps": 6.0
+      },
+      {
+        "run": "before-release-2",
+        "side": "before",
+        "level": 23,
+        "eligible": true,
+        "source": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/before-release-2/proof/20261029T090801Z/run.json",
+        "buildGuid": "38a7643f0bc84fb7964db588724731e2",
+        "passed": true,
+        "batteryBeforeC": 37.0,
+        "batteryAfterC": 38.0,
+        "thermalStatuses": [
+          1,
+          2
+        ],
+        "fps": 29.66498374938965,
+        "p50Ms": 32.67028045654297,
+        "p95Ms": 49.01069259643555,
+        "p99Ms": 65.35453033447266,
+        "maxMs": 81.64339447021484,
+        "skinMs": 10.921603038674034,
+        "gameStepMs": 4.023025414364638,
+        "graphMs": 0.287782044198895,
+        "routeMs": 0.01524281767955801,
+        "maxGraphMs": 35.9024,
+        "peakAllocatedBytes": 100418062.0,
+        "gcCollections": 4.0,
+        "frames": 362.0,
+        "seconds": 12.523822784423828,
+        "taps": 5.0
+      },
+      {
+        "run": "before-release-2",
+        "side": "before",
+        "level": 53,
+        "eligible": true,
+        "source": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/before-release-2/proof/20261029T090801Z/run.json",
+        "buildGuid": "38a7643f0bc84fb7964db588724731e2",
+        "passed": true,
+        "batteryBeforeC": 37.0,
+        "batteryAfterC": 38.0,
+        "thermalStatuses": [
+          1,
+          2
+        ],
+        "fps": 27.1148738861084,
+        "p50Ms": 32.67028045654297,
+        "p95Ms": 49.02748107910156,
+        "p99Ms": 212.3206024169922,
+        "maxMs": 245.0449676513672,
+        "skinMs": 7.624954556500605,
+        "gameStepMs": 8.520920656136083,
+        "graphMs": 2.5517517618469014,
+        "routeMs": 0.018960753341433777,
+        "maxGraphMs": 196.9738,
+        "peakAllocatedBytes": 103477569.0,
+        "gcCollections": 10.0,
+        "frames": 823.0,
+        "seconds": 31.41071319580078,
+        "taps": 13.0
+      },
+      {
+        "run": "before-release-2",
+        "side": "before",
+        "level": 65,
+        "eligible": true,
+        "source": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/before-release-2/proof/20261029T090801Z/run.json",
+        "buildGuid": "38a7643f0bc84fb7964db588724731e2",
+        "passed": true,
+        "batteryBeforeC": 37.0,
+        "batteryAfterC": 38.0,
+        "thermalStatuses": [
+          1,
+          2
+        ],
+        "fps": 28.58590316772461,
+        "p50Ms": 32.670894622802734,
+        "p95Ms": 49.02007293701172,
+        "p99Ms": 65.41190338134766,
+        "maxMs": 98.0063705444336,
+        "skinMs": 6.44443735059762,
+        "gameStepMs": 5.9453964641434185,
+        "graphMs": 0.8070533366533864,
+        "routeMs": 0.020777589641434266,
+        "maxGraphMs": 53.1643,
+        "peakAllocatedBytes": 103055754.0,
+        "gcCollections": 23.0,
+        "frames": 2008.0,
+        "seconds": 72.4255599975586,
+        "taps": 33.0
+      },
+      {
+        "run": "before-release-3",
+        "side": "before",
+        "level": 2,
+        "eligible": true,
+        "source": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/before-release-3/proof/20261029T091335Z/run.json",
+        "buildGuid": "38a7643f0bc84fb7964db588724731e2",
+        "passed": true,
+        "batteryBeforeC": 37.0,
+        "batteryAfterC": 38.0,
+        "thermalStatuses": [
+          1
+        ],
+        "fps": 46.57509231567383,
+        "p50Ms": 16.338109970092773,
+        "p95Ms": 32.710899353027344,
+        "p99Ms": 32.75442123413086,
+        "maxMs": 65.39675903320312,
+        "skinMs": 3.5085746031746012,
+        "gameStepMs": 1.204833650793651,
+        "graphMs": 0.0,
+        "routeMs": 0.008710793650793651,
+        "maxGraphMs": 0.0,
+        "peakAllocatedBytes": 98751446.0,
+        "gcCollections": 2.0,
+        "frames": 315.0,
+        "seconds": 6.915950775146484,
+        "taps": 3.0
+      },
+      {
+        "run": "before-release-3",
+        "side": "before",
+        "level": 7,
+        "eligible": true,
+        "source": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/before-release-3/proof/20261029T091335Z/run.json",
+        "buildGuid": "38a7643f0bc84fb7964db588724731e2",
+        "passed": true,
+        "batteryBeforeC": 37.0,
+        "batteryAfterC": 38.0,
+        "thermalStatuses": [
+          1
+        ],
+        "fps": 29.807714462280273,
+        "p50Ms": 32.66929626464844,
+        "p95Ms": 49.006717681884766,
+        "p99Ms": 65.32152557373047,
+        "maxMs": 98.0467758178711,
+        "skinMs": 5.899173333333336,
+        "gameStepMs": 4.3273317073170805,
+        "graphMs": 0.19706130081300813,
+        "routeMs": 0.026259674796747966,
+        "maxGraphMs": 27.3232,
+        "peakAllocatedBytes": 100522922.0,
+        "gcCollections": 5.0,
+        "frames": 615.0,
+        "seconds": 20.985008239746094,
+        "taps": 6.0
+      },
+      {
+        "run": "before-release-3",
+        "side": "before",
+        "level": 23,
+        "eligible": true,
+        "source": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/before-release-3/proof/20261029T091335Z/run.json",
+        "buildGuid": "38a7643f0bc84fb7964db588724731e2",
+        "passed": true,
+        "batteryBeforeC": 37.0,
+        "batteryAfterC": 38.0,
+        "thermalStatuses": [
+          1
+        ],
+        "fps": 29.71452522277832,
+        "p50Ms": 32.66853713989258,
+        "p95Ms": 49.01729202270508,
+        "p99Ms": 49.09633255004883,
+        "maxMs": 65.3812484741211,
+        "skinMs": 10.090084684684687,
+        "gameStepMs": 3.816649549549551,
+        "graphMs": 0.2367786786786787,
+        "routeMs": 0.016529129129129128,
+        "maxGraphMs": 29.5594,
+        "peakAllocatedBytes": 100856006.0,
+        "gcCollections": 3.0,
+        "frames": 333.0,
+        "seconds": 11.534477233886719,
+        "taps": 5.0
+      },
+      {
+        "run": "before-release-3",
+        "side": "before",
+        "level": 53,
+        "eligible": true,
+        "source": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/before-release-3/proof/20261029T091335Z/run.json",
+        "buildGuid": "38a7643f0bc84fb7964db588724731e2",
+        "passed": true,
+        "batteryBeforeC": 37.0,
+        "batteryAfterC": 38.0,
+        "thermalStatuses": [
+          1
+        ],
+        "fps": 27.106046676635742,
+        "p50Ms": 32.67076873779297,
+        "p95Ms": 49.01310729980469,
+        "p99Ms": 212.3738555908203,
+        "maxMs": 228.80850219726562,
+        "skinMs": 7.509531273176753,
+        "gameStepMs": 8.392318541409141,
+        "graphMs": 2.5725636588380714,
+        "routeMs": 0.02242768850432633,
+        "maxGraphMs": 195.3008,
+        "peakAllocatedBytes": 103924389.0,
+        "gcCollections": 10.0,
+        "frames": 809.0,
+        "seconds": 30.883270263671875,
+        "taps": 13.0
+      },
+      {
+        "run": "before-release-3",
+        "side": "before",
+        "level": 65,
+        "eligible": true,
+        "source": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/before-release-3/proof/20261029T091335Z/run.json",
+        "buildGuid": "38a7643f0bc84fb7964db588724731e2",
+        "passed": true,
+        "batteryBeforeC": 37.0,
+        "batteryAfterC": 38.0,
+        "thermalStatuses": [
+          1
+        ],
+        "fps": 28.837587356567383,
+        "p50Ms": 32.671234130859375,
+        "p95Ms": 49.01480484008789,
+        "p99Ms": 65.36005401611328,
+        "maxMs": 81.72239685058594,
+        "skinMs": 6.357594865525667,
+        "gameStepMs": 5.650740244498773,
+        "graphMs": 0.7318512958435208,
+        "routeMs": 0.020062836185819072,
+        "maxGraphMs": 49.8471,
+        "peakAllocatedBytes": 103511882.0,
+        "gcCollections": 23.0,
+        "frames": 2045.0,
+        "seconds": 73.131591796875,
+        "taps": 33.0
+      }
+    ],
+    "groups": [
+      {
+        "side": "before",
+        "level": 2,
+        "runs": [
+          "before-release-1",
+          "before-release-2",
+          "before-release-3"
+        ],
+        "availableRepeats": 3,
+        "expectedRepeats": 3,
+        "completeRepeatSet": true,
+        "metrics": {
+          "fps": {
+            "n": 3,
+            "median": 46.576316833496094,
+            "min": 46.57509231567383,
+            "max": 46.90618896484375
+          },
+          "p50Ms": {
+            "n": 3,
+            "median": 16.338109970092773,
+            "min": 16.33677101135254,
+            "max": 16.338483810424805
+          },
+          "p95Ms": {
+            "n": 3,
+            "median": 32.68984603881836,
+            "min": 32.67876434326172,
+            "max": 32.710899353027344
+          },
+          "p99Ms": {
+            "n": 3,
+            "median": 32.75442123413086,
+            "min": 32.70184326171875,
+            "max": 32.89478302001953
+          },
+          "maxMs": {
+            "n": 3,
+            "median": 65.39675903320312,
+            "min": 65.35371398925781,
+            "max": 81.67156982421875
+          },
+          "skinMs": {
+            "n": 3,
+            "median": 3.49258144654088,
+            "min": 3.466816190476192,
+            "max": 3.5085746031746012
+          },
+          "gameStepMs": {
+            "n": 3,
+            "median": 1.204833650793651,
+            "min": 1.195509748427673,
+            "max": 1.2367952380952383
+          },
+          "graphMs": {
+            "n": 3,
+            "median": 0.0,
+            "min": 0.0,
+            "max": 0.0
+          },
+          "routeMs": {
+            "n": 3,
+            "median": 0.011234920634920636,
+            "min": 0.008710793650793651,
+            "max": 0.014859748427672955
+          },
+          "maxGraphMs": {
+            "n": 3,
+            "median": 0.0,
+            "min": 0.0,
+            "max": 0.0
+          },
+          "peakAllocatedBytes": {
+            "n": 3,
+            "median": 98778922.0,
+            "min": 98751446.0,
+            "max": 98807022.0
+          },
+          "gcCollections": {
+            "n": 3,
+            "median": 2.0,
+            "min": 2.0,
+            "max": 2.0
+          },
+          "frames": {
+            "n": 3,
+            "median": 315.0,
+            "min": 315.0,
+            "max": 318.0
+          },
+          "seconds": {
+            "n": 3,
+            "median": 6.915950775146484,
+            "min": 6.902688503265381,
+            "max": 6.945821285247803
+          },
+          "taps": {
+            "n": 3,
+            "median": 3.0,
+            "min": 3.0,
+            "max": 3.0
+          }
+        },
+        "startBatteryC": {
+          "n": 3,
+          "median": 37.0,
+          "min": 36.0,
+          "max": 37.0
+        },
+        "endBatteryC": {
+          "n": 3,
+          "median": 38.0,
+          "min": 37.0,
+          "max": 38.0
+        }
+      },
+      {
+        "side": "after",
+        "level": 2,
+        "runs": [
+          "after-release-1",
+          "after-release-2",
+          "after-release-3"
+        ],
+        "availableRepeats": 3,
+        "expectedRepeats": 3,
+        "completeRepeatSet": true,
+        "metrics": {
+          "fps": {
+            "n": 3,
+            "median": 45.76396179199219,
+            "min": 45.02820587158203,
+            "max": 46.094444274902344
+          },
+          "p50Ms": {
+            "n": 3,
+            "median": 16.33756446838379,
+            "min": 16.33710289001465,
+            "max": 16.338420867919922
+          },
+          "p95Ms": {
+            "n": 3,
+            "median": 32.68372344970703,
+            "min": 32.680519104003906,
+            "max": 32.69650650024414
+          },
+          "p99Ms": {
+            "n": 3,
+            "median": 48.9542236328125,
+            "min": 32.696266174316406,
+            "max": 49.0024299621582
+          },
+          "maxMs": {
+            "n": 3,
+            "median": 65.35260009765625,
+            "min": 65.3277359008789,
+            "max": 81.73404693603516
+          },
+          "skinMs": {
+            "n": 3,
+            "median": 3.2695605095541405,
+            "min": 3.2108524115755626,
+            "max": 3.277018300653594
+          },
+          "gameStepMs": {
+            "n": 3,
+            "median": 1.2731372611464975,
+            "min": 1.236933440514469,
+            "max": 1.3112359477124185
+          },
+          "graphMs": {
+            "n": 3,
+            "median": 0.0,
+            "min": 0.0,
+            "max": 0.0
+          },
+          "routeMs": {
+            "n": 3,
+            "median": 0.009990353697749196,
+            "min": 0.00957156862745098,
+            "max": 0.011036624203821656
+          },
+          "maxGraphMs": {
+            "n": 3,
+            "median": 0.0,
+            "min": 0.0,
+            "max": 0.0
+          },
+          "peakAllocatedBytes": {
+            "n": 3,
+            "median": 98857942.0,
+            "min": 98763662.0,
+            "max": 98918258.0
+          },
+          "gcCollections": {
+            "n": 3,
+            "median": 2.0,
+            "min": 2.0,
+            "max": 2.0
+          },
+          "frames": {
+            "n": 3,
+            "median": 311.0,
+            "min": 306.0,
+            "max": 314.0
+          },
+          "seconds": {
+            "n": 3,
+            "median": 6.941801071166992,
+            "min": 6.929543495178223,
+            "max": 6.991851329803467
+          },
+          "taps": {
+            "n": 3,
+            "median": 3.0,
+            "min": 3.0,
+            "max": 3.0
+          }
+        },
+        "startBatteryC": {
+          "n": 3,
+          "median": 37.0,
+          "min": 37.0,
+          "max": 38.0
+        },
+        "endBatteryC": {
+          "n": 3,
+          "median": 37.0,
+          "min": 37.0,
+          "max": 38.0
+        }
+      },
+      {
+        "side": "before",
+        "level": 7,
+        "runs": [
+          "before-release-1",
+          "before-release-2",
+          "before-release-3"
+        ],
+        "availableRepeats": 3,
+        "expectedRepeats": 3,
+        "completeRepeatSet": true,
+        "metrics": {
+          "fps": {
+            "n": 3,
+            "median": 29.716079711914062,
+            "min": 29.6398983001709,
+            "max": 29.807714462280273
+          },
+          "p50Ms": {
+            "n": 3,
+            "median": 32.66929626464844,
+            "min": 32.668521881103516,
+            "max": 32.66978073120117
+          },
+          "p95Ms": {
+            "n": 3,
+            "median": 49.00709915161133,
+            "min": 49.006717681884766,
+            "max": 49.0088996887207
+          },
+          "p99Ms": {
+            "n": 3,
+            "median": 65.32152557373047,
+            "min": 49.10465621948242,
+            "max": 65.33780670166016
+          },
+          "maxMs": {
+            "n": 3,
+            "median": 98.0467758178711,
+            "min": 81.73622131347656,
+            "max": 130.69143676757812
+          },
+          "skinMs": {
+            "n": 3,
+            "median": 5.959977147487845,
+            "min": 5.899173333333336,
+            "max": 6.153898858075036
+          },
+          "gameStepMs": {
+            "n": 3,
+            "median": 4.51594241435563,
+            "min": 4.3273317073170805,
+            "max": 4.52135640194489
+          },
+          "graphMs": {
+            "n": 3,
+            "median": 0.19706130081300813,
+            "min": 0.1965931484502447,
+            "max": 0.2157842787682334
+          },
+          "routeMs": {
+            "n": 3,
+            "median": 0.026259674796747966,
+            "min": 0.022855915721231766,
+            "max": 0.044953996737357255
+          },
+          "maxGraphMs": {
+            "n": 3,
+            "median": 35.832,
+            "min": 27.3232,
+            "max": 38.0993
+          },
+          "peakAllocatedBytes": {
+            "n": 3,
+            "median": 100022738.0,
+            "min": 99769302.0,
+            "max": 100522922.0
+          },
+          "gcCollections": {
+            "n": 3,
+            "median": 5.0,
+            "min": 5.0,
+            "max": 5.0
+          },
+          "frames": {
+            "n": 3,
+            "median": 615.0,
+            "min": 613.0,
+            "max": 617.0
+          },
+          "seconds": {
+            "n": 3,
+            "median": 21.06252098083496,
+            "min": 20.985008239746094,
+            "max": 21.122875213623047
+          },
+          "taps": {
+            "n": 3,
+            "median": 6.0,
+            "min": 6.0,
+            "max": 6.0
+          }
+        },
+        "startBatteryC": {
+          "n": 3,
+          "median": 37.0,
+          "min": 36.0,
+          "max": 37.0
+        },
+        "endBatteryC": {
+          "n": 3,
+          "median": 38.0,
+          "min": 37.0,
+          "max": 38.0
+        }
+      },
+      {
+        "side": "after",
+        "level": 7,
+        "runs": [
+          "after-release-1",
+          "after-release-2",
+          "after-release-3"
+        ],
+        "availableRepeats": 3,
+        "expectedRepeats": 3,
+        "completeRepeatSet": true,
+        "metrics": {
+          "fps": {
+            "n": 3,
+            "median": 29.747709274291992,
+            "min": 29.54001235961914,
+            "max": 29.768451690673828
+          },
+          "p50Ms": {
+            "n": 3,
+            "median": 32.669857025146484,
+            "min": 32.66907501220703,
+            "max": 32.66999053955078
+          },
+          "p95Ms": {
+            "n": 3,
+            "median": 49.008296966552734,
+            "min": 49.00715255737305,
+            "max": 49.00860595703125
+          },
+          "p99Ms": {
+            "n": 3,
+            "median": 49.0764045715332,
+            "min": 49.06467819213867,
+            "max": 49.09156799316406
+          },
+          "maxMs": {
+            "n": 3,
+            "median": 98.11000061035156,
+            "min": 98.02518463134766,
+            "max": 114.35480499267578
+          },
+          "skinMs": {
+            "n": 3,
+            "median": 5.5761743961352686,
+            "min": 5.45501894060995,
+            "max": 5.802345812807892
+          },
+          "gameStepMs": {
+            "n": 3,
+            "median": 4.410861797752806,
+            "min": 4.346866988727854,
+            "max": 4.498800656814446
+          },
+          "graphMs": {
+            "n": 3,
+            "median": 0.17584991789819376,
+            "min": 0.1641027287319422,
+            "max": 0.19380048309178743
+          },
+          "routeMs": {
+            "n": 3,
+            "median": 0.033520933977455716,
+            "min": 0.03349727126805779,
+            "max": 0.03832610837438424
+          },
+          "maxGraphMs": {
+            "n": 3,
+            "median": 28.76,
+            "min": 26.7887,
+            "max": 32.3187
+          },
+          "peakAllocatedBytes": {
+            "n": 3,
+            "median": 99988530.0,
+            "min": 99983190.0,
+            "max": 100051010.0
+          },
+          "gcCollections": {
+            "n": 3,
+            "median": 5.0,
+            "min": 5.0,
+            "max": 5.0
+          },
+          "frames": {
+            "n": 3,
+            "median": 621.0,
+            "min": 609.0,
+            "max": 623.0
+          },
+          "seconds": {
+            "n": 3,
+            "median": 21.23794937133789,
+            "min": 21.051189422607422,
+            "max": 21.2790470123291
+          },
+          "taps": {
+            "n": 3,
+            "median": 6.0,
+            "min": 6.0,
+            "max": 6.0
+          }
+        },
+        "startBatteryC": {
+          "n": 3,
+          "median": 37.0,
+          "min": 37.0,
+          "max": 38.0
+        },
+        "endBatteryC": {
+          "n": 3,
+          "median": 37.0,
+          "min": 37.0,
+          "max": 38.0
+        }
+      },
+      {
+        "side": "before",
+        "level": 23,
+        "runs": [
+          "before-release-1",
+          "before-release-2",
+          "before-release-3"
+        ],
+        "availableRepeats": 3,
+        "expectedRepeats": 3,
+        "completeRepeatSet": true,
+        "metrics": {
+          "fps": {
+            "n": 3,
+            "median": 29.66498374938965,
+            "min": 29.617355346679688,
+            "max": 29.71452522277832
+          },
+          "p50Ms": {
+            "n": 3,
+            "median": 32.669795989990234,
+            "min": 32.66853713989258,
+            "max": 32.67028045654297
+          },
+          "p95Ms": {
+            "n": 3,
+            "median": 49.011016845703125,
+            "min": 49.01069259643555,
+            "max": 49.01729202270508
+          },
+          "p99Ms": {
+            "n": 3,
+            "median": 65.33525848388672,
+            "min": 49.09633255004883,
+            "max": 65.35453033447266
+          },
+          "maxMs": {
+            "n": 3,
+            "median": 81.64339447021484,
+            "min": 65.3812484741211,
+            "max": 81.76203155517578
+          },
+          "skinMs": {
+            "n": 3,
+            "median": 10.790295543175487,
+            "min": 10.090084684684687,
+            "max": 10.921603038674034
+          },
+          "gameStepMs": {
+            "n": 3,
+            "median": 4.023025414364638,
+            "min": 3.816649549549551,
+            "max": 4.044262952646237
+          },
+          "graphMs": {
+            "n": 3,
+            "median": 0.25904150417827293,
+            "min": 0.2367786786786787,
+            "max": 0.287782044198895
+          },
+          "routeMs": {
+            "n": 3,
+            "median": 0.01524281767955801,
+            "min": 0.011520891364902504,
+            "max": 0.016529129129129128
+          },
+          "maxGraphMs": {
+            "n": 3,
+            "median": 35.9024,
+            "min": 29.5594,
+            "max": 40.770799999999994
+          },
+          "peakAllocatedBytes": {
+            "n": 3,
+            "median": 100429454.0,
+            "min": 100418062.0,
+            "max": 100856006.0
+          },
+          "gcCollections": {
+            "n": 3,
+            "median": 4.0,
+            "min": 3.0,
+            "max": 4.0
+          },
+          "frames": {
+            "n": 3,
+            "median": 359.0,
+            "min": 333.0,
+            "max": 362.0
+          },
+          "seconds": {
+            "n": 3,
+            "median": 12.41799545288086,
+            "min": 11.534477233886719,
+            "max": 12.523822784423828
+          },
+          "taps": {
+            "n": 3,
+            "median": 5.0,
+            "min": 5.0,
+            "max": 5.0
+          }
+        },
+        "startBatteryC": {
+          "n": 3,
+          "median": 37.0,
+          "min": 36.0,
+          "max": 37.0
+        },
+        "endBatteryC": {
+          "n": 3,
+          "median": 38.0,
+          "min": 37.0,
+          "max": 38.0
+        }
+      },
+      {
+        "side": "after",
+        "level": 23,
+        "runs": [
+          "after-release-1",
+          "after-release-2",
+          "after-release-3"
+        ],
+        "availableRepeats": 3,
+        "expectedRepeats": 3,
+        "completeRepeatSet": true,
+        "metrics": {
+          "fps": {
+            "n": 3,
+            "median": 29.85418128967285,
+            "min": 29.763004302978516,
+            "max": 29.98956871032715
+          },
+          "p50Ms": {
+            "n": 3,
+            "median": 32.670501708984375,
+            "min": 32.66716384887695,
+            "max": 32.67066192626953
+          },
+          "p95Ms": {
+            "n": 3,
+            "median": 49.0074348449707,
+            "min": 49.006526947021484,
+            "max": 49.01057815551758
+          },
+          "p99Ms": {
+            "n": 3,
+            "median": 65.32084655761719,
+            "min": 49.08652877807617,
+            "max": 65.33065032958984
+          },
+          "maxMs": {
+            "n": 3,
+            "median": 65.46576690673828,
+            "min": 65.33966827392578,
+            "max": 81.67282104492188
+          },
+          "skinMs": {
+            "n": 3,
+            "median": 8.92676557863501,
+            "min": 8.887754945054953,
+            "max": 9.143579402985077
+          },
+          "gameStepMs": {
+            "n": 3,
+            "median": 4.383198219584571,
+            "min": 4.3310337912087915,
+            "max": 4.4738364179104435
+          },
+          "graphMs": {
+            "n": 3,
+            "median": 0.31254362017804155,
+            "min": 0.2968711538461538,
+            "max": 0.3519116417910448
+          },
+          "routeMs": {
+            "n": 3,
+            "median": 0.01661582089552239,
+            "min": 0.015992878338278935,
+            "max": 0.02141785714285714
+          },
+          "maxGraphMs": {
+            "n": 3,
+            "median": 48.3457,
+            "min": 46.581199999999995,
+            "max": 49.994200000000006
+          },
+          "peakAllocatedBytes": {
+            "n": 3,
+            "median": 100431442.0,
+            "min": 100414470.0,
+            "max": 100456938.0
+          },
+          "gcCollections": {
+            "n": 3,
+            "median": 2.0,
+            "min": 2.0,
+            "max": 3.0
+          },
+          "frames": {
+            "n": 3,
+            "median": 337.0,
+            "min": 335.0,
+            "max": 364.0
+          },
+          "seconds": {
+            "n": 3,
+            "median": 11.706954956054688,
+            "min": 11.629653930664062,
+            "max": 12.47467041015625
+          },
+          "taps": {
+            "n": 3,
+            "median": 5.0,
+            "min": 5.0,
+            "max": 5.0
+          }
+        },
+        "startBatteryC": {
+          "n": 3,
+          "median": 37.0,
+          "min": 37.0,
+          "max": 38.0
+        },
+        "endBatteryC": {
+          "n": 3,
+          "median": 37.0,
+          "min": 37.0,
+          "max": 38.0
+        }
+      },
+      {
+        "side": "before",
+        "level": 53,
+        "runs": [
+          "before-release-1",
+          "before-release-2",
+          "before-release-3"
+        ],
+        "availableRepeats": 3,
+        "expectedRepeats": 3,
+        "completeRepeatSet": true,
+        "metrics": {
+          "fps": {
+            "n": 3,
+            "median": 27.1148738861084,
+            "min": 27.106046676635742,
+            "max": 27.266084671020508
+          },
+          "p50Ms": {
+            "n": 3,
+            "median": 32.67063522338867,
+            "min": 32.67028045654297,
+            "max": 32.67076873779297
+          },
+          "p95Ms": {
+            "n": 3,
+            "median": 49.01860427856445,
+            "min": 49.01310729980469,
+            "max": 49.02748107910156
+          },
+          "p99Ms": {
+            "n": 3,
+            "median": 212.3573760986328,
+            "min": 212.3206024169922,
+            "max": 212.3738555908203
+          },
+          "maxMs": {
+            "n": 3,
+            "median": 228.80850219726562,
+            "min": 228.74253845214844,
+            "max": 245.0449676513672
+          },
+          "skinMs": {
+            "n": 3,
+            "median": 7.509531273176753,
+            "min": 7.3317983990147795,
+            "max": 7.624954556500605
+          },
+          "gameStepMs": {
+            "n": 3,
+            "median": 8.392318541409141,
+            "min": 8.19340073891625,
+            "max": 8.520920656136083
+          },
+          "graphMs": {
+            "n": 3,
+            "median": 2.5517517618469014,
+            "min": 2.4491050492610835,
+            "max": 2.5725636588380714
+          },
+          "routeMs": {
+            "n": 3,
+            "median": 0.021763793103448278,
+            "min": 0.018960753341433777,
+            "max": 0.02242768850432633
+          },
+          "maxGraphMs": {
+            "n": 3,
+            "median": 195.3008,
+            "min": 184.9046,
+            "max": 196.9738
+          },
+          "peakAllocatedBytes": {
+            "n": 3,
+            "median": 103522849.0,
+            "min": 103477569.0,
+            "max": 103924389.0
+          },
+          "gcCollections": {
+            "n": 3,
+            "median": 10.0,
+            "min": 9.0,
+            "max": 10.0
+          },
+          "frames": {
+            "n": 3,
+            "median": 812.0,
+            "min": 809.0,
+            "max": 823.0
+          },
+          "seconds": {
+            "n": 3,
+            "median": 30.883270263671875,
+            "min": 30.79637908935547,
+            "max": 31.41071319580078
+          },
+          "taps": {
+            "n": 3,
+            "median": 13.0,
+            "min": 13.0,
+            "max": 13.0
+          }
+        },
+        "startBatteryC": {
+          "n": 3,
+          "median": 37.0,
+          "min": 36.0,
+          "max": 37.0
+        },
+        "endBatteryC": {
+          "n": 3,
+          "median": 38.0,
+          "min": 37.0,
+          "max": 38.0
+        }
+      },
+      {
+        "side": "after",
+        "level": 53,
+        "runs": [
+          "after-release-1",
+          "after-release-2",
+          "after-release-3"
+        ],
+        "availableRepeats": 3,
+        "expectedRepeats": 3,
+        "completeRepeatSet": true,
+        "metrics": {
+          "fps": {
+            "n": 3,
+            "median": 27.4735107421875,
+            "min": 27.32499122619629,
+            "max": 27.499229431152344
+          },
+          "p50Ms": {
+            "n": 3,
+            "median": 32.6695671081543,
+            "min": 32.669437408447266,
+            "max": 32.670997619628906
+          },
+          "p95Ms": {
+            "n": 3,
+            "median": 49.01967239379883,
+            "min": 49.011409759521484,
+            "max": 49.027225494384766
+          },
+          "p99Ms": {
+            "n": 3,
+            "median": 212.2720184326172,
+            "min": 196.07882690429688,
+            "max": 212.3292236328125
+          },
+          "maxMs": {
+            "n": 3,
+            "median": 228.8629608154297,
+            "min": 228.6775665283203,
+            "max": 408.25750732421875
+          },
+          "skinMs": {
+            "n": 3,
+            "median": 5.983859512195124,
+            "min": 5.84829468085106,
+            "max": 5.9987054054054045
+          },
+          "gameStepMs": {
+            "n": 3,
+            "median": 8.055022195121957,
+            "min": 8.028396335697403,
+            "max": 8.379055896805895
+          },
+          "graphMs": {
+            "n": 3,
+            "median": 2.1597255319148934,
+            "min": 2.101500731707317,
+            "max": 2.3565264127764127
+          },
+          "routeMs": {
+            "n": 3,
+            "median": 0.024045853658536582,
+            "min": 0.01755118203309693,
+            "max": 0.028705773955773953
+          },
+          "maxGraphMs": {
+            "n": 3,
+            "median": 199.0743,
+            "min": 187.8671,
+            "max": 379.74559999999997
+          },
+          "peakAllocatedBytes": {
+            "n": 3,
+            "median": 103083897.0,
+            "min": 103006821.0,
+            "max": 103118865.0
+          },
+          "gcCollections": {
+            "n": 3,
+            "median": 7.0,
+            "min": 7.0,
+            "max": 8.0
+          },
+          "frames": {
+            "n": 3,
+            "median": 820.0,
+            "min": 814.0,
+            "max": 846.0
+          },
+          "seconds": {
+            "n": 3,
+            "median": 30.85503387451172,
+            "min": 30.641616821289062,
+            "max": 31.639320373535156
+          },
+          "taps": {
+            "n": 3,
+            "median": 13.0,
+            "min": 13.0,
+            "max": 13.0
+          }
+        },
+        "startBatteryC": {
+          "n": 3,
+          "median": 37.0,
+          "min": 37.0,
+          "max": 38.0
+        },
+        "endBatteryC": {
+          "n": 3,
+          "median": 37.0,
+          "min": 37.0,
+          "max": 38.0
+        }
+      },
+      {
+        "side": "before",
+        "level": 65,
+        "runs": [
+          "before-release-1",
+          "before-release-2",
+          "before-release-3"
+        ],
+        "availableRepeats": 3,
+        "expectedRepeats": 3,
+        "completeRepeatSet": true,
+        "metrics": {
+          "fps": {
+            "n": 3,
+            "median": 28.837587356567383,
+            "min": 28.58590316772461,
+            "max": 28.98946762084961
+          },
+          "p50Ms": {
+            "n": 3,
+            "median": 32.670894622802734,
+            "min": 32.67000961303711,
+            "max": 32.671234130859375
+          },
+          "p95Ms": {
+            "n": 3,
+            "median": 49.01685333251953,
+            "min": 49.01480484008789,
+            "max": 49.02007293701172
+          },
+          "p99Ms": {
+            "n": 3,
+            "median": 65.36624908447266,
+            "min": 65.36005401611328,
+            "max": 65.41190338134766
+          },
+          "maxMs": {
+            "n": 3,
+            "median": 98.0063705444336,
+            "min": 81.72239685058594,
+            "max": 98.03512573242188
+          },
+          "skinMs": {
+            "n": 3,
+            "median": 6.357594865525667,
+            "min": 5.975853064275042,
+            "max": 6.44443735059762
+          },
+          "gameStepMs": {
+            "n": 3,
+            "median": 5.650740244498773,
+            "min": 5.368130293971111,
+            "max": 5.9453964641434185
+          },
+          "graphMs": {
+            "n": 3,
+            "median": 0.7318512958435208,
+            "min": 0.6949794220229197,
+            "max": 0.8070533366533864
+          },
+          "routeMs": {
+            "n": 3,
+            "median": 0.020062836185819072,
+            "min": 0.01829357249626308,
+            "max": 0.020777589641434266
+          },
+          "maxGraphMs": {
+            "n": 3,
+            "median": 49.8471,
+            "min": 46.1215,
+            "max": 53.1643
+          },
+          "peakAllocatedBytes": {
+            "n": 3,
+            "median": 103085986.0,
+            "min": 103055754.0,
+            "max": 103511882.0
+          },
+          "gcCollections": {
+            "n": 3,
+            "median": 23.0,
+            "min": 23.0,
+            "max": 23.0
+          },
+          "frames": {
+            "n": 3,
+            "median": 2008.0,
+            "min": 2007.0,
+            "max": 2045.0
+          },
+          "seconds": {
+            "n": 3,
+            "median": 72.4255599975586,
+            "min": 71.45173645019531,
+            "max": 73.131591796875
+          },
+          "taps": {
+            "n": 3,
+            "median": 33.0,
+            "min": 33.0,
+            "max": 34.0
+          }
+        },
+        "startBatteryC": {
+          "n": 3,
+          "median": 37.0,
+          "min": 36.0,
+          "max": 37.0
+        },
+        "endBatteryC": {
+          "n": 3,
+          "median": 38.0,
+          "min": 37.0,
+          "max": 38.0
+        }
+      },
+      {
+        "side": "after",
+        "level": 65,
+        "runs": [
+          "after-release-1",
+          "after-release-2",
+          "after-release-3"
+        ],
+        "availableRepeats": 3,
+        "expectedRepeats": 3,
+        "completeRepeatSet": true,
+        "metrics": {
+          "fps": {
+            "n": 3,
+            "median": 28.89502716064453,
+            "min": 28.698698043823242,
+            "max": 28.904842376708984
+          },
+          "p50Ms": {
+            "n": 3,
+            "median": 32.670448303222656,
+            "min": 32.67033004760742,
+            "max": 32.67094039916992
+          },
+          "p95Ms": {
+            "n": 3,
+            "median": 49.01723861694336,
+            "min": 49.01500701904297,
+            "max": 49.02484893798828
+          },
+          "p99Ms": {
+            "n": 3,
+            "median": 65.35189056396484,
+            "min": 65.34129333496094,
+            "max": 65.35431671142578
+          },
+          "maxMs": {
+            "n": 3,
+            "median": 98.03993225097656,
+            "min": 97.96256256103516,
+            "max": 114.37928009033203
+          },
+          "skinMs": {
+            "n": 3,
+            "median": 5.6600510906447,
+            "min": 5.629716318601258,
+            "max": 5.848700873786405
+          },
+          "gameStepMs": {
+            "n": 3,
+            "median": 5.544869936862564,
+            "min": 5.479820455647117,
+            "max": 5.775464611650497
+          },
+          "graphMs": {
+            "n": 3,
+            "median": 0.7301510421715947,
+            "min": 0.7034998057309374,
+            "max": 0.7691889805825243
+          },
+          "routeMs": {
+            "n": 3,
+            "median": 0.019362481822588463,
+            "min": 0.018744779018941234,
+            "max": 0.019450728155339807
+          },
+          "maxGraphMs": {
+            "n": 3,
+            "median": 50.8797,
+            "min": 47.8776,
+            "max": 53.8934
+          },
+          "peakAllocatedBytes": {
+            "n": 3,
+            "median": 103207618.0,
+            "min": 102636538.0,
+            "max": 103549602.0
+          },
+          "gcCollections": {
+            "n": 3,
+            "median": 20.0,
+            "min": 20.0,
+            "max": 20.0
+          },
+          "frames": {
+            "n": 3,
+            "median": 2060.0,
+            "min": 2059.0,
+            "max": 2063.0
+          },
+          "seconds": {
+            "n": 3,
+            "median": 73.50067138671875,
+            "min": 73.47325134277344,
+            "max": 73.93511962890625
+          },
+          "taps": {
+            "n": 3,
+            "median": 34.0,
+            "min": 33.0,
+            "max": 34.0
+          }
+        },
+        "startBatteryC": {
+          "n": 3,
+          "median": 37.0,
+          "min": 37.0,
+          "max": 38.0
+        },
+        "endBatteryC": {
+          "n": 3,
+          "median": 37.0,
+          "min": 37.0,
+          "max": 38.0
+        }
+      }
+    ],
+    "comparisons": [
+      {
+        "level": 2,
+        "medianAfterMinusBefore": {
+          "fps": {
+            "absolute": -0.8123550415039062,
+            "percent": -1.7441375719079777
+          },
+          "p50Ms": {
+            "absolute": -0.000545501708984375,
+            "percent": -0.0033388299502390417
+          },
+          "p95Ms": {
+            "absolute": -0.006122589111328125,
+            "percent": -0.018729329908917514
+          },
+          "p99Ms": {
+            "absolute": 16.19980239868164,
+            "percent": 49.45836863635702
+          },
+          "maxMs": {
+            "absolute": -0.044158935546875,
+            "percent": -0.06752465443196076
+          },
+          "skinMs": {
+            "absolute": -0.22302093698673975,
+            "percent": -6.385561522341132
+          },
+          "gameStepMs": {
+            "absolute": 0.06830361035284649,
+            "percent": 5.669132025641321
+          },
+          "graphMs": {
+            "absolute": 0.0,
+            "percent": null
+          },
+          "routeMs": {
+            "absolute": -0.0012445669371714402,
+            "percent": -11.077665589403885
+          },
+          "maxGraphMs": {
+            "absolute": 0.0,
+            "percent": null
+          },
+          "peakAllocatedBytes": {
+            "absolute": 79020.0,
+            "percent": 0.07999682361383709
+          },
+          "gcCollections": {
+            "absolute": 0.0,
+            "percent": 0.0
+          },
+          "frames": {
+            "absolute": -4.0,
+            "percent": -1.2698412698412653
+          },
+          "seconds": {
+            "absolute": 0.025850296020507812,
+            "percent": 0.37377790647967757
+          },
+          "taps": {
+            "absolute": 0.0,
+            "percent": 0.0
+          }
+        },
+        "warnings": [
+          "Starting battery temperatures vary: before 36.0..37.0 C; after 37.0..38.0 C",
+          "Thermal severity differs or is missing"
+        ]
+      },
+      {
+        "level": 7,
+        "medianAfterMinusBefore": {
+          "fps": {
+            "absolute": 0.03162956237792969,
+            "percent": 0.10643921635884457
+          },
+          "p50Ms": {
+            "absolute": 0.000560760498046875,
+            "percent": 0.001716475596857947
+          },
+          "p95Ms": {
+            "absolute": 0.00119781494140625,
+            "percent": 0.002444166176207574
+          },
+          "p99Ms": {
+            "absolute": -16.245121002197266,
+            "percent": -24.869475811401376
+          },
+          "maxMs": {
+            "absolute": 0.06322479248046875,
+            "percent": 0.06448431572896318
+          },
+          "skinMs": {
+            "absolute": -0.3838027513525768,
+            "percent": -6.439668170780677
+          },
+          "gameStepMs": {
+            "absolute": -0.10508061660282397,
+            "percent": -2.3268812345521805
+          },
+          "graphMs": {
+            "absolute": -0.021211382914814364,
+            "percent": -10.763850044277278
+          },
+          "routeMs": {
+            "absolute": 0.00726125918070775,
+            "percent": 27.65174830575965
+          },
+          "maxGraphMs": {
+            "absolute": -7.071999999999999,
+            "percent": -19.73654833668229
+          },
+          "peakAllocatedBytes": {
+            "absolute": -34208.0,
+            "percent": -0.034200223553171316
+          },
+          "gcCollections": {
+            "absolute": 0.0,
+            "percent": 0.0
+          },
+          "frames": {
+            "absolute": 6.0,
+            "percent": 0.9756097560975618
+          },
+          "seconds": {
+            "absolute": 0.1754283905029297,
+            "percent": 0.8328936059579739
+          },
+          "taps": {
+            "absolute": 0.0,
+            "percent": 0.0
+          }
+        },
+        "warnings": [
+          "Starting battery temperatures vary: before 36.0..37.0 C; after 37.0..38.0 C",
+          "Thermal severity differs or is missing"
+        ]
+      },
+      {
+        "level": 23,
+        "medianAfterMinusBefore": {
+          "fps": {
+            "absolute": 0.18919754028320312,
+            "percent": 0.6377806975440992
+          },
+          "p50Ms": {
+            "absolute": 0.000705718994140625,
+            "percent": 0.0021601573341856195
+          },
+          "p95Ms": {
+            "absolute": -0.003582000732421875,
+            "percent": -0.007308562366092897
+          },
+          "p99Ms": {
+            "absolute": -0.01441192626953125,
+            "percent": -0.02205842083427001
+          },
+          "maxMs": {
+            "absolute": -16.177627563476562,
+            "percent": -19.814986464555307
+          },
+          "skinMs": {
+            "absolute": -1.8635299645404775,
+            "percent": -17.27042560682316
+          },
+          "gameStepMs": {
+            "absolute": 0.3601728052199329,
+            "percent": 8.95278473593275
+          },
+          "graphMs": {
+            "absolute": 0.05350211599976862,
+            "percent": 20.653877906356023
+          },
+          "routeMs": {
+            "absolute": 0.0013730032159643794,
+            "percent": 9.007542075411035
+          },
+          "maxGraphMs": {
+            "absolute": 12.4433,
+            "percent": 34.65868577031061
+          },
+          "peakAllocatedBytes": {
+            "absolute": 1988.0,
+            "percent": 0.0019794989625232517
+          },
+          "gcCollections": {
+            "absolute": -2.0,
+            "percent": -50.0
+          },
+          "frames": {
+            "absolute": -22.0,
+            "percent": -6.128133704735372
+          },
+          "seconds": {
+            "absolute": -0.7110404968261719,
+            "percent": -5.725887882018965
+          },
+          "taps": {
+            "absolute": 0.0,
+            "percent": 0.0
+          }
+        },
+        "warnings": [
+          "Starting battery temperatures vary: before 36.0..37.0 C; after 37.0..38.0 C",
+          "Thermal severity differs or is missing"
+        ]
+      },
+      {
+        "level": 53,
+        "medianAfterMinusBefore": {
+          "fps": {
+            "absolute": 0.35863685607910156,
+            "percent": 1.3226572898162647
+          },
+          "p50Ms": {
+            "absolute": -0.001068115234375,
+            "percent": -0.0032693433325459154
+          },
+          "p95Ms": {
+            "absolute": 0.001068115234375,
+            "percent": 0.0021789996881738105
+          },
+          "p99Ms": {
+            "absolute": -0.085357666015625,
+            "percent": -0.04019529134509092
+          },
+          "maxMs": {
+            "absolute": 0.0544586181640625,
+            "percent": 0.023800959160658053
+          },
+          "skinMs": {
+            "absolute": -1.5256717609816288,
+            "percent": -20.31647123477821
+          },
+          "gameStepMs": {
+            "absolute": -0.3372963462871841,
+            "percent": -4.019108004813043
+          },
+          "graphMs": {
+            "absolute": -0.3920262299320081,
+            "percent": -15.363023778154194
+          },
+          "routeMs": {
+            "absolute": 0.002282060555088304,
+            "percent": 10.485582840459617
+          },
+          "maxGraphMs": {
+            "absolute": 3.7734999999999843,
+            "percent": 1.9321477433784207
+          },
+          "peakAllocatedBytes": {
+            "absolute": -438952.0,
+            "percent": -0.424014605703138
+          },
+          "gcCollections": {
+            "absolute": -3.0,
+            "percent": -30.000000000000004
+          },
+          "frames": {
+            "absolute": 8.0,
+            "percent": 0.9852216748768461
+          },
+          "seconds": {
+            "absolute": -0.02823638916015625,
+            "percent": -0.09142940148204604
+          },
+          "taps": {
+            "absolute": 0.0,
+            "percent": 0.0
+          }
+        },
+        "warnings": [
+          "Starting battery temperatures vary: before 36.0..37.0 C; after 37.0..38.0 C",
+          "Thermal severity differs or is missing"
+        ]
+      },
+      {
+        "level": 65,
+        "medianAfterMinusBefore": {
+          "fps": {
+            "absolute": 0.05743980407714844,
+            "percent": 0.1991838060754647
+          },
+          "p50Ms": {
+            "absolute": -0.000446319580078125,
+            "percent": -0.0013661076172843956
+          },
+          "p95Ms": {
+            "absolute": 0.000385284423828125,
+            "percent": 0.000786024392906981
+          },
+          "p99Ms": {
+            "absolute": -0.0143585205078125,
+            "percent": -0.02196626043090566
+          },
+          "maxMs": {
+            "absolute": 0.03356170654296875,
+            "percent": 0.03424441325245997
+          },
+          "skinMs": {
+            "absolute": -0.697543774880967,
+            "percent": -10.971818582895686
+          },
+          "gameStepMs": {
+            "absolute": -0.1058703076362093,
+            "percent": -1.8735652862344576
+          },
+          "graphMs": {
+            "absolute": -0.0017002536719261663,
+            "percent": -0.2323222875442843
+          },
+          "routeMs": {
+            "absolute": -0.000700354363230609,
+            "percent": -3.490804374536227
+          },
+          "maxGraphMs": {
+            "absolute": 1.0326000000000022,
+            "percent": 2.071534753275528
+          },
+          "peakAllocatedBytes": {
+            "absolute": 121632.0,
+            "percent": 0.11799081981909154
+          },
+          "gcCollections": {
+            "absolute": -3.0,
+            "percent": -13.043478260869568
+          },
+          "frames": {
+            "absolute": 52.0,
+            "percent": 2.589641434262946
+          },
+          "seconds": {
+            "absolute": 1.0751113891601562,
+            "percent": 1.4844364188504766
+          },
+          "taps": {
+            "absolute": 1.0,
+            "percent": 3.0303030303030276
+          }
+        },
+        "warnings": [
+          "Starting battery temperatures vary: before 36.0..37.0 C; after 37.0..38.0 C",
+          "Thermal severity differs or is missing",
+          "Route tap counts vary: [34.0, 33.0, 34.0, 34.0, 33.0, 33.0]"
+        ]
+      }
+    ],
+    "releaseHealth": [
+      {
+        "name": "after-release-1",
+        "side": "after",
+        "eligible": true,
+        "batteryBeforeC": 37.0,
+        "batteryAfterC": 37.0,
+        "healthBatteryC": {
+          "samples": 6,
+          "first": 37.0,
+          "last": 37.0,
+          "min": 36.0,
+          "max": 37.0,
+          "mean": 36.833333333333336
+        },
+        "thermalStatuses": [
+          1
+        ],
+        "powerStates": [
+          {
+            "AC": false,
+            "USB": true,
+            "Wireless": false,
+            "Dock": false
+          }
+        ]
+      },
+      {
+        "name": "after-release-2",
+        "side": "after",
+        "eligible": true,
+        "batteryBeforeC": 37.0,
+        "batteryAfterC": 37.0,
+        "healthBatteryC": {
+          "samples": 6,
+          "first": 37.0,
+          "last": 37.0,
+          "min": 37.0,
+          "max": 37.0,
+          "mean": 37.0
+        },
+        "thermalStatuses": [
+          1
+        ],
+        "powerStates": [
+          {
+            "AC": false,
+            "USB": true,
+            "Wireless": false,
+            "Dock": false
+          }
+        ]
+      },
+      {
+        "name": "after-release-3",
+        "side": "after",
+        "eligible": true,
+        "batteryBeforeC": 38.0,
+        "batteryAfterC": 38.0,
+        "healthBatteryC": {
+          "samples": 6,
+          "first": 37.0,
+          "last": 38.0,
+          "min": 37.0,
+          "max": 38.0,
+          "mean": 37.166666666666664
+        },
+        "thermalStatuses": [
+          1,
+          2
+        ],
+        "powerStates": [
+          {
+            "AC": false,
+            "USB": true,
+            "Wireless": false,
+            "Dock": false
+          }
+        ]
+      },
+      {
+        "name": "before-release-1",
+        "side": "before",
+        "eligible": true,
+        "batteryBeforeC": 36.0,
+        "batteryAfterC": 37.0,
+        "healthBatteryC": {
+          "samples": 6,
+          "first": 36.0,
+          "last": 36.0,
+          "min": 36.0,
+          "max": 36.0,
+          "mean": 36.0
+        },
+        "thermalStatuses": [
+          1
+        ],
+        "powerStates": [
+          {
+            "AC": false,
+            "USB": true,
+            "Wireless": false,
+            "Dock": false
+          }
+        ]
+      },
+      {
+        "name": "before-release-2",
+        "side": "before",
+        "eligible": true,
+        "batteryBeforeC": 37.0,
+        "batteryAfterC": 38.0,
+        "healthBatteryC": {
+          "samples": 6,
+          "first": 37.0,
+          "last": 37.0,
+          "min": 37.0,
+          "max": 38.0,
+          "mean": 37.166666666666664
+        },
+        "thermalStatuses": [
+          1,
+          2
+        ],
+        "powerStates": [
+          {
+            "AC": false,
+            "USB": true,
+            "Wireless": false,
+            "Dock": false
+          }
+        ]
+      },
+      {
+        "name": "before-release-3",
+        "side": "before",
+        "eligible": true,
+        "batteryBeforeC": 37.0,
+        "batteryAfterC": 38.0,
+        "healthBatteryC": {
+          "samples": 6,
+          "first": 37.0,
+          "last": 38.0,
+          "min": 37.0,
+          "max": 38.0,
+          "mean": 37.166666666666664
+        },
+        "thermalStatuses": [
+          1
+        ],
+        "powerStates": [
+          {
+            "AC": false,
+            "USB": true,
+            "Wireless": false,
+            "Dock": false
+          }
+        ]
+      }
+    ],
+    "profilerHealthContext": [
+      {
+        "name": "after-profiler-1",
+        "side": "after",
+        "eligible": true,
+        "batteryBeforeC": 36.0,
+        "batteryAfterC": 37.0,
+        "healthBatteryC": {
+          "samples": 7,
+          "first": 36.0,
+          "last": 37.0,
+          "min": 36.0,
+          "max": 37.0,
+          "mean": 36.857142857142854
+        },
+        "thermalStatuses": [
+          1
+        ],
+        "powerStates": [
+          {
+            "AC": false,
+            "USB": true,
+            "Wireless": false,
+            "Dock": false
+          }
+        ]
+      },
+      {
+        "name": "after-profiler-2",
+        "side": "after",
+        "eligible": true,
+        "batteryBeforeC": 37.0,
+        "batteryAfterC": 38.0,
+        "healthBatteryC": {
+          "samples": 7,
+          "first": 37.0,
+          "last": 38.0,
+          "min": 37.0,
+          "max": 38.0,
+          "mean": 37.857142857142854
+        },
+        "thermalStatuses": [
+          1,
+          2
+        ],
+        "powerStates": [
+          {
+            "AC": false,
+            "USB": true,
+            "Wireless": false,
+            "Dock": false
+          }
+        ]
+      },
+      {
+        "name": "after-profiler-3",
+        "side": "after",
+        "eligible": true,
+        "batteryBeforeC": 38.0,
+        "batteryAfterC": 38.0,
+        "healthBatteryC": {
+          "samples": 7,
+          "first": 38.0,
+          "last": 38.0,
+          "min": 38.0,
+          "max": 38.0,
+          "mean": 38.0
+        },
+        "thermalStatuses": [
+          2
+        ],
+        "powerStates": [
+          {
+            "AC": false,
+            "USB": true,
+            "Wireless": false,
+            "Dock": false
+          }
+        ]
+      },
+      {
+        "name": "before-profiler-1",
+        "side": "before",
+        "eligible": true,
+        "batteryBeforeC": 39.0,
+        "batteryAfterC": 40.0,
+        "healthBatteryC": {
+          "samples": 7,
+          "first": 39.0,
+          "last": 40.0,
+          "min": 39.0,
+          "max": 40.0,
+          "mean": 39.285714285714285
+        },
+        "thermalStatuses": [
+          2
+        ],
+        "powerStates": [
+          {
+            "AC": false,
+            "USB": true,
+            "Wireless": false,
+            "Dock": false
+          }
+        ]
+      },
+      {
+        "name": "before-profiler-2",
+        "side": "before",
+        "eligible": true,
+        "batteryBeforeC": 40.0,
+        "batteryAfterC": 40.0,
+        "healthBatteryC": {
+          "samples": 7,
+          "first": 40.0,
+          "last": 40.0,
+          "min": 40.0,
+          "max": 40.0,
+          "mean": 40.0
+        },
+        "thermalStatuses": [
+          2
+        ],
+        "powerStates": [
+          {
+            "AC": false,
+            "USB": true,
+            "Wireless": false,
+            "Dock": false
+          }
+        ]
+      },
+      {
+        "name": "before-profiler-3",
+        "side": "before",
+        "eligible": true,
+        "batteryBeforeC": 40.0,
+        "batteryAfterC": 41.0,
+        "healthBatteryC": {
+          "samples": 7,
+          "first": 41.0,
+          "last": 41.0,
+          "min": 40.0,
+          "max": 41.0,
+          "mean": 40.857142857142854
+        },
+        "thermalStatuses": [
+          2
+        ],
+        "powerStates": [
+          {
+            "AC": false,
+            "USB": true,
+            "Wireless": false,
+            "Dock": false
+          }
+        ]
+      }
+    ],
+    "profilerStartBatteryC": {
+      "before": {
+        "n": 3,
+        "median": 40.0,
+        "min": 39.0,
+        "max": 40.0
+      },
+      "after": {
+        "n": 3,
+        "median": 37.0,
+        "min": 36.0,
+        "max": 38.0
+      }
+    },
+    "profilerLimit": "Profiler captures are a separate dataset with Development/recording overhead. Recorded starting battery ranges: before 39.0..40.0 C; after 36.0..38.0 C. These temperatures differ; Profiler CPU deltas cannot isolate code changes from temperature/governor state. Do not pool Profiler numbers with Release CPU timers. Matching battery temperature in Release does not prove identical CPU clocks or thermal state."
+  },
+  "skinVersusFps": [
+    {
+      "level": 2,
+      "skinMedianChangePercent": -6.385561522341132,
+      "fpsMedianChangePercent": -1.7441375719079777,
+      "skinAllFinalMeansBelowAllBaseline": true,
+      "fpsRepeatRangesOverlap": false
+    },
+    {
+      "level": 7,
+      "skinMedianChangePercent": -6.439668170780677,
+      "fpsMedianChangePercent": 0.10643921635884457,
+      "skinAllFinalMeansBelowAllBaseline": true,
+      "fpsRepeatRangesOverlap": true
+    },
+    {
+      "level": 23,
+      "skinMedianChangePercent": -17.27042560682316,
+      "fpsMedianChangePercent": 0.6377806975440992,
+      "skinAllFinalMeansBelowAllBaseline": true,
+      "fpsRepeatRangesOverlap": false
+    },
+    {
+      "level": 53,
+      "skinMedianChangePercent": -20.31647123477821,
+      "fpsMedianChangePercent": 1.3226572898162647,
+      "skinAllFinalMeansBelowAllBaseline": true,
+      "fpsRepeatRangesOverlap": false
+    },
+    {
+      "level": 65,
+      "skinMedianChangePercent": -10.971818582895686,
+      "fpsMedianChangePercent": 0.1991838060754647,
+      "skinAllFinalMeansBelowAllBaseline": true,
+      "fpsRepeatRangesOverlap": true
+    }
+  ],
+  "observedProcessMemoryMaxima": {
+    "before": {
+      "pssMiB": {
+        "values": [
+          521.4560546875,
+          504.1494140625,
+          526.716796875
+        ],
+        "median": 521.4560546875,
+        "min": 504.1494140625,
+        "max": 526.716796875
+      },
+      "rssMiB": {
+        "values": [
+          635.3359375,
+          617.9296875,
+          652.34375
+        ],
+        "median": 635.3359375,
+        "min": 617.9296875,
+        "max": 652.34375
+      },
+      "swapPssMiB": {
+        "values": [
+          0.9912109375,
+          43.0966796875,
+          3.3369140625
+        ],
+        "median": 3.3369140625,
+        "min": 0.9912109375,
+        "max": 43.0966796875
+      }
+    },
+    "after": {
+      "pssMiB": {
+        "values": [
+          495.4970703125,
+          468.79296875,
+          509.591796875
+        ],
+        "median": 495.4970703125,
+        "min": 468.79296875,
+        "max": 509.591796875
+      },
+      "rssMiB": {
+        "values": [
+          607.8671875,
+          587.26953125,
+          624.1015625
+        ],
+        "median": 607.8671875,
+        "min": 587.26953125,
+        "max": 624.1015625
+      },
+      "swapPssMiB": {
+        "values": [
+          4.5810546875,
+          46.5078125,
+          0.884765625
+        ],
+        "median": 4.5810546875,
+        "min": 0.884765625,
+        "max": 46.5078125
+      }
+    }
+  },
+  "scope": "Canonical six Release runs only. Cool baselines, navigation experiments, Home and after-soak excluded. Start-gated interleaved comparison, not an exact temperature/clock match."
+}

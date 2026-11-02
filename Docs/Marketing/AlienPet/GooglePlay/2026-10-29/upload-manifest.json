@@ -1,0 +1,189 @@
+{
+  "title": "Alien Pet: Escape Puzzle",
+  "locale": "en-US",
+  "date": "2026-10-29",
+  "status": "Prepared final visual/copy assets; upload and publication status are tracked separately in the Console status record.",
+  "counts": {
+    "phone": 6,
+    "tablet-7in": 4,
+    "tablet-10in": 4
+  },
+  "upload_order": {
+    "phone": [
+      "exports/phone/01-tiny-pet-big-escape.png",
+      "exports/phone/02-reveal-the-way.png",
+      "exports/phone/03-think-beyond-floor.png",
+      "exports/phone/04-snack-time.png",
+      "exports/phone/05-splash-personality.png",
+      "exports/phone/06-make-it-yours.png"
+    ],
+    "tablet-7in": [
+      "exports/tablet-7in/01-tap-think-find.png",
+      "exports/tablet-7in/02-reveal-the-way.png",
+      "exports/tablet-7in/03-small-parts-big-ideas.png",
+      "exports/tablet-7in/04-new-paths.png"
+    ],
+    "tablet-10in": [
+      "exports/tablet-10in/01-tap-think-find.png",
+      "exports/tablet-10in/02-reveal-the-way.png",
+      "exports/tablet-10in/03-small-parts-big-ideas.png",
+      "exports/tablet-10in/04-new-paths.png"
+    ]
+  },
+  "icon": "exports/app-icon-512.png",
+  "feature_graphic": "exports/feature-graphic.png",
+  "images": [
+    {
+      "id": "01-tiny-pet-big-escape",
+      "file": "exports/phone/01-tiny-pet-big-escape.png",
+      "width": 1080,
+      "height": 1920,
+      "bytes": 503160,
+      "hasAlpha": false,
+      "sha256": "910fca619d9680e515cb1da25e6b182293761fc6ccb2916f8d3d160d6a9c140f"
+    },
+    {
+      "id": "02-reveal-the-way",
+      "file": "exports/phone/02-reveal-the-way.png",
+      "width": 1080,
+      "height": 1920,
+      "bytes": 576277,
+      "hasAlpha": false,
+      "sha256": "6171ea26088f95c9cd4940eaa390271054870c31e7615763fc3fcc4c06163ed1"
+    },
+    {
+      "id": "03-think-beyond-floor",
+      "file": "exports/phone/03-think-beyond-floor.png",
+      "width": 1080,
+      "height": 1920,
+      "bytes": 598979,
+      "hasAlpha": false,
+      "sha256": "bb6c01e0fea83be1d943a5fc48573e4219481ec1d732713265545de7a31d16dc"
+    },
+    {
+      "id": "04-snack-time",
+      "file": "exports/phone/04-snack-time.png",
+      "width": 1080,
+      "height": 1920,
+      "bytes": 472631,
+      "hasAlpha": false,
+      "sha256": "5b67096411062884deb2b2feb56c2628bbc72c2c391010eaea10b82bb27cbf8c"
+    },
+    {
+      "id": "05-splash-personality",
+      "file": "exports/phone/05-splash-personality.png",
+      "width": 1080,
+      "height": 1920,
+      "bytes": 526643,
+      "hasAlpha": false,
+      "sha256": "6d103ee2f4782be9e8207e6fb724dec1849c0ec1bb057117001fd845e35d2c2a"
+    },
+    {
+      "id": "06-make-it-yours",
+      "file": "exports/phone/06-make-it-yours.png",
+      "width": 1080,
+      "height": 1920,
+      "bytes": 523712,
+      "hasAlpha": false,
+      "sha256": "81f31a5a36c5a3080880c39b6a6ba204c421b072d81f3ea4b199526087fe6983"
+    },
+    {
+      "id": "01-tap-think-find",
+      "file": "exports/tablet-7in/01-tap-think-find.png",
+      "width": 1440,
+      "height": 2560,
+      "bytes": 657416,
+      "hasAlpha": false,
+      "sha256": "f29785fc3cb51c9238aa3c02da1fe7d9398bbffd061264914d3e16b43450bb9a"
+    },
+    {
+      "id": "02-reveal-the-way",
+      "file": "exports/tablet-7in/02-reveal-the-way.png",
+      "width": 1440,
+      "height": 2560,
+      "bytes": 739446,
+      "hasAlpha": false,
+      "sha256": "8e3a218ee63abbdec16e93f83ffb7dd6d0aff1ffb4fa42312b962963d512c81f"
+    },
+    {
+      "id": "03-small-parts-big-ideas",
+      "file": "exports/tablet-7in/03-small-parts-big-ideas.png",
+      "width": 1440,
+      "height": 2560,
+      "bytes": 926627,
+      "hasAlpha": false,
+      "sha256": "ee20387ae058e575e9b9686617ef689ad4d0c427935efd540aa4b143a905303b"
+    },
+    {
+      "id": "04-new-paths",
+      "file": "exports/tablet-7in/04-new-paths.png",
+      "width": 1440,
+      "height": 2560,
+      "bytes": 925110,
+      "hasAlpha": false,
+      "sha256": "790b8484014e6a8d8d46b81d63d5a7ca5c0740892b19c730764660e40ad79c1e"
+    },
+    {
+      "id": "01-tap-think-find",
+      "file": "exports/tablet-10in/01-tap-think-find.png",
+      "width": 1440,
+      "height": 2560,
+      "bytes": 660122,
+      "hasAlpha": false,
+      "sha256": "74d645aa6e7521e8500222285268fbbb2bbf56ff1c772634c57b29d0f695f045"
+    },
+    {
+      "id": "02-reveal-the-way",
+      "file": "exports/tablet-10in/02-reveal-the-way.png",
+      "width": 1440,
+      "height": 2560,
+      "bytes": 741240,
+      "hasAlpha": false,
+      "sha256": "b48530345b733baf7ad09b67f5641e64e9b66f07d1fafea03f3220bdda15fd63"
+    },
+    {
+      "id": "03-small-parts-big-ideas",
+      "file": "exports/tablet-10in/03-small-parts-big-ideas.png",
+      "width": 1440,
+      "height": 2560,
+      "bytes": 925371,
+      "hasAlpha": false,
+      "sha256": "29b7a4f5d8b359ad46157852d17250fbd4aa9755406e574fc6286c1de4761217"
+    },
+    {
+      "id": "04-new-paths",
+      "file": "exports/tablet-10in/04-new-paths.png",
+      "width": 1440,
+      "height": 2560,
+      "bytes": 933993,
+      "hasAlpha": false,
+      "sha256": "6d248da6b5df838291865dee14af33feffa7ffdb62bbc71d3fb65bddd640e891"
+    },
+    {
+      "id": "approved-icon-c",
+      "file": "exports/app-icon-512.png",
+      "width": 512,
+      "height": 512,
+      "bytes": 493542,
+      "hasAlpha": false,
+      "sha256": "f1fe87861e9da69f92e06e6c07301f95493222d558d6ec223157fdee0892fad3"
+    },
+    {
+      "id": "illustrative-feature-graphic",
+      "file": "exports/feature-graphic.png",
+      "width": 1024,
+      "height": 500,
+      "bytes": 807612,
+      "hasAlpha": false,
+      "sha256": "32ddbcd8d47dd966c469a8567fe8b7cf6c71f8691e592804042a37024221351f"
+    }
+  ],
+  "copy_character_counts": {
+    "title": 24,
+    "short_description": 70,
+    "full_description": 1289
+  },
+  "preview": "screenshot-review.html",
+  "quality_checks": "Opaque PNG dimensions, source/crop bounds, caption overflow and header/image/footer collisions verified by export script. Contact sheet and representative full-resolution outputs inspected.",
+  "excluded": "No signing keys, credentials, APK/AAB files, developer account data or private device logs are included."
+}

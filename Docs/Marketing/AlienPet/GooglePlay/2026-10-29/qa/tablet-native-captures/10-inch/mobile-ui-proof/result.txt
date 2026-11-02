@@ -1,0 +1,2 @@
+screen=1600x2560 safe=(x:0.00, y:0.00, width:1600.00, height:2560.00) fullscreen=True camera=(x:0.00, y:0.00, width:1600.00, height:2560.00)
+result=passed overlaps=0 savesWritten=false

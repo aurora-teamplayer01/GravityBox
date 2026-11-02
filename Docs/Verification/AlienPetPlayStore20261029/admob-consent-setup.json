@@ -1,0 +1,46 @@
+{
+  "date": "2026-10-29",
+  "status": "Blocked by AdMob web editor loading failure; no Alien Pet consent form was created, saved or published.",
+  "authorized_account": "kienphamds@gmail.com",
+  "scope_app_id": "ca-app-pub-7806638519709442~4983717950",
+  "public_app_name": "Alien Pet: Escape Puzzle",
+  "privacy_url": "https://cj.suri.house/alien-pet-privacy",
+  "requested_work": "Create separate European and US privacy messages only for Alien Pet, with clear accept/manage/refuse or applicable opt-out controls, using the live policy; preserve other apps and keep automatic Analytics consent propagation off.",
+  "observed_dashboard": {
+    "European_messages": "Exactly one existing published message: Critter Jam - Android and iOS - GDPR,2 apps. Not modified.",
+    "US_overview": "Create a new message displayed; normal editor did not load.",
+    "consent_mode_for_advertising": "OFF; verified checkbox0 via direct observed embedded settings UI. Not changed.",
+    "settings_save": "Disabled; no settings changed."
+  },
+  "attempts": [
+    "Opened own new tab using the explicit AdMob app URL; account image confirmed kienphamds@gmail.com.",
+    "Privacy & messaging → European regulations: parent remains loading, child AX frame about:blank. Reload/hard-refresh did not resolve.",
+    "Opened exact iframe src read from visible DOM in separate own tab: existing table and settings load; Create message stays Loading messages.",
+    "Privacy overview → US state regulations Create: parent editor remains blank/loading; wait for actual create controls timed out."
+  ],
+  "diagnostic": "Google www.gstatic.com/pod-content-ads-contributor/...20261027.05_p0/user-messaging/app.dart.js repeatedly reports ReferenceError: ads is not defined; IRIS MetricsService creation failed. This is observed console evidence, not a proven root-cause analysis.",
+  "no_workarounds": "No hidden API requests, browser-store/cookie scraping, script injection, account-wide setting changes, unrelated-app edits, ad clicks or consent-error bypasses were used.",
+  "evidence": [
+    "Artifacts/AlienPetPlayStore/public-setup/admob-message-table.png",
+    "Artifacts/AlienPetPlayStore/public-setup/admob-consent-mode-off.png",
+    "Artifacts/AlienPetPlayStore/public-setup/admob-us-editor-stalled.png",
+    "Artifacts/AlienPetPlayStore/public-setup/admob-editor-errors.json",
+    "Artifacts/AlienPetPlayStore/public-setup/admob-us-editor-retry.png"
+  ],
+  "next": "Resume normal AdMob editor after its loading issue resolves. Select Alien Pet by exact app ID, set live policy, keep consent propagation off, publish scoped forms, then rerun eligible native UMP/ad flow on disposable emulator. Stop before accepting new legally binding Terms unless explicit action-time approval is obtained.",
+  "native_impact": "Signed release1.0.1(2) still receives UMP error3 no publisher forms configured. It correctly fails closed and permits gameplay; actual AdMob loading/serving is not verified.",
+  "retry_20261029": {
+    "scope": "US-only launch; separate Alien Pet US message, EU traveler coverage if editor permits",
+    "normal_ui_attempts": [
+      "Existing normal AdMob tab recovered US overview with Create a US states message. Clicking opened full-white spinner Message builder; AX frame about:blank.",
+      "Reload then sidebar Privacy & messaging → US state regulations Create; content stayed blank/loading.",
+      "Fresh tab in the same verified kienphamds@gmail.com profile → Privacy & messaging → US Create; content stayed blank/loading, expected Create control did not become visible."
+    ],
+    "visual_verified": true,
+    "screenshot": "Artifacts/AlienPetPlayStore/public-setup/admob-us-editor-retry.png",
+    "console": "Existing tab retains ReferenceError: ads is not defined in Google app.dart.js. Fresh tab has no captured error yet; underlying cause remains unproven.",
+    "changes": "None. No Alien Pet forms created/published, no changes to Critter or consent settings.",
+    "blocked": "AdMob UI does not expose a usable message editor. No hidden API, script injection or browser-security bypass used.",
+    "native_retest": "Not rerun because publisher configuration has not changed; last production release native evidence remains UMP error 3, fail-closed ads."
+  }
+}

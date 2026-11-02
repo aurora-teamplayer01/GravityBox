@@ -1,0 +1,59 @@
+{
+  "method": "Manual Android screen taps in normal Product UI; no proof extras.",
+  "checks": [
+    {
+      "case": "main-menu",
+      "result": "observed pass",
+      "screenshot": "open.png",
+      "utc": "2026-10-29T05:26:39.436747+00:00"
+    },
+    {
+      "case": "play-level-1",
+      "result": "observed pass",
+      "screenshot": "level1.png",
+      "utc": "2026-10-29T05:27:11.392276+00:00"
+    },
+    {
+      "case": "victory",
+      "result": "observed pass",
+      "screenshot": "after-exit.png",
+      "utc": "2026-10-29T05:27:48.533764+00:00"
+    },
+    {
+      "case": "victory-held",
+      "result": "observed pass",
+      "screenshot": "victory-held.png",
+      "utc": "2026-10-29T05:28:02.408963+00:00"
+    },
+    {
+      "case": "next-level-2",
+      "result": "observed pass",
+      "screenshot": "level2.png",
+      "utc": "2026-10-29T05:28:18.168994+00:00"
+    },
+    {
+      "case": "pause",
+      "result": "observed pass",
+      "screenshot": "pause.png",
+      "utc": "2026-10-29T05:28:49.806810+00:00"
+    },
+    {
+      "case": "restart-confirmation",
+      "result": "observed pass",
+      "screenshot": "restart-confirm.png",
+      "utc": "2026-10-29T05:29:30.020244+00:00"
+    },
+    {
+      "case": "confirm-restart-and-leave-open-level-2",
+      "result": "observed pass",
+      "screenshot": "left-open.png"
+    }
+  ],
+  "not_tested": [
+    "Native first-launch skip (covered in Editor)",
+    "Rewarded video completion/purchase",
+    "All Home and understanding chapters"
+  ],
+  "victory_hold_seconds_between_images": 13.9,
+  "progress_note": "Normal smoke test completed level 1, earned its standard 10 Drops, and opened level 2. Author replays had persistence disabled."
+}

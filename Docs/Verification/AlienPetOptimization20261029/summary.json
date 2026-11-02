@@ -1,0 +1,2049 @@
+{
+  "schemaVersion": 2,
+  "generatedUtc": "2026-10-29T10:59:19.694377+00:00",
+  "status": "complete-with-issues",
+  "checks": {
+    "release-repeats": "pass",
+    "profiler-repeats": "pass",
+    "final-builds": "pass",
+    "editor-tests": "pass",
+    "home-repeats": "pass",
+    "full65": "fail",
+    "after-soak": "pass",
+    "release-thermal-band": "fail",
+    "profile-analyzer-compare53": "pass",
+    "product-proof": "pass",
+    "final-installation": "pass",
+    "product-previews": "pass",
+    "native-rechecks": "fail",
+    "final-restore-after-rechecks": "pass",
+    "native-recheck-after-only-first-errors": "fail"
+  },
+  "pendingChecks": [],
+  "failedChecks": [
+    "full65",
+    "release-thermal-band",
+    "native-rechecks",
+    "native-recheck-after-only-first-errors"
+  ],
+  "failedIds": [
+    "full65",
+    "full65-level-10",
+    "full65-level-18",
+    "full65-level-27",
+    "full65-level-32",
+    "full65-level-48",
+    "full65-level-51",
+    "full65-level-56",
+    "full65-level-57",
+    "native-recheck-after-1-level-27",
+    "native-recheck-after-1-level-32",
+    "native-recheck-after-1-level-56",
+    "native-recheck-after-1-level-57",
+    "native-recheck-after-2-level-27",
+    "native-recheck-after-2-level-32",
+    "native-recheck-after-2-level-57",
+    "native-recheck-after-3-level-27",
+    "native-recheck-after-3-level-56",
+    "native-recheck-after-3-level-57",
+    "native-recheck-after-only-first-error-level-27",
+    "native-recheck-after-only-first-error-level-56",
+    "native-recheck-after-only-first-errors",
+    "native-recheck-before-1-level-27",
+    "native-recheck-before-1-level-57",
+    "native-recheck-before-2-level-27",
+    "native-recheck-before-2-level-32",
+    "native-recheck-before-2-level-56",
+    "native-recheck-before-2-level-57",
+    "native-recheck-before-3-level-27",
+    "native-recheck-before-3-level-32",
+    "native-recheck-before-3-level-57",
+    "native-rechecks",
+    "release-thermal-band",
+    "thermal-B2",
+    "thermal-B3",
+    "thermal-F3"
+  ],
+  "releaseComplete": true,
+  "profilerComplete": true,
+  "homeComplete": true,
+  "comparisonGeneratedUtc": "2026-10-29T10:57:05.100980+00:00",
+  "cpuGeneratedUtc": "2026-10-29T10:57:05.287680+00:00",
+  "release": [
+    {
+      "level": 2,
+      "before": {
+        "repeats": 3,
+        "expectedRepeats": 3,
+        "complete": true,
+        "routesPassed": true,
+        "fps": 46.576322,
+        "fpsRange": [
+          46.575107,
+          46.906177
+        ],
+        "p99Ms": 32.754421,
+        "p99Range": [
+          32.701843,
+          32.894783
+        ],
+        "cpuRepeats": 3,
+        "cpuComplete": true,
+        "skinMs": 3.492581,
+        "graphMs": 0.0,
+        "maxGraphMs": 0.0,
+        "startBatteryC": {
+          "n": 3,
+          "median": 37.0,
+          "min": 36.0,
+          "max": 37.0
+        }
+      },
+      "after": {
+        "repeats": 3,
+        "expectedRepeats": 3,
+        "complete": true,
+        "routesPassed": true,
+        "fps": 45.763964,
+        "fpsRange": [
+          45.028205,
+          46.094459
+        ],
+        "p99Ms": 48.954224,
+        "p99Range": [
+          32.696266,
+          49.00243
+        ],
+        "cpuRepeats": 3,
+        "cpuComplete": true,
+        "skinMs": 3.269561,
+        "graphMs": 0.0,
+        "maxGraphMs": 0.0,
+        "startBatteryC": {
+          "n": 3,
+          "median": 37.0,
+          "min": 37.0,
+          "max": 38.0
+        }
+      },
+      "fpsDeltaPercent": -1.744145
+    },
+    {
+      "level": 7,
+      "before": {
+        "repeats": 3,
+        "expectedRepeats": 3,
+        "complete": true,
+        "routesPassed": true,
+        "fps": 29.716093,
+        "fpsRange": [
+          29.639887,
+          29.807732
+        ],
+        "p99Ms": 65.321526,
+        "p99Range": [
+          49.104656,
+          65.337807
+        ],
+        "cpuRepeats": 3,
+        "cpuComplete": true,
+        "skinMs": 5.959977,
+        "graphMs": 0.197061,
+        "maxGraphMs": 35.832,
+        "startBatteryC": {
+          "n": 3,
+          "median": 37.0,
+          "min": 36.0,
+          "max": 37.0
+        }
+      },
+      "after": {
+        "repeats": 3,
+        "expectedRepeats": 3,
+        "complete": true,
+        "routesPassed": true,
+        "fps": 29.747695,
+        "fpsRange": [
+          29.540022,
+          29.768448
+        ],
+        "p99Ms": 49.076405,
+        "p99Range": [
+          49.064678,
+          49.091568
+        ],
+        "cpuRepeats": 3,
+        "cpuComplete": true,
+        "skinMs": 5.576174,
+        "graphMs": 0.17585,
+        "maxGraphMs": 28.76,
+        "startBatteryC": {
+          "n": 3,
+          "median": 37.0,
+          "min": 37.0,
+          "max": 38.0
+        }
+      },
+      "fpsDeltaPercent": 0.106349
+    },
+    {
+      "level": 23,
+      "before": {
+        "repeats": 3,
+        "expectedRepeats": 3,
+        "complete": true,
+        "routesPassed": true,
+        "fps": 29.66498,
+        "fpsRange": [
+          29.617365,
+          29.714506
+        ],
+        "p99Ms": 65.335258,
+        "p99Range": [
+          49.096333,
+          65.35453
+        ],
+        "cpuRepeats": 3,
+        "cpuComplete": true,
+        "skinMs": 10.790296,
+        "graphMs": 0.259042,
+        "maxGraphMs": 35.9024,
+        "startBatteryC": {
+          "n": 3,
+          "median": 37.0,
+          "min": 36.0,
+          "max": 37.0
+        }
+      },
+      "after": {
+        "repeats": 3,
+        "expectedRepeats": 3,
+        "complete": true,
+        "routesPassed": true,
+        "fps": 29.854193,
+        "fpsRange": [
+          29.763012,
+          29.989569
+        ],
+        "p99Ms": 65.320847,
+        "p99Range": [
+          49.086529,
+          65.33065
+        ],
+        "cpuRepeats": 3,
+        "cpuComplete": true,
+        "skinMs": 8.926766,
+        "graphMs": 0.312544,
+        "maxGraphMs": 48.3457,
+        "startBatteryC": {
+          "n": 3,
+          "median": 37.0,
+          "min": 37.0,
+          "max": 38.0
+        }
+      },
+      "fpsDeltaPercent": 0.637831
+    },
+    {
+      "level": 53,
+      "before": {
+        "repeats": 3,
+        "expectedRepeats": 3,
+        "complete": true,
+        "routesPassed": true,
+        "fps": 27.114882,
+        "fpsRange": [
+          27.106037,
+          27.266087
+        ],
+        "p99Ms": 212.357376,
+        "p99Range": [
+          212.320602,
+          212.373856
+        ],
+        "cpuRepeats": 3,
+        "cpuComplete": true,
+        "skinMs": 7.509531,
+        "graphMs": 2.551752,
+        "maxGraphMs": 195.3008,
+        "startBatteryC": {
+          "n": 3,
+          "median": 37.0,
+          "min": 36.0,
+          "max": 37.0
+        }
+      },
+      "after": {
+        "repeats": 3,
+        "expectedRepeats": 3,
+        "complete": true,
+        "routesPassed": true,
+        "fps": 27.473521,
+        "fpsRange": [
+          27.32499,
+          27.499205
+        ],
+        "p99Ms": 212.272018,
+        "p99Range": [
+          196.078827,
+          212.329224
+        ],
+        "cpuRepeats": 3,
+        "cpuComplete": true,
+        "skinMs": 5.98386,
+        "graphMs": 2.159726,
+        "maxGraphMs": 199.0743,
+        "startBatteryC": {
+          "n": 3,
+          "median": 37.0,
+          "min": 37.0,
+          "max": 38.0
+        }
+      },
+      "fpsDeltaPercent": 1.322664
+    },
+    {
+      "level": 65,
+      "before": {
+        "repeats": 3,
+        "expectedRepeats": 3,
+        "complete": true,
+        "routesPassed": true,
+        "fps": 28.837533,
+        "fpsRange": [
+          28.585868,
+          28.989473
+        ],
+        "p99Ms": 65.366249,
+        "p99Range": [
+          65.360054,
+          65.411903
+        ],
+        "cpuRepeats": 3,
+        "cpuComplete": true,
+        "skinMs": 6.357595,
+        "graphMs": 0.731851,
+        "maxGraphMs": 49.8471,
+        "startBatteryC": {
+          "n": 3,
+          "median": 37.0,
+          "min": 36.0,
+          "max": 37.0
+        }
+      },
+      "after": {
+        "repeats": 3,
+        "expectedRepeats": 3,
+        "complete": true,
+        "routesPassed": true,
+        "fps": 28.895025,
+        "fpsRange": [
+          28.698671,
+          28.90488
+        ],
+        "p99Ms": 65.351891,
+        "p99Range": [
+          65.341293,
+          65.354317
+        ],
+        "cpuRepeats": 3,
+        "cpuComplete": true,
+        "skinMs": 5.660051,
+        "graphMs": 0.730151,
+        "maxGraphMs": 50.8797,
+        "startBatteryC": {
+          "n": 3,
+          "median": 37.0,
+          "min": 37.0,
+          "max": 38.0
+        }
+      },
+      "fpsDeltaPercent": 0.199367
+    }
+  ],
+  "profiler": [
+    {
+      "level": 2,
+      "before": {
+        "repeats": 3,
+        "expectedRepeats": 3,
+        "complete": true,
+        "routesPassed": true,
+        "skinMs": 4.350929,
+        "skinMsRuns": 3,
+        "graphMs": null,
+        "graphMsRuns": 0
+      },
+      "after": {
+        "repeats": 3,
+        "expectedRepeats": 3,
+        "complete": true,
+        "routesPassed": true,
+        "skinMs": 3.344754,
+        "skinMsRuns": 3,
+        "graphMs": null,
+        "graphMsRuns": 0
+      }
+    },
+    {
+      "level": 7,
+      "before": {
+        "repeats": 3,
+        "expectedRepeats": 3,
+        "complete": true,
+        "routesPassed": true,
+        "skinMs": 4.604226,
+        "skinMsRuns": 3,
+        "graphMs": 0.174387,
+        "graphMsRuns": 3
+      },
+      "after": {
+        "repeats": 3,
+        "expectedRepeats": 3,
+        "complete": true,
+        "routesPassed": true,
+        "skinMs": 4.148817,
+        "skinMsRuns": 3,
+        "graphMs": 0.139705,
+        "graphMsRuns": 3
+      }
+    },
+    {
+      "level": 23,
+      "before": {
+        "repeats": 3,
+        "expectedRepeats": 3,
+        "complete": true,
+        "routesPassed": true,
+        "skinMs": 9.974591,
+        "skinMsRuns": 3,
+        "graphMs": 0.239483,
+        "graphMsRuns": 3
+      },
+      "after": {
+        "repeats": 3,
+        "expectedRepeats": 3,
+        "complete": true,
+        "routesPassed": true,
+        "skinMs": 6.876136,
+        "skinMsRuns": 3,
+        "graphMs": 0.210366,
+        "graphMsRuns": 3
+      }
+    },
+    {
+      "level": 53,
+      "before": {
+        "repeats": 3,
+        "expectedRepeats": 3,
+        "complete": true,
+        "routesPassed": true,
+        "skinMs": 8.949946,
+        "skinMsRuns": 3,
+        "graphMs": 3.534841,
+        "graphMsRuns": 3
+      },
+      "after": {
+        "repeats": 3,
+        "expectedRepeats": 3,
+        "complete": true,
+        "routesPassed": true,
+        "skinMs": 6.271327,
+        "skinMsRuns": 3,
+        "graphMs": 2.931876,
+        "graphMsRuns": 3
+      }
+    },
+    {
+      "level": 65,
+      "before": {
+        "repeats": 3,
+        "expectedRepeats": 3,
+        "complete": true,
+        "routesPassed": true,
+        "skinMs": 5.69547,
+        "skinMsRuns": 3,
+        "graphMs": 0.529363,
+        "graphMsRuns": 3
+      },
+      "after": {
+        "repeats": 3,
+        "expectedRepeats": 3,
+        "complete": true,
+        "routesPassed": true,
+        "skinMs": 4.663457,
+        "skinMsRuns": 3,
+        "graphMs": 0.47507,
+        "graphMsRuns": 3
+      }
+    }
+  ],
+  "home": [
+    {
+      "side": "before",
+      "repeats": 3,
+      "expectedRepeats": 3,
+      "complete": true,
+      "routesPassed": true,
+      "fpsRange": [
+        29.824085,
+        60.235236
+      ],
+      "medianFps": 29.873437
+    },
+    {
+      "side": "after",
+      "repeats": 3,
+      "expectedRepeats": 3,
+      "complete": true,
+      "routesPassed": true,
+      "fpsRange": [
+        29.89012,
+        60.267628
+      ],
+      "medianFps": 29.890271
+    }
+  ],
+  "profilerStartBatteryC": {
+    "before": {
+      "n": 3,
+      "median": 40.0,
+      "min": 39.0,
+      "max": 40.0
+    },
+    "after": {
+      "n": 3,
+      "median": 37.0,
+      "min": 36.0,
+      "max": 38.0
+    }
+  },
+  "tests": {
+    "state": "verified",
+    "total": 209,
+    "passed": 209,
+    "failed": 0,
+    "other": 0,
+    "allPassed": true,
+    "failedIds": [],
+    "suites": [
+      {
+        "file": "tests-final-targeted.xml",
+        "result": "Passed",
+        "total": "27",
+        "passed": "27",
+        "failed": "0"
+      },
+      {
+        "file": "tests-final-campaign-product.xml",
+        "result": "Passed",
+        "total": "182",
+        "passed": "182",
+        "failed": "0"
+      }
+    ]
+  },
+  "full65": {
+    "state": "failed",
+    "expected": 65,
+    "observed": 65,
+    "passed": 57,
+    "failed": 8,
+    "failedLevels": [
+      10,
+      18,
+      27,
+      32,
+      48,
+      51,
+      56,
+      57
+    ],
+    "missingLevels": [],
+    "levels": [
+      {
+        "level": 1,
+        "passed": true,
+        "fps": 43.944031,
+        "p99Ms": 48.983715,
+        "maxGraphMs": 0.0,
+        "frames": 229,
+        "seconds": 5.266727
+      },
+      {
+        "level": 2,
+        "passed": true,
+        "fps": 46.428532,
+        "p99Ms": 32.684666,
+        "maxGraphMs": 0.0,
+        "frames": 314,
+        "seconds": 6.889629
+      },
+      {
+        "level": 3,
+        "passed": true,
+        "fps": 44.919029,
+        "p99Ms": 32.790745,
+        "maxGraphMs": 0.0,
+        "frames": 317,
+        "seconds": 7.185711
+      },
+      {
+        "level": 4,
+        "passed": true,
+        "fps": 44.619614,
+        "p99Ms": 32.767002,
+        "maxGraphMs": 14.8948,
+        "frames": 328,
+        "seconds": 7.438591
+      },
+      {
+        "level": 5,
+        "passed": true,
+        "fps": 43.385635,
+        "p99Ms": 32.750957,
+        "maxGraphMs": 11.4218,
+        "frames": 567,
+        "seconds": 13.186218
+      },
+      {
+        "level": 6,
+        "passed": true,
+        "fps": 42.311085,
+        "p99Ms": 32.702206,
+        "maxGraphMs": 12.0439,
+        "frames": 573,
+        "seconds": 13.672607
+      },
+      {
+        "level": 7,
+        "passed": true,
+        "fps": 29.773714,
+        "p99Ms": 49.07386,
+        "maxGraphMs": 26.1874,
+        "frames": 643,
+        "seconds": 21.967628
+      },
+      {
+        "level": 8,
+        "passed": true,
+        "fps": 29.739536,
+        "p99Ms": 49.027119,
+        "maxGraphMs": 17.8188,
+        "frames": 240,
+        "seconds": 8.268753
+      },
+      {
+        "level": 9,
+        "passed": true,
+        "fps": 28.963049,
+        "p99Ms": 49.076061,
+        "maxGraphMs": 22.4646,
+        "frames": 555,
+        "seconds": 19.581726
+      },
+      {
+        "level": 10,
+        "passed": false,
+        "fps": 27.982071,
+        "p99Ms": 49.118523,
+        "maxGraphMs": 36.0628,
+        "frames": 1423,
+        "seconds": 51.174072
+      },
+      {
+        "level": 11,
+        "passed": true,
+        "fps": 30.357363,
+        "p99Ms": 49.058121,
+        "maxGraphMs": 32.2827,
+        "frames": 425,
+        "seconds": 14.255844
+      },
+      {
+        "level": 12,
+        "passed": true,
+        "fps": 29.964035,
+        "p99Ms": 49.066143,
+        "maxGraphMs": 60.2446,
+        "frames": 629,
+        "seconds": 21.220062
+      },
+      {
+        "level": 13,
+        "passed": true,
+        "fps": 30.300077,
+        "p99Ms": 49.060375,
+        "maxGraphMs": 28.2677,
+        "frames": 493,
+        "seconds": 16.439545
+      },
+      {
+        "level": 14,
+        "passed": true,
+        "fps": 29.761072,
+        "p99Ms": 49.135113,
+        "maxGraphMs": 22.2515,
+        "frames": 334,
+        "seconds": 11.566833
+      },
+      {
+        "level": 15,
+        "passed": true,
+        "fps": 29.730808,
+        "p99Ms": 65.297325,
+        "maxGraphMs": 32.3643,
+        "frames": 390,
+        "seconds": 13.496582
+      },
+      {
+        "level": 16,
+        "passed": true,
+        "fps": 29.724195,
+        "p99Ms": 65.335037,
+        "maxGraphMs": 46.5738,
+        "frames": 320,
+        "seconds": 11.221008
+      },
+      {
+        "level": 17,
+        "passed": true,
+        "fps": 29.994131,
+        "p99Ms": 65.337021,
+        "maxGraphMs": 49.4129,
+        "frames": 954,
+        "seconds": 33.003113
+      },
+      {
+        "level": 18,
+        "passed": false,
+        "fps": 30.074392,
+        "p99Ms": 49.073498,
+        "maxGraphMs": 58.3888,
+        "frames": 3414,
+        "seconds": 118.119781
+      },
+      {
+        "level": 19,
+        "passed": true,
+        "fps": 29.743586,
+        "p99Ms": 49.07058,
+        "maxGraphMs": 26.6982,
+        "frames": 603,
+        "seconds": 20.839722
+      },
+      {
+        "level": 20,
+        "passed": true,
+        "fps": 30.096121,
+        "p99Ms": 49.071953,
+        "maxGraphMs": 20.2916,
+        "frames": 648,
+        "seconds": 21.989685
+      },
+      {
+        "level": 21,
+        "passed": true,
+        "fps": 29.642126,
+        "p99Ms": 65.327026,
+        "maxGraphMs": 52.1095,
+        "frames": 860,
+        "seconds": 30.088928
+      },
+      {
+        "level": 22,
+        "passed": true,
+        "fps": 29.719231,
+        "p99Ms": 65.344505,
+        "maxGraphMs": 45.9772,
+        "frames": 368,
+        "seconds": 12.596008
+      },
+      {
+        "level": 23,
+        "passed": true,
+        "fps": 29.754597,
+        "p99Ms": 65.322136,
+        "maxGraphMs": 41.8865,
+        "frames": 349,
+        "seconds": 12.115967
+      },
+      {
+        "level": 24,
+        "passed": true,
+        "fps": 29.962017,
+        "p99Ms": 49.063515,
+        "maxGraphMs": 51.5339,
+        "frames": 1277,
+        "seconds": 42.899231
+      },
+      {
+        "level": 25,
+        "passed": true,
+        "fps": 28.825022,
+        "p99Ms": 49.113033,
+        "maxGraphMs": 39.0086,
+        "frames": 558,
+        "seconds": 19.685242
+      },
+      {
+        "level": 26,
+        "passed": true,
+        "fps": 30.101938,
+        "p99Ms": 65.324883,
+        "maxGraphMs": 37.6403,
+        "frames": 447,
+        "seconds": 15.156677
+      },
+      {
+        "level": 27,
+        "passed": false,
+        "fps": 29.575899,
+        "p99Ms": 49.063156,
+        "maxGraphMs": 43.4338,
+        "frames": 2839,
+        "seconds": 96.767456
+      },
+      {
+        "level": 28,
+        "passed": true,
+        "fps": 30.261068,
+        "p99Ms": 49.040363,
+        "maxGraphMs": 26.4395,
+        "frames": 568,
+        "seconds": 19.215759
+      },
+      {
+        "level": 29,
+        "passed": true,
+        "fps": 29.873486,
+        "p99Ms": 65.342628,
+        "maxGraphMs": 77.8294,
+        "frames": 692,
+        "seconds": 23.720154
+      },
+      {
+        "level": 30,
+        "passed": true,
+        "fps": 30.051401,
+        "p99Ms": 49.047211,
+        "maxGraphMs": 23.9483,
+        "frames": 568,
+        "seconds": 19.286682
+      },
+      {
+        "level": 31,
+        "passed": true,
+        "fps": 29.983856,
+        "p99Ms": 65.304283,
+        "maxGraphMs": 29.4505,
+        "frames": 842,
+        "seconds": 28.638306
+      },
+      {
+        "level": 32,
+        "passed": false,
+        "fps": 29.662384,
+        "p99Ms": 65.343391,
+        "maxGraphMs": 82.1435,
+        "frames": 1193,
+        "seconds": 41.43811
+      },
+      {
+        "level": 33,
+        "passed": true,
+        "fps": 28.070896,
+        "p99Ms": 49.036495,
+        "maxGraphMs": 0.0,
+        "frames": 83,
+        "seconds": 3.166687
+      },
+      {
+        "level": 34,
+        "passed": true,
+        "fps": 29.059261,
+        "p99Ms": 49.099857,
+        "maxGraphMs": 39.2203,
+        "frames": 366,
+        "seconds": 12.898315
+      },
+      {
+        "level": 35,
+        "passed": true,
+        "fps": 29.429966,
+        "p99Ms": 49.063648,
+        "maxGraphMs": 0.0,
+        "frames": 200,
+        "seconds": 7.072266
+      },
+      {
+        "level": 36,
+        "passed": true,
+        "fps": 29.491274,
+        "p99Ms": 65.417915,
+        "maxGraphMs": 60.4705,
+        "frames": 304,
+        "seconds": 10.670654
+      },
+      {
+        "level": 37,
+        "passed": true,
+        "fps": 29.812742,
+        "p99Ms": 65.399796,
+        "maxGraphMs": 66.1824,
+        "frames": 394,
+        "seconds": 13.673706
+      },
+      {
+        "level": 38,
+        "passed": true,
+        "fps": 27.00231,
+        "p99Ms": 65.329239,
+        "maxGraphMs": 35.1213,
+        "frames": 573,
+        "seconds": 21.762451
+      },
+      {
+        "level": 39,
+        "passed": true,
+        "fps": 30.132816,
+        "p99Ms": 49.105286,
+        "maxGraphMs": 30.1667,
+        "frames": 699,
+        "seconds": 23.722534
+      },
+      {
+        "level": 40,
+        "passed": true,
+        "fps": 29.999546,
+        "p99Ms": 65.305679,
+        "maxGraphMs": 80.9555,
+        "frames": 1185,
+        "seconds": 39.877441
+      },
+      {
+        "level": 41,
+        "passed": true,
+        "fps": 29.833441,
+        "p99Ms": 65.325478,
+        "maxGraphMs": 20.0845,
+        "frames": 424,
+        "seconds": 14.572876
+      },
+      {
+        "level": 42,
+        "passed": true,
+        "fps": 29.662691,
+        "p99Ms": 65.393684,
+        "maxGraphMs": 52.5137,
+        "frames": 848,
+        "seconds": 29.419678
+      },
+      {
+        "level": 43,
+        "passed": true,
+        "fps": 27.321524,
+        "p99Ms": 81.639038,
+        "maxGraphMs": 49.3273,
+        "frames": 765,
+        "seconds": 29.109619
+      },
+      {
+        "level": 44,
+        "passed": true,
+        "fps": 30.115429,
+        "p99Ms": 49.098972,
+        "maxGraphMs": 63.7978,
+        "frames": 1255,
+        "seconds": 42.103516
+      },
+      {
+        "level": 45,
+        "passed": true,
+        "fps": 30.111221,
+        "p99Ms": 49.09901,
+        "maxGraphMs": 31.8003,
+        "frames": 637,
+        "seconds": 21.694458
+      },
+      {
+        "level": 46,
+        "passed": true,
+        "fps": 29.824453,
+        "p99Ms": 49.072918,
+        "maxGraphMs": 61.5286,
+        "frames": 1086,
+        "seconds": 36.748657
+      },
+      {
+        "level": 47,
+        "passed": true,
+        "fps": 29.713507,
+        "p99Ms": 65.436409,
+        "maxGraphMs": 80.7113,
+        "frames": 1014,
+        "seconds": 35.380615
+      },
+      {
+        "level": 48,
+        "passed": false,
+        "fps": 30.080517,
+        "p99Ms": 49.093048,
+        "maxGraphMs": 54.7985,
+        "frames": 1884,
+        "seconds": 64.139282
+      },
+      {
+        "level": 49,
+        "passed": true,
+        "fps": 29.8083,
+        "p99Ms": 65.375206,
+        "maxGraphMs": 73.4875,
+        "frames": 1343,
+        "seconds": 47.105591
+      },
+      {
+        "level": 50,
+        "passed": true,
+        "fps": 29.944897,
+        "p99Ms": 65.306374,
+        "maxGraphMs": 57.9977,
+        "frames": 1198,
+        "seconds": 40.44165
+      },
+      {
+        "level": 51,
+        "passed": false,
+        "fps": 29.565695,
+        "p99Ms": 65.366165,
+        "maxGraphMs": 121.1134,
+        "frames": 1164,
+        "seconds": 39.863403
+      },
+      {
+        "level": 52,
+        "passed": true,
+        "fps": 29.953352,
+        "p99Ms": 65.348969,
+        "maxGraphMs": 48.6349,
+        "frames": 1557,
+        "seconds": 55.024048
+      },
+      {
+        "level": 53,
+        "passed": true,
+        "fps": 26.395483,
+        "p99Ms": 228.713684,
+        "maxGraphMs": 206.4424,
+        "frames": 821,
+        "seconds": 32.000732
+      },
+      {
+        "level": 54,
+        "passed": true,
+        "fps": 29.955917,
+        "p99Ms": 65.379417,
+        "maxGraphMs": 76.8628,
+        "frames": 1518,
+        "seconds": 52.97937
+      },
+      {
+        "level": 55,
+        "passed": true,
+        "fps": 30.169447,
+        "p99Ms": 49.078968,
+        "maxGraphMs": 31.724,
+        "frames": 448,
+        "seconds": 15.257935
+      },
+      {
+        "level": 56,
+        "passed": false,
+        "fps": 29.330568,
+        "p99Ms": 65.347176,
+        "maxGraphMs": 55.4572,
+        "frames": 850,
+        "seconds": 30.674927
+      },
+      {
+        "level": 57,
+        "passed": false,
+        "fps": 30.052137,
+        "p99Ms": 49.114456,
+        "maxGraphMs": 40.6449,
+        "frames": 3465,
+        "seconds": 119.35498
+      },
+      {
+        "level": 58,
+        "passed": true,
+        "fps": 29.967892,
+        "p99Ms": 65.344902,
+        "maxGraphMs": 45.3902,
+        "frames": 1008,
+        "seconds": 34.324829
+      },
+      {
+        "level": 59,
+        "passed": true,
+        "fps": 30.062368,
+        "p99Ms": 49.069317,
+        "maxGraphMs": 22.4884,
+        "frames": 524,
+        "seconds": 17.758301
+      },
+      {
+        "level": 60,
+        "passed": true,
+        "fps": 29.599693,
+        "p99Ms": 65.396225,
+        "maxGraphMs": 74.1307,
+        "frames": 1146,
+        "seconds": 40.057373
+      },
+      {
+        "level": 61,
+        "passed": true,
+        "fps": 29.491905,
+        "p99Ms": 49.076523,
+        "maxGraphMs": 63.288,
+        "frames": 1626,
+        "seconds": 55.632568
+      },
+      {
+        "level": 62,
+        "passed": true,
+        "fps": 28.867758,
+        "p99Ms": 98.024727,
+        "maxGraphMs": 116.3576,
+        "frames": 1087,
+        "seconds": 38.716309
+      },
+      {
+        "level": 63,
+        "passed": true,
+        "fps": 29.898849,
+        "p99Ms": 49.064915,
+        "maxGraphMs": 20.9745,
+        "frames": 591,
+        "seconds": 20.236084
+      },
+      {
+        "level": 64,
+        "passed": true,
+        "fps": 29.676565,
+        "p99Ms": 65.371445,
+        "maxGraphMs": 72.7053,
+        "frames": 781,
+        "seconds": 27.978271
+      },
+      {
+        "level": 65,
+        "passed": true,
+        "fps": 28.3585,
+        "p99Ms": 81.671516,
+        "maxGraphMs": 56.2074,
+        "frames": 1986,
+        "seconds": 72.361328
+      }
+    ],
+    "complete": true,
+    "scope": "Final-build warm soak; no historical before/after inference",
+    "unknown": 0,
+    "duplicateEntries": 0,
+    "errorCount": 0,
+    "levelFpsMedian": 29.824453,
+    "levelFpsRange": [
+      26.395483,
+      46.428532
+    ],
+    "sampleFrames": 56790,
+    "sampleSeconds": 1893.84931,
+    "frameWeightedFps": 29.986546,
+    "source": "../../../Artifacts/AlienPetOptimization-2026-10-29/after-release-full65/proof/20261029T093258Z/run.json",
+    "utc": "2026-10-29T09:32:58.3769200Z"
+  },
+  "afterSoak": {
+    "state": "complete",
+    "expected": 5,
+    "observed": 5,
+    "passed": 5,
+    "failed": 0,
+    "failedLevels": [],
+    "missingLevels": [],
+    "levels": [
+      {
+        "level": 2,
+        "passed": true,
+        "fps": 42.288277,
+        "p99Ms": 49.021229,
+        "maxGraphMs": 0.0,
+        "frames": 286,
+        "seconds": 6.942478
+      },
+      {
+        "level": 7,
+        "passed": true,
+        "fps": 29.688688,
+        "p99Ms": 65.34066,
+        "maxGraphMs": 33.6476,
+        "frames": 614,
+        "seconds": 21.052992
+      },
+      {
+        "level": 23,
+        "passed": true,
+        "fps": 29.672318,
+        "p99Ms": 65.330307,
+        "maxGraphMs": 40.8986,
+        "frames": 365,
+        "seconds": 12.614914
+      },
+      {
+        "level": 53,
+        "passed": true,
+        "fps": 26.55719,
+        "p99Ms": 245.001434,
+        "maxGraphMs": 230.6308,
+        "frames": 800,
+        "seconds": 31.234734
+      },
+      {
+        "level": 65,
+        "passed": true,
+        "fps": 28.393988,
+        "p99Ms": 81.679573,
+        "maxGraphMs": 54.7326,
+        "frames": 2027,
+        "seconds": 73.586655
+      }
+    ],
+    "complete": true,
+    "scope": "Single late same-content repeat after full65; no cooling gate; excluded from primary A/B groups",
+    "unknown": 0,
+    "duplicateEntries": 0,
+    "errorCount": 0,
+    "levelFpsMedian": 29.672318,
+    "levelFpsRange": [
+      26.55719,
+      42.288277
+    ],
+    "sampleFrames": 4092,
+    "sampleSeconds": 141.257553,
+    "frameWeightedFps": 28.968363,
+    "source": "../../../Artifacts/AlienPetOptimization-2026-10-29/after-soak-1/proof/20261029T101249Z/run.json",
+    "utc": "2026-10-29T10:12:50.0121920Z"
+  },
+  "builds": {
+    "release": {
+      "state": "built",
+      "sha256": "26df2c98969cd38f500708e2c364e9a82dd9090bbb1407b5babdd6efe4e5fb39",
+      "bytes": 59316804,
+      "name": "AlienPet-after-Release.apk"
+    },
+    "profiler": {
+      "state": "built",
+      "sha256": "b785169fb186a3aebc3d9ec6113062e6fb6648d2fce1656a723ed88358a77043",
+      "bytes": 93818403,
+      "name": "AlienPet-after-Profiler.apk"
+    }
+  },
+  "thermal": {
+    "complete": true,
+    "targetBatteryRangeC": [
+      36.0,
+      38.0
+    ],
+    "targetThermalStatus": 1,
+    "runs": [
+      {
+        "id": "B1",
+        "run": "before-release-1",
+        "startBatteryC": 36.0,
+        "endBatteryC": 37.0,
+        "startThermalStatus": 1,
+        "endThermalStatus": 1,
+        "batteryRangeC": [
+          36.0,
+          37.0
+        ],
+        "thermalStatuses": [
+          1
+        ],
+        "sampleCount": 7,
+        "startGatePassed": true,
+        "telemetryComplete": true,
+        "wholeRunWithinBand": true
+      },
+      {
+        "id": "F1",
+        "run": "after-release-1",
+        "startBatteryC": 37.0,
+        "endBatteryC": 37.0,
+        "startThermalStatus": 1,
+        "endThermalStatus": 1,
+        "batteryRangeC": [
+          36.0,
+          37.0
+        ],
+        "thermalStatuses": [
+          1
+        ],
+        "sampleCount": 7,
+        "startGatePassed": true,
+        "telemetryComplete": true,
+        "wholeRunWithinBand": true
+      },
+      {
+        "id": "F2",
+        "run": "after-release-2",
+        "startBatteryC": 37.0,
+        "endBatteryC": 37.0,
+        "startThermalStatus": 1,
+        "endThermalStatus": 1,
+        "batteryRangeC": [
+          37.0,
+          37.0
+        ],
+        "thermalStatuses": [
+          1
+        ],
+        "sampleCount": 7,
+        "startGatePassed": true,
+        "telemetryComplete": true,
+        "wholeRunWithinBand": true
+      },
+      {
+        "id": "B2",
+        "run": "before-release-2",
+        "startBatteryC": 37.0,
+        "endBatteryC": 38.0,
+        "startThermalStatus": 1,
+        "endThermalStatus": 2,
+        "batteryRangeC": [
+          37.0,
+          38.0
+        ],
+        "thermalStatuses": [
+          1,
+          2
+        ],
+        "sampleCount": 7,
+        "startGatePassed": true,
+        "telemetryComplete": true,
+        "wholeRunWithinBand": false
+      },
+      {
+        "id": "B3",
+        "run": "before-release-3",
+        "startBatteryC": 37.0,
+        "endBatteryC": 38.0,
+        "startThermalStatus": 1,
+        "endThermalStatus": 2,
+        "batteryRangeC": [
+          37.0,
+          38.0
+        ],
+        "thermalStatuses": [
+          1,
+          2
+        ],
+        "sampleCount": 7,
+        "startGatePassed": true,
+        "telemetryComplete": true,
+        "wholeRunWithinBand": false
+      },
+      {
+        "id": "F3",
+        "run": "after-release-3",
+        "startBatteryC": 38.0,
+        "endBatteryC": 38.0,
+        "startThermalStatus": 1,
+        "endThermalStatus": 2,
+        "batteryRangeC": [
+          37.0,
+          38.0
+        ],
+        "thermalStatuses": [
+          1,
+          2
+        ],
+        "sampleCount": 7,
+        "startGatePassed": true,
+        "telemetryComplete": true,
+        "wholeRunWithinBand": false
+      }
+    ],
+    "driftedRuns": [
+      "B2",
+      "B3",
+      "F3"
+    ],
+    "wholeRunWithinBand": false,
+    "scope": "Recorded run-wide health samples, not continuous temperatures or CPU/core/GPU clocks."
+  },
+  "profileAnalyzer": {
+    "state": "verified",
+    "path": "profile-analyzer-compare53.json",
+    "version": "1.4.0",
+    "pairedMarkers": 667,
+    "beforeFrames": 560,
+    "afterFrames": 609
+  },
+  "product": {
+    "installation": {
+      "state": "verified",
+      "apkSha256": "26df2c98969cd38f500708e2c364e9a82dd9090bbb1407b5babdd6efe4e5fb39",
+      "matchesFinalRelease": true,
+      "normalGameLaunched": true,
+      "scope": "Final restoration after isolated functional rechecks"
+    },
+    "proof": {
+      "state": "verified",
+      "passed": true,
+      "executedAfterFinalPipeline": true
+    },
+    "previewsComplete": true,
+    "previews": [
+      {
+        "name": "01-menu.png",
+        "label": "Menu",
+        "path": "product/01-menu.png",
+        "state": "available"
+      },
+      {
+        "name": "02-game.png",
+        "label": "Trong màn",
+        "path": "product/02-game.png",
+        "state": "available"
+      },
+      {
+        "name": "03-victory-0-45.png",
+        "label": "Chiến thắng",
+        "path": "product/03-victory-0-45.png",
+        "state": "available"
+      },
+      {
+        "name": "04-reward.png",
+        "label": "Phần thưởng",
+        "path": "product/04-reward.png",
+        "state": "available"
+      },
+      {
+        "name": "06-home.png",
+        "label": "Home",
+        "path": "product/06-home.png",
+        "state": "available"
+      },
+      {
+        "name": "07-style.png",
+        "label": "Style",
+        "path": "product/07-style.png",
+        "state": "available"
+      }
+    ]
+  },
+  "nativeRechecks": {
+    "status": "complete",
+    "complete": true,
+    "observationsComplete": true,
+    "expectedRepeatsPerSide": 3,
+    "levels": [
+      {
+        "level": 10,
+        "originalFull65Passed": false,
+        "before": {
+          "passed": 3,
+          "observed": 3,
+          "expected": 3,
+          "failedRuns": [],
+          "firstErrorSignatures": [],
+          "missingFirstErrorRuns": []
+        },
+        "after": {
+          "passed": 3,
+          "observed": 3,
+          "expected": 3,
+          "failedRuns": [],
+          "firstErrorSignatures": [],
+          "missingFirstErrorRuns": []
+        },
+        "unresolvedAfterOnlyFailure": false,
+        "afterOnlyFirstErrorSignatures": []
+      },
+      {
+        "level": 27,
+        "originalFull65Passed": false,
+        "before": {
+          "passed": 0,
+          "observed": 3,
+          "expected": 3,
+          "failedRuns": [
+            "before-1",
+            "before-2",
+            "before-3"
+          ],
+          "firstErrorSignatures": [
+            {
+              "signature": "System.InvalidOperationException: All parts meet and fuse",
+              "runs": [
+                "before-1",
+                "before-2",
+                "before-3"
+              ]
+            }
+          ],
+          "missingFirstErrorRuns": []
+        },
+        "after": {
+          "passed": 0,
+          "observed": 3,
+          "expected": 3,
+          "failedRuns": [
+            "after-1",
+            "after-2",
+            "after-3"
+          ],
+          "firstErrorSignatures": [
+            {
+              "signature": "System.InvalidOperationException: Across the back road onto the right shelf, clear of P2",
+              "runs": [
+                "after-1"
+              ]
+            },
+            {
+              "signature": "System.InvalidOperationException: All parts meet and fuse",
+              "runs": [
+                "after-2",
+                "after-3"
+              ]
+            }
+          ],
+          "missingFirstErrorRuns": []
+        },
+        "unresolvedAfterOnlyFailure": false,
+        "afterOnlyFirstErrorSignatures": [
+          {
+            "signature": "System.InvalidOperationException: Across the back road onto the right shelf, clear of P2",
+            "runs": [
+              "after-1"
+            ]
+          }
+        ]
+      },
+      {
+        "level": 32,
+        "originalFull65Passed": false,
+        "before": {
+          "passed": 1,
+          "observed": 3,
+          "expected": 3,
+          "failedRuns": [
+            "before-2",
+            "before-3"
+          ],
+          "firstErrorSignatures": [
+            {
+              "signature": "System.InvalidOperationException: No visible floor command for part 1 at (0.050, -0.300, -0.240)",
+              "runs": [
+                "before-2",
+                "before-3"
+              ]
+            }
+          ],
+          "missingFirstErrorRuns": []
+        },
+        "after": {
+          "passed": 1,
+          "observed": 3,
+          "expected": 3,
+          "failedRuns": [
+            "after-1",
+            "after-2"
+          ],
+          "firstErrorSignatures": [
+            {
+              "signature": "System.InvalidOperationException: No visible floor command for part 1 at (0.050, -0.300, -0.240)",
+              "runs": [
+                "after-1",
+                "after-2"
+              ]
+            }
+          ],
+          "missingFirstErrorRuns": []
+        },
+        "unresolvedAfterOnlyFailure": false,
+        "afterOnlyFirstErrorSignatures": []
+      },
+      {
+        "level": 56,
+        "originalFull65Passed": false,
+        "before": {
+          "passed": 2,
+          "observed": 3,
+          "expected": 3,
+          "failedRuns": [
+            "before-2"
+          ],
+          "firstErrorSignatures": [
+            {
+              "signature": "System.InvalidOperationException: Handle C rejected:",
+              "runs": [
+                "before-2"
+              ]
+            }
+          ],
+          "missingFirstErrorRuns": []
+        },
+        "after": {
+          "passed": 1,
+          "observed": 3,
+          "expected": 3,
+          "failedRuns": [
+            "after-1",
+            "after-3"
+          ],
+          "firstErrorSignatures": [
+            {
+              "signature": "System.InvalidOperationException: Handle C rejected: Cơ quan đang thực hiện",
+              "runs": [
+                "after-1",
+                "after-3"
+              ]
+            }
+          ],
+          "missingFirstErrorRuns": []
+        },
+        "unresolvedAfterOnlyFailure": false,
+        "afterOnlyFirstErrorSignatures": [
+          {
+            "signature": "System.InvalidOperationException: Handle C rejected: Cơ quan đang thực hiện",
+            "runs": [
+              "after-1",
+              "after-3"
+            ]
+          }
+        ]
+      },
+      {
+        "level": 57,
+        "originalFull65Passed": false,
+        "before": {
+          "passed": 0,
+          "observed": 3,
+          "expected": 3,
+          "failedRuns": [
+            "before-1",
+            "before-2",
+            "before-3"
+          ],
+          "firstErrorSignatures": [
+            {
+              "signature": "System.InvalidOperationException: All parts meet and fuse",
+              "runs": [
+                "before-1",
+                "before-2",
+                "before-3"
+              ]
+            }
+          ],
+          "missingFirstErrorRuns": []
+        },
+        "after": {
+          "passed": 0,
+          "observed": 3,
+          "expected": 3,
+          "failedRuns": [
+            "after-1",
+            "after-2",
+            "after-3"
+          ],
+          "firstErrorSignatures": [
+            {
+              "signature": "System.InvalidOperationException: All parts meet and fuse",
+              "runs": [
+                "after-1",
+                "after-2",
+                "after-3"
+              ]
+            }
+          ],
+          "missingFirstErrorRuns": []
+        },
+        "unresolvedAfterOnlyFailure": false,
+        "afterOnlyFirstErrorSignatures": []
+      }
+    ],
+    "originalFull65FailedLevels": [
+      10,
+      18,
+      27,
+      32,
+      48,
+      51,
+      56,
+      57
+    ],
+    "runs": [
+      {
+        "id": "before-1",
+        "side": "before",
+        "complete": true,
+        "passed": 3,
+        "failedLevels": [
+          27,
+          57
+        ],
+        "errorCount": 0,
+        "source": "../../../Artifacts/AlienPetOptimization-2026-10-29/native-rechecks/before-1/proof/20261029T101732Z/run.json"
+      },
+      {
+        "id": "before-2",
+        "side": "before",
+        "complete": true,
+        "passed": 1,
+        "failedLevels": [
+          27,
+          32,
+          56,
+          57
+        ],
+        "errorCount": 0,
+        "source": "../../../Artifacts/AlienPetOptimization-2026-10-29/native-rechecks/before-2/proof/20261029T102340Z/run.json"
+      },
+      {
+        "id": "before-3",
+        "side": "before",
+        "complete": true,
+        "passed": 2,
+        "failedLevels": [
+          27,
+          32,
+          57
+        ],
+        "errorCount": 0,
+        "source": "../../../Artifacts/AlienPetOptimization-2026-10-29/native-rechecks/before-3/proof/20261029T103042Z/run.json"
+      },
+      {
+        "id": "after-1",
+        "side": "after",
+        "complete": true,
+        "passed": 1,
+        "failedLevels": [
+          27,
+          32,
+          56,
+          57
+        ],
+        "errorCount": 0,
+        "source": "../../../Artifacts/AlienPetOptimization-2026-10-29/native-rechecks/after-1/proof/20261029T103723Z/run.json"
+      },
+      {
+        "id": "after-2",
+        "side": "after",
+        "complete": true,
+        "passed": 2,
+        "failedLevels": [
+          27,
+          32,
+          57
+        ],
+        "errorCount": 0,
+        "source": "../../../Artifacts/AlienPetOptimization-2026-10-29/native-rechecks/after-2/proof/20261029T104347Z/run.json"
+      },
+      {
+        "id": "after-3",
+        "side": "after",
+        "complete": true,
+        "passed": 2,
+        "failedLevels": [
+          27,
+          56,
+          57
+        ],
+        "errorCount": 0,
+        "source": "../../../Artifacts/AlienPetOptimization-2026-10-29/native-rechecks/after-3/proof/20261029T104940Z/run.json"
+      }
+    ],
+    "failedIds": [
+      "native-recheck-after-1-level-27",
+      "native-recheck-after-1-level-32",
+      "native-recheck-after-1-level-56",
+      "native-recheck-after-1-level-57",
+      "native-recheck-after-2-level-27",
+      "native-recheck-after-2-level-32",
+      "native-recheck-after-2-level-57",
+      "native-recheck-after-3-level-27",
+      "native-recheck-after-3-level-56",
+      "native-recheck-after-3-level-57",
+      "native-recheck-before-1-level-27",
+      "native-recheck-before-1-level-57",
+      "native-recheck-before-2-level-27",
+      "native-recheck-before-2-level-32",
+      "native-recheck-before-2-level-56",
+      "native-recheck-before-2-level-57",
+      "native-recheck-before-3-level-27",
+      "native-recheck-before-3-level-32",
+      "native-recheck-before-3-level-57"
+    ],
+    "invalidRuns": [],
+    "unresolvedAfterOnlyLevels": [],
+    "afterOnlyFirstErrorSignatures": [
+      {
+        "level": 27,
+        "signature": "System.InvalidOperationException: Across the back road onto the right shelf, clear of P2",
+        "runs": [
+          "after-1"
+        ],
+        "baselineObserved": 3,
+        "finalObserved": 3,
+        "baselineFirstErrorSignatures": [
+          "System.InvalidOperationException: All parts meet and fuse"
+        ]
+      },
+      {
+        "level": 56,
+        "signature": "System.InvalidOperationException: Handle C rejected: Cơ quan đang thực hiện",
+        "runs": [
+          "after-1",
+          "after-3"
+        ],
+        "baselineObserved": 3,
+        "finalObserved": 3,
+        "baselineFirstErrorSignatures": [
+          "System.InvalidOperationException: Handle C rejected:"
+        ]
+      }
+    ],
+    "finalRestore": {
+      "state": "verified",
+      "apkSha256": "26df2c98969cd38f500708e2c364e9a82dd9090bbb1407b5babdd6efe4e5fb39",
+      "matchesFinalRelease": true,
+      "pidRunning": true,
+      "foreground": true
+    },
+    "scope": "Isolated authored-touch functional rechecks only; no FPS inference. Original full65 failures remain unchanged. Both builds failing a level does not rule out a regression: compare first-error assertions separately."
+  },
+  "sampleCoveragePercent": {
+    "min": 96.422996,
+    "median": 97.278071,
+    "max": 98.419815,
+    "records": 30,
+    "definition": "sum(recorded frame intervals) / route wall time; not a count of every rendered frame"
+  },
+  "preservedContract": {
+    "resolution": [
+      720,
+      1612
+    ],
+    "physicsHz": 120,
+    "particles": 32,
+    "materialsShadersLighting": "unchanged by authorized scope",
+    "source": "README.md"
+  },
+  "limits": [
+    "Release replay uses developer HUD, not Product UI; Product Home is separate.",
+    "FPS, tails and maxGraph cover sampled windows (~97% by sum of recorded frame intervals / route wall time), not the entire route or a measured percentage of rendered frames. Two diagnostic frames before each new touch are excluded; ordinary new-command BuildGraph is not intentionally excluded. Physics and previous-command work can continue during those pauses.",
+    "60 FPS is not achieved across the measured routes. Retained changes are skin/per-tick work; navigation source is restored and unchanged. Skin savings are moderate, not a universal graph or frame-rate improvement.",
+    "Medians summarize runs, not pooled frames; deltas are descriptive, not causal.",
+    "Profiler includes Development/recording overhead; inspect recorded starting-temperature ranges and route differences before interpreting deltas.",
+    "Baseline Home ranges 29.82–60.24 FPS; cause is unestablished.",
+    "GPU timestamps unavailable; present/semaphore waits are not GPU execution time.",
+    "Full65 is a final-build warm soak; historical 30.1 FPS screenshot replay is not an A/B baseline.",
+    "Isolated native rechecks are functional evidence only. They never replace original full65 outcomes or primary timing data; final installation stays pending until the final APK is restored, hash-verified and running in the foreground.",
+    "Ready manifests confirm built artifact records, not installation or on-device verification."
+  ],
+  "sources": [
+    {
+      "label": "So sánh FPS / Profiler",
+      "path": "../../../Artifacts/AlienPetOptimization-2026-10-29/comparison/comparison.json",
+      "state": "available",
+      "sha256": "8e606e193dbe1a306e2261b2dae59137c819f7b8703d6d3a4921e4a3f4c8a70f"
+    },
+    {
+      "label": "Release CPU",
+      "path": "../../../Artifacts/AlienPetOptimization-2026-10-29/comparison/release-cpu.json",
+      "state": "available",
+      "sha256": "5bcae1300f2968b0e8a8687fa816f1e01ed83a9654ff8638985eb50cd50a08b0"
+    },
+    {
+      "label": "Editor tests",
+      "path": "editor-tests.json",
+      "state": "available",
+      "sha256": "ca3d785d927a7cb8c3caeeff920372dd3cfc6e47a67f059ef1b97e5bb20a3619"
+    },
+    {
+      "label": "APK release",
+      "path": "../../../Artifacts/AlienPetOptimization-2026-10-29/final-release-ready.json",
+      "state": "available",
+      "sha256": "c97a47c04d1180f2982d52fcfc26927e098c3673e90953a6c9588dbc03736331"
+    },
+    {
+      "label": "APK profiler",
+      "path": "../../../Artifacts/AlienPetOptimization-2026-10-29/final-profiler-ready.json",
+      "state": "available",
+      "sha256": "a1db73e036f16461a3339597679e829b42b0810c2e0d07f2ad4f6f7dcc971566"
+    },
+    {
+      "label": "Release toàn chiến dịch",
+      "path": "../../../Artifacts/AlienPetOptimization-2026-10-29/after-release-full65/proof/20261029T093258Z/run.json",
+      "state": "available",
+      "sha256": "6dce0c3c6977820b707c631233ce3422993b5ef29286da835ca3f8d5dafe1632"
+    },
+    {
+      "label": "Lặp cùng màn sau warm soak",
+      "path": "../../../Artifacts/AlienPetOptimization-2026-10-29/after-soak-1/proof/20261029T101249Z/run.json",
+      "state": "available",
+      "sha256": "0ff9b17428cde24c3adc31803d8d95fbde05ef4a997c1693f30e8af5ec1b6240"
+    },
+    {
+      "label": "Nhiệt Release đã ghi",
+      "path": "../../../Artifacts/AlienPetOptimization-2026-10-29/matched-release-pipeline/retained-final-calibrated/state.json",
+      "state": "available",
+      "sha256": "cc199ded6aa3996219fc5f91303ba76ce03543637a75da37f19c5117391559f1"
+    },
+    {
+      "label": "Profile Analyzer Compare · màn 53",
+      "path": "profile-analyzer-compare53.json",
+      "state": "available",
+      "sha256": "ff88df5d4edc06f2a144f0b75fabf3a16b8acabb9933fa52875678bb65af3ef8"
+    },
+    {
+      "label": "Cài đặt Release cuối trên OPPO",
+      "path": "installed-release.json",
+      "state": "available",
+      "sha256": "d4e8e4c7b73f0146d2cdd5bf28103e8b211a059096d3ffbee16c82642e9233fa"
+    },
+    {
+      "label": "Lặp kiểm tra chức năng trên hai APK",
+      "path": "../../../Artifacts/AlienPetOptimization-2026-10-29/native-rechecks/state.json",
+      "state": "available",
+      "sha256": "010c2bda0fef4ba948b2e44a25500cedf62f5c220d258a576fc572bdafad5a9d"
+    },
+    {
+      "label": "Lặp chức năng before-1",
+      "path": "../../../Artifacts/AlienPetOptimization-2026-10-29/native-rechecks/before-1/proof/20261029T101732Z/run.json",
+      "state": "available",
+      "sha256": "95da7a32b4e8726815c81877ccab601d29983ba4ca5f3bbccd08b1f0699ce6ef"
+    },
+    {
+      "label": "Lặp chức năng before-2",
+      "path": "../../../Artifacts/AlienPetOptimization-2026-10-29/native-rechecks/before-2/proof/20261029T102340Z/run.json",
+      "state": "available",
+      "sha256": "e6e94d7b2d98ae110010c28cf7762daa91f97caad9c1fafb2589393ab068433a"
+    },
+    {
+      "label": "Lặp chức năng before-3",
+      "path": "../../../Artifacts/AlienPetOptimization-2026-10-29/native-rechecks/before-3/proof/20261029T103042Z/run.json",
+      "state": "available",
+      "sha256": "9030a5a950f2ef19176376f86aa27dda61c3cac1d1bca62fd0cc4856fdd74623"
+    },
+    {
+      "label": "Lặp chức năng after-1",
+      "path": "../../../Artifacts/AlienPetOptimization-2026-10-29/native-rechecks/after-1/proof/20261029T103723Z/run.json",
+      "state": "available",
+      "sha256": "33d7a832eff726f94bdec767add2bcb634a6a94db0c303a2446289d189e34cae"
+    },
+    {
+      "label": "Lặp chức năng after-2",
+      "path": "../../../Artifacts/AlienPetOptimization-2026-10-29/native-rechecks/after-2/proof/20261029T104347Z/run.json",
+      "state": "available",
+      "sha256": "410ad1b3df4d79397b6b85b0233d3902db12385978d1fbf6ca6eada003c7cf6e"
+    },
+    {
+      "label": "Lặp chức năng after-3",
+      "path": "../../../Artifacts/AlienPetOptimization-2026-10-29/native-rechecks/after-3/proof/20261029T104940Z/run.json",
+      "state": "available",
+      "sha256": "16f76804af9103db40b795cce299ab3c8b62b419bee3976ca786267d242bf97f"
+    },
+    {
+      "label": "Audit cửa sổ lấy mẫu Release",
+      "path": "../../../Artifacts/AlienPetOptimization-2026-10-29/review/final-release-review.json",
+      "state": "available",
+      "sha256": "4df58782fc7fc8fca2b61d100bf5adb89292a60884d822f180c0a3c83620c87d"
+    }
+  ],
+  "warnings": [],
+  "links": [
+    {
+      "label": "Phương pháp & kết luận",
+      "path": "README.md"
+    },
+    {
+      "label": "Kết quả kiểm thử",
+      "path": "editor-tests.json"
+    },
+    {
+      "label": "So sánh chi tiết",
+      "path": "comparison.md"
+    },
+    {
+      "label": "Release CPU · CSV",
+      "path": "release-cpu.csv"
+    },
+    {
+      "label": "Các lần đo · CSV",
+      "path": "frames.csv"
+    },
+    {
+      "label": "Profiler markers · CSV",
+      "path": "marker-groups.csv"
+    },
+    {
+      "label": "Nhiệt độ & trạng thái · CSV",
+      "path": "health.csv"
+    },
+    {
+      "label": "Home · CSV",
+      "path": "home-cycles.csv"
+    },
+    {
+      "label": "65 màn · CSV",
+      "path": "campaign.csv"
+    },
+    {
+      "label": "65 màn · JSON",
+      "path": "campaign-summary.json"
+    },
+    {
+      "label": "Lặp sau warm soak · JSON",
+      "path": "after-soak.json"
+    },
+    {
+      "label": "Phân bổ thời gian CPU",
+      "path": "native-cpu-budget.md"
+    },
+    {
+      "label": "Lặp kiểm tra chức năng",
+      "path": "native-rechecks.md"
+    },
+    {
+      "label": "Lặp kiểm tra chức năng · JSON",
+      "path": "native-rechecks.json"
+    },
+    {
+      "label": "Audit các lượt kiểm tra riêng",
+      "path": "recheck-audit.md"
+    },
+    {
+      "label": "Phạm vi, kết quả và giới hạn",
+      "path": "README.md"
+    },
+    {
+      "label": "Bản đã cài trên OPPO",
+      "path": "installed-release.json"
+    },
+    {
+      "label": "Profile Analyzer · Compare 53",
+      "path": "profile-analyzer-compare53.json"
+    },
+    {
+      "label": "Audit Release cuối",
+      "path": "final-release-review.md"
+    },
+    {
+      "label": "Audit Release cuối · JSON",
+      "path": "final-release-review.json"
+    }
+  ]
+}

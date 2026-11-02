@@ -1,0 +1,14 @@
+{
+  "builtFromHead": "afc640dc6a478a859fb1ad7060bf544ee822d378",
+  "workingTreeIncludesAuthorizedPendingChanges": true,
+  "apkSha256": "26df2c98969cd38f500708e2c364e9a82dd9090bbb1407b5babdd6efe4e5fb39",
+  "installedMatchesFinalRelease": true,
+  "normalGameLaunched": true,
+  "productProof": {
+    "passed": true,
+    "result": "screen=720x1612 safe=(x:0.00, y:0.00, width:720.00, height:1548.00) fullscreen=True camera=(x:0.00, y:0.00, width:720.00, height:1612.00)\nresult=passed overlaps=0 savesWritten=false\n",
+    "executedAfterFinalPipeline": true,
+    "source": "mobile-ui-proof/captures/result.txt"
+  },
+  "generatedUtc": "2026-10-29T10:57:05.339469+00:00"
+}

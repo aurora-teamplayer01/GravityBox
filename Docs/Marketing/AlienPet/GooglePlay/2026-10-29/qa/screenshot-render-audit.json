@@ -1,0 +1,434 @@
+[
+  {
+    "id": "01-tiny-pet-big-escape",
+    "kind": "phone",
+    "file": "exports/phone/01-tiny-pet-big-escape.png",
+    "width": 1080,
+    "height": 1920,
+    "hasAlpha": false,
+    "source": "sources/native-puzzle4-switch.png",
+    "crop": {
+      "x": 0,
+      "y": 260,
+      "width": 1080,
+      "height": 1390
+    },
+    "note": "Blank outer margins and outside HUD removed; full enclosure, creature, switch, printed link and exit shutter preserved.",
+    "fontsLoaded": "loaded",
+    "heading": {
+      "width": 952,
+      "scrollWidth": 952
+    },
+    "headerBottom": 350.75,
+    "footerTop": 1853.5,
+    "picture": {
+      "x": 32,
+      "y": 434,
+      "width": 1016,
+      "height": 1308
+    },
+    "bytes": 503160,
+    "sha256": "910fca619d9680e515cb1da25e6b182293761fc6ccb2916f8d3d160d6a9c140f",
+    "sourceSha256": "48b12db2f2995c960844a39a71e3b108e267286ab958bbc8394e36c41adb4703"
+  },
+  {
+    "id": "02-reveal-the-way",
+    "kind": "phone",
+    "file": "exports/phone/02-reveal-the-way.png",
+    "width": 1080,
+    "height": 1920,
+    "hasAlpha": false,
+    "source": "sources/native-puzzle6-crate.png",
+    "crop": {
+      "x": 0,
+      "y": 260,
+      "width": 1080,
+      "height": 1390
+    },
+    "note": "Blank outer margins and outside HUD removed; all crates, creature and entire floor/box preserved.",
+    "fontsLoaded": "loaded",
+    "heading": {
+      "width": 952,
+      "scrollWidth": 952
+    },
+    "headerBottom": 350.75,
+    "footerTop": 1853.5,
+    "picture": {
+      "x": 32,
+      "y": 434,
+      "width": 1016,
+      "height": 1308
+    },
+    "bytes": 576277,
+    "sha256": "6171ea26088f95c9cd4940eaa390271054870c31e7615763fc3fcc4c06163ed1",
+    "sourceSha256": "e7cf28c514bb7025dd0f9550e322d6ebffcad725ba4f0fb5b2935e0bd06dd0e5"
+  },
+  {
+    "id": "03-think-beyond-floor",
+    "kind": "phone",
+    "file": "exports/phone/03-think-beyond-floor.png",
+    "width": 1080,
+    "height": 1920,
+    "hasAlpha": false,
+    "source": "sources/runtime-boss10-lift-bridge.png",
+    "crop": {
+      "x": 0,
+      "y": 300,
+      "width": 720,
+      "height": 1000
+    },
+    "note": "Only blank space above and below removed. Entire real Boss 10 enclosure, lift, bridge and controls preserved; original actual Unity scene capture has no HUD.",
+    "fontsLoaded": "loaded",
+    "heading": {
+      "width": 952,
+      "scrollWidth": 952
+    },
+    "headerBottom": 350.75,
+    "footerTop": 1853.5,
+    "picture": {
+      "x": 45,
+      "y": 400,
+      "width": 990,
+      "height": 1375
+    },
+    "bytes": 598979,
+    "sha256": "bb6c01e0fea83be1d943a5fc48573e4219481ec1d732713265545de7a31d16dc",
+    "sourceSha256": "0b260ca2613a992112f473e32dbe96efb51c39aaf0a2f74ee5b33a9ce18c4385"
+  },
+  {
+    "id": "04-snack-time",
+    "kind": "phone",
+    "file": "exports/phone/04-snack-time.png",
+    "width": 1080,
+    "height": 1920,
+    "hasAlpha": false,
+    "source": "sources/native-home-apple.png",
+    "crop": {
+      "x": 0,
+      "y": 240,
+      "width": 1080,
+      "height": 1520
+    },
+    "note": "Top Home title and blank bottom removed. Real feeding pose, food, energy/drops and bottom Home actions preserved.",
+    "fontsLoaded": "loaded",
+    "heading": {
+      "width": 952,
+      "scrollWidth": 952
+    },
+    "headerBottom": 350.75,
+    "footerTop": 1853.5,
+    "picture": {
+      "x": 52,
+      "y": 400,
+      "width": 977,
+      "height": 1375
+    },
+    "bytes": 472631,
+    "sha256": "5b67096411062884deb2b2feb56c2628bbc72c2c391010eaea10b82bb27cbf8c",
+    "sourceSha256": "a234bf68e3123159e1ee940b9441d714bb6c3f2acda7b3de80a8314718aa54c8"
+  },
+  {
+    "id": "05-splash-personality",
+    "kind": "phone",
+    "file": "exports/phone/05-splash-personality.png",
+    "width": 1080,
+    "height": 1920,
+    "hasAlpha": false,
+    "source": "sources/native-style-mint.png",
+    "crop": {
+      "x": 0,
+      "y": 250,
+      "width": 1080,
+      "height": 1395
+    },
+    "note": "Outside header and bottom action bar removed. Actual Mint hold, creature, color mix, tabs and native catalog area preserved without retouch.",
+    "fontsLoaded": "loaded",
+    "heading": {
+      "width": 952,
+      "scrollWidth": 952
+    },
+    "headerBottom": 350.75,
+    "footerTop": 1853.5,
+    "picture": {
+      "x": 32,
+      "y": 431,
+      "width": 1016,
+      "height": 1312
+    },
+    "bytes": 526643,
+    "sha256": "6d103ee2f4782be9e8207e6fb724dec1849c0ec1bb057117001fd845e35d2c2a",
+    "sourceSha256": "43d7c861d129080da8c66f362a98da36bfbdc75b893e2aee37ca162a13f44d19"
+  },
+  {
+    "id": "06-make-it-yours",
+    "kind": "phone",
+    "file": "exports/phone/06-make-it-yours.png",
+    "width": 1080,
+    "height": 1920,
+    "hasAlpha": false,
+    "source": "sources/native-style-flower.png",
+    "crop": {
+      "x": 0,
+      "y": 250,
+      "width": 1080,
+      "height": 1395
+    },
+    "note": "Outside header and bottom action bar removed. Actual flower crown, creature, tabs and native accessory choices preserved without retouch.",
+    "fontsLoaded": "loaded",
+    "heading": {
+      "width": 952,
+      "scrollWidth": 952
+    },
+    "headerBottom": 350.75,
+    "footerTop": 1853.5,
+    "picture": {
+      "x": 32,
+      "y": 431,
+      "width": 1016,
+      "height": 1312
+    },
+    "bytes": 523712,
+    "sha256": "81f31a5a36c5a3080880c39b6a6ba204c421b072d81f3ea4b199526087fe6983",
+    "sourceSha256": "000afc72425b3b3d3578ea6e720a2de5c3f935b475d2c7e96cff5c0aa5ec1403"
+  },
+  {
+    "id": "01-tap-think-find",
+    "kind": "tablet-7in",
+    "file": "exports/tablet-7in/01-tap-think-find.png",
+    "width": 1440,
+    "height": 2560,
+    "hasAlpha": false,
+    "source": "qa/tablet-native-captures/7-inch/level-04-switch.png",
+    "crop": "whole source contain-fit",
+    "note": "Actual separate native 1200x1920 Android emulator rendering with 320dpi and sw600dp, on the same isolated Pixel Tablet AVD adjusted for the 7-inch-equivalent profile. Normal Product UI, developer scene picker closed. Full source retained, no crop or image retouch. Not physical 7-inch hardware or full-solve evidence.",
+    "fontsLoaded": "loaded",
+    "heading": {
+      "width": 1272,
+      "scrollWidth": 1272
+    },
+    "headerBottom": 388.4375,
+    "footerTop": 2510,
+    "picture": {
+      "x": 83,
+      "y": 430,
+      "width": 1275,
+      "height": 2040
+    },
+    "bytes": 657416,
+    "sha256": "f29785fc3cb51c9238aa3c02da1fe7d9398bbffd061264914d3e16b43450bb9a",
+    "sourceSha256": "3bb1f00affdf4633f5aa6b151d543261a292c4810b315103e53e398f31fb7403"
+  },
+  {
+    "id": "02-reveal-the-way",
+    "kind": "tablet-7in",
+    "file": "exports/tablet-7in/02-reveal-the-way.png",
+    "width": 1440,
+    "height": 2560,
+    "hasAlpha": false,
+    "source": "qa/tablet-native-captures/7-inch/level-06-crates.png",
+    "crop": "whole source contain-fit",
+    "note": "Actual separate native 1200x1920 Android emulator rendering with 320dpi and sw600dp, on the same isolated Pixel Tablet AVD adjusted for the 7-inch-equivalent profile. Normal Product UI, developer scene picker closed. Full source retained, no crop or image retouch. Not physical 7-inch hardware or full-solve evidence.",
+    "fontsLoaded": "loaded",
+    "heading": {
+      "width": 1272,
+      "scrollWidth": 1272
+    },
+    "headerBottom": 388.4375,
+    "footerTop": 2510,
+    "picture": {
+      "x": 83,
+      "y": 430,
+      "width": 1275,
+      "height": 2040
+    },
+    "bytes": 739446,
+    "sha256": "8e3a218ee63abbdec16e93f83ffb7dd6d0aff1ffb4fa42312b962963d512c81f",
+    "sourceSha256": "2d01e57ff5fc62ac0e7fdbf5db8de88a23c7499b00fb7c363257a3ff9df2a2bd"
+  },
+  {
+    "id": "03-small-parts-big-ideas",
+    "kind": "tablet-7in",
+    "file": "exports/tablet-7in/03-small-parts-big-ideas.png",
+    "width": 1440,
+    "height": 2560,
+    "hasAlpha": false,
+    "source": "qa/tablet-native-captures/7-inch/level-29-raw.png",
+    "crop": "whole source contain-fit",
+    "note": "Actual separate native 1200x1920 Android emulator rendering with 320dpi and sw600dp, on the same isolated Pixel Tablet AVD adjusted for the 7-inch-equivalent profile. Normal Product UI, developer scene picker closed. Full source retained, no crop or image retouch. Not physical 7-inch hardware or full-solve evidence.",
+    "fontsLoaded": "loaded",
+    "heading": {
+      "width": 1272,
+      "scrollWidth": 1272
+    },
+    "headerBottom": 388.4375,
+    "footerTop": 2510,
+    "picture": {
+      "x": 83,
+      "y": 430,
+      "width": 1275,
+      "height": 2040
+    },
+    "bytes": 926627,
+    "sha256": "ee20387ae058e575e9b9686617ef689ad4d0c427935efd540aa4b143a905303b",
+    "sourceSha256": "9780c9be6efd05b1af55387b645ee05d03255dcfd4def25e039e5dd8d87e3404"
+  },
+  {
+    "id": "04-new-paths",
+    "kind": "tablet-7in",
+    "file": "exports/tablet-7in/04-new-paths.png",
+    "width": 1440,
+    "height": 2560,
+    "hasAlpha": false,
+    "source": "qa/tablet-native-captures/7-inch/level-34-raw.png",
+    "crop": "whole source contain-fit",
+    "note": "Actual separate native 1200x1920 Android emulator rendering with 320dpi and sw600dp, on the same isolated Pixel Tablet AVD adjusted for the 7-inch-equivalent profile. Normal Product UI, developer scene picker closed. Full source retained, no crop or image retouch. Not physical 7-inch hardware or full-solve evidence.",
+    "fontsLoaded": "loaded",
+    "heading": {
+      "width": 1272,
+      "scrollWidth": 1272
+    },
+    "headerBottom": 388.4375,
+    "footerTop": 2510,
+    "picture": {
+      "x": 83,
+      "y": 430,
+      "width": 1275,
+      "height": 2040
+    },
+    "bytes": 925110,
+    "sha256": "790b8484014e6a8d8d46b81d63d5a7ca5c0740892b19c730764660e40ad79c1e",
+    "sourceSha256": "3c07b9bb92193a9d30c6e8193d6a529dfaa57cc5b15ff53f01aaddfed465262c"
+  },
+  {
+    "id": "01-tap-think-find",
+    "kind": "tablet-10in",
+    "file": "exports/tablet-10in/01-tap-think-find.png",
+    "width": 1440,
+    "height": 2560,
+    "hasAlpha": false,
+    "source": "qa/tablet-native-captures/10-inch/level-04-switch.png",
+    "crop": "whole source contain-fit",
+    "note": "Actual native Android tablet emulator capture, 1600x2560 Pixel Tablet profile. Existing internal test APK and normal Product UI; developer scene picker closed before capture. Full source retained, no crop or retouch. Emulator evidence is not a physical-device performance claim.",
+    "fontsLoaded": "loaded",
+    "heading": {
+      "width": 1272,
+      "scrollWidth": 1272
+    },
+    "headerBottom": 388.4375,
+    "footerTop": 2510,
+    "picture": {
+      "x": 83,
+      "y": 430,
+      "width": 1275,
+      "height": 2040
+    },
+    "bytes": 660122,
+    "sha256": "74d645aa6e7521e8500222285268fbbb2bbf56ff1c772634c57b29d0f695f045",
+    "sourceSha256": "85579dc450c38959cdd6fb1cba49839de92074a3471e70bc96338351ed8b689d"
+  },
+  {
+    "id": "02-reveal-the-way",
+    "kind": "tablet-10in",
+    "file": "exports/tablet-10in/02-reveal-the-way.png",
+    "width": 1440,
+    "height": 2560,
+    "hasAlpha": false,
+    "source": "qa/tablet-native-captures/10-inch/level-06-crates.png",
+    "crop": "whole source contain-fit",
+    "note": "Actual native Android tablet emulator capture, 1600x2560 Pixel Tablet profile. Existing internal test APK and normal Product UI; developer scene picker closed before capture. Full source retained, no crop or retouch. Emulator evidence is not a physical-device performance claim.",
+    "fontsLoaded": "loaded",
+    "heading": {
+      "width": 1272,
+      "scrollWidth": 1272
+    },
+    "headerBottom": 388.4375,
+    "footerTop": 2510,
+    "picture": {
+      "x": 83,
+      "y": 430,
+      "width": 1275,
+      "height": 2040
+    },
+    "bytes": 741240,
+    "sha256": "b48530345b733baf7ad09b67f5641e64e9b66f07d1fafea03f3220bdda15fd63",
+    "sourceSha256": "4b89e4f9e09d8bd58fb7b1dc714af1af5f143f34914f859c15edfeb5db40b844"
+  },
+  {
+    "id": "03-small-parts-big-ideas",
+    "kind": "tablet-10in",
+    "file": "exports/tablet-10in/03-small-parts-big-ideas.png",
+    "width": 1440,
+    "height": 2560,
+    "hasAlpha": false,
+    "source": "qa/tablet-native-captures/10-inch/level-29-raw.png",
+    "crop": "whole source contain-fit",
+    "note": "Actual native Android tablet emulator capture, 1600x2560 Pixel Tablet profile. Existing internal test APK and normal Product UI; developer scene picker closed before capture. Full source retained, no crop or retouch. Emulator evidence is not a physical-device performance claim.",
+    "fontsLoaded": "loaded",
+    "heading": {
+      "width": 1272,
+      "scrollWidth": 1272
+    },
+    "headerBottom": 388.4375,
+    "footerTop": 2510,
+    "picture": {
+      "x": 83,
+      "y": 430,
+      "width": 1275,
+      "height": 2040
+    },
+    "bytes": 925371,
+    "sha256": "29b7a4f5d8b359ad46157852d17250fbd4aa9755406e574fc6286c1de4761217",
+    "sourceSha256": "9846f616027374959a264e702e370e794c91f1b12c59e07bddbcceb91cd10712"
+  },
+  {
+    "id": "04-new-paths",
+    "kind": "tablet-10in",
+    "file": "exports/tablet-10in/04-new-paths.png",
+    "width": 1440,
+    "height": 2560,
+    "hasAlpha": false,
+    "source": "qa/tablet-native-captures/10-inch/level-34-raw.png",
+    "crop": "whole source contain-fit",
+    "note": "Actual native Android tablet emulator capture, 1600x2560 Pixel Tablet profile. Normal Product UI and real authored level 34; no game-state or image retouch. Overview screenshot, not new solve evidence. Full capture contain-fit.",
+    "fontsLoaded": "loaded",
+    "heading": {
+      "width": 1272,
+      "scrollWidth": 1272
+    },
+    "headerBottom": 388.4375,
+    "footerTop": 2510,
+    "picture": {
+      "x": 83,
+      "y": 430,
+      "width": 1275,
+      "height": 2040
+    },
+    "bytes": 933993,
+    "sha256": "6d248da6b5df838291865dee14af33feffa7ffdb62bbc71d3fb65bddd640e891",
+    "sourceSha256": "610194d25456717d28fa4a5c046b1a4356169cdd33b1bae13f35eb0ef3b9837c"
+  },
+  {
+    "id": "approved-icon-c",
+    "file": "exports/app-icon-512.png",
+    "source": "/Users/mrk/GravityBox/Assets/_Game/Branding/COghe-AppIcon.png",
+    "width": 512,
+    "height": 512,
+    "transform": "Mechanical whole-image 512x512 Lanczos resize; no crop, retouch, text, border or rounding.",
+    "hasAlpha": false,
+    "bytes": 493542,
+    "sha256": "f1fe87861e9da69f92e06e6c07301f95493222d558d6ec223157fdee0892fad3",
+    "sourceSha256": "9b37a41c6d8d0365139a92b08a2ce0574d2d0062b5c679f36c1f43a73f17ce22"
+  },
+  {
+    "id": "illustrative-feature-graphic",
+    "file": "exports/feature-graphic.png",
+    "source": "/Users/mrk/GravityBox/Docs/Marketing/AlienPet/GooglePlay/2026-10-29/sources/feature-art-master.png",
+    "width": 1024,
+    "height": 500,
+    "transform": "Mechanical whole-image resize to Google Play 1024x500; no crop or creative edit. Root-approved illustrative key art, separate from actual gameplay screenshots.",
+    "hasAlpha": false,
+    "bytes": 807612,
+    "sha256": "32ddbcd8d47dd966c469a8567fe8b7cf6c71f8691e592804042a37024221351f",
+    "sourceSha256": "ead33862d3340c91d094d48a7e6244ee511bad252938565ce3ba5788355c60a8"
+  }
+]

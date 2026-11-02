@@ -1,0 +1,108 @@
+{
+  "date": "2026-10-29",
+  "status": "Source implemented; Unity14/14 cases pass; signed release1.0.1(2) native Android36 age/consent matrix and merged-manifest checks pass. Actual ads remain blocked by missing UMP publisher forms.",
+  "artifact_scope": "This applies only to the next build. Uploaded AAB 1.0.0 (1) does not contain this privacy gate and must not be represented as containing it.",
+  "policy": [
+    {
+      "age": "Unknown",
+      "local_gameplay": "first-run neutral age screen",
+      "sdk_initialization": "No Firebase, Remote Config, UMP or Mobile Ads initialization requested by managed bootstrap"
+    },
+    {
+      "age": "Under 13",
+      "local_gameplay": true,
+      "sdk_initialization": "No Firebase, Remote Config, UMP or Mobile Ads initialization requested by managed bootstrap"
+    },
+    {
+      "age": "13\u201315 / 16\u201317",
+      "local_gameplay": true,
+      "firebase_analytics_remote_config": "Disabled; no adult analytics question",
+      "ads": "Only after UMP success and CanRequestAds; UMP under-age signal, GMA Teen plus TFUA, maximum G rating, personalization disabled"
+    },
+    {
+      "age": "18+",
+      "local_gameplay": true,
+      "firebase_analytics_remote_config": "Explicit analytics choice required; default off; only opt-in initializes Firebase and Remote Config",
+      "ads": "UMP success and CanRequestAds; maximum G rating and personalization disabled regardless of analytics choice"
+    }
+  ],
+  "implementation": {
+    "local_age": "Only coarse band persisted in PlayerPrefs; no date of birth. No raw age-band Analytics event. Eligible ad requests do carry coarse age-treatment/under-consent-age signals.",
+    "startup": "Before age/choice completion, service bootstrap only connects local no-ads and analytics facade. Firebase dependency check, native Ads dispatcher and UMP are deferred.",
+    "analytics": "Pre-consent/pre-ready event queue removed. Denied events are dropped. Adult opt-in grants AnalyticsStorage only; AdStorage, AdUserData and AdPersonalization remain denied.",
+    "revocation": "Turns off Analytics collection, denies consent, resets local Analytics data, invalidates async permits and prevents further Remote Config work. It does not delete already delivered server data or cancel a request already transmitted.",
+    "callback_guards": "Every consent/init/fetch continuation checks a monotonically changing choice revision; withdrawing then granting again cannot resurrect old callbacks.",
+    "ads": "Errors now fail closed rather than resuming ads from a cached eligible status. Native provider checks the age gate on each readiness/load path.",
+    "android_build": "Postprocessor removes FirebaseInitProvider and MobileAdsInitProvider auto-start components; sets Analytics and default consent false; disables Analytics AAID; removes AD_ID and AdServices permissions; delays Ads measurement initialization.",
+    "ios_build": "Postprocessor supplies analytics/ad-storage/personalization/IDFA/IDFV defaults false and delays Ads measurement. Existing SDK service boot remains Android-only. iOS behavior is not claimed verified by Android tests."
+  },
+  "data_safety_delta": {
+    "still_collected_and_shared_for_eligible_ad_users": [
+      "Approximate location",
+      "App interactions",
+      "Diagnostics",
+      "Device or other IDs"
+    ],
+    "collection_control_for_ad_types": "Required in the app-wide Play form unless all eligible users receive a genuine global collection choice. Declining optional game Analytics does not disable ad SDK operational data.",
+    "other_actions": {
+      "collected": true,
+      "optional": true,
+      "purpose": [
+        "Analytics"
+      ],
+      "scope": "Game outcome/progression events only for adult opt-in.",
+      "shared": "Unverified; inspect GA sharing/linked Ads/export settings before choosing a final answer."
+    },
+    "other_personal_info": {
+      "collected": true,
+      "shared": true,
+      "optional": false,
+      "purpose": [
+        "Advertising or marketing",
+        "Fraud prevention, security, and compliance"
+      ],
+      "scope": "Coarse teen/under-consent-age ad-treatment signals. No birthday, name or login."
+    },
+    "advertising_id": "Do not infer no identifiers. Removed AD_ID permission blocks ordinary AAID access on Android 13+; older supported Android versions require separate verification. App-set and app-instance identifiers remain relevant for eligible users.",
+    "no_account": "No app account creation, real IAP provider or Crashlytics integration added.",
+    "not_all_data_optional": "Only developer gameplay Analytics is a user-selectable opt-in; SDK ad processing remains separate."
+  },
+  "files": [
+    "Assets/_Game/Venom/Runtime/Shop/COghePrivacy.cs",
+    "Assets/_Game/Venom/Services/COgheGoogleServices.cs",
+    "Assets/_Game/Venom/Services/COgheAdMob.cs",
+    "Assets/_Game/Venom/Services/COgheRemoteConfig.cs",
+    "Assets/_Game/Editor/COghePrivacyBuild.cs",
+    "Assets/_Game/Tests/Privacy/COghePrivacyTests.cs",
+    "Assets/_Game/Tests/Privacy/GravityBox.Tests.Privacy.asmdef"
+  ],
+  "tests": {
+    "source_sdk_api_compile": "Isolated Roslyn compile using installed SDK and Unity assemblies exited 0.",
+    "unity_editmode": "10/10 passed, 0 failed, Unity 6000.3.19f1, exit 0. Artifacts/AlienPetPlayStore/public-setup/privacy-editmode-final.xml and privacy-editmode-final.log.",
+    "native_required": [
+      "Inspect merged manifest of replacement AAB",
+      "Fresh unknown and Under13 launch: verify no Firebase/Ads initialization and no installation-ID file",
+      "Teen launch: no Firebase Analytics/Remote Config requests; correct UMP/GMA treatment",
+      "Adult decline vs opt-in; reopen after choice; withdraw during network initialization",
+      "Verify no pre-consent game events uploaded",
+      "Verify missing consent form/offline failure does not block gameplay or request ads"
+    ],
+    "unity_playmode": "4/4 privacy UI tests passed (root run), Artifacts/AlienPetPlayStore/public-setup/privacy-playmode.xml",
+    "native_artifacts": "Artifacts/AlienPetPlayStore/public-setup/native-privacy",
+    "native_manifest": "Actual universal APK from final AAB: FirebaseInitProvider and MobileAdsInitProvider absent; all collection/consent defaults false, Ads measurement delayed, AD_ID and all three AdServices permissions absent.",
+    "native_results": "Docs/Verification/AlienPetPlayStore20261029/native-privacy-results.json"
+  },
+  "official_sources": [
+    "https://developers.google.com/admob/unity/targeting",
+    "https://firebase.google.com/docs/analytics/android/configure-data-collection",
+    "https://firebase.google.com/docs/analytics/ios/configure-data-collection",
+    "https://developers.google.com/tag-platform/security/guides/app-consent",
+    "https://developers.google.com/admob/android/privacy/consent-mode",
+    "https://support.google.com/googleplay/android-developer/answer/10787469?hl=en"
+  ],
+  "limitations": "Technical source record, not legal compliance certification. Backend/dashboard state, all native network paths and submitted store declarations remain separate verification steps.",
+  "remaining_native_checks": [
+    "Configure/publish AdMob Privacy & messaging forms and rerun eligible ad requests; current UMP code3 safely blocks ads.",
+    "Broader OS/device and iOS coverage are not established by this emulator test."
+  ]
+}

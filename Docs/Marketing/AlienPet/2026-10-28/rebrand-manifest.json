@@ -1,0 +1,192 @@
+[
+  {
+    "id": "D",
+    "name": "PUZZLE",
+    "duration": 15,
+    "end": 12.7,
+    "source": "/Users/mrk/GravityBox/Artifacts/COgheMarketingReview/COGHE_AD1_PUZZLE_15S_9X16_1080X1920.mp4",
+    "kind": "native",
+    "captions": [
+      [
+        0,
+        "CAN YOU GUIDE IT OUT?"
+      ],
+      [
+        2.5,
+        "TAP TO GUIDE IT"
+      ],
+      [
+        5.3,
+        "SPLIT. TEAM UP."
+      ],
+      [
+        7.7,
+        "CLEVER PHYSICS PUZZLES"
+      ],
+      [
+        11,
+        "A LITTLE VICTORY!"
+      ]
+    ],
+    "tag": "A tiny friend. A big escape."
+  },
+  {
+    "id": "E",
+    "name": "PET_PLAY",
+    "duration": 17,
+    "end": 14.7,
+    "source": "/Users/mrk/GravityBox/Artifacts/COgheMarketingReview/COGHE_AD2_PET_17S_9X16_1080X1920.mp4",
+    "kind": "native",
+    "captions": [
+      [
+        0,
+        "MEET YOUR ALIEN PET"
+      ],
+      [
+        1.5,
+        "A LITTLE LOVE…"
+      ],
+      [
+        4,
+        "…A LOT OF FEELINGS."
+      ],
+      [
+        5.5,
+        "EASY ON THE HUGS!"
+      ],
+      [
+        7.5,
+        "TIME TO PLAY"
+      ],
+      [
+        9.5,
+        "SNACK TIME!"
+      ],
+      [
+        11.5,
+        "MAKE IT YOURS"
+      ]
+    ],
+    "tag": "A little pet. A lot of personality."
+  },
+  {
+    "id": "F",
+    "name": "GAME_SHOWCASE",
+    "duration": 30,
+    "end": 27,
+    "source": "/Users/mrk/GravityBox/Artifacts/COgheMarketingReview/COGHE_AD3_SHOWCASE_30S_9X16_1080X1920.mp4",
+    "kind": "native",
+    "captions": [
+      [
+        0,
+        "MEET YOUR ALIEN PET"
+      ],
+      [
+        2.5,
+        "TAP TO GUIDE IT"
+      ],
+      [
+        5.3,
+        "SWING ACROSS"
+      ],
+      [
+        7.5,
+        "SPLIT. TEAM UP."
+      ],
+      [
+        9.5,
+        "TURN THE GEARS"
+      ],
+      [
+        11.5,
+        "MOVE. SOLVE. ESCAPE."
+      ],
+      [
+        13.4,
+        "CELEBRATE TOGETHER"
+      ],
+      [
+        15,
+        "A LITTLE LOVE"
+      ],
+      [
+        17.5,
+        "SNACK TIME!"
+      ],
+      [
+        19.5,
+        "A SPLASH OF COLOR"
+      ],
+      [
+        23,
+        "MAKE IT YOURS"
+      ]
+    ],
+    "tag": "Solve puzzles. Care for your pet."
+  },
+  {
+    "id": "G",
+    "name": "CINEMATIC_ESCAPE",
+    "duration": 30,
+    "end": 24.5,
+    "source": "/Users/mrk/GravityBox/Artifacts/COgheCinematicAd-2026-10-22/picture-lock.mp4",
+    "audio": "/Users/mrk/GravityBox/Artifacts/COgheCinematicAd-2026-10-22/final_mix_30s.wav",
+    "kind": "cinematic",
+    "captions": [],
+    "tag": "Can you guide it home?",
+    "correction": {
+      "date": "2026-10-29",
+      "frames": [
+        241,
+        331
+      ],
+      "source": "/Users/mrk/GravityBox/Artifacts/AlienPetScene2Fix-2026-10-29/sources/shot02_INSIDE_GLASS_FIXED_1080p.mp4",
+      "script": "/Users/mrk/GravityBox/Artifacts/AlienPetScene2Fix-2026-10-29/splice_scene2.py",
+      "output_sha256": "13fd62339248a1a3bd487b5fe7cff528b904cd1ba95c6f521d25218472b4a959",
+      "notes": "Cảnh 2 đã sửa 29/10: COghe bò ở mặt trong kính; giữ nguyên nhạc, lời thoại và các cảnh khác."
+    }
+  },
+  {
+    "id": "H",
+    "name": "GAMEPLAY_TOUR",
+    "duration": 30,
+    "end": 28.3,
+    "source": "/Users/mrk/Downloads/COghe.mp4",
+    "kind": "native",
+    "captions": [
+      [
+        0,
+        "MEET YOUR ALIEN PET"
+      ],
+      [
+        4,
+        "PULL. SOLVE. ESCAPE."
+      ],
+      [
+        8,
+        "SPLIT. TEAM UP."
+      ],
+      [
+        11.5,
+        "CLEVER PHYSICS PUZZLES"
+      ],
+      [
+        17.5,
+        "MAKE YOURSELF AT HOME"
+      ],
+      [
+        19.5,
+        "A LITTLE LOVE"
+      ],
+      [
+        21.5,
+        "GET TO KNOW YOUR PET"
+      ],
+      [
+        25,
+        "MAKE IT YOURS"
+      ]
+    ],
+    "tag": "Your little alien friend."
+  }
+]

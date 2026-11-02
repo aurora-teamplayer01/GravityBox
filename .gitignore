@@ -44,3 +44,19 @@ Assets/Plugins/Android/FirebaseApp.androidlib/
 Assets/Plugins/Android/FirebaseApp.androidlib.meta
 ProjectSettings/AndroidResolverDependencies.xml
 Assets/Resources/PerformanceTestRun*.json*
+
+# Local ad-distribution ZIPs; individual media and docs are kept alongside them.
+Docs/Marketing/AlienPet/AdsResources/Packages/**/*.zip
+
+/ProfileAnalyzer/
+
+/ProfilerCaptures/
+
+# Unity test-runner scratch scenes and local crash reports.
+/Assets/InitTestScene*.unity*
+/mono_crash.*
+# Raw device logs and duplicate upload archives stay local.
+/Docs/Verification/**/*.log
+/Docs/Marketing/AlienPet/GooglePlay/**/*.zip
+/Docs/Marketing/**/unity-logcat.txt
+/Docs/Marketing/YoloStudioGlobal/DeveloperPage/**/*.zip

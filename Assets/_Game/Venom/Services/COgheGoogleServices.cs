@@ -17,10 +17,10 @@ namespace GravityBox.Services
         public const string AndroidPackage = "com.gravityboxlab.venom";
         public const string AdMobApp = "ca-app-pub-7806638519709442~4983717950";
         public static bool Ready { get; private set; }
-        private readonly Queue<KeyValuePair<string, IReadOnlyDictionary<string, object>>> queue = new();
         private FirebaseApp firebase;
         private COgheAdMob ads;
-        private bool adsInitializing;
+        private bool adsInitializing, firebaseInitializing, dispatcherReady;
+        private int consentRevision = -1;
         private float consentRetryDelay = 15;
 
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
@@ -35,51 +35,131 @@ namespace GravityBox.Services
 
         private void Awake()
         {
-            // UMP completes before MobileAds.Initialize. Its callbacks already need a Unity dispatcher.
-            MobileAdsEventExecutor.Initialize();
             COgheAds.TestAds = false;
             COgheAds.Provider = new COgheNoAds();
             COgheAnalytics.Sink = Send;
             COgheEconomy.LoadCached();
-            Debug.Log($"[COghe services] Active economy: {COgheEconomy.Revision}/{COgheEconomy.Variant}");
+            COgheAds.PrivacyRequired = () => COghePrivacy.AdsAgeEligible && dispatcherReady &&
+                ConsentInformation.PrivacyOptionsRequirementStatus == PrivacyOptionsRequirementStatus.Required;
+            COgheAds.OpenPrivacy = OpenAdPrivacy;
+            COghePrivacy.Changed += ApplyPrivacy;
+            ApplyPrivacy();
+        }
+
+        private void ApplyPrivacy()
+        {
+            CancelInvoke(nameof(RetryConsent));
+            consentRevision = -1;
+            ads?.Suspend();
+            COgheAds.Provider = new COgheNoAds();
+            if (!COghePrivacy.AnalyticsAllowed) StopAnalytics();
+            // A fresh blocked session has no native SDK objects to stop. Age-unknown and under-13
+            // users stay on local gameplay; changing a prior choice first suspends existing services.
+            if (!COghePrivacy.SetupComplete) return;
+            if (COghePrivacy.AnalyticsAllowed) StartAnalytics();
+            if (!COghePrivacy.AdsAgeEligible) return;
+            if (!dispatcherReady) { MobileAdsEventExecutor.Initialize(); dispatcherReady = true; }
+            MobileAds.SetRequestConfiguration(AdRequestConfiguration());
+            RequestConsent();
+        }
+
+        public static RequestConfiguration AdRequestConfiguration()
+        {
+#pragma warning disable CS0618 // TFUA is retained as the more conservative under-consent-age signal.
+            return new RequestConfiguration
+            {
+                AgeRestrictedTreatment = COghePrivacy.IsTeen ? AgeRestrictedTreatment.Teen : AgeRestrictedTreatment.Unspecified,
+                TagForUnderAgeOfConsent = COghePrivacy.IsTeen ? TagForUnderAgeOfConsent.True : TagForUnderAgeOfConsent.False,
+                MaxAdContentRating = MaxAdContentRating.G,
+                PublisherPrivacyPersonalizationState = PublisherPrivacyPersonalizationState.Disabled
+            };
+#pragma warning restore CS0618
+        }
+
+        private void StartAnalytics()
+        {
+            if (!COghePrivacy.AnalyticsAllowed || Ready || firebaseInitializing) return;
+            firebaseInitializing = true;
+            int ticket = COghePrivacy.Revision;
             FirebaseApp.CheckAndFixDependenciesAsync().ContinueWithOnMainThread(task =>
             {
+                firebaseInitializing = false;
                 if (this == null) return;
+                if (!COghePrivacy.AnalyticsPermitValid(ticket))
+                {
+                    // Regranting during initialization gets a new permit; never reuse the old one.
+                    if (COghePrivacy.AnalyticsAllowed) StartAnalytics();
+                    return;
+                }
                 if (task.IsFaulted || task.IsCanceled || task.Result != DependencyStatus.Available)
-                { queue.Clear(); Debug.LogWarning("[COghe services] Firebase unavailable; gameplay continues."); return; }
+                { Debug.LogWarning("[COghe services] Firebase unavailable; gameplay continues."); return; }
                 firebase = FirebaseApp.DefaultInstance;
+                FirebaseAnalytics.SetAnalyticsCollectionEnabled(false);
+                SetAnalyticsConsent(true);
+                FirebaseAnalytics.SetUserProperty(FirebaseAnalytics.UserPropertyAllowAdPersonalizationSignals, "false");
                 FirebaseAnalytics.SetAnalyticsCollectionEnabled(true);
                 FirebaseAnalytics.SetUserProperty("build_channel", COgheTestTools.LevelSelect ? "test" : "store");
                 FirebaseAnalytics.SetUserProperty("economy_revision", COgheEconomy.Revision);
                 FirebaseAnalytics.SetUserProperty("economy_variant", COgheEconomy.Variant);
                 Ready = true;
-                while (queue.Count > 0) { var e = queue.Dequeue(); Send(e.Key, e.Value); }
-                Debug.Log("[COghe services] Firebase ready: " + firebase.Options.ProjectId);
+                // No pre-consent/pre-ready gameplay events are stored for a later upload.
                 COgheRemoteConfig.Fetch();
             });
-            COgheAds.PrivacyRequired = () => ConsentInformation.PrivacyOptionsRequirementStatus == PrivacyOptionsRequirementStatus.Required;
-            COgheAds.OpenPrivacy = () => ConsentForm.ShowPrivacyOptionsForm(error => Main(() =>
+        }
+
+        private static void SetAnalyticsConsent(bool allowAnalytics)
+        {
+            FirebaseAnalytics.SetConsent(new Dictionary<ConsentType, Firebase.Analytics.ConsentStatus>
             {
-                ads?.Suspend();
-                if (error != null) Debug.LogWarning("[COghe services] Privacy options: " + error.ErrorCode);
-                EnableAds();
+                { ConsentType.AnalyticsStorage, allowAnalytics ? Firebase.Analytics.ConsentStatus.Granted : Firebase.Analytics.ConsentStatus.Denied },
+                { ConsentType.AdStorage, Firebase.Analytics.ConsentStatus.Denied },
+                { ConsentType.AdUserData, Firebase.Analytics.ConsentStatus.Denied },
+                { ConsentType.AdPersonalization, Firebase.Analytics.ConsentStatus.Denied }
+            });
+        }
+
+        private void StopAnalytics()
+        {
+            Ready = false;
+            // Do not call any Firebase static API merely to disable it: that can initialize the SDK.
+            if (firebase == null) return;
+            FirebaseAnalytics.SetAnalyticsCollectionEnabled(false);
+            SetAnalyticsConsent(false);
+            FirebaseAnalytics.ResetAnalyticsData(); // Local SDK data only; not a server-deletion promise.
+        }
+
+        private void OpenAdPrivacy()
+        {
+            if (!COghePrivacy.AdsAgeEligible || !dispatcherReady) return;
+            int ticket = COghePrivacy.Revision;
+            ads?.Suspend(); COgheAds.Provider = new COgheNoAds();
+            ConsentForm.ShowPrivacyOptionsForm(error => Main(() =>
+            {
+                if (this == null || !COghePrivacy.AdsPermitValid(ticket)) return;
+                if (error != null) { ConsentError(error); return; }
+                // The separate adult analytics choice remains authoritative; UMP must not opt it in.
+                if (firebase != null) SetAnalyticsConsent(COghePrivacy.AnalyticsAllowed);
+                EnableAds(ticket);
             }));
-            RequestConsent();
         }
 
         private void RequestConsent()
         {
+            if (!COghePrivacy.AdsAgeEligible) return;
             CancelInvoke(nameof(RetryConsent));
-            ConsentInformation.Update(new ConsentRequestParameters(), error => Main(() =>
+            int ticket = COghePrivacy.Revision;
+            consentRevision = ticket;
+            ConsentInformation.Update(new ConsentRequestParameters { TagForUnderAgeOfConsent = COghePrivacy.IsTeen }, error => Main(() =>
             {
-                if (this == null) return;
-                if (error != null) { ConsentError(error); EnableAds(); return; }
+                if (this == null || !COghePrivacy.AdsPermitValid(ticket)) return;
+                if (error != null) { ConsentError(error); return; }
                 ConsentForm.LoadAndShowConsentFormIfRequired(formError => Main(() =>
                 {
-                    if (this == null) return;
-                    if (formError != null) ConsentError(formError);
-                    else consentRetryDelay = 15;
-                    EnableAds();
+                    if (this == null || !COghePrivacy.AdsPermitValid(ticket)) return;
+                    if (formError != null) { ConsentError(formError); return; }
+                    consentRetryDelay = 15;
+                    if (firebase != null) SetAnalyticsConsent(COghePrivacy.AnalyticsAllowed);
+                    EnableAds(ticket);
                 }));
             }));
         }
@@ -96,6 +176,7 @@ namespace GravityBox.Services
 
         private void RetryConsent()
         {
+            if (!COghePrivacy.AdsAgeEligible) return;
             if (Application.internetReachability == NetworkReachability.NotReachable)
                 Invoke(nameof(RetryConsent), 15);
             else RequestConsent();
@@ -103,30 +184,32 @@ namespace GravityBox.Services
 
         public static void Main(Action action) => MobileAdsEventExecutor.ExecuteInUpdate(action);
 
-        private void EnableAds()
+        private void EnableAds(int ticket)
         {
-            if (!ConsentInformation.CanRequestAds()) return;
-            if (ads != null) { ads.Resume(); return; }
+            if (!COghePrivacy.AdsPermitValid(ticket) || consentRevision != ticket || !ConsentInformation.CanRequestAds()) return;
+            if (ads != null) { COgheAds.Provider = ads; ads.Resume(); COgheAds.RefreshBanner(); return; }
             if (adsInitializing) return;
             adsInitializing = true;
             MobileAds.Initialize(status => Main(() =>
             {
                 adsInitializing = false;
-                if (this == null || status == null || !ConsentInformation.CanRequestAds()) return;
+                if (this == null || status == null) return;
+                if (!COghePrivacy.AdsPermitValid(ticket))
+                {
+                    if (COghePrivacy.AdsAgeEligible && consentRevision == COghePrivacy.Revision) RequestConsent();
+                    return;
+                }
+                if (!ConsentInformation.CanRequestAds()) return;
                 ads = gameObject.AddComponent<COgheAdMob>();
                 COgheAds.Provider = ads;
                 COgheAds.RefreshBanner();
-                Debug.Log("[COghe services] AdMob ready; " + (COgheTestTools.LevelSelect ? "Google test units" : "production units"));
+                Debug.Log("[COghe services] AdMob ready with restricted personalization.");
             }));
         }
 
         private void Send(string name, IReadOnlyDictionary<string, object> values)
         {
-            if (!Ready)
-            {
-                if (queue.Count == 128) queue.Dequeue();
-                queue.Enqueue(new KeyValuePair<string, IReadOnlyDictionary<string, object>>(name, values)); return;
-            }
+            if (!Ready || !COghePrivacy.AnalyticsAllowed || values == null) return;
             var parameters = new List<Parameter>(values.Count + 4);
             foreach (var pair in values)
             {
@@ -144,7 +227,10 @@ namespace GravityBox.Services
 
         private void OnDestroy()
         {
-            COgheAnalytics.Sink = null; COgheAds.PrivacyRequired = null; COgheAds.OpenPrivacy = null; Ready = false;
+            COghePrivacy.Changed -= ApplyPrivacy;
+            CancelInvoke(); ads?.Suspend(); StopAnalytics();
+            COgheAnalytics.Sink = null; COgheAds.PrivacyRequired = null; COgheAds.OpenPrivacy = null;
+            COgheAds.Provider = new COgheNoAds();
         }
     }
 }

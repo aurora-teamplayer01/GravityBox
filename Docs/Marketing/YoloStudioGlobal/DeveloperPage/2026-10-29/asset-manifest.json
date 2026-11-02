@@ -1,0 +1,143 @@
+{
+  "date": "2026-10-29",
+  "brand": "YoloStudioGlobal",
+  "scope": "Google Play developer page presentation assets; no legal identity or account profile changes.",
+  "provenance": {
+    "generation": "Built-in image generation tool, executed by the coordinating root agent.",
+    "masters": "Generated source art; exports prepared by the root agent. This documentation task only read metadata and did not edit images.",
+    "promptFile": "prompts.txt",
+    "metadataVerification": "Local sips read-only metadata plus SHA-256 and exact file bytes."
+  },
+  "consoleStatus": {
+    "state": "saved_in_console_public_propagation_pending",
+    "saveAuthorizedByUser": true,
+    "saveSuccessVerified": true,
+    "saveConfirmation": "Your changes have been saved",
+    "publicPageUpdateVerified": false,
+    "publicObservation": "The public developer collection still showed the previous app-list layout with Critter Jam and no new header at the latest check.",
+    "proofs": [
+      "verification/console-saved.png"
+    ]
+  },
+  "requirements": {
+    "liveConsoleUi": {
+      "icon": {
+        "width": 512,
+        "height": 512,
+        "acceptedFormat": "JPG or 24-bit PNG, no transparency",
+        "maxBytesExclusive": 1000000
+      },
+      "header": {
+        "width": 4096,
+        "height": 2304,
+        "acceptedFormat": "JPG or 24-bit PNG, no transparency",
+        "maxBytesExclusive": 1000000
+      },
+      "promotionalTextMaxCharacters": 140
+    },
+    "officialHelp": "https://support.google.com/googleplay/android-developer/answer/9873827?hl=en",
+    "formatNote": "The help article describes a 32-bit PNG developer icon. The currently inspected Console upload control requires an opaque 24-bit PNG/JPG; this pack follows the live control using RGB PNG. Both exports are below 1,000,000 bytes."
+  },
+  "assets": [
+    {
+      "path": "exports/developer-header-4096x2304.jpg",
+      "role": "upload export",
+      "width": 4096,
+      "height": 2304,
+      "format": "jpeg",
+      "colorMode": "RGB",
+      "bitsPerSample": 8,
+      "channels": 3,
+      "hasAlpha": false,
+      "bytes": 930287,
+      "sha256": "0a5bd44853a424b561c0595ce2750dd019ef72fbfce6ca442ec6baddb5d43d43",
+      "generatedByAi": true
+    },
+    {
+      "path": "exports/developer-icon-512.png",
+      "role": "upload export",
+      "width": 512,
+      "height": 512,
+      "format": "png",
+      "colorMode": "RGB",
+      "bitsPerSample": 8,
+      "channels": 3,
+      "hasAlpha": false,
+      "bytes": 296719,
+      "sha256": "6daaf42a57c8ca68ccca31fe0a19a2a779c094f07f3d58fa8054f83753e9dd42",
+      "generatedByAi": true
+    },
+    {
+      "path": "source/developer-header-master.png",
+      "role": "generated source master",
+      "width": 1672,
+      "height": 941,
+      "format": "png",
+      "colorMode": "RGB",
+      "bitsPerSample": 8,
+      "channels": 3,
+      "hasAlpha": false,
+      "bytes": 1868304,
+      "sha256": "3c5526abe987d8c0aeda6971aaf4ca74661d97d13579b1e12bb5586429dc4a77",
+      "generatedByAi": true
+    },
+    {
+      "path": "source/developer-icon-master.png",
+      "role": "generated source master",
+      "width": 1254,
+      "height": 1254,
+      "format": "png",
+      "colorMode": "RGB",
+      "bitsPerSample": 8,
+      "channels": 3,
+      "hasAlpha": false,
+      "bytes": 1663691,
+      "sha256": "ab482c5384eae572cb369b7aa22e1bbdf39f1ef33efb28d7154ebbf5bb41b530",
+      "generatedByAi": true
+    }
+  ],
+  "promotionalText": {
+    "en-US": {
+      "text": "Clever puzzles, charming pets, fresh ideas. We craft mobile games and explore new technology to shape what comes next.",
+      "characters": 118
+    },
+    "vi": {
+      "text": "Câu đố thú vị, thú cưng đáng yêu, ý tưởng mới. Chúng tôi sáng tạo game di động và khám phá công nghệ cho những trải nghiệm tương lai.",
+      "characters": 133,
+      "consoleDisplayedCharacterCount": 133,
+      "note": "Exact requested Vietnamese text preserved; local Unicode length matches the live Console counter at 133/140."
+    }
+  },
+  "featuredApp": {
+    "name": "Critter Jam: Color Sort Puzzle",
+    "packageName": "com.ntklstudio.critterjam",
+    "reason": "Only currently published app verified on the public developer collection. Alien Pet is not yet published.",
+    "publicUrl": "https://play.google.com/store/apps/details?id=com.ntklstudio.critterjam"
+  },
+  "website": {
+    "value": "https://cj.suri.house/",
+    "state": "saved; explicitly selected by owner",
+    "reason": "Owner selected the existing published Critter Jam website for this developer page."
+  },
+  "publicCollectionUrl": "https://play.google.com/store/apps/developer?id=YoloStudioGlobal",
+  "copyBoundaries": [
+    "No invented team size, awards, download counts or specific AI capabilities.",
+    "Technology exploration is brand direction, not a promise of an AI product feature.",
+    "No legal identity, payments, verification or account-security profile changes."
+  ],
+  "distributionArchive": {
+    "path": "YoloStudioGlobal-DeveloperPage.zip",
+    "contents": [
+      "exports/developer-icon-512.png",
+      "exports/developer-header-4096x2304.jpg",
+      "README.md",
+      "asset-manifest.json",
+      "prompts.txt"
+    ],
+    "excluded": [
+      "source/",
+      "verification/"
+    ],
+    "note": "Upload exports and text/metadata only. Generated masters and Console proof remain outside the ZIP."
+  }
+}

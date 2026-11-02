@@ -1,0 +1,127 @@
+[
+  {
+    "name": "GravityBox.Tests.COgheSpatialCampaignTests.Ceiling26DepartureDuringRiseCanRecover",
+    "result": "Passed",
+    "seconds": "21.126220"
+  },
+  {
+    "name": "GravityBox.Tests.COgheSpatialCampaignTests.Ceiling26ExitFromUpperLanding",
+    "result": "Passed",
+    "seconds": "12.896208"
+  },
+  {
+    "name": "GravityBox.Tests.COgheSpatialCampaignTests.Ceiling26ExitFromUpperLandingAt30Fps",
+    "result": "Passed",
+    "seconds": "6.825833"
+  },
+  {
+    "name": "GravityBox.Tests.COgheSpatialCampaignTests.Ceiling26FloorFromUpperLanding",
+    "result": "Passed",
+    "seconds": "12.965840"
+  },
+  {
+    "name": "GravityBox.Tests.COgheSpatialCampaignTests.Ceiling26HighGlassFromUpperLanding",
+    "result": "Passed",
+    "seconds": "12.927343"
+  },
+  {
+    "name": "GravityBox.Tests.COgheSpatialCampaignTests.Ceiling26RecallAfterLeavingUpperLanding",
+    "result": "Passed",
+    "seconds": "22.335028"
+  },
+  {
+    "name": "GravityBox.Tests.COgheProductUITests.AbilityAccentsAreSparseAndNeverBlockTouch",
+    "result": "Passed",
+    "seconds": "11.080115"
+  },
+  {
+    "name": "GravityBox.Tests.COgheProductUITests.CleverLevel25WorksWithSavedCardAndProductPresentation",
+    "result": "Passed",
+    "seconds": "31.065145"
+  },
+  {
+    "name": "GravityBox.Tests.COgheProductUITests.FreshLaunchFinishesIntroIntoLevelOneWithoutAnotherButton",
+    "result": "Passed",
+    "seconds": "1.773348"
+  },
+  {
+    "name": "GravityBox.Tests.COgheProductUITests.FreshLaunchStartsIntroWithoutPlayAndSkipEntersLevelOneImmediately",
+    "result": "Passed",
+    "seconds": "1.088788"
+  },
+  {
+    "name": "GravityBox.Tests.COgheProductUITests.HintCloseAndPauseFadeOnUiTimeAndRelayoutDoesNotRestartIt",
+    "result": "Passed",
+    "seconds": "2.751511"
+  },
+  {
+    "name": "GravityBox.Tests.COgheProductUITests.MintGiftMigrationPreservesOceanAndFinishedLessons",
+    "result": "Passed",
+    "seconds": "0.711423"
+  },
+  {
+    "name": "GravityBox.Tests.COgheProductUITests.OpeningHintFadesAndFirstTouchStillIssuesItsCommand",
+    "result": "Passed",
+    "seconds": "1.888668"
+  },
+  {
+    "name": "GravityBox.Tests.COgheProductUITests.ReturningLaunchKeepsMenuAndLegacyProgressIsNotRestarted",
+    "result": "Passed",
+    "seconds": "1.362035"
+  },
+  {
+    "name": "GravityBox.Tests.COgheProductUITests.SpeedyAccentsWaitForActualMovementAndSupport",
+    "result": "Passed",
+    "seconds": "3.816930"
+  },
+  {
+    "name": "GravityBox.Tests.COgheProductUITests.VictoryRewardOfferWaitsAndSurvivesCancelledAd",
+    "result": "Passed",
+    "seconds": "6.980544"
+  },
+  {
+    "name": "GravityBox.Tests.COgheSpatialCampaignTests.Boss10TrayButtonCannotCallTheLiftFromTheFloor",
+    "result": "Passed",
+    "seconds": "8.576429"
+  },
+  {
+    "name": "GravityBox.Tests.COgheSpatialCampaignTests.CasingCannotBeSelectedThroughAnOpaqueObjectOrOutsideItsBody",
+    "result": "Passed",
+    "seconds": "0.450599"
+  },
+  {
+    "name": "GravityBox.Tests.COgheSpatialCampaignTests.CleverBookCoversCurrentCatalogAndResolvesEveryStep",
+    "result": "Passed",
+    "seconds": "26.943160"
+  },
+  {
+    "name": "GravityBox.Tests.COgheSpatialCampaignTests.CleverGlassRoadLessonStartsWithTheGearBeforeThePad",
+    "result": "Passed",
+    "seconds": "0.032771"
+  },
+  {
+    "name": "GravityBox.Tests.COgheSpatialCampaignTests.CleverLevelTwoGuidesLevel25At30Fps",
+    "result": "Passed",
+    "seconds": "15.919514"
+  },
+  {
+    "name": "GravityBox.Tests.COgheSpatialCampaignTests.CleverLevelTwoGuidesLevel25At60Fps",
+    "result": "Passed",
+    "seconds": "31.150038"
+  },
+  {
+    "name": "GravityBox.Tests.COgheSpatialCampaignTests.CleverRetryRestartsItsIdleClock",
+    "result": "Passed",
+    "seconds": "1.340713"
+  },
+  {
+    "name": "GravityBox.Tests.COgheSpatialCampaignTests.IntroFinalShotIsTheActualLevelAtPhoneAndTabletAspects",
+    "result": "Passed",
+    "seconds": "4.924373"
+  },
+  {
+    "name": "GravityBox.Tests.COgheSpatialCampaignTests.WholeCasingOpensLevelFiveAndStillRespectsTheLock",
+    "result": "Passed",
+    "seconds": "1.391007"
+  }
+]

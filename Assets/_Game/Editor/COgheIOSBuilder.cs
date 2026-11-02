@@ -42,7 +42,7 @@ namespace GravityBox.Editor
             string originalAdsId=adsId?.stringValue;
             try
             {
-                PlayerSettings.productName="COghe";
+                PlayerSettings.productName=GravityBox.Venom.AlienPetBrand.DisplayName;
                 PlayerSettings.SetApplicationIdentifier(platform,BundleId);
                 PlayerSettings.iOS.sdkVersion=iOSSdkVersion.DeviceSDK;
                 PlayerSettings.SetScriptingBackend(platform,ScriptingImplementation.IL2CPP);

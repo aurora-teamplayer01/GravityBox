@@ -1,0 +1,21 @@
+{
+  "date": "2026-11-02",
+  "package": "com.gravityboxlab.venom",
+  "versionName": "1.0.1",
+  "versionCode": 2,
+  "track": "Internal testing",
+  "status": "Active / Available to internal testers",
+  "opt_in_url": "https://play.google.com/apps/internaltest/4700437523599384969",
+  "production_changed": false,
+  "installerPackageName": "com.android.vending",
+  "initiatingPackageName": "com.android.vending",
+  "firstInstallTime": "2026-11-02 08:55:28",
+  "device": "OPPO CPH2591, Android 15/API35, ARM64",
+  "fresh_play_install": "PASS",
+  "launch": "PASS: Unity initialized, observed Level 1 victory screen; resumed successfully through launcher",
+  "fatal_or_anr_lines_in_capture": 0,
+  "gameplay_scope": "Level 1 victory observed; not a full campaign test. First-run taps were not all performed/observed by agent.",
+  "root_cause": "Reviewer installation failure not reproduced; root cause remains unknown.",
+  "separate_warning": "UMP consent error 3: no forms configured for app ID. Dashboard configuration issue; not established as installation cause.",
+  "source_fix_applied": false
+}

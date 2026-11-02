@@ -1,0 +1,4 @@
+    flags=0x0
+    versionCode=1 minSdk=26 targetSdk=36
+    versionName=1.0.0
+    flags=[ HAS_CODE ALLOW_CLEAR_USER_DATA ALLOW_BACKUP ]

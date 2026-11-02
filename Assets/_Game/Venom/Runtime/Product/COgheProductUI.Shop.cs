@@ -157,7 +157,7 @@ namespace GravityBox.Venom
                 y += 56;
             }
             if (COgheEntitlements.StoreAvailable && !COgheEntitlements.HasPlus && COgheEconomy.PlusOfferEnabled && COgheShop.Current.CommerceVisited)
-                LabelButton(panel, "Plus offer", new Rect(24, y, w - 48, 44), COgheIcon.Sparkles, "COghe Plus · ×2 Drops", () => ShowShopPopup(COgheProductPopup.Plus));
+                LabelButton(panel, "Plus offer", new Rect(24, y, w - 48, 44), COgheIcon.Sparkles, AlienPetBrand.Plus + " · ×2 Drops", () => ShowShopPopup(COgheProductPopup.Plus));
         }
         private float BuyPopupHeight()
         {
@@ -237,7 +237,7 @@ namespace GravityBox.Venom
         }
         private void TripleButton()
         {
-            if (victoryDrops <= 0) return;
+            if (victoryDrops <= 0 || HideAdOffers) return;
             float w = Mathf.Min(260, width - 80), y = height - 140;
             var b = LabelButton(pageRoot, "Triple drops", new Rect((width - w) * .5f, y, w, 52),
                 tripleTaken ? COgheIcon.Check : COgheIcon.Play,
@@ -318,13 +318,15 @@ namespace GravityBox.Venom
         // COghe Plus / No Ads --------------------------------------------------------------------------------------------------
         private void PlusPopup(RectTransform panel, float w, float h)
         {
-            PopupTitle(panel, w, COgheEntitlements.Store is COgheTestStore ? "COghe Plus · test only" : "COghe Plus"); ClosePopup(panel, w, Resume);
+            PopupTitle(panel, w, AlienPetBrand.Plus); ClosePopup(panel, w, Resume);
+            if (COgheEntitlements.Store is COgheTestStore)
+                art.Label(panel, "Test purchase notice", "TEST ONLY · No real payment", new Rect(24, 53, w - 48, 17), 10, COgheUIArt.Muted);
             if (!COgheEntitlements.StoreAvailable) { art.Label(panel, "Unavailable", "Purchases are not available yet.", new Rect(24, 90, w - 48, 80), 15); return; }
             var store = COgheEntitlements.Store; float y = 74;
             string[] perks = { "No ads, anywhere", "Rewards without watching ads", "×2 Drops from levels and gifts", "Call COghe's monster act at Home" };
             foreach (var perk in perks) { art.Icon(panel, COgheIcon.Check, new Rect(26, y + 2, 18, 18), COgheUIArt.Teal); art.Label(panel, "Perk", perk, new Rect(52, y, w - 76, 22), 13, null, TextAnchor.MiddleLeft); y += 28; }
             y += 8;
-            if (COgheEntitlements.HasPlus) art.Label(panel, "Owned", "You have COghe Plus. Thank you!", new Rect(24, y, w - 48, 40), 15, COgheUIArt.Teal);
+            if (COgheEntitlements.HasPlus) art.Label(panel, "Owned", "You have " + AlienPetBrand.Plus + ". Thank you!", new Rect(24, y, w - 48, 40), 15, COgheUIArt.Teal);
             else
             {
                 LabelButton(panel, "Buy Plus", new Rect(24, y, w - 48, 54), COgheIcon.Sparkles, "Plus · " + store.Price(COgheEntitlements.Plus), () => COgheEntitlements.Buy(COgheEntitlements.Plus, ok => { if (ok) COgheAudio.Happy(); Rebuild(); }), true);

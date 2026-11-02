@@ -103,7 +103,9 @@ namespace GravityBox.Venom
         }
         private string MechanismActivity()
         {
-            foreach(var m in Mechanisms)if(m.isActiveAndEnabled&&!string.IsNullOrEmpty(m.Activity))return m.Activity;
+            foreach(var m in Mechanisms)
+                if(m.isActiveAndEnabled)
+                {string activity=m.Activity;if(!string.IsNullOrEmpty(activity))return activity;}
             return null;
         }
         public void SelectFragment(int anchor)

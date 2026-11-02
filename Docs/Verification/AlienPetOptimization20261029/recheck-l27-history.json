@@ -1,0 +1,41 @@
+{
+  "generatedUtc": "2026-10-29T10:49:18.735023+00:00",
+  "scope": "Historical native L27/G9 failure-signature search, not FPS evidence. Raw run reports de-duplicated by UTC/GUID/error/taps.",
+  "search": "All Artifacts run.json/run-latest.json plus text search for clear of P2 / Across the back road in Artifacts and Docs/Verification. The September Mac display27 is a different historical campaign and excluded.",
+  "originalNativeRecords": [
+    {
+      "source": "Artifacts/AlienPetOppo-2026-10-29/campaign/run-latest.json",
+      "reportSha256": "c2ed23348c410cd1b916efccdad563b612283ae2445c8e77e62e4bb1737897a2",
+      "utc": "2026-10-29T04:29:50.6304350Z",
+      "buildGuid": "586c1db643064b2bbabd55016653616e",
+      "recordedApkSha256": "442bc3ba29bc1a2f2ef1a7c2e052208beeab9740a38fc9569ae56aeb44b88b7a",
+      "passed": false,
+      "taps": 49,
+      "assertion": "System.InvalidOperationException: All parts meet and fuse",
+      "execution": "Normal player loop; InputSystem touch events; screenshots excluded from frame samples. Author replay, not novice evidence.",
+      "apkIdentityEvidence": [
+        "Artifacts/AlienPetOppo-2026-10-29/build-record.json",
+        "Docs/Verification/AlienPetOppo20261029/README.md"
+      ],
+      "relation": "Pre-optimization original native evidence; separate APK/harness from matched baseline; screenshot cadence. Not pooled with rechecks."
+    },
+    {
+      "source": "Artifacts/AlienPetOppo-2026-10-29/retry/run-latest.json",
+      "reportSha256": "6d72a43345e901f7aa9e565e4e67228e3ce70941d2f0cd0ed8a826bbfd2ee876",
+      "utc": "2026-10-29T05:13:50.8599310Z",
+      "buildGuid": "951aa1cb88124199af4865544c79e7d0",
+      "recordedApkSha256": "c715f25e611b4716186c1de15a66ff3ba3402068921fddba0f0e3f615e88e0a9",
+      "passed": false,
+      "taps": 49,
+      "assertion": "System.InvalidOperationException: All parts meet and fuse",
+      "execution": "Normal player loop; InputSystem touch events; screenshots excluded from frame samples. Author replay, not novice evidence.",
+      "apkIdentityEvidence": [
+        "Artifacts/AlienPetOppo-2026-10-29/build-record.json",
+        "Docs/Verification/AlienPetOppo20261029/README.md"
+      ],
+      "relation": "Pre-optimization original native evidence; separate APK/harness from matched baseline; screenshot cadence. Not pooled with rechecks."
+    }
+  ],
+  "earlierRightShelfSignatureFoundInOriginalBaseline": false,
+  "limitation": "Absence in retained reports does not prove the failure impossible on baseline. Reports are sparse endpoint evidence; original screenshot cadence differs from the current screenshot-free replay."
+}

@@ -1,0 +1,102 @@
+[
+  {
+    "src": "/Users/mrk/GravityBox/Artifacts/AlienPetPetAd-2026-10-28/sources/PET_C01_SNACK_06910ad9.mp4",
+    "start": 1.1,
+    "duration": 3.2,
+    "kind": "ai",
+    "heading": "TINY PET.\nBIG APPETITE.",
+    "tag": "",
+    "speed": 1,
+    "timeline_start": 0
+  },
+  {
+    "src": "/Users/mrk/GravityBox/Artifacts/AlienPetPetAd-2026-10-28/sources/pet-care-native.mp4",
+    "start": 7.7,
+    "duration": 2.6,
+    "kind": "home",
+    "heading": "SNACK TIME!",
+    "tag": "YUM!",
+    "speed": 1,
+    "timeline_start": 3.2
+  },
+  {
+    "src": "/Users/mrk/GravityBox/Artifacts/AlienPetPetAd-2026-10-28/sources/pet-care-native.mp4",
+    "start": 13.9,
+    "duration": 2.4,
+    "kind": "home",
+    "heading": "OOPS. SPICY!",
+    "tag": "A LITTLE TOO HOT\u2026",
+    "speed": 1,
+    "timeline_start": 5.8
+  },
+  {
+    "src": "/Users/mrk/GravityBox/Artifacts/AlienPetPetAd-2026-10-28/sources/pet-care-native.mp4",
+    "start": 19.8,
+    "duration": 3.4,
+    "kind": "style",
+    "heading": "A SPLASH\nOF YOU.",
+    "tag": "MINT MAKEOVER",
+    "speed": 1,
+    "timeline_start": 8.2
+  },
+  {
+    "src": "/Users/mrk/GravityBox/Artifacts/AlienPetPetAd-2026-10-28/sources/pet-care-native.mp4",
+    "start": 24.8,
+    "duration": 1.2,
+    "kind": "style",
+    "heading": "MAKE IT\nYOUR OWN.",
+    "tag": "FLOWER POWER",
+    "speed": 1,
+    "timeline_start": 11.6
+  },
+  {
+    "src": "/Users/mrk/GravityBox/Artifacts/AlienPetPetAd-2026-10-28/sources/pet-care-native.mp4",
+    "start": 27.8,
+    "duration": 1,
+    "kind": "style",
+    "heading": "MAKE IT\nYOUR OWN.",
+    "tag": "PARTY TIME",
+    "speed": 1,
+    "timeline_start": 12.8
+  },
+  {
+    "src": "/Users/mrk/GravityBox/Artifacts/AlienPetPetAd-2026-10-28/sources/pet-care-native.mp4",
+    "start": 29.7,
+    "duration": 1.2,
+    "kind": "style",
+    "heading": "MAKE IT\nYOUR OWN.",
+    "tag": "BEE YOURSELF",
+    "speed": 1,
+    "timeline_start": 13.8
+  },
+  {
+    "src": "/Users/mrk/GravityBox/Artifacts/AlienPetPetAd-2026-10-28/sources/PET_C02_CUDDLE_1f7318ac.mp4",
+    "start": 2,
+    "duration": 3.4,
+    "kind": "ai",
+    "heading": "LOVE AT\nFIRST SQUISH.",
+    "tag": "",
+    "speed": 1,
+    "timeline_start": 15.0
+  },
+  {
+    "src": "/Users/mrk/GravityBox/Artifacts/AlienPetPetAd-2026-10-28/sources/pet-care-native.mp4",
+    "start": 3.4,
+    "duration": 2,
+    "kind": "home",
+    "heading": "SO MUCH\nPERSONALITY.",
+    "tag": "A LITTLE LOVE GOES A LONG WAY",
+    "speed": 1,
+    "timeline_start": 18.4
+  },
+  {
+    "src": "/Users/mrk/GravityBox/Artifacts/AlienPetPetAd-2026-10-28/sources/pet-care-native.mp4",
+    "start": 29.5,
+    "duration": 3.6,
+    "kind": "end",
+    "heading": "Alien Pet",
+    "tag": "",
+    "speed": 0.65,
+    "timeline_start": 20.4
+  }
+]

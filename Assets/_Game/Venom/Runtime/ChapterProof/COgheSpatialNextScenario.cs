@@ -122,6 +122,9 @@ namespace GravityBox.Venom.ChapterProof
   public IEnumerator Walk(int actor,Vector3 world,string why,float tolerance=.05f)
   {
    bool Arrived()=>Vector3.Distance(game.Motion.Centre(actor),world+Vector3.up*.02f)<tolerance;
+   // A previous merge can already leave this part at the destination. Tapping its own
+   // body selects it instead of issuing a floor order; that is not a failed walk.
+   if(Arrived())yield break;
    yield return Command(actor,world);
    // A part that stalls on the way (or drops its order) is sent again, as a player taps the spot a second time.
    for(int retry=0;retry<2&&!Arrived();retry++)

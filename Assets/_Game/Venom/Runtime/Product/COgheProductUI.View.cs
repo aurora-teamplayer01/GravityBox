@@ -35,13 +35,15 @@ namespace GravityBox.Venom
                 case COgheProductPage.Game:GameView();break;
                 case COgheProductPage.Victory:VictoryView();break;
                 case COgheProductPage.Style:StyleView();break;
+                case COgheProductPage.PrivacySetup:PrivacySetupView();break;
             }
             if(Popup!=COgheProductPopup.None)PopupView();
             LayoutHint();
         }
         private void MainMenuView()
         {
-            art.Label(pageRoot,"COghe logo","C<color=#356D6D>O</color>ghe",new Rect(0,height*.12f,width,83),65);
+            art.Label(pageRoot,"Game logo",AlienPetBrand.Name,new Rect(20,height*.12f,width-40,62),48);
+            art.Label(pageRoot,"Game subtitle",AlienPetBrand.Subtitle,new Rect(24,height*.12f+62,width-48,25),17,COgheUIArt.Teal);
             PlusButton();DropsCounter(pageRoot,new Rect(width-124,25,100,44));
             art.Box(pageRoot,"Brand underline",new Rect(width*.5f-12,height*.12f+92,24,2),new Color(.58f,.71f,.66f));
             float y=height-265,w=Mathf.Min(280,width-80),x=(width-w)*.5f;
@@ -53,6 +55,7 @@ namespace GravityBox.Venom
             // Real 3D creature receives a greeting; this transparent target does not capture Play/Home.
             var touch=art.Box(pageRoot,"Greet COghe",new Rect(width*.16f,height*.29f,width*.68f,Mathf.Max(48,y-18-height*.29f)),Color.clear,true);
             touch.gameObject.AddComponent<Button>().onClick.AddListener(()=>{Game.GreetHome();COgheAudio.Happy();});
+            PrivacyTextButton(pageRoot,"Privacy",new Rect(width*.5f-80,height-56,160,48),"Privacy",()=>ShowPopup(COgheProductPopup.Privacy));
         }
         private void MenuEntry(float x,float y,string label,COgheIcon icon,System.Action action)
         {
@@ -183,9 +186,10 @@ namespace GravityBox.Venom
         {
             popupRoot=art.Rect(safe,"Popup "+Popup,new Rect(0,0,width,height));
             var veil=art.Box(popupRoot,"Input shield",new Rect(-width,-height,width*3,height*3),new Color(.13f,.23f,.21f,.36f),true);veil.sprite=null;
+            if(Popup==COgheProductPopup.Privacy){PrivacySettingsView();return;}
             if(StylePopup()||ShopPopup()||BonusPopup()||AbilityPopup()||MysteryBoxPopup()||FoodPopup())return;
             float w=Mathf.Min(312,width-40),h=Popup==COgheProductPopup.Pause?(InHome?324:COgheTestTools.LevelSelect?482:430):Popup==COgheProductPopup.Levels?Mathf.Min(560,height-90):Popup==COgheProductPopup.Help?450:Popup==COgheProductPopup.Collection&&Game.HomeRoom!=null?Mathf.Min(560,height-90):260;
-            bool privacy=Popup==COgheProductPopup.Pause&&COgheAds.PrivacyRequired?.Invoke()==true;
+            bool privacy=Popup==COgheProductPopup.Pause;
             if(privacy)h+=56;
             var panel=art.Box(popupRoot,"Panel",new Rect((width-w)*.5f,(height-h)*.5f,w,h),COgheUIArt.Paper,true).rectTransform;
             if(Popup==COgheProductPopup.Pause)
@@ -206,7 +210,7 @@ namespace GravityBox.Venom
                 }
                 art.Button(panel,"Resume",new Rect(24,h-82,w-48,58),COgheIcon.Play,Resume,"Resume",true);ClosePopup(panel,w,Resume);
                 if(COgheTestTools.LevelSelect&&!home)art.Button(panel,"Test levels",new Rect(24,h-138,w-48,48),COgheIcon.Overview,()=>ShowPopup(COgheProductPopup.Levels),"Levels (test)");
-                if(privacy)art.Button(panel,"Privacy choices",new Rect(24,h-(COgheTestTools.LevelSelect&&!home?194:138),w-48,48),COgheIcon.Lock,()=>COgheAds.OpenPrivacy?.Invoke(),"Privacy choices");
+                if(privacy)art.Button(panel,"Privacy",new Rect(24,h-(COgheTestTools.LevelSelect&&!home?194:138),w-48,48),COgheIcon.Lock,()=>ShowPopup(COgheProductPopup.Privacy),"Privacy");
             }
             else if(Popup==COgheProductPopup.Levels)LevelsPopup(panel,w,h);
             else if(Popup==COgheProductPopup.Collection&&Game.HomeRoom!=null)ItemsPopup(panel,w,h);

@@ -1,0 +1,2 @@
+  mCurrentFocus=Window{ade2ab u0 com.gravityboxlab.venom/com.unity3d.player.UnityPlayerGameActivity}
+  mFocusedApp=ActivityRecord{218124895 u0 com.gravityboxlab.venom/com.unity3d.player.UnityPlayerGameActivity t8}

@@ -3,6 +3,33 @@
 Implementation: 04/10/2026. Applies to Android package `com.gravityboxlab.venom`.
 The implementation follows `PLANS/COGHE_MONETIZATION_PLAN.md` (including its 04/10 clarification) and the [monetization contract](README.md). Real IAP waits for Mrk to configure Play Console products. Remote Config networking is integrated; puzzle rules are unchanged.
 
+## Privacy revision — 29/10/2026
+
+The replacement release uses a neutral local age selection before SDK startup.
+Unknown/under-13 profiles do not start Firebase, Remote Config, UMP or Ads.
+Teen profiles use restricted contextual ads only, after successful UMP handling;
+they do not enable game Analytics or Remote Config. Adults receive a separate
+Analytics opt-in, off by default. All ad requests disable personalization and use
+maximum content rating G. Teen requests carry conservative age-treatment signals;
+the selected local band is not a game Analytics property.
+
+`COghePrivacyBuild` disables native SDK auto-start providers and collection/consent
+defaults before managed code runs. Delayed callbacks check the current privacy
+revision. No gameplay events from before consent are queued for later upload.
+Withdrawal stops further Analytics/Remote Config work and resets local Analytics
+data; it is not server-data deletion. Ads operational data is separate from the
+optional game Analytics choice.
+
+Ten privacy EditMode and four UI PlayMode cases pass. The signed replacement AAB
+1.0.1 (2) passes actual merged-manifest checks and the Android 36 emulator age/consent
+matrix; see [native evidence and limits](../../Verification/AlienPetPlayStore20261029/native-privacy-results.json).
+**AAB 1.0.0 (1) predates this revision**. Eligible-user ad serving currently fails closed
+with UMP code 3 because no publisher forms are configured; publish the appropriate
+AdMob Privacy & messaging forms and rerun before claiming ads work in this release.
+See [implementation and verification scope](../../Verification/AlienPetPlayStore20261029/privacy-implementation.json).
+The 04/10 native test results below remain historical evidence, not tests of this
+new privacy flow. SDK proof runs now require an eligible age/consent state.
+
 ## Connected apps
 
 | Service | Configuration |
@@ -39,7 +66,7 @@ bash Tools/build-venom-android.sh --spatial          # Google test ad units, 50 
 COGHE_STORE=1 bash Tools/build-venom-android.sh --spatial  # production unit IDs; no test tools
 ```
 
-Android SDK services initialize before the first scene and survive scene transitions. Editor/Mac do not send Firebase events or request real ads. The public gameplay layer still uses `ICOgheAdProvider` and `COgheAnalytics.Sink`; it has no dependency on Firebase/AdMob assemblies.
+The Android service host exists before the first scene and survives scene transitions; native SDK initialization waits for the age/consent policy above. Editor/Mac do not send Firebase events or request real ads. The public gameplay layer still uses `ICOgheAdProvider` and `COgheAnalytics.Sink`; it has no dependency on Firebase/AdMob assemblies.
 
 ## Ads behavior
 
@@ -65,7 +92,7 @@ Shared parameters: `level_id` / `level_name` (stable content ID), `level` (displ
 
 Active duration excludes Pause, modal popups, background/unfocused app and full-screen ads. Backgrounding does not split one attempt into two. Force-killing an app may leave a start with no end; do not invent a loss for that case. Attempt counters reset if app data is erased/reinstalled. The app supplies no email, real name or custom personally identifying user ID.
 
-Existing shop, unlock, Drops and ad events also flow through the same Firebase sink. Firebase supplies its standard session/app events. The pre-initialization event queue is bounded at 128; the SDK handles ordinary offline delivery once initialized. No custom backend, network calls per frame or server account keys are needed.
+Existing shop, unlock, Drops and ad events flow through the Firebase sink only for adult Analytics opt-in. Firebase supplies its standard session/app events once enabled. Pre-consent and pre-ready events are dropped; there is no deferred game-event queue. The SDK handles ordinary offline delivery after initialization and consent. No custom backend, network calls per frame or server account keys are needed.
 
 ## Read difficulty reports
 

@@ -1,0 +1,1007 @@
+{
+  "generatedUtc": "2026-10-29T10:58:04.214392+00:00",
+  "scope": "Independent saved-evidence functional audit; no device/Unity/runtime controls. Never pooled with primary FPS A/B.",
+  "stateSource": "Artifacts/AlienPetOptimization-2026-10-29/native-rechecks/state.json",
+  "stateSha256": "010c2bda0fef4ba948b2e44a25500cedf62f5c220d258a576fc572bdafad5a9d",
+  "apkSignatureAudit": {
+    "recordedUtc": "2026-10-29T10:35:10.922595+00:00",
+    "scope": "Read-only local APK checks; no device/Unity process launched",
+    "tool": "<local-user>/Library/Android/sdk/build-tools/36.1.0/apksigner verify --print-certs",
+    "javaRuntime": "/Applications/Unity/Hub/Editor/6000.3.19f1/PlaybackEngines/AndroidPlayer/OpenJDK",
+    "certificateSha256": "25eb779fc455fa564f6821cad70117b3ca50214767f8fa1ca1a68e1d21e43ffb",
+    "certificateSubject": "C=US, O=Android, CN=Android Debug",
+    "apks": [
+      {
+        "side": "before",
+        "path": "Artifacts/AlienPetOptimization-2026-10-29/baseline/AlienPet-before-Release-matched.apk",
+        "sha256": "0239994b0fdaaea74d2711dda94a5199486760bcbeba9052a6afdcadb51f536d",
+        "signatureVerificationExitCode": 0,
+        "certificateSha256": "25eb779fc455fa564f6821cad70117b3ca50214767f8fa1ca1a68e1d21e43ffb"
+      },
+      {
+        "side": "after",
+        "path": "Artifacts/AlienPetOptimization-2026-10-29/optimized/AlienPet-after-Release.apk",
+        "sha256": "26df2c98969cd38f500708e2c364e9a82dd9090bbb1407b5babdd6efe4e5fb39",
+        "signatureVerificationExitCode": 0,
+        "certificateSha256": "25eb779fc455fa564f6821cad70117b3ca50214767f8fa1ca1a68e1d21e43ffb"
+      }
+    ]
+  },
+  "runs": [
+    {
+      "side": "before",
+      "index": 1,
+      "startedUtc": "2026-10-29T10:17:22.957393+00:00",
+      "completedUtc": "2026-10-29T10:23:34.805945+00:00",
+      "apkSha256": "0239994b0fdaaea74d2711dda94a5199486760bcbeba9052a6afdcadb51f536d",
+      "returnCode": 1,
+      "passed": 3,
+      "failed": 2,
+      "failedLevels": [
+        27,
+        57
+      ],
+      "report": "native-rechecks/before-1/proof/20261029T101732Z/run.json",
+      "reportSha256": "95da7a32b4e8726815c81877ccab601d29983ba4ca5f3bbccd08b1f0699ce6ef",
+      "buildGuid": "38a7643f0bc84fb7964db588724731e2",
+      "metadata": {
+        "unity": "6000.3.19f1",
+        "device": "OPPO CPH2591",
+        "gpu": "Mali-G52 MC2",
+        "api": "Vulkan",
+        "width": 720,
+        "height": 1612,
+        "graphicProfile": "Current",
+        "execution": "Normal author replay with screenshot capture disabled; not novice evidence."
+      },
+      "runtimeErrors": [],
+      "imageCount": 0,
+      "androidDebuggable": false,
+      "batteryStartC": 40.0,
+      "batteryEndC": 40.0,
+      "batterySampleRangeC": [
+        40.0,
+        41.0
+      ],
+      "thermalStatuses": [
+        2
+      ],
+      "telemetryErrors": []
+    },
+    {
+      "side": "before",
+      "index": 2,
+      "startedUtc": "2026-10-29T10:23:34.806559+00:00",
+      "completedUtc": "2026-10-29T10:30:37.657367+00:00",
+      "apkSha256": "0239994b0fdaaea74d2711dda94a5199486760bcbeba9052a6afdcadb51f536d",
+      "returnCode": 1,
+      "passed": 1,
+      "failed": 4,
+      "failedLevels": [
+        27,
+        32,
+        56,
+        57
+      ],
+      "report": "native-rechecks/before-2/proof/20261029T102340Z/run.json",
+      "reportSha256": "e6e94d7b2d98ae110010c28cf7762daa91f97caad9c1fafb2589393ab068433a",
+      "buildGuid": "38a7643f0bc84fb7964db588724731e2",
+      "metadata": {
+        "unity": "6000.3.19f1",
+        "device": "OPPO CPH2591",
+        "gpu": "Mali-G52 MC2",
+        "api": "Vulkan",
+        "width": 720,
+        "height": 1612,
+        "graphicProfile": "Current",
+        "execution": "Normal author replay with screenshot capture disabled; not novice evidence."
+      },
+      "runtimeErrors": [],
+      "imageCount": 0,
+      "androidDebuggable": false,
+      "batteryStartC": 40.0,
+      "batteryEndC": 41.0,
+      "batterySampleRangeC": [
+        40.0,
+        41.0
+      ],
+      "thermalStatuses": [
+        2
+      ],
+      "telemetryErrors": []
+    },
+    {
+      "side": "before",
+      "index": 3,
+      "startedUtc": "2026-10-29T10:30:37.657853+00:00",
+      "completedUtc": "2026-10-29T10:36:51.873266+00:00",
+      "apkSha256": "0239994b0fdaaea74d2711dda94a5199486760bcbeba9052a6afdcadb51f536d",
+      "returnCode": 1,
+      "passed": 2,
+      "failed": 3,
+      "failedLevels": [
+        27,
+        32,
+        57
+      ],
+      "report": "native-rechecks/before-3/proof/20261029T103042Z/run.json",
+      "reportSha256": "9030a5a950f2ef19176376f86aa27dda61c3cac1d1bca62fd0cc4856fdd74623",
+      "buildGuid": "38a7643f0bc84fb7964db588724731e2",
+      "metadata": {
+        "unity": "6000.3.19f1",
+        "device": "OPPO CPH2591",
+        "gpu": "Mali-G52 MC2",
+        "api": "Vulkan",
+        "width": 720,
+        "height": 1612,
+        "graphicProfile": "Current",
+        "execution": "Normal author replay with screenshot capture disabled; not novice evidence."
+      },
+      "runtimeErrors": [],
+      "imageCount": 0,
+      "androidDebuggable": false,
+      "batteryStartC": 41.0,
+      "batteryEndC": 41.0,
+      "batterySampleRangeC": [
+        40.0,
+        41.0
+      ],
+      "thermalStatuses": [
+        2
+      ],
+      "telemetryErrors": []
+    },
+    {
+      "side": "after",
+      "index": 1,
+      "startedUtc": "2026-10-29T10:37:15.287289+00:00",
+      "completedUtc": "2026-10-29T10:43:41.873776+00:00",
+      "apkSha256": "26df2c98969cd38f500708e2c364e9a82dd9090bbb1407b5babdd6efe4e5fb39",
+      "returnCode": 1,
+      "passed": 1,
+      "failed": 4,
+      "failedLevels": [
+        27,
+        32,
+        56,
+        57
+      ],
+      "report": "native-rechecks/after-1/proof/20261029T103723Z/run.json",
+      "reportSha256": "33d7a832eff726f94bdec767add2bcb634a6a94db0c303a2446289d189e34cae",
+      "buildGuid": "63a40fbb10a74a47a9b606b67cd721b4",
+      "metadata": {
+        "unity": "6000.3.19f1",
+        "device": "OPPO CPH2591",
+        "gpu": "Mali-G52 MC2",
+        "api": "Vulkan",
+        "width": 720,
+        "height": 1612,
+        "graphicProfile": "Current",
+        "execution": "Normal author replay with screenshot capture disabled; not novice evidence."
+      },
+      "runtimeErrors": [],
+      "imageCount": 0,
+      "androidDebuggable": false,
+      "batteryStartC": 41.0,
+      "batteryEndC": 41.0,
+      "batterySampleRangeC": [
+        41.0,
+        42.0
+      ],
+      "thermalStatuses": [
+        2,
+        3
+      ],
+      "telemetryErrors": []
+    },
+    {
+      "side": "after",
+      "index": 2,
+      "startedUtc": "2026-10-29T10:43:41.874375+00:00",
+      "completedUtc": "2026-10-29T10:49:35.917053+00:00",
+      "apkSha256": "26df2c98969cd38f500708e2c364e9a82dd9090bbb1407b5babdd6efe4e5fb39",
+      "returnCode": 1,
+      "passed": 2,
+      "failed": 3,
+      "failedLevels": [
+        27,
+        32,
+        57
+      ],
+      "report": "native-rechecks/after-2/proof/20261029T104347Z/run.json",
+      "reportSha256": "410ad1b3df4d79397b6b85b0233d3902db12385978d1fbf6ca6eada003c7cf6e",
+      "buildGuid": "63a40fbb10a74a47a9b606b67cd721b4",
+      "metadata": {
+        "unity": "6000.3.19f1",
+        "device": "OPPO CPH2591",
+        "gpu": "Mali-G52 MC2",
+        "api": "Vulkan",
+        "width": 720,
+        "height": 1612,
+        "graphicProfile": "Current",
+        "execution": "Normal author replay with screenshot capture disabled; not novice evidence."
+      },
+      "runtimeErrors": [],
+      "imageCount": 0,
+      "androidDebuggable": false,
+      "batteryStartC": 41.0,
+      "batteryEndC": 41.0,
+      "batterySampleRangeC": [
+        41.0,
+        42.0
+      ],
+      "thermalStatuses": [
+        3
+      ],
+      "telemetryErrors": []
+    },
+    {
+      "side": "after",
+      "index": 3,
+      "startedUtc": "2026-10-29T10:49:35.917563+00:00",
+      "completedUtc": "2026-10-29T10:55:24.734488+00:00",
+      "apkSha256": "26df2c98969cd38f500708e2c364e9a82dd9090bbb1407b5babdd6efe4e5fb39",
+      "returnCode": 1,
+      "passed": 2,
+      "failed": 3,
+      "failedLevels": [
+        27,
+        56,
+        57
+      ],
+      "report": "native-rechecks/after-3/proof/20261029T104940Z/run.json",
+      "reportSha256": "16f76804af9103db40b795cce299ab3c8b62b419bee3976ca786267d242bf97f",
+      "buildGuid": "63a40fbb10a74a47a9b606b67cd721b4",
+      "metadata": {
+        "unity": "6000.3.19f1",
+        "device": "OPPO CPH2591",
+        "gpu": "Mali-G52 MC2",
+        "api": "Vulkan",
+        "width": 720,
+        "height": 1612,
+        "graphicProfile": "Current",
+        "execution": "Normal author replay with screenshot capture disabled; not novice evidence."
+      },
+      "runtimeErrors": [],
+      "imageCount": 0,
+      "androidDebuggable": false,
+      "batteryStartC": 41.0,
+      "batteryEndC": 42.0,
+      "batterySampleRangeC": [
+        41.0,
+        42.0
+      ],
+      "thermalStatuses": [
+        3
+      ],
+      "telemetryErrors": []
+    }
+  ],
+  "levelRecords": [
+    {
+      "side": "before",
+      "index": 1,
+      "level": 10,
+      "passed": true,
+      "taps": 11,
+      "seconds": 53.815574645996094,
+      "escaped": 32,
+      "fragments": 1,
+      "firstErrorLine": "",
+      "assertion": "",
+      "source": "Artifacts/AlienPetOptimization-2026-10-29/native-rechecks/before-1/proof/20261029T101732Z/run.json"
+    },
+    {
+      "side": "before",
+      "index": 1,
+      "level": 27,
+      "passed": false,
+      "taps": 36,
+      "seconds": 64.25952911376953,
+      "escaped": 0,
+      "fragments": 2,
+      "firstErrorLine": "System.InvalidOperationException: All parts meet and fuse; Idle; b\u1ea1n ph\u1ea3i h\u1ee3p th\u1ec3 tr\u01b0\u1edbc khi chui ra; selected=2 fragments=2 centre=(0.31, -0.11, 0.12); A position=0.07701901 phase=Idle last= stand=(-0.02, -0.28, -0.03) hand=(-0.02, -0.28, 0.02); C position=0.05702354 phase=Idle last= stand=(0.38, -0.08, -0.06) hand=(0.37, -0.01, -0.06); intent=(-0.0011, 0.2645, -0.3084) velocity=(0.0080, 0.0391, -0.0702) feet=24 supports=Outer pane 4:10,Right shelf:14,; group 0 centre=(0.3793, -0.0458, -0.1425) target= hold= exit=; group 2 centre=(0.3118, -0.1054, 0.1217) target= hold= exit=",
+      "assertion": "All parts meet and fuse",
+      "source": "Artifacts/AlienPetOptimization-2026-10-29/native-rechecks/before-1/proof/20261029T101732Z/run.json"
+    },
+    {
+      "side": "before",
+      "index": 1,
+      "level": 32,
+      "passed": true,
+      "taps": 16,
+      "seconds": 49.122955322265625,
+      "escaped": 32,
+      "fragments": 1,
+      "firstErrorLine": "",
+      "assertion": "",
+      "source": "Artifacts/AlienPetOptimization-2026-10-29/native-rechecks/before-1/proof/20261029T101732Z/run.json"
+    },
+    {
+      "side": "before",
+      "index": 1,
+      "level": 56,
+      "passed": true,
+      "taps": 27,
+      "seconds": 43.7742919921875,
+      "escaped": 32,
+      "fragments": 1,
+      "firstErrorLine": "",
+      "assertion": "",
+      "source": "Artifacts/AlienPetOptimization-2026-10-29/native-rechecks/before-1/proof/20261029T101732Z/run.json"
+    },
+    {
+      "side": "before",
+      "index": 1,
+      "level": 57,
+      "passed": false,
+      "taps": 63,
+      "seconds": 119.46376037597656,
+      "escaped": 0,
+      "fragments": 2,
+      "firstErrorLine": "System.InvalidOperationException: All parts meet and fuse; Idle; ; selected=13 fragments=2 centre=(0.20, -0.29, -0.10); intent=(0.0000, 0.0000, 0.0000) velocity=(0.0000, 0.0000, 0.0000) feet=32 supports=Laboratory floor:32,; group 0 centre=(0.1327, -0.2875, -0.0483) target= hold= exit=; group 13 centre=(0.2015, -0.2880, -0.1044) target= hold= exit=",
+      "assertion": "All parts meet and fuse",
+      "source": "Artifacts/AlienPetOptimization-2026-10-29/native-rechecks/before-1/proof/20261029T101732Z/run.json"
+    },
+    {
+      "side": "before",
+      "index": 2,
+      "level": 10,
+      "passed": true,
+      "taps": 11,
+      "seconds": 53.29838562011719,
+      "escaped": 32,
+      "fragments": 1,
+      "firstErrorLine": "",
+      "assertion": "",
+      "source": "Artifacts/AlienPetOptimization-2026-10-29/native-rechecks/before-2/proof/20261029T102340Z/run.json"
+    },
+    {
+      "side": "before",
+      "index": 2,
+      "level": 27,
+      "passed": false,
+      "taps": 75,
+      "seconds": 145.9825439453125,
+      "escaped": 0,
+      "fragments": 2,
+      "firstErrorLine": "System.InvalidOperationException: All parts meet and fuse; Idle; ; selected=2 fragments=2 centre=(0.24, -0.11, 0.14); A position=0.07701901 phase=Idle last= stand=(-0.02, -0.28, -0.03) hand=(-0.02, -0.28, 0.02); C position=0.05702354 phase=Idle last= stand=(0.38, -0.08, -0.06) hand=(0.37, -0.01, -0.06); intent=(0.0000, 0.0000, 0.0000) velocity=(0.0000, 0.0000, 0.0000) feet=31 supports=Outer pane 2:8,Right shelf:23,; group 0 centre=(0.2556, -0.1004, 0.2800) target= hold= exit=; group 2 centre=(0.2428, -0.1051, 0.1363) target= hold= exit=",
+      "assertion": "All parts meet and fuse",
+      "source": "Artifacts/AlienPetOptimization-2026-10-29/native-rechecks/before-2/proof/20261029T102340Z/run.json"
+    },
+    {
+      "side": "before",
+      "index": 2,
+      "level": 32,
+      "passed": false,
+      "taps": 17,
+      "seconds": 41.433990478515625,
+      "escaped": 0,
+      "fragments": 2,
+      "firstErrorLine": "System.InvalidOperationException: No visible floor command for part 1 at (0.050, -0.300, -0.240); activity=Idle; lost=False failure=; escaped=0; centre=(0.329, -0.005, -0.115); target=; yaw=0",
+      "assertion": "No visible floor command for part 1 at (0.050, -0.300, -0.240)",
+      "source": "Artifacts/AlienPetOptimization-2026-10-29/native-rechecks/before-2/proof/20261029T102340Z/run.json"
+    },
+    {
+      "side": "before",
+      "index": 2,
+      "level": 56,
+      "passed": false,
+      "taps": 26,
+      "seconds": 30.716766357421875,
+      "escaped": 0,
+      "fragments": 2,
+      "firstErrorLine": "System.InvalidOperationException: Handle C rejected:",
+      "assertion": "Handle C rejected:",
+      "source": "Artifacts/AlienPetOptimization-2026-10-29/native-rechecks/before-2/proof/20261029T102340Z/run.json"
+    },
+    {
+      "side": "before",
+      "index": 2,
+      "level": 57,
+      "passed": false,
+      "taps": 63,
+      "seconds": 119.18328857421875,
+      "escaped": 0,
+      "fragments": 2,
+      "firstErrorLine": "System.InvalidOperationException: All parts meet and fuse; Idle; ; selected=13 fragments=2 centre=(0.20, -0.29, -0.10); intent=(0.0000, 0.0000, 0.0000) velocity=(0.0000, 0.0000, 0.0000) feet=32 supports=Laboratory floor:32,; group 0 centre=(0.1330, -0.2875, -0.0478) target= hold= exit=; group 13 centre=(0.2018, -0.2880, -0.1047) target= hold= exit=",
+      "assertion": "All parts meet and fuse",
+      "source": "Artifacts/AlienPetOptimization-2026-10-29/native-rechecks/before-2/proof/20261029T102340Z/run.json"
+    },
+    {
+      "side": "before",
+      "index": 3,
+      "level": 10,
+      "passed": true,
+      "taps": 11,
+      "seconds": 52.16395568847656,
+      "escaped": 32,
+      "fragments": 1,
+      "firstErrorLine": "",
+      "assertion": "",
+      "source": "Artifacts/AlienPetOptimization-2026-10-29/native-rechecks/before-3/proof/20261029T103042Z/run.json"
+    },
+    {
+      "side": "before",
+      "index": 3,
+      "level": 27,
+      "passed": false,
+      "taps": 49,
+      "seconds": 81.87379455566406,
+      "escaped": 0,
+      "fragments": 2,
+      "firstErrorLine": "System.InvalidOperationException: All parts meet and fuse; Idle; b\u1ea1n ph\u1ea3i h\u1ee3p th\u1ec3 tr\u01b0\u1edbc khi chui ra; selected=2 fragments=2 centre=(0.31, -0.11, 0.15); A position=0.07701901 phase=Idle last= stand=(-0.02, -0.28, -0.03) hand=(-0.02, -0.28, 0.03); C position=0.05702354 phase=Idle last= stand=(0.38, -0.08, -0.06) hand=(0.37, -0.01, -0.06); intent=(-0.0515, 0.2960, -0.1670) velocity=(0.0151, 0.0204, -0.0762) feet=24 supports=Outer pane 4:8,Right shelf:16,; group 0 centre=(0.3842, -0.0422, -0.1630) target= hold= exit=; group 2 centre=(0.3130, -0.1056, 0.1465) target= hold= exit=",
+      "assertion": "All parts meet and fuse",
+      "source": "Artifacts/AlienPetOptimization-2026-10-29/native-rechecks/before-3/proof/20261029T103042Z/run.json"
+    },
+    {
+      "side": "before",
+      "index": 3,
+      "level": 32,
+      "passed": false,
+      "taps": 17,
+      "seconds": 41.41748046875,
+      "escaped": 0,
+      "fragments": 2,
+      "firstErrorLine": "System.InvalidOperationException: No visible floor command for part 1 at (0.050, -0.300, -0.240); activity=Idle; lost=False failure=; escaped=0; centre=(0.329, -0.005, -0.115); target=; yaw=0",
+      "assertion": "No visible floor command for part 1 at (0.050, -0.300, -0.240)",
+      "source": "Artifacts/AlienPetOptimization-2026-10-29/native-rechecks/before-3/proof/20261029T103042Z/run.json"
+    },
+    {
+      "side": "before",
+      "index": 3,
+      "level": 56,
+      "passed": true,
+      "taps": 26,
+      "seconds": 43.67057800292969,
+      "escaped": 32,
+      "fragments": 1,
+      "firstErrorLine": "",
+      "assertion": "",
+      "source": "Artifacts/AlienPetOptimization-2026-10-29/native-rechecks/before-3/proof/20261029T103042Z/run.json"
+    },
+    {
+      "side": "before",
+      "index": 3,
+      "level": 57,
+      "passed": false,
+      "taps": 63,
+      "seconds": 119.39273071289062,
+      "escaped": 0,
+      "fragments": 2,
+      "firstErrorLine": "System.InvalidOperationException: All parts meet and fuse; Idle; ; selected=13 fragments=2 centre=(0.20, -0.29, -0.10); intent=(0.0000, 0.0000, 0.0000) velocity=(0.0000, 0.0000, 0.0000) feet=32 supports=Laboratory floor:32,; group 0 centre=(0.1320, -0.2873, -0.0506) target= hold= exit=; group 13 centre=(0.2017, -0.2880, -0.1046) target= hold= exit=",
+      "assertion": "All parts meet and fuse",
+      "source": "Artifacts/AlienPetOptimization-2026-10-29/native-rechecks/before-3/proof/20261029T103042Z/run.json"
+    },
+    {
+      "side": "after",
+      "index": 1,
+      "level": 10,
+      "passed": true,
+      "taps": 11,
+      "seconds": 53.265480041503906,
+      "escaped": 32,
+      "fragments": 1,
+      "firstErrorLine": "",
+      "assertion": "",
+      "source": "Artifacts/AlienPetOptimization-2026-10-29/native-rechecks/after-1/proof/20261029T103723Z/run.json"
+    },
+    {
+      "side": "after",
+      "index": 1,
+      "level": 27,
+      "passed": false,
+      "taps": 11,
+      "seconds": 108.06598663330078,
+      "escaped": 0,
+      "fragments": 2,
+      "firstErrorLine": "System.InvalidOperationException: Across the back road onto the right shelf, clear of P2; Idle; ; selected=2 fragments=2 centre=(-0.03, -0.29, 0.25); A position=0.07701901 phase=Idle last= stand=(-0.02, -0.28, -0.03) hand=(-0.02, -0.28, 0.03); C position=0 phase=Idle last= stand=(0.38, -0.08, 0.00) hand=(0.37, -0.01, 0.00); intent=(0.0000, 0.0000, 0.0000) velocity=(-0.0001, -0.0002, -0.0002) feet=32 supports=Right shelf:8,Outer pane 2:8,Laboratory floor:16,; group 0 centre=(0.2545, -0.1025, 0.2799) target= hold= exit=; group 2 centre=(-0.0253, -0.2858, 0.2540) target= hold= exit=",
+      "assertion": "Across the back road onto the right shelf, clear of P2",
+      "source": "Artifacts/AlienPetOptimization-2026-10-29/native-rechecks/after-1/proof/20261029T103723Z/run.json"
+    },
+    {
+      "side": "after",
+      "index": 1,
+      "level": 32,
+      "passed": false,
+      "taps": 17,
+      "seconds": 41.50544738769531,
+      "escaped": 0,
+      "fragments": 2,
+      "firstErrorLine": "System.InvalidOperationException: No visible floor command for part 1 at (0.050, -0.300, -0.240); activity=Idle; lost=False failure=; escaped=0; centre=(0.329, -0.005, -0.115); target=; yaw=0",
+      "assertion": "No visible floor command for part 1 at (0.050, -0.300, -0.240)",
+      "source": "Artifacts/AlienPetOptimization-2026-10-29/native-rechecks/after-1/proof/20261029T103723Z/run.json"
+    },
+    {
+      "side": "after",
+      "index": 1,
+      "level": 56,
+      "passed": false,
+      "taps": 26,
+      "seconds": 30.393829345703125,
+      "escaped": 0,
+      "fragments": 2,
+      "firstErrorLine": "System.InvalidOperationException: Handle C rejected: C\u01a1 quan \u0111ang th\u1ef1c hi\u1ec7n",
+      "assertion": "Handle C rejected: C\u01a1 quan \u0111ang th\u1ef1c hi\u1ec7n",
+      "source": "Artifacts/AlienPetOptimization-2026-10-29/native-rechecks/after-1/proof/20261029T103723Z/run.json"
+    },
+    {
+      "side": "after",
+      "index": 1,
+      "level": 57,
+      "passed": false,
+      "taps": 63,
+      "seconds": 119.46524047851562,
+      "escaped": 0,
+      "fragments": 2,
+      "firstErrorLine": "System.InvalidOperationException: All parts meet and fuse; Idle; ; selected=13 fragments=2 centre=(0.20, -0.29, -0.10); intent=(0.0000, 0.0000, 0.0000) velocity=(0.0000, 0.0000, 0.0000) feet=32 supports=Laboratory floor:32,; group 0 centre=(0.1326, -0.2872, -0.0473) target= hold= exit=; group 13 centre=(0.2017, -0.2880, -0.1046) target= hold= exit=",
+      "assertion": "All parts meet and fuse",
+      "source": "Artifacts/AlienPetOptimization-2026-10-29/native-rechecks/after-1/proof/20261029T103723Z/run.json"
+    },
+    {
+      "side": "after",
+      "index": 2,
+      "level": 10,
+      "passed": true,
+      "taps": 11,
+      "seconds": 52.80030822753906,
+      "escaped": 32,
+      "fragments": 1,
+      "firstErrorLine": "",
+      "assertion": "",
+      "source": "Artifacts/AlienPetOptimization-2026-10-29/native-rechecks/after-2/proof/20261029T104347Z/run.json"
+    },
+    {
+      "side": "after",
+      "index": 2,
+      "level": 27,
+      "passed": false,
+      "taps": 36,
+      "seconds": 63.43665313720703,
+      "escaped": 0,
+      "fragments": 2,
+      "firstErrorLine": "System.InvalidOperationException: All parts meet and fuse; Idle; b\u1ea1n ph\u1ea3i h\u1ee3p th\u1ec3 tr\u01b0\u1edbc khi chui ra; selected=2 fragments=2 centre=(0.31, -0.10, 0.12); A position=0.07701901 phase=Idle last= stand=(-0.02, -0.28, -0.03) hand=(-0.02, -0.28, 0.03); C position=0.05702354 phase=Idle last= stand=(0.38, -0.08, -0.06) hand=(0.37, -0.01, -0.06); intent=(-0.0061, 0.2627, -0.2675) velocity=(0.0089, 0.0324, -0.0758) feet=25 supports=Outer pane 4:10,Right shelf:15,; group 0 centre=(0.3801, -0.0439, -0.1490) target= hold= exit=; group 2 centre=(0.3103, -0.1044, 0.1215) target= hold= exit=",
+      "assertion": "All parts meet and fuse",
+      "source": "Artifacts/AlienPetOptimization-2026-10-29/native-rechecks/after-2/proof/20261029T104347Z/run.json"
+    },
+    {
+      "side": "after",
+      "index": 2,
+      "level": 32,
+      "passed": false,
+      "taps": 17,
+      "seconds": 41.38104248046875,
+      "escaped": 0,
+      "fragments": 2,
+      "firstErrorLine": "System.InvalidOperationException: No visible floor command for part 1 at (0.050, -0.300, -0.240); activity=Idle; lost=False failure=; escaped=0; centre=(0.329, -0.005, -0.115); target=; yaw=0",
+      "assertion": "No visible floor command for part 1 at (0.050, -0.300, -0.240)",
+      "source": "Artifacts/AlienPetOptimization-2026-10-29/native-rechecks/after-2/proof/20261029T104347Z/run.json"
+    },
+    {
+      "side": "after",
+      "index": 2,
+      "level": 56,
+      "passed": true,
+      "taps": 25,
+      "seconds": 43.64741516113281,
+      "escaped": 32,
+      "fragments": 1,
+      "firstErrorLine": "",
+      "assertion": "",
+      "source": "Artifacts/AlienPetOptimization-2026-10-29/native-rechecks/after-2/proof/20261029T104347Z/run.json"
+    },
+    {
+      "side": "after",
+      "index": 2,
+      "level": 57,
+      "passed": false,
+      "taps": 63,
+      "seconds": 119.340576171875,
+      "escaped": 0,
+      "fragments": 2,
+      "firstErrorLine": "System.InvalidOperationException: All parts meet and fuse; Idle; ; selected=13 fragments=2 centre=(0.20, -0.29, -0.10); intent=(0.0000, 0.0000, 0.0000) velocity=(0.0000, 0.0000, 0.0000) feet=32 supports=Laboratory floor:32,; group 0 centre=(0.1327, -0.2873, -0.0481) target= hold= exit=; group 13 centre=(0.2015, -0.2880, -0.1045) target= hold= exit=",
+      "assertion": "All parts meet and fuse",
+      "source": "Artifacts/AlienPetOptimization-2026-10-29/native-rechecks/after-2/proof/20261029T104347Z/run.json"
+    },
+    {
+      "side": "after",
+      "index": 3,
+      "level": 10,
+      "passed": true,
+      "taps": 11,
+      "seconds": 52.98430633544922,
+      "escaped": 32,
+      "fragments": 1,
+      "firstErrorLine": "",
+      "assertion": "",
+      "source": "Artifacts/AlienPetOptimization-2026-10-29/native-rechecks/after-3/proof/20261029T104940Z/run.json"
+    },
+    {
+      "side": "after",
+      "index": 3,
+      "level": 27,
+      "passed": false,
+      "taps": 36,
+      "seconds": 63.978904724121094,
+      "escaped": 0,
+      "fragments": 2,
+      "firstErrorLine": "System.InvalidOperationException: All parts meet and fuse; Idle; b\u1ea1n ph\u1ea3i h\u1ee3p th\u1ec3 tr\u01b0\u1edbc khi chui ra; selected=2 fragments=2 centre=(0.31, -0.10, 0.12); A position=0.07701901 phase=Idle last= stand=(-0.02, -0.28, -0.03) hand=(-0.02, -0.28, 0.03); C position=0.05702354 phase=Idle last= stand=(0.38, -0.08, -0.06) hand=(0.37, -0.01, -0.06); intent=(-0.0680, 0.2594, -0.2151) velocity=(0.0136, 0.0256, -0.0785) feet=25 supports=Outer pane 4:12,Right shelf:15,; group 0 centre=(0.3859, -0.0419, -0.1570) target= hold= exit=; group 2 centre=(0.3134, -0.1046, 0.1212) target= hold= exit=",
+      "assertion": "All parts meet and fuse",
+      "source": "Artifacts/AlienPetOptimization-2026-10-29/native-rechecks/after-3/proof/20261029T104940Z/run.json"
+    },
+    {
+      "side": "after",
+      "index": 3,
+      "level": 32,
+      "passed": true,
+      "taps": 16,
+      "seconds": 49.172576904296875,
+      "escaped": 32,
+      "fragments": 1,
+      "firstErrorLine": "",
+      "assertion": "",
+      "source": "Artifacts/AlienPetOptimization-2026-10-29/native-rechecks/after-3/proof/20261029T104940Z/run.json"
+    },
+    {
+      "side": "after",
+      "index": 3,
+      "level": 56,
+      "passed": false,
+      "taps": 26,
+      "seconds": 30.50531005859375,
+      "escaped": 0,
+      "fragments": 2,
+      "firstErrorLine": "System.InvalidOperationException: Handle C rejected: C\u01a1 quan \u0111ang th\u1ef1c hi\u1ec7n",
+      "assertion": "Handle C rejected: C\u01a1 quan \u0111ang th\u1ef1c hi\u1ec7n",
+      "source": "Artifacts/AlienPetOptimization-2026-10-29/native-rechecks/after-3/proof/20261029T104940Z/run.json"
+    },
+    {
+      "side": "after",
+      "index": 3,
+      "level": 57,
+      "passed": false,
+      "taps": 63,
+      "seconds": 119.40916442871094,
+      "escaped": 0,
+      "fragments": 2,
+      "firstErrorLine": "System.InvalidOperationException: All parts meet and fuse; Idle; ; selected=13 fragments=2 centre=(0.20, -0.29, -0.10); intent=(0.0000, 0.0000, 0.0000) velocity=(0.0000, 0.0000, 0.0000) feet=32 supports=Laboratory floor:32,; group 0 centre=(0.1323, -0.2872, -0.0467) target= hold= exit=; group 13 centre=(0.2016, -0.2880, -0.1046) target= hold= exit=",
+      "assertion": "All parts meet and fuse",
+      "source": "Artifacts/AlienPetOptimization-2026-10-29/native-rechecks/after-3/proof/20261029T104940Z/run.json"
+    }
+  ],
+  "levels": [
+    {
+      "level": 10,
+      "beforePasses": 3,
+      "afterPasses": 3,
+      "beforeTaps": [
+        11,
+        11,
+        11
+      ],
+      "afterTaps": [
+        11,
+        11,
+        11
+      ],
+      "beforeOutcomes": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "afterOutcomes": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "afterOnlyObservedFailedLevel": false,
+      "afterOnlyObservedAssertions": [],
+      "originalFullSweep": {
+        "passed": false,
+        "taps": 4,
+        "assertion": "Operate B",
+        "firstErrorLine": "System.InvalidOperationException: Operate B; Idle; ; selected=0 fragments=1 centre=(-0.24, -0.24, 0.13); C position=0.04702782 phase=Idle last= stand=(0.01, 0.06, 0.18) hand=(0.01, 0.06, 0.23); D position=0 phase=Idle last= stand=(0.30, 0.06, 0.19) hand=(0.30, 0.06, 0.24); A position=0 phase=Idle last= stand=(-0.05, -0.28, -0.14) hand=(-0.05, -0.28, -0.09); B position=0 phase=Idle last= stand=(0.08, -0.28, -0.29) hand=(0.08, -0.28, -0.24); intent=(0.0000, 0.0000, 0.0000) velocity=(0.0000, 0.0001, 0.0000) feet=29 supports=Passenger elevator surface:29,; group 0 centre=(-0.2378, -0.2424, 0.1268) target= hold= exit="
+      }
+    },
+    {
+      "level": 27,
+      "beforePasses": 0,
+      "afterPasses": 0,
+      "beforeTaps": [
+        36,
+        75,
+        49
+      ],
+      "afterTaps": [
+        11,
+        36,
+        36
+      ],
+      "beforeOutcomes": [
+        "All parts meet and fuse",
+        "All parts meet and fuse",
+        "All parts meet and fuse"
+      ],
+      "afterOutcomes": [
+        "Across the back road onto the right shelf, clear of P2",
+        "All parts meet and fuse",
+        "All parts meet and fuse"
+      ],
+      "afterOnlyObservedFailedLevel": false,
+      "afterOnlyObservedAssertions": [
+        "Across the back road onto the right shelf, clear of P2"
+      ],
+      "originalFullSweep": {
+        "passed": false,
+        "taps": 11,
+        "assertion": "Across the back road onto the right shelf, clear of P2",
+        "firstErrorLine": "System.InvalidOperationException: Across the back road onto the right shelf, clear of P2; Idle; ; selected=2 fragments=2 centre=(-0.01, -0.29, 0.26); A position=0.07701901 phase=Idle last= stand=(-0.02, -0.28, -0.03) hand=(-0.02, -0.28, 0.03); C position=0 phase=Idle last= stand=(0.38, -0.08, 0.00) hand=(0.37, -0.01, 0.00); intent=(0.0000, 0.0000, 0.0000) velocity=(0.0000, 0.0004, 0.0004) feet=31 supports=Right shelf:10,Laboratory floor:15,Outer pane 2:7,; group 0 centre=(0.2555, -0.1024, 0.2800) target= hold= exit=; group 2 centre=(-0.0092, -0.2857, 0.2609) target= hold= exit="
+      }
+    },
+    {
+      "level": 32,
+      "beforePasses": 1,
+      "afterPasses": 1,
+      "beforeTaps": [
+        16,
+        17,
+        17
+      ],
+      "afterTaps": [
+        17,
+        17,
+        16
+      ],
+      "beforeOutcomes": [
+        "pass",
+        "No visible floor command for part 1 at (0.050, -0.300, -0.240)",
+        "No visible floor command for part 1 at (0.050, -0.300, -0.240)"
+      ],
+      "afterOutcomes": [
+        "No visible floor command for part 1 at (0.050, -0.300, -0.240)",
+        "No visible floor command for part 1 at (0.050, -0.300, -0.240)",
+        "pass"
+      ],
+      "afterOnlyObservedFailedLevel": false,
+      "afterOnlyObservedAssertions": [],
+      "originalFullSweep": {
+        "passed": false,
+        "taps": 17,
+        "assertion": "No visible floor command for part 1 at (0.050, -0.300, -0.240)",
+        "firstErrorLine": "System.InvalidOperationException: No visible floor command for part 1 at (0.050, -0.300, -0.240); activity=Idle; lost=False failure=; escaped=0; centre=(0.329, -0.005, -0.115); target=; yaw=0"
+      }
+    },
+    {
+      "level": 56,
+      "beforePasses": 2,
+      "afterPasses": 1,
+      "beforeTaps": [
+        27,
+        26,
+        26
+      ],
+      "afterTaps": [
+        26,
+        25,
+        26
+      ],
+      "beforeOutcomes": [
+        "pass",
+        "Handle C rejected:",
+        "pass"
+      ],
+      "afterOutcomes": [
+        "Handle C rejected: C\u01a1 quan \u0111ang th\u1ef1c hi\u1ec7n",
+        "pass",
+        "Handle C rejected: C\u01a1 quan \u0111ang th\u1ef1c hi\u1ec7n"
+      ],
+      "afterOnlyObservedFailedLevel": false,
+      "afterOnlyObservedAssertions": [
+        "Handle C rejected: C\u01a1 quan \u0111ang th\u1ef1c hi\u1ec7n"
+      ],
+      "originalFullSweep": {
+        "passed": false,
+        "taps": 26,
+        "assertion": "Handle C rejected:",
+        "firstErrorLine": "System.InvalidOperationException: Handle C rejected:"
+      }
+    },
+    {
+      "level": 57,
+      "beforePasses": 0,
+      "afterPasses": 0,
+      "beforeTaps": [
+        63,
+        63,
+        63
+      ],
+      "afterTaps": [
+        63,
+        63,
+        63
+      ],
+      "beforeOutcomes": [
+        "All parts meet and fuse",
+        "All parts meet and fuse",
+        "All parts meet and fuse"
+      ],
+      "afterOutcomes": [
+        "All parts meet and fuse",
+        "All parts meet and fuse",
+        "All parts meet and fuse"
+      ],
+      "afterOnlyObservedFailedLevel": false,
+      "afterOnlyObservedAssertions": [],
+      "originalFullSweep": {
+        "passed": false,
+        "taps": 63,
+        "assertion": "All parts meet and fuse",
+        "firstErrorLine": "System.InvalidOperationException: All parts meet and fuse; Idle; ; selected=13 fragments=2 centre=(0.20, -0.29, -0.10); intent=(0.0000, 0.0000, 0.0000) velocity=(0.0000, 0.0000, 0.0000) feet=32 supports=Laboratory floor:32,; group 0 centre=(0.1324, -0.2872, -0.0468) target= hold= exit=; group 13 centre=(0.2017, -0.2880, -0.1046) target= hold= exit="
+      }
+    }
+  ],
+  "afterOnlyObservedFailedLevels": [],
+  "afterOnlyObservedAssertions": [
+    {
+      "level": 27,
+      "assertions": [
+        "Across the back road onto the right shelf, clear of P2"
+      ]
+    },
+    {
+      "level": 56,
+      "assertions": [
+        "Handle C rejected: C\u01a1 quan \u0111ang th\u1ef1c hi\u1ec7n"
+      ]
+    }
+  ],
+  "level27AssertionFrequencies": {
+    "before": {
+      "All parts meet and fuse": 3
+    },
+    "after": {
+      "Across the back road onto the right shelf, clear of P2": 1,
+      "All parts meet and fuse": 2
+    }
+  },
+  "level27HistoricalEvidence": {
+    "generatedUtc": "2026-10-29T10:49:18.735023+00:00",
+    "scope": "Historical native L27/G9 failure-signature search, not FPS evidence. Raw run reports de-duplicated by UTC/GUID/error/taps.",
+    "search": "All Artifacts run.json/run-latest.json plus text search for clear of P2 / Across the back road in Artifacts and Docs/Verification. The September Mac display27 is a different historical campaign and excluded.",
+    "originalNativeRecords": [
+      {
+        "source": "Artifacts/AlienPetOppo-2026-10-29/campaign/run-latest.json",
+        "reportSha256": "c2ed23348c410cd1b916efccdad563b612283ae2445c8e77e62e4bb1737897a2",
+        "utc": "2026-10-29T04:29:50.6304350Z",
+        "buildGuid": "586c1db643064b2bbabd55016653616e",
+        "recordedApkSha256": "442bc3ba29bc1a2f2ef1a7c2e052208beeab9740a38fc9569ae56aeb44b88b7a",
+        "passed": false,
+        "taps": 49,
+        "assertion": "System.InvalidOperationException: All parts meet and fuse",
+        "execution": "Normal player loop; InputSystem touch events; screenshots excluded from frame samples. Author replay, not novice evidence.",
+        "apkIdentityEvidence": [
+          "Artifacts/AlienPetOppo-2026-10-29/build-record.json",
+          "Docs/Verification/AlienPetOppo20261029/README.md"
+        ],
+        "relation": "Pre-optimization original native evidence; separate APK/harness from matched baseline; screenshot cadence. Not pooled with rechecks."
+      },
+      {
+        "source": "Artifacts/AlienPetOppo-2026-10-29/retry/run-latest.json",
+        "reportSha256": "6d72a43345e901f7aa9e565e4e67228e3ce70941d2f0cd0ed8a826bbfd2ee876",
+        "utc": "2026-10-29T05:13:50.8599310Z",
+        "buildGuid": "951aa1cb88124199af4865544c79e7d0",
+        "recordedApkSha256": "c715f25e611b4716186c1de15a66ff3ba3402068921fddba0f0e3f615e88e0a9",
+        "passed": false,
+        "taps": 49,
+        "assertion": "System.InvalidOperationException: All parts meet and fuse",
+        "execution": "Normal player loop; InputSystem touch events; screenshots excluded from frame samples. Author replay, not novice evidence.",
+        "apkIdentityEvidence": [
+          "Artifacts/AlienPetOppo-2026-10-29/build-record.json",
+          "Docs/Verification/AlienPetOppo20261029/README.md"
+        ],
+        "relation": "Pre-optimization original native evidence; separate APK/harness from matched baseline; screenshot cadence. Not pooled with rechecks."
+      }
+    ],
+    "earlierRightShelfSignatureFoundInOriginalBaseline": false,
+    "limitation": "Absence in retained reports does not prove the failure impossible on baseline. Reports are sparse endpoint evidence; original screenshot cadence differs from the current screenshot-free replay."
+  },
+  "savedLogCrashScan": {
+    "scope": "Saved logcat only, exact recorded PID and device epoch floor. No fresh device access. Logcat collector selects Unity, AndroidRuntime and libc tags; this is not a complete system crash/ANR history.",
+    "runs": [
+      {
+        "run": "before-1",
+        "pid": "1137",
+        "epochFloor": 1793269042.0,
+        "filteredLogLineCount": 2444,
+        "firstEpoch": 1793269045.557,
+        "lastEpoch": 1793269412.966,
+        "crashPatternHits": [],
+        "completed": true,
+        "errors": []
+      },
+      {
+        "run": "before-2",
+        "pid": "4372",
+        "epochFloor": 1793269413.0,
+        "filteredLogLineCount": 3731,
+        "firstEpoch": 1793269416.429,
+        "lastEpoch": 1793269833.707,
+        "crashPatternHits": [],
+        "completed": true,
+        "errors": []
+      },
+      {
+        "run": "before-3",
+        "pid": "5926",
+        "epochFloor": 1793269836.0,
+        "filteredLogLineCount": 2851,
+        "firstEpoch": 1793269838.874,
+        "lastEpoch": 1793270208.476,
+        "crashPatternHits": [],
+        "completed": true,
+        "errors": []
+      },
+      {
+        "run": "after-1",
+        "pid": "8456",
+        "epochFloor": 1793270234.0,
+        "filteredLogLineCount": 1835,
+        "firstEpoch": 1793270236.92,
+        "lastEpoch": 1793270619.862,
+        "crashPatternHits": [],
+        "completed": true,
+        "errors": []
+      },
+      {
+        "run": "after-2",
+        "pid": "10252",
+        "epochFloor": 1793270621.0,
+        "filteredLogLineCount": 2405,
+        "firstEpoch": 1793270623.14,
+        "lastEpoch": 1793270973.218,
+        "crashPatternHits": [],
+        "completed": true,
+        "errors": []
+      },
+      {
+        "run": "after-3",
+        "pid": "11519",
+        "epochFloor": 1793270975.0,
+        "filteredLogLineCount": 2489,
+        "firstEpoch": 1793270977.231,
+        "lastEpoch": 1793271322.37,
+        "crashPatternHits": [],
+        "completed": true,
+        "errors": []
+      }
+    ]
+  },
+  "primaryFullSweep": {
+    "source": "Artifacts/AlienPetOptimization-2026-10-29/after-release-full65/run-latest.json",
+    "sha256": "be25d8e97303d68a0af77bc3af7fce358634e36161f22810e9226b3a8f200da0",
+    "passed": 57,
+    "failed": 8,
+    "failedLevels": [
+      10,
+      18,
+      27,
+      32,
+      48,
+      51,
+      56,
+      57
+    ]
+  },
+  "finalRestore": {
+    "apkSha256": "26df2c98969cd38f500708e2c364e9a82dd9090bbb1407b5babdd6efe4e5fb39",
+    "installedMatchesFinalRelease": true,
+    "pidRunning": true,
+    "focusedActivities": [
+      "topResumedActivity=ActivityRecord{120304b u0 com.gravityboxlab.venom/com.unity3d.player.UnityPlayerGameActivity t560}",
+      "ResumedActivity: ActivityRecord{120304b u0 com.gravityboxlab.venom/com.unity3d.player.UnityPlayerGameActivity t560}"
+    ],
+    "normalLaunch": "Starting: Intent { cmp=com.gravityboxlab.venom/com.unity3d.player.UnityPlayerGameActivity }\nStatus: ok\nLaunchState: COLD\nActivity: com.gravityboxlab.venom/com.unity3d.player.UnityPlayerGameActivity\nTotalTime: 901\nWaitTime: 923\nComplete\n",
+    "utc": "2026-10-29T10:55:38.848064+00:00"
+  },
+  "installedFinalPulledSha256": "26df2c98969cd38f500708e2c364e9a82dd9090bbb1407b5babdd6efe4e5fb39"
+}

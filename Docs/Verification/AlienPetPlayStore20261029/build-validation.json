@@ -1,0 +1,118 @@
+{
+  "artifact": "/Users/mrk/GravityBox/Builds/AlienPet/GooglePlay/AlienPet-1.0.0-1.aab",
+  "bytes": 58677976,
+  "sha256": "218e4cc1646b5d9add183785661ee7526e2e7dd7fc0ddd3f1178e365b69ecfbe",
+  "identity": {
+    "package": "com.gravityboxlab.venom",
+    "version_name": "1.0.0",
+    "version_code": "1",
+    "minimum_sdk": "26",
+    "target_sdk": "36",
+    "debuggable": "false",
+    "test_only": "false"
+  },
+  "bundletool_validation": "passed",
+  "jar_signature_verified": true,
+  "upload_certificate_sha256": "5b894271027148d895e3c1bc0f84f0490e0c78f3f745ebeafa118f82dc0a3d4c",
+  "certificate_matches_private_upload_key": true,
+  "signed_content_entries_verified": 1066,
+  "features": [
+    {
+      "name": null,
+      "required": "true"
+    },
+    {
+      "name": "android.hardware.vulkan.version",
+      "required": "false"
+    },
+    {
+      "name": "android.hardware.touchscreen",
+      "required": "false"
+    },
+    {
+      "name": "android.hardware.touchscreen.multitouch",
+      "required": "false"
+    },
+    {
+      "name": "android.hardware.touchscreen.multitouch.distinct",
+      "required": "false"
+    }
+  ],
+  "supported_screens": {
+    "anyDensity": "true",
+    "largeScreens": "true",
+    "normalScreens": "true",
+    "smallScreens": "true",
+    "xlargeScreens": "true"
+  },
+  "android_tablets_not_excluded": true,
+  "native_16k_elf_alignment": [
+    {
+      "library": "base/lib/arm64-v8a/libFirebaseCppAnalytics.so",
+      "minimum_load_alignment": 16384
+    },
+    {
+      "library": "base/lib/arm64-v8a/libFirebaseCppApp-13_17_0.so",
+      "minimum_load_alignment": 16384
+    },
+    {
+      "library": "base/lib/arm64-v8a/libFirebaseCppRemoteConfig.so",
+      "minimum_load_alignment": 16384
+    },
+    {
+      "library": "base/lib/arm64-v8a/lib_burst_generated.so",
+      "minimum_load_alignment": 16384
+    },
+    {
+      "library": "base/lib/arm64-v8a/libc++_shared.so",
+      "minimum_load_alignment": 16384
+    },
+    {
+      "library": "base/lib/arm64-v8a/libdatastore_shared_counter.so",
+      "minimum_load_alignment": 16384
+    },
+    {
+      "library": "base/lib/arm64-v8a/libgame.so",
+      "minimum_load_alignment": 16384
+    },
+    {
+      "library": "base/lib/arm64-v8a/libil2cpp.so",
+      "minimum_load_alignment": 16384
+    },
+    {
+      "library": "base/lib/arm64-v8a/libmain.so",
+      "minimum_load_alignment": 16384
+    },
+    {
+      "library": "base/lib/arm64-v8a/libswappywrapper.so",
+      "minimum_load_alignment": 16384
+    },
+    {
+      "library": "base/lib/arm64-v8a/libunity.so",
+      "minimum_load_alignment": 16384
+    }
+  ],
+  "bundle_16k_page_alignment": "PAGE_ALIGNMENT_16K",
+  "scene_count": 67,
+  "diagnostic_types_absent": [
+    "COgheViewProofPlayer",
+    "COgheMobileUIProof",
+    "COgheServicesProof",
+    "AlienPetBrandProof",
+    "AlienPetAdReel",
+    "AlienPetCareReel",
+    "COgheMobileBenchmark"
+  ],
+  "native_service_ids_match": {
+    "admob_app": true,
+    "firebase_project": true,
+    "firebase_app": true
+  },
+  "production_ad_unit_ids_packaged": true,
+  "private_upload_key_exists": true,
+  "limitations": [
+    "Draft upload artifact only; no rollout.",
+    "No installation of this signed AAB on a physical device.",
+    "Recent native logs reported missing UMP consent form configuration; service approval/fill is not established."
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "checkedAt": "2026-10-29",
+  "scope": "Safe one-file PR rebase merge completed under explicit root authorization; no additional deployment",
+  "pr": "https://github.com/aurora-teamplayer01/g005-color-drop/pull/1",
+  "state": "MERGED",
+  "isDraft": false,
+  "mergeable": "MERGEABLE",
+  "mergeStateStatus": "CLEAN",
+  "base": {
+    "branch": "main",
+    "sha": "e7bc8591f159870f7f96f8eb669574fd1789605f",
+    "protected": false
+  },
+  "head": {
+    "branch": "codex/alien-pet-privacy",
+    "sha": "597e9836d21d05626e225d3097b45675339d25a5"
+  },
+  "diff": {
+    "changedFiles": 1,
+    "additions": 98,
+    "deletions": 0,
+    "files": [
+      "site/alien-pet-privacy.html"
+    ],
+    "unrelatedGameOrMarketingChanges": false
+  },
+  "checks": [
+    {
+      "name": "deploy",
+      "conclusion": "SUCCESS",
+      "run": "https://github.com/aurora-teamplayer01/g005-color-drop/actions/runs/40894025450"
+    }
+  ],
+  "repositoryRules": {
+    "source": "CLAUDE.md at current deployment-repo main",
+    "linearHistoryRequired": true,
+    "rebaseMergeAllowedByGitHub": true,
+    "squashMergeAllowedByGitHub": true,
+    "scopeException": "Root expressly limited this task to the one policy page and prohibited syncing unrelated game/marketing commits or mirror branches."
+  },
+  "proposedCommandWhenAuthorized": "gh pr merge 1 --repo aurora-teamplayer01/g005-color-drop --rebase --match-head-commit 597e9836d21d05626e225d3097b45675339d25a5",
+  "commandEffect": "Merge only the existing PR's new HTML page into deployment main with linear history. Do not delete the branch or update any mirror. A main merge does not trigger the tag-based site deployment workflow.",
+  "beforeExecution": "Recheck the PR diff, head, base and checks. Abort on unexpected changes. --match-head-commit pins the approved PR head.",
+  "afterExecution": "Verify PR merged, main contains the exact policy blob, and no extra files changed. Existing live tag site-v1.0.4 remains valid; no new deploy is needed solely to preserve the policy in main.",
+  "performed": true,
+  "launchAudience": {
+    "confirmedTargetAges": "9\u201315",
+    "policyMismatchFound": false,
+    "assessment": "The live policy describes processing age bands without claiming that 16\u201317 or adults are marketing targets. Ages9\u201312 remain Under13/noSDK; ages13\u201315 have restricted contextual ads/noFirebase. Older-teen and adult handling correctly describes fallback/parent behavior. No public text change is necessary solely for the narrower target.",
+    "optionalFutureClarification": "A single introductory sentence may name the 9\u201315 design audience and families, but it must not imply the under-13 protections begin only at age9. No such change was deployed."
+  },
+  "retentionObserved": {
+    "eventDataMonths": 2,
+    "userDataMonths": 14,
+    "resetUserDataOnNewActivity": true,
+    "source": "Root relayed verified GA dashboard audit"
+  },
+  "deletionOperations": "privacy-request-operations.txt",
+  "remaining": [
+    "Owner must operate the support mailbox and request process",
+    "Current app has no self-service existing app-instance-ID/FID export",
+    "Final ad-serving flow still requires configured UMP messages; native tests currently fail closed on missing form"
+  ],
+  "mergedAt": "2026-10-29T15:11:19Z",
+  "mainAfterMerge": "fdbc4f554e948ea2f446bddfb79a9aacfcd01976",
+  "postMergeVerification": {
+    "onlyOwnHtmlChanged": true,
+    "policyBlobMatchesDeployedBranch": true,
+    "sourceBlob": "6d33517bd52afd2cdaa515d540a216d1071de0f1",
+    "branchRetained": true,
+    "tagRetained": true,
+    "otherRefsUpdated": false,
+    "additionalDeploy": false
+  }
+}

@@ -1,5 +1,6 @@
 using GravityBox.Foundation;
 using GravityBox.Simulation;
+using Unity.Profiling;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,6 +9,7 @@ namespace GravityBox.Venom
     [DefaultExecutionOrder(-100)]
     public sealed class VenomLevelController : MonoBehaviour
     {
+        private static readonly ProfilerMarker GameplayStepMarker = new ProfilerMarker("COghe.Gameplay.Step");
         public VenomProfile MatterProfile;
         public int LevelNumber = 1;
         public VenomControlMode ControlMode;
@@ -110,7 +112,16 @@ namespace GravityBox.Venom
             joint.linearLimit=new SoftJointLimit{limit=(upper-lower)*.5f,bounciness=0,contactDistance=contactDistance};
         }
 
-        private void FixedUpdate() { if (!Paused && !Lost) { COgheMobileMetrics.Begin(1);Step(Time.fixedDeltaTime);COgheMobileMetrics.End(1); } }
+        private void FixedUpdate()
+        {
+            if (!Paused && !Lost)
+            {
+                using (GameplayStepMarker.Auto())
+                {
+                    COgheMobileMetrics.Begin(1);Step(Time.fixedDeltaTime);COgheMobileMetrics.End(1);
+                }
+            }
+        }
         public void Step(float dt)
         {
             if (Paused || Lost || dt <= 0) return;

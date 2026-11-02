@@ -1,0 +1,56 @@
+[
+  {
+    "src": "/Users/mrk/GravityBox/Artifacts/AlienPetAds-2026-10-28/sources/shot_04_9f93ec45.mp4",
+    "start": 2.8,
+    "duration": 2.4,
+    "kind": "cinematic",
+    "heading": "THIS PET\nHAS A PLAN.",
+    "speed": 1,
+    "timeline_start": 0
+  },
+  {
+    "src": "/Users/mrk/GravityBox/Artifacts/AlienPetAds-2026-10-28/sources/shot_01_bdc10b06.mp4",
+    "start": 1,
+    "duration": 3,
+    "kind": "cinematic",
+    "heading": "ONE LITTLE\nESCAPE ARTIST.",
+    "speed": 1,
+    "timeline_start": 2.4
+  },
+  {
+    "src": "/Users/mrk/GravityBox/Artifacts/AlienPetAds-2026-10-28/sources/gameplay-native.mp4",
+    "start": 0.9,
+    "duration": 4,
+    "kind": "game",
+    "heading": "TAP. SOLVE.\nESCAPE.",
+    "speed": 1.1,
+    "timeline_start": 5.4
+  },
+  {
+    "src": "/Users/mrk/GravityBox/Artifacts/AlienPetAds-2026-10-28/sources/gameplay-native.mp4",
+    "start": 16,
+    "duration": 5,
+    "kind": "game",
+    "heading": "WHAT\u2019S UNDER\nTHE BOX?",
+    "speed": 1.4,
+    "timeline_start": 9.4
+  },
+  {
+    "src": "/Users/mrk/GravityBox/Artifacts/AlienPetAds-2026-10-28/sources/shot_02R_3369b0dc.mp4",
+    "start": 1.1,
+    "duration": 4,
+    "kind": "cinematic",
+    "heading": "SQUEEZE INTO\nADVENTURE.",
+    "speed": 1,
+    "timeline_start": 14.4
+  },
+  {
+    "src": "/Users/mrk/GravityBox/Artifacts/AlienPetAds-2026-10-28/sources/gameplay-native.mp4",
+    "start": 31.6,
+    "duration": 3.6,
+    "kind": "end",
+    "heading": "Alien Pet",
+    "speed": 0.6,
+    "timeline_start": 18.4
+  }
+]

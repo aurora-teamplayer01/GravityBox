@@ -1,0 +1,161 @@
+{
+  "auditedAt": "2026-10-29",
+  "scope": "Repository and existing Play Console evidence; no public-site deployment or browser mutation by this audit",
+  "app": {
+    "name": "Alien Pet: Escape Puzzle",
+    "androidPackage": "com.gravityboxlab.venom",
+    "developerDisplayName": "YoloStudioGlobal",
+    "developerDisplayNameEvidence": "console-state.json",
+    "responsibleLegalOperator": null,
+    "responsiblePublicOperator": "YoloStudioGlobal",
+    "operatorNote": "Confirmed by parent from Play Console; do not infer a legal relationship with NTKL Studio."
+  },
+  "publicContactCandidates": {
+    "confirmedPrivacyPolicyUrl": "https://cj.suri.house/alien-pet-privacy",
+    "confirmedPrivacyEmail": "support@suri.house",
+    "confirmedSupportEmail": "support@suri.house",
+    "confirmedDeveloperWebsite": "https://cj.suri.house/",
+    "sourcePolicyUrl": "https://cj.suri.house/privacy",
+    "proposedAlienPetPolicyUrl": "https://cj.suri.house/alien-pet-privacy",
+    "proposedPolicyPublished": true,
+    "note": "App-specific Alien Pet policy published and HTTPS-verified. User authorized reuse of Critter Jam website/support; public operator is YoloStudioGlobal."
+  },
+  "hosting": {
+    "existingConfigFound": true,
+    "deployedPolicyFound": true,
+    "sourceRepo": "/Users/mrk/ColorDrop",
+    "sourceDirectory": "/Users/mrk/ColorDrop/site",
+    "siteUrl": "https://cj.suri.house/",
+    "currentLiveVersionObserved": "site-v1.0.4",
+    "readOnlyDiscovery": false,
+    "deploymentInstructions": "/Users/mrk/ColorDrop/site/README.md",
+    "defaultDeployment": "site-v semantic version tag triggers .github/workflows/deploy-site.yml in aurora-teamplayer01/g005-color-drop; main push alone does not deploy.",
+    "route": "New alien-pet-privacy.html maps to /alien-pet-privacy using current nginx clean URLs; no server config change required.",
+    "preservation": "Existing Critter Jam policy and unrelated dirty marketing changes must be preserved. Prefer isolated checkout for deployment work.",
+    "noUrlInventedOrDeployed": false,
+    "isolatedWorktree": "/tmp/codex-alien-pet-policy-20261029",
+    "branch": "codex/alien-pet-privacy",
+    "minimalDeploy": "New site-v tag on isolated production-based branch, one new page; create and attach PR for future main inclusion. Root approved this route; preserve all other branches and dirty changes.",
+    "deployment": {
+      "commit": "597e9836d21d05626e225d3097b45675339d25a5",
+      "tag": "site-v1.0.4",
+      "run": "https://github.com/aurora-teamplayer01/g005-color-drop/actions/runs/40894025450",
+      "result": "success",
+      "pr": "https://github.com/aurora-teamplayer01/g005-color-drop/pull/1",
+      "prMerged": true,
+      "scope": "New HTML only, subsequently merged into deployment main under explicit authorization. Existing game/mirror refs and dirty files were not updated.",
+      "mainAfterMerge": "fdbc4f554e948ea2f446bddfb79a9aacfcd01976"
+    }
+  },
+  "unverifiedAndMustNotClaim": [
+    "The Console account's login email is the public support/privacy contact.",
+    "Google Analytics data retention, Google Signals and dashboard sharing settings are configured appropriately.",
+    "Withdrawing ad consent disables Analytics.",
+    "Clearing local save data deletes previously transmitted SDK data.",
+    "The game is not intended for children; the user previously specified ages 4–15.",
+    "Child privacy, consent or ads compliance is established simply by writing a policy.",
+    "The existing Critter Jam privacy policy accurately describes Alien Pet; it does not."
+  ],
+  "ownerInputsNeeded": [
+    "Owner must monitor the public support mailbox and operate the request process described in privacy-request-operations.txt."
+  ],
+  "implementationAndDashboardWork": [
+    "Publish a completed, accurate policy and add its URL both in Play Console and inside the game.",
+    "Resolve audience/age restrictions and Analytics consent behavior before publishing the policy.",
+    "Verify Analytics retention, ad features, Google Signals and sharing settings.",
+    "Publish the relevant AdMob privacy messages; current smoke evidence reported no configured consent form.",
+    "Align Data safety declarations with the shipped SDKs and actual configuration."
+  ],
+  "evidence": [
+    {
+      "path": "Docs/Monetization/COghe/GOOGLE_SERVICES.md",
+      "line": 96,
+      "finding": "Real Privacy Policy URL and published consent message remain required; URL previously requested from owner."
+    },
+    {
+      "path": "Assets/_Game/Venom/Services/COgheGoogleServices.cs",
+      "finding": "Analytics startup, UMP consent and analytics event sink."
+    },
+    {
+      "path": "Assets/_Game/Venom/Services/COgheRemoteConfig.cs",
+      "finding": "Firebase fetch/activate and configuration event."
+    },
+    {
+      "path": "Assets/_Game/Venom/Runtime/Shop/COgheAnalytics.cs",
+      "finding": "Gameplay telemetry facade."
+    },
+    {
+      "path": "Assets/_Game/Venom/Runtime/Shop/COgheShop.cs",
+      "finding": "Local virtual rewards, owned items and shop state."
+    },
+    {
+      "path": "Assets/_Game/Venom/Runtime/VenomCampaignSave.cs",
+      "finding": "Local campaign save."
+    },
+    {
+      "path": "Assets/_Game/Venom/Runtime/Product/COgheProductUI.View.cs",
+      "line": 189,
+      "finding": "Conditional UMP Privacy choices; no policy URL."
+    },
+    {
+      "url": "https://cj.suri.house/privacy",
+      "finding": "Public HTML verified via HTTPS GET: app-specific Critter Jam policy, NTKL Studio, Ha Noi Vietnam, support@suri.house. Not suitable verbatim because it describes Crashlytics and excludes children under13."
+    },
+    {
+      "path": "/Users/mrk/ColorDrop/site/README.md",
+      "finding": "Site source/deploy instructions and owner-approved support email; read only."
+    },
+    {
+      "url": "https://cj.suri.house/alien-pet-privacy",
+      "finding": "Published app-specific policy verified200/site-v1.0.4. Cloudflare-injected website analytics disclosed; public support contact visible."
+    }
+  ],
+  "officialReferences": [
+    "https://support.google.com/googleplay/android-developer/answer/10144311?hl=en",
+    "https://firebase.google.com/support/privacy",
+    "https://developers.google.com/admob/unity/privacy/play-data-disclosure",
+    "https://support.google.com/analytics/answer/11582702?hl=en",
+    "https://firebase.google.com/docs/android/play-data-disclosure",
+    "https://developers.google.com/admob/android/privacy/consent-mode"
+  ],
+  "outputs": [
+    "privacy-policy-draft.en-US.txt",
+    "privacy-contact-audit.json",
+    "alien-pet-privacy.html",
+    "privacy-page-validation.json",
+    "privacy-site-deployment.txt",
+    "privacy-live-checks.json",
+    "alien-pet-privacy-live.txt",
+    "privacy-request-operations.txt",
+    "privacy-merge-readiness.json"
+  ],
+  "publicationStatus": "Published and HTTPS/content-verified at https://cj.suri.house/alien-pet-privacy. Source/API verification supports revised-release policy; native app tests and dashboard retention check remain separate.",
+  "followupAuthorization": "Root relayed user authorization to reuse Critter Jam website/contact and deploy an app-specific Alien Pet policy if needed. Publication held pending final factual content and root coordination.",
+  "authorizedReleasePolicy": {
+    "unknownAndUnder13": "No UMP, ads or Firebase services",
+    "ages13to17": "Restricted contextual ads, no Firebase Analytics or Remote Config",
+    "adults18plus": "Optional Analytics off by default; UMP ad consent separate",
+    "allAds": "Non-personalized requested",
+    "state": "10 privacy +4 UI tests passed; native signed release1.0.1(2) age/consent matrix observed passing on Android36 emulator. See native-privacy-results.json for limits; UMP message config still blocks ad fill.",
+    "teenSignals": "Coarse Teen/under-consent-age ad treatment signals are sent to Google for eligible teen ads; selected age range is not logged as a gameplay-Analytics event.",
+    "launchTargetAges": "9–15; under13 protection unchanged, older/adult behavior retained as runtime safeguard."
+  },
+  "initialBuildVerifiedBehavior": [
+    "Local campaign and shop state use PlayerPrefs. No account login, user-entered email, or account-based cloud save found in the audited game paths.",
+    "Code enables Firebase Analytics at startup before the UMP consent reply. Explicit code gating applies to ads; UMP's possible dashboard-controlled Analytics Consent Mode integration is unverified.",
+    "Analytics event payloads contain gameplay, level outcome, attempt/duration, virtual reward and item data.",
+    "Remote Config fetches configuration via Firebase, using the Firebase SDK installation context.",
+    "UMP gates ad initialization through CanRequestAds and exposes Privacy choices only where required.",
+    "No always-accessible Privacy Policy link was found in the game.",
+    "No in-game Analytics opt-out, ResetAnalyticsData or SDK-data deletion control was found.",
+    "No real Billing provider is installed in the current store build."
+  ],
+  "initialBuildNote": "Initial behavior findings apply to AAB code1/source before age-aware service changes. The public policy describes the revised release; do not treat old AAB1 as having new safeguards.",
+  "futureDeploymentNote": "PR1 merged into deployment main; policy blob equals deployed branch. No additional site deployment required.",
+  "analyticsRetentionVerified": {
+    "eventDataMonths": 2,
+    "userDataMonths": 14,
+    "resetUserDataOnNewActivity": true,
+    "note": "Not a fixed lifetime for active-user identifiers and not an all-service retention period."
+  }
+}

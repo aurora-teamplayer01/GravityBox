@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System;
+using Unity.Profiling;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.EnhancedTouch;
@@ -11,6 +12,13 @@ namespace GravityBox.Venom
     [DefaultExecutionOrder(-110)]
     public sealed partial class VenomCampaign : MonoBehaviour
     {
+        private static readonly ProfilerMarker PropsStepMarker = new ProfilerMarker("COghe.Gameplay.Props");
+        private static readonly ProfilerMarker MatterStepMarker = new ProfilerMarker("COghe.Gameplay.Matter");
+        private static readonly ProfilerMarker MotionStepMarker = new ProfilerMarker("COghe.Gameplay.Motion");
+        private static readonly ProfilerMarker IntelligenceStepMarker = new ProfilerMarker("COghe.Gameplay.Intelligence");
+        private static readonly ProfilerMarker LegacyMechanismsStepMarker = new ProfilerMarker("COghe.Gameplay.LegacyMechanisms");
+        private static readonly ProfilerMarker MechanismsStepMarker = new ProfilerMarker("COghe.Gameplay.Mechanisms");
+        private static readonly ProfilerMarker StateAndExitStepMarker = new ProfilerMarker("COghe.Gameplay.StateAndExit");
         public VenomCampaignDefinition Definition;
         public VenomSurfacePatch[] Surfaces;
         public VenomMovableProp[] Props;
@@ -199,28 +207,35 @@ namespace GravityBox.Venom
         {
             // PhysicsTiming deliberately disables Unity's global gravity. Every
             // free prop needs the same explicit world acceleration as the tissue.
-            if(!Home)foreach(var prop in Props)
+            using(PropsStepMarker.Auto())if(!Home)foreach(var prop in Props)
             {
                 prop.GetComponent<VenomPropContainment>()?.ResolveContacts();
                 prop.Body.AddForce(Vector3.down*9.81f,ForceMode.Acceleration);
             }
-            Matter.Step(dt);
+            using(MatterStepMarker.Auto())Matter.Step(dt);
             if(Owner.Completed){Owner.Celebration.Step();return;}
             Impact=Mathf.MoveTowards(Impact,0,dt*3);CatchPulse=Mathf.MoveTowards(CatchPulse,0,dt*2);
-            Motion.Step(dt);
-            if(!Home)Intelligence?.Step(dt);
-            if(!Home){StepProp(dt);StepKnife(dt);StepPads(dt);StepTube(dt);StepMechanisms(dt);}
-            int contacts=0;Vector3 velocity=Vector3.zero;
-            for(int i=0;i<32;i++){if(Motion.HasGrip(i))contacts++;velocity+=Matter.Bodies[i].linearVelocity/32;}
-            if(!hadContact&&contacts>4){Impact=Mathf.Clamp01((lastVelocity-velocity).magnitude/.5f);CatchPulse=1;}
-            hadContact=contacts>4;lastVelocity=velocity;
-            Activity=InTube?"Chảy qua ống":Motion.TryCatchPoint(Motion.Selected,out _)?"Bám vành ống":KnifePhase==BladePhase.Warning?"Cảnh giác":KnifePhase==BladePhase.Falling?"Phân tách":heldProp!=null?(IsPulling?"Kéo":"Đẩy"):
-                (Definition.Passive||contacts<2)&&Motion.Get(Motion.Selected)!=null&&Motion.Intent(Motion.Selected).sqrMagnitude>.001f?"Cố bò / trượt":
-                contacts<3?(velocity.magnitude>.06f?"Rơi / trượt":"Trượt"):Motion.Busy(Motion.Selected)?"Giữ":
-                Motion.Get(Motion.Selected)!=null?"Bò / leo":"Idle";
-            if(!Home){Activity=MechanismActivity()??Activity;EvaluateExit();}else habitat?.Step(dt);
-            if(!Owner.Completed&&!Owner.Lost)for(int i=0;i<32;i++)
-                if(Matter.Bodies[i].position.magnitude>2.2f){Fail("Sinh vật đã ra ngoài vỏ hộp. Thử lại.");break;}
+            using(MotionStepMarker.Auto())Motion.Step(dt);
+            using(IntelligenceStepMarker.Auto())if(!Home)Intelligence?.Step(dt);
+            if(!Home)
+            {
+                using(LegacyMechanismsStepMarker.Auto()){StepProp(dt);StepKnife(dt);StepPads(dt);StepTube(dt);}
+                using(MechanismsStepMarker.Auto())StepMechanisms(dt);
+            }
+            using(StateAndExitStepMarker.Auto())
+            {
+                int contacts=0;Vector3 velocity=Vector3.zero;
+                for(int i=0;i<32;i++){if(Motion.HasGrip(i))contacts++;velocity+=Matter.Bodies[i].linearVelocity/32;}
+                if(!hadContact&&contacts>4){Impact=Mathf.Clamp01((lastVelocity-velocity).magnitude/.5f);CatchPulse=1;}
+                hadContact=contacts>4;lastVelocity=velocity;
+                Activity=InTube?"Chảy qua ống":Motion.TryCatchPoint(Motion.Selected,out _)?"Bám vành ống":KnifePhase==BladePhase.Warning?"Cảnh giác":KnifePhase==BladePhase.Falling?"Phân tách":heldProp!=null?(IsPulling?"Kéo":"Đẩy"):
+                    (Definition.Passive||contacts<2)&&Motion.Get(Motion.Selected)!=null&&Motion.Intent(Motion.Selected).sqrMagnitude>.001f?"Cố bò / trượt":
+                    contacts<3?(velocity.magnitude>.06f?"Rơi / trượt":"Trượt"):Motion.Busy(Motion.Selected)?"Giữ":
+                    Motion.Get(Motion.Selected)!=null?"Bò / leo":"Idle";
+                if(!Home){Activity=MechanismActivity()??Activity;EvaluateExit();}else habitat?.Step(dt);
+                if(!Owner.Completed&&!Owner.Lost)for(int i=0;i<32;i++)
+                    if(Matter.Bodies[i].position.magnitude>2.2f){Fail("Sinh vật đã ra ngoài vỏ hộp. Thử lại.");break;}
+            }
         }
         private void StepProp(float dt)
         {

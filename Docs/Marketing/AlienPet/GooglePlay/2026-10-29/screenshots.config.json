@@ -1,0 +1,241 @@
+{
+  "phone": [
+    {
+      "id": "01-tiny-pet-big-escape",
+      "eyebrow": "A NEW FRIEND. A NEW ADVENTURE.",
+      "headline": [
+        "A tiny pet.",
+        "A big escape."
+      ],
+      "detail": "Guide COghe through clever 3D puzzles.",
+      "theme": "mint",
+      "image": "sources/native-puzzle4-switch.png",
+      "sourceWidth": 1080,
+      "sourceHeight": 1920,
+      "crop": {
+        "x": 0,
+        "y": 260,
+        "width": 1080,
+        "height": 1390
+      },
+      "note": "Blank outer margins and outside HUD removed; full enclosure, creature, switch, printed link and exit shutter preserved."
+    },
+    {
+      "id": "02-reveal-the-way",
+      "eyebrow": "EVERY MOVE HAS A PURPOSE.",
+      "headline": [
+        "Move it.",
+        "Reveal the way."
+      ],
+      "detail": "Move crates. Discover the way out.",
+      "theme": "coral",
+      "image": "sources/native-puzzle6-crate.png",
+      "sourceWidth": 1080,
+      "sourceHeight": 1920,
+      "crop": {
+        "x": 0,
+        "y": 260,
+        "width": 1080,
+        "height": 1390
+      },
+      "note": "Blank outer margins and outside HUD removed; all crates, creature and entire floor/box preserved."
+    },
+    {
+      "id": "03-think-beyond-floor",
+      "eyebrow": "65 CAMPAIGN PUZZLES TO EXPLORE.",
+      "headline": [
+        "Think beyond",
+        "the floor."
+      ],
+      "detail": "Climb, connect and find a new perspective.",
+      "theme": "lavender",
+      "image": "sources/runtime-boss10-lift-bridge.png",
+      "sourceWidth": 720,
+      "sourceHeight": 1612,
+      "crop": {
+        "x": 0,
+        "y": 300,
+        "width": 720,
+        "height": 1000
+      },
+      "note": "Only blank space above and below removed. Entire real Boss 10 enclosure, lift, bridge and controls preserved; original actual Unity scene capture has no HUD."
+    },
+    {
+      "id": "04-snack-time",
+      "eyebrow": "YOUR LITTLE ALIEN FRIEND.",
+      "headline": [
+        "Snack time.",
+        "Big reactions."
+      ],
+      "detail": "Feed, care and share a little affection.",
+      "theme": "coral",
+      "image": "sources/native-home-apple.png",
+      "sourceWidth": 1080,
+      "sourceHeight": 1920,
+      "crop": {
+        "x": 0,
+        "y": 240,
+        "width": 1080,
+        "height": 1520
+      },
+      "note": "Top Home title and blank bottom removed. Real feeding pose, food, energy/drops and bottom Home actions preserved."
+    },
+    {
+      "id": "05-splash-personality",
+      "eyebrow": "MAKE EVERY COLOR YOURS.",
+      "headline": [
+        "A splash of",
+        "personality."
+      ],
+      "detail": "Mix colors on your very own alien pet.",
+      "theme": "mint",
+      "image": "sources/native-style-mint.png",
+      "sourceWidth": 1080,
+      "sourceHeight": 1920,
+      "crop": {
+        "x": 0,
+        "y": 250,
+        "width": 1080,
+        "height": 1395
+      },
+      "note": "Outside header and bottom action bar removed. Actual Mint hold, creature, color mix, tabs and native catalog area preserved without retouch."
+    },
+    {
+      "id": "06-make-it-yours",
+      "eyebrow": "A LITTLE EXTRA PERSONALITY.",
+      "headline": [
+        "Make it",
+        "your own."
+      ],
+      "detail": "Pick a favorite hat. Bring your look along.",
+      "theme": "lavender",
+      "image": "sources/native-style-flower.png",
+      "sourceWidth": 1080,
+      "sourceHeight": 1920,
+      "crop": {
+        "x": 0,
+        "y": 250,
+        "width": 1080,
+        "height": 1395
+      },
+      "note": "Outside header and bottom action bar removed. Actual flower crown, creature, tabs and native accessory choices preserved without retouch."
+    }
+  ],
+  "tabletNote": "Separate native 7-inch-equivalent and 10-inch-equivalent Android tablet emulator captures. Every frame is kept whole, contain-fit. No phone image or one tablet profile is relabelled as another.",
+  "tablet-7in": [
+    {
+      "id": "01-tap-think-find",
+      "image": "qa/tablet-native-captures/7-inch/level-04-switch.png",
+      "headline": [
+        "Tap. Think.",
+        "Find a way."
+      ],
+      "eyebrow": "A TINY PET. A BIG ESCAPE.",
+      "detail": "Guide COghe through clever 3D puzzles.",
+      "theme": "mint",
+      "sourceWidth": 1200,
+      "sourceHeight": 1920,
+      "provenance": "Actual separate native 1200x1920 Android emulator rendering with 320dpi and sw600dp, on the same isolated Pixel Tablet AVD adjusted for the 7-inch-equivalent profile. Normal Product UI, developer scene picker closed. Full source retained, no crop or image retouch. Not physical 7-inch hardware or full-solve evidence."
+    },
+    {
+      "id": "02-reveal-the-way",
+      "image": "qa/tablet-native-captures/7-inch/level-06-crates.png",
+      "headline": [
+        "Move it.",
+        "Reveal the way."
+      ],
+      "eyebrow": "EVERY MOVE HAS A PURPOSE.",
+      "detail": "Move crates. Discover the way out.",
+      "theme": "coral",
+      "sourceWidth": 1200,
+      "sourceHeight": 1920,
+      "provenance": "Actual separate native 1200x1920 Android emulator rendering with 320dpi and sw600dp, on the same isolated Pixel Tablet AVD adjusted for the 7-inch-equivalent profile. Normal Product UI, developer scene picker closed. Full source retained, no crop or image retouch. Not physical 7-inch hardware or full-solve evidence."
+    },
+    {
+      "id": "03-small-parts-big-ideas",
+      "image": "qa/tablet-native-captures/7-inch/level-29-raw.png",
+      "headline": [
+        "Small parts.",
+        "Big ideas."
+      ],
+      "eyebrow": "65 CAMPAIGN PUZZLES TO EXPLORE.",
+      "detail": "Discover new ways to work together.",
+      "theme": "lavender",
+      "sourceWidth": 1200,
+      "sourceHeight": 1920,
+      "provenance": "Actual separate native 1200x1920 Android emulator rendering with 320dpi and sw600dp, on the same isolated Pixel Tablet AVD adjusted for the 7-inch-equivalent profile. Normal Product UI, developer scene picker closed. Full source retained, no crop or image retouch. Not physical 7-inch hardware or full-solve evidence."
+    },
+    {
+      "id": "04-new-paths",
+      "image": "qa/tablet-native-captures/7-inch/level-34-raw.png",
+      "headline": [
+        "New paths.",
+        "More to discover."
+      ],
+      "eyebrow": "CURIOUS MINDS FIND A WAY.",
+      "detail": "Explore clever mechanisms and reach the exit.",
+      "theme": "mint",
+      "sourceWidth": 1200,
+      "sourceHeight": 1920,
+      "provenance": "Actual separate native 1200x1920 Android emulator rendering with 320dpi and sw600dp, on the same isolated Pixel Tablet AVD adjusted for the 7-inch-equivalent profile. Normal Product UI, developer scene picker closed. Full source retained, no crop or image retouch. Not physical 7-inch hardware or full-solve evidence."
+    }
+  ],
+  "tablet-10in": [
+    {
+      "id": "01-tap-think-find",
+      "image": "qa/tablet-native-captures/10-inch/level-04-switch.png",
+      "headline": [
+        "Tap. Think.",
+        "Find a way."
+      ],
+      "eyebrow": "A TINY PET. A BIG ESCAPE.",
+      "detail": "Guide COghe through clever 3D puzzles.",
+      "theme": "mint",
+      "sourceWidth": 1600,
+      "sourceHeight": 2560,
+      "provenance": "Actual native Android tablet emulator capture, 1600x2560 Pixel Tablet profile. Existing internal test APK and normal Product UI; developer scene picker closed before capture. Full source retained, no crop or retouch. Emulator evidence is not a physical-device performance claim."
+    },
+    {
+      "id": "02-reveal-the-way",
+      "image": "qa/tablet-native-captures/10-inch/level-06-crates.png",
+      "headline": [
+        "Move it.",
+        "Reveal the way."
+      ],
+      "eyebrow": "EVERY MOVE HAS A PURPOSE.",
+      "detail": "Move crates. Discover the way out.",
+      "theme": "coral",
+      "sourceWidth": 1600,
+      "sourceHeight": 2560,
+      "provenance": "Actual native Android tablet emulator capture, 1600x2560 Pixel Tablet profile. Existing internal test APK and normal Product UI; developer scene picker closed before capture. Full source retained, no crop or retouch. Emulator evidence is not a physical-device performance claim."
+    },
+    {
+      "id": "03-small-parts-big-ideas",
+      "image": "qa/tablet-native-captures/10-inch/level-29-raw.png",
+      "headline": [
+        "Small parts.",
+        "Big ideas."
+      ],
+      "eyebrow": "65 CAMPAIGN PUZZLES TO EXPLORE.",
+      "detail": "Discover new ways to work together.",
+      "theme": "lavender",
+      "sourceWidth": 1600,
+      "sourceHeight": 2560,
+      "provenance": "Actual native Android tablet emulator capture, 1600x2560 Pixel Tablet profile. Existing internal test APK and normal Product UI; developer scene picker closed before capture. Full source retained, no crop or retouch. Emulator evidence is not a physical-device performance claim."
+    },
+    {
+      "id": "04-new-paths",
+      "image": "qa/tablet-native-captures/10-inch/level-34-raw.png",
+      "headline": [
+        "New paths.",
+        "More to discover."
+      ],
+      "eyebrow": "CURIOUS MINDS FIND A WAY.",
+      "detail": "Explore clever mechanisms and reach the exit.",
+      "theme": "mint",
+      "sourceWidth": 1600,
+      "sourceHeight": 2560,
+      "provenance": "Actual native Android tablet emulator capture, 1600x2560 Pixel Tablet profile. Normal Product UI and real authored level 34; no game-state or image retouch. Overview screenshot, not new solve evidence. Full capture contain-fit."
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+PASS: native menu at three aspect ratios; title fits; Plus, gameplay and pause captured. Save persistence disabled.

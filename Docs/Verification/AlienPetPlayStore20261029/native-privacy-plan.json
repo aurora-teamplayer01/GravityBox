@@ -1,0 +1,29 @@
+{
+  "scope": "Replacement Android release 1.0.1 (2), not the historical uploaded 1.0.0 (1).",
+  "device": "Disposable AlienPetTablet Android 36 Google APIs emulator, serial emulator-5580. Root ADB allows inspection of release-package private files. No physical device or personal save is touched.",
+  "artifact": "Signed universal APK generated from the final AAB; verify package, version, signing fingerprint, no debuggable/testOnly, manifest and ZIP alignment before installation.",
+  "observations": [
+    "UI screenshot and action history for equal age choices and separate adult analytics choice.",
+    "Synthetic local PlayerPrefs privacy state across force-stop/relaunch.",
+    "Package-private file names indicating Firebase Installations, Remote Config, Analytics, UMP or Ads. Never print identifier contents.",
+    "Release-process logcat SDK initialization/error markers, including absence/presence of AdMob-ready messages.",
+    "Root BPF mAppUidStatsMap cumulative rx/tx bytes before and after each case; compare deltas, not counters across unrelated cases.",
+    "AppOps and merged-manifest permissions/defaults. A permission check alone is not a network/privacy proof."
+  ],
+  "cases": [
+    {"name":"unknown","fresh_data":true,"action":"Launch and leave age selection unanswered for at least 60 seconds.","expect":"No UMP/AdMob/Firebase initialization evidence, no Firebase/FID/RC data files, no app-UID network delta; no intro/play before confirmation."},
+    {"name":"under13","fresh_data":true,"action":"Select Under 13, confirm, skip intro, play; force-stop and relaunch.","expect":"Gameplay works, choice persists, no optional Analytics prompt, no ad offers and no SDK/FID/RC artifacts or app-UID network delta."},
+    {"name":"teen13to15","fresh_data":true,"action":"Select 13–15, confirm; wait for UMP outcome, play and relaunch.","expect":"No optional Analytics prompt/game Analytics/RC/FID fetch. Restricted UMP/Ads can process operational data; contextual ad settings checked in source tests. UMP configuration errors fail closed; no ad initialization after a failed consent update."},
+    {"name":"teen16to17","fresh_data":true,"action":"Select 16–17, confirm and play.","expect":"Same conservative policy as 13–15; coarse age-treatment flags may be sent to Google, not a promise of zero network for teens."},
+    {"name":"adult_decline","fresh_data":true,"action":"Select 18 or older, leave the Analytics prompt unanswered, then Not now; play and relaunch.","expect":"Before choice, no SDK. Decline persists and gameplay continues; no game Analytics or RC. UMP/Ads may operate once eligible after successful consent handling."},
+    {"name":"adult_allow_withdraw","fresh_data":true,"action":"Select 18 or older, Allow analytics; play; open Privacy and turn Analytics off; play again and relaunch.","expect":"Only opt-in initializes game Firebase/RC, consent grants AnalyticsStorage only and denies advertising consent. Withdrawal persists and stops further app event/RC processing. Existing/in-flight server work is not retroactively deleted or cancellable."}
+  ],
+  "layout_checks": "Capture age/analytics/Privacy panels in tablet portrait, tablet landscape and a phone-sized emulator display; confirm accessible equal choices and no clipped controls.",
+  "limitations": [
+    "SDK log silence and absence of private files alone cannot prove absence of all network processing. Combine evidence and state the observation window.",
+    "UID accounting cannot attribute traffic delegated to Google Play services to this app; packet/domain or SDK inspection may be needed if unexplained evidence appears.",
+    "Advertising-ID permission removal blocks ordinary AAID access on Android 13+, not a guarantee for older supported Android versions. Ads can use app-set/other IDs.",
+    "Native release behavior is distinct from Editor tests. Ad serving success may be blocked by AdMob app review or UMP publisher configuration; this must be reported rather than bypassed.",
+    "Emulator synthetic tests do not certify every jurisdiction, age misrepresentation scenario, SDK version, actual production ad response, device or OS."
+  ]
+}

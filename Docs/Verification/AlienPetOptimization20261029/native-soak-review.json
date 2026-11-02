@@ -1,0 +1,617 @@
+{
+  "generatedUtc": "2026-10-29T10:17:33.099294+00:00",
+  "scope": "Saved native evidence only; no device interaction by reviewer. Single screenshot-free authored route sweep plus five-level immediate late repeat. Not novice usability evidence or a matched before/after experiment.",
+  "pipelineMarker": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/final-device-pipeline-complete.json",
+  "pipelineMarkerSha256": "55d06e4745a78552e85277dd19148ecc0db32b7f1e81641fc399ba6202cd2492",
+  "finalApk": {
+    "path": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/optimized/AlienPet-after-Release.apk",
+    "sha256": "26df2c98969cd38f500708e2c364e9a82dd9090bbb1407b5babdd6efe4e5fb39",
+    "bytes": 59316804
+  },
+  "runs": [
+    {
+      "name": "after-release-full65",
+      "status": "complete",
+      "monitorId": "e86193ef87d242bfbf2721f410015000",
+      "pid": "24139",
+      "hostStartedUtc": "2026-10-29T09:32:55.078714+00:00",
+      "reportUtc": "2026-10-29T09:32:58.3769200Z",
+      "reportSource": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/after-release-full65/run-latest.json",
+      "passed": 57,
+      "failed": 8,
+      "completedLevels": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65
+      ],
+      "failedLevels": [
+        10,
+        18,
+        27,
+        32,
+        48,
+        51,
+        56,
+        57
+      ],
+      "runtimeErrors": [],
+      "lastProgressEvent": {
+        "epoch": 1793268759.554,
+        "severity": "I",
+        "tag": "Unity",
+        "text": "COGHE_VIEW_DONE passed=57 failed=8 directory=/storage/emulated/0/Android/data/com.gravityboxlab.venom/files/view-proof/20261029T093258Z"
+      },
+      "childStartedUtc": "2026-10-29T09:32:54.843544+00:00",
+      "childEndedUtc": "2026-10-29T10:12:43.631078+00:00",
+      "childReturnCode": 1,
+      "monitorWallSeconds": 2388.7875339984894,
+      "samples": {
+        "frames": 56790,
+        "sampledSeconds": 1893.8493097553253,
+        "routeWallSeconds": 1944.1728167533875,
+        "intervalTimeCoveragePercent": 97.41157233737594,
+        "frameWeightedFps": 29.98654629355751,
+        "p50Ms": 32.669429779052734,
+        "p95Ms": 49.00767135620117,
+        "p99Ms": 65.33220672607422,
+        "maxMs": 245.1338653564453,
+        "over50Ms": 759,
+        "over100Ms": 26
+      },
+      "metadata": {
+        "unity": "6000.3.19f1",
+        "buildGuid": "63a40fbb10a74a47a9b606b67cd721b4",
+        "device": "OPPO CPH2591",
+        "gpu": "Mali-G52 MC2",
+        "api": "Vulkan",
+        "execution": "Normal author replay with screenshot capture disabled; not novice evidence.",
+        "graphicProfile": "Current",
+        "width": 720,
+        "height": 1612
+      },
+      "frameCountsMatchArrays": true,
+      "fpsRecomputationMaxAbsDelta": 0.00010558270520277802,
+      "imageFiles": 0,
+      "failureMetrics": [
+        {
+          "level": 10,
+          "passed": false,
+          "escaped": 0,
+          "fragments": 1,
+          "taps": 4,
+          "seconds": 51.174072265625,
+          "frames": 1423,
+          "fps": 27.982070922851562,
+          "p95Ms": 49.0251350402832,
+          "p99Ms": 49.11852264404297,
+          "maxMs": 65.38550567626953,
+          "errorFirstLine": "System.InvalidOperationException: Operate B; Idle; ; selected=0 fragments=1 centre=(-0.24, -0.24, 0.13); C position=0.04702782 phase=Idle last= stand=(0.01, 0.06, 0.18) hand=(0.01, 0.06, 0.23); D position=0 phase=Idle last= stand=(0.30, 0.06, 0.19) hand=(0.30, 0.06, 0.24); A position=0 phase=Idle last= stand=(-0.05, -0.28, -0.14) hand=(-0.05, -0.28, -0.09); B position=0 phase=Idle last= stand=(0.08, -0.28, -0.29) hand=(0.08, -0.28, -0.24); intent=(0.0000, 0.0000, 0.0000) velocity=(0.0000, 0.0001, 0.0000) feet=29 supports=Passenger elevator surface:29,; group 0 centre=(-0.2378, -0.2424, 0.1268) target= hold= exit="
+        },
+        {
+          "level": 18,
+          "passed": false,
+          "escaped": 0,
+          "fragments": 2,
+          "taps": 70,
+          "seconds": 118.11978149414062,
+          "frames": 3414,
+          "fps": 30.074392318725586,
+          "p95Ms": 49.00761795043945,
+          "p99Ms": 49.0734977722168,
+          "maxMs": 81.70502471923828,
+          "errorFirstLine": "System.InvalidOperationException: All parts meet and fuse; Có mô trong vùng chuyển — đưa về bệ an toàn; ; selected=16 fragments=2 centre=(0.12, -0.29, -0.23); B position=0.04702649 phase=Idle last= stand=(0.19, -0.28, -0.11) hand=(0.19, -0.28, -0.06); C position=0 phase=Idle last=Phần này chưa đủ sức — nhập lại rồi thử stand=(0.31, -0.28, -0.24) hand=(0.31, -0.27, -0.19); intent=(0.0000, 0.0000, 0.0000) velocity=(0.0000, 0.0000, 0.0000) feet=31 supports=Laboratory floor:31,; group 0 centre=(0.1237, -0.2869, -0.2261) target= hold= exit=; group 1 centre=(0.1882, -0.2853, -0.1052) target= hold= exit="
+        },
+        {
+          "level": 27,
+          "passed": false,
+          "escaped": 0,
+          "fragments": 2,
+          "taps": 11,
+          "seconds": 96.7674560546875,
+          "frames": 2839,
+          "fps": 29.575899124145508,
+          "p95Ms": 48.997161865234375,
+          "p99Ms": 49.06315612792969,
+          "maxMs": 81.71442413330078,
+          "errorFirstLine": "System.InvalidOperationException: Across the back road onto the right shelf, clear of P2; Idle; ; selected=2 fragments=2 centre=(-0.01, -0.29, 0.26); A position=0.07701901 phase=Idle last= stand=(-0.02, -0.28, -0.03) hand=(-0.02, -0.28, 0.03); C position=0 phase=Idle last= stand=(0.38, -0.08, 0.00) hand=(0.37, -0.01, 0.00); intent=(0.0000, 0.0000, 0.0000) velocity=(0.0000, 0.0004, 0.0004) feet=31 supports=Right shelf:10,Laboratory floor:15,Outer pane 2:7,; group 0 centre=(0.2555, -0.1024, 0.2800) target= hold= exit=; group 2 centre=(-0.0092, -0.2857, 0.2609) target= hold= exit="
+        },
+        {
+          "level": 32,
+          "passed": false,
+          "escaped": 0,
+          "fragments": 2,
+          "taps": 17,
+          "seconds": 41.4381103515625,
+          "frames": 1193,
+          "fps": 29.662384033203125,
+          "p95Ms": 49.00856018066406,
+          "p99Ms": 65.34339141845703,
+          "maxMs": 114.36970520019531,
+          "errorFirstLine": "System.InvalidOperationException: No visible floor command for part 1 at (0.050, -0.300, -0.240); activity=Idle; lost=False failure=; escaped=0; centre=(0.329, -0.005, -0.115); target=; yaw=0"
+        },
+        {
+          "level": 48,
+          "passed": false,
+          "escaped": 0,
+          "fragments": 1,
+          "taps": 21,
+          "seconds": 64.1392822265625,
+          "frames": 1884,
+          "fps": 30.080516815185547,
+          "p95Ms": 49.00520324707031,
+          "p99Ms": 49.093048095703125,
+          "maxMs": 98.01177215576172,
+          "errorFirstLine": "System.InvalidOperationException: All tissue through the final exit; Idle; ; selected=10 fragments=1 centre=(0.34, -0.29, 0.13); intent=(0.0000, 0.0000, 0.0000) velocity=(0.0000, 0.0000, 0.0000) feet=32 supports=Laboratory floor:32,; group 0 centre=(0.3399, -0.2875, 0.1253) target= hold= exit="
+        },
+        {
+          "level": 51,
+          "passed": false,
+          "escaped": 0,
+          "fragments": 2,
+          "taps": 6,
+          "seconds": 39.8634033203125,
+          "frames": 1164,
+          "fps": 29.56569480895996,
+          "p95Ms": 49.00855255126953,
+          "p99Ms": 65.36616516113281,
+          "maxMs": 147.02491760253906,
+          "errorFirstLine": "System.InvalidOperationException: Swing to landing 1; Có mô trong vùng chuyển — đưa về bệ an toàn; ; selected=0 fragments=2 centre=(-0.18, -0.15, 0.14); B position=0.06702065 phase=Idle last= stand=(0.34, -0.17, -0.02) hand=(0.34, -0.17, -0.07); intent=(0.0000, 0.0000, 0.0000) velocity=(0.0000, 0.0000, 0.0000) feet=30 supports=Middle platform:16,Start bank:14,; group 0 centre=(-0.1801, -0.1461, 0.1401) target= hold= exit=; group 1 centre=(0.3380, -0.1760, -0.0143) target= hold= exit="
+        },
+        {
+          "level": 56,
+          "passed": false,
+          "escaped": 0,
+          "fragments": 2,
+          "taps": 26,
+          "seconds": 30.6749267578125,
+          "frames": 850,
+          "fps": 29.330568313598633,
+          "p95Ms": 49.01456832885742,
+          "p99Ms": 65.34717559814453,
+          "maxMs": 81.7064208984375,
+          "errorFirstLine": "System.InvalidOperationException: Handle C rejected: "
+        },
+        {
+          "level": 57,
+          "passed": false,
+          "escaped": 0,
+          "fragments": 2,
+          "taps": 63,
+          "seconds": 119.35498046875,
+          "frames": 3465,
+          "fps": 30.05213737487793,
+          "p95Ms": 49.005950927734375,
+          "p99Ms": 49.11445617675781,
+          "maxMs": 81.65106201171875,
+          "errorFirstLine": "System.InvalidOperationException: All parts meet and fuse; Idle; ; selected=13 fragments=2 centre=(0.20, -0.29, -0.10); intent=(0.0000, 0.0000, 0.0000) velocity=(0.0000, 0.0000, 0.0000) feet=32 supports=Laboratory floor:32,; group 0 centre=(0.1324, -0.2872, -0.0468) target= hold= exit=; group 13 centre=(0.2017, -0.2880, -0.1046) target= hold= exit="
+        }
+      ],
+      "failedIdsOutsideEarlierUnresolvedSet": [
+        10,
+        32,
+        56,
+        57
+      ],
+      "failedIdsOutsideEarlierUnresolvedOr65Set": [
+        10,
+        32,
+        56,
+        57
+      ],
+      "crashSignatures": [],
+      "unityErrorOrFatalLogs": [],
+      "otherErrorOrFatalLogs": [],
+      "health": {
+        "samples": 77,
+        "firstUtc": "2026-10-29T09:33:01.482269+00:00",
+        "lastUtc": "2026-10-29T10:12:17.147170+00:00",
+        "batteryC": {
+          "first": 36.0,
+          "last": 40.0,
+          "min": 36.0,
+          "max": 40.0,
+          "count": 77
+        },
+        "oemPhoneC": {
+          "first": 37.0,
+          "last": 43.0,
+          "min": 37.0,
+          "max": 43.0,
+          "count": 77
+        },
+        "thermalStatusValues": [
+          1,
+          2
+        ],
+        "thermalStatusCounts": {
+          "1": 17,
+          "2": 60
+        },
+        "currentHalCpuC": {
+          "first": 55.3,
+          "last": 64.5,
+          "min": 50.6,
+          "max": 64.5,
+          "count": 77
+        },
+        "currentHalGpuC": {
+          "first": 55.3,
+          "last": 64.5,
+          "min": 50.6,
+          "max": 64.5,
+          "count": 77
+        },
+        "pssMiB": {
+          "first": 454.2236328125,
+          "last": 406.578125,
+          "min": 388.4521484375,
+          "max": 468.75,
+          "count": 77
+        },
+        "rssMiB": {
+          "first": 570.859375,
+          "last": 370.5625,
+          "min": 360.19921875,
+          "max": 592.06640625,
+          "count": 77
+        },
+        "swapPssMiB": {
+          "first": 1.3857421875,
+          "last": 111.181640625,
+          "min": 0.2802734375,
+          "max": 114.662109375,
+          "count": 77
+        },
+        "usbPoweredAllObserved": true,
+        "telemetryErrors": [],
+        "batteryBeforeC": 37.0,
+        "batteryAfterC": 40.0
+      },
+      "proofSource": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/after-release-full65/proof/20261029T093258Z/run.json",
+      "proofSha256": "6dce0c3c6977820b707c631233ce3422993b5ef29286da835ca3f8d5dafe1632",
+      "proofEqualsLatest": true,
+      "expectedLevelsExact": true,
+      "countIntegrity": true
+    },
+    {
+      "name": "after-soak-1",
+      "status": "complete",
+      "monitorId": "230941c00c934e5e8c9db56f5a5c1b27",
+      "pid": "29909",
+      "hostStartedUtc": "2026-10-29T10:12:44.108649+00:00",
+      "reportUtc": "2026-10-29T10:12:50.0121920Z",
+      "reportSource": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/after-soak-1/run-latest.json",
+      "passed": 5,
+      "failed": 0,
+      "completedLevels": [
+        2,
+        7,
+        23,
+        53,
+        65
+      ],
+      "failedLevels": [],
+      "runtimeErrors": [],
+      "lastProgressEvent": {
+        "epoch": 1793268955.298,
+        "severity": "I",
+        "tag": "Unity",
+        "text": "COGHE_VIEW_DONE passed=5 failed=0 directory=/storage/emulated/0/Android/data/com.gravityboxlab.venom/files/view-proof/20261029T101249Z"
+      },
+      "childStartedUtc": "2026-10-29T10:12:43.845877+00:00",
+      "childEndedUtc": "2026-10-29T10:15:58.647368+00:00",
+      "childReturnCode": 0,
+      "monitorWallSeconds": 194.80149102210999,
+      "samples": {
+        "frames": 4092,
+        "sampledSeconds": 141.2575525188446,
+        "routeWallSeconds": 145.43177223205566,
+        "intervalTimeCoveragePercent": 97.12977456772613,
+        "frameWeightedFps": 28.968362590411605,
+        "p50Ms": 32.67031478881836,
+        "p95Ms": 49.014427185058594,
+        "p99Ms": 81.6749267578125,
+        "maxMs": 277.8038330078125,
+        "over50Ms": 82,
+        "over100Ms": 14
+      },
+      "metadata": {
+        "unity": "6000.3.19f1",
+        "buildGuid": "63a40fbb10a74a47a9b606b67cd721b4",
+        "device": "OPPO CPH2591",
+        "gpu": "Mali-G52 MC2",
+        "api": "Vulkan",
+        "execution": "Normal author replay with screenshot capture disabled; not novice evidence.",
+        "graphicProfile": "Current",
+        "width": 720,
+        "height": 1612
+      },
+      "frameCountsMatchArrays": true,
+      "fpsRecomputationMaxAbsDelta": 4.312406081652398e-05,
+      "imageFiles": 0,
+      "failureMetrics": [],
+      "failedIdsOutsideEarlierUnresolvedSet": [],
+      "failedIdsOutsideEarlierUnresolvedOr65Set": [],
+      "crashSignatures": [],
+      "unityErrorOrFatalLogs": [],
+      "otherErrorOrFatalLogs": [],
+      "health": {
+        "samples": 6,
+        "firstUtc": "2026-10-29T10:12:52.420830+00:00",
+        "lastUtc": "2026-10-29T10:15:27.513850+00:00",
+        "batteryC": {
+          "first": 40.0,
+          "last": 40.0,
+          "min": 40.0,
+          "max": 40.0,
+          "count": 6
+        },
+        "oemPhoneC": {
+          "first": 42.0,
+          "last": 43.0,
+          "min": 42.0,
+          "max": 43.0,
+          "count": 6
+        },
+        "thermalStatusValues": [
+          2
+        ],
+        "thermalStatusCounts": {
+          "2": 6
+        },
+        "currentHalCpuC": {
+          "first": 55.0,
+          "last": 63.9,
+          "min": 52.4,
+          "max": 63.9,
+          "count": 6
+        },
+        "currentHalGpuC": {
+          "first": 55.0,
+          "last": 63.9,
+          "min": 52.4,
+          "max": 63.9,
+          "count": 6
+        },
+        "pssMiB": {
+          "first": 303.6591796875,
+          "last": 490.7001953125,
+          "min": 303.6591796875,
+          "max": 491.8154296875,
+          "count": 6
+        },
+        "rssMiB": {
+          "first": 406.42578125,
+          "last": 588.31640625,
+          "min": 406.42578125,
+          "max": 592.34375,
+          "count": 6
+        },
+        "swapPssMiB": {
+          "first": 1.0966796875,
+          "last": 15.6611328125,
+          "min": 1.0966796875,
+          "max": 16.0869140625,
+          "count": 6
+        },
+        "usbPoweredAllObserved": true,
+        "telemetryErrors": [],
+        "batteryBeforeC": 40.0,
+        "batteryAfterC": 40.0
+      },
+      "proofSource": "/Users/mrk/GravityBox/Artifacts/AlienPetOptimization-2026-10-29/after-soak-1/proof/20261029T101249Z/run.json",
+      "proofSha256": "0ff9b17428cde24c3adc31803d8d95fbde05ef4a997c1693f30e8af5ec1b6240",
+      "proofEqualsLatest": true,
+      "expectedLevelsExact": true,
+      "countIntegrity": true
+    }
+  ],
+  "knownBaselineFailures": [
+    {
+      "level": 18,
+      "content": "N18",
+      "baseline": "Reunion projected taps consumed as selection; alternate cold start missed first Q-machine tap."
+    },
+    {
+      "level": 27,
+      "content": "G9",
+      "baseline": "Reunion taps fail to move a half; one half enters exit before merging and normal merge-required loss appears."
+    },
+    {
+      "level": 48,
+      "content": "N31",
+      "baseline": "Initial exit approach stopped on floor; clean confirmation later stalled at partition after reunion."
+    },
+    {
+      "level": 51,
+      "content": "26",
+      "baseline": "Target dock tap released rope to rescue floor, phase Idle, landings=0, misses=0."
+    },
+    {
+      "level": 65,
+      "content": "N50 (boss 6)",
+      "baseline": "Separate legacy Release failed second A approach at gear-table corner; stage1 profiler also had a floor-command replay failure. Historical first full sweep passed 65."
+    }
+  ],
+  "failureInvestigations": {
+    "10": {
+      "display": 10,
+      "stableId": "coghe.spatial.pilot.10",
+      "classification": "Additional native authored-replay failure; optimization causality unresolved",
+      "current": "Tap 4 at (0.080,-0.273,-0.235) logged moves=0 mechanisms=0 target empty; focused and unlocked. B remained Idle without failure text; body remained on lowered elevator. Operate B timed out 35 seconds later.",
+      "baseline": "Historical native sweep passed with 11 taps. First four targets match to logged three-decimal precision; historical tap 4 accepted moves=1 mechanisms=1 with target (0.08,-0.28,-0.29).",
+      "source": "Pilot Operate helper taps once then waits 35 seconds, without retrying an unaccepted command. Level 10 calls B after the return elevator journey.",
+      "scopeLimits": "VIEW_PICK is a subsequent diagnostic ray and does not prove original event delivery or exact rejection. Scene, definition, lift implementation and route have no working-tree diffs. TapRail edits affect caches, not hit-test code; timing/pose effects are not excluded. Passing final Editor solve/wander/boss-shortcut tests do not negate the native failure.",
+      "references": [
+        "Assets/_Game/Venom/Runtime/ChapterProof/COgheSpatialScenario.cs:14",
+        "Assets/_Game/Venom/Runtime/ChapterProof/COgheSpatialScenario.cs:42",
+        "Artifacts/AlienPetOptimization-2026-10-29/after-release-full65/logcat.txt",
+        "Docs/Verification/AlienPetOppo20261029/campaign-summary.json"
+      ],
+      "nextCheck": "Isolated native baseline/final replay after current pipeline, owned by root; reviewer did not touch device.",
+      "carryoverAudit": {
+        "conclusion": "Saved Clever/abilities/accumulated per-level win progress are not supported explanations by inspected proof setup.",
+        "evidence": [
+          "Launcher force-stops previous process; proof disables persistence BeforeSceneLoad.",
+          "ProductMode false means no Intelligence/ProductUI; speed scale1 and Fed rests.",
+          "Every scene gets a new empty Progress from VenomCampaignSave.Read while persistence disabled; earlier wins affect only earlier scene object.",
+          "Personality resets tap history per scene; tantrum needs6 taps/3s, while level10 has4 taps/~16s and rejected B tap locked=False.",
+          "Saved appearance application is ProductUI.Initialize, which this fixture does not attach. Default Shop/Style initial reads happen with persistence disabled."
+        ],
+        "limits": [
+          "Static Shop/Style caches are not explicitly reset; no direct ability/style snapshot is recorded.",
+          "Full and isolated runs differ in lifetime, synthetic touchscreen history, timing, and presentation history.",
+          "Historical full and final use Current graphic profile but different APK/build GUID and screenshot behavior; historical run is not an exact reproduction."
+        ],
+        "references": [
+          "Assets/_Game/Venom/Runtime/ChapterProof/COgheViewProofPlayer.cs:43",
+          "Assets/_Game/Venom/Runtime/Product/COgheProductCatalog.cs:31",
+          "Assets/_Game/Venom/Runtime/VenomCampaign.cs:118",
+          "Assets/_Game/Venom/Runtime/VenomCampaignSave.cs:18",
+          "Assets/_Game/Venom/Runtime/Personality/COghePersonality.cs:61",
+          "Assets/_Game/Venom/Runtime/Product/COgheProductUI.cs:80"
+        ]
+      }
+    },
+    "27": {
+      "display": 27,
+      "stableId": "coghe.spatial.plus.g9",
+      "classification": "Known failed ID with a different earlier route-step failure; cause unresolved",
+      "current": "Across the back road onto the right shelf, clear of P2 timed out after 11 taps. Taps9–11 all accepted moves=1 mechanisms=0 toward (.22,-.10,.14). Holder ended rear floor (-.009,-.286,.261) without an active order; other half remained on right shelf (.256,-.102,.280). No escape or merge-required loss was reported.",
+      "baseline": "Prior full/retry runs failed later at reunion after 49 taps, with merge-required loss. This run did not reach the C operation or reunion, so its signature differs.",
+      "source": "G9 calls Walk(holder, (.22,-.108,.13)) after crossing to left shelf. Walk retries at most twice before final40s arrival check.",
+      "references": [
+        "Assets/_Game/Venom/Runtime/ChapterProof/COgheSpatialPlusScenario.cs:135",
+        "Assets/_Game/Venom/Runtime/ChapterProof/COgheSpatialNextScenario.cs:122",
+        "Artifacts/AlienPetOptimization-2026-10-29/after-release-full65/logcat.txt",
+        "Docs/Verification/AlienPetOppo20261029/campaign-summary.json"
+      ]
+    },
+    "32": {
+      "display": 32,
+      "stableId": "coghe.spatial.plus.g5",
+      "classification": "Additional native authored-replay failure at a projection-sensitive floor command; causality unresolved",
+      "current": "17 taps; No visible floor command for part1 at(.05,-.30,-.24). All5 candidates rejected moves0/mechanisms0. Intended climber stayed elevated(.329,-.005,-.115), fragments2, lostFalse. Tap13 logged prior holder return target(.10,-.28,-.20), consistent with selecting foreground half but not conclusive proof of original event hit.",
+      "baseline": "Historical full sweep passed with 16 taps. First 12 logged rounded targets match; both runs reject candidates 13 and 14. Historical candidate 15 at (.02,-.30,-.24) succeeds; final candidates 15–17 fail. This location previously needed nearby-point recovery.",
+      "source": "G5 returns holder then climber. Command explicitly accounts for selecting another part and tries5 nearby offsets before throwing. No current G5 scene/definition/route working-tree change.",
+      "references": [
+        "Assets/_Game/Venom/Runtime/ChapterProof/COgheSpatialPlusScenario.cs:97",
+        "Assets/_Game/Venom/Runtime/ChapterProof/COgheSpatialNextScenario.cs:139",
+        "Artifacts/AlienPetOptimization-2026-10-29/after-release-full65/logcat.txt",
+        "Docs/Verification/AlienPetOppo20261029/campaign-summary.json",
+        "Assets/_Game/Venom/Runtime/VenomCampaign.cs:708"
+      ],
+      "scopeLimits": "Cannot conclude unplayable level, physics bug or optimization regression from this route failure. Historical screenshot-based APK differs from final; isolated same-harness baseline/final replays are separate follow-up evidence.",
+      "retryTiming": {
+        "historicalFirstThreeCandidateSeconds": 0.819,
+        "finalFirstThreeCandidateSeconds": 0.405,
+        "finalAllFiveCandidateSeconds": 0.799,
+        "interpretation": "Historical screenshot capture affects retry cadence. Faster retries/settling or foreground selection are plausible contributors, not proven causes."
+      }
+    },
+    "56": {
+      "display": 56,
+      "stableId": "coghe.spatial.plus.n45",
+      "classification": "Additional failed replay; strong fixture false-failure candidate, not confirmed",
+      "current": "26 taps, two fragments, Handle C rejected with blank LastFailure. Preceding high-deck walking taps14/15/17/18/20 register mechanisms1 toward C stand(.20,-.10,.14). Explicit C tap23 aims hand.x=.267, versus historical retry.x=.200. Tap23 and stand24 accept only movement; retries25/26 no command.",
+      "baseline": "The historical 18-tap failure was an already-reached floor-pad assertion; an arrival guard corrected it, and a clean retry passed with 29 taps. The current rejection occurs at a different check.",
+      "source": "C starts.x=.20, travel.07, catchTolerance.003, OneWay=true. TryTouch returns false for completed one-way rail without setting LastFailure. Route unconditionally Operates C after deck Walk; helper requires new Busy journey, not an already-completed rail.",
+      "inference": "C may have completed during walking retries; handle.x≈.267 and blank early rejection fit one-way AtEnd. This would make explicit fresh-operation requirement a harness false failure.",
+      "scopeLimits": "Exact AtEnd, CompletedJourneys and top-step state were not logged, handle point is rounded; no confirmed game defect or confirmed false failure from this evidence alone. N45 scene/definition/route unchanged; passing Editor solve/wander does not replace native outcome.",
+      "references": [
+        "Assets/_Game/Venom/SpatialCampaign/COgheSpatialPlusN45.unity:14090",
+        "Assets/_Game/Venom/SpatialCampaign/COgheSpatialPlusN45.unity:14242",
+        "Assets/_Game/Venom/Runtime/COgheTapRail.cs:165",
+        "Assets/_Game/Venom/Runtime/ChapterProof/COgheSpatialPlusScenario.cs:571",
+        "Assets/_Game/Venom/Runtime/ChapterProof/COgheSpatialNextScenario.cs:45",
+        "Artifacts/AlienPetOptimization-2026-10-29/after-release-full65/logcat.txt"
+      ]
+    },
+    "57": {
+      "display": 57,
+      "stableId": "coghe.spatial.plus.n49",
+      "classification": "Additional native authored-replay failure; selection/occlusion-sensitive reunion, not a confirmed merge-rule defect",
+      "current": "Door operation succeeded.63 taps, All parts meet and fuse failed. Reunion accepted moves8/9/15, then48 retries16–63 all moves0/mechanisms0, focusedTrue/lockedFalse. Two floor halves ~9.02cm apart, both no active orders, escaped0. Retry centre(.167,-.30,-.076) exhausted nearby candidates.",
+      "baseline": "Historical sweep passed with 31 taps. Both runs accepted the first seven rounded targets. Historical reunion also had ineffective taps, but retry points near (.229,-.30,-.140) accepted movement and solved.",
+      "source": "N49 ends with s.Merge after door operation; merge helper tries visible nearby points. Scene/definition/route unchanged; final Editor solve/wander passed.",
+      "scopeLimits": "Failure is an inability of this authored tap sequence to bring separated halves together; it does not establish that touching tissue failed to merge. Different projected geometry and input timing may matter; no optimization causality is confirmed.",
+      "references": [
+        "Assets/_Game/Venom/Runtime/ChapterProof/COgheSpatialPlusScenario.cs:639",
+        "Assets/_Game/Venom/Runtime/ChapterProof/COgheSpatialNextScenario.cs:178",
+        "Artifacts/AlienPetOptimization-2026-10-29/after-release-full65/logcat.txt",
+        "Docs/Verification/AlienPetOppo20261029/campaign-summary.json"
+      ]
+    }
+  },
+  "confirmedNewGameplayBugs": [],
+  "interpretation": "Authored replay failure identifies a route/check that failed in this run. It does not establish an impossible level, human usability defect, or optimization regression. Failure signatures require comparison with baseline context. No historical 30.1 FPS comparison is made.",
+  "sourceReferences": [
+    "Docs/Verification/AlienPetOppo20261029/README.md",
+    "Artifacts/AlienPetOptimization-2026-10-29/measurement-exceptions.txt",
+    "Assets/_Game/Venom/Runtime/ChapterProof/COgheViewProofPlayer.cs",
+    "Artifacts/AlienPetOptimization-2026-10-29/run_device.py",
+    "Artifacts/AlienPetOptimization-2026-10-29/run_matched_release.py"
+  ]
+}

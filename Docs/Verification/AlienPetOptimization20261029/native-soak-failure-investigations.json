@@ -1,0 +1,110 @@
+{
+  "10": {
+    "display": 10,
+    "stableId": "coghe.spatial.pilot.10",
+    "classification": "Additional native authored-replay failure; optimization causality unresolved",
+    "current": "Tap 4 at (0.080,-0.273,-0.235) logged moves=0 mechanisms=0 target empty; focused and unlocked. B remained Idle without failure text; body remained on lowered elevator. Operate B timed out 35 seconds later.",
+    "baseline": "Historical native sweep passed with 11 taps. First four targets match to logged three-decimal precision; historical tap 4 accepted moves=1 mechanisms=1 with target (0.08,-0.28,-0.29).",
+    "source": "Pilot Operate helper taps once then waits 35 seconds, without retrying an unaccepted command. Level 10 calls B after the return elevator journey.",
+    "scopeLimits": "VIEW_PICK is a subsequent diagnostic ray and does not prove original event delivery or exact rejection. Scene, definition, lift implementation and route have no working-tree diffs. TapRail edits affect caches, not hit-test code; timing/pose effects are not excluded. Passing final Editor solve/wander/boss-shortcut tests do not negate the native failure.",
+    "references": [
+      "Assets/_Game/Venom/Runtime/ChapterProof/COgheSpatialScenario.cs:14",
+      "Assets/_Game/Venom/Runtime/ChapterProof/COgheSpatialScenario.cs:42",
+      "Artifacts/AlienPetOptimization-2026-10-29/after-release-full65/logcat.txt",
+      "Docs/Verification/AlienPetOppo20261029/campaign-summary.json"
+    ],
+    "nextCheck": "Isolated native baseline/final replay after current pipeline, owned by root; reviewer did not touch device.",
+    "carryoverAudit": {
+      "conclusion": "Saved Clever/abilities/accumulated per-level win progress are not supported explanations by inspected proof setup.",
+      "evidence": [
+        "Launcher force-stops previous process; proof disables persistence BeforeSceneLoad.",
+        "ProductMode false means no Intelligence/ProductUI; speed scale1 and Fed rests.",
+        "Every scene gets a new empty Progress from VenomCampaignSave.Read while persistence disabled; earlier wins affect only earlier scene object.",
+        "Personality resets tap history per scene; tantrum needs6 taps/3s, while level10 has4 taps/~16s and rejected B tap locked=False.",
+        "Saved appearance application is ProductUI.Initialize, which this fixture does not attach. Default Shop/Style initial reads happen with persistence disabled."
+      ],
+      "limits": [
+        "Static Shop/Style caches are not explicitly reset; no direct ability/style snapshot is recorded.",
+        "Full and isolated runs differ in lifetime, synthetic touchscreen history, timing, and presentation history.",
+        "Historical full and final use Current graphic profile but different APK/build GUID and screenshot behavior; historical run is not an exact reproduction."
+      ],
+      "references": [
+        "Assets/_Game/Venom/Runtime/ChapterProof/COgheViewProofPlayer.cs:43",
+        "Assets/_Game/Venom/Runtime/Product/COgheProductCatalog.cs:31",
+        "Assets/_Game/Venom/Runtime/VenomCampaign.cs:118",
+        "Assets/_Game/Venom/Runtime/VenomCampaignSave.cs:18",
+        "Assets/_Game/Venom/Runtime/Personality/COghePersonality.cs:61",
+        "Assets/_Game/Venom/Runtime/Product/COgheProductUI.cs:80"
+      ]
+    }
+  },
+  "27": {
+    "display": 27,
+    "stableId": "coghe.spatial.plus.g9",
+    "classification": "Known failed ID with a different earlier route-step failure; cause unresolved",
+    "current": "Across the back road onto the right shelf, clear of P2 timed out after 11 taps. Taps9\u201311 all accepted moves=1 mechanisms=0 toward (.22,-.10,.14). Holder ended rear floor (-.009,-.286,.261) without an active order; other half remained on right shelf (.256,-.102,.280). No escape or merge-required loss was reported.",
+    "baseline": "Prior full/retry runs failed later at reunion after 49 taps, with merge-required loss. This run did not reach the C operation or reunion, so its signature differs.",
+    "source": "G9 calls Walk(holder, (.22,-.108,.13)) after crossing to left shelf. Walk retries at most twice before final40s arrival check.",
+    "references": [
+      "Assets/_Game/Venom/Runtime/ChapterProof/COgheSpatialPlusScenario.cs:135",
+      "Assets/_Game/Venom/Runtime/ChapterProof/COgheSpatialNextScenario.cs:122",
+      "Artifacts/AlienPetOptimization-2026-10-29/after-release-full65/logcat.txt",
+      "Docs/Verification/AlienPetOppo20261029/campaign-summary.json"
+    ]
+  },
+  "32": {
+    "display": 32,
+    "stableId": "coghe.spatial.plus.g5",
+    "classification": "Additional native authored-replay failure at a projection-sensitive floor command; causality unresolved",
+    "current": "17 taps; No visible floor command for part1 at(.05,-.30,-.24). All5 candidates rejected moves0/mechanisms0. Intended climber stayed elevated(.329,-.005,-.115), fragments2, lostFalse. Tap13 logged prior holder return target(.10,-.28,-.20), consistent with selecting foreground half but not conclusive proof of original event hit.",
+    "baseline": "Historical full sweep passed with 16 taps. First 12 logged rounded targets match; both runs reject candidates 13 and 14. Historical candidate 15 at (.02,-.30,-.24) succeeds; final candidates 15\u201317 fail. This location previously needed nearby-point recovery.",
+    "source": "G5 returns holder then climber. Command explicitly accounts for selecting another part and tries5 nearby offsets before throwing. No current G5 scene/definition/route working-tree change.",
+    "references": [
+      "Assets/_Game/Venom/Runtime/ChapterProof/COgheSpatialPlusScenario.cs:97",
+      "Assets/_Game/Venom/Runtime/ChapterProof/COgheSpatialNextScenario.cs:139",
+      "Artifacts/AlienPetOptimization-2026-10-29/after-release-full65/logcat.txt",
+      "Docs/Verification/AlienPetOppo20261029/campaign-summary.json",
+      "Assets/_Game/Venom/Runtime/VenomCampaign.cs:708"
+    ],
+    "scopeLimits": "Cannot conclude unplayable level, physics bug or optimization regression from this route failure. Historical screenshot-based APK differs from final; isolated same-harness baseline/final replays are separate follow-up evidence.",
+    "retryTiming": {
+      "historicalFirstThreeCandidateSeconds": 0.819,
+      "finalFirstThreeCandidateSeconds": 0.405,
+      "finalAllFiveCandidateSeconds": 0.799,
+      "interpretation": "Historical screenshot capture affects retry cadence. Faster retries/settling or foreground selection are plausible contributors, not proven causes."
+    }
+  },
+  "56": {
+    "display": 56,
+    "stableId": "coghe.spatial.plus.n45",
+    "classification": "Additional failed replay; strong fixture false-failure candidate, not confirmed",
+    "current": "26 taps, two fragments, Handle C rejected with blank LastFailure. Preceding high-deck walking taps14/15/17/18/20 register mechanisms1 toward C stand(.20,-.10,.14). Explicit C tap23 aims hand.x=.267, versus historical retry.x=.200. Tap23 and stand24 accept only movement; retries25/26 no command.",
+    "baseline": "The historical 18-tap failure was an already-reached floor-pad assertion; an arrival guard corrected it, and a clean retry passed with 29 taps. The current rejection occurs at a different check.",
+    "source": "C starts.x=.20, travel.07, catchTolerance.003, OneWay=true. TryTouch returns false for completed one-way rail without setting LastFailure. Route unconditionally Operates C after deck Walk; helper requires new Busy journey, not an already-completed rail.",
+    "inference": "C may have completed during walking retries; handle.x\u2248.267 and blank early rejection fit one-way AtEnd. This would make explicit fresh-operation requirement a harness false failure.",
+    "scopeLimits": "Exact AtEnd, CompletedJourneys and top-step state were not logged, handle point is rounded; no confirmed game defect or confirmed false failure from this evidence alone. N45 scene/definition/route unchanged; passing Editor solve/wander does not replace native outcome.",
+    "references": [
+      "Assets/_Game/Venom/SpatialCampaign/COgheSpatialPlusN45.unity:14090",
+      "Assets/_Game/Venom/SpatialCampaign/COgheSpatialPlusN45.unity:14242",
+      "Assets/_Game/Venom/Runtime/COgheTapRail.cs:165",
+      "Assets/_Game/Venom/Runtime/ChapterProof/COgheSpatialPlusScenario.cs:571",
+      "Assets/_Game/Venom/Runtime/ChapterProof/COgheSpatialNextScenario.cs:45",
+      "Artifacts/AlienPetOptimization-2026-10-29/after-release-full65/logcat.txt"
+    ]
+  },
+  "57": {
+    "display": 57,
+    "stableId": "coghe.spatial.plus.n49",
+    "classification": "Additional native authored-replay failure; selection/occlusion-sensitive reunion, not a confirmed merge-rule defect",
+    "current": "Door operation succeeded.63 taps, All parts meet and fuse failed. Reunion accepted moves8/9/15, then48 retries16\u201363 all moves0/mechanisms0, focusedTrue/lockedFalse. Two floor halves ~9.02cm apart, both no active orders, escaped0. Retry centre(.167,-.30,-.076) exhausted nearby candidates.",
+    "baseline": "Historical sweep passed with 31 taps. Both runs accepted the first seven rounded targets. Historical reunion also had ineffective taps, but retry points near (.229,-.30,-.140) accepted movement and solved.",
+    "source": "N49 ends with s.Merge after door operation; merge helper tries visible nearby points. Scene/definition/route unchanged; final Editor solve/wander passed.",
+    "scopeLimits": "Failure is an inability of this authored tap sequence to bring separated halves together; it does not establish that touching tissue failed to merge. Different projected geometry and input timing may matter; no optimization causality is confirmed.",
+    "references": [
+      "Assets/_Game/Venom/Runtime/ChapterProof/COgheSpatialPlusScenario.cs:639",
+      "Assets/_Game/Venom/Runtime/ChapterProof/COgheSpatialNextScenario.cs:178",
+      "Artifacts/AlienPetOptimization-2026-10-29/after-release-full65/logcat.txt",
+      "Docs/Verification/AlienPetOppo20261029/campaign-summary.json"
+    ]
+  }
+}

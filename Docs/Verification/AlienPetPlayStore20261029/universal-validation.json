@@ -1,0 +1,15 @@
+{
+  "apk": "/Users/mrk/GravityBox/Artifacts/AlienPetPlayStore/AlienPet-1.0.0-1-universal.apk",
+  "bytes": 59027763,
+  "sha256": "9ffce5bb32cde58a93bb8b855fb5aae95214558a7acbf4a40a3763f72e12989a",
+  "source_aab_sha256": "218e4cc1646b5d9add183785661ee7526e2e7dd7fc0ddd3f1178e365b69ecfbe",
+  "upload_certificate_sha256": "5b894271027148d895e3c1bc0f84f0490e0c78f3f745ebeafa118f82dc0a3d4c",
+  "certificate_matches_aab": true,
+  "package": "com.gravityboxlab.venom",
+  "version_name": "1.0.0",
+  "version_code": 1,
+  "debuggable": false,
+  "test_only": false,
+  "apk_16k_zip_alignment_verified": true,
+  "purpose": "Isolated Android tablet emulator testing; no physical-device installation by this script."
+}

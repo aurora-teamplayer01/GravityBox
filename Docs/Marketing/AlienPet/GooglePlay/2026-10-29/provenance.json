@@ -1,0 +1,185 @@
+{
+  "feature_art": {
+    "kind": "Illustrative Google Play feature key art; not a gameplay screenshot",
+    "generation_tool": "Built-in imagegen tool, invoked by coordinating root agent",
+    "source": "sources/feature-art-master.png",
+    "source_dimensions": {
+      "width": 1796,
+      "height": 876
+    },
+    "source_sha256": "ead33862d3340c91d094d48a7e6244ee511bad252938565ce3ba5788355c60a8",
+    "approved_reference_images": [
+      "Assets/_Game/Branding/COghe-AppIcon.png",
+      "Docs/Marketing/AlienPet/GooglePlay/2026-10-29/sources/native-puzzle4-switch.png"
+    ],
+    "prompt_summary": "Polished wide Google Play feature artwork for Alien Pet: Escape Puzzle using the approved icon C creature and native switch-puzzle screenshot as visual references. Warm ivory and mint laboratory, glossy playful dark alien, legible Alien Pet title with Escape Puzzle subtitle, friendly calm tone.",
+    "prompt_summary_note": "Descriptive production summary, not a verbatim prompt transcript. The coordinating agent owns the image-generation record.",
+    "review": "Coordinating agent reported visual approval of the generated master; mechanical export also inspected by layout agent.",
+    "export": "exports/feature-graphic.png",
+    "export_transform": "Whole image mechanically resampled to 1024x500 RGB PNG. No crop, retouch or new visual elements.",
+    "source_identity": "Approved text-free creature icon C retained unchanged as launcher/store icon; feature art does not replace that source."
+  },
+  "screenshots": [
+    {
+      "id": "01-tiny-pet-big-escape",
+      "file": "exports/phone/01-tiny-pet-big-escape.png",
+      "source": "sources/native-puzzle4-switch.png",
+      "source_sha256": "48b12db2f2995c960844a39a71e3b108e267286ab958bbc8394e36c41adb4703",
+      "crop": {
+        "x": 0,
+        "y": 260,
+        "width": 1080,
+        "height": 1390
+      },
+      "notes": "Blank outer margins and outside HUD removed; full enclosure, creature, switch, printed link and exit shutter preserved."
+    },
+    {
+      "id": "02-reveal-the-way",
+      "file": "exports/phone/02-reveal-the-way.png",
+      "source": "sources/native-puzzle6-crate.png",
+      "source_sha256": "e7cf28c514bb7025dd0f9550e322d6ebffcad725ba4f0fb5b2935e0bd06dd0e5",
+      "crop": {
+        "x": 0,
+        "y": 260,
+        "width": 1080,
+        "height": 1390
+      },
+      "notes": "Blank outer margins and outside HUD removed; all crates, creature and entire floor/box preserved."
+    },
+    {
+      "id": "03-think-beyond-floor",
+      "file": "exports/phone/03-think-beyond-floor.png",
+      "source": "sources/runtime-boss10-lift-bridge.png",
+      "source_sha256": "0b260ca2613a992112f473e32dbe96efb51c39aaf0a2f74ee5b33a9ce18c4385",
+      "crop": {
+        "x": 0,
+        "y": 300,
+        "width": 720,
+        "height": 1000
+      },
+      "notes": "Only blank space above and below removed. Entire real Boss 10 enclosure, lift, bridge and controls preserved; original actual Unity scene capture has no HUD."
+    },
+    {
+      "id": "04-snack-time",
+      "file": "exports/phone/04-snack-time.png",
+      "source": "sources/native-home-apple.png",
+      "source_sha256": "a234bf68e3123159e1ee940b9441d714bb6c3f2acda7b3de80a8314718aa54c8",
+      "crop": {
+        "x": 0,
+        "y": 240,
+        "width": 1080,
+        "height": 1520
+      },
+      "notes": "Top Home title and blank bottom removed. Real feeding pose, food, energy/drops and bottom Home actions preserved."
+    },
+    {
+      "id": "05-splash-personality",
+      "file": "exports/phone/05-splash-personality.png",
+      "source": "sources/native-style-mint.png",
+      "source_sha256": "43d7c861d129080da8c66f362a98da36bfbdc75b893e2aee37ca162a13f44d19",
+      "crop": {
+        "x": 0,
+        "y": 250,
+        "width": 1080,
+        "height": 1395
+      },
+      "notes": "Outside header and bottom action bar removed. Actual Mint hold, creature, color mix, tabs and native catalog area preserved without retouch."
+    },
+    {
+      "id": "06-make-it-yours",
+      "file": "exports/phone/06-make-it-yours.png",
+      "source": "sources/native-style-flower.png",
+      "source_sha256": "000afc72425b3b3d3578ea6e720a2de5c3f935b475d2c7e96cff5c0aa5ec1403",
+      "crop": {
+        "x": 0,
+        "y": 250,
+        "width": 1080,
+        "height": 1395
+      },
+      "notes": "Outside header and bottom action bar removed. Actual flower crown, creature, tabs and native accessory choices preserved without retouch."
+    },
+    {
+      "id": "01-tap-think-find",
+      "file": "exports/tablet-7in/01-tap-think-find.png",
+      "source": "qa/tablet-native-captures/7-inch/level-04-switch.png",
+      "source_sha256": "3bb1f00affdf4633f5aa6b151d543261a292c4810b315103e53e398f31fb7403",
+      "crop": "whole source contain-fit",
+      "notes": "Actual separate native 1200x1920 Android emulator rendering with 320dpi and sw600dp, on the same isolated Pixel Tablet AVD adjusted for the 7-inch-equivalent profile. Normal Product UI, developer scene picker closed. Full source retained, no crop or image retouch. Not physical 7-inch hardware or full-solve evidence."
+    },
+    {
+      "id": "02-reveal-the-way",
+      "file": "exports/tablet-7in/02-reveal-the-way.png",
+      "source": "qa/tablet-native-captures/7-inch/level-06-crates.png",
+      "source_sha256": "2d01e57ff5fc62ac0e7fdbf5db8de88a23c7499b00fb7c363257a3ff9df2a2bd",
+      "crop": "whole source contain-fit",
+      "notes": "Actual separate native 1200x1920 Android emulator rendering with 320dpi and sw600dp, on the same isolated Pixel Tablet AVD adjusted for the 7-inch-equivalent profile. Normal Product UI, developer scene picker closed. Full source retained, no crop or image retouch. Not physical 7-inch hardware or full-solve evidence."
+    },
+    {
+      "id": "03-small-parts-big-ideas",
+      "file": "exports/tablet-7in/03-small-parts-big-ideas.png",
+      "source": "qa/tablet-native-captures/7-inch/level-29-raw.png",
+      "source_sha256": "9780c9be6efd05b1af55387b645ee05d03255dcfd4def25e039e5dd8d87e3404",
+      "crop": "whole source contain-fit",
+      "notes": "Actual separate native 1200x1920 Android emulator rendering with 320dpi and sw600dp, on the same isolated Pixel Tablet AVD adjusted for the 7-inch-equivalent profile. Normal Product UI, developer scene picker closed. Full source retained, no crop or image retouch. Not physical 7-inch hardware or full-solve evidence."
+    },
+    {
+      "id": "04-new-paths",
+      "file": "exports/tablet-7in/04-new-paths.png",
+      "source": "qa/tablet-native-captures/7-inch/level-34-raw.png",
+      "source_sha256": "3c07b9bb92193a9d30c6e8193d6a529dfaa57cc5b15ff53f01aaddfed465262c",
+      "crop": "whole source contain-fit",
+      "notes": "Actual separate native 1200x1920 Android emulator rendering with 320dpi and sw600dp, on the same isolated Pixel Tablet AVD adjusted for the 7-inch-equivalent profile. Normal Product UI, developer scene picker closed. Full source retained, no crop or image retouch. Not physical 7-inch hardware or full-solve evidence."
+    },
+    {
+      "id": "01-tap-think-find",
+      "file": "exports/tablet-10in/01-tap-think-find.png",
+      "source": "qa/tablet-native-captures/10-inch/level-04-switch.png",
+      "source_sha256": "85579dc450c38959cdd6fb1cba49839de92074a3471e70bc96338351ed8b689d",
+      "crop": "whole source contain-fit",
+      "notes": "Actual native Android tablet emulator capture, 1600x2560 Pixel Tablet profile. Existing internal test APK and normal Product UI; developer scene picker closed before capture. Full source retained, no crop or retouch. Emulator evidence is not a physical-device performance claim."
+    },
+    {
+      "id": "02-reveal-the-way",
+      "file": "exports/tablet-10in/02-reveal-the-way.png",
+      "source": "qa/tablet-native-captures/10-inch/level-06-crates.png",
+      "source_sha256": "4b89e4f9e09d8bd58fb7b1dc714af1af5f143f34914f859c15edfeb5db40b844",
+      "crop": "whole source contain-fit",
+      "notes": "Actual native Android tablet emulator capture, 1600x2560 Pixel Tablet profile. Existing internal test APK and normal Product UI; developer scene picker closed before capture. Full source retained, no crop or retouch. Emulator evidence is not a physical-device performance claim."
+    },
+    {
+      "id": "03-small-parts-big-ideas",
+      "file": "exports/tablet-10in/03-small-parts-big-ideas.png",
+      "source": "qa/tablet-native-captures/10-inch/level-29-raw.png",
+      "source_sha256": "9846f616027374959a264e702e370e794c91f1b12c59e07bddbcceb91cd10712",
+      "crop": "whole source contain-fit",
+      "notes": "Actual native Android tablet emulator capture, 1600x2560 Pixel Tablet profile. Existing internal test APK and normal Product UI; developer scene picker closed before capture. Full source retained, no crop or retouch. Emulator evidence is not a physical-device performance claim."
+    },
+    {
+      "id": "04-new-paths",
+      "file": "exports/tablet-10in/04-new-paths.png",
+      "source": "qa/tablet-native-captures/10-inch/level-34-raw.png",
+      "source_sha256": "610194d25456717d28fa4a5c046b1a4356169cdd33b1bae13f35eb0ef3b9837c",
+      "crop": "whole source contain-fit",
+      "notes": "Actual native Android tablet emulator capture, 1600x2560 Pixel Tablet profile. Normal Product UI and real authored level 34; no game-state or image retouch. Overview screenshot, not new solve evidence. Full capture contain-fit."
+    },
+    {
+      "id": "approved-icon-c",
+      "file": "exports/app-icon-512.png",
+      "source": "Assets/_Game/Branding/COghe-AppIcon.png",
+      "source_sha256": "9b37a41c6d8d0365139a92b08a2ce0574d2d0062b5c679f36c1f43a73f17ce22",
+      "crop": null,
+      "notes": "Mechanical whole-image 512x512 Lanczos resize; no crop, retouch, text, border or rounding."
+    },
+    {
+      "id": "illustrative-feature-graphic",
+      "file": "exports/feature-graphic.png",
+      "source": "Docs/Marketing/AlienPet/GooglePlay/2026-10-29/sources/feature-art-master.png",
+      "source_sha256": "ead33862d3340c91d094d48a7e6244ee511bad252938565ce3ba5788355c60a8",
+      "crop": null,
+      "notes": "Mechanical whole-image resize to Google Play 1024x500; no crop or creative edit. Root-approved illustrative key art, separate from actual gameplay screenshots."
+    }
+  ],
+  "tablet_note": "7-inch-equivalent and 10-inch-equivalent Android emulator capture sets are separate native captures. These are not evidence of physical device performance. Source overviews do not certify complete puzzle solves.",
+  "screenshot_policy": "Actual game source pixels are only uniformly scaled and caption-framed. No gameplay, creature or UI element is synthesized or retouched. Phone crop rectangles exclude documented outer margins and HUD; tablet frames are preserved whole.",
+  "icon_note": "Approved text-free icon C, mechanically resized whole to 512x512."
+}

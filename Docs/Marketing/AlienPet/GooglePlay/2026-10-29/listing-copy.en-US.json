@@ -1,0 +1,183 @@
+{
+  "status": "Final prepared English store copy. Upload and publication status are tracked separately in the Console status record.",
+  "date": "2026-10-29",
+  "locale": "en-US",
+  "title": "Alien Pet: Escape Puzzle",
+  "short_description": "Solve 3D escape puzzles, care for your alien pet and make it your own.",
+  "full_description": "Meet COghe, a curious little alien with a squishy liquid body and a big personality. Guide your new pet through 3D lab escape puzzles, then take a break together at Home.\n\nA little pet. A big escape.\nTap to guide COghe, look around the glass room and work out the way forward. Climb bare glass, move crates, operate switches and ride lifts. Later puzzles ask you to split into smaller parts, work together and reunite before escaping.\n\n65 campaign levels to explore\nDiscover new puzzle ideas across six chapters, with a boss puzzle at the end of each chapter. Rotate the camera to inspect the room, follow the connections between devices and try your own solution.\n\nCare for your alien friend\nUnlock Home as you progress. Feed COghe, share a little affection and discover its playful reactions. Try different snacks, play together and get to know the little creature behind every escape.\n\nMake COghe your own\nUnlock color inks and accessories along the way. Mix up to four inks, choose a hat and add tiny decorations that float inside your pet. Your saved look comes with COghe into the puzzles, Home and the main menu.\n\nSmall taps. Curious discoveries. One very squishy friend.\nHelp COghe find the next way out in Alien Pet: Escape Puzzle.\n\nSome items and features unlock as you progress.",
+  "character_counts": {
+    "title": 24,
+    "short_description": 70,
+    "full_description": 1289
+  },
+  "screenshot_captions": [
+    {
+      "category": "phone",
+      "order": 1,
+      "id": "01-tiny-pet-big-escape",
+      "headline": "A tiny pet. A big escape.",
+      "eyebrow": "A NEW FRIEND. A NEW ADVENTURE.",
+      "detail": "Guide COghe through clever 3D puzzles."
+    },
+    {
+      "category": "phone",
+      "order": 2,
+      "id": "02-reveal-the-way",
+      "headline": "Move it. Reveal the way.",
+      "eyebrow": "EVERY MOVE HAS A PURPOSE.",
+      "detail": "Move crates. Discover the way out."
+    },
+    {
+      "category": "phone",
+      "order": 3,
+      "id": "03-think-beyond-floor",
+      "headline": "Think beyond the floor.",
+      "eyebrow": "65 CAMPAIGN PUZZLES TO EXPLORE.",
+      "detail": "Climb, connect and find a new perspective."
+    },
+    {
+      "category": "phone",
+      "order": 4,
+      "id": "04-snack-time",
+      "headline": "Snack time. Big reactions.",
+      "eyebrow": "YOUR LITTLE ALIEN FRIEND.",
+      "detail": "Feed, care and share a little affection."
+    },
+    {
+      "category": "phone",
+      "order": 5,
+      "id": "05-splash-personality",
+      "headline": "A splash of personality.",
+      "eyebrow": "MAKE EVERY COLOR YOURS.",
+      "detail": "Mix colors on your very own alien pet."
+    },
+    {
+      "category": "phone",
+      "order": 6,
+      "id": "06-make-it-yours",
+      "headline": "Make it your own.",
+      "eyebrow": "A LITTLE EXTRA PERSONALITY.",
+      "detail": "Pick a favorite hat. Bring your look along."
+    },
+    {
+      "category": "tablet-7in",
+      "order": 1,
+      "id": "01-tap-think-find",
+      "headline": "Tap. Think. Find a way.",
+      "eyebrow": "A TINY PET. A BIG ESCAPE.",
+      "detail": "Guide COghe through clever 3D puzzles."
+    },
+    {
+      "category": "tablet-7in",
+      "order": 2,
+      "id": "02-reveal-the-way",
+      "headline": "Move it. Reveal the way.",
+      "eyebrow": "EVERY MOVE HAS A PURPOSE.",
+      "detail": "Move crates. Discover the way out."
+    },
+    {
+      "category": "tablet-7in",
+      "order": 3,
+      "id": "03-small-parts-big-ideas",
+      "headline": "Small parts. Big ideas.",
+      "eyebrow": "65 CAMPAIGN PUZZLES TO EXPLORE.",
+      "detail": "Discover new ways to work together."
+    },
+    {
+      "category": "tablet-7in",
+      "order": 4,
+      "id": "04-new-paths",
+      "headline": "New paths. More to discover.",
+      "eyebrow": "CURIOUS MINDS FIND A WAY.",
+      "detail": "Explore clever mechanisms and reach the exit."
+    },
+    {
+      "category": "tablet-10in",
+      "order": 1,
+      "id": "01-tap-think-find",
+      "headline": "Tap. Think. Find a way.",
+      "eyebrow": "A TINY PET. A BIG ESCAPE.",
+      "detail": "Guide COghe through clever 3D puzzles."
+    },
+    {
+      "category": "tablet-10in",
+      "order": 2,
+      "id": "02-reveal-the-way",
+      "headline": "Move it. Reveal the way.",
+      "eyebrow": "EVERY MOVE HAS A PURPOSE.",
+      "detail": "Move crates. Discover the way out."
+    },
+    {
+      "category": "tablet-10in",
+      "order": 3,
+      "id": "03-small-parts-big-ideas",
+      "headline": "Small parts. Big ideas.",
+      "eyebrow": "65 CAMPAIGN PUZZLES TO EXPLORE.",
+      "detail": "Discover new ways to work together."
+    },
+    {
+      "category": "tablet-10in",
+      "order": 4,
+      "id": "04-new-paths",
+      "headline": "New paths. More to discover.",
+      "eyebrow": "CURIOUS MINDS FIND A WAY.",
+      "detail": "Explore clever mechanisms and reach the exit."
+    }
+  ],
+  "evidence": [
+    {
+      "claim": "Approved public name, palette and retained text-free icon",
+      "source": "Docs/ArtDirection/COghe/STYLE_RULES.md:1",
+      "runtime": "Assets/_Game/Venom/Runtime/Product/AlienPetBrand.cs:6"
+    },
+    {
+      "claim": "65 main-campaign levels in six chapters, plus two post-campaign prototypes; do not advertise 67 finished campaign levels",
+      "source": "Assets/_Game/Editor/COgheSpatialCampaignBuilder.cs:19",
+      "note": "SpatialOrder contains F2/F3 at 66/67, beyond the main campaign. Current AGENTS.md also states this scope."
+    },
+    {
+      "claim": "Tap-to-guide, glass climbing and separate orbit/zoom camera",
+      "source": "Docs/COGHE_LEVEL_DESIGN_RULES.md:24",
+      "runtime": "Assets/_Game/Venom/Runtime/VenomCampaignTapCommands.cs"
+    },
+    {
+      "claim": "Switch and crate interactions are actual runtime gameplay",
+      "source": "Assets/_Game/Venom/Runtime/Product/AlienPetAdReel.cs:30",
+      "verification": "Docs/Marketing/AlienPet/2026-10-28/README.md"
+    },
+    {
+      "claim": "Later levels split/reunite and use lifts",
+      "source": "Docs/Verification/AlienPetOptimization20261029/README.md:83",
+      "note": "209 Editor tests include main-campaign solves, lifts, tubes, split/merge; do not infer native acceptance/performance from this."
+    },
+    {
+      "claim": "Home unlocks after first boss, feeding, real snack interactions and affection",
+      "source": "Assets/_Game/Venom/Runtime/VenomCampaignSave.cs:31",
+      "runtime": [
+        "Assets/_Game/Venom/Runtime/Product/COgheProductUI.Food.cs",
+        "Assets/_Game/Venom/Runtime/Product/AlienPetCareReel.cs:39",
+        "Assets/_Game/Venom/Runtime/Home/COgheSnacks.cs:25"
+      ]
+    },
+    {
+      "claim": "Home play/toys",
+      "source": "Assets/_Game/Venom/Runtime/Home/COgheToys.cs:3",
+      "runtime": "Assets/_Game/Venom/Runtime/Personality/COghePersonality.Toys.cs"
+    },
+    {
+      "claim": "Up to four colors, one hat and up to two inside decorations; saved style appears in game/Home/menu",
+      "source": "Assets/_Game/Venom/Runtime/Customize/COgheStyle.cs:38",
+      "runtime": [
+        "Assets/_Game/Venom/Runtime/Customize/COgheInking.cs:14",
+        "Assets/_Game/Venom/Runtime/Product/COgheProductUI.Style.cs"
+      ]
+    }
+  ],
+  "copy_exclusions": [
+    "No claim of offline support, no ads, free full game, guaranteed improvement, complete native 65-level acceptance or sustained 60 FPS.",
+    "No Marvel/Venom terms in public copy.",
+    "Do not present AI cinematic footage as gameplay.",
+    "Do not promise all items or Home at first launch.",
+    "No urgency, child-directed purchase pressure, fake ratings or install counts."
+  ]
+}

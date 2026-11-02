@@ -261,7 +261,7 @@ namespace GravityBox.Venom
             {
                 PopupTitle(panel, w, "A mystery gift!");
                 art.Label(panel, "Message", "What's inside? Open it to find out.", new Rect(24, 70, w - 48, 24), 14, COgheUIArt.Muted);
-                var open = LabelButton(panel, "Open mystery box", new Rect(24, h - 116, w - 48, 54), COgheIcon.Play, "Watch an ad to open", OpenMysteryBox, true);
+                var open = LabelButton(panel, "Open mystery box", new Rect(24, h - 116, w - 48, 54), COgheIcon.Play, COgheAds.RewardedAvailable && !HideAdOffers ? "Watch an ad to open" : "Open gift", OpenMysteryBox, true);
                 open.interactable = !COgheAds.Showing;
                 LabelButton(panel, "Skip mystery box", new Rect(24, h - 56, w - 48, 40), COgheIcon.Close, "Skip", SkipMysteryBox);
             }

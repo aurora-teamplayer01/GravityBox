@@ -1,0 +1,409 @@
+{
+  "date": "2026-10-29",
+  "scope": "Current saved Play Console setup and release drafts, combined with release-2 technical evidence. Not a production approval, publication, or legal compliance certificate.",
+  "provenance": {
+    "consoleFacts": "Verified live by coordinating root agent; user approvals relayed through the same task. This documentation update did not mutate Console.",
+    "technicalFacts": [
+      "native-privacy-results.json",
+      "privacy-implementation.json",
+      "analytics-console-audit.json",
+      "privacy-merge-readiness.json"
+    ],
+    "historicalRecord": "console-state.json",
+    "historicalRecordUnchangedSha256": "7ee77dc44de676c4d4889c24b7cafef64b846533a1d5df61e11b7a5e6efaaa54"
+  },
+  "app": {
+    "name": "Alien Pet: Escape Puzzle",
+    "packageName": "com.gravityboxlab.venom",
+    "developerAccount": "YoloStudioGlobal",
+    "developerId": "5637064096940148363",
+    "appId": "4974079895895643247",
+    "platform": "Google Play Android; phones and tablets. No iPad/App Store binary in this release task."
+  },
+  "artifact": {
+    "versionName": "1.0.1",
+    "versionCode": 2,
+    "aab": "Builds/AlienPet/GooglePlay/AlienPet-1.0.1-2.aab",
+    "bytes": 58684797,
+    "sha256": "30bc7fce27fda89f484a35bc776bfdbc312b99daec30e519d4dc2bc9fb2d9ab0",
+    "universalApkSha256": "2c421b502a0e405f1588f044ca784caaf5c3b28c11998216717350d7c7d01b4f",
+    "uploadCertificateSha256": "5b894271027148d895e3c1bc0f84f0490e0c78f3f745ebeafa118f82dc0a3d4c",
+    "verification": "native-privacy-results.json",
+    "nextBuildExample": {
+      "versionName": "1.0.2",
+      "versionCode": 3,
+      "note": "Code2 is already used. Confirm the next unused code before another upload."
+    }
+  },
+  "releases": {
+    "internal": {
+      "track": "Internal testing",
+      "trackId": "4700437523599384969",
+      "state": "saved draft",
+      "bundleVersionCodes": [
+        2
+      ],
+      "version1InDraft": false,
+      "url": "https://play.google.com/console/u/0/developers/5637064096940148363/app/4974079895895643247/tracks/4700437523599384969/releases/1/prepare",
+      "proof": "console/release-1.0.1-2-internal-saved.jpg"
+    },
+    "production": {
+      "track": "Production",
+      "trackId": "4698253974970298717",
+      "state": "prepared in Publishing overview; not submitted for review",
+      "releaseName": "1.0.1 (2) - US launch draft",
+      "bundleVersionCodes": [
+        2
+      ],
+      "url": "https://play.google.com/console/u/0/developers/5637064096940148363/app/4974079895895643247/tracks/4698253974970298717/releases/1/prepare",
+      "proof": "console/release-1.0.1-2-production-saved.jpg",
+      "preparationHistory": "Previously saved as a production draft; current Publishing overview includes version 1.0.1 (2) with the pending action Start full rollout.",
+      "pendingAction": "Start full rollout",
+      "observedHeading": "1.0.1",
+      "versionName": "1.0.1",
+      "versionCode": 2,
+      "reviewStatus": "Not yet sent for review",
+      "currentProof": "console/production-prepared-not-submitted.jpg"
+    },
+    "submittedForReview": false,
+    "testerRolloutPerformed": false,
+    "productionRolloutPerformed": false,
+    "published": false,
+    "countries": {
+      "state": "saved",
+      "targetedCount": 1,
+      "targeted": [
+        {
+          "code": "US",
+          "name": "United States"
+        }
+      ],
+      "userExplicitlyApproved": true,
+      "supersedes": "Earlier all-country proposal",
+      "proof": "console/us-only-saved.jpg"
+    },
+    "nativeSymbols": {
+      "status": "uploaded_and_draft_saved",
+      "uploaded": true,
+      "artifactVersionCode": 2,
+      "archiveSha256": "89fcea49f041ef9da3bcb1a0033d90aa06ebefb2f32090e282f13aa0ecaaeb5c",
+      "includedLibraryCount": 7,
+      "aabNativeLibraryCount": 11,
+      "r8MappingApplicable": false,
+      "proof": "console/native-symbols-attached.jpg",
+      "evidence": "native-symbols-summary.json",
+      "note": "Exact release-2 symbols verified and attached in Play Console; production draft saved. Public function-name symbols for 7/11 libraries, not complete source-line or third-party coverage."
+    },
+    "publishingOverview": {
+      "state": "10 changes not yet submitted",
+      "pendingChangeCount": 10,
+      "submitForReviewButtonEnabled": true,
+      "quickChecks": "complete",
+      "submissionClickedByAgent": false,
+      "finalRolloutClickedByAgent": false,
+      "note": "Console configuration is ready to submit. Pending Start full rollout wording is an intended release action, not an actual rollout. Review submission and publication remain false; actual ad serving and campaign QA limits are separate.",
+      "consoleMessage": "Your changes can now be sent for review. We may find additional issues when reviewing your app.",
+      "managedPublishing": false,
+      "proof": "console/publishing-ready-10-changes.jpg",
+      "fullPageProof": "console/publishing-ready-full.jpg"
+    }
+  },
+  "initialSetup": {
+    "completeCount": 11,
+    "totalCount": 11,
+    "allComplete": true,
+    "productionPreparationUnlocked": true,
+    "note": "Initial setup section disappeared after completion. Completion means declarations saved; it is not approval of the app.",
+    "items": [
+      "Privacy policy",
+      "App access",
+      "Ads declaration",
+      "Content ratings",
+      "Target audience and content",
+      "Data safety",
+      "Government apps",
+      "Financial features",
+      "Health apps",
+      "Store settings / category and support contact",
+      "Main store listing"
+    ]
+  },
+  "listing": {
+    "locale": "en-US",
+    "state": "Ready to send for review",
+    "submittedForReview": false,
+    "published": false,
+    "url": "https://play.google.com/console/u/0/developers/5637064096940148363/app/4974079895895643247/store-listings",
+    "assetCounts": {
+      "appIcon": 1,
+      "featureGraphic": 1,
+      "phone": 6,
+      "tablet7inch": 4,
+      "tablet10inch": 4
+    },
+    "aiLabelledAssets": [
+      "app-icon-512.png",
+      "feature-graphic.png"
+    ],
+    "provenance": "Icon and feature art are generative imagery. Screenshots retain authentic game rendering with code-composed marketing typography. Full provenance is recorded in the ASO pack.",
+    "proof": "console/store-listing-ready.jpg"
+  },
+  "targetAudience": {
+    "state": "saved",
+    "ageGroups": [
+      "9–12",
+      "13–15"
+    ],
+    "userApproved": true,
+    "familiesDeclarationUserApproved": true,
+    "teacherApprovedProgram": false,
+    "scope": "Launch design audience9–15. Under13 protections apply to any under13 user. This is not a Families compliance certificate.",
+    "supersedes": "Historic preschool-inclusive4–15 design brief for launch targeting",
+    "url": "https://play.google.com/console/u/0/developers/5637064096940148363/app/4974079895895643247/app-content/target-audience-content?source=dashboard",
+    "proof": "console/target-audience-9-15-saved.jpg"
+  },
+  "contentRatings": {
+    "state": "IARC completed",
+    "userApprovedSubmission": true,
+    "submittedAnswers": {
+      "violence": "No",
+      "fear": "Yes; scary content occurs rarely",
+      "crudeHumor": "Yes; mucus/belching category",
+      "digitalPurchases": "No current cash/IAP provider"
+    },
+    "confirmedKeyRatings": {
+      "ESRB": {
+        "rating": "Everyone",
+        "descriptors": [
+          "Mild Fantasy Violence",
+          "Comic Mischief"
+        ]
+      },
+      "PEGI": {
+        "rating": "7",
+        "descriptors": [
+          "Fear"
+        ]
+      },
+      "Taiwan": {
+        "rating": "12",
+        "descriptors": [
+          "Horror"
+        ]
+      },
+      "USK": {
+        "rating": "6"
+      },
+      "Australia": {
+        "rating": "PG"
+      }
+    },
+    "otherRegions": "See live IARC certificate; do not infer a universal minimum age from the launch target.",
+    "usLaunchRating": "ESRB Everyone; Mild Fantasy Violence and Comic Mischief",
+    "evidence": "families-content-audit.json",
+    "proof": "console/iarc-completed.jpg",
+    "officialHelp": "https://support.google.com/googleplay/android-developer/answer/9859655?hl=en"
+  },
+  "dataSafety": {
+    "state": "saved; Ready to send for review",
+    "submittedForReview": false,
+    "typeCount": 6,
+    "url": "https://play.google.com/console/u/0/developers/5637064096940148363/app/4974079895895643247/app-content/data-privacy-security?source=dashboard",
+    "proof": "console/data-safety-ready-for-review.jpg",
+    "types": [
+      {
+        "category": "Location",
+        "type": "Approximate location",
+        "collected": true,
+        "shared": true,
+        "optional": false
+      },
+      {
+        "category": "App activity",
+        "type": "App interactions",
+        "collected": true,
+        "shared": true,
+        "optional": false
+      },
+      {
+        "category": "App info and performance",
+        "type": "Diagnostics",
+        "collected": true,
+        "shared": true,
+        "optional": false
+      },
+      {
+        "category": "Device or other IDs",
+        "type": "Device or other IDs",
+        "collected": true,
+        "shared": true,
+        "optional": false
+      },
+      {
+        "category": "Personal info",
+        "type": "Other info",
+        "collected": true,
+        "shared": true,
+        "optional": false,
+        "scope": "Coarse teen/under-consent-age ad treatment; no birthday, name or game account login."
+      },
+      {
+        "category": "App activity",
+        "type": "Other actions",
+        "collected": true,
+        "shared": false,
+        "optional": true,
+        "scope": "Developer gameplay events only after separate adult Analytics opt-in; purpose Analytics."
+      }
+    ],
+    "scope": "The four ad-operational types plus coarse age treatment are not made globally optional by declining gameplay Analytics. Unknown/Under13 initializes no Ads/Firebase. Optional gameplay-event sharing conclusion depends on inspected Analytics settings and service-provider/fully-anonymized exceptions; distinct AdMob operational sharing remains declared.",
+    "evidence": [
+      "privacy-implementation.json",
+      "analytics-console-audit.json",
+      "native-privacy-results.json"
+    ],
+    "historicalBaseline": "data-safety-audit.json describes version1; its original unknowns and unguarded behavior must not be treated as current release2 state."
+  },
+  "privacy": {
+    "policyUrl": "https://cj.suri.house/alien-pet-privacy",
+    "supportEmail": "support@suri.house",
+    "livePolicyVerified": true,
+    "policySourceMergedToMain": true,
+    "policySourcePullRequest": "https://github.com/aurora-teamplayer01/g005-color-drop/pull/1",
+    "policySourceMergeEvidence": "privacy-merge-readiness.json",
+    "liveEvidence": "privacy-live-checks.json",
+    "requestOperations": "privacy-request-operations.txt",
+    "runtimePolicy": {
+      "unknownAndUnder13": "No Ads, Analytics or Remote Config SDK initialization",
+      "ages13To17": "Restricted contextual-ad treatment; no Analytics or Remote Config",
+      "adults": "Separate optional Analytics/Remote Config consent; eligible advertising consent handled independently",
+      "withdrawal": "Privacy control disables subsequent Analytics collection; it is not deletion of records already received by service providers"
+    },
+    "noAccountCreation": true,
+    "realIapProviderInstalled": false
+  },
+  "analytics": {
+    "dashboardAudit": "analytics-console-audit.json",
+    "googleSignals": false,
+    "googleProductsServicesSharing": false,
+    "googleAdsLinks": 0,
+    "googleAdMobLinks": 0,
+    "eventRetentionMonths": 2,
+    "userRetentionMonths": 14,
+    "resetOnNewUserActivity": true,
+    "dataProcessingTerms": {
+      "accepted": true,
+      "acceptedDate": "2026-10-29",
+      "userActionTimeApproved": true,
+      "termsUrl": "https://privacy.google.com/businesses/processorterms/",
+      "accountId": "58477001",
+      "persistedAfterReload": true,
+      "sharingAndRetentionPreserved": true,
+      "proof": "console/analytics-dpa-accepted.jpg"
+    }
+  },
+  "validation": {
+    "unity": {
+      "editModePassed": 10,
+      "playModePassed": 4,
+      "failed": 0,
+      "totalPassed": 14,
+      "scope": "Targeted privacy/service/UI checks, not all campaign solve tests.",
+      "evidence": "privacy-implementation.json"
+    },
+    "native": {
+      "artifact": "Signed release1.0.1(2) APK derived from exact AAB",
+      "environment": "Isolated Android36 emulator; tablet landscape/portrait and phone layouts",
+      "cases": [
+        "Unknown and unconfirmed choice",
+        "Under13 intro, play and relaunch",
+        "Both teen bands",
+        "Adult pending, decline, opt-in, withdrawal and relaunch"
+      ],
+      "result": "Privacy gate observations passed within bounded test windows; production ad loading remains unverified due UMP error3.",
+      "evidence": "native-privacy-results.json",
+      "limits": [
+        "Observed one signed release on Android36 emulator, not every supported Android version/physical device/jurisdiction.",
+        "UID counters do not attribute Google Play services shared-process traffic. Zero UID traffic plus no native startup/artifacts/logs is bounded evidence, not universal certification.",
+        "No native loaded-ad behavior could be verified due UMP publisher configuration; request policy is covered by Unity tests.",
+        "Withdrawal leaves previously created Firebase/FID/cache files; it disables further app collection, not remote deletion. In-flight/already sent data is not retroactively cancelled.",
+        "No iOS SDK runtime claim from these Android tests.",
+        "Age treatment may be transmitted for eligible teens, although exact selected band/DOB is not a game Analytics property."
+      ]
+    },
+    "priorContinuousCampaign": {
+      "passed": 57,
+      "total": 65,
+      "unresolvedDisplayLevels": [
+        10,
+        18,
+        27,
+        32,
+        48,
+        51,
+        56,
+        57
+      ],
+      "resolvedByThisSetupTask": false,
+      "evidence": [
+        "../AlienPetOptimization20261029/native-soak-review.md",
+        "../AlienPetOptimization20261029/recheck-audit.md"
+      ]
+    },
+    "initialVersion1Validation": [
+      "build-validation.json",
+      "universal-validation.json"
+    ],
+    "initialEvidenceScope": "Retained version1 validation must not automatically be attributed to version2."
+  },
+  "remaining": [
+    {
+      "item": "AdMob privacy messages",
+      "state": "blocked by normal web-editor loading failure; final retry remained blank",
+      "evidence": "admob-consent-setup.json",
+      "runtimeEffect": "UMP publisher error3; no Alien Pet form configured. Eligible ad path fails closed and gameplay remains available. No live ad-serving verification.",
+      "next": "Resume normal Alien Pet-scoped consent-message setup once editor works; preserve independent Analytics consent, then re-run native consent/ad flow."
+    },
+    {
+      "item": "Campaign routes",
+      "state": "Prior57/65 continuous acceptance not resolved",
+      "next": "Investigate unresolved routes before claiming all levels pass."
+    },
+    {
+      "item": "Production publication",
+      "state": "Console quick checks complete and 10 changes ready to submit; not submitted for review or rolled out",
+      "next": "Complete remaining checks, review US-only prepared production changes, and use the authorized publication workflow."
+    },
+    {
+      "item": "Real IAP",
+      "state": "Not installed; intentionally unavailable",
+      "next": "Configure and re-audit only if the owner enables real billing later."
+    },
+    {
+      "item": "Privacy requests",
+      "state": "Published contact/process requires operator follow-through",
+      "next": "Operate support mailbox and scoped data-request process."
+    }
+  ],
+  "relatedReadme": "README.md",
+  "advertisingIdDeclaration": {
+    "state": "saved",
+    "usesAdvertisingId": "Yes",
+    "purposes": [
+      "Analytics",
+      "Advertising or marketing",
+      "Fraud prevention, security and compliance"
+    ],
+    "analyticsPurposeScope": "AdMob operational/ad measurement; independent of optional developer gameplay Analytics.",
+    "turnOffMissingAdIdPermissionReleaseErrors": true,
+    "runtimeScope": "The release intentionally removes AD_ID permission, so Advertising ID is unavailable on Android 13+ for this target SDK. Eligible AdMob operation on supported Android 8–12L (API 26–32) may still use the advertising ID; permission removal alone is not a global no-ID-use declaration. Unknown and under-13 users do not initialize Ads.",
+    "verifiedBy": "Coordinating root agent observed Changes saved in Play Console.",
+    "proof": "console/advertising-id-saved.jpg",
+    "officialSource": "https://developers.google.com/admob/android/privacy/play-data-disclosure"
+  },
+  "platformDistribution": {
+    "googlePlayGamesOnPc": "opted out; pending PC change removed",
+    "androidXr": "same-track default inspected and left unchanged",
+    "scope": "Mobile phones and tablets; no new build or gameplay changes in this Console continuation."
+  }
+}

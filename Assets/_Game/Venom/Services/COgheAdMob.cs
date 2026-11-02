@@ -22,7 +22,7 @@ namespace GravityBox.Services
         private int failuresI, failuresR, failuresB, generation, bannerWidth;
         private Action<bool> finishInterstitial, finishRewarded;
         private static string Unit(string real, string test) => COgheTestTools.LevelSelect || Debug.isDebugBuild ? test : real;
-        private bool ConsentAllowed => !suspended && ConsentInformation.CanRequestAds();
+        private bool ConsentAllowed => COghePrivacy.AdsAgeEligible && !suspended && ConsentInformation.CanRequestAds();
         private bool ForcedAllowed => ConsentAllowed && COgheAds.ForcedAdsAllowed;
         private bool RewardAllowed => ConsentAllowed && COgheAds.RewardAdsAllowed;
         public bool InterstitialReady => ForcedAllowed && interstitial != null && interstitial.CanShowAd();

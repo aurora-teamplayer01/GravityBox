@@ -19,6 +19,7 @@ namespace GravityBox.Venom.ChapterProof
             public double skinMs,gameStepMs,graphMs,routeMs,maxGraphMs;
             public float seconds,fps,p50Ms,p95Ms,p99Ms,maxMs;public long peakAllocatedBytes;
             public string error;public List<float> frameMs=new List<float>();
+            public string profilerFile;public float profilerSeconds;
         }
         [Serializable] private sealed class FadeSample
         {public float yaw;public float[] opacity;}
@@ -35,6 +36,8 @@ namespace GravityBox.Venom.ChapterProof
         private static string requested;private static bool previousPersistence;
         private string directory;private VenomCampaign game;private Touchscreen touchscreen;
         private Report report;private Result result;private bool measuring,fast;private int shot;
+        private bool noScreenshots,profileCapture,ownsProfiler;
+        private int profileSeconds=25;private float profileStarted;private Coroutine profileTimer;
         private COgheCooperativeDrive[] cooperativeDrives=Array.Empty<COgheCooperativeDrive>();
         private readonly HashSet<COgheCooperativeDrive> capturedCooperation=new HashSet<COgheCooperativeDrive>();
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
@@ -54,7 +57,7 @@ namespace GravityBox.Venom.ChapterProof
         private static void Begin()
         {if(string.IsNullOrEmpty(requested))return;var go=new GameObject("Requested V2 author replay");DontDestroyOnLoad(go);go.AddComponent<COgheViewProofPlayer>();}
         private void OnEnable()=>Application.logMessageReceived+=Log;
-        private void OnDestroy(){IsRunning=false;Application.logMessageReceived-=Log;if(touchscreen!=null)InputSystem.RemoveDevice(touchscreen);}
+        private void OnDestroy(){StopProfilerCapture();IsRunning=false;Application.logMessageReceived-=Log;if(touchscreen!=null)InputSystem.RemoveDevice(touchscreen);}
         private void Log(string message,string trace,LogType type)
         {if(type==LogType.Error||type==LogType.Exception||type==LogType.Assert)report?.errors.Add(message+"\n"+trace);}
         private void Update()
@@ -73,35 +76,52 @@ namespace GravityBox.Venom.ChapterProof
             if(Array.IndexOf(Environment.GetCommandLineArgs(),"-coghe-depth-record")>=0)report.execution="Visual recording with synchronous frame capture. FPS is not performance evidence.";
             if(fast)report.execution="Accelerated author diagnosis: normal touch events; 120Hz scripted simulation. Not realtime performance evidence.";
             touchscreen=InputSystem.AddDevice<Touchscreen>();
-            var args=Environment.GetCommandLineArgs();bool spatial=Array.IndexOf(args,"-coghe-spatial")>=0;string prefix=spatial?"COgheSpatial":"COgheView";int first=1,last=spatial?10:30;
+            var args=Environment.GetCommandLineArgs();bool spatial=Array.IndexOf(args,"-coghe-spatial")>=0;int first=1,last=spatial?10:30;
+            string only=null;
             for(int i=0;i<args.Length-1;i++){if(args[i]=="-coghe-view-first")first=int.Parse(args[i+1]);if(args[i]=="-coghe-view-last")last=int.Parse(args[i+1]);}
 #if UNITY_ANDROID
             using(var player=new AndroidJavaClass("com.unity3d.player.UnityPlayer"))
             using(var activity=player.GetStatic<AndroidJavaObject>("currentActivity"))
             using(var intent=activity.Call<AndroidJavaObject>("getIntent"))
             {
+                // Android launches do not receive desktop command-line switches.
+                spatial=intent.Call<bool>("getBooleanExtra","coghe_spatial",spatial);
                 first=intent.Call<int>("getIntExtra","coghe_view_first",first);
                 last=intent.Call<int>("getIntExtra","coghe_view_last",last);
+                only=intent.Call<string>("getStringExtra","coghe_view_only");
+                noScreenshots=intent.Call<bool>("getBooleanExtra","coghe_no_screenshots",false);
+                profileCapture=intent.Call<bool>("getBooleanExtra","coghe_profiler_capture",false)&&Debug.isDebugBuild;
+                profileSeconds=Mathf.Clamp(intent.Call<int>("getIntExtra","coghe_profiler_seconds",25),5,45);
             }
 #endif
+            if(profileCapture){noScreenshots=true;report.execution="Development player Unity Profiler binary capture; normal touch/physics; no screenshots; Deep Profile and Script Debugging off. Diagnostic timings include profiler overhead.";}
+            else if(noScreenshots)report.execution="Normal author replay with screenshot capture disabled; not novice evidence.";
+            string prefix=spatial?"COgheSpatial":"COgheView";
             // Spatial plays in campaign order: the scene for position n is SceneSequence[n-1] (read from level 1).
             string[] sequence=null;
             if(spatial){yield return SceneManager.LoadSceneAsync(prefix+"01");yield return null;sequence=FindFirstObjectByType<VenomCampaign>().Definition.SceneSequence;}
             int count=sequence!=null&&sequence.Length>0?sequence.Length:30;
             first=Mathf.Clamp(first,1,count);last=Mathf.Clamp(last,first,count);
+            var selectedLevels=new HashSet<int>();
+            if(!string.IsNullOrWhiteSpace(only))foreach(string value in only.Split(','))
+                if(int.TryParse(value,out int selected)&&selected>=first&&selected<=last)selectedLevels.Add(selected);
             report.graphicProfile=COgheGraphicProfile.UseNew?"BlenderMobile":"Current";
             if(Array.IndexOf(args,"-coghe-depth")>=0)report.graphicProfile="GlassDepth-"+COgheGlassDepthStudy.Selection;
             for(int n=first;n<=last;n++)
             {
+                if(selectedLevels.Count>0&&!selectedLevels.Contains(n))continue;
                 result=new Result{level=n};report.levels.Add(result);
                 yield return SceneManager.LoadSceneAsync(sequence!=null&&sequence.Length>0?sequence[n-1]:$"{prefix}{n:00}");yield return null;
                 game=FindFirstObjectByType<VenomCampaign>();game.AutoAdvance=false;
                 cooperativeDrives=game.Owner.Apparatus.GetComponentsInChildren<COgheCooperativeDrive>();capturedCooperation.Clear();
                 if(fast){game.Owner.enabled=false;game.Owner.Rotation.enabled=false;Physics.simulationMode=SimulationMode.Script;for(int t=0;t<120;t++)Tick();}
-                yield return new WaitForSeconds(2);yield return Capture("start");
+                yield return new WaitForSeconds(profileCapture?5:2);yield return Capture("start");
+                yield return null;yield return null;
                 if(Array.IndexOf(args,"-coghe-view-fade-proof")>=0)yield return Guarded(FadeProof());
+                if(profileCapture)BeginProfilerCapture(n);
                 float started=Time.realtimeSinceStartup;int gc=GC.CollectionCount(0);COgheMobileMetrics.Enabled=!fast;Array.Clear(COgheMobileMetrics.Milliseconds,0,4);measuring=!fast;
                 yield return Guarded(spatial?new COgheSpatialScenario(game,Tap,Until,Orbit).Solve():new COgheViewScenario(game,Tap,Until,Orbit,Pinch).Solve());
+                StopProfilerCapture();
                 measuring=false;COgheMobileMetrics.Enabled=false;result.gcCollections=GC.CollectionCount(0)-gc;result.seconds=Time.realtimeSinceStartup-started;
                 result.escaped=game.Matter.EscapedCount;result.fragments=game.Matter.TotalFragmentCount;
                 result.passed=result.error==null&&game.Owner.Completed&&!game.Owner.Lost&&result.escaped==32&&result.fragments==1;
@@ -196,8 +216,8 @@ namespace GravityBox.Venom.ChapterProof
             screen=game.Owner.View.WorldToScreenPoint(point);int moves=game.Motion.MoveCount,mechanismTaps=game.MechanismTaps;
             InputSystem.QueueStateEvent(touchscreen,new TouchState{touchId=1,phase=UnityEngine.InputSystem.TouchPhase.Began,position=screen});yield return null;
             InputSystem.QueueStateEvent(touchscreen,new TouchState{touchId=1,phase=UnityEngine.InputSystem.TouchPhase.Ended,position=screen});yield return null;yield return null;result.taps++;
-            Debug.Log($"VIEW_TAP {result.taps} point={point:F3} moves={game.Motion.MoveCount-moves} mechanisms={game.MechanismTaps-mechanismTaps} target={game.Motion.Get(game.Motion.Selected)?.Target} focused={Application.isFocused} locked={game.InputLocked}");
-            if(game.Motion.MoveCount==moves)
+            if(!profileCapture)Debug.Log($"VIEW_TAP {result.taps} point={point:F3} moves={game.Motion.MoveCount-moves} mechanisms={game.MechanismTaps-mechanismTaps} target={game.Motion.Get(game.Motion.Selected)?.Target} focused={Application.isFocused} locked={game.InputLocked}");
+            if(!profileCapture&&game.Motion.MoveCount==moves)
             {
                 var hits=Physics.RaycastAll(game.Owner.View.ScreenPointToRay(screen),game.Owner.View.farClipPlane);Array.Sort(hits,(a,b)=>a.distance.CompareTo(b.distance));int count=0;
                 foreach(var hit in hits)
@@ -258,12 +278,39 @@ namespace GravityBox.Venom.ChapterProof
                 foreach(var wheel in drive.FirstWheels)text+=$" wheel={wheel.position:F4}";
             }
             foreach(var tube in game.Owner.Apparatus.GetComponentsInChildren<COgheTubeNetwork>()){text+="\nTube "+tube.DebugState(game.Motion.Selected); for(int n=0;n<tube.Nodes.Length;n++)if(tube.Nodes[n].Terminal==COgheTubeNetwork.TerminalKind.Entry)text+="\n"+tube.DebugEntryState(game.Motion.Selected,n);}
+            foreach(var swing in game.Owner.Apparatus.GetComponentsInChildren<COgheSwingTransfer>())
+                text+=$"\nSwing {swing.name} phase={swing.Phase} actor={swing.Actor} dock={swing.ChosenDock} landings={swing.Landings} misses={swing.Misses} message={swing.LastMessage}";
             return text;
         }
         private IEnumerator Capture(string label)
         {
+            if(noScreenshots)yield break;
             yield return new WaitForEndOfFrame();var image=ScreenCapture.CaptureScreenshotAsTexture();
             try{File.WriteAllBytes(Path.Combine(directory,$"{result.level:00}-{shot++:000}-{label}.png"),image.EncodeToPNG());}finally{Destroy(image);}
+        }
+        private void BeginProfilerCapture(int level)
+        {
+            result.profilerFile=Path.Combine(directory,$"level-{level:00}.raw");
+            Profiler.maxUsedMemory=128*1024*1024;
+            Profiler.logFile=result.profilerFile;
+            Profiler.enableBinaryLog=true;
+            Profiler.enabled=true;
+            ownsProfiler=true;profileStarted=Time.realtimeSinceStartup;
+            profileTimer=StartCoroutine(EndProfilerAfterWindow());
+            Debug.Log($"COGHE_PROFILE_BEGIN level={level} seconds={profileSeconds} path={result.profilerFile}");
+        }
+        private IEnumerator EndProfilerAfterWindow()
+        {
+            yield return new WaitForSecondsRealtime(profileSeconds);
+            profileTimer=null;StopProfilerCapture();
+        }
+        private void StopProfilerCapture()
+        {
+            if(!ownsProfiler)return;
+            if(profileTimer!=null){StopCoroutine(profileTimer);profileTimer=null;}
+            Profiler.enabled=false;Profiler.logFile="";ownsProfiler=false;
+            if(result!=null)result.profilerSeconds=Time.realtimeSinceStartup-profileStarted;
+            Debug.Log($"COGHE_PROFILE_END level={result?.level} seconds={result?.profilerSeconds:F2}");
         }
         private void Save()=>File.WriteAllText(Path.Combine(directory,"run.json"),JsonUtility.ToJson(report,true));
     }

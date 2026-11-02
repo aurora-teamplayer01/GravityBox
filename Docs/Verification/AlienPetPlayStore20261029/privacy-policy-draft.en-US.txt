@@ -1,0 +1,55 @@
+DRAFT — NOT READY TO PUBLISH
+This document describes the audited Android build on 29 October 2026. Bracketed items must be resolved before publication. It is not a live privacy policy and must not be submitted as the policy URL.
+
+Alien Pet: Escape Puzzle — Privacy Policy
+Effective date: [DATE OF PUBLICATION]
+
+Who is responsible
+Alien Pet: Escape Puzzle (Android package com.gravityboxlab.venom) is listed by YoloStudioGlobal. The responsible operator is [CONFIRMED RESPONSIBLE ENTITY OR INDIVIDUAL]. For privacy questions, requests or game support, contact support@suri.house.
+
+Playing the game
+The current Android build does not require an account, a name, an email address or a phone number to play. Progress, unlocked items, virtual Drops, customization and settings are stored locally on your device. The game does not provide an account-based cloud-save service. Gameplay events described below are separate from this local save.
+
+Gameplay analytics
+We use Google Analytics for Firebase to understand how the game is used and improve level difficulty and reliability. Events include starting, completing and failing levels, attempts and duration, tutorial progress, virtual rewards, item selections, and interactions with pet-care and advertising features. Event parameters may include level and attempt identifiers, item identifiers, virtual currency amounts, and the app or economy version. These events are not a recording of the screen or of everything you type or do on your device.
+
+The Analytics SDK also processes installation/device identifiers and device/app information. [VERIFY AND DESCRIBE THE RELEASE CONFIGURATION: ADVERTISING ID COLLECTION, ADVERTISING FEATURES, GOOGLE SIGNALS, DATA SHARING, CONSENT AND ANY CHILD/AGE RESTRICTIONS.]
+
+Ads
+The game integrates Google AdMob to show ads, including optional ads that offer an in-game reward. Google's advertising SDK processes identifiers, approximate location derived from an IP address, ad/app interactions and diagnostic information for advertising, measurement and fraud prevention. Ads may be delivered and measured by Google and its advertising partners. Available choices and ad behavior depend on the consent and age configuration of the released version.
+
+Configuration and service providers
+Firebase Remote Config supplies game configuration values. It processes a Firebase installation identifier and technical context such as country, language, time zone and platform to return configuration to the app. This does not upload the complete local game save.
+
+These Google services may process information outside your country. Their documentation describes their processing and safeguards:
+Google Privacy Policy: https://policies.google.com/privacy
+Firebase privacy and security: https://firebase.google.com/support/privacy
+Google Mobile Ads disclosures: https://developers.google.com/admob/unity/privacy/play-data-disclosure
+
+Privacy choices
+When required by Google's consent platform, the Pause menu provides Privacy choices to review available advertising consent options. Android also provides advertising-identifier controls in device settings. [REPLACE THIS PARAGRAPH WITH THE VERIFIED RELEASE'S ANALYTICS CHOICE AND AGE/CONSENT FLOW. The audited code enables Analytics before the consent reply and has no in-game Analytics toggle. UMP's possible dashboard-controlled Analytics Consent Mode integration is unverified. Do not claim that Privacy choices disables Analytics without testing the final configuration.]
+
+Retention and deletion
+Local progress and settings remain on the device until cleared or otherwise removed by the device/app. Clearing local app storage also resets local progress; it does not itself delete previously transmitted data from Google services.
+
+[INSERT VERIFIED ANALYTICS RETENTION SETTING, ANY RESET-ON-ACTIVITY SETTING, THE OPERATOR'S RETENTION FOR SUPPORT REQUESTS AND ANY EXPORTS, AND THE REMOTE CONFIG/INSTALLATION RETENTION AND DELETION PRACTICE.]
+
+[INSERT AN OPERABLE PRIVACY REQUEST PROCESS: PUBLIC CONTACT, INFORMATION NEEDED TO LOCATE THE RELEVANT DATA WITHOUT REQUESTING UNNECESSARY SENSITIVE INFORMATION, AND HOW REQUESTS ARE HANDLED. No in-game SDK-data deletion control was found in the audited build. Do not promise a deletion capability or deadline that has not been implemented.]
+
+Children and families
+[RELEASE BLOCKER: The intended audience includes children. Insert an accurate explanation of the final audience, age handling, parental/child privacy controls and restricted ad/Analytics processing after those controls have been implemented and verified. Do not replace this with a statement that the game is not intended for children; that would conflict with the project's stated audience.]
+
+Security
+Google documents encrypted transport for the Firebase and Google Mobile Ads services used by the game. No transmission or storage method is completely risk-free. [CONFIRM THE OPERATOR'S ACCESS CONTROLS AND SUPPORT-DATA HANDLING BEFORE ADDING SPECIFIC PROMISES.]
+
+Policy changes
+We will update this policy when the game's data practices change. [CONFIRM HOW MATERIAL CHANGES AND ANY REQUIRED NEW CONSENT WILL BE PRESENTED TO PLAYERS.]
+
+AUTHORING NOTES — REMOVE ONLY AFTER RESOLVING
+1. Public support/privacy email support@suri.house is verified on the existing Critter Jam website and its reuse has been authorized by the owner. Confirm the responsible Alien Pet operator: the site names NTKL Studio while the Play account display is YoloStudioGlobal.
+2. Confirm launch countries, audience/age handling, Analytics dashboard settings and retention. Align code, Google dashboards, this policy and Play Data safety.
+3. Publish the completed policy on the existing authorized site, proposed URL https://cj.suri.house/alien-pet-privacy, then add an accessible policy link inside the game and in Play Console. This proposed page is not yet published. The conditional UMP Privacy choices button is not a policy link. Preserve Critter Jam's existing /privacy page.
+4. Configure the AdMob privacy messages. The last store smoke reported UMP error 3, no consent forms configured.
+5. Re-audit after changing the build. This draft does not certify the current build as ready for a child-directed release.
+
+Audit evidence: COgheGoogleServices.cs; COgheRemoteConfig.cs; COgheAnalytics.cs; COgheShop.cs; VenomCampaignSave.cs; COgheProductUI.View.cs. See privacy-contact-audit.json and the sibling Data safety/content audit for details.

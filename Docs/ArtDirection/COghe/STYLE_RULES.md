@@ -1,3 +1,7 @@
+# Public game identity — 28/10/2026
+
+The approved game title is **Alien Pet: Escape Puzzle**. Use **Alien Pet** as the primary wordmark and **Escape Puzzle** as its subtitle, in the existing Manrope / ivory / muted teal palette. **COghe remains the creature's name**, including dialogue, Understand COghe, Home and tutorials. The approved text-free creature app icon is retained. Player-facing upgrade naming is **Alien Pet Plus**. Do not rename persisted keys, bundle identifiers, SKU IDs or resources as part of branding. This scoped rule supersedes earlier references to COghe as the game title, not the existing art or gameplay rules.
+
 # COghe — Day Lab design rules
 
 Status: **approved direction, consolidated 29/09/2026**. Version 2.0 — Glass C / Spatial.

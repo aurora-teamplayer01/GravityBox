@@ -27,11 +27,31 @@ namespace GravityBox.Venom
         private bool brakeSet;
         private float brakePosition;
         private bool lowerCatch;
+        private Transform cachedFrame;
+        private Rigidbody frameBody;
+        private VenomMovableProp prop;
+        private bool componentsInitialized;
+
+        // Frame may be reassigned by authoring; its Rigidbody identity is stable during a simulated journey.
+        public Rigidbody FrameBody
+        {
+            get
+            {
+                if (!ReferenceEquals(cachedFrame, Frame) || frameBody == null)
+                { cachedFrame = Frame; frameBody = Frame.GetComponent<Rigidbody>(); }
+                return frameBody;
+            }
+        }
+
+        public override void InitializeMechanism(VenomCampaign game) => RefreshComponents();
+        private void RefreshComponents()
+        { cachedFrame = Frame; frameBody = Frame.GetComponent<Rigidbody>(); prop = GetComponent<VenomMovableProp>(); componentsInitialized = true; }
 
         public void ApplyEffort(Vector3 force) { pendingEffort += Vector3.Project(force, WorldAxis); }
         public void ReleaseLatch() { Latched = false; }
         public override void ResetMechanism(VenomCampaign game)
         {
+            RefreshComponents();
             pendingEffort = Vector3.zero; Effort = 0; Speed = 0; Latched = false; brakeSet = false; lowerCatch = false;
             Body.position = Frame.TransformPoint(Start + Axis.normalized * InitialTravel);
             Body.rotation = Frame.rotation;
@@ -42,23 +62,27 @@ namespace GravityBox.Venom
         private void SetBrake(bool enabled)
         {
             if (enabled && !brakeSet) brakePosition = Position;
-            Joint.connectedAnchor = Start + Axis.normalized * (enabled ? brakePosition : Travel * .5f);
-            Joint.xMotion = enabled ? ConfigurableJointMotion.Locked : ConfigurableJointMotion.Limited;
+            Vector3 anchor = Start + Axis.normalized * (enabled ? brakePosition : Travel * .5f);
+            var motion = enabled ? ConfigurableJointMotion.Locked : ConfigurableJointMotion.Limited;
+            // Exact equality preserves small authored adjustments; read the joint so external changes are still repaired.
+            if (!Joint.connectedAnchor.Equals(anchor)) Joint.connectedAnchor = anchor;
+            if (Joint.xMotion != motion) Joint.xMotion = motion;
             brakeSet = enabled;
         }
         public override void StepMechanism(VenomCampaign game, float dt)
         {
+            if (!componentsInitialized) RefreshComponents();
             if (LatchAtEnd && AtEnd) { Latched = true; lowerCatch = false; }
             if (LatchAtStart && Position <= CatchTolerance) { Latched = true; lowerCatch = true; }
             // A deliberate reverse pull releases a terminal catch. Gates keep their separate brake.
             Effort = Vector3.Dot(pendingEffort, WorldAxis);
             if (Latched && (lowerCatch ? Effort > Resistance + .004f : Effort < -Resistance - .004f)) Latched = false;
             SetBrake(Locked || Latched);
-            Vector3 relative = Body.linearVelocity - Frame.GetComponent<Rigidbody>().GetPointVelocity(Body.position);
+            Vector3 relative = Body.linearVelocity - FrameBody.GetPointVelocity(Body.position);
             float speed = Vector3.Dot(relative, WorldAxis); Speed = speed;
             float gravity = Gravity ? Vector3.Dot(Vector3.down * 9.81f * Body.mass, WorldAxis) : 0;
             // Campaign applies gravity to props. Cancel it here and apply exactly one axial force.
-            if (GetComponent<VenomMovableProp>() != null) Body.AddForce(Vector3.up * 9.81f, ForceMode.Acceleration);
+            if (prop != null) Body.AddForce(Vector3.up * 9.81f, ForceMode.Acceleration);
             float drive = Effort + gravity;
             float friction = Mathf.Abs(speed) < .002f ? Mathf.Clamp(drive, -Resistance, Resistance) : Mathf.Sign(speed) * Resistance;
             if (!Locked && !Latched) Body.AddForce(WorldAxis * (drive - friction - speed * Damping));

@@ -1,0 +1,104 @@
+{
+  "conclusion": "Eleven TextureImporter files gained only disabled VisionOS/tvOS entries matching their existing default platform; no existing Android/iOS import setting or GUID changed. These files were imported in the Play build log at lines389-399 and their modification timestamps fall during the build. Assets were left untouched by this audit.",
+  "files": [
+    {
+      "path": "Assets/_Game/Venom/Resources/COgheHome/Icons/SNACK_APPLE_PIE.png.meta",
+      "only_added_platform_defaults": true,
+      "platforms": [
+        "VisionOS",
+        "tvOS"
+      ],
+      "added_settings_match_default_platform": true
+    },
+    {
+      "path": "Assets/_Game/Venom/Resources/COgheHome/Icons/SNACK_CHILLI_CANDY.png.meta",
+      "only_added_platform_defaults": true,
+      "platforms": [
+        "VisionOS",
+        "tvOS"
+      ],
+      "added_settings_match_default_platform": true
+    },
+    {
+      "path": "Assets/_Game/Venom/Resources/COgheHome/Icons/SNACK_ICE_CREAM.png.meta",
+      "only_added_platform_defaults": true,
+      "platforms": [
+        "VisionOS",
+        "tvOS"
+      ],
+      "added_settings_match_default_platform": true
+    },
+    {
+      "path": "Assets/_Game/Venom/Resources/COgheHome/Icons/SNACK_LEMON_DROP.png.meta",
+      "only_added_platform_defaults": true,
+      "platforms": [
+        "VisionOS",
+        "tvOS"
+      ],
+      "added_settings_match_default_platform": true
+    },
+    {
+      "path": "Assets/_Game/Venom/Resources/COgheHome/Icons/SNACK_STRAWBERRY_CAKE.png.meta",
+      "only_added_platform_defaults": true,
+      "platforms": [
+        "VisionOS",
+        "tvOS"
+      ],
+      "added_settings_match_default_platform": true
+    },
+    {
+      "path": "Assets/_Game/Venom/Resources/COgheHome/Icons/TOY_BALLOON.png.meta",
+      "only_added_platform_defaults": true,
+      "platforms": [
+        "VisionOS",
+        "tvOS"
+      ],
+      "added_settings_match_default_platform": true
+    },
+    {
+      "path": "Assets/_Game/Venom/Resources/COgheHome/Icons/TOY_DRUM.png.meta",
+      "only_added_platform_defaults": true,
+      "platforms": [
+        "VisionOS",
+        "tvOS"
+      ],
+      "added_settings_match_default_platform": true
+    },
+    {
+      "path": "Assets/_Game/Venom/Resources/COgheHome/Icons/TOY_HORN.png.meta",
+      "only_added_platform_defaults": true,
+      "platforms": [
+        "VisionOS",
+        "tvOS"
+      ],
+      "added_settings_match_default_platform": true
+    },
+    {
+      "path": "Assets/_Game/Venom/Resources/COgheHome/Icons/TOY_MUSICBOX.png.meta",
+      "only_added_platform_defaults": true,
+      "platforms": [
+        "VisionOS",
+        "tvOS"
+      ],
+      "added_settings_match_default_platform": true
+    },
+    {
+      "path": "Assets/_Game/Venom/Resources/COgheHome/Icons/TOY_TOP.png.meta",
+      "only_added_platform_defaults": true,
+      "platforms": [
+        "VisionOS",
+        "tvOS"
+      ],
+      "added_settings_match_default_platform": true
+    },
+    {
+      "path": "Assets/_Game/Venom/Resources/COgheStyle/Icons/HAT_BEE.png.meta",
+      "only_added_platform_defaults": true,
+      "platforms": [
+        "VisionOS",
+        "tvOS"
+      ],
+      "added_settings_match_default_platform": true
+    }
+  ]
+}

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Unity.Profiling;
 using UnityEngine;
 
 namespace GravityBox.Venom
@@ -6,6 +7,13 @@ namespace GravityBox.Venom
     // Small surface graph: route only the command given, never solve mechanism dependencies.
     public sealed class VenomCampaignMotion
     {
+        private static readonly ProfilerMarker GraphBuildMarker = new ProfilerMarker("COghe.Navigation.BuildGraph");
+        private static readonly ProfilerMarker GraphSyncMarker = new ProfilerMarker("COghe.Navigation.BuildGraph.SyncTransforms");
+        private static readonly ProfilerMarker GraphSnapshotMarker = new ProfilerMarker("COghe.Navigation.BuildGraph.Snapshot");
+        private static readonly ProfilerMarker GraphNodesMarker = new ProfilerMarker("COghe.Navigation.BuildGraph.Nodes");
+        private static readonly ProfilerMarker GraphEdgesMarker = new ProfilerMarker("COghe.Navigation.BuildGraph.Edges");
+        private static readonly ProfilerMarker GraphRevisionMarker = new ProfilerMarker("COghe.Navigation.BuildGraph.CaptureRevision");
+        private static readonly ProfilerMarker RouteSearchMarker = new ProfilerMarker("COghe.Navigation.Search");
         public sealed class Order
         {
             public int Anchor;
@@ -263,50 +271,58 @@ namespace GravityBox.Venom
         public void BuildGraph(bool force=false)
         {
             if(!force&&graphRevision.Matches(game))return;
+            using var graphScope=GraphBuildMarker.Auto();
             COgheMobileMetrics.Begin(2);GraphBuildCount++;
-            Physics.SyncTransforms();
-            navigation.Capture(game);
-            nodes.Clear();worldNodes.Clear();nodeSurfaces.Clear();nodeRise.Clear();links.Clear();cells.Clear();int cellCount=0;
-            Matrix4x4 toRoot=game.Root.worldToLocalMatrix;
-            foreach(var s in game.Surfaces)
+            using(GraphSyncMarker.Auto())Physics.SyncTransforms();
+            using(GraphSnapshotMarker.Auto())navigation.Capture(game);
+            using(GraphNodesMarker.Auto())
             {
-                if(!s.isActiveAndEnabled||s.IsCurved)continue;
-                Matrix4x4 toWorld=s.transform.localToWorldMatrix;
-                bool wall=Mathf.Abs(Vector3.Dot(s.Normal,game.Root.up))<.5f;float foot=float.PositiveInfinity;
-                if(wall)foreach(var corner in new[]{new Vector3(-1,-1),new Vector3(1,-1),new Vector3(1,1),new Vector3(-1,1)})
-                    foot=Mathf.Min(foot,Vector3.Dot(toWorld.MultiplyPoint3x4(new Vector3(corner.x*s.Size.x*.5f,corner.y*s.Size.y*.5f,0)),game.Root.up));
-                int nx=Mathf.Max(1,Mathf.CeilToInt(s.Size.x/.065f)),ny=Mathf.Max(1,Mathf.CeilToInt(s.Size.y/.065f));
-                for(int x=0;x<=nx;x++)for(int y=0;y<=ny;y++)
+                nodes.Clear();worldNodes.Clear();nodeSurfaces.Clear();nodeRise.Clear();links.Clear();cells.Clear();int cellCount=0;
+                Matrix4x4 toRoot=game.Root.worldToLocalMatrix;
+                foreach(var s in game.Surfaces)
                 {
-                    float ix=Mathf.Min(.017f,s.Size.x*.25f),iy=Mathf.Min(.017f,s.Size.y*.25f);
-                    var p=new Vector3(Mathf.Lerp(-s.Size.x*.5f+ix,s.Size.x*.5f-ix,x/(float)nx),Mathf.Lerp(-s.Size.y*.5f+iy,s.Size.y*.5f-iy,y/(float)ny),.021f);
-                    Vector3 world=toWorld.MultiplyPoint3x4(p);
-                    if(!s.Contains(p)||navigation.Occupied(world))continue;
-                    int index=nodes.Count;Vector3 local=toRoot.MultiplyPoint3x4(world);
-                    nodes.Add(local);worldNodes.Add(world);nodeSurfaces.Add(s);nodeRise.Add(wall?Vector3.Dot(world,game.Root.up)-foot:0);
-                    if(linkStorage.Count<=index)linkStorage.Add(new List<int>(8));
-                    var connections=linkStorage[index];connections.Clear();links.Add(connections);
-                    Vector3Int cell=Cell(local);
-                    if(!cells.TryGetValue(cell,out var bucket))
+                    if(!s.isActiveAndEnabled||s.IsCurved)continue;
+                    Matrix4x4 toWorld=s.transform.localToWorldMatrix;
+                    bool wall=Mathf.Abs(Vector3.Dot(s.Normal,game.Root.up))<.5f;float foot=float.PositiveInfinity;
+                    if(wall)foreach(var corner in new[]{new Vector3(-1,-1),new Vector3(1,-1),new Vector3(1,1),new Vector3(-1,1)})
+                        foot=Mathf.Min(foot,Vector3.Dot(toWorld.MultiplyPoint3x4(new Vector3(corner.x*s.Size.x*.5f,corner.y*s.Size.y*.5f,0)),game.Root.up));
+                    int nx=Mathf.Max(1,Mathf.CeilToInt(s.Size.x/.065f)),ny=Mathf.Max(1,Mathf.CeilToInt(s.Size.y/.065f));
+                    for(int x=0;x<=nx;x++)for(int y=0;y<=ny;y++)
                     {
-                        if(cellStorage.Count<=cellCount)cellStorage.Add(new List<int>(16));
-                        bucket=cellStorage[cellCount++];bucket.Clear();cells.Add(cell,bucket);
+                        float ix=Mathf.Min(.017f,s.Size.x*.25f),iy=Mathf.Min(.017f,s.Size.y*.25f);
+                        var p=new Vector3(Mathf.Lerp(-s.Size.x*.5f+ix,s.Size.x*.5f-ix,x/(float)nx),Mathf.Lerp(-s.Size.y*.5f+iy,s.Size.y*.5f-iy,y/(float)ny),.021f);
+                        Vector3 world=toWorld.MultiplyPoint3x4(p);
+                        if(!s.Contains(p)||navigation.Occupied(world))continue;
+                        int index=nodes.Count;Vector3 local=toRoot.MultiplyPoint3x4(world);
+                        nodes.Add(local);worldNodes.Add(world);nodeSurfaces.Add(s);nodeRise.Add(wall?Vector3.Dot(world,game.Root.up)-foot:0);
+                        if(linkStorage.Count<=index)linkStorage.Add(new List<int>(8));
+                        var connections=linkStorage[index];connections.Clear();links.Add(connections);
+                        Vector3Int cell=Cell(local);
+                        if(!cells.TryGetValue(cell,out var bucket))
+                        {
+                            if(cellStorage.Count<=cellCount)cellStorage.Add(new List<int>(16));
+                            bucket=cellStorage[cellCount++];bucket.Clear();cells.Add(cell,bucket);
+                        }
+                        bucket.Add(index);
                     }
-                    bucket.Add(index);
                 }
             }
-            for(int i=0;i<nodes.Count;i++)
+            using(GraphEdgesMarker.Auto())
             {
-                neighbours.Clear();var cell=Cell(nodes[i]);
-                for(int x=-1;x<=1;x++)for(int y=-1;y<=1;y++)for(int z=-1;z<=1;z++)
-                    if(cells.TryGetValue(cell+new Vector3Int(x,y,z),out var bucket))
-                        foreach(int j in bucket)if(j>i&&(nodes[i]-nodes[j]).sqrMagnitude<=.10f*.10f)neighbours.Add(j);
-                // Preserve the original deterministic edge order for equal-cost routes.
-                neighbours.Sort();
-                foreach(int j in neighbours)if(navigation.Clear(worldNodes[i],worldNodes[j],.006f))
-                {links[i].Add(j);links[j].Add(i);}
+                for(int i=0;i<nodes.Count;i++)
+                {
+                    neighbours.Clear();var cell=Cell(nodes[i]);
+                    for(int x=-1;x<=1;x++)for(int y=-1;y<=1;y++)for(int z=-1;z<=1;z++)
+                        if(cells.TryGetValue(cell+new Vector3Int(x,y,z),out var bucket))
+                            foreach(int j in bucket)if(j>i&&(nodes[i]-nodes[j]).sqrMagnitude<=.10f*.10f)neighbours.Add(j);
+                    // Preserve the original deterministic edge order for equal-cost routes.
+                    neighbours.Sort();
+                    foreach(int j in neighbours)if(navigation.Clear(worldNodes[i],worldNodes[j],.006f))
+                    {links[i].Add(j);links[j].Add(i);}
+                }
             }
-            graphRevision.Capture(game);COgheMobileMetrics.End(2);
+            using(GraphRevisionMarker.Auto())graphRevision.Capture(game);
+            COgheMobileMetrics.End(2);
         }
         public void Move(int anchor,Vector3 world,bool hold=false,bool exit=false,Rigidbody keepOff=null)
         {
@@ -342,6 +358,7 @@ namespace GravityBox.Venom
         }
         private bool Search(Vector3 start,Vector3 goal,List<Vector3> path,bool avoidSlippery,bool quiet,Rigidbody keepOff)
         {
+            using var routeScope=RouteSearchMarker.Auto();
             COgheMobileMetrics.Begin(3);
             path.Clear();int n=nodes.Count;
             if(n==0){path.Add(game.Root.InverseTransformPoint(goal));COgheMobileMetrics.End(3);return false;}

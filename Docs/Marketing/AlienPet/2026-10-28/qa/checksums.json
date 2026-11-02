@@ -1,0 +1,34 @@
+{
+  "AlienPet_C_CUTE_PET_24s_1080x1920.mp4": {
+    "bytes": 8781120,
+    "sha256": "3d9d1c236df098f848c1d314effaca38fc66cb2762aafc1b2d25012237492321"
+  },
+  "AlienPet_A_ESCAPE_22s_1080x1920.mp4": {
+    "bytes": 9085679,
+    "sha256": "823ea6fbd66430312171f94067f10b1a5d414723451f4403006e57076ed50657"
+  },
+  "AlienPet_F_GAME_SHOWCASE_30s_1080x1920.mp4": {
+    "bytes": 9436229,
+    "sha256": "ecf3d3dcfdeb28f5191b76df622f4984b499534117e8c64d4a05c4a921e1116b"
+  },
+  "AlienPet_G_CINEMATIC_ESCAPE_30s_1080x1920.mp4": {
+    "bytes": 21860063,
+    "sha256": "13fd62339248a1a3bd487b5fe7cff528b904cd1ba95c6f521d25218472b4a959"
+  },
+  "AlienPet_E_PET_PLAY_17s_1080x1920.mp4": {
+    "bytes": 5986282,
+    "sha256": "d0dcb12a595ad9b5f8d936d5bc2e5ca0f9cb92b9d448ecab3990f78b51e94886"
+  },
+  "AlienPet_H_GAMEPLAY_TOUR_30s_1080x1920.mp4": {
+    "bytes": 7234606,
+    "sha256": "ab00eb4f5a8cd5203e54fd2e0819939af6e3bd87d0ffc16205740f2806973db6"
+  },
+  "AlienPet_D_PUZZLE_15s_1080x1920.mp4": {
+    "bytes": 3955310,
+    "sha256": "7041ffd457acb59f4da07977495b496c57d17124ca6fab10f5eec25d4c6cabca"
+  },
+  "AlienPet_B_BEST_FRIEND_24s_1080x1920.mp4": {
+    "bytes": 9046083,
+    "sha256": "21e47a8e7de006e64c4ff513efabe6557f7bd8bfcca1f7c85340ab32713661f7"
+  }
+}

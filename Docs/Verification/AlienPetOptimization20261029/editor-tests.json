@@ -1,0 +1,1282 @@
+{
+  "total": 209,
+  "passed": 209,
+  "suites": [
+    {
+      "file": "tests-final-targeted.xml",
+      "result": "Passed",
+      "total": "27",
+      "passed": "27",
+      "failed": "0",
+      "duration": "134.5520656",
+      "start-time": "2026-10-29 08:15:53Z",
+      "end-time": "2026-10-29 08:18:08Z"
+    },
+    {
+      "file": "tests-final-campaign-product.xml",
+      "result": "Passed",
+      "total": "182",
+      "passed": "182",
+      "failed": "0",
+      "duration": "1008.4001303",
+      "start-time": "2026-10-29 08:22:28Z",
+      "end-time": "2026-10-29 08:39:17Z"
+    }
+  ],
+  "tests": [
+    {
+      "test": "GravityBox.Tests.COgheMechanismHotLoopTests.BrakeKeepsItsCaptureUntilReleasedAndRepairsChangedConfiguration",
+      "result": "Passed",
+      "seconds": 0.019474,
+      "suite": "tests-final-targeted.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheMechanismHotLoopTests.RailRetainsTheSameQueuedForceAndRefreshesItsFrameReference",
+      "result": "Passed",
+      "seconds": 0.000884,
+      "suite": "tests-final-targeted.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheMechanismHotLoopTests.TapActivityRefreshesOnStateAndLabelChangesButReusesUnchangedText",
+      "result": "Passed",
+      "seconds": 0.001237,
+      "suite": "tests-final-targeted.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheMechanismHotLoopTests.TubeReconciliationRevisitsTheSameGroupsAfterMergeAndNewCommands",
+      "result": "Passed",
+      "seconds": 0.002454,
+      "suite": "tests-final-targeted.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheMobilePerformanceTests.CachedQueriesPreserveAperturesAndMovingSurfaceGeometryAcrossExpansion",
+      "result": "Passed",
+      "seconds": 4.402228,
+      "suite": "tests-final-targeted.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheMobilePerformanceTests.GraphRevisionMatchesFreshGraphAcrossDoorMotionAndApertureChanges",
+      "result": "Passed",
+      "seconds": 2.322316,
+      "suite": "tests-final-targeted.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheMobilePerformanceTests.HeapPathsMatchOriginalDijkstraIncludingTieBreaksAndCornerWaypoints",
+      "result": "Passed",
+      "seconds": 2.787291,
+      "suite": "tests-final-targeted.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheMobilePerformanceTests.Level14_RotationCannotPullHingeOrGateOffTheirPhysicalRails",
+      "result": "Passed",
+      "seconds": 2.395425,
+      "suite": "tests-final-targeted.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheMobilePerformanceTests.RepeatedCommandsReuseGraphButMovingDoorAndApertureInvalidateIt",
+      "result": "Passed",
+      "seconds": 0.536033,
+      "suite": "tests-final-targeted.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheNavigationEquivalenceTests.N43AndN50GraphEdgesMatchExactReferenceAfterMechanismAndApertureChanges",
+      "result": "Passed",
+      "seconds": 22.697438,
+      "suite": "tests-final-targeted.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheNavigationEquivalenceTests.QueriesMatchExactAcrossMutableRemovedAndReorderedBlockers",
+      "result": "Passed",
+      "seconds": 0.87293,
+      "suite": "tests-final-targeted.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheNavigationEquivalenceTests.QueriesMatchExactWhenDoorsOpenReorderOrMeshesRecook",
+      "result": "Passed",
+      "seconds": 0.082767,
+      "suite": "tests-final-targeted.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheNavigationEquivalenceTests.SegmentPruningPreservesThinPanesAperturesAndRotatedMovingObstacles",
+      "result": "Passed",
+      "seconds": 0.242745,
+      "suite": "tests-final-targeted.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COghePipeExpansionTests.FusionIsOpenAtAMouthButBlockedAcrossRealTubeAndCapGeometry",
+      "result": "Passed",
+      "seconds": 0.377089,
+      "suite": "tests-final-targeted.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COghePipeExpansionTests.MazeBranchCanBeChosenByAnActualScreenTap",
+      "result": "Passed",
+      "seconds": 0.530099,
+      "suite": "tests-final-targeted.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COghePipeExpansionTests.MazeFlowsToAJunctionWaitsAndPhysicallyReturnsFromADeadEnd",
+      "result": "Passed",
+      "seconds": 0.863825,
+      "suite": "tests-final-targeted.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COghePipeExpansionTests.MazeOnlyUnlocksExitAfterTheChosenConnectedRouteReachesItsDistalTerminal",
+      "result": "Passed",
+      "seconds": 1.383417,
+      "suite": "tests-final-targeted.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COghePipeExpansionTests.TappingAVisibleFarMouthQueuesARealSurfaceApproachThenEntersOnContact",
+      "result": "Passed",
+      "seconds": 0.400281,
+      "suite": "tests-final-targeted.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheProductUITests.CleverLevel25WorksWithSavedCardAndProductPresentation",
+      "result": "Passed",
+      "seconds": 31.168116,
+      "suite": "tests-final-targeted.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheRailFeelTests.HandlesPullSmoothly01to10",
+      "result": "Passed",
+      "seconds": 6.458477,
+      "suite": "tests-final-targeted.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheRailFeelTests.HandlesPullSmoothly11to20",
+      "result": "Passed",
+      "seconds": 10.283683,
+      "suite": "tests-final-targeted.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheRailFeelTests.HandlesPullSmoothly21to30",
+      "result": "Passed",
+      "seconds": 12.525952,
+      "suite": "tests-final-targeted.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheRailFeelTests.HandlesPullSmoothly31to40",
+      "result": "Passed",
+      "seconds": 7.850137,
+      "suite": "tests-final-targeted.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheRailFeelTests.HandlesPullSmoothly41to50",
+      "result": "Passed",
+      "seconds": 13.094555,
+      "suite": "tests-final-targeted.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.DirectedSkinCacheExactlyMatchesDenseAcrossPlaneWrapAndGenerationReset",
+      "result": "Passed",
+      "seconds": 2.967327,
+      "suite": "tests-final-targeted.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.SparseSkinExactlyMatchesDenseFieldAndMeshAcrossBufferReuse",
+      "result": "Passed",
+      "seconds": 3.926237,
+      "suite": "tests-final-targeted.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.SparseSkinExactlyMatchesDenseMonsterAndInjectedInk",
+      "result": "Passed",
+      "seconds": 6.061689,
+      "suite": "tests-final-targeted.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheProductUITests.AbilityCardsCanBeChangedBeforeConfirmAndMaxCannotBePicked",
+      "result": "Passed",
+      "seconds": 2.254599,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheProductUITests.AbilityCardsFitPhonesAndTabletsWithoutOverlaps",
+      "result": "Passed",
+      "seconds": 1.653219,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheProductUITests.FragmentButtonsSelectPartsWithoutIssuingAMove",
+      "result": "Passed",
+      "seconds": 1.034907,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheProductUITests.HomeAbilityShowsBarsAndAWaitingCard",
+      "result": "Passed",
+      "seconds": 1.75558,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheProductUITests.HomeLockAndMenuRoundTripLeavePuzzlePhysicsIntact",
+      "result": "Passed",
+      "seconds": 1.327412,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheProductUITests.HomeMonsterReturnsToLiquidAndCanBeInterrupted",
+      "result": "Passed",
+      "seconds": 7.259037,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheProductUITests.HomeTurnsWithADragAndZoomFollowsCOghe",
+      "result": "Passed",
+      "seconds": 10.806245,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheProductUITests.RealMenuCreatureDoesNotUnlockOrCompletePuzzles",
+      "result": "Passed",
+      "seconds": 4.10234,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheProductUITests.RewardFxRemainDecorativeExpireWhilePausedAndDoNotReplayOnRelayout",
+      "result": "Passed",
+      "seconds": 3.63026,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheProductUITests.StyleHoldInjectsTheChosenInkAndUndoTakesItBack",
+      "result": "Passed",
+      "seconds": 6.819134,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheProductUITests.TheSavedLookIsWornInTheNextLevel",
+      "result": "Passed",
+      "seconds": 1.496242,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheProductUITests.VictoryRewardsAndAdClosureNeverAdvanceWithoutNextTap",
+      "result": "Passed",
+      "seconds": 6.186414,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheProductUITests.VictoryRewardsStayBelowDanceAndTripleUpdatesOneAmount",
+      "result": "Passed",
+      "seconds": 0.789153,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.BalconyLevelsSolveAt60And30Fps",
+      "result": "Passed",
+      "seconds": 68.720304,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.BoardingCanBeCancelledByAnotherTap",
+      "result": "Passed",
+      "seconds": 0.665421,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.Boss10RejectsShortcutsAndRecoversAfterReversingBridge",
+      "result": "Passed",
+      "seconds": 11.701308,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.Boss32NeedsRelayHandoffAndRecoversWhenHolderLeaves",
+      "result": "Passed",
+      "seconds": 10.34043,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.ElevatorRoundTripCarriesAllTissue",
+      "result": "Passed",
+      "seconds": 1.688047,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.GlassCrawlG2NoShortcut",
+      "result": "Passed",
+      "seconds": 13.684772,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.GlassCrawlG3NoShortcut",
+      "result": "Passed",
+      "seconds": 15.49568,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.GlassCrawlG4NoShortcut",
+      "result": "Passed",
+      "seconds": 14.689861,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.GlassCrawlG5NoShortcut",
+      "result": "Passed",
+      "seconds": 18.22945,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.GlassRoadG10NoShortcut",
+      "result": "Passed",
+      "seconds": 14.052303,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.GlassRoadG11NoShortcut",
+      "result": "Passed",
+      "seconds": 12.653436,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.GlassRoadG6NoShortcut",
+      "result": "Passed",
+      "seconds": 13.211068,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.GlassRoadG7NoShortcut",
+      "result": "Passed",
+      "seconds": 14.010666,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.GlassRoadG8NoShortcut",
+      "result": "Passed",
+      "seconds": 15.030186,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.GlassRoadG9NoShortcut",
+      "result": "Passed",
+      "seconds": 17.485926,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.InkIsCarriedByTheParticlesAndRinsesAway",
+      "result": "Passed",
+      "seconds": 2.203013,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.LatchedDeckKeepsGripThroughLoadSettlingButReleasesOnReverse",
+      "result": "Passed",
+      "seconds": 0.546406,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.MonsterEdgeReuseMatchesUncachedSurface",
+      "result": "Passed",
+      "seconds": 5.860987,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.MonsterGrowsAFaceAndLosesIt",
+      "result": "Passed",
+      "seconds": 6.288972,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.PersonalityActsNeverMoveTheBody",
+      "result": "Passed",
+      "seconds": 18.635989,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.PulleyCanBeReversedAndReset",
+      "result": "Passed",
+      "seconds": 1.868139,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.Spatial01Solve",
+      "result": "Passed",
+      "seconds": 0.678137,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.Spatial02Solve",
+      "result": "Passed",
+      "seconds": 0.915633,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.Spatial02Wander",
+      "result": "Passed",
+      "seconds": 2.974045,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.Spatial03Solve",
+      "result": "Passed",
+      "seconds": 0.924678,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.Spatial04Solve",
+      "result": "Passed",
+      "seconds": 0.95178,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.Spatial05Solve",
+      "result": "Passed",
+      "seconds": 1.405297,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.Spatial05Wander",
+      "result": "Passed",
+      "seconds": 2.447935,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.Spatial06Solve",
+      "result": "Passed",
+      "seconds": 2.274675,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.Spatial06Wander",
+      "result": "Passed",
+      "seconds": 7.126902,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.Spatial09Solve",
+      "result": "Passed",
+      "seconds": 2.336208,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.Spatial09Wander",
+      "result": "Passed",
+      "seconds": 4.151563,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.Spatial10Solve",
+      "result": "Passed",
+      "seconds": 6.571992,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.Spatial10Wander",
+      "result": "Passed",
+      "seconds": 9.077333,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.Spatial12Solve",
+      "result": "Passed",
+      "seconds": 2.455283,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.Spatial13Solve",
+      "result": "Passed",
+      "seconds": 2.952879,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.Spatial14PipePaceKeepsTheWholeBody",
+      "result": "Passed",
+      "seconds": 1.490179,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.Spatial14Solve",
+      "result": "Passed",
+      "seconds": 1.804385,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.Spatial15ReachesTheBalconyMouthRoundA",
+      "result": "Passed",
+      "seconds": 6.9322,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.Spatial15Solve",
+      "result": "Passed",
+      "seconds": 1.879283,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.Spatial16Solve",
+      "result": "Passed",
+      "seconds": 2.061271,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.Spatial17Solve",
+      "result": "Passed",
+      "seconds": 3.205013,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.Spatial18FallRecovery",
+      "result": "Passed",
+      "seconds": 1.377604,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.Spatial18RingFromFloor",
+      "result": "Passed",
+      "seconds": 1.07734,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.Spatial18Solve",
+      "result": "Passed",
+      "seconds": 0.916435,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.Spatial20NoSpanShortcut",
+      "result": "Passed",
+      "seconds": 4.583285,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.Spatial20Solve",
+      "result": "Passed",
+      "seconds": 5.261136,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.Spatial21ClimbBack",
+      "result": "Passed",
+      "seconds": 0.966491,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.Spatial21Solve",
+      "result": "Passed",
+      "seconds": 2.153663,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.Spatial22Solve",
+      "result": "Passed",
+      "seconds": 3.368582,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.Spatial26ClimbBack",
+      "result": "Passed",
+      "seconds": 1.259568,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.Spatial26FallRecovery",
+      "result": "Passed",
+      "seconds": 1.666894,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.Spatial26LatchIsOneWay",
+      "result": "Passed",
+      "seconds": 2.809674,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.Spatial26LateFallRecovery",
+      "result": "Passed",
+      "seconds": 1.772913,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.Spatial26RightHalfReachesTubeAfterLongWait",
+      "result": "Passed",
+      "seconds": 2.564735,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.Spatial26RightHalfReachesTubeAfterShortWait",
+      "result": "Passed",
+      "seconds": 2.544134,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.Spatial26Solve",
+      "result": "Passed",
+      "seconds": 3.568151,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.Spatial29ClimbBack",
+      "result": "Passed",
+      "seconds": 1.754963,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.Spatial29HalfCannotLiftFrame",
+      "result": "Passed",
+      "seconds": 5.763876,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.Spatial29Solve",
+      "result": "Passed",
+      "seconds": 6.137635,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.SpatialPlusB1Solve",
+      "result": "Passed",
+      "seconds": 5.00095,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.SpatialPlusB1Wander",
+      "result": "Passed",
+      "seconds": 11.399224,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.SpatialPlusB2RetryPartway",
+      "result": "Passed",
+      "seconds": 8.350962,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.SpatialPlusE04CartCancelAndRedo",
+      "result": "Passed",
+      "seconds": 2.64112,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.SpatialPlusE07BlockCancelAndRedo",
+      "result": "Passed",
+      "seconds": 2.542853,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.SpatialPlusE10Solve",
+      "result": "Passed",
+      "seconds": 1.265111,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.SpatialPlusE10Wander",
+      "result": "Passed",
+      "seconds": 4.459111,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.SpatialPlusE11Solve",
+      "result": "Passed",
+      "seconds": 4.493203,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.SpatialPlusE11Wander",
+      "result": "Passed",
+      "seconds": 7.174197,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.SpatialPlusF1Solve",
+      "result": "Passed",
+      "seconds": 2.269974,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.SpatialPlusF1Wander",
+      "result": "Passed",
+      "seconds": 5.376553,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.SpatialPlusG10Solve",
+      "result": "Passed",
+      "seconds": 1.781951,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.SpatialPlusG10Wander",
+      "result": "Passed",
+      "seconds": 2.62828,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.SpatialPlusG11Solve",
+      "result": "Passed",
+      "seconds": 2.321394,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.SpatialPlusG11Wander",
+      "result": "Passed",
+      "seconds": 4.145285,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.SpatialPlusG2Solve",
+      "result": "Passed",
+      "seconds": 1.893167,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.SpatialPlusG2Wander",
+      "result": "Passed",
+      "seconds": 3.485008,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.SpatialPlusG3Solve",
+      "result": "Passed",
+      "seconds": 1.804064,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.SpatialPlusG3Wander",
+      "result": "Passed",
+      "seconds": 2.613841,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.SpatialPlusG4Solve",
+      "result": "Passed",
+      "seconds": 2.554484,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.SpatialPlusG4Wander",
+      "result": "Passed",
+      "seconds": 4.649024,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.SpatialPlusG5Solve",
+      "result": "Passed",
+      "seconds": 6.728038,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.SpatialPlusG5Wander",
+      "result": "Passed",
+      "seconds": 8.74428,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.SpatialPlusG6Solve",
+      "result": "Passed",
+      "seconds": 1.177752,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.SpatialPlusG6Wander",
+      "result": "Passed",
+      "seconds": 2.125745,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.SpatialPlusG7Solve",
+      "result": "Passed",
+      "seconds": 1.836699,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.SpatialPlusG7Wander",
+      "result": "Passed",
+      "seconds": 2.842004,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.SpatialPlusG8Solve",
+      "result": "Passed",
+      "seconds": 3.241089,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.SpatialPlusG8Wander",
+      "result": "Passed",
+      "seconds": 5.741091,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.SpatialPlusG9Solve",
+      "result": "Passed",
+      "seconds": 6.944928,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.SpatialPlusG9Wander",
+      "result": "Passed",
+      "seconds": 10.760965,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.SpatialPlusK01Solve",
+      "result": "Passed",
+      "seconds": 1.515944,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.SpatialPlusK01Wander",
+      "result": "Passed",
+      "seconds": 3.520728,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.SpatialPlusK02Solve",
+      "result": "Passed",
+      "seconds": 2.133885,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.SpatialPlusK02Wander",
+      "result": "Passed",
+      "seconds": 4.358245,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.SpatialPlusK03Solve",
+      "result": "Passed",
+      "seconds": 3.564655,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.SpatialPlusK03Wander",
+      "result": "Passed",
+      "seconds": 5.671831,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.SpatialPlusK04Solve",
+      "result": "Passed",
+      "seconds": 3.664127,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.SpatialPlusK04Wander",
+      "result": "Passed",
+      "seconds": 5.814576,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.SpatialPlusK05Solve",
+      "result": "Passed",
+      "seconds": 4.037522,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.SpatialPlusK05Wander",
+      "result": "Passed",
+      "seconds": 5.559826,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.SpatialPlusK06Solve",
+      "result": "Passed",
+      "seconds": 3.815995,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.SpatialPlusK06Wander",
+      "result": "Passed",
+      "seconds": 5.757214,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.SpatialPlusK07Solve",
+      "result": "Passed",
+      "seconds": 4.24611,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.SpatialPlusK07Wander",
+      "result": "Passed",
+      "seconds": 5.502511,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.SpatialPlusK09Solve",
+      "result": "Passed",
+      "seconds": 5.534845,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.SpatialPlusK09Wander",
+      "result": "Passed",
+      "seconds": 7.440382,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.SpatialPlusN13Solve",
+      "result": "Passed",
+      "seconds": 3.649563,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.SpatialPlusN13Wander",
+      "result": "Passed",
+      "seconds": 5.897103,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.SpatialPlusN15Solve",
+      "result": "Passed",
+      "seconds": 1.975837,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.SpatialPlusN15Wander",
+      "result": "Passed",
+      "seconds": 4.684935,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.SpatialPlusN18Solve",
+      "result": "Passed",
+      "seconds": 3.914913,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.SpatialPlusN18Wander",
+      "result": "Passed",
+      "seconds": 6.086507,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.SpatialPlusN19Solve",
+      "result": "Passed",
+      "seconds": 4.27946,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.SpatialPlusN19Wander",
+      "result": "Passed",
+      "seconds": 7.06683,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.SpatialPlusN22Solve",
+      "result": "Passed",
+      "seconds": 1.88111,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.SpatialPlusN22Wander",
+      "result": "Passed",
+      "seconds": 3.418673,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.SpatialPlusN23Solve",
+      "result": "Passed",
+      "seconds": 1.805744,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.SpatialPlusN23Wander",
+      "result": "Passed",
+      "seconds": 4.465302,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.SpatialPlusN25Solve",
+      "result": "Passed",
+      "seconds": 2.648634,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.SpatialPlusN25Wander",
+      "result": "Passed",
+      "seconds": 8.217361,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.SpatialPlusN26Solve",
+      "result": "Passed",
+      "seconds": 4.759946,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.SpatialPlusN26Wander",
+      "result": "Passed",
+      "seconds": 7.001111,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.SpatialPlusN31Solve",
+      "result": "Passed",
+      "seconds": 2.797127,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.SpatialPlusN31Wander",
+      "result": "Passed",
+      "seconds": 4.937424,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.SpatialPlusN32Solve",
+      "result": "Passed",
+      "seconds": 4.52067,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.SpatialPlusN32SolveAt60And30Fps",
+      "result": "Passed",
+      "seconds": 50.978416,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.SpatialPlusN32Wander",
+      "result": "Passed",
+      "seconds": 6.7847,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.SpatialPlusN33Solve",
+      "result": "Passed",
+      "seconds": 5.233635,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.SpatialPlusN33Wander",
+      "result": "Passed",
+      "seconds": 13.972271,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.SpatialPlusN34Solve",
+      "result": "Passed",
+      "seconds": 5.882841,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.SpatialPlusN34Wander",
+      "result": "Passed",
+      "seconds": 8.847799,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.SpatialPlusN35Solve",
+      "result": "Passed",
+      "seconds": 5.595493,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.SpatialPlusN35Wander",
+      "result": "Passed",
+      "seconds": 9.756588,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.SpatialPlusN40Solve",
+      "result": "Passed",
+      "seconds": 6.272019,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.SpatialPlusN40Wander",
+      "result": "Passed",
+      "seconds": 9.430732,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.SpatialPlusN42Solve",
+      "result": "Passed",
+      "seconds": 2.696811,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.SpatialPlusN42Wander",
+      "result": "Passed",
+      "seconds": 4.225596,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.SpatialPlusN43ReachesTheBalconyMouthRoundC",
+      "result": "Passed",
+      "seconds": 33.558353,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.SpatialPlusN43Solve",
+      "result": "Passed",
+      "seconds": 7.133761,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.SpatialPlusN43Wander",
+      "result": "Passed",
+      "seconds": 11.701242,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.SpatialPlusN44Solve",
+      "result": "Passed",
+      "seconds": 2.54791,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.SpatialPlusN44Wander",
+      "result": "Passed",
+      "seconds": 4.24609,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.SpatialPlusN45Solve",
+      "result": "Passed",
+      "seconds": 5.553437,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.SpatialPlusN45Wander",
+      "result": "Passed",
+      "seconds": 9.23911,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.SpatialPlusN46Solve",
+      "result": "Passed",
+      "seconds": 2.032655,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.SpatialPlusN46Wander",
+      "result": "Passed",
+      "seconds": 3.931913,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.SpatialPlusN47Solve",
+      "result": "Passed",
+      "seconds": 2.759336,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.SpatialPlusN47Wander",
+      "result": "Passed",
+      "seconds": 4.795908,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.SpatialPlusN48Solve",
+      "result": "Passed",
+      "seconds": 3.054137,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.SpatialPlusN48Wander",
+      "result": "Passed",
+      "seconds": 6.468103,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.SpatialPlusN49Solve",
+      "result": "Passed",
+      "seconds": 3.014477,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.SpatialPlusN49Wander",
+      "result": "Passed",
+      "seconds": 5.086725,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.SpatialPlusN50Solve",
+      "result": "Passed",
+      "seconds": 11.167127,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.SpatialPlusN50Wander",
+      "result": "Passed",
+      "seconds": 13.973603,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.TubeBodyTapGoesThrough",
+      "result": "Passed",
+      "seconds": 1.459411,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheSpatialCampaignTests.TubeBranchTapRoutesThroughTheJunction",
+      "result": "Passed",
+      "seconds": 0.685332,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheTapCampaignTests.ANewWalkCancelsOnlyTheApproach",
+      "result": "Passed",
+      "seconds": 0.641506,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheTapCampaignTests.DisabledActuatorReleasesItsOwnedOrderAndCanBeUsedAgain",
+      "result": "Passed",
+      "seconds": 0.587047,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheTapCampaignTests.FourStopBusyTapsPauseCancelAndRetryNeverSkipADetent",
+      "result": "Passed",
+      "seconds": 1.071143,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheTapCampaignTests.OneTapSeatsStopsReversesAndActuallyOpensAndClosesDoor",
+      "result": "Passed",
+      "seconds": 1.259982,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheTapCampaignTests.ReleasingLoadMidActionCancelsOnlyThatJourneyAndAllowsRecovery",
+      "result": "Passed",
+      "seconds": 0.822006,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheTapCampaignTests.RepeatedTapsDoNotQueueTogglesAndPauseDoesNotExpireJourney",
+      "result": "Passed",
+      "seconds": 0.772474,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.COgheTapCampaignTests.RetryDuringApproachAndOperationClearsActorForcesAndOutput",
+      "result": "Passed",
+      "seconds": 0.792254,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.VenomOriginTests.BossMovingPartMergesWithHeldButtonAndKeepsNewestCommand",
+      "result": "Passed",
+      "seconds": 1.262375,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.VenomOriginTests.BossPartsWithDifferentDestinationsMergeWhenTheyMeet",
+      "result": "Passed",
+      "seconds": 0.769079,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.VenomOriginTests.BossSecondCutPreservesUnrelatedPadHolderOrderAndImpulse",
+      "result": "Passed",
+      "seconds": 0.614417,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.VenomOriginTests.BossUnmergedExitShowsFailureInsteadOfFallingRepeatedly",
+      "result": "Passed",
+      "seconds": 1.096171,
+      "suite": "tests-final-campaign-product.xml"
+    },
+    {
+      "test": "GravityBox.Tests.VenomOriginTests.ProximityFusionHasNoTimerAndRespectsSolidDivider",
+      "result": "Passed",
+      "seconds": 0.35601,
+      "suite": "tests-final-campaign-product.xml"
+    }
+  ]
+}

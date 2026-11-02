@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Unity.Profiling;
 using UnityEngine;
 using UnityEngine.Rendering;
 
@@ -9,11 +10,20 @@ namespace GravityBox.Venom
     // the skin; PhysX particles and cohesive forces own all motion and contacts.
     public sealed class VenomSurface : MonoBehaviour
     {
+        private static readonly ProfilerMarker SkinRebuildMarker = new ProfilerMarker("COghe.Skin.Rebuild");
+        private static readonly ProfilerMarker SkinConstraintsMarker = new ProfilerMarker("COghe.Skin.PrepareConstraints");
+        private static readonly ProfilerMarker SkinFieldMarker = new ProfilerMarker("COghe.Skin.Field");
+        private static readonly ProfilerMarker SkinPolygonizeMarker = new ProfilerMarker("COghe.Skin.Polygonize");
+        private static readonly ProfilerMarker SkinUploadMarker = new ProfilerMarker("COghe.Skin.Upload");
         private CohesiveOrganism organism;
         private Mesh mesh; private MeshRenderer skin;
         private readonly List<Vector3> vertices = new List<Vector3>(20000), normals = new List<Vector3>(20000);
         private readonly List<int> triangles = new List<int>(30000);
         private float[] field = Array.Empty<float>(); private Vector3[] gradient = Array.Empty<Vector3>();
+        // Final field vertices at/above the threshold bound the only cells that
+        // can cross it. These row ranges skip empty space without changing any
+        // field arithmetic, cell order or mesh density. Reused across fragments.
+        private int[] activeRowMin = Array.Empty<int>(), activeRowMax = Array.Empty<int>();
         private readonly Vector3[] corners = new Vector3[8], cornerNormals = new Vector3[8];
         private readonly float[] values = new float[8];
         private readonly Vector3[] edgePoints = new Vector3[64], edgeNormals = new Vector3[64];
@@ -28,6 +38,14 @@ namespace GravityBox.Venom
         private Vector3[] monsterEdgePoint = Array.Empty<Vector3>(), monsterEdgeNormal = Array.Empty<Vector3>();
         private Vector4[] monsterEdgeInk = Array.Empty<Vector4>();
         private int monsterStamp;
+        // Ordinary crossings retain both endpoint directions: reversing a Lerp
+        // changes floating-point rounding. Two z planes bound storage while the
+        // absolute origin and fragment stamp reject wrapped or stale entries.
+        private bool ordinaryEdges;
+        private int ordinaryEdgeRingSize,ordinaryStamp;
+        private int[] ordinaryEdgeOrigin=Array.Empty<int>(),ordinaryEdgeStamp=Array.Empty<int>();
+        private Vector3[] ordinaryEdgePoint=Array.Empty<Vector3>(),ordinaryEdgeNormal=Array.Empty<Vector3>();
+        private Vector4[] ordinaryEdgeInk=Array.Empty<Vector4>();
         private readonly int[] inside = new int[4], outside = new int[4];
         private readonly int[] seen = new int[CohesiveOrganism.ParticleCount];
         /// <summary>The body's particles plus what the life animation adds (a crest, a shape, the monster).</summary>
@@ -89,41 +107,47 @@ namespace GravityBox.Venom
         }
         public void Rebuild(bool interpolate = true)
         {
-            COgheMobileMetrics.Begin(0);
-            level.Campaign?.PrepareSkinConstraints(transform);
-            Array.Clear(edgeVersions,0,edgeVersions.Length);cellVersion=0;
-            vertices.Clear(); normals.Clear(); triangles.Clear(); int seenCount = 0; fragmentCount = 0;
-            inking = ParticleInk != null; vertexInks.Clear();
-            toFloor = floor.transform.worldToLocalMatrix*transform.localToWorldMatrix;
-            fromFloor = transform.worldToLocalMatrix*floor.transform.localToWorldMatrix;
-            life.BeginFrame();
-            for (int i = 0; i < CohesiveOrganism.ParticleCount; i++)
+            using (SkinRebuildMarker.Auto())
             {
-                int group = organism.Groups[i]; if (Array.IndexOf(seen,group,0,seenCount)>=0) continue;
-                seen[seenCount++] = group; int count=0;
-                for (int j=0;j<CohesiveOrganism.ParticleCount;j++)
-                    if (organism.Groups[j]==group && organism.Bodies[j].position.sqrMagnitude < 9)
-                    {
-                        particleIds[count]=j;supports[count]=organism.Profile.SkinSupport;weights[count]=1;
-                        points[count++]=transform.InverseTransformPoint(interpolate ? organism.Bodies[j].transform.position : organism.Bodies[j].position);
-                    }
-                if(count>0)
+                COgheMobileMetrics.Begin(0);
+                using (SkinConstraintsMarker.Auto()) level.Campaign?.PrepareSkinConstraints(transform);
+                Array.Clear(edgeVersions,0,edgeVersions.Length);cellVersion=0;
+                vertices.Clear(); normals.Clear(); triangles.Clear(); int seenCount = 0; fragmentCount = 0;
+                inking = ParticleInk != null; vertexInks.Clear();
+                toFloor = floor.transform.worldToLocalMatrix*transform.localToWorldMatrix;
+                fromFloor = transform.worldToLocalMatrix*floor.transform.localToWorldMatrix;
+                life.BeginFrame();
+                for (int i = 0; i < CohesiveOrganism.ParticleCount; i++)
                 {
-                    int sources=life.Decorate(points,supports,weights,particleIds,count);
-                    for(int k=0;k<count;k++)DrawnParticles[particleIds[k]]=transform.TransformPoint(points[k]);
-                    if(inking)
+                    int group = organism.Groups[i]; if (Array.IndexOf(seen,group,0,seenCount)>=0) continue;
+                    seen[seenCount++] = group; int count=0;
+                    for (int j=0;j<CohesiveOrganism.ParticleCount;j++)
+                        if (organism.Groups[j]==group && organism.Bodies[j].position.sqrMagnitude < 9)
+                        {
+                            particleIds[count]=j;supports[count]=organism.Profile.SkinSupport;weights[count]=1;
+                            points[count++]=transform.InverseTransformPoint(interpolate ? organism.Bodies[j].transform.position : organism.Bodies[j].position);
+                        }
+                    if(count>0)
                     {
-                        // the body's particles carry their own ink; the life animation's extra sources (feet, crest) the mean
-                        Vector4 mean=Vector4.zero;for(int k=0;k<count;k++){sourceInks[k]=ParticleInk[particleIds[k]];mean+=sourceInks[k];}
-                        mean/=count;for(int k=count;k<sources;k++)sourceInks[k]=mean;
+                        int sources=life.Decorate(points,supports,weights,particleIds,count);
+                        for(int k=0;k<count;k++)DrawnParticles[particleIds[k]]=transform.TransformPoint(points[k]);
+                        if(inking)
+                        {
+                            // the body's particles carry their own ink; the life animation's extra sources (feet, crest) the mean
+                            Vector4 mean=Vector4.zero;for(int k=0;k<count;k++){sourceInks[k]=ParticleInk[particleIds[k]];mean+=sourceInks[k];}
+                            mean/=count;for(int k=count;k<sources;k++)sourceInks[k]=mean;
+                        }
+                        int start=vertices.Count;BuildFragment(sources);
+                        fragmentRanges[fragmentCount++]=new Vector3Int(group,start,vertices.Count);
                     }
-                    int start=vertices.Count;BuildFragment(sources);
-                    fragmentRanges[fragmentCount++]=new Vector3Int(group,start,vertices.Count);
                 }
+                using (SkinUploadMarker.Auto())
+                {
+                    mesh.Clear(); mesh.SetVertices(vertices); mesh.SetNormals(normals); if(inking)mesh.SetUVs(2,vertexInks); mesh.SetTriangles(triangles,0,false); mesh.RecalculateBounds();
+                }
+                life.EndFrame();
+                COgheMobileMetrics.End(0);
             }
-            mesh.Clear(); mesh.SetVertices(vertices); mesh.SetNormals(normals); if(inking)mesh.SetUVs(2,vertexInks); mesh.SetTriangles(triangles,0,false); mesh.RecalculateBounds();
-            life.EndFrame();
-            COgheMobileMetrics.End(0);
             Rebuilt?.Invoke(this);
         }
 
@@ -235,9 +259,24 @@ namespace GravityBox.Venom
             Vector3 min=points[0]-Vector3.one*supports[0], max=points[0]+Vector3.one*supports[0];
             for(int i=1;i<count;i++){min=Vector3.Min(min,points[i]-Vector3.one*supports[i]);max=Vector3.Max(max,points[i]+Vector3.one*supports[i]);}
             Vector3 size=max-min; float cell=Mathf.Max(organism.Profile.MeshCell,Mathf.Max(size.x,size.y,size.z)/64);
-            level.Campaign?.PrepareSkinFragment(new Bounds((min+max)*.5f,size+Vector3.one*cell*2));
+            using (SkinConstraintsMarker.Auto()) level.Campaign?.PrepareSkinFragment(new Bounds((min+max)*.5f,size+Vector3.one*cell*2));
             int nx=Mathf.CeilToInt(size.x/cell)+1, ny=Mathf.CeilToInt(size.y/cell)+1,nz=Mathf.CeilToInt(size.z/cell)+1;
             int length=nx*ny*nz;
+            ordinaryEdges=life.Monster.Body<=.001f;
+            if(ordinaryEdges)
+            {
+                ordinaryEdgeRingSize=nx*ny*2;
+                int required=ordinaryEdgeRingSize*14;
+                if(ordinaryEdgeStamp.Length<required)
+                {
+                    int capacity=Mathf.NextPowerOfTwo(required);
+                    ordinaryEdgeOrigin=new int[capacity];ordinaryEdgeStamp=new int[capacity];
+                    ordinaryEdgePoint=new Vector3[capacity];ordinaryEdgeNormal=new Vector3[capacity];
+                    ordinaryEdgeInk=Array.Empty<Vector4>();
+                }
+                if(inking&&ordinaryEdgeInk.Length<ordinaryEdgeStamp.Length)ordinaryEdgeInk=new Vector4[ordinaryEdgeStamp.Length];
+                if(++ordinaryStamp==int.MaxValue){Array.Clear(ordinaryEdgeStamp,0,ordinaryEdgeStamp.Length);ordinaryStamp=1;}
+            }
             monsterEdges = reuseMonsterEdges && life.Monster.Body > .001f;
             if (monsterEdges)
             {
@@ -251,56 +290,82 @@ namespace GravityBox.Venom
                 if(inking&&monsterEdgeInk.Length<monsterEdgeStamp.Length)monsterEdgeInk=new Vector4[monsterEdgeStamp.Length];
                 if(++monsterStamp==int.MaxValue){Array.Clear(monsterEdgeStamp,0,monsterEdgeStamp.Length);monsterStamp=1;}
             }
-            if(field.Length<length){int capacity=Mathf.NextPowerOfTwo(length);field=new float[capacity];gradient=new Vector3[capacity];}
-            Array.Clear(field,0,length);Array.Clear(gradient,0,length);
-            if(inking){if(inkField.Length<field.Length)inkField=new Vector4[field.Length];Array.Clear(inkField,0,length);}
-            for(int p=0;p<count;p++)
+            using (SkinFieldMarker.Auto())
             {
-                float support=supports[p],h2=support*support,weight=weights[p];
-                Vector3 q=(points[p]-min)/cell;
-                int reach=Mathf.CeilToInt(support/cell);
-                for(int z=Mathf.Max(0,(int)q.z-reach);z<=Mathf.Min(nz-1,(int)q.z+reach);z++)
-                for(int y=Mathf.Max(0,(int)q.y-reach);y<=Mathf.Min(ny-1,(int)q.y+reach);y++)
-                for(int x=Mathf.Max(0,(int)q.x-reach);x<=Mathf.Min(nx-1,(int)q.x+reach);x++)
+                if(field.Length<length){int capacity=Mathf.NextPowerOfTwo(length);field=new float[capacity];gradient=new Vector3[capacity];}
+                Array.Clear(field,0,length);Array.Clear(gradient,0,length);
+                if(inking){if(inkField.Length<field.Length)inkField=new Vector4[field.Length];Array.Clear(inkField,0,length);}
+                for(int p=0;p<count;p++)
                 {
-                    Vector3 d=min+new Vector3(x,y,z)*cell-points[p];float s=1-d.sqrMagnitude/h2;if(s<=0)continue;
-                    int index=x+nx*(y+ny*z);field[index]+=s*s*s*weight;gradient[index]+=d*(6*s*s*weight/h2);
-                    if(inking)inkField[index]+=sourceInks[p]*(s*s*s*weight);
+                    float support=supports[p],h2=support*support,weight=weights[p];
+                    Vector3 q=(points[p]-min)/cell;
+                    int reach=Mathf.CeilToInt(support/cell);
+                    int x0=Mathf.Max(0,(int)q.x-reach),x1=Mathf.Min(nx-1,(int)q.x+reach);
+                    int y0=Mathf.Max(0,(int)q.y-reach),y1=Mathf.Min(ny-1,(int)q.y+reach);
+                    int z0=Mathf.Max(0,(int)q.z-reach),z1=Mathf.Min(nz-1,(int)q.z+reach);
+                    for(int z=z0;z<=z1;z++)
+                    for(int y=y0;y<=y1;y++)
+                    for(int x=x0;x<=x1;x++)
+                    {
+                        Vector3 d=min+new Vector3(x,y,z)*cell-points[p];float s=1-d.sqrMagnitude/h2;if(s<=0)continue;
+                        int index=x+nx*(y+ny*z);field[index]+=s*s*s*weight;gradient[index]+=d*(6*s*s*weight/h2);
+                        if(inking)inkField[index]+=sourceInks[p]*(s*s*s*weight);
+                    }
+                }
+                int rows=ny*nz;
+                if(activeRowMin.Length<rows){int capacity=Mathf.NextPowerOfTwo(rows);activeRowMin=new int[capacity];activeRowMax=new int[capacity];}
+                for(int row=0;row<rows;row++)
+                {
+                    int first=nx,last=-1,start=row*nx;
+                    for(int x=0;x<nx;x++)if(field[start+x]>=threshold){if(first==nx)first=x;last=x;}
+                    activeRowMin[row]=first;activeRowMax[row]=last;
                 }
             }
-            for(int z=0;z<nz-1;z++)for(int y=0;y<ny-1;y++)for(int x=0;x<nx-1;x++)
+            using (SkinPolygonizeMarker.Auto())
             {
-                int above=0;
-                for(int c=0;c<8;c++)
+                for(int z=0;z<nz-1;z++)for(int y=0;y<ny-1;y++)
                 {
-                    Vector3Int o=offsets[c];int index=x+o.x+nx*(y+o.y+ny*(z+o.z));
-                    values[c]=field[index];if(values[c]>=threshold)above++;
-                }
-                if(above==0||above==8)continue;
-                cellVersion++;
-                // Empty/full cells need no corner positions or normals. Keep
-                // the same field, tetrahedra and mesh density at the boundary.
-                for(int c=0;c<8;c++)
-                {
-                    Vector3Int o=offsets[c];int index=x+o.x+nx*(y+o.y+ny*(z+o.z));
-                    cornerGrid[c]=index;
-                    corners[c]=min+new Vector3(x+o.x,y+o.y,z+o.z)*cell;cornerNormals[c]=gradient[index];
-                    if(inking)cornerInks[c]=inkField[index];
-                }
-                for(int t=0;t<6;t++)
-                {
-                    int ni=0,no=0;
-                    for(int c=0;c<4;c++){int id=tetrahedra[t,c];if(values[id]>=threshold)inside[ni++]=id;else outside[no++]=id;}
-                    if(ni==0||ni==4)continue;
-                    // edge keys (from*8+to) also index each crossing's cached ink
-                    if(ni==1){Edge(inside[0],outside[0],out var a,out var an);Edge(inside[0],outside[1],out var b,out var bn);Edge(inside[0],outside[2],out var c,out var cn);Triangle(a,b,c,an,bn,cn,inside[0]*8+outside[0],inside[0]*8+outside[1],inside[0]*8+outside[2]);}
-                    else if(ni==3){Edge(outside[0],inside[0],out var a,out var an);Edge(outside[0],inside[1],out var b,out var bn);Edge(outside[0],inside[2],out var c,out var cn);Triangle(a,b,c,an,bn,cn,outside[0]*8+inside[0],outside[0]*8+inside[1],outside[0]*8+inside[2]);}
-                    else
+                    // A crossing cell has an above-threshold corner in one of these
+                    // four vertex rows. Include both cells adjacent to its x coordinate.
+                    int row=y+ny*z,next=row+ny;
+                    int first=Mathf.Min(Mathf.Min(activeRowMin[row],activeRowMin[row+1]),Mathf.Min(activeRowMin[next],activeRowMin[next+1]));
+                    int last=Mathf.Max(Mathf.Max(activeRowMax[row],activeRowMax[row+1]),Mathf.Max(activeRowMax[next],activeRowMax[next+1]));
+                    int end=Mathf.Min(nx-2,last);
+                    for(int x=Mathf.Max(0,first-1);x<=end;x++)
                     {
-                        Edge(inside[0],outside[0],out var a,out var an);Edge(inside[0],outside[1],out var b,out var bn);
-                        Edge(inside[1],outside[0],out var c,out var cn);Edge(inside[1],outside[1],out var d,out var dn);
-                        int ka=inside[0]*8+outside[0],kb=inside[0]*8+outside[1],kc=inside[1]*8+outside[0],kd=inside[1]*8+outside[1];
-                        Triangle(a,b,c,an,bn,cn,ka,kb,kc);Triangle(b,d,c,bn,dn,cn,kb,kd,kc);
+                        int above=0;
+                        for(int c=0;c<8;c++)
+                        {
+                            Vector3Int o=offsets[c];int index=x+o.x+nx*(y+o.y+ny*(z+o.z));
+                            values[c]=field[index];if(values[c]>=threshold)above++;
+                        }
+                        if(above==0||above==8)continue;
+                        cellVersion++;
+                        // Empty/full cells need no corner positions or normals. Keep
+                        // the same field, tetrahedra and mesh density at the boundary.
+                        for(int c=0;c<8;c++)
+                        {
+                            Vector3Int o=offsets[c];int index=x+o.x+nx*(y+o.y+ny*(z+o.z));
+                            cornerGrid[c]=index;
+                            corners[c]=min+new Vector3(x+o.x,y+o.y,z+o.z)*cell;cornerNormals[c]=gradient[index];
+                            if(inking)cornerInks[c]=inkField[index];
+                        }
+                        for(int t=0;t<6;t++)
+                        {
+                            int ni=0,no=0;
+                            for(int c=0;c<4;c++){int id=tetrahedra[t,c];if(values[id]>=threshold)inside[ni++]=id;else outside[no++]=id;}
+                            if(ni==0||ni==4)continue;
+                            // edge keys (from*8+to) also index each crossing's cached ink
+                            if(ni==1){Edge(inside[0],outside[0],out var a,out var an);Edge(inside[0],outside[1],out var b,out var bn);Edge(inside[0],outside[2],out var c,out var cn);Triangle(a,b,c,an,bn,cn,inside[0]*8+outside[0],inside[0]*8+outside[1],inside[0]*8+outside[2]);}
+                            else if(ni==3){Edge(outside[0],inside[0],out var a,out var an);Edge(outside[0],inside[1],out var b,out var bn);Edge(outside[0],inside[2],out var c,out var cn);Triangle(a,b,c,an,bn,cn,outside[0]*8+inside[0],outside[0]*8+inside[1],outside[0]*8+inside[2]);}
+                            else
+                            {
+                                Edge(inside[0],outside[0],out var a,out var an);Edge(inside[0],outside[1],out var b,out var bn);
+                                Edge(inside[1],outside[0],out var c,out var cn);Edge(inside[1],outside[1],out var d,out var dn);
+                                int ka=inside[0]*8+outside[0],kb=inside[0]*8+outside[1],kc=inside[1]*8+outside[0],kd=inside[1]*8+outside[1];
+                                Triangle(a,b,c,an,bn,cn,ka,kb,kc);Triangle(b,d,c,bn,dn,cn,kb,kd,kc);
+                            }
+                        }
                     }
                 }
             }
@@ -312,6 +377,21 @@ namespace GravityBox.Venom
             // order and emitted triangle/vertex order exactly.
             int key=a*8+b;
             if(edgeVersions[key]==cellVersion){p=edgePoints[key];n=edgeNormals[key];return;}
+            int ordinary=-1,ordinaryOrigin=0;
+            if(ordinaryEdges)
+            {
+                Vector3Int d=offsets[b]-offsets[a];
+                int direction=Mathf.Abs(d.x)+Mathf.Abs(d.y)*2+Mathf.Abs(d.z)*4-1;
+                ordinaryOrigin=Mathf.Min(cornerGrid[a],cornerGrid[b]);
+                ordinary=(ordinaryOrigin%ordinaryEdgeRingSize)*14+direction*2+(cornerGrid[a]>cornerGrid[b]?1:0);
+                if(ordinaryEdgeStamp[ordinary]==ordinaryStamp&&ordinaryEdgeOrigin[ordinary]==ordinaryOrigin)
+                {
+                    edgeVersions[key]=cellVersion;
+                    p=edgePoints[key]=ordinaryEdgePoint[ordinary];n=edgeNormals[key]=ordinaryEdgeNormal[ordinary];
+                    if(inking)edgeInks[key]=ordinaryEdgeInk[ordinary];
+                    return;
+                }
+            }
             int shared=-1;
             if(monsterEdges)
             {
@@ -353,6 +433,12 @@ namespace GravityBox.Venom
             ConstrainFloor(ref p,ref n);
             edgeVersions[key]=cellVersion;edgePoints[key]=p;edgeNormals[key]=n;
             if(inking)edgeInks[key]=Vector4.Lerp(cornerInks[a],cornerInks[b],t)/Mathf.Max(1e-6f,Mathf.Lerp(values[a],values[b],t));
+            if(ordinary>=0)
+            {
+                ordinaryEdgeOrigin[ordinary]=ordinaryOrigin;ordinaryEdgeStamp[ordinary]=ordinaryStamp;
+                ordinaryEdgePoint[ordinary]=p;ordinaryEdgeNormal[ordinary]=n;
+                if(inking)ordinaryEdgeInk[ordinary]=edgeInks[key];
+            }
             if(shared>=0)
             {
                 monsterEdgeStamp[shared]=monsterStamp;monsterEdgePoint[shared]=p;monsterEdgeNormal[shared]=n;

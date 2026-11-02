@@ -1,0 +1,36 @@
+{
+  "checkedAt": "2026-10-29",
+  "deploymentRun": "https://github.com/aurora-teamplayer01/g005-color-drop/actions/runs/40894025450",
+  "result": "success",
+  "pages": [
+    {
+      "url": "https://cj.suri.house/alien-pet-privacy",
+      "status": 200,
+      "version": "site-v1.0.4",
+      "bytes": 14368,
+      "sha256": "0f8faeb08ffaa87ec0921304112fd6c12648f482e270759ea1e8aa2ab607c11b",
+      "scriptProviders": [
+        "Cloudflare Web Analytics"
+      ],
+      "privacyContentChecks": "passed: identity/contact/age ranges/teen signals/website analytics; no unresolved placeholders"
+    },
+    {
+      "url": "https://cj.suri.house/",
+      "status": 200,
+      "version": "site-v1.0.4",
+      "bytes": 9132
+    },
+    {
+      "url": "https://cj.suri.house/privacy",
+      "status": 200,
+      "version": "site-v1.0.4",
+      "bytes": 13143
+    },
+    {
+      "url": "https://cj.suri.house/terms",
+      "status": 200,
+      "version": "site-v1.0.4",
+      "bytes": 9811
+    }
+  ]
+}

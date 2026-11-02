@@ -1,0 +1,93 @@
+Alien Pet — saved native campaign evidence audit
+Date: 2026-10-29. Scope: read-only review of existing records; no new gameplay test,
+build, code change or Console action. This is not a release certification.
+
+DECISION
+The recorded continuous native run remains 57/65, with unresolved authored routes
+10/18/27/32/48/51/56/57. There is no evidence establishing that all eight puzzles
+are impossible for a person. There is also no evidence justifying dismissing all
+failures as harmless automation issues. Do not label the campaign all-passed.
+
+ARTIFACT BOUNDARY
+The 57/65 OPPO run used Release APK SHA256
+26df2c98969cd38f500708e2c364e9a82dd9090bbb1407b5babdd6efe4e5fb39,
+build GUID 63a40fbb10a74a47a9b606b67cd721b4. Its continuous session lasted39.81min.
+The current Play AAB1.0.1(2) is a different artifact, SHA256
+30bc7fce27fda89f484a35bc776bfdbc312b99daec30e519d4dc2bc9fb2d9ab0.
+Current signed-release native evidence covers privacy gates/startup/level1 and
+relaunch, not a new65-level campaign. Unresolved risks carry forward as unverified;
+these records do not prove each failure recurs in1.0.1(2).
+
+PER-LEVEL CLASSIFICATION
+10 — Tap4 at B was not accepted; single-attempt helper waited35s and failed.
+     Both baseline and final isolated rechecks passed3/3 each. Strong timing/input
+     sensitivity evidence, not a proven logic defect. Original long-run failure
+     remains unresolved; no gameplay fix established.
+18 — N18 halves stop near each other; projected reunion taps select bodies rather
+     than movement. Clean confirmation reproduces; separate cold start misses
+     initial Q-machine tap. Input/selection route problem observed; proximity merge
+     rule defect not established. No verified native fix/pass recorded.
+27 — G9 has two distinct phases: older runs fail at reunion/exit-before-merge;
+     final continuous run fails earlier crossing to right shelf. All6 isolated
+     attempts fail (baseline0/3, final0/3); early crossing occurs final1/3 only.
+     Gate nearly closed and pad contact absent at failure. Route checks proximity,
+     not measured P2 activation; loss of pad contact is hypothesis, not diagnosis.
+     No verified fix. Priority: instrument gate/pad/support handoff and actual touch.
+32 — G5 Boss floor command cannot find visible target for part1; all5 nearby
+     candidates rejected. Baseline1/3 and final1/3 pass. Projection/occlusion and
+     cadence sensitivity; not proof Boss unsolvable or physics regression.
+     No resolved long-run confirmation.
+48 — N31 initial final-exit order stalls; later clean run stalls after reunion at
+     partition with8 particles supported by Partition wall and an active order
+     through door. Most concrete collision/clearance concern, but exact root cause
+     unconfirmed. Contaminated manual-camera attempt excluded. No verified fix.
+51 — Content26 swing target dock tap instead invokes rope release onto rescue
+     floor; reproduced twice, landings0/misses0/Idle. Picking/rescue-floor priority
+     candidate; not established tissue-clearance bug. No verified fix.
+56 — N45 had an earlier CONFIRMED harness arrival false failure, fixed by not
+     walking again when merge already put body on pad; then native retry passed.
+     Current failure is DIFFERENT: HandleC rejected, possibly one-way C already
+     completed during prior walking taps. Exact AtEnd/journeys not logged, so this
+     current harness-false-failure hypothesis is unconfirmed. Baseline2/3 vs final
+     1/3 pass. Do not claim the old arrival fix resolved this current failure.
+57 — N49 reunion has63 taps, many consumed by selection/occlusion; halves remain
+     ~9cm apart and no orders, not touching-but-refusing-merge. Historical sweep
+     passed, but baseline0/3 and final0/3 isolated. No verified fix.
+
+No new gameplay bug was formally confirmed by the saved independent audit;
+that statement is a limit of diagnosis, not proof there are no player-facing bugs.
+Repeated failures18/27/48/51 and57 warrant normal-player-touch recovery testing.
+A repeat should distinguish command not accepted vs accepted but stuck, capture
+support/collision/pad/gate state, and retain original failures even if retry passes.
+The late5/5 soak was levels2/7/23/53/65, NOT revalidation of these eight failures.
+
+CURRENT RELEASE SDK / MANIFEST
+Signed1.0.1(2) launches through unknown/child/teen/adult privacy cases on Android36
+emulator. No startup blocker is observed. Collection defaults false, Firebase and
+AdMob auto-init providers absent, AD_ID/AdServices permissions absent; age policy
+and withdrawal tested. UMP returns publisher error3 (no form configured), so all
+eligible ad profiles fail closed: ads do not initialize/load, gameplay remains
+available. This is a monetization/ad-flow readiness blocker, not an app-launch
+crash. Native loaded-ad behavior still unverified. No real IAP provider; purchases
+intentionally unavailable. No new blanket Android/iOS compatibility claim.
+Files build-validation.json and universal-validation.json in this directory are
+for OLD1.0.0(1), not proof of current1.0.1(2). Current artifact evidence is in
+native-privacy-results.json; do not mix their hashes or coverage.
+
+EXACT EVIDENCE
+Docs/Verification/AlienPetOptimization20261029/native-soak-review.md
+Docs/Verification/AlienPetOptimization20261029/native-soak-review.json
+Docs/Verification/AlienPetOptimization20261029/native-soak-failure-investigations.json
+Docs/Verification/AlienPetOptimization20261029/recheck-audit.md
+Docs/Verification/AlienPetOptimization20261029/recheck-audit.json
+Docs/Verification/AlienPetOptimization20261029/native-rechecks.json
+Docs/Verification/AlienPetOptimization20261029/level27-causal-source-review.md
+Docs/Verification/AlienPetOppo20261029/README.md
+Docs/Verification/AlienPetOppo20261029/campaign-summary.json
+Artifacts/AlienPetOptimization-2026-10-29/after-release-full65/run-latest.json
+Artifacts/AlienPetOptimization-2026-10-29/after-release-full65/proof/20261029T093258Z/run.json
+Artifacts/AlienPetOptimization-2026-10-29/after-release-full65/logcat.txt
+Docs/Verification/AlienPetPlayStore20261029/native-privacy-results.json
+Docs/Verification/AlienPetPlayStore20261029/admob-consent-setup.json
+
+All paths above are relative to /Users/mrk/GravityBox.

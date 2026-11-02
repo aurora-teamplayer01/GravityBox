@@ -1,0 +1,16 @@
+{
+  "utc": "2026-10-29T09:29:47.595170+00:00",
+  "scope": "Read-only system diagnostic during final Home3 warmup; outside measured six-run comparison",
+  "activeDisplayRefreshHz": 60,
+  "activeRenderFrameRate": 60,
+  "supportedModesHz": [
+    60,
+    90
+  ],
+  "displayFrameRateOverrides": [],
+  "surfaceFlingerFrameRateOverrides": "none",
+  "gameMode": "standard",
+  "gameInterventions": "none reported for package",
+  "settingsChanged": false,
+  "limitation": "Single read-only snapshot outside primary measurement; not historical per-frame clock or GPU telemetry."
+}

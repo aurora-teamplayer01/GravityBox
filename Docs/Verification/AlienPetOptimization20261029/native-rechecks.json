@@ -1,0 +1,351 @@
+{
+  "generatedUtc": "2026-10-29T10:56:15.182743+00:00",
+  "scope": "Isolated authored touch functional rechecks of failures outside the previous native sweep; not primary FPS evidence",
+  "status": "complete",
+  "levels": [
+    {
+      "level": 10,
+      "originalFullSweepPassed": false,
+      "originalFullSweepError": "System.InvalidOperationException: Operate B",
+      "before": {
+        "passed": 3,
+        "observed": 3,
+        "observations": [
+          {
+            "repeat": 1,
+            "passed": true,
+            "taps": 11,
+            "error": null,
+            "report": "native-rechecks/before-1/proof/20261029T101732Z/run.json"
+          },
+          {
+            "repeat": 2,
+            "passed": true,
+            "taps": 11,
+            "error": null,
+            "report": "native-rechecks/before-2/proof/20261029T102340Z/run.json"
+          },
+          {
+            "repeat": 3,
+            "passed": true,
+            "taps": 11,
+            "error": null,
+            "report": "native-rechecks/before-3/proof/20261029T103042Z/run.json"
+          }
+        ]
+      },
+      "after": {
+        "passed": 3,
+        "observed": 3,
+        "observations": [
+          {
+            "repeat": 1,
+            "passed": true,
+            "taps": 11,
+            "error": null,
+            "report": "native-rechecks/after-1/proof/20261029T103723Z/run.json"
+          },
+          {
+            "repeat": 2,
+            "passed": true,
+            "taps": 11,
+            "error": null,
+            "report": "native-rechecks/after-2/proof/20261029T104347Z/run.json"
+          },
+          {
+            "repeat": 3,
+            "passed": true,
+            "taps": 11,
+            "error": null,
+            "report": "native-rechecks/after-3/proof/20261029T104940Z/run.json"
+          }
+        ]
+      },
+      "classification": "both-isolated-pass-original-sweep-failure-retained",
+      "afterOnlyFirstErrorSignatures": []
+    },
+    {
+      "level": 27,
+      "originalFullSweepPassed": false,
+      "originalFullSweepError": "System.InvalidOperationException: Across the back road onto the right shelf, clear of P2",
+      "before": {
+        "passed": 0,
+        "observed": 3,
+        "observations": [
+          {
+            "repeat": 1,
+            "passed": false,
+            "taps": 36,
+            "error": "System.InvalidOperationException: All parts meet and fuse",
+            "report": "native-rechecks/before-1/proof/20261029T101732Z/run.json"
+          },
+          {
+            "repeat": 2,
+            "passed": false,
+            "taps": 75,
+            "error": "System.InvalidOperationException: All parts meet and fuse",
+            "report": "native-rechecks/before-2/proof/20261029T102340Z/run.json"
+          },
+          {
+            "repeat": 3,
+            "passed": false,
+            "taps": 49,
+            "error": "System.InvalidOperationException: All parts meet and fuse",
+            "report": "native-rechecks/before-3/proof/20261029T103042Z/run.json"
+          }
+        ]
+      },
+      "after": {
+        "passed": 0,
+        "observed": 3,
+        "observations": [
+          {
+            "repeat": 1,
+            "passed": false,
+            "taps": 11,
+            "error": "System.InvalidOperationException: Across the back road onto the right shelf, clear of P2",
+            "report": "native-rechecks/after-1/proof/20261029T103723Z/run.json"
+          },
+          {
+            "repeat": 2,
+            "passed": false,
+            "taps": 36,
+            "error": "System.InvalidOperationException: All parts meet and fuse",
+            "report": "native-rechecks/after-2/proof/20261029T104347Z/run.json"
+          },
+          {
+            "repeat": 3,
+            "passed": false,
+            "taps": 36,
+            "error": "System.InvalidOperationException: All parts meet and fuse",
+            "report": "native-rechecks/after-3/proof/20261029T104940Z/run.json"
+          }
+        ]
+      },
+      "classification": "failure-observed-on-both-versions",
+      "afterOnlyFirstErrorSignatures": [
+        "System.InvalidOperationException: Across the back road onto the right shelf, clear of P2"
+      ]
+    },
+    {
+      "level": 32,
+      "originalFullSweepPassed": false,
+      "originalFullSweepError": "System.InvalidOperationException: No visible floor command for part 1 at (0.050, -0.300, -0.240)",
+      "before": {
+        "passed": 1,
+        "observed": 3,
+        "observations": [
+          {
+            "repeat": 1,
+            "passed": true,
+            "taps": 16,
+            "error": null,
+            "report": "native-rechecks/before-1/proof/20261029T101732Z/run.json"
+          },
+          {
+            "repeat": 2,
+            "passed": false,
+            "taps": 17,
+            "error": "System.InvalidOperationException: No visible floor command for part 1 at (0.050, -0.300, -0.240)",
+            "report": "native-rechecks/before-2/proof/20261029T102340Z/run.json"
+          },
+          {
+            "repeat": 3,
+            "passed": false,
+            "taps": 17,
+            "error": "System.InvalidOperationException: No visible floor command for part 1 at (0.050, -0.300, -0.240)",
+            "report": "native-rechecks/before-3/proof/20261029T103042Z/run.json"
+          }
+        ]
+      },
+      "after": {
+        "passed": 1,
+        "observed": 3,
+        "observations": [
+          {
+            "repeat": 1,
+            "passed": false,
+            "taps": 17,
+            "error": "System.InvalidOperationException: No visible floor command for part 1 at (0.050, -0.300, -0.240)",
+            "report": "native-rechecks/after-1/proof/20261029T103723Z/run.json"
+          },
+          {
+            "repeat": 2,
+            "passed": false,
+            "taps": 17,
+            "error": "System.InvalidOperationException: No visible floor command for part 1 at (0.050, -0.300, -0.240)",
+            "report": "native-rechecks/after-2/proof/20261029T104347Z/run.json"
+          },
+          {
+            "repeat": 3,
+            "passed": true,
+            "taps": 16,
+            "error": null,
+            "report": "native-rechecks/after-3/proof/20261029T104940Z/run.json"
+          }
+        ]
+      },
+      "classification": "failure-observed-on-both-versions",
+      "afterOnlyFirstErrorSignatures": []
+    },
+    {
+      "level": 56,
+      "originalFullSweepPassed": false,
+      "originalFullSweepError": "System.InvalidOperationException: Handle C rejected: ",
+      "before": {
+        "passed": 2,
+        "observed": 3,
+        "observations": [
+          {
+            "repeat": 1,
+            "passed": true,
+            "taps": 27,
+            "error": null,
+            "report": "native-rechecks/before-1/proof/20261029T101732Z/run.json"
+          },
+          {
+            "repeat": 2,
+            "passed": false,
+            "taps": 26,
+            "error": "System.InvalidOperationException: Handle C rejected: ",
+            "report": "native-rechecks/before-2/proof/20261029T102340Z/run.json"
+          },
+          {
+            "repeat": 3,
+            "passed": true,
+            "taps": 26,
+            "error": null,
+            "report": "native-rechecks/before-3/proof/20261029T103042Z/run.json"
+          }
+        ]
+      },
+      "after": {
+        "passed": 1,
+        "observed": 3,
+        "observations": [
+          {
+            "repeat": 1,
+            "passed": false,
+            "taps": 26,
+            "error": "System.InvalidOperationException: Handle C rejected: Cơ quan đang thực hiện",
+            "report": "native-rechecks/after-1/proof/20261029T103723Z/run.json"
+          },
+          {
+            "repeat": 2,
+            "passed": true,
+            "taps": 25,
+            "error": null,
+            "report": "native-rechecks/after-2/proof/20261029T104347Z/run.json"
+          },
+          {
+            "repeat": 3,
+            "passed": false,
+            "taps": 26,
+            "error": "System.InvalidOperationException: Handle C rejected: Cơ quan đang thực hiện",
+            "report": "native-rechecks/after-3/proof/20261029T104940Z/run.json"
+          }
+        ]
+      },
+      "classification": "failure-observed-on-both-versions",
+      "afterOnlyFirstErrorSignatures": [
+        "System.InvalidOperationException: Handle C rejected: Cơ quan đang thực hiện"
+      ]
+    },
+    {
+      "level": 57,
+      "originalFullSweepPassed": false,
+      "originalFullSweepError": "System.InvalidOperationException: All parts meet and fuse",
+      "before": {
+        "passed": 0,
+        "observed": 3,
+        "observations": [
+          {
+            "repeat": 1,
+            "passed": false,
+            "taps": 63,
+            "error": "System.InvalidOperationException: All parts meet and fuse",
+            "report": "native-rechecks/before-1/proof/20261029T101732Z/run.json"
+          },
+          {
+            "repeat": 2,
+            "passed": false,
+            "taps": 63,
+            "error": "System.InvalidOperationException: All parts meet and fuse",
+            "report": "native-rechecks/before-2/proof/20261029T102340Z/run.json"
+          },
+          {
+            "repeat": 3,
+            "passed": false,
+            "taps": 63,
+            "error": "System.InvalidOperationException: All parts meet and fuse",
+            "report": "native-rechecks/before-3/proof/20261029T103042Z/run.json"
+          }
+        ]
+      },
+      "after": {
+        "passed": 0,
+        "observed": 3,
+        "observations": [
+          {
+            "repeat": 1,
+            "passed": false,
+            "taps": 63,
+            "error": "System.InvalidOperationException: All parts meet and fuse",
+            "report": "native-rechecks/after-1/proof/20261029T103723Z/run.json"
+          },
+          {
+            "repeat": 2,
+            "passed": false,
+            "taps": 63,
+            "error": "System.InvalidOperationException: All parts meet and fuse",
+            "report": "native-rechecks/after-2/proof/20261029T104347Z/run.json"
+          },
+          {
+            "repeat": 3,
+            "passed": false,
+            "taps": 63,
+            "error": "System.InvalidOperationException: All parts meet and fuse",
+            "report": "native-rechecks/after-3/proof/20261029T104940Z/run.json"
+          }
+        ]
+      },
+      "classification": "failure-observed-on-both-versions",
+      "afterOnlyFirstErrorSignatures": []
+    }
+  ],
+  "afterOnlyObservedLevels": [],
+  "afterOnlyFirstErrorSignatures": [
+    {
+      "level": 27,
+      "signatures": [
+        "System.InvalidOperationException: Across the back road onto the right shelf, clear of P2"
+      ]
+    },
+    {
+      "level": 56,
+      "signatures": [
+        "System.InvalidOperationException: Handle C rejected: Cơ quan đang thực hiện"
+      ]
+    }
+  ],
+  "originalFullSweepFailedLevels": [
+    10,
+    18,
+    27,
+    32,
+    48,
+    51,
+    56,
+    57
+  ],
+  "apkSha256": {
+    "before": "0239994b0fdaaea74d2711dda94a5199486760bcbeba9052a6afdcadb51f536d",
+    "after": "26df2c98969cd38f500708e2c364e9a82dd9090bbb1407b5babdd6efe4e5fb39"
+  },
+  "finalReleaseRestored": true,
+  "limits": [
+    "Isolated launches do not reproduce the complete full-campaign process and input history.",
+    "These functional rechecks are not the temperature-gated primary performance comparison.",
+    "A pass does not erase the original full-sweep failure; failure on both builds does not establish a unique root cause."
+  ]
+}

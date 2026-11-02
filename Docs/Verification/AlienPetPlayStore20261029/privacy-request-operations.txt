@@ -1,0 +1,61 @@
+ALIEN PET — PRIVACY REQUEST OPERATIONS
+Readiness review: 29 October 2026. This is an operator runbook, not a public-policy replacement. No real user data was accessed or deleted during preparation.
+
+Public entry point
+https://cj.suri.house/alien-pet-privacy#deletion
+Email: support@suri.house; subject: Alien Pet privacy request.
+Responsible public developer: YoloStudioGlobal.
+
+What the live policy currently promises
+The operator reviews requests for identifiable information it controls, may request limited technical details, and explains identification limits. It does not guarantee deletion of unidentified records, a fixed deletion deadline, or server deletion merely because local storage is cleared. It explicitly distinguishes local save data from previously transmitted Google-service records.
+
+The public URL is a way to submit a request, not a promise that every installation can always be identified from an email or that every provider record can be deleted automatically.
+
+Who must operate this
+The owner must monitor the support mailbox, assign someone to handle privacy requests, retain access to the correct Alien Pet GA4/Firebase properties, and keep a minimal private record of each request and the actions taken. Do not place real requester emails, identifiers, correspondence or API credentials in this public project/repository.
+
+1. Receive and scope a request
+Record receipt, requested action and affected service. Ask only what is needed: Android app version, whether the request concerns local game data, prior Analytics/advertising, website visits or support email. A parent/guardian may request help for a child. Use proportionate verification; do not ask children for a birth certificate, school, payment information or account password. There is no game account to verify.
+
+2. Explain the age/build context
+Launch marketing now targets ages 9–15. In revised release 1.0.1 (2), ages 9–12 are covered by Under13 (no advertising or Firebase initialization); ages 13–15 have restricted contextual ads with no Firebase Analytics/Remote Config. Adult opt-in and older-teen handling remain safeguards for people outside the marketed range, including parents. Older internal AAB1 did not have these gates; do not claim that a historical test installation could never have sent data.
+
+Native evidence: native-privacy-results.json recorded no app-UID network or SDK artifacts for the tested Unknown and Under13 cases on one Android36 emulator. This is bounded evidence, not certification for every device/version or shared Google Play services traffic.
+
+3. Local progress and inventory
+The player can clear Android app storage to reset local progress, virtual Drops, items, age/privacy choices and settings. Explain the loss of progress before recommending that action. The operator has no cloud account save to erase. Clearing local data, reinstalling or turning Analytics off is not proof that historical Google data was deleted. Android backup/restore can affect locally restored data.
+
+4. Identify Analytics data before requesting deletion
+The game has no login/email-to-installation mapping. A support email address, player nickname, phone model or a recent level alone is not a reliable Analytics identity. Do not guess a matching Analytics user based on these details.
+
+Google Analytics uses its app-instance ID for the app installation. It is distinct from a Firebase installation ID (FID), Android advertising ID, the app's Firebase project/app ID and level-attempt IDs. Current game code does not expose an app-instance-ID/FID copy or export control. It also calls ResetAnalyticsData when an initialized adult opts out; the prior local Analytics identifier may no longer be available afterwards.
+
+If a valid existing app-instance ID is available through an already authorized support/diagnostic workflow, verify its link to the request and the correct Android stream/property. Never turn Analytics on, create new identifiers, root a player's phone or collect a child's additional identity merely to manufacture an identifier for a deletion request. If no reliable existing identifier is available, explain that exact historical Analytics records cannot currently be located from the email alone. Do not mark the request as fully deleted.
+
+5. Submit an identifiable Analytics deletion
+An authorized GA4 Editor can locate the exact app-instance/device ID in the correct property's User explorer and request deletion for that user. This is irreversible: verify the property and identifier first. Google documents disappearance from that exploration within 24 hours and permanent removal within the following 63 days; that provider timeline is not an instant-deletion guarantee for every service. Record the request and result without copying unrelated users' data.
+Source: https://support.google.com/analytics/answer/9283607?hl=en
+
+For an approved operational API workflow, GA4 Admin API properties.submitUserDeletion supports appInstanceId and requires analytics.edit authorization. A successful response supplies deletionRequestTime. Do not send the support email as userProvidedData: this game did not upload an email-to-Analytics mapping. Do not use the Measurement Protocol secret as Admin API authorization.
+Source: https://developers.google.com/analytics/devguides/config/admin/v1/rest/v1alpha/properties/submitUserDeletion
+
+6. Handle Remote Config/Firebase installation data separately
+If a verified FID is available and deletion is requested, an authorized Firebase operator can use the Firebase Admin SDK installation-deletion operation. FID deletion and GA Analytics deletion are separate. Google states that deleting an FID does not delete Analytics data, and new FIDs can be created if generating services remain enabled. Current app has no self-service FID deletion control; this runbook does not imply one exists.
+Source: https://firebase.google.com/docs/projects/manage-installations#delete_a_firebase_installation
+
+7. Ads, website and support records
+Use the app's eligible advertising privacy choices and Google's privacy controls for advertising requests. Do not claim that resetting Android's advertising ID deletes all AdMob-held data; seek the provider's applicable process when necessary.
+
+For website requests, distinguish Cloudflare's web-analytics metrics from server/security request logs. Review only identifiable records the operator can control and explain provider/identification limits. Do not create a persistent child-to-IP identity map to identify old visits.
+
+For support correspondence, locate the actual requester's messages in the support mailbox and any support system or manually stored export. Remove unneeded copies when fulfilling a valid request, subject to required recordkeeping. Preserve only the minimum audit evidence needed to document the request and disposition. The mailbox and any logs are operational responsibilities outside the Unity code.
+
+8. Confirm the actual outcome
+Reply with the actions actually taken, the provider requests submitted, remaining processing time if known, and any records that could not be identified or must be retained. Do not say "all data deleted" when only local storage was reset or an Analytics request was submitted. State how the player can keep optional Analytics off to avoid new collection.
+
+Observed Analytics retention (root/GA audit)
+Event data: 2 months. User data: 14 months. Reset user data on new activity: ON. Therefore 14 months is not a fixed lifetime for an active user's identifier: new activity can extend that user-data retention period. These controls do not apply identically to standard aggregated reports, AdMob records, local saves or support emails. The live policy's "according to the Google Analytics retention settings" remains accurate; do not simplify it to "all data is deleted after 2 months" or "after 14 months".
+Source: https://support.google.com/analytics/answer/7667196?hl=en
+
+Remaining operational limitation
+An email request channel exists, but the current game lacks a reliable self-service way to provide an existing Analytics/FID identifier. That limits exact server-side deletion for an unidentified installation. A future privacy-support ID feature would need to avoid initializing SDKs for children or declined users and must not claim that a new/reset identifier identifies historical data. This review does not implement such a feature.

@@ -39,7 +39,7 @@ namespace GravityBox.Editor
             if(Environment.GetEnvironmentVariable("COGHE_STORE")!="1")defines.Add("COGHE_TEST_TOOLS");
             return defines.ToArray();
         }
-        private static void BuildScenes(string[] scenes, string output,string bundleId=BundleId,string displayName="COghe")
+        private static void BuildScenes(string[] scenes, string output,string bundleId=BundleId,string displayName=GravityBox.Venom.AlienPetBrand.DisplayName)
         {
             if(!BuildPipeline.IsBuildTargetSupported(BuildTargetGroup.Android,BuildTarget.Android))
                 throw new InvalidOperationException("Install Android Build Support for this Unity version first.");
@@ -67,8 +67,10 @@ namespace GravityBox.Editor
                 EditorUserBuildSettings.buildAppBundle=false;
                 EditorUserBuildSettings.exportAsGoogleAndroidProject=false;
                 Directory.CreateDirectory(Path.GetDirectoryName(output));
+                bool profile=Environment.GetEnvironmentVariable("COGHE_PROFILE")=="1";
+                if(profile)output=Path.Combine(Path.GetDirectoryName(output),Path.GetFileNameWithoutExtension(output)+"-Profiler.apk");
                 var report=BuildPipeline.BuildPlayer(new BuildPlayerOptions{
-                    scenes=scenes,target=BuildTarget.Android,locationPathName=output,options=BuildOptions.None,
+                    scenes=scenes,target=BuildTarget.Android,locationPathName=output,options=profile?BuildOptions.Development:BuildOptions.None,
                     extraScriptingDefines=Defines()});
                 if(report.summary.result!=BuildResult.Succeeded)
                     throw new Exception("COghe Android build failed: "+report.summary.result);

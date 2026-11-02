@@ -1,0 +1,740 @@
+{
+  "date": "2026-10-29",
+  "device": "OPPO CPH2591",
+  "gpu": "Mali-G52 MC2",
+  "api": "Vulkan",
+  "unity": "6000.3.19f1",
+  "build": "Development ARM64 IL2CPP; Deep Profile off; Script Debugging off; no screenshots",
+  "apkSha256": "5fefc616cc6975382134152ac710f850235151f09e6f3dd0426a1ac4b13f6e0c",
+  "scope": "Author replay in developer HUD; same approved gameplay/art; not Product UI FPS baseline. Native binary capture windows are at most25s, not the entire solve. Overlapping inclusive markers and threads must not be added. GPU unavailable, not zero.",
+  "frames": 2618,
+  "levels": [
+    {
+      "level": 2,
+      "frames": 264,
+      "meanFrameMs": 27.426633430249762,
+      "p50FrameMs": 26.199459075927734,
+      "p95FrameMs": 41.86484909057617,
+      "p99FrameMs": 64.99376678466797,
+      "maxFrameMs": 109.17838287353516,
+      "gcAllocBytes": 2799649,
+      "gcMissingSize": 0,
+      "rawSha256": "332d8e7d8779e89a10e6e20728e6666a1d2e4fd73b16606f7090ed8f1514250d",
+      "markers": [
+        {
+          "thread": "Render Thread",
+          "marker": "Semaphore.WaitForSignal",
+          "calls": 2527,
+          "meanInclusiveMsPerCapturedFrame": 12.673175462278474,
+          "meanSelfMsPerCapturedFrame": 12.673175462278474,
+          "maxCallMs": 82.73908233642578
+        },
+        {
+          "thread": "Render Thread",
+          "marker": "GfxDeviceVK.Present",
+          "calls": 263,
+          "meanInclusiveMsPerCapturedFrame": 7.619607458060438,
+          "meanSelfMsPerCapturedFrame": 7.619607458060438,
+          "maxCallMs": 59.4538459777832
+        },
+        {
+          "thread": "Main Thread",
+          "marker": "COghe.Skin.Rebuild",
+          "calls": 263,
+          "meanInclusiveMsPerCapturedFrame": 3.986260489983992,
+          "meanSelfMsPerCapturedFrame": 3.98413753546232,
+          "maxCallMs": 6.931153774261475
+        },
+        {
+          "thread": "Main Thread",
+          "marker": "COghe.Gameplay.Step",
+          "calls": 872,
+          "meanInclusiveMsPerCapturedFrame": 2.012990395002293,
+          "meanSelfMsPerCapturedFrame": 2.0125524139499853,
+          "maxCallMs": 10.003999710083008
+        },
+        {
+          "thread": "Main Thread",
+          "marker": "Profiler.FlushMemoryCounters",
+          "calls": 263,
+          "meanInclusiveMsPerCapturedFrame": 0.5501043293060679,
+          "meanSelfMsPerCapturedFrame": 0.5497602118866505,
+          "maxCallMs": 2.965846061706543
+        },
+        {
+          "thread": "Main Thread",
+          "marker": "WaitForTargetFPS",
+          "calls": 263,
+          "meanInclusiveMsPerCapturedFrame": 0.44292803234985156,
+          "meanSelfMsPerCapturedFrame": 0.3642141268835048,
+          "maxCallMs": 15.358077049255371
+        },
+        {
+          "thread": "Main Thread",
+          "marker": "GC.Collect",
+          "calls": 4,
+          "meanInclusiveMsPerCapturedFrame": 0.08702010096925678,
+          "meanSelfMsPerCapturedFrame": 0.08702010096925678,
+          "maxCallMs": 12.18822956085205
+        },
+        {
+          "thread": "Render Thread",
+          "marker": "Gfx.WaitForGfxCommandsFromMainThread",
+          "calls": 2525,
+          "meanInclusiveMsPerCapturedFrame": 12.707178826373406,
+          "meanSelfMsPerCapturedFrame": 0.03408116333621641,
+          "maxCallMs": 82.74523162841797
+        },
+        {
+          "thread": "Main Thread",
+          "marker": "Physics.Simulate",
+          "calls": 872,
+          "meanInclusiveMsPerCapturedFrame": 5.625875289693023,
+          "meanSelfMsPerCapturedFrame": 0.020368859002535992,
+          "maxCallMs": 17.227384567260742
+        },
+        {
+          "thread": "Main Thread",
+          "marker": "COghe.Navigation.Search",
+          "calls": 3,
+          "meanInclusiveMsPerCapturedFrame": 0.013796038248322227,
+          "meanSelfMsPerCapturedFrame": 0.013569348857455418,
+          "maxCallMs": 1.7532310485839844
+        },
+        {
+          "thread": "Main Thread",
+          "marker": "Gfx.WaitForPresentOnGfxThread",
+          "calls": 263,
+          "meanInclusiveMsPerCapturedFrame": 1.3061523649741889,
+          "meanSelfMsPerCapturedFrame": 0.0010597483508745702,
+          "maxCallMs": 34.83607482910156
+        }
+      ],
+      "graphFrames": []
+    },
+    {
+      "level": 7,
+      "frames": 738,
+      "meanFrameMs": 33.890484215444346,
+      "p50FrameMs": 32.59446334838867,
+      "p95FrameMs": 45.854461669921875,
+      "p99FrameMs": 54.59907531738281,
+      "maxFrameMs": 135.6692352294922,
+      "gcAllocBytes": 8366936,
+      "gcMissingSize": 0,
+      "rawSha256": "db1ed738f9cc6a1645f06377bf36738e4b44638e0cf990eaf262507a003585fa",
+      "markers": [
+        {
+          "thread": "Render Thread",
+          "marker": "GfxDeviceVK.Present",
+          "calls": 736,
+          "meanInclusiveMsPerCapturedFrame": 15.991739112510267,
+          "meanSelfMsPerCapturedFrame": 15.991739112510267,
+          "maxCallMs": 43.28315353393555
+        },
+        {
+          "thread": "Render Thread",
+          "marker": "Semaphore.WaitForSignal",
+          "calls": 8534,
+          "meanInclusiveMsPerCapturedFrame": 12.407375083518804,
+          "meanSelfMsPerCapturedFrame": 12.407375083518804,
+          "maxCallMs": 103.71900177001953
+        },
+        {
+          "thread": "Main Thread",
+          "marker": "COghe.Skin.Rebuild",
+          "calls": 737,
+          "meanInclusiveMsPerCapturedFrame": 4.646134245040294,
+          "meanSelfMsPerCapturedFrame": 4.644151661059975,
+          "maxCallMs": 11.306077003479004
+        },
+        {
+          "thread": "Main Thread",
+          "marker": "WaitForTargetFPS",
+          "calls": 737,
+          "meanInclusiveMsPerCapturedFrame": 3.7848589514485664,
+          "meanSelfMsPerCapturedFrame": 3.7545040977169473,
+          "maxCallMs": 26.549846649169922
+        },
+        {
+          "thread": "Main Thread",
+          "marker": "COghe.Gameplay.Step",
+          "calls": 2996,
+          "meanInclusiveMsPerCapturedFrame": 3.5729831332759807,
+          "meanSelfMsPerCapturedFrame": 3.461034582447255,
+          "maxCallMs": 24.31846046447754
+        },
+        {
+          "thread": "Main Thread",
+          "marker": "Profiler.FlushMemoryCounters",
+          "calls": 737,
+          "meanInclusiveMsPerCapturedFrame": 0.5954064088381403,
+          "meanSelfMsPerCapturedFrame": 0.5951714671070518,
+          "maxCallMs": 4.171770095825195
+        },
+        {
+          "thread": "Main Thread",
+          "marker": "COghe.Navigation.BuildGraph.Edges",
+          "calls": 5,
+          "meanInclusiveMsPerCapturedFrame": 0.11580967192404315,
+          "meanSelfMsPerCapturedFrame": 0.10834222489625321,
+          "maxCallMs": 21.799768447875977
+        },
+        {
+          "thread": "Main Thread",
+          "marker": "GC.Collect",
+          "calls": 10,
+          "meanInclusiveMsPerCapturedFrame": 0.039123723015875675,
+          "meanSelfMsPerCapturedFrame": 0.039123723015875675,
+          "maxCallMs": 5.393922805786133
+        },
+        {
+          "thread": "Main Thread",
+          "marker": "COghe.Navigation.Search",
+          "calls": 10,
+          "meanInclusiveMsPerCapturedFrame": 0.024990933212807508,
+          "meanSelfMsPerCapturedFrame": 0.02497123267067914,
+          "maxCallMs": 3.101461887359619
+        },
+        {
+          "thread": "Main Thread",
+          "marker": "Physics.Simulate",
+          "calls": 2996,
+          "meanInclusiveMsPerCapturedFrame": 6.94706096526407,
+          "meanSelfMsPerCapturedFrame": 0.022946075805107026,
+          "maxCallMs": 8.420076370239258
+        },
+        {
+          "thread": "Render Thread",
+          "marker": "Gfx.WaitForGfxCommandsFromMainThread",
+          "calls": 8527,
+          "meanInclusiveMsPerCapturedFrame": 12.426249204401534,
+          "meanSelfMsPerCapturedFrame": 0.018923840393183476,
+          "maxCallMs": 103.72331237792969
+        },
+        {
+          "thread": "Main Thread",
+          "marker": "Gfx.WaitForPresentOnGfxThread",
+          "calls": 737,
+          "meanInclusiveMsPerCapturedFrame": 1.600044597055669,
+          "meanSelfMsPerCapturedFrame": 0.0009204879167523149,
+          "maxCallMs": 26.388076782226562
+        },
+        {
+          "thread": "Main Thread",
+          "marker": "COghe.Navigation.BuildGraph",
+          "calls": 5,
+          "meanInclusiveMsPerCapturedFrame": 0.12560401957855638,
+          "meanSelfMsPerCapturedFrame": 5.534506241379553e-05,
+          "maxCallMs": 23.354154586791992
+        }
+      ],
+      "graphFrames": [
+        {
+          "frame": 183,
+          "calls": 1,
+          "inclusiveMs": 17.559768676757812,
+          "maxCallMs": 17.559768676757812
+        },
+        {
+          "frame": 185,
+          "calls": 1,
+          "inclusiveMs": 23.354154586791992,
+          "maxCallMs": 23.354154586791992
+        },
+        {
+          "frame": 187,
+          "calls": 1,
+          "inclusiveMs": 17.41815185546875,
+          "maxCallMs": 17.41815185546875
+        },
+        {
+          "frame": 192,
+          "calls": 1,
+          "inclusiveMs": 17.28092384338379,
+          "maxCallMs": 17.28092384338379
+        },
+        {
+          "frame": 372,
+          "calls": 1,
+          "inclusiveMs": 17.082767486572266,
+          "maxCallMs": 17.082767486572266
+        }
+      ]
+    },
+    {
+      "level": 23,
+      "frames": 378,
+      "meanFrameMs": 33.87506094433012,
+      "p50FrameMs": 32.86123275756836,
+      "p95FrameMs": 45.61469268798828,
+      "p99FrameMs": 57.43607711791992,
+      "maxFrameMs": 65.09454345703125,
+      "gcAllocBytes": 5767768,
+      "gcMissingSize": 0,
+      "rawSha256": "08556e189d5d3807cdee5adb1f2d09fe44bc5be3d4e8aefa1caac5934e16c5f1",
+      "markers": [
+        {
+          "thread": "Render Thread",
+          "marker": "Semaphore.WaitForSignal",
+          "calls": 4561,
+          "meanInclusiveMsPerCapturedFrame": 15.365168775759807,
+          "meanSelfMsPerCapturedFrame": 15.365168775759807,
+          "maxCallMs": 30.662845611572266
+        },
+        {
+          "thread": "Render Thread",
+          "marker": "GfxDeviceVK.Present",
+          "calls": 376,
+          "meanInclusiveMsPerCapturedFrame": 13.504527678565374,
+          "meanSelfMsPerCapturedFrame": 13.504527678565374,
+          "maxCallMs": 42.57823181152344
+        },
+        {
+          "thread": "Main Thread",
+          "marker": "COghe.Skin.Rebuild",
+          "calls": 377,
+          "meanInclusiveMsPerCapturedFrame": 9.265110491444824,
+          "meanSelfMsPerCapturedFrame": 9.263789531151012,
+          "maxCallMs": 15.270999908447266
+        },
+        {
+          "thread": "Main Thread",
+          "marker": "WaitForTargetFPS",
+          "calls": 377,
+          "meanInclusiveMsPerCapturedFrame": 3.410889674037222,
+          "meanSelfMsPerCapturedFrame": 3.366018335511158,
+          "maxCallMs": 23.11961555480957
+        },
+        {
+          "thread": "Main Thread",
+          "marker": "COghe.Gameplay.Step",
+          "calls": 1538,
+          "meanInclusiveMsPerCapturedFrame": 3.60911402437422,
+          "meanSelfMsPerCapturedFrame": 3.3594573667602,
+          "maxCallMs": 34.34953689575195
+        },
+        {
+          "thread": "Main Thread",
+          "marker": "Profiler.FlushMemoryCounters",
+          "calls": 377,
+          "meanInclusiveMsPerCapturedFrame": 0.5914560457859089,
+          "meanSelfMsPerCapturedFrame": 0.5913787124501098,
+          "maxCallMs": 1.391692042350769
+        },
+        {
+          "thread": "Main Thread",
+          "marker": "COghe.Navigation.BuildGraph.Edges",
+          "calls": 5,
+          "meanInclusiveMsPerCapturedFrame": 0.19681481709555973,
+          "meanSelfMsPerCapturedFrame": 0.19231654730234013,
+          "maxCallMs": 15.187076568603516
+        },
+        {
+          "thread": "Main Thread",
+          "marker": "GC.Collect",
+          "calls": 7,
+          "meanInclusiveMsPerCapturedFrame": 0.03851505546342759,
+          "meanSelfMsPerCapturedFrame": 0.03851505546342759,
+          "maxCallMs": 3.3772308826446533
+        },
+        {
+          "thread": "Render Thread",
+          "marker": "Gfx.WaitForGfxCommandsFromMainThread",
+          "calls": 4561,
+          "meanInclusiveMsPerCapturedFrame": 15.38557583093697,
+          "meanSelfMsPerCapturedFrame": 0.020407055177163486,
+          "maxCallMs": 30.66492462158203
+        },
+        {
+          "thread": "Main Thread",
+          "marker": "Physics.Simulate",
+          "calls": 1538,
+          "meanInclusiveMsPerCapturedFrame": 4.935177732554693,
+          "meanSelfMsPerCapturedFrame": 0.01708958515769275,
+          "maxCallMs": 3.365539073944092
+        },
+        {
+          "thread": "Main Thread",
+          "marker": "COghe.Navigation.Search",
+          "calls": 7,
+          "meanInclusiveMsPerCapturedFrame": 0.014399881085390767,
+          "meanSelfMsPerCapturedFrame": 0.01438421706408253,
+          "maxCallMs": 1.2695389986038208
+        },
+        {
+          "thread": "Main Thread",
+          "marker": "Gfx.WaitForPresentOnGfxThread",
+          "calls": 377,
+          "meanInclusiveMsPerCapturedFrame": 0.9239232788560297,
+          "meanSelfMsPerCapturedFrame": 0.0009456610206388942,
+          "maxCallMs": 29.468307495117188
+        },
+        {
+          "thread": "Main Thread",
+          "marker": "COghe.Navigation.BuildGraph",
+          "calls": 5,
+          "meanInclusiveMsPerCapturedFrame": 0.21481704711914062,
+          "meanSelfMsPerCapturedFrame": 0.00010764015106750386,
+          "maxCallMs": 16.650461196899414
+        }
+      ],
+      "graphFrames": [
+        {
+          "frame": 67,
+          "calls": 1,
+          "inclusiveMs": 16.2239990234375,
+          "maxCallMs": 16.2239990234375
+        },
+        {
+          "frame": 69,
+          "calls": 1,
+          "inclusiveMs": 15.924230575561523,
+          "maxCallMs": 15.924230575561523
+        },
+        {
+          "frame": 77,
+          "calls": 1,
+          "inclusiveMs": 16.211383819580078,
+          "maxCallMs": 16.211383819580078
+        },
+        {
+          "frame": 84,
+          "calls": 2,
+          "inclusiveMs": 32.841230392456055,
+          "maxCallMs": 16.650461196899414
+        }
+      ]
+    },
+    {
+      "level": 53,
+      "frames": 583,
+      "meanFrameMs": 42.894486049436175,
+      "p50FrameMs": 37.20646286010742,
+      "p95FrameMs": 56.376922607421875,
+      "p99FrameMs": 231.95477294921875,
+      "maxFrameMs": 446.90362548828125,
+      "gcAllocBytes": 10231483,
+      "gcMissingSize": 0,
+      "rawSha256": "703cb3ec8f7c1f40fbb099dedc1ed790c68931a656ac019b20fe1fda30d4c63b",
+      "markers": [
+        {
+          "thread": "Render Thread",
+          "marker": "Semaphore.WaitForSignal",
+          "calls": 5155,
+          "meanInclusiveMsPerCapturedFrame": 26.11052303337295,
+          "meanSelfMsPerCapturedFrame": 26.11052303337295,
+          "maxCallMs": 431.8479919433594
+        },
+        {
+          "thread": "Render Thread",
+          "marker": "GfxDeviceVK.Present",
+          "calls": 582,
+          "meanInclusiveMsPerCapturedFrame": 11.042629431492264,
+          "meanSelfMsPerCapturedFrame": 11.042629431492264,
+          "maxCallMs": 42.05361557006836
+        },
+        {
+          "thread": "Main Thread",
+          "marker": "COghe.Gameplay.Step",
+          "calls": 2822,
+          "meanInclusiveMsPerCapturedFrame": 11.122325774122471,
+          "meanSelfMsPerCapturedFrame": 9.04846378683537,
+          "maxCallMs": 209.4836883544922
+        },
+        {
+          "thread": "Main Thread",
+          "marker": "COghe.Skin.Rebuild",
+          "calls": 582,
+          "meanInclusiveMsPerCapturedFrame": 8.240866191595742,
+          "meanSelfMsPerCapturedFrame": 8.239036141884425,
+          "maxCallMs": 16.40769386291504
+        },
+        {
+          "thread": "Main Thread",
+          "marker": "COghe.Navigation.BuildGraph.Edges",
+          "calls": 9,
+          "meanInclusiveMsPerCapturedFrame": 3.0014511291608597,
+          "meanSelfMsPerCapturedFrame": 2.970146742679591,
+          "maxCallMs": 203.0984649658203
+        },
+        {
+          "thread": "Main Thread",
+          "marker": "WaitForTargetFPS",
+          "calls": 582,
+          "meanInclusiveMsPerCapturedFrame": 2.9179320596318252,
+          "meanSelfMsPerCapturedFrame": 2.8629317749893954,
+          "maxCallMs": 22.601768493652344
+        },
+        {
+          "thread": "Main Thread",
+          "marker": "Profiler.FlushMemoryCounters",
+          "calls": 582,
+          "meanInclusiveMsPerCapturedFrame": 0.7172084860695369,
+          "meanSelfMsPerCapturedFrame": 0.7170382802369969,
+          "maxCallMs": 1.6132309436798096
+        },
+        {
+          "thread": "Main Thread",
+          "marker": "GC.Collect",
+          "calls": 14,
+          "meanInclusiveMsPerCapturedFrame": 0.07070616649313612,
+          "meanSelfMsPerCapturedFrame": 0.07070616649313612,
+          "maxCallMs": 9.294231414794922
+        },
+        {
+          "thread": "Main Thread",
+          "marker": "COghe.Navigation.Search",
+          "calls": 13,
+          "meanInclusiveMsPerCapturedFrame": 0.047461539046842076,
+          "meanSelfMsPerCapturedFrame": 0.047433834072651934,
+          "maxCallMs": 13.675615310668945
+        },
+        {
+          "thread": "Main Thread",
+          "marker": "Physics.Simulate",
+          "calls": 2822,
+          "meanInclusiveMsPerCapturedFrame": 6.003952058981049,
+          "meanSelfMsPerCapturedFrame": 0.022266314558263094,
+          "maxCallMs": 3.846230983734131
+        },
+        {
+          "thread": "Render Thread",
+          "marker": "Gfx.WaitForGfxCommandsFromMainThread",
+          "calls": 5153,
+          "meanInclusiveMsPerCapturedFrame": 26.128949226773987,
+          "meanSelfMsPerCapturedFrame": 0.01845113165104701,
+          "maxCallMs": 431.8492126464844
+        },
+        {
+          "thread": "Main Thread",
+          "marker": "Gfx.WaitForPresentOnGfxThread",
+          "calls": 582,
+          "meanInclusiveMsPerCapturedFrame": 0.31247884763644745,
+          "meanSelfMsPerCapturedFrame": 0.0006830741832294185,
+          "maxCallMs": 28.624000549316406
+        },
+        {
+          "thread": "Main Thread",
+          "marker": "COghe.Navigation.BuildGraph",
+          "calls": 9,
+          "meanInclusiveMsPerCapturedFrame": 3.052581185133134,
+          "meanSelfMsPerCapturedFrame": 0.00012583532298740964,
+          "maxCallMs": 206.4993896484375
+        }
+      ],
+      "graphFrames": [
+        {
+          "frame": 71,
+          "calls": 1,
+          "inclusiveMs": 194.2562255859375,
+          "maxCallMs": 194.2562255859375
+        },
+        {
+          "frame": 95,
+          "calls": 1,
+          "inclusiveMs": 206.4993896484375,
+          "maxCallMs": 206.4993896484375
+        },
+        {
+          "frame": 101,
+          "calls": 1,
+          "inclusiveMs": 196.48829650878906,
+          "maxCallMs": 196.48829650878906
+        },
+        {
+          "frame": 304,
+          "calls": 1,
+          "inclusiveMs": 199.80430603027344,
+          "maxCallMs": 199.80430603027344
+        },
+        {
+          "frame": 305,
+          "calls": 2,
+          "inclusiveMs": 392.22731018066406,
+          "maxCallMs": 196.4923095703125
+        },
+        {
+          "frame": 310,
+          "calls": 1,
+          "inclusiveMs": 197.11500549316406,
+          "maxCallMs": 197.11500549316406
+        },
+        {
+          "frame": 461,
+          "calls": 1,
+          "inclusiveMs": 196.4134521484375,
+          "maxCallMs": 196.4134521484375
+        },
+        {
+          "frame": 533,
+          "calls": 1,
+          "inclusiveMs": 196.85084533691406,
+          "maxCallMs": 196.85084533691406
+        }
+      ]
+    },
+    {
+      "level": 65,
+      "frames": 655,
+      "meanFrameMs": 38.209356648685365,
+      "p50FrameMs": 37.4095344543457,
+      "p95FrameMs": 48.43976974487305,
+      "p99FrameMs": 77.3978500366211,
+      "maxFrameMs": 90.505615234375,
+      "gcAllocBytes": 7652726,
+      "gcMissingSize": 0,
+      "rawSha256": "45fda6fba0a5311b2fce369935a165616afcbdafb39823312d68ec48e4b15e92",
+      "markers": [
+        {
+          "thread": "Render Thread",
+          "marker": "Semaphore.WaitForSignal",
+          "calls": 5161,
+          "meanInclusiveMsPerCapturedFrame": 20.537604832698264,
+          "meanSelfMsPerCapturedFrame": 20.537604832698264,
+          "maxCallMs": 72.08953857421875
+        },
+        {
+          "thread": "Render Thread",
+          "marker": "GfxDeviceVK.Present",
+          "calls": 654,
+          "meanInclusiveMsPerCapturedFrame": 12.134917513286794,
+          "meanSelfMsPerCapturedFrame": 12.134917513286794,
+          "maxCallMs": 42.770076751708984
+        },
+        {
+          "thread": "Main Thread",
+          "marker": "COghe.Gameplay.Step",
+          "calls": 3003,
+          "meanInclusiveMsPerCapturedFrame": 8.785914929768511,
+          "meanSelfMsPerCapturedFrame": 8.32160436166366,
+          "maxCallMs": 52.470767974853516
+        },
+        {
+          "thread": "Main Thread",
+          "marker": "COghe.Skin.Rebuild",
+          "calls": 654,
+          "meanInclusiveMsPerCapturedFrame": 5.728146107506206,
+          "meanSelfMsPerCapturedFrame": 5.726128154862246,
+          "maxCallMs": 7.975691795349121
+        },
+        {
+          "thread": "Main Thread",
+          "marker": "WaitForTargetFPS",
+          "calls": 654,
+          "meanInclusiveMsPerCapturedFrame": 3.122451287573417,
+          "meanSelfMsPerCapturedFrame": 3.073242759679918,
+          "maxCallMs": 22.962461471557617
+        },
+        {
+          "thread": "Main Thread",
+          "marker": "Profiler.FlushMemoryCounters",
+          "calls": 654,
+          "meanInclusiveMsPerCapturedFrame": 0.7092097353844242,
+          "meanSelfMsPerCapturedFrame": 0.7091895369111688,
+          "maxCallMs": 2.0423851013183594
+        },
+        {
+          "thread": "Main Thread",
+          "marker": "COghe.Navigation.BuildGraph.Edges",
+          "calls": 7,
+          "meanInclusiveMsPerCapturedFrame": 0.49322407263835877,
+          "meanSelfMsPerCapturedFrame": 0.4870335017237746,
+          "maxCallMs": 46.9763069152832
+        },
+        {
+          "thread": "Main Thread",
+          "marker": "COghe.Navigation.Search",
+          "calls": 10,
+          "meanInclusiveMsPerCapturedFrame": 0.03280845616609995,
+          "meanSelfMsPerCapturedFrame": 0.03278907601373227,
+          "maxCallMs": 2.880692958831787
+        },
+        {
+          "thread": "Main Thread",
+          "marker": "GC.Collect",
+          "calls": 10,
+          "meanInclusiveMsPerCapturedFrame": 0.029574871609229166,
+          "meanSelfMsPerCapturedFrame": 0.029574871609229166,
+          "maxCallMs": 3.86899995803833
+        },
+        {
+          "thread": "Main Thread",
+          "marker": "Physics.Simulate",
+          "calls": 3003,
+          "meanInclusiveMsPerCapturedFrame": 7.025474244674654,
+          "meanSelfMsPerCapturedFrame": 0.02402833110674192,
+          "maxCallMs": 4.462769031524658
+        },
+        {
+          "thread": "Render Thread",
+          "marker": "Gfx.WaitForGfxCommandsFromMainThread",
+          "calls": 5161,
+          "meanInclusiveMsPerCapturedFrame": 20.5542346067995,
+          "meanSelfMsPerCapturedFrame": 0.016629774101235804,
+          "maxCallMs": 72.09200286865234
+        },
+        {
+          "thread": "Main Thread",
+          "marker": "Gfx.WaitForPresentOnGfxThread",
+          "calls": 654,
+          "meanInclusiveMsPerCapturedFrame": 0.2501699563931631,
+          "meanSelfMsPerCapturedFrame": 0.000625990962526114,
+          "maxCallMs": 20.408384323120117
+        },
+        {
+          "thread": "Main Thread",
+          "marker": "COghe.Navigation.BuildGraph",
+          "calls": 7,
+          "meanInclusiveMsPerCapturedFrame": 0.5249729884489802,
+          "meanSelfMsPerCapturedFrame": 0.0001078136620744494,
+          "maxCallMs": 50.316925048828125
+        }
+      ],
+      "graphFrames": [
+        {
+          "frame": 23,
+          "calls": 1,
+          "inclusiveMs": 49.78984832763672,
+          "maxCallMs": 49.78984832763672
+        },
+        {
+          "frame": 176,
+          "calls": 1,
+          "inclusiveMs": 49.66084671020508,
+          "maxCallMs": 49.66084671020508
+        },
+        {
+          "frame": 353,
+          "calls": 1,
+          "inclusiveMs": 49.189537048339844,
+          "maxCallMs": 49.189537048339844
+        },
+        {
+          "frame": 400,
+          "calls": 1,
+          "inclusiveMs": 50.316925048828125,
+          "maxCallMs": 50.316925048828125
+        },
+        {
+          "frame": 407,
+          "calls": 1,
+          "inclusiveMs": 48.11084747314453,
+          "maxCallMs": 48.11084747314453
+        },
+        {
+          "frame": 415,
+          "calls": 1,
+          "inclusiveMs": 48.67115020751953,
+          "maxCallMs": 48.67115020751953
+        },
+        {
+          "frame": 487,
+          "calls": 1,
+          "inclusiveMs": 48.1181526184082,
+          "maxCallMs": 48.1181526184082
+        }
+      ]
+    }
+  ]
+}

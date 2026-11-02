@@ -1,0 +1,54 @@
+{
+  "app": "Alien Pet: Escape Puzzle",
+  "package": "com.gravityboxlab.venom",
+  "version_name": "1.0.2",
+  "version_code": 3,
+  "recorded_at": "2026-11-02T02:26:56.751168+00:00",
+  "track": "Production",
+  "markets": [
+    "United States"
+  ],
+  "rollout_percentage": 100,
+  "console_status": "Changes in review",
+  "quick_checks": "Still running at submission; Console says changes are sent when checks complete successfully.",
+  "managed_publishing": false,
+  "artifact": "/Users/mrk/GravityBox/Builds/AlienPet/GooglePlay/AlienPet-1.0.2-3.aab",
+  "aab_sha256": "27e9e64ce0dd9d68ee1e5ceb43588875109e67848d459d1d37bc1d05e8b7b2f4",
+  "same_upload_key_verified": true,
+  "upload_certificate_sha256": "5b894271027148d895e3c1bc0f84f0490e0c78f3f745ebeafa118f82dc0a3d4c",
+  "validation": {
+    "bundletool": "PASS",
+    "signature": "PASS",
+    "native_16kb_alignment": "PASS",
+    "release_not_debuggable": true,
+    "tablet_support_preserved": true
+  },
+  "supported_devices": {
+    "phone": 8416,
+    "tablet": 4739,
+    "removed": 0
+  },
+  "native_symbols": {
+    "uploaded": true,
+    "libraries": 7,
+    "zip": "Artifacts/AlienPetResubmit20261102/native-symbols/native-symbols.zip",
+    "sha256": "b291b7643f3196dcbc4e2c938bbb85c2e4d671d7fd8c08be350f1ccbb37fe088"
+  },
+  "remaining_nonblocking_warnings": [
+    "Advertising ID declaration versus intentionally absent AD_ID permission",
+    "R8 mapping absent; release minification disabled"
+  ],
+  "changes_this_task": [
+    "New version 1.0.2 (3) release build using existing key",
+    "Uploaded AAB and matching native symbols",
+    "Submitted Production and previously approved app listing/declarations for review"
+  ],
+  "limitations": [
+    "No claim that prior installation rejection root cause was identified or fixed.",
+    "Physical Google Play installation/startup verification covered version 1.0.1 (2); version 1.0.2 (3) validated statically in this task.",
+    "Approval pending; not yet live.",
+    "UMP consent forms still require dashboard configuration; ads fail closed."
+  ],
+  "proof": "Docs/Verification/AlienPetResubmit20261102/production-in-review.png",
+  "console_url": "https://play.google.com/console/u/0/developers/5637064096940148363/app/4974079895895643247/publishing"
+}

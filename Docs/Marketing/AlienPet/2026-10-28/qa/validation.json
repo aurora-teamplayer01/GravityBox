@@ -1,0 +1,34 @@
+[
+  {
+    "file": "AlienPet_A_ESCAPE_22s_1080x1920.mp4",
+    "duration": 22.0,
+    "frames": 660,
+    "video": "1080x1920, 30fps H.264",
+    "audio": "48kHz stereo AAC",
+    "black_intervals": 0,
+    "audio_stats": [
+      "[Parsed_astats_0 @ 0xc61048b40] Peak level dB: -1.576159",
+      "[Parsed_astats_0 @ 0xc61048b40] RMS level dB: -18.153890",
+      "[Parsed_astats_0 @ 0xc61048b40] Peak level dB: -1.480197",
+      "[Parsed_astats_0 @ 0xc61048b40] RMS level dB: -18.161648",
+      "[Parsed_astats_0 @ 0xc61048b40] Peak level dB: -1.480197",
+      "[Parsed_astats_0 @ 0xc61048b40] RMS level dB: -18.157768"
+    ]
+  },
+  {
+    "file": "AlienPet_B_BEST_FRIEND_24s_1080x1920.mp4",
+    "duration": 24.0,
+    "frames": 720,
+    "video": "1080x1920, 30fps H.264",
+    "audio": "48kHz stereo AAC",
+    "black_intervals": 0,
+    "audio_stats": [
+      "[Parsed_astats_0 @ 0x842c38b40] Peak level dB: -1.646166",
+      "[Parsed_astats_0 @ 0x842c38b40] RMS level dB: -17.915238",
+      "[Parsed_astats_0 @ 0x842c38b40] Peak level dB: -1.657745",
+      "[Parsed_astats_0 @ 0x842c38b40] RMS level dB: -17.897355",
+      "[Parsed_astats_0 @ 0x842c38b40] Peak level dB: -1.646166",
+      "[Parsed_astats_0 @ 0x842c38b40] RMS level dB: -17.906287"
+    ]
+  }
+]

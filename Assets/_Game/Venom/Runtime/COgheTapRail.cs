@@ -99,8 +99,19 @@ namespace GravityBox.Venom
             (RequiredRail == null || (RequiredPosition >= 0 ? Mathf.Abs(RequiredRail.Position - RequiredPosition) <= RequiredRail.CatchTolerance :
                 RequiredEnd ? RequiredRail.AtEnd : RequiredRail.Position <= RequiredRail.CatchTolerance)) && AlsoOpen;
         private bool AlsoOpen { get { if (AlsoRequired != null) foreach (var r in AlsoRequired) if (r != null && !r.AtEnd) return false; return true; } }
-        public override string Activity => Busy ? Label + (Phase == TaskPhase.Approaching ? " · Đang tới" : Holding ? " · Đang giữ" : RequiredGrip != null && !InterlockOpen ? " · Chờ nhả phanh" : " · Đang chuyển") :
-            owner != null && owner.Matter.SimulationTime < messageUntil ? LastFailure : null;
+        private string activityLabel, activitySuffix, activityText;
+        public override string Activity
+        {
+            get
+            {
+                if (!Busy) return owner != null && owner.Matter.SimulationTime < messageUntil ? LastFailure : null;
+                string suffix = Phase == TaskPhase.Approaching ? " · Đang tới" : Holding ? " · Đang giữ" :
+                    RequiredGrip != null && !InterlockOpen ? " · Chờ nhả phanh" : " · Đang chuyển";
+                if (activityLabel != Label || activitySuffix != suffix)
+                { activityLabel = Label; activitySuffix = suffix; activityText = Label + suffix; }
+                return activityText;
+            }
+        }
         public Vector3 HandPoint => across != 0 ? Rail.Body.position + Rail.Frame.TransformDirection(Across * across * (HalfAlong(Across) + .008f)) :
             backSide&&AlternateHandle!=null?AlternateHandle.position:Handle != null ? Handle.position : Rail.Body.position;
         /// <summary>The crate's long sides, square to its slide on the floor (frame space).</summary>
@@ -440,7 +451,7 @@ namespace GravityBox.Venom
             float remaining = Mathf.Abs(target - Rail.Position);
             if (remaining < bestDistance - .002f) { bestDistance = remaining; lastProgressAt = now; }
             Vector3 axis = Rail.WorldAxis;
-            float velocity = Vector3.Dot(Rail.Body.linearVelocity - Rail.Frame.GetComponent<Rigidbody>().GetPointVelocity(Rail.Body.position), axis);
+            float velocity = Vector3.Dot(Rail.Body.linearVelocity - Rail.FrameBody.GetPointVelocity(Rail.Body.position), axis);
             bool reached = remaining <= Rail.CatchTolerance;
             stableTime = reached && Mathf.Abs(velocity) < .025f ? stableTime + dt : 0;
             if (!HoldAtEnd && stableTime >= .10f)

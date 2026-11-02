@@ -1,0 +1,362 @@
+level,passed,escaped,fragments,taps,frames,seconds,fps,p50Ms,p95Ms,p99Ms,maxMs,skinMs,gameStepMs,graphMs,maxGraphMs,peakAllocatedBytes,gcCollections,error
+1,True,32,1,1,229,5.266726970672607,43.94403076171875,16.33809471130371,32.69318389892578,48.98371505737305,81.64641571044922,3.2917672489082963,1.1272877729257638,0.0,0.0,98464894,2,
+2,True,32,1,3,314,6.889629364013672,46.428531646728516,16.337074279785156,32.67506408691406,32.68466567993164,49.01506423950195,3.200149681528662,1.2402799363057326,0.0,0.0,74393422,2,
+3,True,32,1,3,317,7.185710906982422,44.919029235839844,16.33869171142578,32.6956901550293,32.79074478149414,48.99151611328125,3.4519154574132513,1.3823315457413254,0.0,0.0,74406194,2,
+4,True,32,1,2,328,7.438591003417969,44.61961364746094,16.33742904663086,32.70062255859375,32.76700210571289,97.97096252441406,3.4855231707317063,1.4997786585365864,0.10673201219512195,14.8948,99392522,3,
+5,True,32,1,3,567,13.18621826171875,43.38563537597656,16.33904457092285,32.70059585571289,32.75095748901367,65.34054565429688,3.5960735449735433,1.7959070546737217,0.15001322751322752,11.4218,74986642,5,
+6,True,32,1,3,573,13.672607421875,42.31108474731445,16.33794593811035,32.68339920043945,32.702205657958984,97.9989013671875,3.693811169284467,1.890061082024431,0.12101780104712041,12.0439,99618362,5,
+7,True,32,1,6,643,21.967628479003906,29.773714065551758,32.669551849365234,49.00170135498047,49.07386016845703,130.6490478515625,5.457775116640755,4.4112569206842895,0.18807247278382583,26.1874,100449482,5,
+8,True,32,1,3,240,8.268753051757812,29.73953628540039,32.67062759399414,49.00779724121094,49.02711868286133,49.08803176879883,6.321082083333335,3.7389279166666656,0.26392374999999996,17.8188,100030202,2,
+9,True,32,1,6,555,19.58172607421875,28.963048934936523,32.67127990722656,49.012699127197266,49.0760612487793,81.67159271240234,3.947857297297298,3.7217890090090084,0.693533873873874,22.4646,101197298,7,
+10,False,0,1,4,1423,51.174072265625,27.982070922851562,32.672122955322266,49.0251350402832,49.11852264404297,65.38550567626953,4.087423612087142,3.3248025298664765,0.5891905832747717,36.0628,79176634,13,"System.InvalidOperationException: Operate B; Idle; ; selected=0 fragments=1 centre=(-0.24, -0.24, 0.13); C position=0.04702782 phase=Idle last= stand=(0.01, 0.06, 0.18) hand=(0.01, 0.06, 0.23); D position=0 phase=Idle last= stand=(0.30, 0.06, 0.19) hand=(0.30, 0.06, 0.24); A position=0 phase=Idle last= stand=(-0.05, -0.28, -0.14) hand=(-0.05, -0.28, -0.09); B position=0 phase=Idle last= stand=(0.08, -0.28, -0.29) hand=(0.08, -0.28, -0.24); intent=(0.0000, 0.0000, 0.0000) velocity=(0.0000, 0.0001, 0.0000) feet=29 supports=Passenger elevator surface:29,; group 0 centre=(-0.2378, -0.2424, 0.1268) target= hold= exit=
+Nearby colliders: 
+Passenger elevator surface bounds=Center: (-0.25, -0.29, 0.15), Extents: (0.14, 0.00, 0.14) active=True enabled=True
+Passenger elevator surface bounds=Center: (-0.25, -0.28, 0.02), Extents: (0.14, 0.02, 0.00) active=True enabled=True
+Passenger elevator surface bounds=Center: (-0.25, -0.26, 0.15), Extents: (0.14, 0.00, 0.14) active=True enabled=True
+Laboratory floor bounds=Center: (0.00, -0.30, 0.00), Extents: (0.40, 0.00, 0.30) active=True enabled=True
+Particle 0 group=0 position=(-0.25612, -0.24710, 0.09761) support=Passenger elevator surface
+Particle 1 group=0 position=(-0.22254, -0.24681, 0.09206) support=Passenger elevator surface
+Particle 2 group=0 position=(-0.24290, -0.24954, 0.10882) support=Passenger elevator surface
+Particle 3 group=0 position=(-0.22625, -0.24954, 0.10848) support=Passenger elevator surface
+Particle 4 group=0 position=(-0.23935, -0.24161, 0.09403) support=Passenger elevator surface
+Particle 5 group=0 position=(-0.21231, -0.24076, 0.10585) support=Passenger elevator surface
+Particle 6 group=0 position=(-0.27182, -0.24551, 0.10582) support=Passenger elevator surface
+Particle 7 group=0 position=(-0.24808, -0.23499, 0.10826) support=Passenger elevator surface
+Particle 8 group=0 position=(-0.23192, -0.23688, 0.11643) support=Passenger elevator surface
+Particle 9 group=0 position=(-0.20083, -0.24849, 0.11753) support=Passenger elevator surface
+Particle 10 group=0 position=(-0.27447, -0.24912, 0.12293) support=Passenger elevator surface
+Particle 11 group=0 position=(-0.25345, -0.24954, 0.13288) support=Passenger elevator surface
+Particle 12 group=0 position=(-0.22190, -0.24954, 0.12523) support=Passenger elevator surface
+Particle 13 group=0 position=(-0.20600, -0.24886, 0.13450) support=Passenger elevator surface
+Particle 14 group=0 position=(-0.25784, -0.24722, 0.11661) support=Passenger elevator surface
+Particle 15 group=0 position=(-0.23819, -0.24954, 0.12522) support=Passenger elevator surface
+Particle 16 group=0 position=(-0.23918, -0.22062, 0.11389) support=
+Particle 17 group=0 position=(-0.22315, -0.22282, 0.12155) support=
+Particle 18 group=0 position=(-0.26439, -0.23692, 0.12983) support=Passenger elevator surface
+Particle 19 group=0 position=(-0.24705, -0.23565, 0.12572) support=Passenger elevator surface
+Particle 20 group=0 position=(-0.22941, -0.23732, 0.13437) support=Passenger elevator surface
+Particle 21 group=0 position=(-0.21155, -0.23643, 0.12362) support=Passenger elevator surface
+Particle 22 group=0 position=(-0.27369, -0.24724, 0.14078) support=Passenger elevator surface
+Particle 23 group=0 position=(-0.24949, -0.23660, 0.14310) support=Passenger elevator surface
+Particle 24 group=0 position=(-0.22148, -0.24954, 0.14332) support=Passenger elevator surface
+Particle 25 group=0 position=(-0.20617, -0.24632, 0.15199) support=Passenger elevator surface
+Particle 26 group=0 position=(-0.25845, -0.24954, 0.14995) support=Passenger elevator surface
+Particle 27 group=0 position=(-0.23877, -0.24954, 0.14314) support=Passenger elevator surface
+Particle 28 group=0 position=(-0.23844, -0.22288, 0.14620) support=
+Particle 29 group=0 position=(-0.22957, -0.23777, 0.15231) support=Passenger elevator surface
+Particle 30 group=0 position=(-0.24470, -0.24476, 0.15929) support=Passenger elevator surface
+Particle 31 group=0 position=(-0.22873, -0.24685, 0.16729) support=Passenger elevator surface
+Rail Passenger elevator pos=0.00146 target=0.30000 end=False
+Rail C carriage pos=0.04703 target=0.05000 end=True
+Rail D carriage pos=0.00000 target=0.05000 end=False
+Rail A carriage pos=0.00000 target=0.12000 end=False
+Rail B carriage pos=0.00000 target=0.12000 end=False
+Rail A glass lid pos=0.11948 target=0.12000 end=True
+Rail A jam pin pos=0.00000 target=0.05000 end=False
+Rail B rising bridge pos=0.00000 target=0.15200 end=False
+Rail A blue shutter pos=0.00000 target=0.14000 end=False
+  at GravityBox.Venom.ChapterProof.COgheViewProofPlayer+<Until>d__39.MoveNext () [0x00000] in <00000000000000000000000000000000>:0 
+  at GravityBox.Venom.ChapterProof.COgheViewProofPlayer+<Guarded>d__33.MoveNext () [0x00000] in <00000000000000000000000000000000>:0 
+  at UnityEngine.SetupCoroutine.InvokeMoveNext (System.Collections.IEnumerator enumerator, System.IntPtr returnValueAddress) [0x00000] in <00000000000000000000000000000000>:0 "
+11,True,32,1,4,425,14.255844116210938,30.357362747192383,32.670101165771484,48.99368667602539,49.05812072753906,65.35128021240234,4.94175623529412,3.7918727058823576,0.4150404705882353,32.2827,77899050,3,
+12,True,32,1,4,629,21.220062255859375,29.964035034179688,32.66957092285156,49.00474166870117,49.06614303588867,98.00061798095703,5.76675246422893,4.184298092209852,0.3301801271860095,60.2446,102361562,5,
+13,True,32,1,3,493,16.439544677734375,30.300077438354492,32.67043685913086,49.00737762451172,49.06037521362305,65.34623718261719,5.667086206896552,4.110347870182555,0.3041610547667343,28.2677,77972082,4,
+14,True,32,1,5,334,11.56683349609375,29.761072158813477,32.66917419433594,49.01301956176758,49.13511276245117,65.33003997802734,5.982937425149699,4.291195209580838,0.18185568862275447,22.2515,78067354,2,
+15,True,32,1,6,390,13.49658203125,29.73080825805664,32.669254302978516,48.99718475341797,65.29732513427734,114.33016204833984,5.259870512820513,5.035124871794868,0.5345476923076924,32.3643,103027082,3,
+16,True,32,1,8,320,11.22100830078125,29.72419548034668,32.669464111328125,49.013484954833984,65.33503723144531,81.70111846923828,6.742500624999996,5.0972793749999985,0.748541875,46.5738,102942466,4,
+17,True,32,1,18,954,33.00311279296875,29.994131088256836,32.67030715942383,49.01287841796875,65.33702087402344,81.66456604003906,7.294070649895184,4.9916473794549265,0.38149528301886787,49.4129,80701818,9,
+18,False,0,2,70,3414,118.11978149414062,30.074392318725586,32.6698112487793,49.00761795043945,49.0734977722168,81.70502471923828,7.540902050380776,3.6808545401288857,0.07573509080257763,58.3888,80950228,36,"System.InvalidOperationException: All parts meet and fuse; Có mô trong vùng chuyển — đưa về bệ an toàn; ; selected=16 fragments=2 centre=(0.12, -0.29, -0.23); B position=0.04702649 phase=Idle last= stand=(0.19, -0.28, -0.11) hand=(0.19, -0.28, -0.06); C position=0 phase=Idle last=Phần này chưa đủ sức — nhập lại rồi thử stand=(0.31, -0.28, -0.24) hand=(0.31, -0.27, -0.19); intent=(0.0000, 0.0000, 0.0000) velocity=(0.0000, 0.0000, 0.0000) feet=31 supports=Laboratory floor:31,; group 0 centre=(0.1237, -0.2869, -0.2261) target= hold= exit=; group 1 centre=(0.1882, -0.2853, -0.1052) target= hold= exit=
+Nearby colliders: 
+Partition wall bounds=Center: (0.05, -0.30, 0.08), Extents: (0.02, 0.00, 0.22) active=True enabled=True
+Partition wall bounds=Center: (0.06, -0.20, 0.08), Extents: (0.00, 0.10, 0.22) active=True enabled=True
+Partition wall bounds=Center: (0.05, -0.20, -0.14), Extents: (0.02, 0.10, 0.00) active=True enabled=True
+Partition wall bounds=Center: (0.05, -0.20, -0.26), Extents: (0.02, 0.10, 0.00) active=True enabled=True
+Partition wall bounds=Center: (0.05, -0.20, -0.29), Extents: (0.02, 0.10, 0.00) active=True enabled=True
+Partition wall bounds=Center: (0.04, -0.20, -0.28), Extents: (0.00, 0.10, 0.02) active=True enabled=True
+Partition wall bounds=Center: (0.06, -0.20, -0.28), Extents: (0.00, 0.10, 0.02) active=True enabled=True
+Partition wall bounds=Center: (0.05, -0.30, -0.28), Extents: (0.02, 0.00, 0.02) active=True enabled=True
+Outer pane 1 bounds=Center: (0.00, -0.10, -0.30), Extents: (0.40, 0.20, 0.00) active=True enabled=True
+Laboratory floor bounds=Center: (0.00, -0.30, 0.00), Extents: (0.40, 0.00, 0.30) active=True enabled=True
+Particle 0 group=0 position=(0.13735, -0.29100, -0.22350) support=Laboratory floor
+Particle 1 group=1 position=(0.19802, -0.29100, -0.10943) support=Laboratory floor
+Particle 2 group=0 position=(0.12506, -0.28790, -0.25413) support=Laboratory floor
+Particle 3 group=1 position=(0.20018, -0.29100, -0.09217) support=Laboratory floor
+Particle 4 group=0 position=(0.15679, -0.28812, -0.21417) support=Laboratory floor
+Particle 5 group=1 position=(0.16610, -0.29100, -0.09319) support=Laboratory floor
+Particle 6 group=0 position=(0.13740, -0.28906, -0.24108) support=Laboratory floor
+Particle 7 group=0 position=(0.12016, -0.29046, -0.23729) support=Laboratory floor
+Particle 8 group=1 position=(0.18395, -0.29100, -0.08581) support=Laboratory floor
+Particle 9 group=1 position=(0.18117, -0.29100, -0.10317) support=Laboratory floor
+Particle 10 group=0 position=(0.10583, -0.28763, -0.24844) support=Laboratory floor
+Particle 11 group=0 position=(0.10376, -0.29100, -0.23105) support=Laboratory floor
+Particle 12 group=1 position=(0.18583, -0.28047, -0.11613) support=Laboratory floor
+Particle 13 group=1 position=(0.18845, -0.29100, -0.12940) support=Laboratory floor
+Particle 14 group=0 position=(0.11987, -0.29100, -0.22025) support=Laboratory floor
+Particle 15 group=1 position=(0.21815, -0.28801, -0.11908) support=Laboratory floor
+Particle 16 group=0 position=(0.15289, -0.28793, -0.23187) support=Laboratory floor
+Particle 17 group=1 position=(0.16996, -0.28764, -0.07558) support=Laboratory floor
+Particle 18 group=0 position=(0.14094, -0.27921, -0.21206) support=Laboratory floor
+Particle 19 group=0 position=(0.13062, -0.29100, -0.20689) support=Laboratory floor
+Particle 20 group=1 position=(0.16749, -0.28163, -0.10817) support=Laboratory floor
+Particle 21 group=1 position=(0.17287, -0.29100, -0.12105) support=Laboratory floor
+Particle 22 group=0 position=(0.11228, -0.27726, -0.22815) support=Laboratory floor
+Particle 23 group=0 position=(0.10443, -0.28550, -0.21448) support=Laboratory floor
+Particle 24 group=1 position=(0.19244, -0.27803, -0.09963) support=Laboratory floor
+Particle 25 group=1 position=(0.20191, -0.28240, -0.12386) support=Laboratory floor
+Particle 26 group=0 position=(0.08736, -0.28800, -0.22299) support=Laboratory floor
+Particle 27 group=1 position=(0.21496, -0.28727, -0.10149) support=Laboratory floor
+Particle 28 group=0 position=(0.12959, -0.27798, -0.22962) support=Laboratory floor
+Particle 29 group=1 position=(0.17604, -0.27750, -0.09274) support=Laboratory floor
+Particle 30 group=0 position=(0.11474, -0.28787, -0.20101) support=Laboratory floor
+Particle 31 group=1 position=(0.19316, -0.26475, -0.11233) support=
+Rail A door pos=0.19958 target=0.20000 end=True
+Rail Q left lane gate pos=0.00020 target=0.09000 end=False
+Rail Q right lane gate pos=0.00020 target=0.09000 end=False
+Rail Q septum pos=0.00282 target=0.10000 end=False
+Rail B carriage pos=0.04703 target=0.05000 end=True
+Rail C block pos=0.00000 target=0.15600 end=False
+  at GravityBox.Venom.ChapterProof.COgheViewProofPlayer+<Until>d__39.MoveNext () [0x00000] in <00000000000000000000000000000000>:0 
+  at GravityBox.Venom.ChapterProof.COgheViewProofPlayer+<Guarded>d__33.MoveNext () [0x00000] in <00000000000000000000000000000000>:0 
+  at UnityEngine.SetupCoroutine.InvokeMoveNext (System.Collections.IEnumerator enumerator, System.IntPtr returnValueAddress) [0x00000] in <00000000000000000000000000000000>:0 "
+19,True,32,1,9,603,20.8397216796875,29.74358558654785,32.669002532958984,49.007686614990234,49.070579528808594,65.44171905517578,4.294139137645106,3.6632756218905502,1.3808626865671643,26.6982,80063130,9,
+20,True,32,1,7,648,21.98968505859375,30.096120834350586,32.66862869262695,49.00600051879883,49.07195281982422,65.34443664550781,6.186744290123453,4.056049228395056,0.09910462962962961,20.2916,80140934,4,
+21,True,32,1,16,860,30.08892822265625,29.642126083374023,32.66929626464844,49.00337219238281,65.3270263671875,81.77820587158203,5.980453139534887,5.239346395348835,0.5098061627906977,52.1095,81808202,9,
+22,True,32,1,3,368,12.59600830078125,29.71923065185547,32.669464111328125,49.008155822753906,65.3445053100586,81.66728973388672,7.502918750000002,5.39036820652174,0.5326701086956521,45.9772,105822782,3,
+23,True,32,1,5,349,12.115966796875,29.754596710205078,32.67039489746094,49.0089225769043,65.32213592529297,81.64830017089844,8.761404871060169,4.268244699140403,0.267036676217765,41.8865,105578314,2,
+24,True,32,1,5,1277,42.89923095703125,29.962017059326172,32.67007064819336,49.00374221801758,49.063514709472656,81.67229461669922,5.819418402505872,4.252019733750971,0.2171048551292091,51.5339,105249042,11,
+25,True,32,1,5,558,19.68524169921875,28.825021743774414,32.66960144042969,49.03171157836914,49.113033294677734,65.39962005615234,4.081591397849462,3.956767383512542,0.5000267025089606,39.0086,105896362,5,
+26,True,32,1,4,447,15.15667724609375,30.101938247680664,32.665611267089844,49.00242233276367,65.32488250732422,81.7043228149414,5.695364205816553,4.356246979865775,0.5275769574944071,37.6403,105172418,4,
+27,False,0,2,11,2839,96.7674560546875,29.575899124145508,32.66933822631836,48.997161865234375,49.06315612792969,81.71442413330078,5.982521592109898,3.9178837618879854,0.16292088763649173,43.4338,106277754,28,"System.InvalidOperationException: Across the back road onto the right shelf, clear of P2; Idle; ; selected=2 fragments=2 centre=(-0.01, -0.29, 0.26); A position=0.07701901 phase=Idle last= stand=(-0.02, -0.28, -0.03) hand=(-0.02, -0.28, 0.03); C position=0 phase=Idle last= stand=(0.38, -0.08, 0.00) hand=(0.37, -0.01, 0.00); intent=(0.0000, 0.0000, 0.0000) velocity=(0.0000, 0.0004, 0.0004) feet=31 supports=Right shelf:10,Laboratory floor:15,Outer pane 2:7,; group 0 centre=(0.2555, -0.1024, 0.2800) target= hold= exit=; group 2 centre=(-0.0092, -0.2857, 0.2609) target= hold= exit=
+Nearby colliders: 
+Outer pane 2 bounds=Center: (0.00, -0.10, 0.30), Extents: (0.40, 0.20, 0.00) active=True enabled=True
+Laboratory floor bounds=Center: (0.00, -0.30, 0.00), Extents: (0.40, 0.00, 0.30) active=True enabled=True
+Particle 0 group=0 position=(0.23511, -0.10895, 0.26024) support=Right shelf
+Particle 1 group=0 position=(0.25356, -0.11063, 0.29068) support=Right shelf
+Particle 2 group=1 position=(-0.02307, -0.27860, 0.27269) support=Laboratory floor
+Particle 3 group=0 position=(0.24673, -0.09537, 0.28501) support=Outer pane 2
+Particle 4 group=0 position=(0.23542, -0.11062, 0.29078) support=Right shelf
+Particle 5 group=0 position=(0.22934, -0.09397, 0.28750) support=Outer pane 2
+Particle 6 group=1 position=(-0.00727, -0.29100, 0.24201) support=Laboratory floor
+Particle 7 group=1 position=(-0.03651, -0.28480, 0.25344) support=Laboratory floor
+Particle 8 group=0 position=(0.26899, -0.10674, 0.26052) support=Right shelf
+Particle 9 group=0 position=(0.26095, -0.10504, 0.27626) support=Right shelf
+Particle 10 group=1 position=(0.02123, -0.29100, 0.26306) support=Laboratory floor
+Particle 11 group=1 position=(-0.01149, -0.29100, 0.27506) support=Laboratory floor
+Particle 12 group=0 position=(0.27113, -0.11009, 0.29009) support=Right shelf
+Particle 13 group=0 position=(0.28743, -0.10314, 0.28868) support=Outer pane 2
+Particle 14 group=1 position=(-0.00462, -0.29100, 0.25904) support=Laboratory floor
+Particle 15 group=0 position=(0.26328, -0.09461, 0.29069) support=Outer pane 2
+Particle 16 group=1 position=(-0.03540, -0.29029, 0.27428) support=Laboratory floor
+Particle 17 group=0 position=(0.22637, -0.10758, 0.27568) support=Right shelf
+Particle 18 group=1 position=(-0.02486, -0.29100, 0.24191) support=Laboratory floor
+Particle 19 group=1 position=(-0.00766, -0.27649, 0.26527) support=Laboratory floor
+Particle 20 group=0 position=(0.25192, -0.10426, 0.26123) support=Right shelf
+Particle 21 group=0 position=(0.27911, -0.10929, 0.27430) support=Right shelf
+Particle 22 group=1 position=(0.00950, -0.27887, 0.26232) support=Laboratory floor
+Particle 23 group=1 position=(-0.00081, -0.27721, 0.24830) support=Laboratory floor
+Particle 24 group=1 position=(-0.00245, -0.27745, 0.28151) support=Outer pane 2
+Particle 25 group=0 position=(0.27881, -0.08756, 0.28656) support=Outer pane 2
+Particle 26 group=1 position=(0.00958, -0.29097, 0.24940) support=Laboratory floor
+Particle 27 group=1 position=(-0.02241, -0.29100, 0.26129) support=Laboratory floor
+Particle 28 group=1 position=(-0.01746, -0.27906, 0.25104) support=Laboratory floor
+Particle 29 group=0 position=(0.24422, -0.11024, 0.27557) support=Right shelf
+Particle 30 group=1 position=(0.00608, -0.29100, 0.27369) support=Laboratory floor
+Particle 31 group=0 position=(0.25527, -0.07986, 0.28563) support=Outer pane 2
+Rail Q left lane gate pos=0.00020 target=0.09000 end=False
+Rail Q right lane gate pos=0.00020 target=0.09000 end=False
+Rail Q septum pos=0.00282 target=0.10000 end=False
+Rail Front road cover pos=0.15945 target=0.16000 end=True
+Rail A carriage pos=0.07702 target=0.08000 end=True
+Rail Back road gate pos=0.00035 target=0.12000 end=False
+Rail C carriage pos=0.00000 target=0.06000 end=False
+Rail C exit shutter pos=0.00000 target=0.12000 end=False
+  at GravityBox.Venom.ChapterProof.COgheViewProofPlayer+<Until>d__39.MoveNext () [0x00000] in <00000000000000000000000000000000>:0 
+  at GravityBox.Venom.ChapterProof.COgheViewProofPlayer+<Guarded>d__33.MoveNext () [0x00000] in <00000000000000000000000000000000>:0 
+  at UnityEngine.SetupCoroutine.InvokeMoveNext (System.Collections.IEnumerator enumerator, System.IntPtr returnValueAddress) [0x00000] in <00000000000000000000000000000000>:0 "
+28,True,32,1,7,568,19.21575927734375,30.26106834411621,32.66903305053711,49.00018310546875,49.04036331176758,81.6865463256836,5.790819190140849,4.675364964788729,0.35126373239436626,26.4395,106033802,4,
+29,True,32,1,8,692,23.72015380859375,29.873485565185547,32.669403076171875,49.014244079589844,65.3426284790039,98.16117858886719,7.161965606936417,4.754919508670518,0.6211082369942196,77.82939999999999,106226738,8,
+30,True,32,1,6,568,19.28668212890625,30.051401138305664,32.669105529785156,48.994075775146484,49.047210693359375,65.34317779541016,4.960222183098594,4.22284172535211,0.4256980633802817,23.9483,105761286,4,
+31,True,32,1,9,842,28.6383056640625,29.983856201171875,32.66982650756836,49.004032135009766,65.30428314208984,81.68243408203125,6.090182185273155,4.8350921615201905,0.16204726840855108,29.4505,81516550,6,
+32,False,0,2,17,1193,41.4381103515625,29.662384033203125,32.67039489746094,49.00856018066406,65.34339141845703,114.36970520019531,7.161225649622795,4.975209052808047,0.6258837384744341,82.1435,82204386,12,"System.InvalidOperationException: No visible floor command for part 1 at (0.050, -0.300, -0.240); activity=Idle; lost=False failure=; escaped=0; centre=(0.329, -0.005, -0.115); target=; yaw=0
+  at GravityBox.Venom.ChapterProof.COgheSpatialNextScenario+<Command>d__26.MoveNext () [0x00000] in <00000000000000000000000000000000>:0 
+  at GravityBox.Venom.ChapterProof.COgheViewProofPlayer+<Guarded>d__33.MoveNext () [0x00000] in <00000000000000000000000000000000>:0 
+  at UnityEngine.SetupCoroutine.InvokeMoveNext (System.Collections.IEnumerator enumerator, System.IntPtr returnValueAddress) [0x00000] in <00000000000000000000000000000000>:0 "
+33,True,32,1,3,83,3.16668701171875,28.07089614868164,32.6722297668457,49.01789855957031,49.036495208740234,49.036495208740234,3.546381927710843,2.487561445783133,0.0,0.0,81035425,0,
+34,True,32,1,5,366,12.8983154296875,29.059261322021484,32.66551208496094,49.01638412475586,49.099857330322266,65.37520599365234,3.9403453551912557,3.377460928961747,0.24116803278688523,39.220299999999995,81239081,3,
+35,True,32,1,4,200,7.072265625,29.42996597290039,32.670494079589844,49.004364013671875,49.06364822387695,49.09117126464844,5.1975549999999995,2.6481305000000015,0.0,0.0,81226905,1,
+36,True,32,1,6,304,10.670654296875,29.491273880004883,32.66942596435547,49.0356330871582,65.41791534423828,98.05644989013672,5.394406578947366,5.262322368421049,2.0292605263157895,60.4705,81720585,4,
+37,True,32,1,7,394,13.6737060546875,29.812742233276367,32.668941497802734,49.01819610595703,65.39979553222656,97.99247741699219,5.090331472081224,5.083307106598982,1.9615733502538073,66.1824,106197077,5,
+38,True,32,1,8,573,21.762451171875,27.002309799194336,32.67375564575195,49.040008544921875,65.32923889160156,65.34886932373047,4.406035078534033,4.88511815008726,0.7000844677137872,35.1213,106616585,6,
+39,True,32,1,8,699,23.7225341796875,30.132816314697266,32.66812515258789,49.0042610168457,49.10528564453125,81.75581359863281,5.6540500715307545,4.795486695278969,0.4661831187410588,30.1667,106493493,5,
+40,True,32,1,6,1185,39.87744140625,29.99954605102539,32.669105529785156,48.99839782714844,65.30567932128906,114.35884094238281,5.242713333333338,4.399287594936708,0.3292161181434599,80.9555,105965966,9,
+41,True,32,1,6,424,14.5728759765625,29.83344078063965,32.66421890258789,49.005760192871094,65.32547760009766,81.66374206542969,6.916401650943397,3.8303103773584897,0.22431957547169806,20.0845,106043625,3,
+42,True,32,1,12,848,29.419677734375,29.662691116333008,32.668312072753906,49.095890045166016,65.39368438720703,81.69994354248047,6.42267606132075,5.763477830188689,1.7463454009433963,52.5137,106716506,12,
+43,True,32,1,16,765,29.109619140625,27.321523666381836,32.67284393310547,49.03044891357422,81.6390380859375,81.78416442871094,6.092642875816998,6.310970588235286,0.8932963398692809,49.3273,107374006,8,
+44,True,32,1,7,1255,42.103515625,30.115428924560547,32.6678581237793,48.99322509765625,49.09897232055664,98.07208251953125,4.947414023904383,4.0373169721115545,0.3333690039840637,63.7978,106010082,10,
+45,True,32,1,8,637,21.6944580078125,30.111221313476562,32.66960906982422,49.00397491455078,49.0990104675293,65.470458984375,5.814809419152278,4.80592967032967,0.3764287284144427,31.8003,106537689,6,
+46,True,32,1,6,1086,36.7486572265625,29.824453353881836,32.67043685913086,49.00139617919922,49.07291793823242,81.68388366699219,4.7806923572744005,4.059047421731123,0.40936786372007367,61.5286,106097726,9,
+47,True,32,1,21,1014,35.380615234375,29.7135066986084,32.66977310180664,49.01358413696289,65.43640899658203,114.36028289794922,7.112218441814592,5.213314398422092,0.5556985207100592,80.7113,106840522,10,
+48,False,0,1,21,1884,64.1392822265625,30.080516815185547,32.66957092285156,49.00520324707031,49.093048095703125,98.01177215576172,7.173290180467086,3.9020087579617866,0.16911900212314226,54.7985,106914598,16,"System.InvalidOperationException: All tissue through the final exit; Idle; ; selected=10 fragments=1 centre=(0.34, -0.29, 0.13); intent=(0.0000, 0.0000, 0.0000) velocity=(0.0000, 0.0000, 0.0000) feet=32 supports=Laboratory floor:32,; group 0 centre=(0.3399, -0.2875, 0.1253) target= hold= exit=
+Nearby colliders: 
+Outer pane 4 bounds=Center: (0.40, -0.10, 0.00), Extents: (0.00, 0.20, 0.30) active=True enabled=True
+Laboratory floor bounds=Center: (0.00, -0.30, 0.00), Extents: (0.40, 0.00, 0.30) active=True enabled=True
+Particle 0 group=0 position=(0.32748, -0.28790, 0.19249) support=Laboratory floor
+Particle 1 group=0 position=(0.36455, -0.29100, 0.11146) support=Laboratory floor
+Particle 2 group=0 position=(0.32238, -0.28641, 0.16553) support=Laboratory floor
+Particle 3 group=0 position=(0.34625, -0.29100, 0.12720) support=Laboratory floor
+Particle 4 group=0 position=(0.34527, -0.28746, 0.19077) support=Laboratory floor
+Particle 5 group=0 position=(0.32963, -0.28800, 0.09442) support=Laboratory floor
+Particle 6 group=0 position=(0.35640, -0.29036, 0.17716) support=Laboratory floor
+Particle 7 group=0 position=(0.33723, -0.29100, 0.15792) support=Laboratory floor
+Particle 8 group=0 position=(0.33147, -0.28785, 0.11798) support=Laboratory floor
+Particle 9 group=0 position=(0.34716, -0.28886, 0.10949) support=Laboratory floor
+Particle 10 group=0 position=(0.29721, -0.28800, 0.05383) support=Laboratory floor
+Particle 11 group=0 position=(0.31342, -0.28800, 0.06128) support=Laboratory floor
+Particle 12 group=0 position=(0.36263, -0.29100, 0.13183) support=Laboratory floor
+Particle 13 group=0 position=(0.38041, -0.28850, 0.11764) support=Laboratory floor
+Particle 14 group=0 position=(0.31393, -0.28767, 0.18097) support=Laboratory floor
+Particle 15 group=0 position=(0.37306, -0.29100, 0.14645) support=Laboratory floor
+Particle 16 group=0 position=(0.34556, -0.28035, 0.16828) support=Laboratory floor
+Particle 17 group=0 position=(0.34901, -0.28800, 0.09084) support=Laboratory floor
+Particle 18 group=0 position=(0.33049, -0.28800, 0.05666) support=Laboratory floor
+Particle 19 group=0 position=(0.33487, -0.29100, 0.17685) support=Laboratory floor
+Particle 20 group=0 position=(0.35651, -0.27887, 0.12062) support=Laboratory floor
+Particle 21 group=0 position=(0.37187, -0.27828, 0.12943) support=Laboratory floor
+Particle 22 group=0 position=(0.30059, -0.28800, 0.07305) support=Laboratory floor
+Particle 23 group=0 position=(0.31656, -0.28800, 0.08110) support=Laboratory floor
+Particle 24 group=0 position=(0.35058, -0.29100, 0.14446) support=Laboratory floor
+Particle 25 group=0 position=(0.38530, -0.28843, 0.13487) support=Laboratory floor
+Particle 26 group=0 position=(0.28467, -0.28800, 0.08070) support=Laboratory floor
+Particle 27 group=0 position=(0.36064, -0.28845, 0.15892) support=Laboratory floor
+Particle 28 group=0 position=(0.33357, -0.28800, 0.07482) support=Laboratory floor
+Particle 29 group=0 position=(0.33560, -0.28412, 0.13901) support=Laboratory floor
+Particle 30 group=0 position=(0.31112, -0.28800, 0.09878) support=Laboratory floor
+Particle 31 group=0 position=(0.36182, -0.27829, 0.14429) support=Laboratory floor
+Rail Q left lane gate pos=0.00020 target=0.09000 end=False
+Rail Q right lane gate pos=0.00020 target=0.09000 end=False
+Rail Q septum pos=0.00282 target=0.10000 end=False
+Rail A door pos=0.19795 target=0.20000 end=True
+  at GravityBox.Venom.ChapterProof.COgheViewProofPlayer+<Until>d__39.MoveNext () [0x00000] in <00000000000000000000000000000000>:0 
+  at GravityBox.Venom.ChapterProof.COgheViewProofPlayer+<Guarded>d__33.MoveNext () [0x00000] in <00000000000000000000000000000000>:0 
+  at UnityEngine.SetupCoroutine.InvokeMoveNext (System.Collections.IEnumerator enumerator, System.IntPtr returnValueAddress) [0x00000] in <00000000000000000000000000000000>:0 "
+49,True,32,1,29,1343,47.1055908203125,29.808300018310547,32.66856384277344,49.008243560791016,65.37520599365234,114.34422302246094,7.766257855547274,4.386496649292625,0.36615383469843643,73.4875,106883210,16,
+50,True,32,1,8,1198,40.441650390625,29.944896697998047,32.66908264160156,48.99314880371094,65.3063735961914,81.67266845703125,4.49390968280467,3.945239983305513,0.4703172787979966,57.997699999999995,106346210,10,
+51,False,0,2,6,1164,39.8634033203125,29.56569480895996,32.670108795166016,49.00855255126953,65.36616516113281,147.02491760253906,9.753798024054985,4.456942096219927,0.5013197594501718,121.1134,107578513,12,"System.InvalidOperationException: Swing to landing 1; Có mô trong vùng chuyển — đưa về bệ an toàn; ; selected=0 fragments=2 centre=(-0.18, -0.15, 0.14); B position=0.06702065 phase=Idle last= stand=(0.34, -0.17, -0.02) hand=(0.34, -0.17, -0.07); intent=(0.0000, 0.0000, 0.0000) velocity=(0.0000, 0.0000, 0.0000) feet=30 supports=Middle platform:16,Start bank:14,; group 0 centre=(-0.1801, -0.1461, 0.1401) target= hold= exit=; group 1 centre=(0.3380, -0.1760, -0.0143) target= hold= exit=
+Nearby colliders: 
+Transfer bounds=Center: (-0.02, -0.19, 0.24), Extents: (0.28, 0.11, 0.07) active=True enabled=True
+Start bank shoulder bounds=Center: (-0.16, -0.23, 0.03), Extents: (0.00, 0.07, 0.05) active=True enabled=True
+Start bank shoulder bounds=Center: (-0.13, -0.23, 0.08), Extents: (0.04, 0.07, 0.00) active=True enabled=True
+Start bank shoulder bounds=Center: (-0.09, -0.23, 0.03), Extents: (0.00, 0.07, 0.05) active=True enabled=True
+Start bank bounds=Center: (-0.16, -0.23, 0.14), Extents: (0.00, 0.07, 0.16) active=True enabled=True
+Start bank bounds=Center: (-0.28, -0.16, 0.14), Extents: (0.12, 0.00, 0.16) active=True enabled=True
+A tube cap surface bounds=Center: (-0.21, 0.01, 0.15), Extents: (0.00, 0.05, 0.01) active=True enabled=True
+A tube cap surface bounds=Center: (-0.25, 0.01, 0.15), Extents: (0.05, 0.05, 0.00) active=True enabled=True
+A tube cap surface bounds=Center: (-0.25, 0.01, 0.15), Extents: (0.05, 0.05, 0.00) active=True enabled=True
+Start bank shoulder bounds=Center: (-0.13, -0.16, 0.03), Extents: (0.04, 0.00, 0.05) active=True enabled=True
+A tube cap surface bounds=Center: (-0.25, -0.04, 0.15), Extents: (0.05, 0.00, 0.01) active=True enabled=True
+Particle 0 group=0 position=(-0.15848, -0.13801, 0.14450) support=
+Particle 1 group=1 position=(0.30511, -0.17600, 0.00953) support=Middle platform
+Particle 2 group=0 position=(-0.19302, -0.14736, 0.11936) support=Start bank
+Particle 3 group=1 position=(0.33336, -0.17600, -0.04990) support=Middle platform
+Particle 4 group=0 position=(-0.15069, -0.13891, 0.12775) support=
+Particle 5 group=1 position=(0.31359, -0.17600, -0.00645) support=Middle platform
+Particle 6 group=0 position=(-0.15935, -0.14792, 0.11410) support=Start bank
+Particle 7 group=0 position=(-0.16954, -0.14833, 0.12845) support=Start bank
+Particle 8 group=1 position=(0.32974, -0.17600, 0.00080) support=Middle platform
+Particle 9 group=1 position=(0.31877, -0.17600, 0.03931) support=Middle platform
+Particle 10 group=0 position=(-0.20639, -0.14993, 0.15015) support=Start bank
+Particle 11 group=0 position=(-0.17160, -0.15100, 0.14572) support=Start bank
+Particle 12 group=1 position=(0.33906, -0.17600, 0.01558) support=Middle platform
+Particle 13 group=1 position=(0.36697, -0.17600, -0.04445) support=Middle platform
+Particle 14 group=0 position=(-0.18752, -0.15100, 0.15289) support=Start bank
+Particle 15 group=1 position=(0.32816, -0.17600, -0.01654) support=Middle platform
+Particle 16 group=0 position=(-0.17720, -0.14704, 0.11249) support=Start bank
+Particle 17 group=1 position=(0.35226, -0.17600, -0.06057) support=Middle platform
+Particle 18 group=0 position=(-0.20359, -0.15032, 0.13273) support=Start bank
+Particle 19 group=0 position=(-0.17742, -0.13681, 0.13965) support=Start bank
+Particle 20 group=1 position=(0.34565, -0.17600, -0.01781) support=Middle platform
+Particle 21 group=1 position=(0.35970, -0.17600, -0.02844) support=Middle platform
+Particle 22 group=0 position=(-0.19861, -0.14620, 0.16554) support=Start bank
+Particle 23 group=0 position=(-0.18579, -0.15100, 0.13506) support=Start bank
+Particle 24 group=1 position=(0.33547, -0.17600, -0.03216) support=Middle platform
+Particle 25 group=1 position=(0.36172, -0.17600, -0.01094) support=Middle platform
+Particle 26 group=0 position=(-0.18149, -0.14852, 0.16957) support=Start bank
+Particle 27 group=1 position=(0.32133, -0.17600, 0.01673) support=Middle platform
+Particle 28 group=0 position=(-0.19472, -0.13898, 0.14275) support=Start bank
+Particle 29 group=1 position=(0.34947, -0.17600, -0.04272) support=Middle platform
+Particle 30 group=0 position=(-0.16588, -0.14641, 0.16154) support=Start bank
+Particle 31 group=1 position=(0.34737, -0.17600, -0.00024) support=Middle platform
+Rail Q left lane gate pos=0.00020 target=0.09000 end=False
+Rail Q right lane gate pos=0.00000 target=0.09000 end=False
+Rail Q septum pos=0.00282 target=0.10000 end=False
+Rail A tube cap pos=0.11958 target=0.12000 end=True
+Rail B carriage pos=0.06702 target=0.07000 end=True
+Rail B landing tray pos=0.14824 target=0.15000 end=True
+Tube outside centre=(-0.1801, -0.1461, 0.1401) exit=False localRadius=0.242..0.297[p0L(-0.158, -0.138, 0.145)/W(-0.158, -0.138, 0.145)/v(0.000, 0.000, 0.000);p2L(-0.193, -0.147, 0.119)/W(-0.193, -0.147, 0.119)/v(0.000, 0.000, 0.000);p4L(-0.151, -0.139, 0.128)/W(-0.151, -0.139, 0.128)/v(0.000, 0.000, 0.000);p6L(-0.159, -0.148, 0.114)/W(-0.159, -0.148, 0.114)/v(0.000, 0.000, 0.000);p7L(-0.170, -0.148, 0.128)/W(-0.170, -0.148, 0.128)/v(0.000, 0.000, 0.000);p10L(-0.206, -0.150, 0.150)/W(-0.206, -0.150, 0.150)/v(0.000, 0.000, 0.000);p11L(-0.172, -0.151, 0.146)/W(-0.172, -0.151, 0.146)/v(0.000, 0.000, 0.000);p14L(-0.188, -0.151, 0.153)/W(-0.188, -0.151, 0.153)/v(0.000, 0.000, 0.000);p16L(-0.177, -0.147, 0.112)/W(-0.177, -0.147, 0.112)/v(0.000, 0.000, 0.000);p18L(-0.204, -0.150, 0.133)/W(-0.204, -0.150, 0.133)/v(0.000, 0.000, 0.000);p19L(-0.177, -0.137, 0.140)/W(-0.177, -0.137, 0.140)/v(0.000, 0.000, 0.000);p22L(-0.199, -0.146, 0.166)/W(-0.199, -0.146, 0.166)/v(0.000, 0.000, 0.000);p23L(-0.186, -0.151, 0.135)/W(-0.186, -0.151, 0.135)/v(0.000, 0.000, 0.000);p26L(-0.181, -0.149, 0.170)/W(-0.181, -0.149, 0.170)/v(0.000, 0.000, 0.000);p28L(-0.195, -0.139, 0.143)/W(-0.195, -0.139, 0.143)/v(0.000, 0.000, 0.000);p30L(-0.166, -0.146, 0.162)/W(-0.166, -0.146, 0.162)/v(0.000, 0.000, 0.000)]
+entry=0:Vào open=True contacts=3 core=0 rim=2 ready=False mouth=(-0.250, -0.115, 0.170) approach=(-0.248, -0.114, 0.145) order=none failures=[]
+entry=1:Ra open=True contacts=0 core=0 rim=16 ready=False mouth=(0.245, -0.149, 0.270) approach=(0.268, -0.139, 0.270) order=none failures=[]
+Swing A rope swing phase=Idle actor=-1 dock=-1 landings=0 misses=0 message=Buông dây xuống sàn cứu hộ
+  at GravityBox.Venom.ChapterProof.COgheViewProofPlayer+<Until>d__39.MoveNext () [0x00000] in <00000000000000000000000000000000>:0 
+  at GravityBox.Venom.ChapterProof.COgheViewProofPlayer+<Guarded>d__33.MoveNext () [0x00000] in <00000000000000000000000000000000>:0 
+  at UnityEngine.SetupCoroutine.InvokeMoveNext (System.Collections.IEnumerator enumerator, System.IntPtr returnValueAddress) [0x00000] in <00000000000000000000000000000000>:0 "
+52,True,32,1,47,1557,55.0240478515625,29.953351974487305,32.6698112487793,49.009708404541016,65.34896850585938,81.7866439819336,7.4851086062941485,4.2986485549132984,0.5706834938985228,48.6349,107023842,18,
+53,True,32,1,13,821,32.000732421875,26.395483016967773,32.671234130859375,49.02366256713867,228.71368408203125,245.1338653564453,6.27571729598051,9.058780633373935,2.720684531059683,206.4424,108632849,7,
+54,True,32,1,33,1518,52.9793701171875,29.955917358398438,32.66862487792969,49.01505661010742,65.3794174194336,114.34037780761719,7.554608234519093,4.848633926218713,0.6647191699604744,76.8628,107348330,18,
+55,True,32,1,6,448,15.2579345703125,30.16944694519043,32.669960021972656,49.00578689575195,49.0789680480957,65.42044067382812,5.939609151785715,4.682975000000001,0.4261419642857143,31.724,106504954,4,
+56,False,0,2,26,850,30.6749267578125,29.330568313598633,32.66978073120117,49.01456832885742,65.34717559814453,81.7064208984375,7.082271176470591,4.371234352941183,1.1132783529411767,55.4572,107471194,11,"System.InvalidOperationException: Handle C rejected: 
+  at GravityBox.Venom.ChapterProof.COgheSpatialNextScenario+<Operate>d__14.MoveNext () [0x00000] in <00000000000000000000000000000000>:0 
+  at GravityBox.Venom.ChapterProof.COgheViewProofPlayer+<Guarded>d__33.MoveNext () [0x00000] in <00000000000000000000000000000000>:0 
+  at UnityEngine.SetupCoroutine.InvokeMoveNext (System.Collections.IEnumerator enumerator, System.IntPtr returnValueAddress) [0x00000] in <00000000000000000000000000000000>:0 "
+57,False,0,2,63,3465,119.35498046875,30.05213737487793,32.66919708251953,49.005950927734375,49.11445617675781,81.65106201171875,7.834785223665192,3.758250995671002,0.16702565656565657,40.6449,107368862,37,"System.InvalidOperationException: All parts meet and fuse; Idle; ; selected=13 fragments=2 centre=(0.20, -0.29, -0.10); intent=(0.0000, 0.0000, 0.0000) velocity=(0.0000, 0.0000, 0.0000) feet=32 supports=Laboratory floor:32,; group 0 centre=(0.1324, -0.2872, -0.0468) target= hold= exit=; group 13 centre=(0.2017, -0.2880, -0.1046) target= hold= exit=
+Nearby colliders: 
+P2 sensing surface bounds=Center: (0.10, -0.30, 0.04), Extents: (0.05, 0.00, 0.05) active=True enabled=True
+C sensing surface bounds=Center: (0.30, -0.30, -0.20), Extents: (0.05, 0.00, 0.05) active=True enabled=True
+Laboratory floor bounds=Center: (0.00, -0.30, 0.00), Extents: (0.40, 0.00, 0.30) active=True enabled=True
+Particle 0 group=0 position=(0.14233, -0.28800, -0.08370) support=Laboratory floor
+Particle 1 group=0 position=(0.08268, -0.28769, -0.06933) support=Laboratory floor
+Particle 2 group=0 position=(0.13109, -0.28810, -0.05834) support=Laboratory floor
+Particle 3 group=0 position=(0.09500, -0.29100, -0.05757) support=Laboratory floor
+Particle 4 group=0 position=(0.16153, -0.28839, -0.07540) support=Laboratory floor
+Particle 5 group=0 position=(0.09201, -0.28792, -0.04025) support=Laboratory floor
+Particle 6 group=0 position=(0.14688, -0.28519, -0.06598) support=Laboratory floor
+Particle 7 group=0 position=(0.16235, -0.28934, -0.05780) support=Laboratory floor
+Particle 8 group=0 position=(0.10929, -0.29100, -0.04394) support=Laboratory floor
+Particle 9 group=0 position=(0.07844, -0.28773, -0.05191) support=Laboratory floor
+Particle 10 group=0 position=(0.12094, -0.28814, -0.02684) support=Laboratory floor
+Particle 11 group=0 position=(0.14646, -0.29100, -0.04977) support=Laboratory floor
+Particle 12 group=0 position=(0.11216, -0.28793, -0.06137) support=Laboratory floor
+Particle 13 group=1 position=(0.19834, -0.28800, -0.10721) support=Laboratory floor
+Particle 14 group=0 position=(0.13450, -0.28860, -0.03799) support=Laboratory floor
+Particle 15 group=1 position=(0.19153, -0.28800, -0.09071) support=Laboratory floor
+Particle 16 group=0 position=(0.15776, -0.27863, -0.04468) support=Laboratory floor
+Particle 17 group=0 position=(0.09988, -0.28773, -0.07438) support=Laboratory floor
+Particle 18 group=0 position=(0.14597, -0.27717, -0.03115) support=Laboratory floor
+Particle 19 group=0 position=(0.16953, -0.29100, -0.04164) support=Laboratory floor
+Particle 20 group=1 position=(0.18072, -0.28800, -0.10485) support=Laboratory floor
+Particle 21 group=1 position=(0.18746, -0.28800, -0.12133) support=Laboratory floor
+Particle 22 group=0 position=(0.14031, -0.29064, -0.02128) support=Laboratory floor
+Particle 23 group=0 position=(0.15345, -0.29100, -0.03350) support=Laboratory floor
+Particle 24 group=0 position=(0.10215, -0.27734, -0.05076) support=Laboratory floor
+Particle 25 group=1 position=(0.21598, -0.28800, -0.10951) support=Laboratory floor
+Particle 26 group=0 position=(0.16741, -0.28571, -0.02498) support=Laboratory floor
+Particle 27 group=1 position=(0.22518, -0.28800, -0.08652) support=Laboratory floor
+Particle 28 group=0 position=(0.15461, -0.28689, -0.01218) support=Laboratory floor
+Particle 29 group=1 position=(0.20513, -0.28800, -0.12363) support=Laboratory floor
+Particle 30 group=0 position=(0.17157, -0.28770, -0.00815) support=Laboratory floor
+Particle 31 group=1 position=(0.20887, -0.28800, -0.09319) support=Laboratory floor
+Rail Q left lane gate pos=0.00020 target=0.09000 end=False
+Rail Q right lane gate pos=0.00020 target=0.09000 end=False
+Rail Q septum pos=0.00282 target=0.10000 end=False
+Rail Exit door pos=0.09604 target=0.10000 end=True
+Rail C gear lock pos=0.00041 target=0.03000 end=False
+  at GravityBox.Venom.ChapterProof.COgheViewProofPlayer+<Until>d__39.MoveNext () [0x00000] in <00000000000000000000000000000000>:0 
+  at GravityBox.Venom.ChapterProof.COgheViewProofPlayer+<Guarded>d__33.MoveNext () [0x00000] in <00000000000000000000000000000000>:0 
+  at UnityEngine.SetupCoroutine.InvokeMoveNext (System.Collections.IEnumerator enumerator, System.IntPtr returnValueAddress) [0x00000] in <00000000000000000000000000000000>:0 "
+58,True,32,1,11,1008,34.3248291015625,29.967891693115234,32.668338775634766,49.021244049072266,65.34490203857422,98.02066040039062,6.407077976190478,5.545839682539686,0.3673967261904762,45.3902,107157410,9,
+59,True,32,1,5,524,17.75830078125,30.062368392944336,32.669891357421875,49.00498580932617,49.06931686401367,65.41073608398438,6.293650381679394,3.710754580152672,0.29417729007633586,22.4884,106018170,4,
+60,True,32,1,19,1146,40.057373046875,29.599693298339844,32.66977310180664,49.015132904052734,65.39622497558594,98.03347778320312,7.847635689354277,5.594330191972079,1.2764213787085514,74.1307,107288649,16,
+61,True,32,1,9,1626,55.632568359375,29.491905212402344,32.669151306152344,48.99812698364258,49.07652282714844,114.3484878540039,4.743184255842558,4.059935301353009,0.41145000000000004,63.288,106922562,12,
+62,True,32,1,16,1087,38.71630859375,28.86775779724121,32.67048645019531,49.00930404663086,98.02472686767578,163.42237854003906,7.654498344066226,6.714353081876722,1.1709585096596136,116.35759999999999,108029637,13,
+63,True,32,1,7,591,20.236083984375,29.898849487304688,32.666934967041016,48.99830627441406,49.06491470336914,65.39388275146484,4.942019966159053,3.502528426395938,0.26773316412859555,20.9745,106568757,5,
+64,True,32,1,24,781,27.978271484375,29.676565170288086,32.67040252685547,49.013309478759766,65.37144470214844,97.98728942871094,6.527509859154929,6.092733802816897,0.868674775928297,72.7053,107796706,8,
+65,True,32,1,33,1986,72.361328125,28.35849952697754,32.67120361328125,49.02540588378906,81.67151641845703,81.77716064453125,6.553473816717017,6.45644652567976,0.8364974823766362,56.2074,108559738,22,

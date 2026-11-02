@@ -1,0 +1,48 @@
+ALIEN PET PRIVACY PAGE — DEPLOYMENT HANDOFF
+Published 29 October 2026 as site-v1.0.4; HTTPS/content checks passed.
+Commit: 597e9836d21d05626e225d3097b45675339d25a5
+CI: https://github.com/aurora-teamplayer01/g005-color-drop/actions/runs/40894025450
+PR: https://github.com/aurora-teamplayer01/g005-color-drop/pull/1 (attached; rebase-merged 29 October 2026)
+Main after merge: fdbc4f554e948ea2f446bddfb79a9aacfcd01976; only the new HTML was added.
+
+Authorized scope
+Add an Alien Pet-specific privacy page to the existing Critter Jam website, using support@suri.house. Public developer name: YoloStudioGlobal. Do not infer a legal relationship with NTKL Studio. Preserve Critter Jam's existing /privacy page and all unrelated game/marketing changes.
+
+Source and destination
+Isolated sparse Git worktree: /tmp/codex-alien-pet-policy-20261029
+Branch: codex/alien-pet-privacy
+Production base: e7bc859 (site-v1.0.2)
+Only new site source: site/alien-pet-privacy.html
+Review copy: Docs/Verification/AlienPetPlayStore20261029/alien-pet-privacy.html
+Intended URL: https://cj.suri.house/alien-pet-privacy
+Clean URLs already map /alien-pet-privacy to alien-pet-privacy.html. No nginx/server changes are needed.
+
+Repository facts
+Website deployment repository: aurora-teamplayer01/g005-color-drop
+Verified current GitHub viewer permission: ADMIN
+Local ColorDrop's origin is the separate iamnvt/ColorDrop mirror, so do not blindly git push origin.
+Its working tree has unrelated dirty marketing files. The isolated worktree shares object storage but does not alter those files.
+The deploy repository main is 3 commits behind mirror unity-port; syncing those game/marketing commits is outside this task.
+
+Minimal deployment route
+1. Finish and verify the age/privacy runtime and review the corresponding policy text.
+2. Commit only site/alien-pet-privacy.html on the isolated codex branch based on the current production site revision.
+3. Check that the production site/tag/repo have not changed and that the next site-v version is unused.
+4. Push the NEW codex branch and a NEW annotated site-v tag to aurora-teamplayer01/g005-color-drop using the existing authenticated GitHub account. Do not update existing game/mirror refs.
+5. .github/workflows/deploy-site.yml accepts site-v* tags from any branch, builds the static site on Ubuntu, deploys atomically, and smoke-tests the existing pages. This is a supported CI trigger; site/release.sh is not used because it intentionally requires main.
+6. Create a PR into the deployment repository main containing only the new page and attach the PR to the task. The PR should be included before the next main-based site release, otherwise a later release can remove the page. Do not merge or rewrite existing refs without root coordination.
+7. Wait for the Actions run, then verify public HTTPS status 200, policy title, expected version, email, age/consent text, absence of placeholders, and readable mobile rendering. Also verify /, /privacy and /terms remain healthy.
+8. Record the final commit, tag, PR URL, Actions run, SHA256 and live URL in privacy-page-validation.json. Root can then use the verified URL in Play Console and the game.
+
+Build-tool note
+site/build.sh uses GNU sed -i and md5sum; site/release.sh also uses timeout. The local Mac does not have GNU sed/timeout on PATH. CI runs Ubuntu and supplies those tools. Do not patch shared scripts merely to run a Mac build for this one HTML page. The local page already passes HTML parsing, anchor/link checks and no-script checks.
+
+Release facts still requiring final verification
+- Unknown and under-13: no UMP, Mobile Ads, Firebase Analytics, Remote Config or Installations initialization.
+- Ages 13–17: restricted contextual ads only; no Analytics/Remote Config/Installations.
+- Adults 18+: Analytics opt-in default off; ads consent separate; non-personalized ads requested for everyone.
+- Permanent privacy link and adult Analytics control must work in the shipped build.
+- Analytics dashboard retention/settings and the request-handling process must be consistent with policy wording.
+- The old uploaded AAB code 1 predates these controls and must not be described as having them.
+
+Deployment completed through the minimal route above. Only the new codex branch and site-v tags were pushed; no server configuration, game/mirror branch or dirty user file was changed. A later explicitly authorized rebase merge added only this page to deployment main. PR1 is now included in main with the exact deployed policy blob; a future main-based release retains it. Live verification discovered a Cloudflare Web Analytics beacon; the final policy explicitly discloses that website behavior.

@@ -1,0 +1,44 @@
+ALIEN PET — SCENE 2 REPAIR PREPARATION
+29 October 2026
+
+This folder is a review workspace. Nothing here automatically updates the ads
+resource kit, historical videos, ZIP packages, or published ads.
+
+Original export: 1080x1920, 30 fps, 900 frames, 30 seconds.
+Actual scene boundaries in that export: frames [241,331), or
+08.033333333–11.033333333. The older edit dossier rounds this to 8–11 seconds;
+using those rounded seconds leaves one stale frame. This script uses frame trims.
+
+Prepare backup and the original AI CINEMATIC badge style:
+/Users/mrk/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 \
+  /Users/mrk/GravityBox/Artifacts/AlienPetScene2Fix-2026-10-29/splice_scene2.py --prepare-only
+
+After the actual Flow replacement has been downloaded and visually reviewed:
+/Users/mrk/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 \
+  /Users/mrk/GravityBox/Artifacts/AlienPetScene2Fix-2026-10-29/splice_scene2.py \
+  --source /absolute/path/to/real-flow-source.mp4 --source-in 0
+
+The next three seconds are used. Supply a different --source-in only after
+inspecting the source. No freeze, synthetic placeholder, audio replacement,
+duration change, crop or portrait-to-landscape conversion is applied.
+
+The final video is re-encoded at H.264 CRF17 for safe exact frame splicing.
+The original AAC packets are copied without transcoding. Validation compares
+packet data hashes AND timestamps, checks 900 frames/30 seconds/1080x1920,
+fully decodes the result, detects black gaps and compares SSIM for all 810
+unchanged frames. The original Alien Pet end card and non-scene-2 overlays
+remain in those unchanged frames. New scene 2 receives the same AI CINEMATIC
+label, font, rounded background, color, opacity and coordinates as before.
+
+Review output:
+review-output/AlienPet_G_CINEMATIC_ESCAPE_30s_1080x1920_scene2-fixed.mp4
+qa/scene2-before-after-and-cuts.jpg
+qa/validation.json
+
+Technical PASS does not imply visual story PASS. Watch the entire replacement,
+confirm the pet stays INSIDE the glass enclosure while the scientist's hand is
+OUTSIDE, check continuous mass and movement, and inspect lips versus the retained
+line “Okay, little one. Follow me.” before approving it for the ads resource kit.
+
+The script refuses to overwrite an existing review render unless
+--replace-review is supplied. The original backup is immutable by this script.

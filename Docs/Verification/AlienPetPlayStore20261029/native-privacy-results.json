@@ -1,0 +1,203 @@
+{
+  "date": "2026-10-29",
+  "result": "Observed privacy gates pass on signed release Android36 emulator; production ad serving is blocked by missing UMP publisher message configuration.",
+  "artifact": {
+    "apk": "/Users/mrk/GravityBox/Artifacts/AlienPetPlayStore/public-setup/native-privacy/AlienPet-1.0.1-2-universal.apk",
+    "bytes": 59031859,
+    "sha256": "2c421b502a0e405f1588f044ca784caaf5c3b28c11998216717350d7c7d01b4f",
+    "source_aab_sha256": "30bc7fce27fda89f484a35bc776bfdbc312b99daec30e519d4dc2bc9fb2d9ab0",
+    "upload_certificate_sha256": "5b894271027148d895e3c1bc0f84f0490e0c78f3f745ebeafa118f82dc0a3d4c",
+    "certificate_matches_aab": true,
+    "package": "com.gravityboxlab.venom",
+    "version_name": "1.0.1",
+    "version_code": 2,
+    "debuggable": false,
+    "test_only": false,
+    "apk_16k_zip_alignment_verified": true,
+    "purpose": "Isolated Android tablet emulator testing; no physical-device installation by this script."
+  },
+  "manifest": {
+    "metadata_false": {
+      "firebase_data_collection_default_enabled": true,
+      "firebase_analytics_collection_enabled": true,
+      "google_analytics_adid_collection_enabled": true,
+      "google_analytics_default_allow_analytics_storage": true,
+      "google_analytics_default_allow_ad_storage": true,
+      "google_analytics_default_allow_ad_user_data": true,
+      "google_analytics_default_allow_ad_personalization_signals": true
+    },
+    "ads_measurement_delayed": true,
+    "provider_absent": {
+      "com.google.firebase.provider.FirebaseInitProvider": true,
+      "com.google.android.gms.ads.MobileAdsInitProvider": true
+    },
+    "permission_absent": {
+      "com.google.android.gms.permission.AD_ID": true,
+      "android.permission.ACCESS_ADSERVICES_AD_ID": true,
+      "android.permission.ACCESS_ADSERVICES_ATTRIBUTION": true,
+      "android.permission.ACCESS_ADSERVICES_TOPICS": true
+    }
+  },
+  "environment": {
+    "avd": "AlienPetTablet",
+    "serial": "emulator-5580",
+    "system": "Android36 Google APIs arm64, root ADB",
+    "package_uid": 10215,
+    "physical_devices_touched": false,
+    "save_data": "Only this disposable emulator app was uninstalled/cleared between synthetic age cases. Original test APK had a different signing certificate; release2 installed fresh."
+  },
+  "cases": [
+    {
+      "case": "Unknown / selected age not yet confirmed",
+      "result": "pass",
+      "observation_seconds": 75,
+      "network_delta": {
+        "rx_bytes": 0,
+        "tx_bytes": 0
+      },
+      "sdk_file_paths": [],
+      "sdk_log_indicators": 0,
+      "evidence": [
+        "00-before-launch",
+        "01-unknown-start",
+        "04-unknown-unconfirmed"
+      ]
+    },
+    {
+      "case": "Under13",
+      "result": "pass",
+      "observed_seconds_after_first_confirmed_snapshot": 51,
+      "flow": "Confirm → intro → Skip → Level1 → force-stop/relaunch menu; local age persists; no Analytics prompt.",
+      "network_delta_from_fresh_install": {
+        "rx_bytes": 0,
+        "tx_bytes": 0
+      },
+      "sdk_file_paths": [],
+      "evidence": [
+        "05-under13-confirmed",
+        "07-under13-level1",
+        "08-under13-relaunch"
+      ]
+    },
+    {
+      "case": "Teen13–15 and16–17",
+      "result": "pass age gate; ad fill unverified because UMP error3",
+      "flow": "Confirmation directly opens intro; analytics false and choice made;13–15 persists across force-stop/relaunch.",
+      "firebase_fid_remote_config_artifacts": false,
+      "network": "UMP request occurs only after confirmation; only UMP/WebView preference artifacts. No AdMob ready log.",
+      "evidence": [
+        "10-teen13-confirmed",
+        "11-teen13-relaunch",
+        "13-teen16-confirmed"
+      ]
+    },
+    {
+      "case": "Adult pending separate Analytics choice",
+      "result": "pass",
+      "observation_seconds": 64,
+      "network_delta": {
+        "rx_bytes": 0,
+        "tx_bytes": 0
+      },
+      "sdk_file_paths": [],
+      "evidence": [
+        "14-adult-choice-pending",
+        "15-adult-pending-held"
+      ]
+    },
+    {
+      "case": "Adult declines Analytics",
+      "result": "pass",
+      "flow": "Not now → intro; decline persists across force-stop/relaunch.",
+      "firebase_fid_remote_config_artifacts": false,
+      "network": "Only eligible UMP request; publisher error3 prevents ads initialization.",
+      "evidence": [
+        "16-adult-declined",
+        "17-adult-decline-relaunch"
+      ]
+    },
+    {
+      "case": "Adult explicitly allows Analytics",
+      "result": "pass",
+      "flow": "Only after Allow Analytics: Firebase initialization, Installations file, Analytics preferences/database, successful Remote Config fetch/staging.",
+      "native_measurement_flags": {
+        "measurement_enabled_from_api": "true",
+        "deferred_analytics_collection": "true",
+        "consent_source": "-20",
+        "consent_settings": "G101",
+        "measurement_enabled": "true",
+        "dma_consent_settings": "-20:0"
+      },
+      "evidence": [
+        "18-adult-allow",
+        "19-adult-level1",
+        "20-adult-privacy-on"
+      ]
+    },
+    {
+      "case": "Adult withdraws Analytics in Privacy and relaunches",
+      "result": "pass",
+      "flow": "UI turn-off persists; native measurement_enabled=false and consentG100. After transition, no additional UID network for observed hold. Relaunch logs UMP only; no new Firebase initialization/RC fetch.",
+      "post_transition_seconds": 65,
+      "post_transition_network_delta": {
+        "rx_bytes": 0,
+        "tx_bytes": 0
+      },
+      "native_measurement_flags_after_relaunch": {
+        "measurement_enabled_from_api": "false",
+        "deferred_analytics_collection": "true",
+        "consent_source": "-20",
+        "consent_settings": "G100",
+        "measurement_enabled": "false",
+        "dma_consent_settings": "-20:0"
+      },
+      "evidence": [
+        "21-adult-withdrawn",
+        "23-adult-withdrawn-held",
+        "24-adult-withdrawn-relaunch"
+      ]
+    }
+  ],
+  "ui": {
+    "result": "Neutral age choices, equal adult consent actions, policy and withdrawal controls visibly fit.",
+    "layouts": [
+      {
+        "size": "2560x1600 tablet landscape",
+        "behavior": "Existing game locks portrait and letterboxes; panel fits.",
+        "evidence": "01-unknown-start/screen.png"
+      },
+      {
+        "size": "1600x2560 tablet portrait",
+        "behavior": "Age choices fully visible.",
+        "evidence": "09-teen-tablet-age/screen.png"
+      },
+      {
+        "size": "1080x1920 phone",
+        "behavior": "Age/Analytics/Privacy panels fully visible; no clipped controls.",
+        "evidence": [
+          "12-teen16-phone-age/screen.png",
+          "14-adult-choice-pending/screen.png",
+          "20-adult-privacy-on/screen.png",
+          "21-adult-withdrawn/screen.png"
+        ]
+      }
+    ]
+  },
+  "remaining_external_issue": {
+    "code": 3,
+    "service": "Google UMP",
+    "message": "Publisher misconfiguration: no form(s) configured for input app ID ca-app-pub-7806638519709442~4983717950",
+    "effect": "All eligible profiles fail closed and do not initialize/load AdMob. Gameplay remains available.",
+    "required_action": "Configure and publish appropriate AdMob Privacy & messaging forms; keep automatic Analytics consent propagation disabled because app uses separate adult opt-in. Rerun eligible native ad-flow after server configuration. Do not bypass consent errors."
+  },
+  "limitations": [
+    "Observed one signed release on Android36 emulator, not every supported Android version/physical device/jurisdiction.",
+    "UID counters do not attribute Google Play services shared-process traffic. Zero UID traffic plus no native startup/artifacts/logs is bounded evidence, not universal certification.",
+    "No native loaded-ad behavior could be verified due UMP publisher configuration; request policy is covered by Unity tests.",
+    "Withdrawal leaves previously created Firebase/FID/cache files; it disables further app collection, not remote deletion. In-flight/already sent data is not retroactively cancelled.",
+    "No iOS SDK runtime claim from these Android tests.",
+    "Age treatment may be transmitted for eligible teens, although exact selected band/DOB is not a game Analytics property."
+  ],
+  "evidence_directory": "/Users/mrk/GravityBox/Artifacts/AlienPetPlayStore/public-setup/native-privacy",
+  "test_assertions": "All assertions in native-privacy/summarize.py passed."
+}

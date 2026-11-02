@@ -108,8 +108,13 @@ namespace GravityBox.Venom
         private readonly float[] flowAlong=new float[CohesiveOrganism.ParticleCount],flowProgress=new float[CohesiveOrganism.ParticleCount];
         private readonly float[] orderedProgress=new float[CohesiveOrganism.ParticleCount],flowPace=new float[CohesiveOrganism.ParticleCount];
         private readonly List<int>[] adjacency=new List<int>[64];
+        // Each pass keeps its own scratch set: entry commands can call other passes before this one completes.
+        private readonly HashSet<Travel> steppedTravels=new HashSet<Travel>();
+        private readonly HashSet<int> autoCaptureGroups=new HashSet<int>(),snagGroups=new HashSet<int>(),
+            queuedGroups=new HashSet<int>(),reconciledGroups=new HashSet<int>();
         private VenomCampaign game;
         private Transform root;
+        private Rigidbody rootBody;
         private int flexibleTick;
         private int nextTravelCommand;
         private Collider[] solidColliders=Array.Empty<Collider>();
@@ -135,7 +140,7 @@ namespace GravityBox.Venom
 
         public override void InitializeMechanism(VenomCampaign owner)
         {
-            game=owner;root=owner.Root;PrepareGraph();
+            game=owner;root=owner.Root;rootBody=root.GetComponent<Rigidbody>();PrepareGraph();
             for(int i=0;i<queuedEntry.Length;i++){queuedEntry[i]=-1;queuedEdge[i]=-1;queuedPlan[i]=null;}
             nodeColliders=new Collider[Nodes.Length];
             for(int n=0;n<Nodes.Length;n++){var joint=transform.Find(Nodes[n].Name+" junction");nodeColliders[n]=joint!=null?joint.GetComponent<Collider>():null;}
@@ -145,7 +150,8 @@ namespace GravityBox.Venom
 
         public override void ResetMechanism(VenomCampaign owner)
         {
-            game=owner;root=owner.Root;Array.Clear(travelByParticle,0,travelByParticle.Length);
+            game=owner;root=owner.Root;rootBody=root.GetComponent<Rigidbody>();Array.Clear(travelByParticle,0,travelByParticle.Length);
+            steppedTravels.Clear();autoCaptureGroups.Clear();snagGroups.Clear();queuedGroups.Clear();reconciledGroups.Clear();
             for(int i=0;i<blockedAutoEntry.Length;i++){blockedAutoEntry[i]=-1;queuedEntry[i]=queuedEdge[i]=-1;queuedPlan[i]=null;}
             LastChosenEdge=LastReachedNode=-1;ExitReached=false;AnyTravelling=AnyWaiting=AnyApproaching=AnyChoice=false;flexibleTick=nextTravelCommand=0;
             PrepareGraph(true);solidColliders=GetComponentsInChildren<Collider>(true);SyncExitDetector();
@@ -375,11 +381,11 @@ namespace GravityBox.Venom
             ReconcileGroups();
             AnyTravelling=AnyWaiting=AnyChoice=false;AnyApproaching=false;
             for(int i=0;i<queuedEntry.Length;i++)if(queuedEntry[i]>=0){AnyApproaching=true;break;}
-            var seen=new HashSet<Travel>();
+            steppedTravels.Clear();
             for(int i=0;i<travelByParticle.Length;i++)
             {
                 Travel travel=travelByParticle[i];
-                if(travel==null||!seen.Add(travel))continue;
+                if(travel==null||!steppedTravels.Add(travel))continue;
                 if(travel.Edge>=0){AnyTravelling=true;StepEdge(travel,dt);}
                 else
                 {
@@ -432,7 +438,7 @@ namespace GravityBox.Venom
                     for(int i=0;i<32;i++)if(flowProgress[i]>=orderedProgress[gap])flowPace[i]=Mathf.Min(flowPace[i],pace);
                 }
             }
-            Rigidbody frame=root.GetComponent<Rigidbody>();
+            Rigidbody frame=rootBody;
             for(int i=0;i<32;i++)
             {
                 if(game.Matter.Groups[i]!=game.Matter.Groups[travel.Anchor]||
@@ -530,7 +536,7 @@ namespace GravityBox.Venom
 
         private void HoldAtNode(Travel travel,float dt)
         {
-            Vector3 target=NodeWorld(travel.Node);Rigidbody frame=root.GetComponent<Rigidbody>();
+            Vector3 target=NodeWorld(travel.Node);Rigidbody frame=rootBody;
             for(int i=0;i<32;i++)
             {
                 if(game.Matter.Groups[i]!=game.Matter.Groups[travel.Anchor]||game.Matter.Escaped[i])continue;
@@ -564,10 +570,10 @@ namespace GravityBox.Venom
         private void AutoCaptureContactingGroups()
         {
             if(!AutoCaptureEntries)return;
-            var groups=new HashSet<int>();
+            autoCaptureGroups.Clear();
             for(int anchor=0;anchor<32;anchor++)
             {
-                int group=game.Matter.Groups[anchor];if(game.Matter.Escaped[anchor]||!groups.Add(group)||TravelFor(anchor)!=null)continue;
+                int group=game.Matter.Groups[anchor];if(game.Matter.Escaped[anchor]||!autoCaptureGroups.Add(group)||TravelFor(anchor)!=null)continue;
                 int blocked=blockedAutoEntry[anchor];
                 if(blocked>=0)
                 {
@@ -597,10 +603,10 @@ namespace GravityBox.Venom
         private readonly Dictionary<int,float> snagTime=new Dictionary<int,float>();
         private void ReleaseSnaggedParticles(float dt)
         {
-            float r=game.Matter.Profile.ParticleRadius;var groups=new HashSet<int>();
+            float r=game.Matter.Profile.ParticleRadius;snagGroups.Clear();
             for(int anchor=0;anchor<32;anchor++)
             {
-                int group=game.Matter.Groups[anchor];if(game.Matter.Escaped[anchor]||!groups.Add(group))continue;
+                int group=game.Matter.Groups[anchor];if(game.Matter.Escaped[anchor]||!snagGroups.Add(group))continue;
                 bool snagged=false;
                 if(TravelFor(anchor)==null)
                     for(int node=0;node<Nodes.Length&&!snagged;node++)
@@ -724,10 +730,10 @@ namespace GravityBox.Venom
 
         private void StepQueuedEntries()
         {
-            var groups=new HashSet<int>();
+            queuedGroups.Clear();
             for(int anchor=0;anchor<32;anchor++)
             {
-                int group=game.Matter.Groups[anchor];if(!groups.Add(group)||travelByParticle[anchor]!=null)continue;
+                int group=game.Matter.Groups[anchor];if(!queuedGroups.Add(group)||travelByParticle[anchor]!=null)continue;
                 int node=queuedEntry[anchor];if(node<0)continue;
                 VenomCampaignMotion.Order order=game.Motion.Get(anchor);
                 if(order!=null&&Vector3.Distance(order.Target,queuedApproach[anchor])>.006f){ClearQueuedEntry(anchor);continue;}
@@ -874,10 +880,10 @@ namespace GravityBox.Venom
 
         private void ReconcileGroups()
         {
-            var reconciled=new HashSet<int>();
+            reconciledGroups.Clear();
             for(int anchor=0;anchor<32;anchor++)
             {
-                int group=game.Matter.Groups[anchor];if(!reconciled.Add(group))continue;
+                int group=game.Matter.Groups[anchor];if(!reconciledGroups.Add(group))continue;
                 Travel winner=null;
                 for(int i=0;i<32;i++)if(game.Matter.Groups[i]==group)
                 {

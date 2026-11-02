@@ -34,6 +34,7 @@ namespace GravityBox.Tests
         }
         [UnityTearDown] public IEnumerator After()
         {
+            COgheProductUI.PrivacyGateForTests=null;COgheProductUI.PrivacyOpenUrlForTests=null;COghePrivacy.ClearTestOverride();
             if(COgheIntro.Playing){var intro=Object.FindFirstObjectByType<COgheIntro>();intro.Speed=100;intro.Skip();while(COgheIntro.Playing)yield return null;}
             if(ui!=null){ui.Resume();ui.enabled=false;}
             COgheProductMode.OverrideForTests=false;

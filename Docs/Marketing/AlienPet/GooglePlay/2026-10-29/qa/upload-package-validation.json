@@ -1,0 +1,12 @@
+{
+  "file": "/Users/mrk/GravityBox/Docs/Marketing/AlienPet/GooglePlay/2026-10-29/AlienPet_GooglePlay_UploadPack_2026-10-29.zip",
+  "bytes": 12519588,
+  "sha256": "b48edb3524bc1460128175bebbfd7301ff65146c4b08ca7f2b7fb134f64b18c8",
+  "files": 26,
+  "counts": {
+    "phone": 6,
+    "tablet-7in": 4,
+    "tablet-10in": 4
+  },
+  "validation": "ZIP CRCs passed; explicit allowlist excludes credentials and build/signing files."
+}

@@ -1,0 +1,10 @@
+Subject: Request for reproduction details — installation issue, com.gravityboxlab.venom, version code 2
+
+Our release 1.0.1 (2) was rejected for Broken Functionality / Problems installing.
+We distributed the same version code through Google Play Internal testing and performed a fresh Google Play installation on an OPPO CPH2591 running Android 15 (API 35), ARM64, on 2 November 2026. Android package information confirms com.android.vending as the installer and initiating package. The app launched successfully and the Level 1 victory screen was observed. The captured test log contains no fatal exception, fatal signal, or ANR entries.
+
+We have not reproduced the installation failure reported during review and do not claim that this single-device check rules out other device-specific failures. Could you please provide the affected device model, Android version, installation error code/message, and whether the failure occurred during installation or first launch? These details will help us reproduce and correct the issue accurately.
+
+The original submitted AAB passed bundle validation and signature/integrity checks; the Google Play-generated device split package also installed successfully through Google Play. Evidence is available on request.
+
+Thank you.

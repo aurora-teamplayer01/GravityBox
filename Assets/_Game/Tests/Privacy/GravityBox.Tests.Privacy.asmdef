@@ -1,0 +1,9 @@
+{
+  "name": "GravityBox.Tests.Privacy",
+  "references": ["GravityBox.Venom", "GravityBox.Services", "GravityBox.Editor"],
+  "includePlatforms": ["Editor"],
+  "overrideReferences": true,
+  "precompiledReferences": ["nunit.framework.dll", "GoogleMobileAds.Core.dll"],
+  "optionalUnityReferences": ["TestAssemblies"],
+  "defineConstraints": ["UNITY_INCLUDE_TESTS"]
+}

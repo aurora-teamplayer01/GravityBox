@@ -1,0 +1,366 @@
+{
+  "audit_date": "2026-10-29",
+  "scope": "Technical evidence for the Google Play Data safety form, not a legal compliance certification. Read-only source/artifact audit; no Console changes or Assets edits.",
+  "app": {
+    "title": "Alien Pet: Escape Puzzle",
+    "package": "com.gravityboxlab.venom",
+    "version": "1.0.0 (1)",
+    "aab": "Builds/AlienPet/GooglePlay/AlienPet-1.0.0-1.aab",
+    "sha256": "218e4cc1646b5d9add183785661ee7526e2e7dd7fc0ddd3f1178e365b69ecfbe",
+    "source_head": "afc640dc6a478a859fb1ad7060bf544ee822d378",
+    "source_note": "The built artifact includes uncommitted authorized changes; HEAD alone does not identify the complete built tree.",
+    "artifact_evidence": [
+      "Artifacts/AlienPetPlayStore/bundle-manifest.xml",
+      "Artifacts/AlienPetPlayStore/validation-report.json",
+      "Docs/Verification/AlienPetPlayStore20261029/build-validation.json"
+    ]
+  },
+  "sdk_inventory": [
+    {
+      "name": "Google Mobile Ads Unity",
+      "version": "11.5.0",
+      "native_android": "com.google.android.gms:play-services-ads:25.4.0",
+      "evidence": [
+        "Packages/manifest.json",
+        "Assets/Plugins/Android/mainTemplate.gradle:12"
+      ]
+    },
+    {
+      "name": "Google User Messaging Platform",
+      "version": "4.0.0",
+      "evidence": [
+        "Assets/Plugins/Android/mainTemplate.gradle:14"
+      ]
+    },
+    {
+      "name": "Firebase Analytics",
+      "unity_version": "13.17.0",
+      "native_android": "23.2.0",
+      "evidence": [
+        "Assets/Plugins/Android/mainTemplate.gradle:15",
+        "Assets/_Game/Venom/Services/COgheGoogleServices.cs:51"
+      ]
+    },
+    {
+      "name": "Firebase Remote Config",
+      "unity_version": "13.17.0",
+      "native_android": "23.1.0",
+      "evidence": [
+        "Assets/Plugins/Android/mainTemplate.gradle:19",
+        "Assets/_Game/Venom/Services/COgheRemoteConfig.cs:19"
+      ]
+    },
+    {
+      "name": "Firebase Installations",
+      "version": "transitive; not independently pinned in app template",
+      "evidence": [
+        "Artifacts/AlienPetPlayStore/bundle-manifest.xml: FirebaseInstallationsRegistrar"
+      ]
+    }
+  ],
+  "recommended_form_summary_for_current_build": {
+    "collects_or_shares_user_data": true,
+    "contains_ads": true,
+    "data_types_to_disclose": [
+      "Location / Approximate location",
+      "App activity / App interactions",
+      "App info and performance / Diagnostics",
+      "Device or other IDs",
+      "App activity / Other actions"
+    ],
+    "all_observed_sdk_transfers_encrypted_in_transit": true,
+    "encryption_basis": "Firebase documents HTTPS; Analytics and Mobile Ads document TLS. No custom runtime HTTP/client/upload endpoint found in app-owned services/runtime. This was not a packet-capture audit of every ad creative.",
+    "account_creation": false,
+    "account_creation_basis": "No account/login UI, Firebase Auth SDK, custom user account identifier or authentication flow found.",
+    "data_deletion_request_mechanism_verified": false,
+    "deletion_form_answer": "No verified in-app or public data-deletion request mechanism. Do not claim that requests are available until the owner supplies a real published endpoint and an actionable process.",
+    "independent_security_review_verified": false,
+    "final_submission_status": "Historical artifact-1 audit. Superseded for the replacement build by privacy-implementation.json. Verify Analytics sharing/settings and privacy/deletion facts before submitting."
+  },
+  "data_type_table": [
+    {
+      "play_category": "Location",
+      "play_data_type": "Approximate location",
+      "collected": true,
+      "shared": true,
+      "examples": "IP-derived coarse location in Analytics and Mobile Ads; country code in Remote Config. No GPS access is required for this collection.",
+      "collectors": [
+        "Firebase Analytics",
+        "Google Mobile Ads",
+        "Firebase Remote Config"
+      ],
+      "collection_required_or_optional": "Required",
+      "required_basis": "No all-user opt-out. Analytics is explicitly enabled on startup; UMP regional options do not establish a global collection choice.",
+      "processed_ephemerally": false,
+      "collection_purposes": [
+        "Analytics",
+        "Advertising or marketing",
+        "Fraud prevention, security, and compliance",
+        "App functionality"
+      ],
+      "sharing_purposes": [
+        "Analytics",
+        "Advertising or marketing",
+        "Fraud prevention, security, and compliance"
+      ],
+      "purpose_detail": "Ads purposes follow the Mobile Ads disclosure; Analytics measures usage; Remote Config uses country for configuration targeting.",
+      "transit": "HTTPS/TLS per SDK documentation",
+      "deletion": "No verified app data-deletion flow; backend retention and request handling need owner/dashboard confirmation.",
+      "sources": [
+        "GA_DISCLOSURE",
+        "GMA_DISCLOSURE",
+        "FIREBASE_DISCLOSURE",
+        "PLAY_DEFINITIONS"
+      ]
+    },
+    {
+      "play_category": "App activity",
+      "play_data_type": "App interactions",
+      "collected": true,
+      "shared": true,
+      "examples": "Sessions, launches, screen interactions, ad taps and views. Custom puzzle outcomes and progression are separately mapped to Other actions.",
+      "collectors": [
+        "Firebase Analytics",
+        "Google Mobile Ads"
+      ],
+      "collection_required_or_optional": "Required",
+      "required_basis": "Analytics starts automatically; core gameplay generates events without an analytics opt-out.",
+      "processed_ephemerally": false,
+      "collection_purposes": [
+        "Analytics",
+        "Advertising or marketing",
+        "Fraud prevention, security, and compliance"
+      ],
+      "sharing_purposes": [
+        "Analytics",
+        "Advertising or marketing",
+        "Fraud prevention, security, and compliance"
+      ],
+      "purpose_detail": "App and ad interactions measure usage and monetization. Sharing is established by Mobile Ads, without assuming every Firebase transfer is sharing.",
+      "transit": "HTTPS/TLS per SDK documentation",
+      "deletion": "No verified app data-deletion flow. Local progress reset is not deletion of server-side Analytics/ad data.",
+      "code_evidence": [
+        "Assets/_Game/Venom/Runtime/Shop/COgheLevelAttempt.cs:51",
+        "Assets/_Game/Venom/Runtime/Shop/COgheShop.cs",
+        "Assets/_Game/Venom/Services/COgheAdMob.cs",
+        "Assets/_Game/Venom/Services/COgheGoogleServices.cs:142"
+      ],
+      "sources": [
+        "GA_DISCLOSURE",
+        "GMA_DISCLOSURE",
+        "PLAY_DEFINITIONS"
+      ]
+    },
+    {
+      "play_category": "App info and performance",
+      "play_data_type": "Diagnostics",
+      "collected": true,
+      "shared": true,
+      "examples": "Mobile Ads performance diagnostics, including startup, hangs and energy use; app-owned ad-load/failure analytics.",
+      "collectors": [
+        "Google Mobile Ads",
+        "Firebase Analytics for app-owned ad-failure events"
+      ],
+      "collection_required_or_optional": "Required",
+      "required_basis": "No globally available diagnostic-collection choice; ads can load automatically where eligible. Choosing not to watch a rewarded ad does not disable all SDK data collection.",
+      "processed_ephemerally": false,
+      "collection_purposes": [
+        "Analytics",
+        "Advertising or marketing",
+        "Fraud prevention, security, and compliance"
+      ],
+      "sharing_purposes": [
+        "Analytics",
+        "Advertising or marketing",
+        "Fraud prevention, security, and compliance"
+      ],
+      "transit": "HTTPS/TLS per SDK documentation",
+      "deletion": "No verified deletion-request mechanism in the app. Do not equate this type with an installed Crashlytics SDK.",
+      "sources": [
+        "GMA_DISCLOSURE",
+        "PLAY_DEFINITIONS"
+      ]
+    },
+    {
+      "play_category": "Device or other IDs",
+      "play_data_type": "Device or other IDs",
+      "collected": true,
+      "shared": true,
+      "examples": "Analytics app-instance ID, Android advertising ID, Mobile Ads app-set ID, Firebase installation ID. Event-specific attempt GUID is not itself a user ID.",
+      "collectors": [
+        "Firebase Analytics",
+        "Firebase Installations / Remote Config",
+        "Google Mobile Ads"
+      ],
+      "collection_required_or_optional": "Required",
+      "required_basis": "Android can restrict/reset/delete AAID, but that does not disable all identifiers. FID/app-instance collection has no global app opt-out.",
+      "processed_ephemerally": false,
+      "collection_purposes": [
+        "App functionality",
+        "Analytics",
+        "Advertising or marketing",
+        "Fraud prevention, security, and compliance"
+      ],
+      "sharing_purposes": [
+        "Analytics",
+        "Advertising or marketing",
+        "Fraud prevention, security, and compliance"
+      ],
+      "purpose_detail": "FID supports Remote Config installation identity; Analytics metrics and Ads use their identifiers. No app-owned account-management purpose is evidenced.",
+      "transit": "HTTPS/TLS per SDK documentation",
+      "deletion": "Android ad-ID controls affect that identifier, not all game/SDK records. No app-exposed FID/Analytics deletion implementation found.",
+      "code_evidence": [
+        "Artifacts/AlienPetPlayStore/bundle-manifest.xml: com.google.android.gms.permission.AD_ID",
+        "Assets/_Game/Venom/Services/COgheGoogleServices.cs:51",
+        "Assets/_Game/Venom/Services/COgheRemoteConfig.cs:19"
+      ],
+      "sources": [
+        "GA_DISCLOSURE",
+        "GMA_DISCLOSURE",
+        "FIREBASE_DISCLOSURE",
+        "PLAY_DEFINITIONS"
+      ]
+    },
+    {
+      "play_category": "App activity",
+      "play_data_type": "Other actions",
+      "collected": true,
+      "shared": null,
+      "examples": "Custom level starts/outcomes/duration, retries, progression, ability choices and virtual-economy game actions.",
+      "collectors": [
+        "Firebase Analytics"
+      ],
+      "collection_required_or_optional": "Required",
+      "required_basis": "In artifact 1, app-owned Analytics was enabled automatically with no opt-out.",
+      "processed_ephemerally": false,
+      "collection_purposes": [
+        "Analytics"
+      ],
+      "sharing_purposes": [],
+      "sharing_status": "Not established from code. Verify GA data-sharing, Ads links and exports. The existence of AdMob alone does not prove that this custom game event payload is shared.",
+      "transit": "TLS per Analytics documentation",
+      "deletion": "No verified request workflow in artifact 1.",
+      "sources": [
+        "GA_DISCLOSURE",
+        "PLAY_DEFINITIONS"
+      ],
+      "mapping_note": "Google Play explicitly lists gameplay under Other actions, distinct from App interactions."
+    }
+  ],
+  "types_not_evidenced_in_current_build": [
+    {
+      "type": "Precise location",
+      "reason": "No location permission or app geolocation call found. Approximate IP location still applies."
+    },
+    {
+      "type": "Name, email, address, phone and app account User IDs",
+      "reason": "No identity input/login/custom SetUserId found. Conditional Google Signals/account-related SDK collection is a dashboard unknown, so do not give a blanket no-identifiers statement."
+    },
+    {
+      "type": "Financial info / payment details / purchase history",
+      "reason": "No live billing provider or BILLING permission. COgheEntitlements.Store is null in the store build; virtual Drops exchanges and ad revenue are not user card details. Re-audit before enabling real IAP."
+    },
+    {
+      "type": "Crash logs",
+      "reason": "No Crashlytics SDK or app crash upload found. Mobile Ads Diagnostics remains disclosed; generic diagnostic documentation does not by itself prove a separate crash-log payload."
+    },
+    {
+      "type": "Contacts, messages, photos, video, audio, files/documents, health/fitness, calendar, browsing history, user-generated content",
+      "reason": "No corresponding input/upload/network feature or sensitive permission found in this app. Game choices are predefined actions, not user chat/content."
+    }
+  ],
+  "local_data_and_identity": {
+    "local_storage": "PlayerPrefs holds progress, tutorial flags, preferences, inventory, virtual currency, energy, attempt counts and cached Remote Config. This is not an app-owned cloud-save system.",
+    "local_storage_evidence": [
+      "Assets/_Game/Venom/Runtime/VenomCampaignSave.cs:22",
+      "Assets/_Game/Venom/Runtime/VenomCampaignSave.cs:37",
+      "Assets/_Game/Venom/Runtime/Shop/COgheShop.cs:62",
+      "Assets/_Game/Venom/Runtime/Shop/COgheEconomy.Config.cs:71"
+    ],
+    "custom_event_keys": [
+      "level",
+      "level_id",
+      "level_name",
+      "campaign",
+      "attempt",
+      "attempt_id",
+      "duration_seconds",
+      "replay",
+      "outcome",
+      "reason",
+      "success",
+      "item",
+      "price",
+      "currency",
+      "amount",
+      "balance",
+      "build_channel",
+      "event_schema",
+      "economy_revision",
+      "economy_variant"
+    ],
+    "linkage": "Gameplay events can be associated with SDK app/device identifiers; no login does not make Analytics anonymous or remove disclosure obligations.",
+    "production_store_evidence": "Assets/_Game/Venom/Runtime/Shop/COgheEntitlements.cs:28"
+  },
+  "privacy_controls_and_unknowns": [
+    "COgheGoogleServices.cs:51 explicitly enables Analytics immediately after dependencies resolve. No app-owned analytics consent or opt-out and no SetConsent call was found.",
+    "UMP Update uses default ConsentRequestParameters (line 73). Ads initialization checks CanRequestAds (line 108). Privacy choices is exposed only when UMP reports Required, in COgheProductUI.View.cs.",
+    "UMP 4.0 can propagate Analytics Consent Mode when configured in AdMob. That dashboard setting was not inspected by this audit. Do not claim that UMP can never affect Analytics; current code does not explicitly coordinate it. Firebase/UMP initialization is asynchronous.",
+    "Existing native test documentation reports UMP error 3 / no consent form configured. Dashboard readiness and regional consent behavior need verification before release.",
+    "No published privacy URL or actionable data-deletion process was verified here. Owner contact, retention, deletion identification and exception handling must be supplied and implemented truthfully.",
+    "Google Analytics Google Signals, data-sharing settings, linked ad accounts/audience exports and actual retention settings were not inspected. They may add data handling beyond this source-derived table.",
+    "AdMob mediation/server-side account configuration was not inspected. No additional network mediation adapter dependency was found in the app template.",
+    "No age gate, child-directed tag, under-age tag or max-ad-content-rating configuration was found in app-owned services. A separate Families/target-audience audit is required because the stated intended audience includes children.",
+    "The current official Mobile Ads disclosure page names version 25.5.0; this artifact packages native 25.4.0. The four documented categories are the evidence-backed baseline, not proof that a newer page exhaustively certifies every older SDK behavior.",
+    "No packet interception, production server retention audit or backend deletion test was performed. This audit did not change code, data collection or user-facing disclosures."
+  ],
+  "manifest_observations": {
+    "relevant_permissions": [
+      "android.permission.INTERNET",
+      "android.permission.ACCESS_NETWORK_STATE",
+      "com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE",
+      "com.google.android.gms.permission.AD_ID",
+      "android.permission.ACCESS_ADSERVICES_AD_ID",
+      "android.permission.ACCESS_ADSERVICES_ATTRIBUTION",
+      "android.permission.ACCESS_ADSERVICES_TOPICS"
+    ],
+    "no_sensitive_permissions_observed": [
+      "GPS/location",
+      "camera",
+      "microphone",
+      "contacts",
+      "external storage",
+      "Google Play BILLING"
+    ],
+    "note": "SMS/dial/calendar intent queries in SDK manifests are visibility declarations, not SMS/contact/calendar read permissions and not evidence that the game collects those data types."
+  },
+  "sources": {
+    "GMA_DISCLOSURE": {
+      "url": "https://developers.google.com/admob/unity/privacy/play-data-disclosure",
+      "accessed": "2026-10-29",
+      "published_update": "2026-10-28",
+      "use": "Automatic Ads data categories, purposes, TLS and AAID controls; page currently names 25.5.0."
+    },
+    "GA_DISCLOSURE": {
+      "url": "https://support.google.com/analytics/answer/11582702?hl=en",
+      "accessed": "2026-10-29",
+      "use": "Analytics automatic and conditional collection; TLS; dashboard features needing review."
+    },
+    "FIREBASE_DISCLOSURE": {
+      "url": "https://firebase.google.com/docs/android/play-data-disclosure",
+      "accessed": "2026-10-29",
+      "use": "HTTPS, Firebase installations and Remote Config data handling."
+    },
+    "PLAY_DEFINITIONS": {
+      "url": "https://support.google.com/googleplay/android-developer/answer/10787469?hl=en",
+      "accessed": "2026-10-29",
+      "use": "SDK and pseudonymous collection are included; optional requires all-user choice; service-provider sharing exception and ephemeral definition."
+    },
+    "UMP_CONSENT_MODE": {
+      "url": "https://developers.google.com/admob/android/privacy/consent-mode",
+      "accessed": "2026-10-29",
+      "use": "UMP can interpret Analytics consent if dashboard prerequisites are configured; code inspection alone cannot establish that state."
+    }
+  },
+  "source_reference_scope": "Historical pre-privacy-change source inspected for AAB 1.0.0 (1); current source lines have moved. The replacement release is described in privacy-implementation.json."
+}

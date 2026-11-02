@@ -1,0 +1,1 @@
+Source trims are in C-edit-manifest.json. Script is designed to run at Artifacts/AlienPetPetAd-2026-10-28 inside the game repository; ROOT must point at the repo for Manrope fonts and COgheAudio effects. Capture source is 1135 frames at 30fps. The dev-only capture entrypoint is AlienPetCareReel.cs, flag -alien-pet-care-reel <directory>. No unlock/purchase is written to saves.

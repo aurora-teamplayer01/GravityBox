@@ -1,0 +1,183 @@
+{
+  "updated_utc": "2026-10-29T13:54:34.932921+00:00",
+  "scope": "Android tablet release readiness; no physical-device interaction, no Unity process, no Assets changes. Emulator is functional/visual evidence only, never device performance evidence.",
+  "android_sdk": "/Users/mrk/Library/Android/sdk",
+  "system_image": {
+    "package": "system-images;android-36;google_apis;arm64-v8a",
+    "available_revision": "7.0.0",
+    "status": "installed",
+    "new_license_accepted": false,
+    "package_revision": 7,
+    "license": "Existing accepted android-sdk-license used; no new license prompt was presented."
+  },
+  "avd": {
+    "name": "AlienPetTablet",
+    "hardware_profile": "pixel_tablet",
+    "hardware_profile_observed_id": 60,
+    "ram_mb": 2048,
+    "cpu_cores": 2,
+    "status": "created_and_tested",
+    "launch_status": "running",
+    "path": "/Users/mrk/.android/avd/AlienPetTablet.avd",
+    "native_display_pixels": [
+      2560,
+      1600
+    ],
+    "density_dpi": 320,
+    "minimum_display_dp": 800,
+    "host_acceleration": "Hypervisor.Framework OS X Version 26.5 available",
+    "configuration_copy": "Docs/Marketing/AlienPet/GooglePlay/2026-10-29/qa/AlienPetTablet.config.ini",
+    "adb_serial": "emulator-5580",
+    "requested_ram_mb": 2048,
+    "runtime_ram_mb": 3072,
+    "ram_note": "Emulator enforces 3072 MB minimum; Unity reports 2975 MB guest memory.",
+    "portrait_capture_pixels": [
+      1600,
+      2560
+    ],
+    "current_display": "Native Pixel Tablet display restored: portrait 1600x2560 @ 320dpi, sw800dp",
+    "left_running_state": "Test APK paused on level10; native 1600x2560 restored. Emulator only; no physical device touched."
+  },
+  "evidence": {
+    "manifest": "Final signed AAB and universal APK manifests inspected: anyDensity plus small/normal/large/xlarge supported, portrait, resizeableActivity=true, appCategory=game, target36/min26. Files: Artifacts/AlienPetPlayStore/bundle-manifest.xml and universal-manifest.txt.",
+    "ui": "Safe-area scale = min(width / 360, height / 640), automatic resize/safe-area relayout, main controls 48–64 logical px.",
+    "camera": "Authored bounds fit HUD-safe region; existing camera tests chiefly phone ratios.",
+    "layout_tests": "Existing page/popup/ability/ink guide tests include 1536 × 2048; no tests executed by this audit.",
+    "tablet_reference": "AlienPetBrand Mac 768 × 1024 menu/Plus/game/Pause only; Development Build watermark, test UI; not Android screenshots.",
+    "latest_device_ui": "OPPO 720 × 1612 release proof; not tablet proof."
+  },
+  "capture_hooks": {
+    "AlienPetAdReel": "Compiled in development/COGHE_MOBILE_BENCHMARK; desktop command-line only; forces 540 × 960 and 2× capture; cannot directly trigger unchanged on Android.",
+    "AlienPetCareReel": "Same activation/size limitation as AdReel; in-memory ownership/unlock fixture, real food/style interactions.",
+    "COgheViewProofPlayer": "Android intent extras exist in test APK, but PersistenceEnabled=false disables ProductMode unless overridden; developer HUD makes this hook unsuitable for store images. Not used for recommended captures.",
+    "COgheMobileUIProof": "Android boolean coghe_ui_proof; native-resolution menu/game/victory/Home/Style shots; fixture temporarily substitutes test ads, in-memory unlocks; excluded from store APK.",
+    "final_store_apk": "Installed and smoked with ordinary native taps/swipe/pinch. No test hooks were used in store APK."
+  },
+  "store_screenshot_guidance": {
+    "url": "https://support.google.com/googleplay/android-developer/answer/9866151?hl=en",
+    "large_screen_guidance": "Four or more actual in-game images per tablet category; 1080–7680 px; 9:16 portrait or 16:9 landscape; avoid added promotional text. General upload limits are separately 320–3840 px, max/min <= 2, JPEG or opaque 24-bit PNG."
+  },
+  "outstanding": [],
+  "setup_notes": [
+    "The first create attempt occurred while extraction was finishing and returned package-not-yet-valid; retry after SDK install exit 0 succeeded.",
+    "Read-only avdmanager required Android Studio bundled Java runtime; JAVA_HOME used for individual commands only.",
+    "Pixel Tablet natural display is landscape. The 7-inch-class override used wm size 1920x1200, yielding portrait app/screenshot 1200x1920 after ROTATION_90. The first 1200x1920 override was landscape at runtime and triggered an Android education overlay; those setup images are excluded from recommended ASO sources. Native size was restored after capture."
+  ],
+  "store_smoke": {
+    "apk": "/Users/mrk/GravityBox/Artifacts/AlienPetPlayStore/AlienPet-1.0.0-1-universal.apk",
+    "sha256": "9ffce5bb32cde58a93bb8b855fb5aae95214558a7acbf4a40a3763f72e12989a",
+    "aab_sha256": "218e4cc1646b5d9add183785661ee7526e2e7dd7fc0ddd3f1178e365b69ecfbe",
+    "version": "1.0.0 (1)",
+    "debuggable": false,
+    "input_method": "Ordinary Android shell taps/swipe, plus external two-pointer MotionEvent injection for pinch; no gameplay test hooks or save editing.",
+    "observed_passed": [
+      "First install and release launch",
+      "Portrait fullscreen 1600 × 2560, sw800dp",
+      "Intro playback and Skip into level 1",
+      "Floor tap moves the creature",
+      "Drag orbits camera",
+      "Overview restores initial framing",
+      "Tap wall exit solves level 1",
+      "Victory reward layout",
+      "Continue reaches level 2",
+      "Two-finger pinch zooms camera",
+      "Pause contains no Levels (test)",
+      "Menu leave confirmation",
+      "Return to Alien Pet menu with level 2 saved"
+    ],
+    "capture_directory": "Docs/Marketing/AlienPet/GooglePlay/2026-10-29/qa/tablet-store-smoke",
+    "not_claimed": [
+      "Real tablet performance",
+      "Full campaign solve",
+      "Real purchases",
+      "Ad delivery outside emulator",
+      "All tablet sizes"
+    ],
+    "notes": [
+      "Emulator Google AdMob SDK displayed Test Ad banner during victory; no ad clicked.",
+      "Shell mouse scroll produced no visible zoom; final pinch was verified with the successful two-finger helper.",
+      "First external pinch helper attempt used deprecated InputManager singleton and failed; corrected InputManagerGlobal helper succeeded. This helper failure was outside the game process."
+    ]
+  },
+  "test_apk": {
+    "path": "/Users/mrk/GravityBox/Builds/SpatialLab/Android/COghe-Spatial.apk",
+    "sha256": "26df2c98969cd38f500708e2c364e9a82dd9090bbb1407b5babdd6efe4e5fb39",
+    "capture_provenance": "Current non-debug test APK. Later levels selected through existing test level chooser. Home/Style may use existing MobileUIProof in-memory fixture. These images are not final-store-APK smoke evidence."
+  },
+  "capture_profiles": {
+    "10-inch": {
+      "portrait_pixels": [
+        1600,
+        2560
+      ],
+      "density_dpi": 320,
+      "smallest_width_dp": 800,
+      "physical_hardware": false,
+      "avd": "AlienPetTablet",
+      "display_size_override": null
+    },
+    "7-inch": {
+      "portrait_pixels": [
+        1200,
+        1920
+      ],
+      "density_dpi": 320,
+      "smallest_width_dp": 600,
+      "physical_hardware": false,
+      "avd": "AlienPetTablet",
+      "display_size_override": [
+        1920,
+        1200
+      ],
+      "note": "Independent app rendering on the same isolated AVD, not a resized 10-inch image or a physical 7-inch tablet."
+    }
+  },
+  "ui_proof": {
+    "10-inch": {
+      "result_text": "screen=1600x2560 safe=(x:0.00, y:0.00, width:1600.00, height:2560.00) fullscreen=True camera=(x:0.00, y:0.00, width:1600.00, height:2560.00)\nresult=passed overlaps=0 savesWritten=false",
+      "report": "Docs/Marketing/AlienPet/GooglePlay/2026-10-29/qa/tablet-native-captures/10-inch/mobile-ui-proof/result.txt",
+      "scope": "Existing native MobileUIProof fixture: measures victory dance mesh against named labels and all buttons across three animation variants; menu/game/reward/Home/Style screenshots also captured. Not a universal audit of every page or every campaign level.",
+      "fixture": "In-memory wallet/progress, test ads during reward proof, HomeUnlocked=true before Home/Style; savesWritten=false. Test APK only; not final-store-APK evidence."
+    },
+    "7-inch": {
+      "result_text": "screen=1200x1920 safe=(x:0.00, y:0.00, width:1200.00, height:1920.00) fullscreen=True camera=(x:0.00, y:0.00, width:1200.00, height:1920.00)\nresult=passed overlaps=0 savesWritten=false",
+      "report": "Docs/Marketing/AlienPet/GooglePlay/2026-10-29/qa/tablet-native-captures/7-inch/mobile-ui-proof/result.txt",
+      "scope": "Existing native MobileUIProof fixture: measures victory dance mesh against named labels and all buttons across three animation variants; menu/game/reward/Home/Style screenshots also captured. Not a universal audit of every page or every campaign level.",
+      "fixture": "In-memory wallet/progress, test ads during reward proof, HomeUnlocked=true before Home/Style; savesWritten=false. Test APK only; not final-store-APK evidence."
+    }
+  },
+  "completed": [
+    "Signed AAB-derived release APK smoke at native 1600x2560",
+    "Five clean puzzle overviews per class at 1600x2560 and 1200x1920: levels 4/6/10/29/34",
+    "Four primary ASO source images per class shared with ASO agent",
+    "Existing MobileUIProof passed on both classes with zero measured dance/UI overlaps",
+    "Capture manifest includes dimensions, SHA256, APK provenance, emulator configuration and source state"
+  ],
+  "release_findings": [
+    {
+      "severity": "needs_service_configuration",
+      "finding": "Signed store APK logged UMP consent warning code 3: no consent forms configured for the AdMob app ID. Gameplay continued.",
+      "evidence": "Docs/Marketing/AlienPet/GooglePlay/2026-10-29/qa/tablet-store-smoke/unity-logcat.txt:33"
+    },
+    {
+      "severity": "coverage_limit",
+      "finding": "Only two emulator display configurations were tested; physical tablet thermals, performance, purchases, production consent/ad delivery, full campaign solves, landscape/multi-window and iPad are not verified."
+    },
+    {
+      "severity": "capture_limit",
+      "finding": "Later-level screenshot sources use existing non-debug test APK v0.1.0, selected through test picker. Their Product UI is clean; they are not represented as captures from final store APK v1.0.0. Home fixture is sparse and Style shows locked choices, so primary tablet ASO uses puzzles."
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://support.google.com/googleplay/android-developer/answer/9866151?hl=en-GB",
+      "checked": "2026-10-29",
+      "supports": "Separate 7/10-inch screenshot categories; four large-screen images, portrait 9:16, 1080–7680px guidance; avoid extra non-app text. General upload limits separately 320–3840px, max/min<=2, JPEG or RGB PNG."
+    },
+    {
+      "url": "https://developer.android.com/about/versions/16/behavior-changes-16",
+      "checked": "2026-10-29",
+      "supports": "Android 16 large-screen orientation restrictions exception for games based on android:appCategory. Observed release stayed portrait fullscreen."
+    }
+  ]
+}

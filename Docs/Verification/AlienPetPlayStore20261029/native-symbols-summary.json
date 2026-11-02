@@ -1,0 +1,146 @@
+{
+  "date": "2026-10-29",
+  "status": "uploaded_and_production_draft_saved",
+  "versionName": "1.0.1",
+  "versionCode": 2,
+  "aabSha256": "30bc7fce27fda89f484a35bc776bfdbc312b99daec30e519d4dc2bc9fb2d9ab0",
+  "abi": "arm64-v8a",
+  "unity": "6000.3.19f1",
+  "format": "Public native symbol table, ABI directory at ZIP root; no full DWARF/file-line guarantee",
+  "archive": {
+    "repoPath": "Artifacts/AlienPetPlayStore/public-setup/native-symbols/native-symbols.zip",
+    "sha256": "89fcea49f041ef9da3bcb1a0033d90aa06ebefb2f32090e282f13aa0ecaaeb5c",
+    "bytes": 20828818,
+    "crcTest": "PASS"
+  },
+  "coverage": {
+    "included": 7,
+    "totalAabNativeLibraries": 11
+  },
+  "verifiedLibraries": [
+    {
+      "library": "libil2cpp.so",
+      "buildId": "b16cb1f8e5ad09532ae4df232617a95ab76a87fb",
+      "codeVerification": "Executable .text bytes, virtual address, size and Build ID match AAB",
+      "aabLibrarySha256": "a77c8c04a57f8ccab2891428fbada1de54ef27a9353684de6d2c6db6e9b38759",
+      "packagedSha256": "6759f1b69f7f02e8ff5c86d494c2d201917335adb9f6577867fab363a11b5623",
+      "archiveEntry": "arm64-v8a/libil2cpp.so"
+    },
+    {
+      "library": "libunity.so",
+      "buildId": "c089f6b9436c0adc",
+      "codeVerification": "Executable .text bytes, virtual address, size and Build ID match AAB",
+      "aabLibrarySha256": "75f8dcfb4e4581ec8603c4b452895324fa098c0deb579335e3dc62d10c0401be",
+      "packagedSha256": "55800c41a1c888cbaaec9f39d9bb07161334d4706f562df5116904452b8fb4b6",
+      "archiveEntry": "arm64-v8a/libunity.so"
+    },
+    {
+      "library": "libmain.so",
+      "buildId": "c5498ab8c791f1473a54c79a9d3c5b738ff6d941",
+      "codeVerification": "Editor executable counterpart byte-identical to AAB; symbol .text range and Build ID match",
+      "aabLibrarySha256": "88f32dddd4c77224351f645d1aefb3987aefad9bc53b43fcf8e292e61be1bc4d",
+      "packagedSha256": "dc5f0f68af8630ecbb588bf68f59136fbd8c574ea799fe64ae4f5f62760abb9f",
+      "archiveEntry": "arm64-v8a/libmain.so"
+    },
+    {
+      "library": "lib_burst_generated.so",
+      "buildId": "811fd0687a3448dd",
+      "codeVerification": "Executable .text bytes, virtual address, size and Build ID match AAB",
+      "aabLibrarySha256": "0d949c39931f00d47af25d0d9fd5c116008769bed5600c370eb59cb1f5780c0c",
+      "packagedSha256": "3f60a7f481466fea9041e6304d165728f1620a4f644a8e5d3bd4ff5f04c8dcad",
+      "archiveEntry": "arm64-v8a/lib_burst_generated.so"
+    },
+    {
+      "library": "libc++_shared.so",
+      "buildId": "b04675a35ad96f8a9dcaa073e3bd31d4536f00ad",
+      "codeVerification": "Executable .text bytes, virtual address, size and Build ID match AAB",
+      "aabLibrarySha256": "4397241b4bd20a8e579bfb41d21107857e12985f6a01ca0c2a5f83380d1270b4",
+      "packagedSha256": "76e04d92ad3bb64572eb92d64a3f6f651f9d08ce5977db555d4a2ab85c688936",
+      "archiveEntry": "arm64-v8a/libc++_shared.so"
+    },
+    {
+      "library": "libgame.so",
+      "buildId": "ed14ce7554bea5751d1c5e96ce849b98ba04f3af",
+      "codeVerification": "Executable .text bytes, virtual address, size and Build ID match AAB",
+      "aabLibrarySha256": "34bc29c669059e5a1007b7c9cc0ee9c6e8243b17fa87414dd0319fef7c8dc479",
+      "packagedSha256": "be6dbea537c467f40deda5b26464cfae579412066b9f1a186300114a3b8948f6",
+      "archiveEntry": "arm64-v8a/libgame.so"
+    },
+    {
+      "library": "libswappywrapper.so",
+      "buildId": "25ac735658b7208e9c2f7f8c35bd06224788693d",
+      "codeVerification": "Executable .text bytes, virtual address, size and Build ID match AAB",
+      "aabLibrarySha256": "72600540fc6475c1dc2174a70b68fb8b9ba73d577c65fe26a40bb37128dc5e34",
+      "packagedSha256": "e1db0c96545a31b5056430107dddd44b73b6aa56cf8cf031c1e0a89f5e77d138",
+      "archiveEntry": "arm64-v8a/libswappywrapper.so"
+    }
+  ],
+  "omittedLibraries": [
+    {
+      "library": "libFirebaseCppAnalytics.so",
+      "reason": "Third-party Firebase binary has no GNU Build ID; omitted instead of claiming Build-ID verification"
+    },
+    {
+      "library": "libFirebaseCppApp-13_17_0.so",
+      "reason": "Third-party Firebase binary has no GNU Build ID; omitted instead of claiming Build-ID verification"
+    },
+    {
+      "library": "libFirebaseCppRemoteConfig.so",
+      "reason": "Third-party Firebase binary has no GNU Build ID; omitted instead of claiming Build-ID verification"
+    },
+    {
+      "library": "libdatastore_shared_counter.so",
+      "reason": "No unstripped/symbol-table candidate found in current release intermediates"
+    }
+  ],
+  "r8Mapping": {
+    "applicable": false,
+    "reason": "Release minification disabled; no mapping.txt generated for exact final build",
+    "evidence": [
+      {
+        "line": 24,
+        "text": "versionName \"1.0.1\""
+      },
+      {
+        "line": 27,
+        "text": "versionCode 2"
+      },
+      {
+        "line": 31,
+        "text": "debugSymbolLevel \"none\""
+      },
+      {
+        "line": 61,
+        "text": "minifyEnabled false"
+      },
+      {
+        "line": 68,
+        "text": "minifyEnabled false"
+      },
+      {
+        "line": 293,
+        "text": "AndroidMinifyRelease: 0"
+      },
+      {
+        "line": 294,
+        "text": "AndroidMinifyDebug: 0"
+      }
+    ]
+  },
+  "upload": {
+    "verifiedBy": "Coordinating root agent, live Play Console",
+    "artifactVersionCode": 2,
+    "consoleText": "This app bundle has native debug symbols",
+    "productionDraftSaved": true,
+    "proof": "console/native-symbols-attached.jpg"
+  },
+  "limits": [
+    "Applies only to the exact AAB hash above; a rebuild requires fresh symbol matching.",
+    "Seven of eleven native libraries are covered. Some third-party native stacks remain unsymbolicated.",
+    "Public symbols provide function names; complete source file/line or DWARF coverage is not claimed."
+  ],
+  "sources": [
+    "https://developer.android.com/build/include-native-symbols",
+    "https://docs.unity.com/en-us/engine/6000.3/manual/platform-specific/android/developing/testing-and-debugging/symbols"
+  ]
+}

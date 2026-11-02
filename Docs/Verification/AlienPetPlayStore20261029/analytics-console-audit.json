@@ -1,0 +1,127 @@
+{
+  "date": "2026-10-29",
+  "method": "Read-only visible Firebase/Google Analytics UI via CUA; no hidden APIs and no configuration mutations.",
+  "browser": {
+    "id": "3",
+    "profile": "Chrome của bạn",
+    "account": "kienphamds@gmail.com"
+  },
+  "firebaseProject": "coghe-57f21",
+  "analyticsAccount": "58477001",
+  "analyticsProperty": "557269271",
+  "androidStream": "16036255684",
+  "retention": {
+    "eventMonths": 2,
+    "userMonths": 14,
+    "resetOnNewUserActivity": true,
+    "note": "UI says these controls do not affect most standard aggregated reporting."
+  },
+  "dataCollection": {
+    "googleSignals": false,
+    "googleSignalsEvidence": "Turn on Google signals action shown",
+    "granularLocationAndDeviceData": true,
+    "adsPersonalizationAllowedRegions": 307,
+    "totalRegions": 307,
+    "userProvidedData": "Not configured; page requests an industry category to get started. No setup action taken."
+  },
+  "accountSharing": {
+    "googleProductsAndServices": false,
+    "modelingContributionsAndBusinessInsights": true,
+    "modelingUiScope": "Measurement data aggregated and de-identified before use for business insights",
+    "technicalSupport": true,
+    "recommendationsForYourBusiness": true,
+    "recommendationsUiScope": "Account data: account usage and configuration, product spending, users associated with the Analytics account",
+    "countryOfBusiness": "Vietnam",
+    "dataProcessingTermsUiStatus": "were accepted on October 29, 2026",
+    "termsCaveat": "Acceptance performed only after explicit user action-time approval relayed by parent; persisted state verified after page reload."
+  },
+  "productLinks": {
+    "googleAds": {
+      "completed": 0,
+      "approvalNeeded": 0,
+      "requestSent": 0,
+      "cancelled": 0
+    },
+    "googleAdMob": {
+      "count": 0
+    },
+    "firebase": "Linked to coghe-57f21",
+    "otherIntegrations": "Not exhaustively inspected; Firebase overview showed Link BigQuery, Link Google Ads and no matching Play app."
+  },
+  "dataSafetyInference": {
+    "otherActionsCollected": true,
+    "optional": true,
+    "scope": "New release sends gameplay analytics only after separate adult opt-in. No child/teen analytics per service implementation.",
+    "otherActionsShared": false,
+    "basis": "Products/services sharing and Google signals are off, Google Ads/AdMob link lists are empty. Technical support is processing on behalf; modeling UI explicitly scopes its input to aggregate/de-identified data; Recommendations refers to account administration data rather than game-player events.",
+    "limits": "Reasoned declaration recommendation, not contractual certainty or proof of every possible integration. Reassess when links/sharing settings or SDK behavior change. Distinct AdMob ad-interaction data may still be shared and must be disclosed separately.",
+    "confidence": "Supported scoped inference from inspected settings and primary documentation, not contractual certainty."
+  },
+  "evidenceDirectory": "/Users/mrk/GravityBox/Artifacts/AlienPetPlayStore/public-setup/analytics-console-audit",
+  "screenshots": [
+    "data-collection.jpg",
+    "account-sharing-top.jpg",
+    "account-sharing-details.jpg",
+    "google-ads-links.jpg",
+    "google-admob-links.jpg",
+    "data-retention.jpg",
+    "analytics-account.jpg",
+    "firebase-linked-property.jpg",
+    "data-processing-terms-unaccepted.jpg",
+    "data-processing-terms-accepted.jpg"
+  ],
+  "primaryPolicySources": [
+    {
+      "url": "https://support.google.com/googleplay/android-developer/answer/10787469?hl=en",
+      "verifiedVia": "Visible Data sharing section",
+      "relevance": "Developer-instructed service-provider transfers and fully anonymized data transfers are excluded from sharing disclosure."
+    },
+    {
+      "url": "https://support.google.com/analytics/answer/11582702?hl=en",
+      "verifiedVia": "Visible article",
+      "relevance": "Analytics disclosure depends on SDK invocation and optional Google signals, Ads links, and Google products/services sharing."
+    },
+    {
+      "url": "https://support.google.com/analytics/answer/1011397?hl=en",
+      "verifiedVia": "Visible article",
+      "relevance": "Modeling data is aggregated so organization/account/users cannot be identified; technical support accesses data to resolve service issues; Recommendations concerns Analytics account administration data. Google products/services sharing would make Google an independent controller, and it is off here."
+    }
+  ],
+  "dpaHandoff": {
+    "browserId": "3",
+    "profile": "Chrome của bạn",
+    "extensionInstanceId": "6a684d96-97aa-41e7-a745-b83704c3855f",
+    "tabId": "1790259279",
+    "account": "kienphamds@gmail.com",
+    "pageUrl": "https://analytics.google.com/analytics/web/?authuser=0&hl=en-US#/a58477001p557269271/admin/account/settings",
+    "statusText": "The Data Processing Terms for this account were accepted on October 29, 2026.",
+    "checkboxText": "I accept the Data Processing Terms as required by GDPR.",
+    "checkboxChecked": false,
+    "termsLink": "https://privacy.google.com/businesses/processorterms/",
+    "helpLink": "https://support.google.com/analytics/answer/3379636?hl=en_US&utm_id=ad",
+    "manageDpaDetailsLink": "https://marketingplatform.google.com/gdpr/?key=58477001&product=1",
+    "actionAfterOwnerApproval": "Completed and persisted; no further terms action pending.",
+    "screenshot": "data-processing-terms-unaccepted.jpg",
+    "retained": false
+  },
+  "dpaAcceptance": {
+    "date": "2026-10-29",
+    "accountId": "58477001",
+    "termsUrl": "https://privacy.google.com/businesses/processorterms/",
+    "authorization": "Parent relayed user's explicit action-time confirmation: Tao đồng ý Data Processing Terms.",
+    "actions": [
+      "Checked the existing Data Processing Terms acceptance checkbox",
+      "Clicked Save",
+      "Reloaded and verified persisted accepted date"
+    ],
+    "verifiedStatusText": "The Data Processing Terms for this account were accepted on October 29, 2026.",
+    "sharingUnchanged": {
+      "googleProductsAndServices": false,
+      "modelingContributionsAndBusinessInsights": true,
+      "technicalSupport": true,
+      "recommendationsForYourBusiness": true
+    },
+    "retentionChanged": false,
+    "screenshot": "data-processing-terms-accepted.jpg"
+  }
+}

@@ -1,0 +1,65 @@
+[
+  {
+    "src": "/Users/mrk/GravityBox/Artifacts/AlienPetAds-2026-10-28/sources/shot_03_0ce7b753.mp4",
+    "start": 4.6,
+    "duration": 2.8,
+    "kind": "cinematic",
+    "heading": "NOT YOUR\nAVERAGE PET.",
+    "speed": 1,
+    "timeline_start": 0
+  },
+  {
+    "src": "/Users/mrk/GravityBox/Artifacts/AlienPetAds-2026-10-28/sources/gameplay-native.mp4",
+    "start": 26.8,
+    "duration": 3,
+    "kind": "home",
+    "heading": "A LITTLE LOVE\u2026",
+    "speed": 1,
+    "timeline_start": 2.8
+  },
+  {
+    "src": "/Users/mrk/GravityBox/Artifacts/AlienPetAds-2026-10-28/sources/shot_04_9f93ec45.mp4",
+    "start": 2.8,
+    "duration": 2.8,
+    "kind": "cinematic",
+    "heading": "\u2026A LOT OF\nPERSONALITY.",
+    "speed": 1,
+    "timeline_start": 5.8
+  },
+  {
+    "src": "/Users/mrk/GravityBox/Artifacts/AlienPetAds-2026-10-28/sources/gameplay-native.mp4",
+    "start": 0.8,
+    "duration": 4.4,
+    "kind": "game",
+    "heading": "BIG BRAINS.\nTINY BODY.",
+    "speed": 1,
+    "timeline_start": 8.6
+  },
+  {
+    "src": "/Users/mrk/GravityBox/Artifacts/AlienPetAds-2026-10-28/sources/gameplay-native.mp4",
+    "start": 16.4,
+    "duration": 4.8,
+    "kind": "game",
+    "heading": "HELP IT FIND\nTHE WAY.",
+    "speed": 1.4,
+    "timeline_start": 13.0
+  },
+  {
+    "src": "/Users/mrk/GravityBox/Artifacts/AlienPetAds-2026-10-28/sources/shot_03_0ce7b753.mp4",
+    "start": 4.8,
+    "duration": 3,
+    "kind": "cinematic",
+    "heading": "YOUR NEW\nALIEN FRIEND.",
+    "speed": 1,
+    "timeline_start": 17.8
+  },
+  {
+    "src": "/Users/mrk/GravityBox/Artifacts/AlienPetAds-2026-10-28/sources/gameplay-native.mp4",
+    "start": 31.6,
+    "duration": 3.2,
+    "kind": "end",
+    "heading": "Alien Pet",
+    "speed": 0.65,
+    "timeline_start": 20.8
+  }
+]
