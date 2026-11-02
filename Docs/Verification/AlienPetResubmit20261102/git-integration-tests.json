@@ -1,0 +1,56 @@
+{
+  "date": "2026-11-02",
+  "source_commit": "ba691df6de8d6f67ce69f4f938f50fe8ebdad7fe",
+  "scope": "Commit/push existing Alien Pet changes and integrate upstream Clever improvements without conflict",
+  "reports": [
+    {
+      "file": "Artifacts/Tests/alienpet-prepush-20261102.xml",
+      "result": "Passed",
+      "passed": 5,
+      "failed": 0,
+      "tests": [
+        {
+          "name": "GravityBox.Tests.COgheMechanismHotLoopTests.BrakeKeepsItsCaptureUntilReleasedAndRepairsChangedConfiguration",
+          "result": "Passed"
+        },
+        {
+          "name": "GravityBox.Tests.COgheMechanismHotLoopTests.RailRetainsTheSameQueuedForceAndRefreshesItsFrameReference",
+          "result": "Passed"
+        },
+        {
+          "name": "GravityBox.Tests.COgheMechanismHotLoopTests.TapActivityRefreshesOnStateAndLabelChangesButReusesUnchangedText",
+          "result": "Passed"
+        },
+        {
+          "name": "GravityBox.Tests.COgheMechanismHotLoopTests.TubeReconciliationRevisitsTheSameGroupsAfterMergeAndNewCommands",
+          "result": "Passed"
+        },
+        {
+          "name": "GravityBox.Tests.COgheSpatialCampaignTests.PlayfulTricksWaitForTheirEmotionLevel",
+          "result": "Passed"
+        }
+      ]
+    },
+    {
+      "file": "Artifacts/Tests/alienpet-clever-merge-20261102.xml",
+      "result": "Passed",
+      "passed": 2,
+      "failed": 0,
+      "tests": [
+        {
+          "name": "GravityBox.Tests.COgheSpatialCampaignTests.CleverLevelTwoGuidesLevel25At30Fps",
+          "result": "Passed"
+        },
+        {
+          "name": "GravityBox.Tests.COgheSpatialCampaignTests.CleverLevelTwoGuidesLevel25At60Fps",
+          "result": "Passed"
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "Focused post-merge regression tests only; full campaign was not rerun in this commit/push task.",
+    "Previously submitted AAB 1.0.2 (3) predates upstream Clever merge and was not rebuilt or replaced by this task."
+  ],
+  "excluded": "Upload keystore, credentials, APK/AAB, raw logs, crash reports, Unity scratch scenes and editor-only PackageManagerSettings remain local."
+}
