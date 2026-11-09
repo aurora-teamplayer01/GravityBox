@@ -1,0 +1,95 @@
+{
+  "date": "2026-11-08",
+  "test_device": "AlienPetTablet disposable Android ARM64 AVD",
+  "oppo": {
+    "model": "CPH2591",
+    "installed_version": "1.0.1 (2), Google Play",
+    "progress_and_install_preserved": true,
+    "analytics": "Off, unchanged in this task",
+    "live_no_fill_code": 3
+  },
+  "admob_audit": {
+    "app": "Alien Pet: Escape Puzzle",
+    "verified": true,
+    "ready": true,
+    "policy_issues": false,
+    "unit_ids_match_source": true,
+    "interstitial_floor": "Google optimized / All prices",
+    "rewarded_floor": "Google optimized / All prices",
+    "frequency_cap": "None at app and unit level",
+    "interstitial_ad_types": "Text/image/rich media and video enabled",
+    "active_mediation_groups": 0
+  },
+  "root_causes": {
+    "confirmed_tracking_bug": "Custom ad_reward rejected by Firebase, reserved event error 13. Rename to rewarded_earned; banner placement click becomes ad_tap. Automatic AdMob events untouched.",
+    "no_fill": "Code 3 persists in OPPO Play-build native log. No blocking policy, readiness, floor or cap found. Test SDK ads fill. Exact per-request server cause cannot be determined from old numeric-only build; full LoadAdError and ResponseInfo added. Do not claim No fill eliminated."
+  },
+  "tests": {
+    "playmode": {
+      "passed": "12",
+      "failed": "0",
+      "total": "12"
+    },
+    "native_before_fix": {
+      "interstitial_shown": true,
+      "interstitial_closed": true,
+      "rewarded_sdk_completed": true,
+      "reward_delta": 15,
+      "expected_delta": 15,
+      "reward_cap": 1,
+      "plus_instant_delta": 15,
+      "paid_callbacks": [
+        "banner",
+        "interstitial",
+        "rewarded"
+      ],
+      "callback_value": 0,
+      "currency": "USD",
+      "precision": "Unknown",
+      "firebase_upload_http": 204,
+      "firebase_debugview_ad_revenue_count": 3,
+      "reserved_event_error": 13
+    },
+    "native_after_fix": {
+      "interstitial_shown": true,
+      "interstitial_closed": true,
+      "rewarded_sdk_completed": true,
+      "reward_delta": 15,
+      "expected_delta": 15,
+      "reward_cap": 1,
+      "plus_instant_delta": 15,
+      "paid_callbacks": [
+        "banner",
+        "interstitial",
+        "rewarded"
+      ],
+      "callback_value": 0,
+      "currency": "USD",
+      "precision": "Unknown",
+      "firebase_debugview_rewarded_earned": {
+        "count": 1,
+        "amount": 15,
+        "timestamp_local": "15:13:26"
+      },
+      "firebase_reserved_event_errors": 0,
+      "native_log": "Artifacts/AlienPetAds20261108/after-fix-native.log"
+    }
+  },
+  "limitations": [
+    "Test ads cannot validate positive production revenue or guarantee future fill.",
+    "Dashboard earnings are not expected to increase from test ads.",
+    "No production store release or OPPO app replacement performed."
+  ],
+  "artifacts": "/Users/mrk/GravityBox/Artifacts/AlienPetAds20261108",
+  "privacy": {
+    "production_guards_changed": false,
+    "oppo_analytics_changed": false,
+    "prior_native_matrix": "Docs/Verification/AlienPetConsent20261108/verification.json",
+    "current_qa_profile": "Synthetic adult opt-in, disposable emulator, demo ad units only"
+  },
+  "test_apk": {
+    "path": "/Users/mrk/GravityBox/Builds/SpatialLab/Android/COghe-Spatial.apk",
+    "sha256": "d0fae5659356c81f6397148a071244327005dcd776128b919b410ffdaa59ae08",
+    "store_release": false
+  }
+}

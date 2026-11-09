@@ -195,6 +195,7 @@ Plus: các thưởng trên **nhận ngay** không cần xem. No Ads: vẫn xem �
 - **Tính năng:** `feature_unlock` (home, style), `item_unlock`, `item_buy` (id, giá, nguồn tiền), `item_preview`, `style_inject`, `style_rinse`.
 - **Tiền:** `drops_earn` (nguồn), `drops_spend`; `daily_gift`.
 - **Quảng cáo:** `ad_show` / `ad_complete` / `ad_fail` theo loại và placement. Doanh thu theo lượt hiển thị (từ mediation).
+- **Đối soát thưởng (08/11/2026):** `rewarded_earned` chỉ phát khi ví đã ghi thưởng thành công, gồm `placement`, `type`, `amount` (Drops của game). Không tự gửi `ad_reward` hay `ad_click`: đây là tên dành riêng cho sự kiện tự động của AdMob/Firebase; Firebase từ chối tên public này với error 13. Click banner theo placement dùng `ad_tap`. `ad_reward` tự động có thể mang đơn vị thưởng của SDK, không dùng để đối soát số Drops. `ad_revenue` là event chẩn đoán callback `OnAdPaid` (micros / 1.000.000); không cộng nó lần nữa với `ad_impression` trong báo cáo doanh thu. QA dùng quảng cáo test, DebugView và `build_channel=test`; giá trị 0 USD không xác nhận doanh thu production. Log lỗi tải giữ đầy đủ domain/message/response tại thiết bị; Analytics chỉ nhận mã lỗi và domain khi người dùng đủ điều kiện và đã đồng ý.
 - **IAP:** `iap_view`, `iap_purchase`, `iap_restore`.
 - **Chỉ số quyết định:** doanh thu thuần theo nhóm cài sau 30 ngày, D1 / D7 / D30 (Codex). Tỉ lệ bấm banner bất thường.
   Người không xem quảng cáo có bỏ game ở Home / Style không.

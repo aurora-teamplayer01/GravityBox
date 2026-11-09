@@ -1,0 +1,79 @@
+{
+  "date": "2026-11-08",
+  "scope": "Read-only investigation of Google Ads installs versus Firebase and AdMob reporting. No campaign, consent, SDK, or service-link settings changed.",
+  "app": "Alien Pet: Escape Puzzle",
+  "package": "com.gravityboxlab.venom",
+  "google_ads": {
+    "campaign_id": "24431006571",
+    "campaign_name": "ALIENPET_ANDROID_US_INSTALL_20261106",
+    "observed_date_range": "2026-11-07 only; account time zone GMT+07:00",
+    "installs": 34,
+    "conversions": 34,
+    "in_app_actions": 0,
+    "source_note": "Campaign creation record uses Google Play codeless install conversion, not the Firebase first_open stream. These counts are not directly equivalent."
+  },
+  "firebase": {
+    "project": "coghe-57f21",
+    "ga4_property": "557269271",
+    "original_ui_date_range": "2026-11-07 only; no events displayed",
+    "audited_date_range": "2026-11-06 through 2026-11-08",
+    "total_users": 1,
+    "event_count": 119,
+    "first_open": 1,
+    "level_start": 6,
+    "level_end": 5,
+    "level_complete": 5,
+    "ad_fail": 2,
+    "country": "United States",
+    "device_model": "SM-G781U1",
+    "latest_release_card": "1.0.2 Successful",
+    "conclusion": "Firebase is receiving gameplay events. It is not completely disconnected. The available cohort is not sufficient to attribute every missing Ads install to a specific cause.",
+    "privacy_gate": "Current code allows Analytics only for adults who explicitly opt in. Under18, unknown-age, declined or incomplete-choice users do not initialize game Analytics. Ads eligibility is separate: under13/unknown blocked; teens restricted; eligible users still require successful UMP.",
+    "processing_note": "GA4 standard reporting can take 24-48 hours, and first_open measures first launch rather than raw store download. Date ranges and account/property time zones must be aligned before comparing."
+  },
+  "admob": {
+    "app_id": "ca-app-pub-7806638519709442~4983717950",
+    "approval": "Ready; Ad serving enabled",
+    "verification": "Verified; correct Google Play package linked",
+    "production_ad_units": "All three IDs match repository and release validation",
+    "report_range": "Last 7 days versus previous 7 days",
+    "requests": 0,
+    "impressions": 0,
+    "estimated_revenue_usd": 0,
+    "firebase_link": "Not linked (live Linked services page filtered to Alien Pet)",
+    "consent_messages": {
+      "european": "One published message, last modified 2026-10-26: Critter Jam - Android and iOS - GDPR. Its app selection contains only the two Critter Jam apps checked. Alien Pet is unchecked and has Add URL.",
+      "us_states": "Privacy overview offers Create a new message; no active US message shown."
+    },
+    "root_cause_evidence": "Published consent configuration for Alien Pet remains missing. Native release1.0.1(2) testing on 2026-10-29 observed UMP error3: no forms configured for this exact App ID. Release1.0.2(3) record still lists this unresolved blocker. Current COgheGoogleServices returns on this error before MobileAds initialization, which explains how requests can stay zero despite installs.",
+    "confidence_limit": "Missing form is confirmed live; UMP error is historical native evidence, not a new capture from today's store installation. Two current ad_fail events indicate ad actions failed, but do not themselves prove a particular SDK error.",
+    "linking_note": "Missing Firebase link affects integrated reporting. It does not by itself cause zero AdMob requests or suppress basic Firebase gameplay events."
+  },
+  "release_checks": {
+    "artifact": "Builds/AlienPet/GooglePlay/AlienPet-1.0.2-3.aab",
+    "evidence": "Artifacts/AlienPetResubmit20261102/validation-report.json; bundle-manifest.xml; bundle-resources.txt",
+    "firebase_project_and_app_id": "Match expected project/app",
+    "admob_app_id_and_production_units": "Match expected app/units",
+    "default_native_analytics_collection": "Disabled deliberately; runtime adult opt-in enables it"
+  },
+  "device_check": "adb devices -l returned no connected Android devices; no fresh physical-device runtime test performed.",
+  "recommended_order": [
+    "Configure and publish Alien Pet-specific UMP messages for the applicable release regions using its existing privacy policy. Keep Critter Jam forms unchanged and preserve separate adult Analytics choice.",
+    "Retest the Play-installed release with an eligible synthetic adult test profile and consent; inspect UMP success, CanRequestAds, native provider initialization and ad-load result. Use registered test device or demo units; do not click live ads.",
+    "Complete the correctly scoped AdMob/Firebase link after reviewing the data-sharing settings; do not enable personalized advertising or bypass the age gate.",
+    "Verify Firebase level_end outcomes and ad impression/revenue events for opted-in eligible users, then confirm AdMob requests and impressions after reporting delay.",
+    "Use Play Console installs for acquisition totals. Label Firebase retention/gameplay analysis as the opted-in adult cohort, not all players."
+  ],
+  "evidence_images": [
+    "google-ads-installs.png",
+    "firebase-events.png",
+    "admob-zero-requests.png",
+    "admob-privacy-overview.png",
+    "consent-app-selection.png"
+  ],
+  "official_references": [
+    "https://developers.google.com/admob/unity/privacy",
+    "https://support.google.com/analytics/answer/9234069?hl=en",
+    "https://support.google.com/analytics/answer/11198161?hl=en"
+  ]
+}

@@ -61,6 +61,11 @@ namespace GravityBox.Tests
                 ads.Earned(); ads.Closed(true); ads.Closed(true);
                 Assert.AreEqual(15, COgheShop.Drops); Assert.AreEqual(1, closes);
                 Assert.IsFalse(COgheShop.ApplyReward(reward));
+                Assert.AreEqual(1, COgheAnalytics.Recent.Count(x => x.StartsWith("rewarded_earned ")),
+                    "Only the committed reward should be tracked, even when SDK callbacks repeat.");
+                Assert.IsTrue(COgheAnalytics.Recent.Any(x => x.StartsWith("rewarded_earned ") && x.Contains("amount=15")));
+                Assert.IsFalse(COgheAnalytics.Recent.Any(x => x.StartsWith("ad_reward ")),
+                    "Firebase reserves ad_reward for automatic SDK collection (error 13).");
             }
             finally { if (existed) PlayerPrefs.SetString(key, backup); else PlayerPrefs.DeleteKey(key); PlayerPrefs.Save(); }
         }
@@ -72,6 +77,7 @@ namespace GravityBox.Tests
             Assert.IsFalse(paid); Assert.AreEqual(0, COgheShop.Drops); Assert.AreEqual(0, COgheShop.Current.AdsForDropsToday);
             COgheAds.Rewarded("daily_gift", COgheReward.Daily(), ok => paid = ok); ads.Closed(false);
             Assert.IsTrue(COgheShop.GiftReady); Assert.IsFalse(paid);
+            Assert.IsFalse(COgheAnalytics.Recent.Any(x => x.StartsWith("rewarded_earned ")));
         }
         [Test] public void FailedInterstitialDoesNotSpendCapsOrReportComplete()
         {

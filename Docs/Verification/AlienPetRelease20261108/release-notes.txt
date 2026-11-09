@@ -1,0 +1,4 @@
+<en-US>
+Improved rewarded-ad tracking and ad diagnostics.
+Privacy choices and protections for younger players remain in place.
+</en-US>

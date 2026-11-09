@@ -98,7 +98,10 @@ namespace GravityBox.Venom
                 if (earned) return;
                 // No UI dependency: commit the wallet, ownership and transaction key together before dismissal.
                 earned = COgheShop.ApplyReward(reward);
-                if (earned) COgheAnalytics.Log("ad_reward", "type", "rewarded", "placement", placement);
+                // ad_reward is reserved for automatic AdMob events (Firebase rejects public use).
+                // This event means the game actually committed its own reward, not SDK coins.
+                if (earned) COgheAnalytics.Log("rewarded_earned", "type", "rewarded", "placement", placement,
+                    "amount", reward.Amount);
             }
             void Closed(bool ok)
             {

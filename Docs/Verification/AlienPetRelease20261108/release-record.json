@@ -1,0 +1,40 @@
+{
+  "app": "Alien Pet: Escape Puzzle",
+  "package": "com.gravityboxlab.venom",
+  "version_name": "1.0.3",
+  "version_code": 4,
+  "recorded_at": "2026-11-08T08:23:17.911214+00:00",
+  "track": "Production",
+  "submitted_for_review": false,
+  "aab": "/Users/mrk/GravityBox/Builds/AlienPet/GooglePlay/AlienPet-1.0.3-4.aab",
+  "aab_sha256": "100c64b466392fff963898996a9b53f765f27d824c308c6996ed2861a18f1479",
+  "same_upload_key_verified": true,
+  "upload_certificate_sha256": "5b894271027148d895e3c1bc0f84f0490e0c78f3f745ebeafa118f82dc0a3d4c",
+  "supported_devices": {
+    "phone": 8479,
+    "tablet": 4761,
+    "removed": 0
+  },
+  "native_symbols": {
+    "uploaded": true,
+    "libraries": 7,
+    "zip": "/Users/mrk/GravityBox/Artifacts/AlienPetRelease20261108/native-symbols/native-symbols.zip",
+    "sha256": "2d54e4d66ae620b63465f4731c8c8d6f824b16936b14cdcbe3acd333c3670ac6"
+  },
+  "warnings": [
+    "AD_ID declaration mismatch with intentionally absent permission (existing).",
+    "No R8 mapping; release minification disabled."
+  ],
+  "ads_fix_verification": "../AlienPetAds20261108/review.html",
+  "limitations": [
+    "Live No fill is not guaranteed resolved.",
+    "Store bundle validated statically; native demo SDK test was performed on the preceding test build from the same source.",
+    "Production release left for the user to submit for review."
+  ],
+  "console_status": "Changes not yet submitted for review",
+  "quick_checks": "Running; Console showed up to 14 minutes remaining at handoff",
+  "console_url": "https://play.google.com/console/u/0/developers/5637064096940148363/app/4974079895895643247/publishing",
+  "proof": "production-ready-for-review.png",
+  "other_changes_in_review": "Existing country expansion (176 countries plus rest of world), untouched",
+  "managed_publishing": false
+}

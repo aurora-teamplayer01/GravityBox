@@ -71,10 +71,18 @@ namespace GravityBox.Services
                 COgheAds.NotifyAvailabilityChanged();
             }));
         }
-        private static void LoadError(string format, LoadAdError error) =>
-            COgheAnalytics.Log("ad_load_fail", "type", format, "code", error == null ? -1 : error.GetCode());
+        private static void LoadError(string format, LoadAdError error)
+        {
+            // Code 3 alone is ambiguous across SDK domains. Keep the full response on the device;
+            // only the small, non-personal classification goes to consent-gated Analytics.
+            Debug.LogWarning($"COGHE ADMOB load_failed format={format} test={COgheTestTools.LevelSelect || Debug.isDebugBuild} error={error}");
+            Debug.Log($"COGHE ADMOB response format={format} info={error?.GetResponseInfo()}");
+            COgheAnalytics.Log("ad_load_fail", "type", format, "code", error == null ? -1 : error.GetCode(),
+                "error_domain", error?.GetDomain() ?? "unknown");
+        }
         private static void Paid(AdValue value, string format, string placement, string unit, ResponseInfo response)
         {
+            Debug.Log($"COGHE ADMOB paid format={format} micros={value.Value} currency={value.CurrencyCode} precision={value.Precision}");
             // Separate diagnostic event: Firebase/AdMob may auto-collect ad_impression; never duplicate it.
             COgheAnalytics.Log("ad_revenue", "type", format, "placement", placement, "ad_unit_id", unit,
                 "value", value.Value / 1000000.0, "currency", value.CurrencyCode,
@@ -91,7 +99,7 @@ namespace GravityBox.Services
             finishInterstitial = Finish;
             ad.OnAdFullScreenContentOpened += () => Main(() => { if (finished || opened) return; opened = true; shown?.Invoke(); });
             ad.OnAdFullScreenContentClosed += () => Main(() => Finish(true));
-            ad.OnAdFullScreenContentFailed += error => Main(() => Finish(false));
+            ad.OnAdFullScreenContentFailed += error => Main(() => { Debug.LogWarning($"COGHE ADMOB show_failed format=interstitial error={error}"); Finish(false); });
             ad.OnAdPaid += value => Main(() => Paid(value, "interstitial", placement, Unit(InterstitialId, TestInterstitial), response));
             try { ad.Show(); } catch (Exception) { Finish(false); }
         }
@@ -106,7 +114,7 @@ namespace GravityBox.Services
             finishRewarded = Finish;
             ad.OnAdFullScreenContentOpened += () => Main(() => { if (finished || opened) return; opened = true; shown?.Invoke(); });
             ad.OnAdFullScreenContentClosed += () => Main(() => Finish(true));
-            ad.OnAdFullScreenContentFailed += error => Main(() => Finish(false));
+            ad.OnAdFullScreenContentFailed += error => Main(() => { Debug.LogWarning($"COGHE ADMOB show_failed format=rewarded error={error}"); Finish(false); });
             ad.OnAdPaid += value => Main(() => Paid(value, "rewarded", placement, Unit(RewardedId, TestRewarded), response));
             try { ad.Show(reward => Main(() => { if (paid) return; paid = true; earned?.Invoke(); })); } catch (Exception) { Finish(false); }
         }
@@ -144,7 +152,8 @@ namespace GravityBox.Services
             current.OnAdImpressionRecorded += () =>
             { string page = COgheAds.BannerPlacement; Main(() => COgheAnalytics.Log("ad_show", "type", "banner", "placement", page)); };
             current.OnAdClicked += () =>
-            { string page = COgheAds.BannerPlacement; Main(() => COgheAnalytics.Log("ad_click", "type", "banner", "placement", page)); };
+            // ad_click belongs to AdMob's automatic collection. Keep our placement event distinct.
+            { string page = COgheAds.BannerPlacement; Main(() => COgheAnalytics.Log("ad_tap", "type", "banner", "placement", page)); };
             current.LoadAd(new AdRequest());
         }
         private void DestroyBanner() { banner?.Destroy(); banner = null; bannerLoaded = false; COgheAds.NotifyBannerChanged(); }

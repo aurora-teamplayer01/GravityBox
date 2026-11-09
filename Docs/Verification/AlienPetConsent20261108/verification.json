@@ -1,0 +1,215 @@
+{
+  "date": "2026-11-08",
+  "app": "Alien Pet: Escape Puzzle",
+  "package": "com.gravityboxlab.venom",
+  "scope": "Dashboard consent and service linking; verification against existing shipped Android binaries. No runtime source or age-gate changes.",
+  "published_messages": [
+    {
+      "name": "Alien Pet - Android - European consent",
+      "app_only": "Alien Pet",
+      "language": "English",
+      "regions": "EEA, UK and Switzerland",
+      "status": "Published",
+      "reject_choice": true,
+      "privacy_url": "https://cj.suri.house/alien-pet-privacy"
+    },
+    {
+      "name": "Alien Pet - Android - US privacy",
+      "app_only": "Alien Pet",
+      "language": "English (US)",
+      "regions": "All current and future supported US states",
+      "status": "Published",
+      "opt_out": true,
+      "privacy_url": "https://cj.suri.house/alien-pet-privacy"
+    }
+  ],
+  "firebase_link": {
+    "status": "Linked",
+    "project": "coghe-57f21",
+    "app_name": "COghe Android",
+    "firebase_app_id": "1:446362971270:android:0c8ad45b9a697531dc3507",
+    "ga4_property": "557269271"
+  },
+  "impression_level_revenue": {
+    "enabled": true,
+    "scope": "AdMob account-wide setting, not a per-app switch. Required for linked ad-revenue export. Runtime Analytics/age gates remain authoritative."
+  },
+  "unchanged_controls": [
+    "Unknown age and under13: ads and Analytics disabled",
+    "Ages13-17: age-restricted ads, no game Analytics",
+    "Adults: Analytics only after explicit separate opt-in",
+    "Nonpersonalized ads; MaxAdContentRating G",
+    "UMP consent-mode advertising toggle remains off",
+    "Critter Jam messages unchanged",
+    "No live ad clicked, no production save cleared"
+  ],
+  "oppo": {
+    "device": "CPH2591",
+    "install_source": "com.android.vending",
+    "version": "1.0.1 (2)",
+    "data_preserved": true,
+    "banner_observed": "Live SPX banner shown on main menu before adult Analytics opt-in; not clicked",
+    "analytics_evidence": {
+      "source": "Firebase DebugView, OPPO session after opt-in",
+      "level_start": true,
+      "level_end": true,
+      "level_complete": true,
+      "level": 11,
+      "outcome": "win",
+      "duration_seconds": 60.95,
+      "additional_events": [
+        "bonus_start",
+        "bonus_answer",
+        "bonus_complete",
+        "ability_offer",
+        "ability_pick",
+        "drops_earn",
+        "item_unlock"
+      ]
+    },
+    "ad_load_fail": {
+      "count_in_observed_session": 6,
+      "code": 3,
+      "meaning": "No fill",
+      "formats": {
+        "rewarded": 2,
+        "interstitial": 2,
+        "banner": 2
+      }
+    },
+    "analytics_restored_off": true,
+    "debug_property_restored": ".none.",
+    "restoration_evidence": "oppo-analytics-restored-off.png"
+  },
+  "native_release_matrix": {
+    "version": "1.0.2 (3)",
+    "source": "Universal APK derived from existing signed AAB, dedicated disposable AlienPetTablet emulator",
+    "cases": [
+      {
+        "case": "unknown",
+        "fixture": {
+          "version": 1,
+          "age": 0,
+          "analyticsChoiceMade": false,
+          "analytics": false
+        },
+        "ads_ready": false,
+        "firebase_initialized": false,
+        "consent_error3": false,
+        "native_fatal": false
+      },
+      {
+        "case": "under13",
+        "fixture": {
+          "version": 1,
+          "age": 1,
+          "analyticsChoiceMade": true,
+          "analytics": false
+        },
+        "ads_ready": false,
+        "firebase_initialized": false,
+        "consent_error3": false,
+        "native_fatal": false
+      },
+      {
+        "case": "teen13",
+        "fixture": {
+          "version": 1,
+          "age": 2,
+          "analyticsChoiceMade": true,
+          "analytics": false
+        },
+        "ads_ready": true,
+        "firebase_initialized": false,
+        "consent_error3": false,
+        "native_fatal": false
+      },
+      {
+        "case": "teen16",
+        "fixture": {
+          "version": 1,
+          "age": 3,
+          "analyticsChoiceMade": true,
+          "analytics": false
+        },
+        "ads_ready": true,
+        "firebase_initialized": false,
+        "consent_error3": false,
+        "native_fatal": false
+      },
+      {
+        "case": "adult_decline",
+        "fixture": {
+          "version": 1,
+          "age": 4,
+          "analyticsChoiceMade": true,
+          "analytics": false
+        },
+        "ads_ready": true,
+        "firebase_initialized": false,
+        "consent_error3": false,
+        "native_fatal": false
+      },
+      {
+        "case": "adult_allow",
+        "fixture": {
+          "version": 1,
+          "age": 4,
+          "analyticsChoiceMade": true,
+          "analytics": true
+        },
+        "ads_ready": true,
+        "firebase_initialized": true,
+        "consent_error3": false,
+        "native_fatal": false
+      }
+    ],
+    "details": "Ads SDK may create dormant measurement preferences for eligible non-Analytics cohorts. Logs confirm measurement disabled and analytics_storage denied. Only adult opt-in initializes FirebaseApp/Remote Config. Emulator ad requests explicitly report test-device status. Adult level_start upload returned HTTP204."
+  },
+  "automated_tests": [
+    {
+      "suite": "privacy-editmode",
+      "result": "Passed",
+      "total": "10",
+      "passed": "10",
+      "failed": "0"
+    },
+    {
+      "suite": "privacy-playmode",
+      "result": "Passed",
+      "total": "4",
+      "passed": "4",
+      "failed": "0"
+    },
+    {
+      "suite": "attempt-tests",
+      "result": "Passed",
+      "total": "4",
+      "passed": "4",
+      "failed": "0"
+    }
+  ],
+  "limits": [
+    "Observed win end-to-end on OPPO; loss/retry semantics passed automated tests, not a new physical-device loss in this session.",
+    "Eligible native cases no longer report missing consent forms. EEA/US regional form presentation was verified in AdMob preview, not forced on the Vietnam OPPO.",
+    "No-fill responses remain for some real ad loads. Full-screen playback/reward delivery and paid ad revenue were not verified end-to-end in this session.",
+    "AdMob Today report still shows zero requests/impressions at verification time; linking UI advises up to48hours for integrated metrics. Do not treat this as already-confirmed revenue reporting.",
+    "Firebase gameplay data represents opted-in adults, not all installs or children. Debug traffic is for verification, not acquisition measurement."
+  ],
+  "official_references": [
+    "https://developers.google.com/admob/unity/privacy",
+    "https://support.google.com/admob/answer/6383165?hl=en",
+    "https://support.google.com/admob/answer/15090849?hl=en",
+    "https://support.google.com/admob/answer/11322405"
+  ],
+  "evidence_images": [
+    "european-published.png",
+    "us-published.png",
+    "firebase-linked-table.png",
+    "admob-impression-revenue-on.png",
+    "firebase-oppo-level11.png",
+    "firebase-oppo-win.png",
+    "firebase-rewarded-nofill.png",
+    "admob-today-awaiting-report.png"
+  ]
+}
