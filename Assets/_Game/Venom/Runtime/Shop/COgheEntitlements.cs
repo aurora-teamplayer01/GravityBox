@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace GravityBox.Venom
 {
-    /// <summary>The app stores' purchases (Unity IAP plugs in here once the products exist on both stores).</summary>
+    /// <summary>The app stores' purchases: StoreKit 2 on iOS (<see cref="COgheAppleStore"/>); Google Play not integrated yet.</summary>
     public interface ICOgheStore
     {
         bool Available { get; }
@@ -24,8 +24,8 @@ namespace GravityBox.Venom
         public const string Plus = "coghe_plus", NoAds = "coghe_no_ads";
         private static string Key => COgheTestTools.LevelSelect ? "coghe.entitlements.test.v1" : "coghe.entitlements.store.v1";
         private static ICOgheStore store;
-        /// <summary>The store: Unity IAP once integrated; a test store in development/test builds; none in a store build until then.</summary>
-        public static ICOgheStore Store { get => store ??= COgheTestTools.LevelSelect ? new COgheTestStore() : null; set => store = value; }
+        /// <summary>The store: a test store in development/test builds; the App Store in an iOS store build; none elsewhere.</summary>
+        public static ICOgheStore Store { get => store ??= COgheTestTools.LevelSelect ? new COgheTestStore() : COgheAppleStore.ForPlatform(); set => store = value; }
         public static event Action Changed;
         private static int flags = -1;
         private static int Flags
@@ -47,6 +47,16 @@ namespace GravityBox.Venom
             Flags |= bit;
             COgheAnalytics.Log("iap_entitlement", "product", product);
         }
+        /// <summary>Apple refunded or revoked a purchase: its perks go.</summary>
+        public static void Revoke(string product)
+        {
+            int bit = product == Plus ? 1 : product == NoAds ? 2 : 0;
+            if (bit == 0 || (Flags & bit) == 0) return;
+            Flags &= ~bit;
+            COgheAnalytics.Log("iap_revoked", "product", product);
+        }
+        /// <summary>The store's prices or availability changed: screens that show them rebuild.</summary>
+        public static void NotifyChanged() => Changed?.Invoke();
         public static void Buy(string product, Action<bool> done)
         {
             if (!StoreAvailable) { done?.Invoke(false); return; }

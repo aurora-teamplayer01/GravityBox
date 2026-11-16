@@ -83,6 +83,7 @@ namespace GravityBox.Venom
             COgheShop.MigrateUnderstand(Catalog,Game.Progress);
             COgheAds.BannerChanged += OnBannerChanged;
             COgheAds.AvailabilityChanged += OnBannerChanged;
+            COgheEntitlements.Changed += OnBannerChanged;   // prices arrive, a purchase lands or is restored
             if(PrivacySetupRequired){BeginPrivacySetup();return;}
             StartPlayerSession();
         }
@@ -326,6 +327,6 @@ namespace GravityBox.Venom
             camera.transform.position=focus-camera.transform.forward*.8f-camera.transform.up*((centre-.5f)*2*camera.orthographicSize);
             camera.nearClipPlane=.01f;camera.farClipPlane=30;
         }
-        private void OnDestroy(){COgheAds.BannerChanged-=OnBannerChanged;COgheAds.AvailabilityChanged-=OnBannerChanged;if(styleSaving&&Game!=null&&Game.Matter!=null)SaveLook();art?.Dispose();if(dropSprite!=null)Destroy(dropSprite);DisposeItemIcons();if(ownEvents!=null)Destroy(ownEvents.gameObject);}
+        private void OnDestroy(){COgheAds.BannerChanged-=OnBannerChanged;COgheAds.AvailabilityChanged-=OnBannerChanged;COgheEntitlements.Changed-=OnBannerChanged;if(styleSaving&&Game!=null&&Game.Matter!=null)SaveLook();art?.Dispose();if(dropSprite!=null)Destroy(dropSprite);DisposeItemIcons();if(ownEvents!=null)Destroy(ownEvents.gameObject);}
     }
 }

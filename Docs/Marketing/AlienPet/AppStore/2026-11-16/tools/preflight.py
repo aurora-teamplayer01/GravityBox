@@ -34,7 +34,12 @@ record('Firebase iOS config', 'PASS_STATIC' if valid_config else 'BLOCKED',
 record('Native privacy manifests', 'MANUAL',
        'Generated unsigned app includes SDK/Unity manifests in recorded build; validate final signed archive privacy report.')
 packages = json.loads(read('Packages/manifest.json') or '{}').get('dependencies', {})
-record('IAP provider', 'MANUAL', 'Unity Purchasing dependency ' + ('present' if 'com.unity.purchasing' in packages else 'not present') + '; verify any alternative StoreKit provider and real product handling.')
+storekit = repo / 'Assets/Plugins/iOS/AlienPetStoreKit.swift'
+apple_store = repo / 'Assets/_Game/Venom/Runtime/Shop/COgheAppleStore.cs'
+if storekit.exists() and apple_store.exists() and 'Transaction.currentEntitlements' in storekit.read_text() and 'COgheAppleStore.ForPlatform' in (repo / 'Assets/_Game/Venom/Runtime/Shop/COgheEntitlements.cs').read_text():
+    record('IAP provider', 'PASS_STATIC', 'StoreKit 2 provider present (coghe_plus, coghe_no_ads); App Store Connect products and sandbox device purchase/restore still to verify.')
+else:
+    record('IAP provider', 'MANUAL', 'Unity Purchasing dependency ' + ('present' if 'com.unity.purchasing' in packages else 'not present') + '; verify any alternative StoreKit provider and real product handling.')
 record('Development install script', 'BLOCKED' if 'Release-iphoneos/COghe.app' in read('Tools/build-venom-ios.sh') else 'PASS_STATIC',
        'Do not use USB install script as App Store archive workflow.')
 for name in ['Apple team and Bundle ID ownership', 'Native age/consent QA', 'TestFlight device QA', 'App Privacy and rating', 'iOS screenshot parity', 'Archive validation and upload']:

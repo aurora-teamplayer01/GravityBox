@@ -1,6 +1,8 @@
 using System;
 using UnityEditor;
+#if UNITY_ANDROID
 using UnityEditor.Android;
+#endif
 using UnityEditor.Build;
 using UnityEngine;
 
@@ -33,8 +35,12 @@ namespace GravityBox.Editor
                 throw new InvalidOperationException("COghe app icon must be a square texture.");
 
             PlayerSettings.SetIcons(NamedBuildTarget.Unknown, new[] { texture }, IconKind.Any);
+#if UNITY_ANDROID   // Android Build Support is optional on an iOS-only Mac; switch to Android to refresh these slots
             SetAndroidIcons(AndroidPlatformIconKind.Legacy, texture);
             SetAndroidIcons(AndroidPlatformIconKind.Round, texture);
+#else
+            Debug.LogWarning("COGHE APP ICON: active target is not Android; Android legacy/round slots left unchanged.");
+#endif
             // C is an approved, flattened illustration. Do not invent a two-layer
             // adaptive crop: Android uses these complete legacy/round alternatives.
             AssetDatabase.SaveAssets();

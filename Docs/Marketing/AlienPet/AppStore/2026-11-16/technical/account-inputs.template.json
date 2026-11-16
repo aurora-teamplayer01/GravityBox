@@ -1,7 +1,7 @@
 {
-  "status": "IOS_SERVICES_CONFIGURED_APPLE_FIELDS_PENDING",
-  "apple_team_id": null,
-  "app_store_connect_app_id": null,
+  "status": "APP_RECORD_AND_IAP_CREATED_TESTFLIGHT_BUILD_1_UPLOADED",
+  "apple_team_id": "RPLRU9Q87A",
+  "app_store_connect_app_id": "6835357287",
   "bundle_id": "com.gravityboxlab.venom",
   "sku_proposed": "alienpet-ios",
   "version_proposed": "1.0.0",
@@ -20,12 +20,26 @@
   "admob_ios_banner_unit": "ca-app-pub-7806638519709442/1433739156",
   "firebase_ios_app_id": "1:446362971270:ios:8d705f7bc5e2ebbddc3507",
   "firebase_config_path": "Assets/GoogleService-Info.plist",
-  "iap_products": [],
-  "commerce_decision_required": "Implement and test real iOS commerce OR owner approves a coherent no-commerce release. Do not ship fake offers.",
+  "iap_products": [
+    {
+      "id": "coghe_plus",
+      "asc_id": "6835357705",
+      "type": "non-consumable",
+      "price_usd": "5.99"
+    },
+    {
+      "id": "coghe_no_ads",
+      "asc_id": "6835357757",
+      "type": "non-consumable",
+      "price_usd": "2.99"
+    }
+  ],
+  "commerce_decision_required": "Decided 2026-11-16: real StoreKit 2 commerce (technical/IOS-IAP.md). Both IAPs created via API with price, en-US localization and all territories; review screenshot still needed.",
   "privacy_url_verification": "Pending external Safari check; automated 403",
   "secrets": "Never add passwords, .p8/.p12, profiles or tokens to this JSON.",
   "firebase_project_id": "coghe-57f21",
   "firebase_ios_stream_id": "16348097813",
   "admob_firebase_link": "LINKED",
-  "ios_consent_messages": "European + US published 2026-11-16"
+  "ios_consent_messages": "European + US published 2026-11-16",
+  "bundle_id_resource_id": "VL8F9884YX"
 }

@@ -3,7 +3,9 @@ using System.IO;
 using System.Linq;
 using GravityBox.Venom;
 using UnityEditor;
+#if UNITY_ANDROID
 using UnityEditor.Android;
+#endif
 using UnityEditor.Build;
 using UnityEditor.Build.Reporting;
 using UnityEngine;
@@ -59,9 +61,13 @@ namespace GravityBox.Editor
             var icon = AssetDatabase.LoadAssetAtPath<Texture2D>(COgheAppIconBuilder.IconPath);
             if (icon == null || !PlayerSettings.GetIcons(NamedBuildTarget.Unknown, IconKind.Any).Contains(icon))
                 throw new BuildFailedException("Apply the approved app icon before a Play build.");
+#if UNITY_ANDROID   // a Play build always runs with the Android target active
             foreach (var kind in new[] { AndroidPlatformIconKind.Legacy, AndroidPlatformIconKind.Round })
                 if (PlayerSettings.GetPlatformIcons(platform, kind).Any(slot => slot.GetTexture() != icon))
                     throw new BuildFailedException("Android launcher icons must use the approved artwork.");
+#else
+            throw new BuildFailedException("Switch the active build target to Android before a Play build.");
+#endif
 
             string output = Path.GetFullPath(Required("ALIEN_PET_AAB_OUTPUT"));
             if (!output.EndsWith(".aab", StringComparison.OrdinalIgnoreCase))
