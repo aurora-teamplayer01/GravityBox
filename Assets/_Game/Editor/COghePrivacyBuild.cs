@@ -68,10 +68,18 @@ namespace GravityBox.Editor
             if (target != BuildTarget.iOS || PlayerSettings.GetApplicationIdentifier(NamedBuildTarget.iOS) != COgheIOSBuilder.BundleId) return;
             string file = Path.Combine(path, "Info.plist");
             var plist = new PlistDocument(); plist.ReadFromFile(file);
-            foreach (string key in new[] { "FirebaseDataCollectionDefaultEnabled", "FIREBASE_ANALYTICS_COLLECTION_ENABLED", "GOOGLE_ANALYTICS_IDFA_COLLECTION_ENABLED", "GOOGLE_ANALYTICS_IDFV_COLLECTION_ENABLED", "GOOGLE_ANALYTICS_DEFAULT_ALLOW_ANALYTICS_STORAGE", "GOOGLE_ANALYTICS_DEFAULT_ALLOW_AD_STORAGE", "GOOGLE_ANALYTICS_DEFAULT_ALLOW_AD_USER_DATA", "GOOGLE_ANALYTICS_DEFAULT_ALLOW_AD_PERSONALIZATION_SIGNALS" }) plist.root.SetBoolean(key, false);
-            plist.root.SetBoolean("GADDelayAppMeasurementInit", true);
+            ConfigureIOSPlist(plist);
             plist.WriteToFile(file);
 #endif
         }
+#if UNITY_IOS
+        public static void ConfigureIOSPlist(PlistDocument plist)
+        {
+            foreach (string key in new[] { "FirebaseDataCollectionDefaultEnabled", "FIREBASE_ANALYTICS_COLLECTION_ENABLED", "GOOGLE_ANALYTICS_IDFA_COLLECTION_ENABLED", "GOOGLE_ANALYTICS_IDFV_COLLECTION_ENABLED", "GOOGLE_ANALYTICS_DEFAULT_ALLOW_ANALYTICS_STORAGE", "GOOGLE_ANALYTICS_DEFAULT_ALLOW_AD_STORAGE", "GOOGLE_ANALYTICS_DEFAULT_ALLOW_AD_USER_DATA", "GOOGLE_ANALYTICS_DEFAULT_ALLOW_AD_PERSONALIZATION_SIGNALS" }) plist.root.SetBoolean(key, false);
+            plist.root.SetBoolean("GADDelayAppMeasurementInit", true);
+            // No ATT request or IDFA-based attribution in this contextual-ads release.
+            plist.root.SetBoolean("GOOGLE_ANALYTICS_REGISTRATION_WITH_AD_NETWORK_ENABLED", false);
+        }
+#endif
     }
 }

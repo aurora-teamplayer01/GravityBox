@@ -1,5 +1,5 @@
 {
-  "status": "TEMPLATE_NOT_CONFIGURED",
+  "status": "IOS_SERVICES_CONFIGURED_APPLE_FIELDS_PENDING",
   "apple_team_id": null,
   "app_store_connect_app_id": null,
   "bundle_id": "com.gravityboxlab.venom",
@@ -14,14 +14,18 @@
   "review_contact_phone": null,
   "review_contact_email": null,
   "support_email": "support@suri.house",
-  "admob_ios_app_id": null,
-  "admob_ios_rewarded_unit": null,
-  "admob_ios_interstitial_unit": null,
-  "admob_ios_banner_unit": null,
-  "firebase_ios_app_id": null,
-  "firebase_config_path": null,
+  "admob_ios_app_id": "ca-app-pub-7806638519709442~8888402391",
+  "admob_ios_rewarded_unit": "ca-app-pub-7806638519709442/5181412470",
+  "admob_ios_interstitial_unit": "ca-app-pub-7806638519709442/1349978676",
+  "admob_ios_banner_unit": "ca-app-pub-7806638519709442/1433739156",
+  "firebase_ios_app_id": "1:446362971270:ios:8d705f7bc5e2ebbddc3507",
+  "firebase_config_path": "Assets/GoogleService-Info.plist",
   "iap_products": [],
   "commerce_decision_required": "Implement and test real iOS commerce OR owner approves a coherent no-commerce release. Do not ship fake offers.",
   "privacy_url_verification": "Pending external Safari check; automated 403",
-  "secrets": "Never add passwords, .p8/.p12, profiles or tokens to this JSON."
+  "secrets": "Never add passwords, .p8/.p12, profiles or tokens to this JSON.",
+  "firebase_project_id": "coghe-57f21",
+  "firebase_ios_stream_id": "16348097813",
+  "admob_firebase_link": "LINKED",
+  "ios_consent_messages": "European + US published 2026-11-16"
 }

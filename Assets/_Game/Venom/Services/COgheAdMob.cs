@@ -8,12 +8,21 @@ namespace GravityBox.Services
 {
     public sealed class COgheAdMob : MonoBehaviour, ICOgheAdProvider
     {
+#if UNITY_IOS
+        public const string BannerId = "ca-app-pub-7806638519709442/1433739156";
+        public const string InterstitialId = "ca-app-pub-7806638519709442/1349978676";
+        public const string RewardedId = "ca-app-pub-7806638519709442/5181412470";
+        private const string TestBanner = "ca-app-pub-3940256099942544/2435281174";
+        private const string TestInterstitial = "ca-app-pub-3940256099942544/4411468910";
+        private const string TestRewarded = "ca-app-pub-3940256099942544/1712485313";
+#else
         public const string BannerId = "ca-app-pub-7806638519709442/2373866483";
         public const string InterstitialId = "ca-app-pub-7806638519709442/7274839373";
         public const string RewardedId = "ca-app-pub-7806638519709442/1245541087";
         private const string TestBanner = "ca-app-pub-3940256099942544/6300978111";
         private const string TestInterstitial = "ca-app-pub-3940256099942544/1033173712";
         private const string TestRewarded = "ca-app-pub-3940256099942544/5224354917";
+#endif
         private BannerView banner;
         private InterstitialAd interstitial;
         private RewardedAd rewarded;

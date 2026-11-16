@@ -1,41 +1,49 @@
-# Portable build runbook
+# Portable iOS build runbook
 
-Run all game commands from the repository root, not the handoff directory. Install the Unity version in ProjectVersion.txt plus iOS Build Support and the release-eligible Xcode SDK. Check branch/commit against source-revision.json. Never transfer a Personal Team provisioning profile as a production solution.
+Clone branch **IOS** of `git@github.com:aurora-teamplayer01/GravityBox.git`. Run commands at the repository root. Install Unity **6000.3.19f1** with iOS Build Support, Xcode, CocoaPods, Python 3 and Git LFS if required by clone. No Blender step is needed. SDK setup is automated by `Tools/setup-google-sdks.py`; do not copy Library or personal signing profiles.
 
-## Inspect before export
-
-```sh
-python3 /path/to/handoff/tools/preflight.py /path/to/GravityBox
-```
-
-This is a static audit. Any manual gate remains pending even if structural checks pass. It does not install SDKs or mutate the project.
-
-## Export current Spatial catalog
+## Validate and export
 
 ```sh
-cd /path/to/GravityBox
-export DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer
-unset COGHE_IOS_TEAM COGHE_IOS_PROFILE COGHE_IOS_DEVICE COGHE_BENCHMARK COGHE_PROFILE
-COGHE_STORE=1 bash Tools/build-venom-ios.sh --spatial
+python3 Docs/Marketing/AlienPet/AppStore/2026-11-16/tools/preflight.py .
+# Use a version/build not already uploaded to this App Store Connect app.
+bash Tools/build-alienpet-ios-store.sh 1.0.0 1
 ```
 
-Current source fails this guard until real iOS AdMob app ID is configured. It also needs the services work described in IOS-GAPS.md. Do not silence the guard or use `COGHE_STORE=0` for distribution. The default build without `--spatial` is the historical Origin catalog.
+The wrapper sets COGHE_STORE=1, clears benchmark/profiler/simulator/local signing environment, validates real service IDs, exports SpatialScenePaths (65 main levels + 2 catalog prototypes), then inspects the generated Xcode project. It does not upload. Do not bypass guards or export the historical Origin/prototype catalog. The compiled release uses actual iOS ad units; a regular non-store test export uses Google test units.
 
-Use the workspace if present, apply team/marketing version/build, validate icon and Info.plist, then Archive from Xcode Organizer. Retain resolved dependencies and exact source commit. `COgheIOSBuilder.BuildSpatial` is the relevant Unity method; its menu label says 50 levels but the scene list comes from current SpatialScenePaths.
+Output: `Builds/SpatialLab/iOS/Unity-iPhone.xcworkspace`. **Open the workspace**, since Google ads use CocoaPods and Firebase uses resolved Swift packages. Logs: `Artifacts/COgheIOS/unity-export.log`. Generated projects/builds are local and ignored by Git.
 
-## Optional command-line archive on the signed-in Mac
+Verified here: Xcode 26.6, iOS SDK 26.5; Firebase Unity 13.17.0 / native 12.19.0; Google Mobile Ads native 13.11.0; UMP 3.1.0. Dependency ranges may resolve newer compatible native packages on the receiving Mac. Record Podfile.lock, Package.resolved and source commit with the archive and rerun QA.
 
-After fixing all code/config gates and selecting the real team:
+## Distribution on the receiving Mac
+
+1. Select the paid Apple Developer team owning `com.gravityboxlab.venom`, configure signing in Xcode and create the matching App Store Connect app. No team is hard-coded into the store wrapper.
+2. Confirm Alien Pet: Escape Puzzle display name, iPhone+iPad support, minimum iOS 15, version/build, approved icon C, Firebase plist, native closed privacy defaults and embedded SDK manifests.
+3. Archive using a generic iOS device destination, validate in Organizer, distribute to TestFlight. Complete native QA before submission. A Release configuration alone is not distribution signing.
+
+Optional archive command after configuring the team:
 
 ```sh
-# Set RELEASE_TEAM to the verified paid-program team ID on this Mac.
-xcodebuild -workspace Builds/SpatialLab/iOS/Unity-iPhone.xcworkspace   -scheme Unity-iPhone -configuration Release -destination 'generic/platform=iOS'   -archivePath Builds/AlienPet-iOS.xcarchive   DEVELOPMENT_TEAM="$RELEASE_TEAM" CODE_SIGN_STYLE=Automatic   -allowProvisioningUpdates archive
+xcodebuild -workspace Builds/SpatialLab/iOS/Unity-iPhone.xcworkspace \
+  -scheme Unity-iPhone -configuration Release -destination 'generic/platform=iOS' \
+  -archivePath Builds/AlienPet-iOS.xcarchive \
+  DEVELOPMENT_TEAM="$RELEASE_TEAM" CODE_SIGN_STYLE=Automatic \
+  -allowProvisioningUpdates archive
 ```
 
-If no workspace exists, first confirm whether resolver/Pods failed; only use the project directly if no Pods are required. Resolve stale CODE_SIGN_IDENTITY/profile overrides in Xcode rather than forcing a development certificate into archive export. Organizer Validate/Distribute is preferred; `ExportOptions.template.plist` is a template, not an executable upload authorization. Fill `teamID` and validate export options against the installed Xcode help.
+`ExportOptions.template.plist` must be filled against the installed Xcode version; it is not an upload authorization or a signing credential. Use Organizer Validate/Distribute when unsure.
 
-For device-install troubleshooting, find the built `.app` by its `CFBundleIdentifier` and actual path. The old script hard-codes COghe.app, while public display name changed. An archive must contain a signed app with com.gravityboxlab.venom, not com.gravityboxlab.prototype.
+## Optional QA exports
 
-## What this handoff does not execute
+```sh
+# Non-store test ads. Clear COGHE_STORE inherited from your shell first.
+unset COGHE_STORE COGHE_BENCHMARK COGHE_PROFILE
+bash Tools/build-venom-ios.sh --spatial
+# Optional simulator export (not exercised in this handoff):
+bash Tools/build-venom-ios.sh --spatial --simulator
+```
 
-No archive/sign/upload/publish, no Apple account changes, no live IAP purchase, no service project creation. Receiving Mac supplies those credentials and records the actual result.
+Local device install can use COGHE_IOS_TEAM and COGHE_IOS_DEVICE with the existing helper; it finds the built app by bundle ID. These development options are intentionally cleared by the store wrapper. Never click production ads for QA. See IOS-SERVICES.md for native DebugView steps and remaining listing/consent/IAP gates.
+
+The Unity exporter also installs an app-target phase that embeds Firebase Swift resource bundles from the native build products. Do not remove it: UnityFramework links the libraries but the initial generated app omitted those bundles. It preserves vendor manifests and fails when the required Firebase manifests are missing. Inspect qa/ios-native-build.json and verify the final archive contains them.

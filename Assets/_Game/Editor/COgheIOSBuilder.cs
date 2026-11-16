@@ -1,5 +1,8 @@
 using System;
 using System.IO;
+using System.Linq;
+using System.Xml.Linq;
+using System.Text.RegularExpressions;
 using UnityEditor;
 using UnityEditor.Build;
 using UnityEditor.Build.Reporting;
@@ -20,7 +23,7 @@ namespace GravityBox.Editor
         [MenuItem("Gravity Box/COghe/Build iPhone Xcode project")]
         public static void Build() => BuildScenes(VenomCampaignBuilder.CampaignScenePaths(), Output);
 
-        [MenuItem("Gravity Box/COghe/Spatial pilot/Build iPhone-iPad Xcode project · 50 levels")]
+        [MenuItem("Gravity Box/COghe/Spatial pilot/Build iPhone-iPad Xcode project · 65 levels")]
         public static void BuildSpatial() => BuildScenes(VenomCampaignBuilder.SpatialScenePaths(), "Builds/SpatialLab/iOS");
 
         private static void BuildScenes(string[] scenes, string output)
@@ -29,40 +32,40 @@ namespace GravityBox.Editor
                 throw new InvalidOperationException("Install iOS Build Support for this Unity version first.");
             foreach(var scene in scenes)if(!File.Exists(scene))throw new FileNotFoundException("Generate campaign before building",scene);
 
+            ValidateServices();
+            bool store=Environment.GetEnvironmentVariable("COGHE_STORE")=="1";
+            bool simulator=Environment.GetEnvironmentVariable("COGHE_IOS_SIMULATOR")=="1";
+            string releaseVersion=Environment.GetEnvironmentVariable("COGHE_IOS_VERSION") ?? "1.0.0";
+            string releaseBuild=Environment.GetEnvironmentVariable("COGHE_IOS_BUILD") ?? "1";
+            ValidateReleaseOptions(releaseVersion, releaseBuild, store,
+                Environment.GetEnvironmentVariable("COGHE_BENCHMARK")=="1");
+            if(simulator) output="Builds/SpatialLab/iOS-Simulator";
             var platform=NamedBuildTarget.iOS;
             string product=PlayerSettings.productName,identifier=PlayerSettings.GetApplicationIdentifier(platform);
+            string oldVersion=PlayerSettings.bundleVersion, oldBuild=PlayerSettings.iOS.buildNumber;
             var sdk=PlayerSettings.iOS.sdkVersion;
             var backend=PlayerSettings.GetScriptingBackend(platform);
             var configuration=PlayerSettings.GetIl2CppCompilerConfiguration(platform);
             var orientation=PlayerSettings.defaultInterfaceOrientation;
             var device=PlayerSettings.iOS.targetDevice;
-            var adsAsset=AssetDatabase.LoadMainAssetAtPath("Assets/GoogleMobileAds/Resources/GoogleMobileAdsSettings.asset");
-            SerializedObject adsSettings=adsAsset!=null?new SerializedObject(adsAsset):null;
-            var adsId=adsSettings?.FindProperty("adMobIOSAppId");
-            string originalAdsId=adsId?.stringValue;
             try
             {
                 PlayerSettings.productName=GravityBox.Venom.AlienPetBrand.DisplayName;
                 PlayerSettings.SetApplicationIdentifier(platform,BundleId);
-                PlayerSettings.iOS.sdkVersion=iOSSdkVersion.DeviceSDK;
+                PlayerSettings.iOS.sdkVersion=simulator?iOSSdkVersion.SimulatorSDK:iOSSdkVersion.DeviceSDK;
+                PlayerSettings.bundleVersion=releaseVersion;
+                PlayerSettings.iOS.buildNumber=releaseBuild;
                 PlayerSettings.SetScriptingBackend(platform,ScriptingImplementation.IL2CPP);
                 PlayerSettings.SetIl2CppCompilerConfiguration(platform,Il2CppCompilerConfiguration.Release);
                 PlayerSettings.defaultInterfaceOrientation=UIOrientation.Portrait;
                 PlayerSettings.iOS.targetDevice=iOSTargetDevice.iPhoneAndiPad;
-                if(adsId!=null&&string.IsNullOrWhiteSpace(originalAdsId))
-                {
-                    if(Environment.GetEnvironmentVariable("COGHE_STORE")=="1")
-                        throw new InvalidOperationException("Configure an iOS AdMob app before exporting a store build.");
-                    // Official Google sample app ID, used only by this local test export.
-                    adsId.stringValue="ca-app-pub-3940256099942544~1458002511";
-                    adsSettings.ApplyModifiedPropertiesWithoutUndo();AssetDatabase.SaveAssetIfDirty(adsAsset);
-                }
                 Directory.CreateDirectory(output);
                 var report=BuildPipeline.BuildPlayer(new BuildPlayerOptions{
                     scenes=scenes,target=BuildTarget.iOS,locationPathName=output,options=BuildOptions.None,extraScriptingDefines=COgheAndroidBuilder.Defines()});
                 if(report.summary.result!=BuildResult.Succeeded)
                     throw new Exception("COghe iOS export failed: "+report.summary.result);
 #if UNITY_IOS
+                ConfigureSwiftResources(output);
                 ConfigureSigning(output);
 #endif
                 Debug.Log("COGHE IOS EXPORT SUCCESS: "+scenes.Length+" scenes, "+Path.GetFullPath(output));
@@ -72,18 +75,56 @@ namespace GravityBox.Editor
                 PlayerSettings.productName=product;
                 PlayerSettings.SetApplicationIdentifier(platform,identifier);
                 PlayerSettings.iOS.sdkVersion=sdk;
+                PlayerSettings.bundleVersion=oldVersion;
+                PlayerSettings.iOS.buildNumber=oldBuild;
                 PlayerSettings.SetScriptingBackend(platform,backend);
                 PlayerSettings.SetIl2CppCompilerConfiguration(platform,configuration);
                 PlayerSettings.defaultInterfaceOrientation=orientation;
                 PlayerSettings.iOS.targetDevice=device;
-                if(adsId!=null)
-                {
-                    adsSettings.Update();adsId=adsSettings.FindProperty("adMobIOSAppId");
-                    adsId.stringValue=originalAdsId;adsSettings.ApplyModifiedPropertiesWithoutUndo();AssetDatabase.SaveAssetIfDirty(adsAsset);
-                }
+
             }
         }
+        public static void ValidateReleaseOptions(string version, string build, bool store, bool benchmark)
+        {
+            if(!Regex.IsMatch(version ?? "", @"^\d+\.\d+\.\d+$"))
+                throw new BuildFailedException("COGHE_IOS_VERSION must be major.minor.patch.");
+            if(!int.TryParse(build, out int number) || number < 1)
+                throw new BuildFailedException("COGHE_IOS_BUILD must be a positive integer.");
+            if(store && benchmark) throw new BuildFailedException("Store builds cannot include benchmark automation.");
+        }
+
+        public static void ValidateFirebaseConfig(string xml)
+        {
+            var root=XDocument.Parse(xml).Root?.Element("dict");
+            string Value(string key) => root?.Elements("key").FirstOrDefault(e=>e.Value==key)?.ElementsAfterSelf().FirstOrDefault()?.Value;
+            if(Value("BUNDLE_ID")!=BundleId || Value("PROJECT_ID")!="coghe-57f21" ||
+                Value("GOOGLE_APP_ID")!="1:446362971270:ios:8d705f7bc5e2ebbddc3507")
+                throw new BuildFailedException("Firebase plist must match the registered Alien Pet iOS app.");
+        }
+
+        private static void ValidateServices()
+        {
+            const string config="Assets/GoogleService-Info.plist";
+            if(!File.Exists(config)) throw new BuildFailedException("Missing iOS Firebase configuration: "+config);
+            ValidateFirebaseConfig(File.ReadAllText(config));
+            var settings=AssetDatabase.LoadMainAssetAtPath("Assets/GoogleMobileAds/Resources/GoogleMobileAdsSettings.asset");
+            if(settings==null || new SerializedObject(settings).FindProperty("adMobIOSAppId")?.stringValue!="ca-app-pub-7806638519709442~8888402391")
+                throw new BuildFailedException("iOS AdMob App ID does not match Alien Pet iOS.");
+        }
 #if UNITY_IOS
+        private static void ConfigureSwiftResources(string output)
+        {
+            const string script="copy-alienpet-ios-swift-resources.sh";
+            File.Copy(Path.Combine("Tools",script),Path.Combine(output,script),true);
+            string path=PBXProject.GetPBXProjectPath(output);
+            var project=new PBXProject();project.ReadFromFile(path);
+            string main=project.GetUnityMainTargetGuid();
+            project.SetBuildProperty(main,"ENABLE_USER_SCRIPT_SANDBOXING","NO");
+            project.AddShellScriptBuildPhase(main,"Alien Pet - Embed Firebase Swift resources", "/bin/sh",
+                "/bin/sh \"$PROJECT_DIR/"+script+"\"");
+            project.WriteToFile(path);
+        }
+
         private static void ConfigureSigning(string output)
         {
             string team=Environment.GetEnvironmentVariable("COGHE_IOS_TEAM");

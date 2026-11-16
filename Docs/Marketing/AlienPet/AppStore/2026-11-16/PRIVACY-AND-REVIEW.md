@@ -17,6 +17,8 @@ The current source has no account login in its normal game flow. Check the final
 | Adult, declined Analytics | Off | Separate consent-dependent ads | Analytics refusal does not silently consent to tracking |
 | Adult, opted in | Allowed | Separate consent-dependent ads | Correct iOS stream and events; withdrawal persists |
 
+On branch IOS, real Firebase/AdMob configuration and separate published UMP messages are present; native collection defaults are closed and verified in the generated project. No ATT prompt is requested. Full details and exact SDK versions are in technical/IOS-SERVICES.md and BUILD-RUNBOOK.md. These are technical results, not legal declarations.
+
 Existing C# age bands are not proof that native Pods respect startup rules. Audit Info.plist defaults, Firebase auto-init, adapters and any remote settings before capturing native evidence.
 
 ## App Privacy worksheet

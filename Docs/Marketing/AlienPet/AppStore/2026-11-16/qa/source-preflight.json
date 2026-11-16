@@ -1,28 +1,33 @@
 {
-  "source_commit": "dec14e929897b4268421553ac51ab02abd297d09",
+  "source_commit": "b8b69f03a29eff9d34985f2b5c80ad6843161793",
   "unity": "m_EditorVersion: 6000.3.19f1",
   "release_ready": false,
-  "scope": "Static audit only",
+  "scope": "Static audit of working tree; source_commit is its Git base when uncommitted. Not device proof.",
   "checks": [
     {
-      "check": "Service boot",
-      "status": "BLOCKED",
-      "detail": "Inspect iOS lifecycle and all SDK initializers; no automatic compliance assertion."
+      "check": "iOS service boot",
+      "status": "PASS_STATIC",
+      "detail": "Native mobile boot present; on-device consent behavior still requires QA."
     },
     {
       "check": "iOS AdMob app ID",
-      "status": "BLOCKED",
-      "detail": "Real iOS app and ad units must be tested. IDs deliberately omitted from report."
+      "status": "PASS_STATIC",
+      "detail": "Matches registered Alien Pet iOS app."
+    },
+    {
+      "check": "iOS ad units",
+      "status": "PASS_STATIC",
+      "detail": "Production units and Google iOS rewarded test unit are platform-scoped; not proof of fill."
     },
     {
       "check": "Firebase iOS config",
-      "status": "BLOCKED",
-      "detail": "Check bundle match and generated archive; file presence alone is insufficient."
+      "status": "PASS_STATIC",
+      "detail": "Exactly one matching config required. Client API key intentionally omitted from report."
     },
     {
       "check": "Native privacy manifests",
       "status": "MANUAL",
-      "detail": "Also inspect resolved CocoaPods, application required-reason APIs and archive privacy report."
+      "detail": "Generated unsigned app includes SDK/Unity manifests in recorded build; validate final signed archive privacy report."
     },
     {
       "check": "IAP provider",
@@ -31,7 +36,7 @@
     },
     {
       "check": "Development install script",
-      "status": "NEEDS_FIX",
+      "status": "PASS_STATIC",
       "detail": "Do not use USB install script as App Store archive workflow."
     },
     {

@@ -11,11 +11,15 @@ using UnityEngine;
 
 namespace GravityBox.Services
 {
-    /// <summary>Android SDK lifetime; game rules depend only on the existing ads / analytics interfaces.</summary>
+    /// <summary>Mobile SDK lifetime; game rules depend only on the existing ads / analytics interfaces.</summary>
     public sealed class COgheGoogleServices : MonoBehaviour
     {
-        public const string AndroidPackage = "com.gravityboxlab.venom";
+        public const string AppBundleId = "com.gravityboxlab.venom";
+#if UNITY_IOS
+        public const string AdMobApp = "ca-app-pub-7806638519709442~8888402391";
+#else
         public const string AdMobApp = "ca-app-pub-7806638519709442~4983717950";
+#endif
         public static bool Ready { get; private set; }
         private FirebaseApp firebase;
         private COgheAdMob ads;
@@ -26,8 +30,8 @@ namespace GravityBox.Services
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
         private static void Boot()
         {
-#if UNITY_ANDROID && !UNITY_EDITOR
-            if (Application.identifier != AndroidPackage || Application.isBatchMode) return;
+#if (UNITY_ANDROID || UNITY_IOS) && !UNITY_EDITOR
+            if (Application.identifier != AppBundleId || Application.isBatchMode) return;
             var host = new GameObject("COghe Google services");
             DontDestroyOnLoad(host); host.AddComponent<COgheGoogleServices>();
 #endif

@@ -1,0 +1,104 @@
+{
+  "scope": "Generated Xcode project only; not runtime/consent/device or App Store validation",
+  "version": "1.0.0",
+  "build": "1",
+  "checks": [
+    {
+      "check": "Firebase bundle",
+      "passed": true
+    },
+    {
+      "check": "Firebase iOS app",
+      "passed": true
+    },
+    {
+      "check": "AdMob iOS app",
+      "passed": true
+    },
+    {
+      "check": "Positive build number",
+      "passed": true
+    },
+    {
+      "check": "FirebaseDataCollectionDefaultEnabled",
+      "passed": true
+    },
+    {
+      "check": "FIREBASE_ANALYTICS_COLLECTION_ENABLED",
+      "passed": true
+    },
+    {
+      "check": "GOOGLE_ANALYTICS_IDFA_COLLECTION_ENABLED",
+      "passed": true
+    },
+    {
+      "check": "GOOGLE_ANALYTICS_IDFV_COLLECTION_ENABLED",
+      "passed": true
+    },
+    {
+      "check": "GOOGLE_ANALYTICS_DEFAULT_ALLOW_ANALYTICS_STORAGE",
+      "passed": true
+    },
+    {
+      "check": "GOOGLE_ANALYTICS_DEFAULT_ALLOW_AD_STORAGE",
+      "passed": true
+    },
+    {
+      "check": "GOOGLE_ANALYTICS_DEFAULT_ALLOW_AD_USER_DATA",
+      "passed": true
+    },
+    {
+      "check": "GOOGLE_ANALYTICS_DEFAULT_ALLOW_AD_PERSONALIZATION_SIGNALS",
+      "passed": true
+    },
+    {
+      "check": "GOOGLE_ANALYTICS_REGISTRATION_WITH_AD_NETWORK_ENABLED",
+      "passed": true
+    },
+    {
+      "check": "Delay GMA measurement",
+      "passed": true
+    },
+    {
+      "check": "No ATT purpose string",
+      "passed": true
+    },
+    {
+      "check": "SKAdNetwork list",
+      "passed": true
+    },
+    {
+      "check": "Workspace created",
+      "passed": true
+    },
+    {
+      "check": "Pod lock present",
+      "passed": true
+    },
+    {
+      "check": "Unity privacy manifest",
+      "passed": true
+    },
+    {
+      "check": "Marketing icon",
+      "passed": true
+    },
+    {
+      "check": "Product bundle ID",
+      "passed": true
+    },
+    {
+      "check": "Firebase configuration in project",
+      "passed": true
+    },
+    {
+      "check": "Swift resource copy phase",
+      "passed": true
+    },
+    {
+      "check": "Swift resource script",
+      "passed": true
+    }
+  ],
+  "passed": true
+}

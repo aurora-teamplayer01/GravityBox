@@ -11,10 +11,15 @@ COGHE_IOS_NATIVE_ONLY=0
 for arg in "$@"; do
   case "$arg" in
     --spatial) COGHE_IOS_OUTPUT="$COGHE_ROOT/Builds/SpatialLab/iOS"; COGHE_IOS_METHOD=GravityBox.Editor.COgheIOSBuilder.BuildSpatial ;;
+    --simulator) export COGHE_IOS_SIMULATOR=1; COGHE_IOS_OUTPUT="$COGHE_ROOT/Builds/SpatialLab/iOS-Simulator"; COGHE_IOS_METHOD=GravityBox.Editor.COgheIOSBuilder.BuildSpatial ;;
     --native-only) COGHE_IOS_NATIVE_ONLY=1 ;;
-    *) echo "Usage: bash Tools/build-venom-ios.sh [--spatial] [--native-only]" >&2; exit 2 ;;
+    *) echo "Usage: bash Tools/build-venom-ios.sh [--spatial] [--native-only] [--simulator]" >&2; exit 2 ;;
   esac
 done
+if [[ "${COGHE_IOS_SIMULATOR:-}" == 1 ]]; then
+  COGHE_IOS_OUTPUT="$COGHE_ROOT/Builds/SpatialLab/iOS-Simulator"
+  COGHE_IOS_METHOD=GravityBox.Editor.COgheIOSBuilder.BuildSpatial
+fi
 if [[ "$COGHE_IOS_NATIVE_ONLY" == 0 ]]; then
     "$UNITY_EDITOR" -batchmode -nographics -projectPath "$COGHE_ROOT" \
       -buildTarget iOS -executeMethod "$COGHE_IOS_METHOD" \
@@ -23,7 +28,7 @@ else
   test -d "$COGHE_IOS_OUTPUT/Unity-iPhone.xcodeproj"
 fi
 
-if [[ -z "${COGHE_IOS_TEAM:-}" ]]; then
+if [[ -z "${COGHE_IOS_TEAM:-}" || "${COGHE_IOS_SIMULATOR:-}" == 1 ]]; then
   echo "Export ready: $COGHE_IOS_OUTPUT. Configure signing in Xcode to install."
   exit 0
 fi
@@ -57,8 +62,18 @@ fi
 echo "COGHE IOS BUILD SUCCESS"
 
 if [[ -n "${COGHE_IOS_DEVICE:-}" ]]; then
-  xcrun devicectl device install app --device "$COGHE_IOS_DEVICE" \
-    "${COGHE_IOS_OUTPUT}-DerivedData/Build/Products/Release-iphoneos/COghe.app"
+  COGHE_BUILT_APP="$(python3 - "${COGHE_IOS_OUTPUT}-DerivedData/Build/Products/Release-iphoneos" <<'PYAPP'
+import pathlib, plistlib, sys
+matches=[]
+for app in pathlib.Path(sys.argv[1]).glob('*.app'):
+    info=app/'Info.plist'
+    if info.is_file() and plistlib.loads(info.read_bytes()).get('CFBundleIdentifier')=='com.gravityboxlab.venom':
+        matches.append(app)
+if len(matches)!=1: raise SystemExit('Expected exactly one Alien Pet app; found '+str(len(matches)))
+print(matches[0])
+PYAPP
+)"
+  xcrun devicectl device install app --device "$COGHE_IOS_DEVICE" "$COGHE_BUILT_APP"
   xcrun devicectl device process launch --device "$COGHE_IOS_DEVICE" \
     --terminate-existing com.gravityboxlab.venom
 fi

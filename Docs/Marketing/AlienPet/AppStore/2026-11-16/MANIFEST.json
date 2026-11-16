@@ -9,13 +9,13 @@
     },
     {
       "path": "NEXT-MACHINE-TASK.txt",
-      "bytes": 1607,
-      "sha256": "f104cac61e9c44278446bb918c63671fbdbb411b708e3c4241942f9f6d077f72"
+      "bytes": 1655,
+      "sha256": "7af4bfbc1057d6ea9084bde6584624c326ea7551cfe31e388fc07ab66292f304"
     },
     {
       "path": "PRIVACY-AND-REVIEW.md",
-      "bytes": 5615,
-      "sha256": "af06517069d7047f32df30e63848922b6cc161b36778a850ffe0bc82c6e676b2"
+      "bytes": 5963,
+      "sha256": "779cc16483f5a8cf15702583d19fd05ab482a8ceee9c2ee77f8620c19976927e"
     },
     {
       "path": "QA-CHECKLIST.csv",
@@ -24,8 +24,8 @@
     },
     {
       "path": "RELEASE-PLAN.md",
-      "bytes": 9152,
-      "sha256": "b366ce7fdcc61abd08fd4f0450b11d3deb59403240f76cd1b889add3bac38af9"
+      "bytes": 8517,
+      "sha256": "c776ebe3bc9c02358a8f1212aa9a507b160d065956157ff4ca49b256b232a290"
     },
     {
       "path": "SCREENSHOTS.md",
@@ -34,8 +34,8 @@
     },
     {
       "path": "START-HERE.md",
-      "bytes": 3551,
-      "sha256": "9a64920d3009126e932247d9e4b593434610f0c27090ccc9bddf7bf8c006043e"
+      "bytes": 3733,
+      "sha256": "4e80595cfca695c9663b8a8b9bc1c58226ffa3c84cbcce666db3b73fddd0deca"
     },
     {
       "path": "assets/icon/AppIcon-1024.png",
@@ -214,8 +214,8 @@
     },
     {
       "path": "qa/VISUAL-REVIEW.md",
-      "bytes": 1171,
-      "sha256": "644628e9f44176576a7071b48ce7994b4e08a83b1e6dc4736b320f6613479a31"
+      "bytes": 1461,
+      "sha256": "83828b743590ef6bd3356ea6fc19898bcc2755f10af0e21247513b91d1d56bf3"
     },
     {
       "path": "qa/contact-sheet.png",
@@ -228,14 +228,29 @@
       "sha256": "de46a94490a6ca19f65354a49fbdb72750f4c31940ba4531e1c102e3cf0a236c"
     },
     {
+      "path": "qa/ios-export-audit.json",
+      "bytes": 2127,
+      "sha256": "7a631702faef61e6ad479fe57cd4dc9933340e3fa7e20e59d384d3af3dea1e0b"
+    },
+    {
+      "path": "qa/ios-native-build.json",
+      "bytes": 4390,
+      "sha256": "ce8c427903d03ac0cdc6efe06bab36960bc750a9e97f44e5bba1ddf9126c7a79"
+    },
+    {
+      "path": "qa/ios-service-tests.json",
+      "bytes": 3720,
+      "sha256": "55cfdb3c89e1a0bef9019f3c364b8d508d02cf0ef3948335c3445bd8d0ddcfd4"
+    },
+    {
       "path": "qa/render-audit.json",
       "bytes": 4934,
       "sha256": "2de4f4c97c42b00d0e1c3fa68361fce9b2f36cfd20ac96d39abe041212da0336"
     },
     {
       "path": "qa/source-preflight.json",
-      "bytes": 2159,
-      "sha256": "fe936e59c5370b08f6fa95704113b621d21f0e726faa11564ea3e24048889a44"
+      "bytes": 2420,
+      "sha256": "85cdf8cc97f244e14eaf4db27d0e3aa750c5b3cdb96e4a2cfbdc96ede29acf2e"
     },
     {
       "path": "qa/tool-environment.json",
@@ -249,8 +264,8 @@
     },
     {
       "path": "review.html",
-      "bytes": 3500,
-      "sha256": "199ccca105af317b8f6ba46ac1504d38836e7c987110501d8ae4f0689e0540f2"
+      "bytes": 3546,
+      "sha256": "2407bd60a23049a2ac24247ef4180740c8a090a4f00ae12d17ac0a9990b33a07"
     },
     {
       "path": "screenshots/draft/ipad/01-tap-think-find.png",
@@ -364,8 +379,8 @@
     },
     {
       "path": "technical/BUILD-RUNBOOK.md",
-      "bytes": 2900,
-      "sha256": "6a2bbdec7c8241c2de50c6bfb26c53eeca9d05cd87d60efb48898d9619b21a5f"
+      "bytes": 3826,
+      "sha256": "1c0d78bd6efa4bed4a4e0c2be3ccfed097dc43a547f7b10a1abab54a6656e6cb"
     },
     {
       "path": "technical/ExportOptions.template.plist",
@@ -374,18 +389,23 @@
     },
     {
       "path": "technical/IOS-GAPS.md",
-      "bytes": 3964,
-      "sha256": "c1315219d0630329ac4b5daab50fab229a29d77e68b0cde0d701ca945bf6c90e"
+      "bytes": 2912,
+      "sha256": "0b3cc579429db8dba5cde3cb147c25b0dc97d736931e52b6a71948a5421be162"
+    },
+    {
+      "path": "technical/IOS-SERVICES.md",
+      "bytes": 5203,
+      "sha256": "371ebe64c5f9212c7ffbf54ff46edb19625409638bc5d4f846f4839272b60838"
     },
     {
       "path": "technical/account-inputs.template.json",
-      "bytes": 971,
-      "sha256": "f5e99f66cd53d2370792fd2e4d4356ffa61b81d6da686ddc222b04685274d5aa"
+      "bytes": 1386,
+      "sha256": "583993835b61efb251018a12708a7866d8a122fa0ec823a7f70bb30bcfc50686"
     },
     {
       "path": "technical/source-revision.json",
-      "bytes": 371,
-      "sha256": "cce0eee2047539a40dfd3abeef016788c24aa082b9fcc53eb0df2831b894e850"
+      "bytes": 417,
+      "sha256": "ca5a555f66be20488f1b0f783a2c007a245ea72cf5ad01e791fba66bf41c2319"
     },
     {
       "path": "tools/package.py",
@@ -394,13 +414,13 @@
     },
     {
       "path": "tools/preflight.py",
-      "bytes": 2823,
-      "sha256": "cda0a6f6f5a2277322794c1173e7dc0dfc9e7e66933b1578bb5f8a3fef0e6606"
+      "bytes": 3605,
+      "sha256": "fee0361029eec8116da1a2e9465322a0cf14c17fa6f3722215b5a111b484b4ef"
     },
     {
       "path": "tools/render.cjs",
-      "bytes": 9067,
-      "sha256": "670df133f1f9fa5f7358f031c8f79674042532dd927b5e365a0423e434dec60e"
+      "bytes": 9101,
+      "sha256": "d8cebe12ffe62163d7cfb4592fb938b7a2ff22aabf6fd8cde435ecccc413db3b"
     },
     {
       "path": "tools/verify-package.py",

@@ -4,7 +4,7 @@
 
 Giữ nhận diện Alien Pet, COghe là tên sinh vật; iPhone + iPad portrait; Glass C; main campaign 65 màn, không quảng bá 2 prototype như màn hoàn chỉnh. Phát hành iOS không được đổi bundle/save keys hoặc làm yếu age gate để chạy quảng cáo.
 
-Bộ này là hồ sơ bàn giao. Không có App Store Connect mutation, build phân phối hay kết quả TestFlight mới được thực hiện trong gói này.
+Nhánh `IOS` đã triển khai AdMob/Firebase và consent, xem [technical/IOS-SERVICES.md](technical/IOS-SERVICES.md). Chưa có App Store Connect mutation, build ký phân phối hay kết quả TestFlight mới.
 
 ## Giai đoạn 1 Chuẩn bị tài khoản và môi trường
 
@@ -25,14 +25,10 @@ Làm theo `technical/IOS-GAPS.md`. Đây là phần kỹ thuật thật còn thi
 
 Hướng khuyến nghị: iOS có chức năng tương đương Android với cùng nguyên tắc tuổi/consent. Nếu muốn ra trước bằng bản không Ads/Analytics/IAP, cần chủ sản phẩm chọn phương án đó và sửa các nút/offer/UI cho đúng; không tự phát hành bản có nút mua/xem ads nhưng provider không hoạt động.
 
-- Tạo Firebase iOS app đúng bundle, lấy GoogleService-Info.plist. Tách stream/platform, dùng chung project nếu phù hợp. Không copy google-services.json Android sang iOS.
-- Tạo AdMob **iOS app và iOS units**; cấu hình app ID, rewarded/interstitial/banner, UMP riêng đúng app. Android IDs không dùng thay.
-- Tích hợp boot iOS có kiểm soát tuổi; audit auto-init native Firebase trước C# và analytics defaults trong Info.plist. Tất cả SDK/adapters/Remote Config phải tôn trọng lựa chọn.
-- Hoàn thiện thanh toán Apple nếu phát hành các gói mua. Xác minh sản phẩm thật, localized price, cancel/pending/fail, xác thực giao dịch, restore, refund/revocation. Không dùng mock/simulated fulfillment. Product IDs cần đối chiếu runtime; `coghe_plus` và `coghe_no_ads` trong code là khóa entitlement, chưa chứng minh đã là SKU App Store.
-- Kiểm tra ATT/tracking theo hành vi SDK thực tế; UMP không thay thế ATT. Không bắt người chơi đồng ý tracking để chơi/nhận quyền đã mua. Không thêm prompt tracking cho trẻ em.
-- Kiểm tra privacy manifests, required-reason APIs, SDK signatures, launch screen, icon, safe areas và iPad.
-
-Đầu ra: code/config iOS được review; tất cả blocker P0 đóng bằng bằng chứng.
+- Firebase iOS app, plist, Analytics stream, AdMob app/units và UMP đã cấu hình. **Không tạo trùng.** Kiểm tra cấu hình/console theo IOS-SERVICES.md.
+- Bản code iOS dùng cùng cơ chế age gate, consent và reward của Android; native defaults đóng trước startup. Kiểm chứng trên thiết bị thật vẫn là gate phát hành.
+- IAP chưa có provider StoreKit thật. Không bật giả lập mua trong store build; hoàn thiện commerce hoặc chốt với chủ sản phẩm phương án phát hành chưa có IAP.
+- Khi có App Store ID, bổ sung Firebase/AdMob listing, hoàn thành app readiness; không thay bundle.
 
 ## Giai đoạn 3 Export và ký
 
@@ -41,10 +37,10 @@ Hướng khuyến nghị: iOS có chức năng tương đương Android với c�
 ```sh
 export DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer
 unset COGHE_IOS_TEAM COGHE_IOS_PROFILE COGHE_IOS_DEVICE COGHE_BENCHMARK COGHE_PROFILE
-COGHE_STORE=1 bash Tools/build-venom-ios.sh --spatial
+bash Tools/build-alienpet-ios-store.sh 1.0.0 1
 ```
 
-Lệnh này export current Spatial catalog. `COGHE_STORE=1` bỏ test tools nhưng **không tự xác nhận mọi điều kiện App Store**. Hiện nó sẽ dừng nếu iOS AdMob app ID trống; không xóa guard để vượt lỗi.
+Lệnh này export current Spatial catalog. `COGHE_STORE=1` bỏ test tools nhưng **không tự xác nhận mọi điều kiện App Store**. Guard kiểm tra đúng app AdMob/Firebase, version/build và cấm benchmark trong store build.
 
 Mở `Builds/SpatialLab/iOS/Unity-iPhone.xcworkspace` khi có CocoaPods, nếu không mới dùng xcodeproj. Kiểm tra Unity-iPhone app target và UnityFramework:
 

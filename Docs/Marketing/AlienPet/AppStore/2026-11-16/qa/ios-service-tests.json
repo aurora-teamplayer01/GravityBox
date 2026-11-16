@@ -1,0 +1,103 @@
+{
+  "scope": "Unity Editor tests on iOS target; no on-device SDK delivery assertions",
+  "suites": [
+    {
+      "suite": "privacy",
+      "result": "Passed",
+      "passed": 12,
+      "failed": 0,
+      "start_utc": "2026-11-16 01:44:26Z",
+      "cases": [
+        {
+          "name": "GravityBox.Tests.COghePrivacyTests.AdultHasNoImplicitConsentAndCanPlayAfterDecliningAnalytics",
+          "result": "Passed"
+        },
+        {
+          "name": "GravityBox.Tests.COghePrivacyTests.AndroidNativeDefaultsDisableAutostartAndAdIdsWithoutRemovingGameplayActivity",
+          "result": "Passed"
+        },
+        {
+          "name": "GravityBox.Tests.COghePrivacyTests.ChangingAgeNeverCarriesAnAdultOptInIntoAnotherBand",
+          "result": "Passed"
+        },
+        {
+          "name": "GravityBox.Tests.COghePrivacyTests.InvalidAgeCannotOpenTheGate",
+          "result": "Passed"
+        },
+        {
+          "name": "GravityBox.Tests.COghePrivacyTests.IOSNativeDefaultsStayClosedAndPreserveUnrelatedPlistKeys",
+          "result": "Passed"
+        },
+        {
+          "name": "GravityBox.Tests.COghePrivacyTests.IOSReleaseRejectsWrongFirebaseAppAndInvalidBuildOptions",
+          "result": "Passed"
+        },
+        {
+          "name": "GravityBox.Tests.COghePrivacyTests.MemoryFixturesDoNotOverwriteExistingPlayerChoice",
+          "result": "Passed"
+        },
+        {
+          "name": "GravityBox.Tests.COghePrivacyTests.RevocationAndRegrantDoNotResurrectAnOldAsyncRequest",
+          "result": "Passed"
+        },
+        {
+          "name": "GravityBox.Tests.COghePrivacyTests.TeenSkipsAnalyticsQuestionAndGetsRestrictedAdConfiguration(Age13To15)",
+          "result": "Passed"
+        },
+        {
+          "name": "GravityBox.Tests.COghePrivacyTests.TeenSkipsAnalyticsQuestionAndGetsRestrictedAdConfiguration(Age16To17)",
+          "result": "Passed"
+        },
+        {
+          "name": "GravityBox.Tests.COghePrivacyTests.UnknownAndChildCannotEnableAnyNetworkService(Unknown)",
+          "result": "Passed"
+        },
+        {
+          "name": "GravityBox.Tests.COghePrivacyTests.UnknownAndChildCannotEnableAnyNetworkService(Under13)",
+          "result": "Passed"
+        }
+      ]
+    },
+    {
+      "suite": "monetization",
+      "result": "Passed",
+      "passed": 8,
+      "failed": 0,
+      "start_utc": "2026-11-16 01:49:39Z",
+      "cases": [
+        {
+          "name": "GravityBox.Tests.COgheMonetizationTests.CloseEarlyOrFailNeverAwardsOrConsumesDailyRewardCap",
+          "result": "Passed"
+        },
+        {
+          "name": "GravityBox.Tests.COgheMonetizationTests.ConfigValidatesSafetyAndAppliesOnlyOnNextLaunchWithOfflineCache",
+          "result": "Passed"
+        },
+        {
+          "name": "GravityBox.Tests.COgheMonetizationTests.EarnedRewardIsSavedBeforeCloseAndSurvivesReloadWithoutDoubleCredit",
+          "result": "Passed"
+        },
+        {
+          "name": "GravityBox.Tests.COgheMonetizationTests.FailedInterstitialDoesNotSpendCapsOrReportComplete",
+          "result": "Passed"
+        },
+        {
+          "name": "GravityBox.Tests.COgheMonetizationTests.NoAdsKeepsOptionalRewardsButPlusNeverRequestsThem",
+          "result": "Passed"
+        },
+        {
+          "name": "GravityBox.Tests.COgheMonetizationTests.OptionalCleanBonusDoesNotPunishRetryByDefault",
+          "result": "Passed"
+        },
+        {
+          "name": "GravityBox.Tests.COgheMonetizationTests.PlusDoublesOnlyBaseRewardsAndAdvertisedBonusIsFixed",
+          "result": "Passed"
+        },
+        {
+          "name": "GravityBox.Tests.COgheMonetizationTests.ThreeShopRewardsPerDayAndMidnightUsesTheOfferDay",
+          "result": "Passed"
+        }
+      ]
+    }
+  ]
+}
