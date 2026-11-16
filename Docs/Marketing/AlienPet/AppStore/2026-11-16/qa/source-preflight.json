@@ -1,0 +1,68 @@
+{
+  "source_commit": "dec14e929897b4268421553ac51ab02abd297d09",
+  "unity": "m_EditorVersion: 6000.3.19f1",
+  "release_ready": false,
+  "scope": "Static audit only",
+  "checks": [
+    {
+      "check": "Service boot",
+      "status": "BLOCKED",
+      "detail": "Inspect iOS lifecycle and all SDK initializers; no automatic compliance assertion."
+    },
+    {
+      "check": "iOS AdMob app ID",
+      "status": "BLOCKED",
+      "detail": "Real iOS app and ad units must be tested. IDs deliberately omitted from report."
+    },
+    {
+      "check": "Firebase iOS config",
+      "status": "BLOCKED",
+      "detail": "Check bundle match and generated archive; file presence alone is insufficient."
+    },
+    {
+      "check": "Native privacy manifests",
+      "status": "MANUAL",
+      "detail": "Also inspect resolved CocoaPods, application required-reason APIs and archive privacy report."
+    },
+    {
+      "check": "IAP provider",
+      "status": "MANUAL",
+      "detail": "Unity Purchasing dependency not present; verify any alternative StoreKit provider and real product handling."
+    },
+    {
+      "check": "Development install script",
+      "status": "NEEDS_FIX",
+      "detail": "Do not use USB install script as App Store archive workflow."
+    },
+    {
+      "check": "Apple team and Bundle ID ownership",
+      "status": "MANUAL_NOT_RUN",
+      "detail": "Needs actual receiving-machine evidence."
+    },
+    {
+      "check": "Native age/consent QA",
+      "status": "MANUAL_NOT_RUN",
+      "detail": "Needs actual receiving-machine evidence."
+    },
+    {
+      "check": "TestFlight device QA",
+      "status": "MANUAL_NOT_RUN",
+      "detail": "Needs actual receiving-machine evidence."
+    },
+    {
+      "check": "App Privacy and rating",
+      "status": "MANUAL_NOT_RUN",
+      "detail": "Needs actual receiving-machine evidence."
+    },
+    {
+      "check": "iOS screenshot parity",
+      "status": "MANUAL_NOT_RUN",
+      "detail": "Needs actual receiving-machine evidence."
+    },
+    {
+      "check": "Archive validation and upload",
+      "status": "MANUAL_NOT_RUN",
+      "detail": "Needs actual receiving-machine evidence."
+    }
+  ]
+}

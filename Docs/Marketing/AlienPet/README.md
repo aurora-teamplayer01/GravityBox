@@ -1,5 +1,8 @@
 # Alien Pet — Marketing
 
+- [Bộ bàn giao App Store iPhone/iPad — 16/11/2026](AppStore/2026-11-16/START-HERE.md)
+- [Preview icon và 10 screenshot layouts](AppStore/2026-11-16/review.html) — nguồn Android/Unity tham khảo, phải thay capture iOS trước upload.
+
 Tài nguyên quảng cáo của game được tập trung tại **[AdsResources](AdsResources/README.md)**.
 
 - [Mở thư viện video](AdsResources/index.html)

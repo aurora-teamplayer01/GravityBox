@@ -1,0 +1,14 @@
+DRAFT — fill and verify against the submitted iOS build before copying to App Review.
+
+Alien Pet: Escape Puzzle is a single-player 3D puzzle game starring COghe, a liquid alien companion. Players guide the creature through glass laboratory rooms, operate mechanisms and reach the exit. Home activities and customization unlock through progression.
+
+Access: [CONFIRM no account/login is required in the submitted build.]
+Controls: Tap a reachable surface or mechanism to guide COghe. Drag to inspect the room where enabled; use the zoom control/pinch as presented by the current build. On victory, use the existing next-level control to continue.
+First launch: [CONFIRM age/privacy setup and intro order from a fresh TestFlight install; record tested result.]
+Privacy: Pause → Privacy. Unknown-age and under-13 players do not receive ads or gameplay Analytics. Teens do not send gameplay Analytics. Adult Analytics is optional and can be disabled. [VERIFY these statements against native iOS test results.]
+Unlocks: [ENTER exact current orders/routes for Home, Style and other features after checking the submitted build. Do not use old Android milestone notes without verification.]
+Monetization: [LIST only real iOS ad placements and submitted IAP products. Explain reward grant, restore route and how an eligible tester reaches these features. Remove this template if commerce is excluded and all related UI is removed.]
+Content: The creature can perform a temporary fantasy monster-head animation; there is no claim of Marvel affiliation.
+Build: [VERSION (BUILD)], source commit [COMMIT]. Tested on [IPHONE] and [IPAD] through TestFlight on [DATE].
+Support: support@suri.house
+Review contact: [ACCOUNT OWNER NAME / CONTACT EMAIL / PHONE — enter in App Store Connect, not a public screenshot.]

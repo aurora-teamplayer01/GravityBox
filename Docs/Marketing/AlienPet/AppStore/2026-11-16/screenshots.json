@@ -1,0 +1,225 @@
+{
+  "status": "DRAFT_REFERENCE_NOT_FOR_UPLOAD",
+  "targets": {
+    "iphone": [
+      1320,
+      2868
+    ],
+    "ipad": [
+      2064,
+      2752
+    ]
+  },
+  "shots": [
+    {
+      "id": "01-tiny-pet-big-escape",
+      "device": "iphone",
+      "source": "sources/iphone-01-tiny-pet-big-escape.png",
+      "headline": [
+        "A tiny pet.",
+        "A big escape."
+      ],
+      "detail": "Guide COghe through clever 3D puzzles.",
+      "theme": "mint",
+      "sourceWidth": 1080,
+      "sourceHeight": 1920,
+      "crop": {
+        "x": 0,
+        "y": 260,
+        "width": 1080,
+        "height": 1390
+      },
+      "provenance": "Android runtime reference",
+      "iosVerified": false,
+      "originalSource": "Docs/Marketing/AlienPet/GooglePlay/2026-10-29/sources/native-puzzle4-switch.png",
+      "originalNote": "Blank outer margins and outside HUD removed; full enclosure, creature, switch, printed link and exit shutter preserved."
+    },
+    {
+      "id": "02-reveal-the-way",
+      "device": "iphone",
+      "source": "sources/iphone-02-reveal-the-way.png",
+      "headline": [
+        "Move it.",
+        "Reveal the way."
+      ],
+      "detail": "Move crates. Discover the way out.",
+      "theme": "coral",
+      "sourceWidth": 1080,
+      "sourceHeight": 1920,
+      "crop": {
+        "x": 0,
+        "y": 260,
+        "width": 1080,
+        "height": 1390
+      },
+      "provenance": "Android runtime reference",
+      "iosVerified": false,
+      "originalSource": "Docs/Marketing/AlienPet/GooglePlay/2026-10-29/sources/native-puzzle6-crate.png",
+      "originalNote": "Blank outer margins and outside HUD removed; all crates, creature and entire floor/box preserved."
+    },
+    {
+      "id": "03-think-beyond-floor",
+      "device": "iphone",
+      "source": "sources/iphone-03-think-beyond-floor.png",
+      "headline": [
+        "Think beyond",
+        "the floor."
+      ],
+      "detail": "Climb, connect and find a new perspective.",
+      "theme": "lavender",
+      "sourceWidth": 720,
+      "sourceHeight": 1612,
+      "crop": {
+        "x": 0,
+        "y": 300,
+        "width": 720,
+        "height": 1000
+      },
+      "provenance": "Unity runtime reference",
+      "iosVerified": false,
+      "originalSource": "Docs/Marketing/AlienPet/GooglePlay/2026-10-29/sources/runtime-boss10-lift-bridge.png",
+      "originalNote": "Only blank space above and below removed. Entire real Boss 10 enclosure, lift, bridge and controls preserved; original actual Unity scene capture has no HUD."
+    },
+    {
+      "id": "04-snack-time",
+      "device": "iphone",
+      "source": "sources/iphone-04-snack-time.png",
+      "headline": [
+        "Snack time.",
+        "Big reactions."
+      ],
+      "detail": "Feed, care and share a little affection.",
+      "theme": "coral",
+      "sourceWidth": 1080,
+      "sourceHeight": 1920,
+      "crop": {
+        "x": 0,
+        "y": 240,
+        "width": 1080,
+        "height": 1520
+      },
+      "provenance": "Android runtime reference",
+      "iosVerified": false,
+      "originalSource": "Docs/Marketing/AlienPet/GooglePlay/2026-10-29/sources/native-home-apple.png",
+      "originalNote": "Top Home title and blank bottom removed. Real feeding pose, food, energy/drops and bottom Home actions preserved."
+    },
+    {
+      "id": "05-splash-personality",
+      "device": "iphone",
+      "source": "sources/iphone-05-splash-personality.png",
+      "headline": [
+        "A splash of",
+        "personality."
+      ],
+      "detail": "Mix colors on your very own alien pet.",
+      "theme": "mint",
+      "sourceWidth": 1080,
+      "sourceHeight": 1920,
+      "crop": {
+        "x": 0,
+        "y": 250,
+        "width": 1080,
+        "height": 1395
+      },
+      "provenance": "Android runtime reference",
+      "iosVerified": false,
+      "originalSource": "Docs/Marketing/AlienPet/GooglePlay/2026-10-29/sources/native-style-mint.png",
+      "originalNote": "Outside header and bottom action bar removed. Actual Mint hold, creature, color mix, tabs and native catalog area preserved without retouch."
+    },
+    {
+      "id": "06-make-it-yours",
+      "device": "iphone",
+      "source": "sources/iphone-06-make-it-yours.png",
+      "headline": [
+        "Make it",
+        "your own."
+      ],
+      "detail": "Pick a favorite hat. Bring your look along.",
+      "theme": "lavender",
+      "sourceWidth": 1080,
+      "sourceHeight": 1920,
+      "crop": {
+        "x": 0,
+        "y": 250,
+        "width": 1080,
+        "height": 1395
+      },
+      "provenance": "Android runtime reference",
+      "iosVerified": false,
+      "originalSource": "Docs/Marketing/AlienPet/GooglePlay/2026-10-29/sources/native-style-flower.png",
+      "originalNote": "Outside header and bottom action bar removed. Actual flower crown, creature, tabs and native accessory choices preserved without retouch."
+    },
+    {
+      "id": "01-tap-think-find",
+      "device": "ipad",
+      "source": "sources/ipad-01-tap-think-find.png",
+      "headline": [
+        "Tap. Think.",
+        "Find a way."
+      ],
+      "detail": "Guide COghe through clever 3D puzzles.",
+      "theme": "mint",
+      "sourceWidth": 1600,
+      "sourceHeight": 2560,
+      "crop": null,
+      "provenance": "Android runtime reference",
+      "iosVerified": false,
+      "originalSource": "Docs/Marketing/AlienPet/GooglePlay/2026-10-29/qa/tablet-native-captures/10-inch/level-04-switch.png",
+      "originalNote": "Actual native Android tablet emulator capture, 1600x2560 Pixel Tablet profile. Existing internal test APK and normal Product UI; developer scene picker closed before capture. Full source retained, no crop or retouch. Emulator evidence is not a physical-device performance claim."
+    },
+    {
+      "id": "02-reveal-the-way",
+      "device": "ipad",
+      "source": "sources/ipad-02-reveal-the-way.png",
+      "headline": [
+        "Move it.",
+        "Reveal the way."
+      ],
+      "detail": "Move crates. Discover the way out.",
+      "theme": "coral",
+      "sourceWidth": 1600,
+      "sourceHeight": 2560,
+      "crop": null,
+      "provenance": "Android runtime reference",
+      "iosVerified": false,
+      "originalSource": "Docs/Marketing/AlienPet/GooglePlay/2026-10-29/qa/tablet-native-captures/10-inch/level-06-crates.png",
+      "originalNote": "Actual native Android tablet emulator capture, 1600x2560 Pixel Tablet profile. Existing internal test APK and normal Product UI; developer scene picker closed before capture. Full source retained, no crop or retouch. Emulator evidence is not a physical-device performance claim."
+    },
+    {
+      "id": "03-small-parts-big-ideas",
+      "device": "ipad",
+      "source": "sources/ipad-03-small-parts-big-ideas.png",
+      "headline": [
+        "Small parts.",
+        "Big ideas."
+      ],
+      "detail": "Discover new ways to work together.",
+      "theme": "lavender",
+      "sourceWidth": 1600,
+      "sourceHeight": 2560,
+      "crop": null,
+      "provenance": "Android runtime reference",
+      "iosVerified": false,
+      "originalSource": "Docs/Marketing/AlienPet/GooglePlay/2026-10-29/qa/tablet-native-captures/10-inch/level-29-raw.png",
+      "originalNote": "Actual native Android tablet emulator capture, 1600x2560 Pixel Tablet profile. Existing internal test APK and normal Product UI; developer scene picker closed before capture. Full source retained, no crop or retouch. Emulator evidence is not a physical-device performance claim."
+    },
+    {
+      "id": "04-new-paths",
+      "device": "ipad",
+      "source": "sources/ipad-04-new-paths.png",
+      "headline": [
+        "New paths.",
+        "More to discover."
+      ],
+      "detail": "Explore clever mechanisms and reach the exit.",
+      "theme": "mint",
+      "sourceWidth": 1600,
+      "sourceHeight": 2560,
+      "crop": null,
+      "provenance": "Android runtime reference",
+      "iosVerified": false,
+      "originalSource": "Docs/Marketing/AlienPet/GooglePlay/2026-10-29/qa/tablet-native-captures/10-inch/level-34-raw.png",
+      "originalNote": "Actual native Android tablet emulator capture, 1600x2560 Pixel Tablet profile. Normal Product UI and real authored level 34; no game-state or image retouch. Overview screenshot, not new solve evidence. Full capture contain-fit."
+    }
+  ]
+}

@@ -1,5 +1,7 @@
 # COghe — build lên iPhone / iPad thật
 
+> **App Store handoff 16/11/2026:** dùng [kế hoạch phát hành Alien Pet](Marketing/AlienPet/AppStore/2026-11-16/START-HERE.md) cho TestFlight/App Store. Tài liệu dưới là lịch sử cài trực tiếp; tên COghe, nhãn 50 màn và đường dẫn `.app` có thể đã cũ. Source audit mới ghi rõ các phần iOS services, commerce và signing cần hoàn tất trước submit.
+
 Bản hiện tại dùng **50 màn Spatial với Product UI**, cùng catalog của Android/Mac.
 Không sinh lại level. Tên hiển thị là **COghe**, bundle ID iOS
 `com.gravityboxlab.venom`; tách khỏi ứng dụng bi sắt cũ `com.gravityboxlab.prototype`.

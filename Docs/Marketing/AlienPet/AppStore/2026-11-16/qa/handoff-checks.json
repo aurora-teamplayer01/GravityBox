@@ -1,0 +1,35 @@
+{
+  "date": "2026-11-16",
+  "scope": "Handoff tooling/assets only; no native iOS tests",
+  "checks": [
+    {
+      "test": "Renderer JavaScript syntax",
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "pass": true
+    },
+    {
+      "test": "Metadata, dimensions, alpha and render hashes",
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "pass": true
+    },
+    {
+      "test": "Final export correctly rejects Android/Unity references",
+      "expected_exit": 1,
+      "actual_exit": 1,
+      "pass": true
+    },
+    {
+      "test": "Preflight correctly reports current iOS blockers",
+      "expected_exit": 2,
+      "actual_exit": 2,
+      "pass": true
+    },
+    {
+      "test": "Python scripts syntax",
+      "pass": true
+    }
+  ],
+  "all_passed": true
+}

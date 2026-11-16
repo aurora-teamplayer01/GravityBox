@@ -1,0 +1,8 @@
+{
+  "date": "2026-11-16",
+  "repository": "git@github.com:aurora-teamplayer01/GravityBox.git",
+  "branch": "NewGraphic",
+  "commit": "dec14e929897b4268421553ac51ab02abd297d09",
+  "scope": "Documentation/creative handoff only; no iOS service implementation or release build in this package. Source code is obtained separately from repository.",
+  "unity": "6000.3.19f1"
+}

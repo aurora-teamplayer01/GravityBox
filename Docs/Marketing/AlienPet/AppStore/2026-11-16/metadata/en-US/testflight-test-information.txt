@@ -1,0 +1,6 @@
+Alien Pet: Escape Puzzle — iOS beta
+
+Explore the glass-room puzzles, care for COghe and try customization as it unlocks.
+Please test a fresh start and an existing save, touch/orbit/zoom, pause/resume, Home and Style, and the privacy choices. Report level number, device, iOS version, build number and steps to reproduce.
+For eligible adult test profiles, verify rewarded ads grant once and interrupted ads do not grant; verify purchase/restore only if the beta has real Sandbox IAP enabled. Never use a child's profile to test adult consent or advertising.
+Feedback email: support@suri.house

@@ -1,0 +1,27 @@
+{
+  "status": "TEMPLATE_NOT_CONFIGURED",
+  "apple_team_id": null,
+  "app_store_connect_app_id": null,
+  "bundle_id": "com.gravityboxlab.venom",
+  "sku_proposed": "alienpet-ios",
+  "version_proposed": "1.0.0",
+  "build_proposed": "1",
+  "country_proposal": [
+    "US"
+  ],
+  "release_mode_proposed": "manual",
+  "review_contact_name": null,
+  "review_contact_phone": null,
+  "review_contact_email": null,
+  "support_email": "support@suri.house",
+  "admob_ios_app_id": null,
+  "admob_ios_rewarded_unit": null,
+  "admob_ios_interstitial_unit": null,
+  "admob_ios_banner_unit": null,
+  "firebase_ios_app_id": null,
+  "firebase_config_path": null,
+  "iap_products": [],
+  "commerce_decision_required": "Implement and test real iOS commerce OR owner approves a coherent no-commerce release. Do not ship fake offers.",
+  "privacy_url_verification": "Pending external Safari check; automated 403",
+  "secrets": "Never add passwords, .p8/.p12, profiles or tokens to this JSON."
+}

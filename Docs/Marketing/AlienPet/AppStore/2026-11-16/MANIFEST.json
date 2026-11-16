@@ -1,0 +1,411 @@
+{
+  "package": "AlienPet-AppStore-Handoff-2026-11-16",
+  "release_ready": false,
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 37,
+      "sha256": "2af77811cc264f5e9d48d293eb92eb40d2019e896de98eacc2d905fd19c03edc"
+    },
+    {
+      "path": "NEXT-MACHINE-TASK.txt",
+      "bytes": 1607,
+      "sha256": "f104cac61e9c44278446bb918c63671fbdbb411b708e3c4241942f9f6d077f72"
+    },
+    {
+      "path": "PRIVACY-AND-REVIEW.md",
+      "bytes": 5615,
+      "sha256": "af06517069d7047f32df30e63848922b6cc161b36778a850ffe0bc82c6e676b2"
+    },
+    {
+      "path": "QA-CHECKLIST.csv",
+      "bytes": 3058,
+      "sha256": "a71d52df556554677ad222a8b18f69523fd90d20e7160e659f6d82de4635860f"
+    },
+    {
+      "path": "RELEASE-PLAN.md",
+      "bytes": 9152,
+      "sha256": "b366ce7fdcc61abd08fd4f0450b11d3deb59403240f76cd1b889add3bac38af9"
+    },
+    {
+      "path": "SCREENSHOTS.md",
+      "bytes": 4566,
+      "sha256": "773c400220042d85aec8bf6dba872cdbf755ea9a839f092e0e18dea423d8b01f"
+    },
+    {
+      "path": "START-HERE.md",
+      "bytes": 3551,
+      "sha256": "9a64920d3009126e932247d9e4b593434610f0c27090ccc9bddf7bf8c006043e"
+    },
+    {
+      "path": "assets/icon/AppIcon-1024.png",
+      "bytes": 1868393,
+      "sha256": "634ec87ae74498da6cf00c22e563d68c5f0e296054c3e6aa65780e6e224d8fa4"
+    },
+    {
+      "path": "assets/icon/AppIcon.appiconset/AppIcon-1024.png",
+      "bytes": 1868393,
+      "sha256": "634ec87ae74498da6cf00c22e563d68c5f0e296054c3e6aa65780e6e224d8fa4"
+    },
+    {
+      "path": "assets/icon/AppIcon.appiconset/Contents.json",
+      "bytes": 208,
+      "sha256": "3c6addf3f20972a12a0c33e6f6fe9e0857a0bdb512dce5d59f4bd007b236c157"
+    },
+    {
+      "path": "design-assets/FONT-LICENSE.txt",
+      "bytes": 4386,
+      "sha256": "d6a309fcfb963d329a93baf9df66fa5f3c23a4be2b5f67edf24d6cafecde12ac"
+    },
+    {
+      "path": "design-assets/Manrope.ttf",
+      "bytes": 97580,
+      "sha256": "22b641671ae90871b9bc42235b2b42d9f05d0101404a659078d5ced98ee2ce8b"
+    },
+    {
+      "path": "design-assets/ManropeBold.ttf",
+      "bytes": 98000,
+      "sha256": "8a5b33e70d08364be31d5304c03947986315457a274aad119b911249cf7abfe6"
+    },
+    {
+      "path": "layouts/ipad-01-tap-think-find.html",
+      "bytes": 1713,
+      "sha256": "f0576e49056d911411381ca54dd8cefe31ca2f8a5e53d7554506604e4bd92702"
+    },
+    {
+      "path": "layouts/ipad-02-reveal-the-way.html",
+      "bytes": 1710,
+      "sha256": "449f3e904251572e4a880d2836a24c5f12be7f0f5231b7e8189ea1bc37b6875d"
+    },
+    {
+      "path": "layouts/ipad-03-small-parts-big-ideas.html",
+      "bytes": 1717,
+      "sha256": "1dbee09b2ad925890c0e729d170d71931a02db683bced0324b804ce61b79eb8b"
+    },
+    {
+      "path": "layouts/ipad-04-new-paths.html",
+      "bytes": 1720,
+      "sha256": "ba6f8a9bf29d8ca4c086608f4bb904d28950f624098b8101951bda5652263d1a"
+    },
+    {
+      "path": "layouts/iphone-01-tiny-pet-big-escape.html",
+      "bytes": 1768,
+      "sha256": "1c2686f0432a27dcb5c1a38b3a93487c39b0e2731c59690f76a17c73d9275fa4"
+    },
+    {
+      "path": "layouts/iphone-02-reveal-the-way.html",
+      "bytes": 1758,
+      "sha256": "e23a891202c700a3a2d092da25afa414c21e8c84898260330a6858eb426ec783"
+    },
+    {
+      "path": "layouts/iphone-03-think-beyond-floor.html",
+      "bytes": 1770,
+      "sha256": "a078ce0487d0c935d21caad21545e8217a363f9f3bf5f68d34791d5759105f36"
+    },
+    {
+      "path": "layouts/iphone-04-snack-time.html",
+      "bytes": 1763,
+      "sha256": "1278786c3640cc4d467d1c344ae0fdf714c5d9c5a039caf5bbac8534df595e63"
+    },
+    {
+      "path": "layouts/iphone-05-splash-personality.html",
+      "bytes": 1746,
+      "sha256": "f8eee09dc340575b9699ec4a1f1d3c6450aed91ccddc4bec07a43e747a505e22"
+    },
+    {
+      "path": "layouts/iphone-06-make-it-yours.html",
+      "bytes": 1739,
+      "sha256": "9d5bc417d3d0dbafc6b7c37d7458259125a38dd13f341d36d0ee0022a4347aa7"
+    },
+    {
+      "path": "metadata/en-US/copyright.txt",
+      "bytes": 22,
+      "sha256": "f94ed37a435dc80b8f32f9c4c25d4753f8e8b10bf49ec0302726f3c32764899a"
+    },
+    {
+      "path": "metadata/en-US/description.txt",
+      "bytes": 1290,
+      "sha256": "46fb87b84753e77617ea7f790e3a8ad70f230f97852aafc236079b1150f3325e"
+    },
+    {
+      "path": "metadata/en-US/game_subcategory.txt",
+      "bytes": 7,
+      "sha256": "ad6f4315181aea316e14d69fa21a309690ffe0fcbd8afe77eb05d26636374821"
+    },
+    {
+      "path": "metadata/en-US/keywords.txt",
+      "bytes": 90,
+      "sha256": "b27a0e28b5b8e5b7b14297d244fc5acbe832b373bc712e33ba556e48e57fc3a6"
+    },
+    {
+      "path": "metadata/en-US/listing.json",
+      "bytes": 2164,
+      "sha256": "1b10ca8b0ac1bc70e726fbc034e9ed72a662893aa0d7869d7c77e6ae914dd2cb"
+    },
+    {
+      "path": "metadata/en-US/locale.txt",
+      "bytes": 6,
+      "sha256": "46ba6aa9d3d54156cb3b8bee34671df456b047b63ed7bdce81f489e741ccbfc0"
+    },
+    {
+      "path": "metadata/en-US/marketing_url.txt",
+      "bytes": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "path": "metadata/en-US/name.txt",
+      "bytes": 25,
+      "sha256": "ac449b192cef600b8efb4dd0a55acb9e45792df41e38b9fd93ef1e92008e31cc"
+    },
+    {
+      "path": "metadata/en-US/primary_category.txt",
+      "bytes": 6,
+      "sha256": "190f7cf1bee2eddae0f05d26d35bf387a0f02337cf05bf331424693c92135a04"
+    },
+    {
+      "path": "metadata/en-US/privacy_policy_url.txt",
+      "bytes": 40,
+      "sha256": "50676a7e120b4e366fd07856f9d074f077f7e55d75015257a04f959d7afd87a7"
+    },
+    {
+      "path": "metadata/en-US/promotional_text.txt",
+      "bytes": 149,
+      "sha256": "dc6aa317aba415ec3d27b7ebb545447ce3e2fa1d4d63efb94beaa8211be4a143"
+    },
+    {
+      "path": "metadata/en-US/review-notes.template.txt",
+      "bytes": 1802,
+      "sha256": "56eac3ec906fe9401cdbf85c47877f9b3e76a1c4a4498edbf387cc11a2e2ca00"
+    },
+    {
+      "path": "metadata/en-US/secondary_game_subcategory.txt",
+      "bytes": 10,
+      "sha256": "6ab5b8575366bcca4cc528f0c521fa84d8dcbdfe4235c7d3d8f99c54f6cfc9b5"
+    },
+    {
+      "path": "metadata/en-US/subtitle.txt",
+      "bytes": 31,
+      "sha256": "f5d57b353ab76397299346d3c3d25e51247d9e5f4f7751c6baa80d21ed50f9bd"
+    },
+    {
+      "path": "metadata/en-US/support_url.txt",
+      "bytes": 49,
+      "sha256": "d6e365ebbef1cac818559b9f35b47cab76122490ead557fcac838d14b0b4fa59"
+    },
+    {
+      "path": "metadata/en-US/testflight-test-information.txt",
+      "bytes": 594,
+      "sha256": "3684159faa8b6625a587c929cc097a257914bd649ebe63e3ccfc9bb3dc0303ca"
+    },
+    {
+      "path": "metadata/en-US/whats_new.txt",
+      "bytes": 121,
+      "sha256": "607dcc4cad3dd4d2587fcd4e5fc02240a858637452d013f39fb8338ffa31ab01"
+    },
+    {
+      "path": "package-lock.json",
+      "bytes": 21580,
+      "sha256": "5eb425f2c1451797e810f0041def51c5c6ae31f0f28b0ed8319ecdc1a2406304"
+    },
+    {
+      "path": "package.json",
+      "bytes": 328,
+      "sha256": "56032b8146f9a64165bf2e7fd3e4f59476ade76ac3f2f30f51250c393aec829c"
+    },
+    {
+      "path": "qa/VISUAL-REVIEW.md",
+      "bytes": 1171,
+      "sha256": "644628e9f44176576a7071b48ce7994b4e08a83b1e6dc4736b320f6613479a31"
+    },
+    {
+      "path": "qa/contact-sheet.png",
+      "bytes": 591737,
+      "sha256": "1a0bc13eb761db72517c0bd0719d302ee2637a4e41513e79dc3d8b5d241044b9"
+    },
+    {
+      "path": "qa/handoff-checks.json",
+      "bytes": 775,
+      "sha256": "de46a94490a6ca19f65354a49fbdb72750f4c31940ba4531e1c102e3cf0a236c"
+    },
+    {
+      "path": "qa/render-audit.json",
+      "bytes": 4934,
+      "sha256": "2de4f4c97c42b00d0e1c3fa68361fce9b2f36cfd20ac96d39abe041212da0336"
+    },
+    {
+      "path": "qa/source-preflight.json",
+      "bytes": 2159,
+      "sha256": "fe936e59c5370b08f6fa95704113b621d21f0e726faa11564ea3e24048889a44"
+    },
+    {
+      "path": "qa/tool-environment.json",
+      "bytes": 153,
+      "sha256": "58876dde1e8296d33bfa8fbf872f735bb553ad0526f313011f5a80f0a3de1389"
+    },
+    {
+      "path": "qa/website-check.json",
+      "bytes": 193,
+      "sha256": "da8f26649691714e9a9c5133a9dbd5e687ebebe480c9a1a681e0144d70f940ec"
+    },
+    {
+      "path": "review.html",
+      "bytes": 3500,
+      "sha256": "199ccca105af317b8f6ba46ac1504d38836e7c987110501d8ae4f0689e0540f2"
+    },
+    {
+      "path": "screenshots/draft/ipad/01-tap-think-find.png",
+      "bytes": 810540,
+      "sha256": "d5c13ce7e4dde3bd3b9b51fb510bacbf87b815ab02afc27d8f4523c6fde0a626"
+    },
+    {
+      "path": "screenshots/draft/ipad/02-reveal-the-way.png",
+      "bytes": 948357,
+      "sha256": "21a0c8438aed1cb9537fe27db43c088e30f8c756f6c5f818b48f6e2e6335c2dc"
+    },
+    {
+      "path": "screenshots/draft/ipad/03-small-parts-big-ideas.png",
+      "bytes": 1099319,
+      "sha256": "bb6d01f1e78d90631ff47585adf74a8e32a39bb4295da85639de658475b05af4"
+    },
+    {
+      "path": "screenshots/draft/ipad/04-new-paths.png",
+      "bytes": 1174975,
+      "sha256": "1447e2a6269d3238664e2de32a5bce3605d3d1664c011ff14af09fe4f1baa352"
+    },
+    {
+      "path": "screenshots/draft/iphone/01-tiny-pet-big-escape.png",
+      "bytes": 744012,
+      "sha256": "75be9a26e4654fde585589cc621a8e4fea4cdc3642c61757b51e2067e854906e"
+    },
+    {
+      "path": "screenshots/draft/iphone/02-reveal-the-way.png",
+      "bytes": 903504,
+      "sha256": "65b29fa23901483356cb72a075ca0c0abab11fd3b67fe3291dc7d226ada8b37f"
+    },
+    {
+      "path": "screenshots/draft/iphone/03-think-beyond-floor.png",
+      "bytes": 891639,
+      "sha256": "4f8c3106ece07fa3b56b70fb995c4a8f43d29dfbda176d41572da9b97ce3d020"
+    },
+    {
+      "path": "screenshots/draft/iphone/04-snack-time.png",
+      "bytes": 736729,
+      "sha256": "71084a6df9b2b0e16e69cc99639d9b1b5284f0cf45301a836cfa12b77f961071"
+    },
+    {
+      "path": "screenshots/draft/iphone/05-splash-personality.png",
+      "bytes": 850149,
+      "sha256": "d99fc9b1124a87fff0515d46d372332b9c7f466801bc999264c3365af08d66b7"
+    },
+    {
+      "path": "screenshots/draft/iphone/06-make-it-yours.png",
+      "bytes": 843752,
+      "sha256": "8c7610eac7ae8bcf8cd535615e45cfeebfdac5b1973491ccda301ee664fe4fbb"
+    },
+    {
+      "path": "screenshots.json",
+      "bytes": 8276,
+      "sha256": "5658d6dc5c1a88c5d74f2d351732c52c7ee58a465a5c33af1b14c725da3c1194"
+    },
+    {
+      "path": "sources/icon-approved-c.png",
+      "bytes": 1764300,
+      "sha256": "9b37a41c6d8d0365139a92b08a2ce0574d2d0062b5c679f36c1f43a73f17ce22"
+    },
+    {
+      "path": "sources/ipad-01-tap-think-find.png",
+      "bytes": 603857,
+      "sha256": "85579dc450c38959cdd6fb1cba49839de92074a3471e70bc96338351ed8b689d"
+    },
+    {
+      "path": "sources/ipad-02-reveal-the-way.png",
+      "bytes": 742185,
+      "sha256": "4b89e4f9e09d8bd58fb7b1dc714af1af5f143f34914f859c15edfeb5db40b844"
+    },
+    {
+      "path": "sources/ipad-03-small-parts-big-ideas.png",
+      "bytes": 955536,
+      "sha256": "9846f616027374959a264e702e370e794c91f1b12c59e07bddbcceb91cd10712"
+    },
+    {
+      "path": "sources/ipad-04-new-paths.png",
+      "bytes": 979051,
+      "sha256": "610194d25456717d28fa4a5c046b1a4356169cdd33b1bae13f35eb0ef3b9837c"
+    },
+    {
+      "path": "sources/iphone-01-tiny-pet-big-escape.png",
+      "bytes": 369103,
+      "sha256": "48b12db2f2995c960844a39a71e3b108e267286ab958bbc8394e36c41adb4703"
+    },
+    {
+      "path": "sources/iphone-02-reveal-the-way.png",
+      "bytes": 461947,
+      "sha256": "e7cf28c514bb7025dd0f9550e322d6ebffcad725ba4f0fb5b2935e0bd06dd0e5"
+    },
+    {
+      "path": "sources/iphone-03-think-beyond-floor.png",
+      "bytes": 331646,
+      "sha256": "0b260ca2613a992112f473e32dbe96efb51c39aaf0a2f74ee5b33a9ce18c4385"
+    },
+    {
+      "path": "sources/iphone-04-snack-time.png",
+      "bytes": 320564,
+      "sha256": "a234bf68e3123159e1ee940b9441d714bb6c3f2acda7b3de80a8314718aa54c8"
+    },
+    {
+      "path": "sources/iphone-05-splash-personality.png",
+      "bytes": 369076,
+      "sha256": "43d7c861d129080da8c66f362a98da36bfbdc75b893e2aee37ca162a13f44d19"
+    },
+    {
+      "path": "sources/iphone-06-make-it-yours.png",
+      "bytes": 405466,
+      "sha256": "000afc72425b3b3d3578ea6e720a2de5c3f935b475d2c7e96cff5c0aa5ec1403"
+    },
+    {
+      "path": "technical/BUILD-RUNBOOK.md",
+      "bytes": 2900,
+      "sha256": "6a2bbdec7c8241c2de50c6bfb26c53eeca9d05cd87d60efb48898d9619b21a5f"
+    },
+    {
+      "path": "technical/ExportOptions.template.plist",
+      "bytes": 495,
+      "sha256": "06875e4d60bd4df31b48fac8474a9a6185b477a1bf2c04f3c41472e609534061"
+    },
+    {
+      "path": "technical/IOS-GAPS.md",
+      "bytes": 3964,
+      "sha256": "c1315219d0630329ac4b5daab50fab229a29d77e68b0cde0d701ca945bf6c90e"
+    },
+    {
+      "path": "technical/account-inputs.template.json",
+      "bytes": 971,
+      "sha256": "f5e99f66cd53d2370792fd2e4d4356ffa61b81d6da686ddc222b04685274d5aa"
+    },
+    {
+      "path": "technical/source-revision.json",
+      "bytes": 371,
+      "sha256": "cce0eee2047539a40dfd3abeef016788c24aa082b9fcc53eb0df2831b894e850"
+    },
+    {
+      "path": "tools/package.py",
+      "bytes": 1732,
+      "sha256": "a7fd6c86729e29118cee3b7d657c3adab51799932237a703cd914afb5362cf83"
+    },
+    {
+      "path": "tools/preflight.py",
+      "bytes": 2823,
+      "sha256": "cda0a6f6f5a2277322794c1173e7dc0dfc9e7e66933b1578bb5f8a3fef0e6606"
+    },
+    {
+      "path": "tools/render.cjs",
+      "bytes": 9067,
+      "sha256": "670df133f1f9fa5f7358f031c8f79674042532dd927b5e365a0423e434dec60e"
+    },
+    {
+      "path": "tools/verify-package.py",
+      "bytes": 2272,
+      "sha256": "79b7e664f819a058e752d920a26f066b0e90e719a7842a0c0cd2eca59325ee9f"
+    }
+  ]
+}

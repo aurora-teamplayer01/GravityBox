@@ -1,5 +1,7 @@
 # Alien Pet: Escape Puzzle
 
+**App Store handoff, 16/11/2026:** [Kế hoạch và bộ bàn giao iPhone/iPad](Docs/Marketing/AlienPet/AppStore/2026-11-16/START-HERE.md) · [Xem icon và screenshot layouts](Docs/Marketing/AlienPet/AppStore/2026-11-16/review.html). Includes English metadata, approved icon C, 10 draft screenshot layouts, portable rendering/validation tools and iOS release/QA instructions. Screenshot sources still need iOS replacement; native services/IAP, signing and TestFlight gates remain pending. This is not an App Store-ready binary.
+
 **Public identity, 28/10/2026:** the game is **Alien Pet: Escape Puzzle**; **COghe** is the creature's name. Main Menu uses an “Alien Pet” / “Escape Puzzle” lockup; the premium upgrade is “Alien Pet Plus”. The approved creature icon and Glass C art remain. Android/iOS builds use the new display name. Existing bundle IDs, store SKUs, analytics IDs, resource paths and save keys stay unchanged. Historical documents below retain the name used when they were written. [Runtime UI review](Docs/Verification/AlienPetBrand/review.html) · [Tài nguyên ads Alien Pet](Docs/Marketing/AlienPet/AdsResources/index.html).
 
 **Playtest refinement, 21/10/2026:** Speedy để lại vệt nước có ánh sao nhỏ; Clever đọc sách và hiện ký tự toán; Flower crown nhiều màu. Màn F1 (cũ 66) thay N29 tại 15, catalog còn 67 màn, giữ sáu Boss và save. Đồng bộ bo góc khi khối đỗ, bỏ nút gọi thang thừa ở 19, bỏ mái chìa khó đọc ở Boss 21, làm rõ bậc 3–6–9–12 cm ở 31. [Thiết kế và kiểm chứng](Docs/Verification/COghePlaytestRefinement/README.md).

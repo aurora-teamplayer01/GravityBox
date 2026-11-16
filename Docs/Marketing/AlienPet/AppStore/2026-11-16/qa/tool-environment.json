@@ -1,0 +1,6 @@
+{
+  "node": "v26.0.0",
+  "python": "Python 3.14.5",
+  "rendering": "Headless Chromium/Playwright; local HTML assets only",
+  "native_tests_run": false
+}

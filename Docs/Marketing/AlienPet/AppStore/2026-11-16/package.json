@@ -1,0 +1,14 @@
+{
+  "name": "alien-pet-appstore-handoff",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "render": "node tools/render.cjs",
+    "render:final": "node tools/render.cjs --final",
+    "verify": "python3 tools/verify-package.py --assets"
+  },
+  "dependencies": {
+    "sharp": "0.35.5",
+    "playwright": "1.62.1"
+  }
+}

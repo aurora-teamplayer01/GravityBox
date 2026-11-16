@@ -1,0 +1,9 @@
+Open START-HERE.md and RELEASE-PLAN.md in this handoff. Work on the GravityBox/NewGraphic source at the documented commit or audit newer changes first. The user wants Alien Pet: Escape Puzzle prepared for iPhone/iPad App Store release on this signed-in Mac.
+
+Preserve gameplay, Glass C art and the approved icon C. Preserve unknown/under13 no-ads/no-Analytics, teen restrictions and adult Analytics opt-in. Follow repository AGENTS.md.
+
+First run tools/preflight.py against the repo, resolve technical/IOS-GAPS.md, configure legitimate iOS Firebase/AdMob IDs and verify real commerce or obtain the owner's no-commerce decision. Do not bypass COGHE_STORE guards or ship mock purchases. Source Apple team/contact/account values from the authorized local account; never commit private keys or tokens.
+
+Build Spatial via COGHE_STORE=1, Archive using the correct distribution team, validate and upload to TestFlight. Test the checklist on iPhone and iPad. Capture native iOS screenshots, update screenshots.json provenance/dimensions/build info, render --final and visually verify. Current screenshots/draft are Android/Unity references with deliberate watermarks, not upload assets.
+
+Complete App Store metadata using metadata/en-US, truthful privacy/rating/export compliance and real reviewer contact. Check the public support/privacy website in external Safari because automated checks returned 403. Propose free/US/manual-release defaults, confirm any differing business choices with the owner. Do not claim the game is ready or already submitted until native evidence and actual Console results support it.
