@@ -87,15 +87,23 @@ namespace GravityBox.Tests
         {
             yield return Load("S2");ticksPerFrame=16;var report=new StringBuilder();
             var drop=new List<Outcome>();
-            yield return Stage("ledge to the floor left of the crate",new Shot[0],Range(-80,10,10).ToArray(),F(.05f,.15f,.25f,.35f),o=>!o.Lost&&o.Body.y<-.23f&&o.Body.x<-.115f&&o.Body.x>-.18f,drop,report);
+            yield return Stage("ledge to the floor left of the crate",new Shot[0],Range(-70,10,10).ToArray(),Range(.05f,.4f,.05f).ToArray(),o=>!o.Lost&&o.Body.y<-.23f&&o.Body.x<-.09f&&o.Body.x>-.18f,drop,report);
             if(drop.Count==0)yield break;
             var ram=new List<Outcome>();var p1=new[]{drop[0].Shot};
-            yield return Stage("ram the crate",p1,Range(-5,25,5).ToArray(),Range(.2f,1f,.1f).ToArray(),o=>!o.Lost&&o.Crate>=.074f,ram,report);
+            yield return Stage("ram the crate",p1,Range(-5,25,5).ToArray(),Range(.2f,1f,.1f).ToArray(),o=>!o.Lost&&o.Crate>=.054f,ram,report);
             if(ram.Count==0)yield break;
             var strip=new List<Outcome>();var p2=new[]{drop[0].Shot,ram[0].Shot};
-            yield return Stage("over the crate, past the curtain",p2,Range(40,90,5).ToArray(),Range(.4f,1f,.1f).ToArray(),o=>o.Won,strip,report);
+            yield return Stage("over the crate, past the curtain",p2,Range(40,90,5).ToArray(),Range(.4f,1f,.1f).ToArray(),o=>o.Won||!o.Lost&&o.Body.x>.17f,strip,report);
+            var stripExit=new List<Outcome>();
             if(strip.Count>0&&!strip[0].Won)
-            {var exit=new List<Outcome>();yield return Stage("strip to the vent",new[]{drop[0].Shot,ram[0].Shot,strip[0].Shot},Range(60,120,10).ToArray(),Range(.2f,.8f,.1f).ToArray(),o=>o.Won,exit,report);}
+            {var exit=stripExit;yield return Stage("strip to the vent",new[]{drop[0].Shot,ram[0].Shot,strip[0].Shot},Range(60,120,10).ToArray(),Range(.2f,.8f,.1f).ToArray(),o=>o.Won,exit,report);}
+            if(strip.Count>0)
+            {
+                // the chosen sequence again from a fresh scene load (the solve tests start there, the grid from Retry)
+                var chosen=new List<Shot>{drop[0].Shot,ram[0].Shot,strip[0].Shot};if(!strip[0].Won&&stripExit.Count>0)chosen.Add(stripExit[0].Shot);
+                for(int k=0;k<2;k++){yield return Load("S2");ticksPerFrame=16;foreach(var s in chosen){var o=new Outcome();yield return Shoot(s,o);report.AppendLine($"  fresh load #{k}: {s} -> {State()}");if(game.Owner.Lost||game.Owner.Completed)break;}}
+                File.WriteAllText($"{Out}/search-{game.Definition.Id}.txt",report.ToString());
+            }
             var back=new List<Outcome>();
             yield return Stage("back up onto the ledge",p2,Range(110,160,10).ToArray(),Range(.4f,1f,.15f).ToArray(),o=>!o.Lost&&o.Body.y>-.08f&&o.Body.x<-.17f,back,report);
             if(back.Count>0)

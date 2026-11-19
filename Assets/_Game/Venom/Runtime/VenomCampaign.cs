@@ -531,7 +531,7 @@ namespace GravityBox.Venom
                 }
             }
             if(Matter.EscapedCount==32)
-            {if(Slime==null)Progress.Win(Definition);Owner.SetCampaignOutcome(true);advanceAt=Matter.SimulationTime+VenomCelebration.Duration;}
+            {if(Slime==null)Progress.Win(Definition);Owner.SetCampaignOutcome(true);if(Slime!=null)Owner.Celebration.Reset();/* the trial keeps its room and HUD on screen */advanceAt=Matter.SimulationTime+VenomCelebration.Duration;}
         }
         public bool ExitAssisting(int particle)
             =>ExitAssisting(particle,FinalExitAvailable);

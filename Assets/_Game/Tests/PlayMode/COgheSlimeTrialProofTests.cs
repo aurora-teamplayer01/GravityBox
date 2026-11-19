@@ -21,7 +21,7 @@ namespace GravityBox.Tests
         // ---- found by SlimeSearchS1/S2/S3 (see the dossiers) --------------------------------------------------------
         public static readonly Vector2[] S1Direct={new Vector2(65,.95f)};
         public static readonly Vector2[] S1MissThenFix={new Vector2(40,.55f),new Vector2(90,.7f)};
-        public static readonly Vector2[] S2Solution={new Vector2(-40,.25f),new Vector2(20,.3f),new Vector2(45,.6f)};
+        public static readonly Vector2[] S2Solution={new Vector2(-30,.25f),new Vector2(15,.3f),new Vector2(65,.9f),new Vector2(70,.5f)};
         public static readonly Vector2[] S3WayA={new Vector2(75,.6f),new Vector2(-80,.2f)};
         public static readonly Vector2[] S3WayB={new Vector2(185,.3f),new Vector2(5,.3f),new Vector2(0,.35f)};
 

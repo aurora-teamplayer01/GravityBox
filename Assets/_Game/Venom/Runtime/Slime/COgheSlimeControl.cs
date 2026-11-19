@@ -80,7 +80,7 @@ namespace GravityBox.Venom
         public void Initialize(VenomCampaign owner){game=owner;BuildPresentation();ResetState();}
         public void ResetState()
         {
-            Pulling=false;pending=null;pendingRecord=null;Flying=false;launchedAt=landingUntil=-10;Power=0;PullVector=PreviewVelocity=Vector3.zero;
+            Pulling=false;pending=null;pendingRecord=null;Flying=false;launchedAt=landingUntil=-10;restingGripless=0;Power=0;PullVector=PreviewVelocity=Vector3.zero;
             Toast=null;toastUntil=0;History.Clear();Launches=Refusals=Cancels=Landings=0;LastCancel=null;
         }
 
@@ -137,7 +137,11 @@ namespace GravityBox.Venom
         // ---- simulation (called by VenomCampaign.Step after Motion.Step, fixed dt) -------------------------------
         public int Anchor=>game.Motion.Selected;
         public int GripCount(){CollectGroup();int n=0;foreach(int i in group)if(game.Motion.HasGrip(i))n++;return n;}
-        public bool Anchored=>game!=null&&GripCount()>=2;
+        /// <summary>May launch: at least two gripping particles, or (anti-softlock) the body has rested still on at least
+        /// two contacts for <see cref="RestingLaunchSeconds"/> without grip (wedged against a slick face).</summary>
+        public bool Anchored=>game!=null&&(GripCount()>=2||restingGripless>=RestingLaunchSeconds);
+        public const float RestingLaunchSeconds=1f;
+        private float restingGripless;
         public Vector3 Centre()=>game.Motion.Centre(Anchor);
         private void CollectGroup()
         {
@@ -151,6 +155,9 @@ namespace GravityBox.Venom
             int grips=0;Vector3 c=Vector3.zero,v=Vector3.zero;
             foreach(int i in group){if(game.Motion.HasGrip(i))grips++;c+=game.Matter.Bodies[i].position;v+=game.Matter.Bodies[i].linearVelocity;}
             c/=group.Count;v/=group.Count;
+            int contacts=0;foreach(int i in group)if(game.Motion.Support(i,out _,out _,out _))contacts++;
+            restingGripless=grips<2&&contacts>=2&&v.magnitude<.05f?restingGripless+dt:0;
+            if(restingGripless>=RestingLaunchSeconds)grips=Mathf.Max(grips,2);
             if(float.IsNaN(c.x)||float.IsNaN(c.y)||float.IsNaN(c.z)){Debug.LogError("SLIME NaN body centre");game.Fail("Lỗi vật lý (NaN). Thử lại.");return;}
             if(pending.HasValue)
             {
@@ -333,7 +340,8 @@ namespace GravityBox.Venom
             if(show)
             {
                 Vector3 aside=PreviewVelocity.sqrMagnitude>0?Vector3.Cross(game.Root.forward,PreviewVelocity.normalized):Vector3.up;if(Vector3.Dot(aside,Vector3.up)<0)aside=-aside;
-                powerText.transform.position=c+aside*.075f+Vector3.back*.04f;powerText.transform.rotation=game.Owner.View.transform.rotation;powerText.characterSize=17*hudUnit*pixelWorld*10f/powerText.fontSize/.75f;
+                Vector3 label=game.Root.InverseTransformPoint(c+aside*.075f);label.x=Mathf.Clamp(label.x,RoomMin.x+.06f,RoomMax.x-.06f);label.y=Mathf.Clamp(label.y,RoomMin.y+.03f,RoomMax.y-.03f);
+                powerText.transform.position=game.Root.TransformPoint(label)+Vector3.back*.04f;powerText.transform.rotation=game.Owner.View.transform.rotation;powerText.characterSize=17*hudUnit*pixelWorld*10f/powerText.fontSize/.75f;
                 powerText.text=PreviewVelocity.sqrMagnitude>0?(anchored?$"{Power*100:F0}%":"chưa bám"):"kéo xa hơn";powerText.color=tint;
             }
             if(aim)

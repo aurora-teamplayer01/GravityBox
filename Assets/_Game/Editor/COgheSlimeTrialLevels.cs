@@ -159,8 +159,8 @@ namespace GravityBox.Editor
   static void SlimeS2(ExpansionContext c,COgheSlimeControl control)
   {
    c.Spawn=new Vector3(-.24f,-.055f,0);c.Exit=new Vector3(.30f,-.06f,0);c.Outward=Vector3.right;SlimeShell(c);
-   NextPlinth(c,"Start ledge",new Vector3(-.24f,-.20f,0),new Vector3(.12f,.20f,.20f));
-   var crate=SlimeCrate(c,"Crate",new Vector3(-.02f,-.268f,0),Vector3.right,.08f,.06f);   // lower than the slime: a ram too high or too hard rides over it into the laser
+   NextPlinth(c,"Start ledge",new Vector3(-.24f,-.20f,0),new Vector3(.12f,.20f,.20f));   // slick sides: a drop slides to the floor (a body wedged gripless against one may still launch: COgheSlimeControl.RestingLaunchSeconds)
+   var crate=SlimeCrate(c,"Crate",new Vector3(.00f,-.268f,0),Vector3.right,.06f,.06f);   // lower than the slime: a ram too high or too hard rides over it into the laser
    var pad=SlimePad(c,"Laser pad",crate,new Vector3(.06f,-.2975f,0));
    var laser=new GameObject("Laser curtain",typeof(COgheSlimeLaser)).GetComponent<COgheSlimeLaser>();laser.transform.SetParent(c.Root,false);
    laser.Pad=pad;laser.Centre=new Vector3(.17f,.10f,0);laser.HalfSize=new Vector3(.004f,.40f,.10f);
