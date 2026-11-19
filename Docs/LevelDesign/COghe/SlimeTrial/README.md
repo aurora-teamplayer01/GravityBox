@@ -45,3 +45,14 @@ không mở khóa, không Personality/Intelligence/ProductUI/quảng cáo (defin
 | Scene / definition / mesh | `Assets/_Game/Venom/SlimeTrial/`, `Art/DayLab/Meshes/SlimeTrial/`, `Art/DayLab/Meshes/SpatialGlass/SlimeS1–S3/`; 3 scene thêm cuối `EditorBuildSettings`. |
 | Test | `Assets/_Game/Tests/PlayMode/COgheSlimeTrialTests.cs` (harness), `…ProofTests.cs`, `…Search.cs`, `…Clips.cs` |
 | Bằng chứng | `Artifacts/SlimeTrial/` (không commit: search, solves, wander, layout, clips) và các file trong thư mục này |
+
+## Kiểm chứng cuối (19/11/2026, Mac M-series, Unity 6000.3.19f1 batch)
+
+| Bộ | Commit | Kết quả |
+| --- | --- | --- |
+| EditMode đầy đủ | `a1ebb64e` | 18/18 đạt |
+| PlayMode đầy đủ (cả repo) | `a1ebb64e` | 1097 ca: 1030 đạt, 1 lỗi, 66 bỏ qua (Explicit), 64,5 phút |
+| Lỗi duy nhất: `COgheProductUITests.FlowerCrownKeepsItsOwnColourPalette` | — | môi trường: test ghi PNG vào `Artifacts/COghePlaytestRefinement/` mà không tạo thư mục (file test không đổi so với `b8b69f03`, không có `CreateDirectory`); tạo thư mục rồi chạy lại ở `8e5522bc`: đạt |
+| 30 test Slime Trial (không Explicit) sau review Codex | `8e5522bc` | 30/30 đạt (solve 60/30 fps từ load mới và sau THỬ LẠI cho S1, S2, S3 A, S3 B; huỷ; huỷ giữa thả và tick; lỗ thoát vs xuyên kính; retry khôi phục; S3 cần một trong hai đường; layout 720×1280/720×1612; chuột + touch thật; wander 3×40 cú) |
+
+Review độc lập của Codex (`~/.buzz/WORK_LOGS/SLIME_TRIAL_REVIEW_2026_11_19.md`): 2 lỗi P2 + 1 gate, đã sửa ở `8e5522bc`.
