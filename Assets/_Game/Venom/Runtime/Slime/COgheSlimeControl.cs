@@ -207,10 +207,16 @@ namespace GravityBox.Venom
             {
                 Vector3 p=game.Root.InverseTransformPoint(game.Matter.Bodies[i].position);
                 bool outside=p.x<RoomMin.x-.03f||p.y<RoomMin.y-.03f||p.z<RoomMin.z-.03f||p.x>RoomMax.x+.03f||p.y>RoomMax.y+.03f||p.z>RoomMax.z+.03f;
-                if(outside&&Vector3.Distance(game.Matter.Bodies[i].position,game.Owner.Outlet.position)>.12f)
+                // tissue leaving through the vent: a fast entry can carry a particle through the bore before the exit
+                // logic records its escape (it then fails the level as "out of the box"; found by the S2 search)
+                if(outside&&ExitingThroughVent(game.Matter.Bodies[i].position))continue;
+                if(outside)
                 {Debug.LogWarning($"SLIME OUT OF BOX particle {i} at {p:F3}");game.Fail("Slime văng ra ngoài hộp. Thử lại.");return;}
             }
         }
+        /// <summary>Outside the outlet's pane, on its outward side and within 25 cm of the vent: leaving by the exit.</summary>
+        public bool ExitingThroughVent(Vector3 world)
+        {var outlet=game.Owner.Outlet;return outlet.InverseTransformPoint(world).z>-.01f&&Vector3.Distance(world,outlet.position)<.25f;}
         private void Wobble()
         {
             // a refused release: a visible shiver of the airborne body (zero net momentum, no change of course)

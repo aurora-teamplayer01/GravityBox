@@ -148,8 +148,9 @@ namespace GravityBox.Tests
         {
             yield return Load(key);var rng=new System.Random(seed);var log=new StringBuilder();int fails=0,lasers=0,stuck=0,wins=0;
             float outside=0;
-            perTick=()=>{foreach(var b in game.Matter.Bodies){var p=Local(b.position);if(float.IsNaN(p.x))outside=999;
-                if(!game.Owner.Completed&&(Mathf.Abs(p.x)>.33f&&Vector3.Distance(b.position,game.Owner.Outlet.position)>.12f||p.y<-.33f||p.y>.53f||Mathf.Abs(p.z)>.13f))outside=Mathf.Max(outside,p.magnitude);}};
+            perTick=()=>{for(int i=0;i<game.Matter.Bodies.Length;i++){var b=game.Matter.Bodies[i];var p=Local(b.position);if(float.IsNaN(p.x))outside=999;
+                if(game.Owner.Completed||game.Matter.Escaped[i]||slime.ExitingThroughVent(b.position))continue;
+                if(Mathf.Abs(p.x)>.33f||p.y<-.33f||p.y>.53f||Mathf.Abs(p.z)>.13f)outside=Mathf.Max(outside,p.magnitude);}};
             ticksPerFrame=8;
             for(int i=0;i<launches;i++)
             {
