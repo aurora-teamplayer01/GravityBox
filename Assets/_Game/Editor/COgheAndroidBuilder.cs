@@ -20,6 +20,11 @@ namespace GravityBox.Editor
         public static void BuildSpatial() => BuildScenes(VenomCampaignBuilder.SpatialScenePaths(),
             "Builds/SpatialLab/Android/COghe-Spatial.apk");
 
+        /// <summary>Slime Trial S1–S3 only (branch claude/slime-physics-trial): its own app id, installs beside the game.</summary>
+        [MenuItem("Gravity Box/COghe/Slime Trial/Build Android test APK")]
+        public static void BuildSlimeTrial() => BuildScenes(new[]{VenomCampaignBuilder.SlimeScenePath("S1"),VenomCampaignBuilder.SlimeScenePath("S2"),VenomCampaignBuilder.SlimeScenePath("S3")},
+            "Builds/SlimeTrial/Android/COghe-SlimeTrial.apk","com.gravityboxlab.venom.slimetrial","Slime Trial");
+
         [MenuItem("Gravity Box/COghe/NewGraphic/Build Android A-B test APK")]
         public static void BuildNewGraphic() => BuildScenes(VenomCampaignBuilder.ViewCampaignScenePaths(), "Builds/NewGraphic/Android/COghe-NewGraphic.apk");
 
