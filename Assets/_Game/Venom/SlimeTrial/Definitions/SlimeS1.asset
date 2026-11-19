@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec8b825fd80e74746bf8f0991fd6d4f3, type: 3}
+  m_Name: SlimeS1
+  m_EditorClassIdentifier: GravityBox.Venom::GravityBox.Venom.VenomCampaignDefinition
+  Id: coghe.slime.s1
+  Title: "S1 \xB7 Nh\xE0 t\xF9 k\xEDnh"
+  Lesson: "B\u1EADt slime t\u1EDBi l\u1ED7 th\xF4ng gi\xF3 tr\xEAn cao."
+  Order: 1
+  CanRotate: 0
+  Boss: 0
+  Passive: 0
+  ViewOnly: 0
+  PreferGripForExit: 0
+  CameraEuler: {x: 6, y: 0, z: 0}
+  ViewRadius: 0.48
+  CameraZones: []
+  InitialCameraZone: -1
+  SceneSequence:
+  - COgheSlimeS1
+  - COgheSlimeS2
+  - COgheSlimeS3
+  ProgressKey: coghe.slime.trial

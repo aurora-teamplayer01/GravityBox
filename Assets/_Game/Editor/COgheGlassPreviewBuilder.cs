@@ -31,6 +31,7 @@ namespace GravityBox.Editor
         {
             string id=game.Definition.Id??string.Empty,tail=id.Substring(id.LastIndexOf('.')+1);
             if(id.Contains(".plus."))return "Plus"+tail.ToUpperInvariant();
+            if(id.StartsWith("coghe.slime.",StringComparison.Ordinal))return "Slime"+tail.ToUpperInvariant();   // Slime Trial: never a campaign LevelNN folder
             return int.TryParse(tail,out int n)?$"Level{n:00}":$"Level{game.Definition.Order:00}";
         }
         public static void ApplyGlassPreview(VenomCampaign game, bool spatial=false)

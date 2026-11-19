@@ -707,5 +707,14 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Game/Venom/SpatialCampaign/COgheSpatialPlusF3.unity
     guid: f23b79e90e9e649cda1c33f9ed16e0d9
+  - enabled: 1
+    path: Assets/_Game/Venom/SlimeTrial/COgheSlimeS1.unity
+    guid: 551fdfa4ed9c0436b9133d8f1fca1659
+  - enabled: 1
+    path: Assets/_Game/Venom/SlimeTrial/COgheSlimeS2.unity
+    guid: 9a2b2015ba98e4a6c8c5e0d8a53aacf9
+  - enabled: 1
+    path: Assets/_Game/Venom/SlimeTrial/COgheSlimeS3.unity
+    guid: dfc0de4751719402cb5f228a733f43d5
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

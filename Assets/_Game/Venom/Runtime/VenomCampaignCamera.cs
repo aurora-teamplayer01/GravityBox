@@ -91,6 +91,7 @@ namespace GravityBox.Venom
         // selectors and above the rotation legend/fragment/action controls.
         public Rect UsableRect(int width,int height,Rect safeArea)
         {
+            if(game.Slime!=null)return game.Slime.FramingRect(safeArea);
             if(game.ProductUI!=null)
             {
                 float unit=Mathf.Min(safeArea.width/360f,safeArea.height/640f);

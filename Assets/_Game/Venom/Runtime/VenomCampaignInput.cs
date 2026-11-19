@@ -25,7 +25,7 @@ namespace GravityBox.Venom
         {
             mouseSamples.Clear();eventMouseDown=Mouse.current!=null&&Mouse.current.leftButton.isPressed;
             mouseNeedsRelease=eventMouseDown;mouseOwnsPointer=false;
-            pointerDown=pointerMoved=false;touchFinger=-1;
+            pointerDown=pointerMoved=false;touchFinger=-1;Slime?.CancelPull("pointer reset");
             viewTouchSuppressed=true;viewNeedAllReleased=true;viewPinchDistance=0;viewGestureBlocked=false;
             if(Owner!=null&&Owner.Rotation!=null)Owner.Rotation.EndDrag();
         }
@@ -33,7 +33,7 @@ namespace GravityBox.Venom
         {
             mouseSamples.Clear();eventMouseDown=Mouse.current!=null&&Mouse.current.leftButton.isPressed;
             mouseNeedsRelease=eventMouseDown;
-            if(mouseOwnsPointer){pointerDown=pointerMoved=false;Owner.Rotation.EndDrag();}
+            if(mouseOwnsPointer){pointerDown=pointerMoved=false;Owner.Rotation.EndDrag();Slime?.CancelPull("touch took over");}
             mouseOwnsPointer=false;
         }
         private void ObserveCampaignMouse(InputEventPtr inputEvent,InputDevice device)

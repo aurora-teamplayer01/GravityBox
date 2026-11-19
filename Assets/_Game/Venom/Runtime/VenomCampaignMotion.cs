@@ -135,6 +135,15 @@ namespace GravityBox.Venom
             }
         }
         public bool Busy(int anchor)=>Get(anchor)?.Holding??false;
+        /// <summary>Slime Trial launch (COgheSlimeControl): the group lets go of every surface it touches for
+        /// <paramref name="seconds"/> (as after a peel), so adhesion and braking cannot swallow the launch impulse. Another
+        /// surface grips it at once; the old ones again after the delay.</summary>
+        public void Detach(int anchor,float seconds)
+        {
+            int group=game.Matter.Groups[anchor];var released=new HashSet<VenomSurfacePatch>();
+            for(int i=0;i<32;i++)if(game.Matter.Groups[i]==group&&support[i]!=null)released.Add(support[i]);
+            for(int i=0;i<32;i++)if(game.Matter.Groups[i]==group){detachedUntil[i]=game.Matter.SimulationTime+seconds;detachedSurfaces[i]=released;gripStrain[i]=0;}
+        }
         // A grip overload peeled this group off its surface in the last .45 s. A peel drops the group's order on its
         // own; mechanisms walking a body to a handle use this to tell it from the player giving a new command.
         public bool Peeled(int anchor)

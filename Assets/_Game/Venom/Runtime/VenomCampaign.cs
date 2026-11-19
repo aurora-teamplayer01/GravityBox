@@ -94,6 +94,8 @@ namespace GravityBox.Venom
         public COghePersonality Personality {get;private set;}
         public bool InputLocked=>Personality!=null&&Personality.LocksInput;
         public COgheOnboarding Onboarding {get;private set;}
+        /// <summary>Slime Trial levels only (pull-and-release launch replaces taps): COgheSlimeControl.</summary>
+        public COgheSlimeControl Slime {get;private set;}
         private GUIStyle title,body,button,small;
         private VenomHabitat habitat;
         private COgheDayLabPresentation dayLab;
@@ -113,6 +115,7 @@ namespace GravityBox.Venom
             Feedback=GetComponent<COgheControlFeedback>();
             if(Feedback==null)Feedback=gameObject.AddComponent<COgheControlFeedback>();
             Feedback.Initialize(this);
+            if(COgheSlimeControl.Applies(this)){Slime=GetComponent<COgheSlimeControl>();if(Slime==null)Slime=gameObject.AddComponent<COgheSlimeControl>();Slime.Initialize(this);if(dayLab!=null)dayLab.enabled=false;}
             if(COghePersonality.Applies(this)){Personality=gameObject.AddComponent<COghePersonality>();Personality.Initialize(this);}
             InitializeMechanisms();CameraRig=new VenomCampaignCamera(this);EnhancedTouchSupport.Enable();
             if(COgheIntelligence.Applies(this)){Intelligence=gameObject.AddComponent<COgheIntelligence>();Intelligence.Initialize(this);}
@@ -155,7 +158,7 @@ namespace GravityBox.Venom
             foreach(var body in Matter.Bodies)body.transform.SetPositionAndRotation(body.position,body.rotation);
             foreach(var p in Props)p.Body.transform.SetPositionAndRotation(p.Body.position,p.Body.rotation);
             Physics.SyncTransforms();Motion.Reset();Feedback.ResetFeedback();
-            Onboarding?.ResetObservation();Personality?.ResetState();
+            Onboarding?.ResetObservation();Personality?.ResetState();Slime?.ResetState();
             Intelligence?.ResetForLevel(); // Fresh mechanism counters and lesson progress for this attempt.
         }
         private void ResetBody(Rigidbody body,Vector3 position)
@@ -216,6 +219,7 @@ namespace GravityBox.Venom
             if(Owner.Completed){Owner.Celebration.Step();return;}
             Impact=Mathf.MoveTowards(Impact,0,dt*3);CatchPulse=Mathf.MoveTowards(CatchPulse,0,dt*2);
             using(MotionStepMarker.Auto())Motion.Step(dt);
+            Slime?.Step(dt);
             using(IntelligenceStepMarker.Auto())if(!Home)Intelligence?.Step(dt);
             if(!Home)
             {
@@ -527,7 +531,7 @@ namespace GravityBox.Venom
                 }
             }
             if(Matter.EscapedCount==32)
-            {Progress.Win(Definition);Owner.SetCampaignOutcome(true);advanceAt=Matter.SimulationTime+VenomCelebration.Duration;}
+            {if(Slime==null)Progress.Win(Definition);Owner.SetCampaignOutcome(true);advanceAt=Matter.SimulationTime+VenomCelebration.Duration;}
         }
         public bool ExitAssisting(int particle)
             =>ExitAssisting(particle,FinalExitAvailable);
@@ -598,12 +602,13 @@ namespace GravityBox.Venom
             SceneManager.LoadScene(prefix+number.ToString("00"));
         }
         private bool PlayArea(Vector2 p)
-        {return ProductUI!=null?ProductUI.AllowsWorldPointer(p):CameraRig.AllowsPointer(p,Screen.width,Screen.height);}
+        {return Slime!=null?Slime.AllowsPointer(p):ProductUI!=null?ProductUI.AllowsWorldPointer(p):CameraRig.AllowsPointer(p,Screen.width,Screen.height);}
         public void CancelPointer()=>ResetPointerInput();
-        public void BeginPointer(Vector2 p){if(!Owner.CanControl||InputLocked||!PlayArea(p))return;ProductUI?.OnGameplayInteraction();LastInputTime=Matter.SimulationTime;pointerDown=true;pointerMoved=false;pointerConsumed=false;pointerOnBody=OnBody(p);pointerDownAt=Matter.SimulationTime;pointerStart=pointerPrevious=p;}
+        public void BeginPointer(Vector2 p){if(!Owner.CanControl||InputLocked||!PlayArea(p))return;if(Slime!=null){LastInputTime=Matter.SimulationTime;pointerDown=Slime.BeginPull(p);pointerMoved=true;return;}ProductUI?.OnGameplayInteraction();LastInputTime=Matter.SimulationTime;pointerDown=true;pointerMoved=false;pointerConsumed=false;pointerOnBody=OnBody(p);pointerDownAt=Matter.SimulationTime;pointerStart=pointerPrevious=p;}
         public void MovePointer(Vector2 p)
         {
             if(!pointerDown)return;
+            if(Slime!=null){Slime.MovePull(p);return;}
             if(!pointerMoved&&(p-pointerStart).magnitude>10*Screen.width/540f){pointerMoved=true;if(Definition.CanRotate&&!Cutting)Owner.Rotation.BeginDrag();}
             if(pointerMoved&&(Home&&ProductUI!=null||Definition.ViewOnly||Definition.CanRotate&&!Cutting))Personality?.NoteCameraMove();   // a selfie (Emotion)
             if(pointerMoved&&Home&&ProductUI!=null)ProductUI.OrbitHome(p.x-pointerPrevious.x);   // Home turns like a level
@@ -611,7 +616,7 @@ namespace GravityBox.Venom
             else if(pointerMoved&&Definition.CanRotate&&!Cutting)Owner.Rotation.Drag((p-pointerPrevious)/Mathf.Min(Screen.width,Screen.height),Owner.View.transform.up,Owner.View.transform.right);
             pointerPrevious=p;
         }
-        public void EndPointer(Vector2 p){MovePointer(p);if(pointerDown&&!pointerMoved&&!pointerConsumed){Personality?.NoteTap();TouchPoint(p);}pointerDown=false;Owner.Rotation.EndDrag();}
+        public void EndPointer(Vector2 p){if(Slime!=null){if(pointerDown)Slime.EndPull(p);pointerDown=false;return;}MovePointer(p);if(pointerDown&&!pointerMoved&&!pointerConsumed){Personality?.NoteTap();TouchPoint(p);}pointerDown=false;Owner.Rotation.EndDrag();}
         private void Update()
         {
             if(Owner==null)return;
@@ -643,7 +648,7 @@ namespace GravityBox.Venom
                     if(touchFinger<0&&t.phase==UnityEngine.InputSystem.TouchPhase.Began){touchFinger=t.finger.index;BeginPointer(t.screenPosition);}
                     if(t.finger.index!=touchFinger)continue;
                     if(t.phase==UnityEngine.InputSystem.TouchPhase.Ended){EndPointer(t.screenPosition);touchFinger=-1;}
-                    else if(t.phase==UnityEngine.InputSystem.TouchPhase.Canceled){pointerDown=false;touchFinger=-1;Owner.Rotation.EndDrag();}
+                    else if(t.phase==UnityEngine.InputSystem.TouchPhase.Canceled){pointerDown=false;touchFinger=-1;Owner.Rotation.EndDrag();Slime?.CancelPull("touch cancelled");}
                     else MovePointer(t.screenPosition);
                     break;
                 }
@@ -784,14 +789,14 @@ namespace GravityBox.Venom
         {
             if(Owner==null)return;
             if(ProductUI!=null&&ProductUI.Showcase){ProductUI.FrameShowcase();return;}
-            if(Owner.Completed){Owner.Celebration.Frame(Screen.width,Screen.height);return;}
+            if(Owner.Completed&&Slime==null){Owner.Celebration.Frame(Screen.width,Screen.height);return;}   // the Slime Trial keeps its room framing and HUD
             // Tests that lay the product out as a phone (COgheProductUI.LayoutAreaForTests) frame the camera the same way.
             var layout=COgheProductUI.LayoutAreaForTests;
             CameraRig.Frame(layout.HasValue?(int)layout.Value.width:Screen.width,layout.HasValue?(int)layout.Value.height:Screen.height,Time.unscaledDeltaTime,false,layout??Screen.safeArea);
         }
         private void OnGUI()
         {
-            if(Owner==null||ProductUI!=null)return;
+            if(Owner==null||ProductUI!=null||Slime!=null)return;
             if(dayLab!=null&&dayLab.enabled)return;
             float s=Mathf.Min(Screen.width/540f,Screen.height/960f),h=Screen.height/s;
             GUI.matrix=Matrix4x4.TRS(new Vector3((Screen.width-540*s)*.5f,0,0),Quaternion.identity,Vector3.one*s);
