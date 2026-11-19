@@ -80,7 +80,7 @@ namespace GravityBox.Venom
         public void Initialize(VenomCampaign owner){game=owner;BuildPresentation();ResetState();}
         public void ResetState()
         {
-            Pulling=false;pending=null;pendingRecord=null;Flying=false;launchedAt=landingUntil=-10;restingGripless=0;Power=0;PullVector=PreviewVelocity=Vector3.zero;
+            Pulling=false;pending=null;pendingRecord=null;Flying=false;launchedAt=landingUntil=-10;restingGripless=0;System.Array.Clear(viaVent,0,viaVent.Length);ventTracked=false;Power=0;PullVector=PreviewVelocity=Vector3.zero;
             Toast=null;toastUntil=0;History.Clear();Launches=Refusals=Cancels=Landings=0;LastCancel=null;
         }
 
@@ -118,6 +118,9 @@ namespace GravityBox.Venom
         }
         public void CancelPull(string reason,string message=null)
         {
+            // a release already queued for the next physics tick is cancelled too (Codex review P2-1: release, then
+            // pause/focus loss before the tick, must not launch on resume)
+            if(pending.HasValue){pending=null;pendingRecord=null;Cancels++;LastCancel=reason;}
             if(!Pulling)return;
             Pulling=false;Power=0;PullVector=PreviewVelocity=Vector3.zero;Cancels++;LastCancel=reason;if(message!=null)Show(message);
         }
@@ -151,7 +154,7 @@ namespace GravityBox.Venom
         public void Step(float dt)
         {
             if(game.Owner.Completed||game.Owner.Lost)return;
-            float now=game.Matter.SimulationTime;CollectGroup();if(group.Count==0)return;
+            float now=game.Matter.SimulationTime;TrackVent();CollectGroup();if(group.Count==0)return;
             int grips=0;Vector3 c=Vector3.zero,v=Vector3.zero;
             foreach(int i in group){if(game.Motion.HasGrip(i))grips++;c+=game.Matter.Bodies[i].position;v+=game.Matter.Bodies[i].linearVelocity;}
             c/=group.Count;v/=group.Count;
@@ -209,14 +212,29 @@ namespace GravityBox.Venom
                 bool outside=p.x<RoomMin.x-.03f||p.y<RoomMin.y-.03f||p.z<RoomMin.z-.03f||p.x>RoomMax.x+.03f||p.y>RoomMax.y+.03f||p.z>RoomMax.z+.03f;
                 // tissue leaving through the vent: a fast entry can carry a particle through the bore before the exit
                 // logic records its escape (it then fails the level as "out of the box"; found by the S2 search)
-                if(outside&&ExitingThroughVent(game.Matter.Bodies[i].position))continue;
+                if(outside&&ExitingThroughVent(i))continue;
                 if(outside)
                 {Debug.LogWarning($"SLIME OUT OF BOX particle {i} at {p:F3}");game.Fail("Slime văng ra ngoài hộp. Thử lại.");return;}
             }
         }
         /// <summary>Outside the outlet's pane, on its outward side and within 25 cm of the vent: leaving by the exit.</summary>
-        public bool ExitingThroughVent(Vector3 world)
-        {var outlet=game.Owner.Outlet;return outlet.InverseTransformPoint(world).z>-.01f&&Vector3.Distance(world,outlet.position)<.25f;}
+        /// <summary>The particle crossed the vent's plane inside its aperture (Codex review P2-2: not merely "near the
+        /// vent"). A particle through the glass beside the hole is not exempt and fails the level.</summary>
+        public bool ExitingThroughVent(int particle)=>viaVent[particle]&&game.Owner.Outlet.InverseTransformPoint(game.Matter.Bodies[particle].position).z<.30f;
+        private readonly bool[] viaVent=new bool[CohesiveOrganism.ParticleCount];
+        private readonly Vector3[] ventLocal=new Vector3[CohesiveOrganism.ParticleCount];private bool ventTracked;
+        private void TrackVent()
+        {
+            var outlet=game.Owner.Outlet;float limit=game.Owner.ApertureRadius+game.Matter.Profile.ParticleRadius;
+            for(int i=0;i<CohesiveOrganism.ParticleCount;i++)
+            {
+                Vector3 p=outlet.InverseTransformPoint(game.Matter.Bodies[i].position),old=ventLocal[i];ventLocal[i]=p;
+                if(!ventTracked)continue;
+                if(old.z<0&&p.z>=0){var cross=Vector3.Lerp(old,p,-old.z/(p.z-old.z));viaVent[i]=new Vector2(cross.x,cross.y).magnitude<limit;}
+                else if(p.z<-.02f)viaVent[i]=false;
+            }
+            ventTracked=true;
+        }
         private void Wobble()
         {
             // a refused release: a visible shiver of the airborne body (zero net momentum, no change of course)

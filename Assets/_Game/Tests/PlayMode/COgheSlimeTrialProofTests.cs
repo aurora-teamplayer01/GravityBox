@@ -46,6 +46,55 @@ namespace GravityBox.Tests
             }
             finally{Time.captureFramerate=0;ticksPerFrame=2;}
         }
+        /// <summary>Codex review gate: a Retry first (a different launch, then THỬ LẠI through the HUD), then the full route.</summary>
+        private IEnumerator SolveAfterRetry(string key,string label,Vector2[] shots,int fps)
+        {
+            Time.captureFramerate=fps;ticksPerFrame=Mathf.RoundToInt(1/(Dt*fps));
+            try
+            {
+                yield return Load(key);yield return Shoot(new Shot(100,.5f));
+                Assert.IsTrue(slime.PressHud(COgheSlimeControl.Layout(new Rect(0,0,width,height)).Retry.center),"THỬ LẠI");yield return Ticks(.6f);
+                Assert.AreEqual(0,slime.Launches);var trace=new StringBuilder();
+                foreach(var v in shots){var o=new Outcome();yield return Shoot(new Shot(v.x,v.y),o);trace.Append($"\n  {v.x:0.#}°/{v.y:0.##} -> {State()}");Assert.IsFalse(game.Owner.Lost,$"{key} {label} after retry: lost{trace}");if(game.Owner.Completed)break;}
+                yield return Ticks(.6f);Assert.IsTrue(game.Owner.Completed,$"{key} {label} after retry at {fps} fps did not win{trace}");
+                File.AppendAllText($"{Out}/solves.txt",$"{DateTime.UtcNow:HH:mm} {key} {label} AFTER RETRY {fps}fps launches={slime.Launches}{trace}\n");
+            }
+            finally{Time.captureFramerate=0;ticksPerFrame=2;}
+        }
+        [UnityTest,Timeout(900000)] public IEnumerator SlimeS1AfterRetry60(){yield return SolveAfterRetry("S1","one launch",S1Direct,60);}
+        [UnityTest,Timeout(900000)] public IEnumerator SlimeS1AfterRetry30(){yield return SolveAfterRetry("S1","one launch",S1Direct,30);}
+        [UnityTest,Timeout(900000)] public IEnumerator SlimeS2AfterRetry60(){yield return SolveAfterRetry("S2","ram crate",S2Solution,60);}
+        [UnityTest,Timeout(900000)] public IEnumerator SlimeS2AfterRetry30(){yield return SolveAfterRetry("S2","ram crate",S2Solution,30);}
+        [UnityTest,Timeout(900000)] public IEnumerator SlimeS3WayAAfterRetry60(){yield return SolveAfterRetry("S3","A ride the wind",S3WayA,60);}
+        [UnityTest,Timeout(900000)] public IEnumerator SlimeS3WayAAfterRetry30(){yield return SolveAfterRetry("S3","A ride the wind",S3WayA,30);}
+        [UnityTest,Timeout(900000)] public IEnumerator SlimeS3WayBAfterRetry60(){yield return SolveAfterRetry("S3","B stop the fan",S3WayB,60);}
+        [UnityTest,Timeout(900000)] public IEnumerator SlimeS3WayBAfterRetry30(){yield return SolveAfterRetry("S3","B stop the fan",S3WayB,30);}
+
+        // ---- review P2-1 / P2-2 ------------------------------------------------------------------------------------------
+        [UnityTest,Timeout(900000)] public IEnumerator SlimeReleaseThenCancelBeforeTick()
+        {
+            yield return Load("S1");yield return Settle();Vector3 a=W(0,.10f),b=a+PullFor(60,.7f);
+            foreach(var cancel in new Action[]{()=>game.SendMessage("OnApplicationFocus",false),()=>game.Owner.TogglePause()})
+            {
+                game.BeginPointer(S(a));game.MovePointer(S(b));game.EndPointer(S(b));   // queued for the next tick
+                cancel();if(game.Owner.Paused){yield return null;game.Owner.TogglePause();}
+                yield return Ticks(.5f);Assert.AreEqual(0,slime.Launches,"a release cancelled before the physics tick never launches on resume");
+                Assert.Less(Speed(),.05f,"the body stayed put");
+            }
+        }
+        [UnityTest,Timeout(900000)] public IEnumerator SlimeVentExitVsGlassTunnel()
+        {
+            // a fast valid entry: the strongest direct S1 shot into the vent is a win, never "out of the box"
+            yield return Load("S1");yield return Shoot(new Shot(S1Direct[0].x,1f));yield return Ticks(1);
+            Assert.IsFalse(game.Owner.Lost,"a fast entry through the vent is not a failure: "+State());
+            // the detector: a particle put through the glass right beside the hole (test-only placement, not a solution)
+            yield return Load("S1");yield return Settle();
+            var outlet=game.Owner.Outlet;var body=game.Matter.Bodies[0];
+            body.position=outlet.TransformPoint(new Vector3(.10f,0,.04f));body.linearVelocity=Vector3.zero;body.transform.position=body.position;Physics.SyncTransforms();
+            for(int k=0;k<3;k++)Tick();
+            Assert.IsTrue(game.Owner.Lost,"tissue through the glass beside the vent fails the level");StringAssert.Contains("ngoài hộp",game.Failure);
+        }
+
         [UnityTest,Timeout(900000)] public IEnumerator SlimeS1SolveOneLaunch60(){yield return SolveAt("S1","one launch",S1Direct,60);}
         [UnityTest,Timeout(900000)] public IEnumerator SlimeS1SolveOneLaunch30(){yield return SolveAt("S1","one launch",S1Direct,30);}
         [UnityTest,Timeout(900000)] public IEnumerator SlimeS1MissThenFix60(){yield return SolveAt("S1","miss then fix",S1MissThenFix,60);}
@@ -148,9 +197,11 @@ namespace GravityBox.Tests
         {
             yield return Load(key);var rng=new System.Random(seed);var log=new StringBuilder();int fails=0,lasers=0,stuck=0,wins=0;
             float outside=0;
-            perTick=()=>{for(int i=0;i<game.Matter.Bodies.Length;i++){var b=game.Matter.Bodies[i];var p=Local(b.position);if(float.IsNaN(p.x))outside=999;
-                if(game.Owner.Completed||game.Matter.Escaped[i]||slime.ExitingThroughVent(b.position))continue;
-                if(Mathf.Abs(p.x)>.33f||p.y<-.33f||p.y>.53f||Mathf.Abs(p.z)>.13f)outside=Mathf.Max(outside,p.magnitude);}};
+            // independent oracle (not the runtime's vent predicate): once the body has settled, every particle the exit has
+            // not recorded as escaped is inside the box, and nothing is NaN
+            void Check(){for(int i=0;i<game.Matter.Bodies.Length;i++){var p=Local(game.Matter.Bodies[i].position);if(float.IsNaN(p.x))outside=999;
+                if(game.Owner.Completed||game.Matter.Escaped[i])continue;
+                if(Mathf.Abs(p.x)>.31f||p.y<-.31f||p.y>.51f||Mathf.Abs(p.z)>.11f)outside=Mathf.Max(outside,p.magnitude);}}
             ticksPerFrame=8;
             for(int i=0;i<launches;i++)
             {
@@ -163,7 +214,8 @@ namespace GravityBox.Tests
                 yield return Settle(6);
                 if(!slime.Anchored&&!game.Owner.Lost&&!game.Owner.Completed){stuck++;log.AppendLine($"  {i}: not anchored after 6 s: {State()} -> Retry");game.ResetLevel();yield return Ticks(.6f);continue;}
                 var s=new Shot((float)rng.NextDouble()*360,.05f+(float)rng.NextDouble()*.95f);
-                yield return Shoot(s);log.AppendLine($"  {i}: {s} -> {State()}");
+                yield return Shoot(s);Check();log.AppendLine($"  {i}: {s} -> {State()}");
+                if(game.Owner.Lost&&game.Failure!=null&&game.Failure.Contains("ngoài hộp"))Assert.Fail($"{key} wander: failed as out of the box: {State()}");
             }
             perTick=null;ticksPerFrame=2;
             File.WriteAllText($"{Out}/wander-{key}.txt",$"{key} seed {seed}: {launches} launches, wins {wins}, failures {fails} (laser {lasers}), not anchored {stuck}, max outside {outside:F3}\n{log}");
