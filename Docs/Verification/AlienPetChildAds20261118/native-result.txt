@@ -1,0 +1,11 @@
+adsDependencyBlocked=False
+bannerLoaded=True
+analyticsAllowed=False
+firebaseReady=False
+rewardedReady=False
+interstitialReady=False
+victoryPage=Victory
+victoryBannerHeight=0
+childRewardOfferCount=0
+under9AdsEligible=False
+under9BannerHeight=0

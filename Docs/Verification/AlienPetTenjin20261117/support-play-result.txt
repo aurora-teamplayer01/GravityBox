@@ -1,0 +1,15 @@
+Hello Tenjin Support,
+
+We completed the Google Play Internal test for Alien Pet (com.gravityboxlab.venom), version 1.0.4-tenjin-test (5), with Unity SDK 1.23.2 / Android SDK 2.0.2. This was an update installed by Google Play, preserving existing game progress, not a fresh-install attribution test.
+
+With adult explicit analytics consent, the native connect request now contains a nonempty Play referrer and referrer timestamps, but the server still returns {"code":202,"message":"invalid device identifier"}. advertising_id is absent. The dashboard still reports Sending Events: no after gameplay. We cannot verify accepted installs, gameplay events or Unity postbacks.
+
+A correction/clarification to our previous privacy description: the native SDK logs show that it fetches App Set ID locally after initialization, although App Set ID is absent from the inspected connect payload under OptInParams. Please provide a supported way to disable this local collection as well as transmission. We will not use App Set ID as an advertising attribution workaround.
+
+Please confirm the supported no-Advertising-ID, no-probabilistic-matching integration and exact required settings for ingestion. Child protections remain unchanged and the Unity campaign remains paused. Please do not enable extra collection or paid services.
+
+No keys, raw logs or device identifiers are included.
+
+Thank you,
+Kien
+YoloStudioGlobal

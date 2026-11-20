@@ -3,6 +3,14 @@
 Implementation: 04/10/2026. Applies to Android package `com.gravityboxlab.venom`.
 The implementation follows `PLANS/COGHE_MONETIZATION_PLAN.md` (including its 04/10 clarification) and the [monetization contract](README.md). Real IAP waits for Mrk to configure Play Console products. Remote Config networking is integrated; puzzle rules are unchanged.
 
+## Android child-banner revision — 18/11/2026 (not yet released)
+
+Supersedes the older under-13 block **only for an explicit new 9–12 selection on Android**. Under9, unknown ages and unresolved legacy Under13 remain blocked. New child profiles receive child-directed, non-personalized G-rated banners on Menu/Home only; no rewarded/interstitial/victory banner. All under18 profiles still have no Firebase Analytics/Remote Config/Tenjin.
+
+Native QA found that Google Mobile Ads 25.4.0 crashes without its App Set dependency. The owner approved restoring Google's official library while keeping AD_ID/AdServices permissions removed and App Set fields excluded from Tenjin uploads. Google may process App Set ID; the public policy now discloses this. Disable publisher first-party ID in the initialization callback, before ad loading, because this SDK rejects the setter before initialization. Child/G/non-personalization flags still apply before initialization.
+
+[Implementation, ad unit, native QA and deployment evidence](../../Verification/AlienPetChildAds20261118/README.md). Unity CPI support request submitted; campaign remains paused pending a supported attribution path.
+
 ## Privacy revision — 29/10/2026
 
 The replacement release uses a neutral local age selection before SDK startup.

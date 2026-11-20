@@ -1,0 +1,14 @@
+{
+  "permissions": [
+    "android.permission.ACCESS_NETWORK_STATE",
+    "android.permission.FOREGROUND_SERVICE",
+    "android.permission.INTERNET",
+    "android.permission.WAKE_LOCK",
+    "com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE",
+    "com.gravityboxlab.venom.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+  ],
+  "privacyDefaultsClosed": true,
+  "autoInitProvidersRemoved": true,
+  "samePreviousUploadCertificate": true,
+  "ageConsentTests": "21/21 passed on same source before this build; not a native proof"
+}

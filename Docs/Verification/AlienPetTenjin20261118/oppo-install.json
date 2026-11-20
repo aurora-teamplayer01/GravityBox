@@ -1,0 +1,17 @@
+{
+  "source": "adb dumpsys package",
+  "package": "com.gravityboxlab.venom",
+  "observed": [
+    "versionCode=6 minSdk=32 targetSdk=36",
+    "versionName=1.0.5-tenjin-test",
+    "lastUpdateTime=2026-11-18 09:20:24",
+    "installerPackageName=com.android.vending",
+    "firstInstallTime=2026-11-02 08:55:28"
+  ],
+  "uninstall_or_clear_performed": false,
+  "progress_visible": {
+    "level": 14,
+    "drops": 320,
+    "pet": "mint"
+  }
+}

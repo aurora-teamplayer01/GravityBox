@@ -14,6 +14,8 @@ namespace GravityBox.Venom
     {
         /// <summary>The tracking SDK: event name and parameters (name, value pairs).</summary>
         public static Action<string, IReadOnlyDictionary<string, object>> Sink;
+        /// <summary>Independent consent-gated providers; failures never block other providers.</summary>
+        public static event Action<string, IReadOnlyDictionary<string, object>> Observed;
         public static readonly List<string> Recent = new List<string>(64);
         private static readonly StringBuilder line = new StringBuilder(128);
 
@@ -21,7 +23,7 @@ namespace GravityBox.Venom
         public static void Log(string name, params object[] pairs)
         {
             Dictionary<string, object> values = null;
-            if (Sink != null || Debug.isDebugBuild)
+            if (Sink != null || Observed != null || Debug.isDebugBuild)
             {
                 values = new Dictionary<string, object>(pairs.Length / 2);
                 for (int i = 0; i + 1 < pairs.Length; i += 2) values[pairs[i].ToString()] = pairs[i + 1];
@@ -29,6 +31,10 @@ namespace GravityBox.Venom
             // Telemetry is observational: a provider fault must never interrupt a win, save or reward.
             try { Sink?.Invoke(name, values); }
             catch (Exception e) { Debug.LogWarning("COghe analytics unavailable: " + e.GetType().Name); }
+            if (Observed != null)
+                foreach (Action<string, IReadOnlyDictionary<string, object>> observer in Observed.GetInvocationList())
+                    try { observer(name, values); }
+                    catch (Exception e) { Debug.LogWarning("COghe analytics observer unavailable: " + e.GetType().Name); }
             line.Clear().Append(name);
             for (int i = 0; i + 1 < pairs.Length; i += 2) line.Append(' ').Append(pairs[i]).Append('=').Append(pairs[i + 1]);
             if (Recent.Count == Recent.Capacity) Recent.RemoveAt(0);

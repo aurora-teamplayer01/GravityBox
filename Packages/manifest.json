@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "com.google.play.review": "1.8.4",
     "com.unity.performance.profile-analyzer": "1.4.0",
     "com.unity.modules.accessibility": "1.0.0",
     "com.unity.modules.adaptiveperformance": "1.0.0",

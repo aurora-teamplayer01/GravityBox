@@ -94,6 +94,13 @@ and [native Unity verification](../../Verification/COgheProductUI/README.md).
 
 ### Ability cards — 17/10/2026
 
+20/11/2026 review checkpoint: after the first completed Understand COghe celebration,
+the existing Continue action may show Google's official In-App Review sheet before
+the earned card. Preserve Google's UI exactly; no custom stars, sentiment gate,
+reward for rating, overlays or store redirect. Keep the friendly live creature and
+existing completion presentation behind it. Suppression/dismissal/failure must
+continue normally. See `Docs/Verification/AlienPetReview20261120`.
+
 For the requested 4–15 audience, show all three illustrated choices in **one
 horizontal row**, as revised by Mrk on 17/10. Give them identical dimensions,
 spacing and emphasis, with no preselected or featured card. Show extra explanation

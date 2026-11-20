@@ -20,8 +20,53 @@ namespace GravityBox.Tests
         [SetUp] public void SetUp() => COghePrivacy.ResetForTests();
         [TearDown] public void TearDown() => COghePrivacy.ClearTestOverride();
 
+        [TestCase(false)]
+        [TestCase(true)]
+        public void PortraitPreferenceDoesNotRequirePortraitHardware(bool explicitRequirement)
+        {
+            XNamespace a = "http://schemas.android.com/apk/res/android";
+            var doc = XDocument.Parse("<manifest xmlns:android='http://schemas.android.com/apk/res/android'><uses-feature android:glEsVersion='0x00030000'/><application><activity android:name='game.Activity' android:screenOrientation='portrait'/></application></manifest>");
+            if (explicitRequirement) doc.Root.Add(new XElement("uses-feature", new XAttribute(a + "name", "android.hardware.screen.portrait"), new XAttribute(a + "required", "true")));
+            COghePrivacyBuild.ConfigureAndroidDeviceFeatures(doc);
+            string once = doc.ToString();
+            COghePrivacyBuild.ConfigureAndroidDeviceFeatures(doc);
+            Assert.AreEqual(once, doc.ToString());
+            Assert.AreEqual("false", (string)doc.Root.Elements("uses-feature").Single(e => (string)e.Attribute(a + "name") == "android.hardware.screen.portrait").Attribute(a + "required"));
+            Assert.AreEqual("portrait", (string)doc.Root.Element("application").Element("activity").Attribute(a + "screenOrientation"));
+            Assert.AreEqual("0x00030000", (string)doc.Root.Elements("uses-feature").Single(e => e.Attribute(a + "glEsVersion") != null).Attribute(a + "glEsVersion"));
+        }
+
+        [Test] public void AttributionQaAddsOnlyAdIdAndCanRestoreProductionManifest()
+        {
+            XNamespace a = "http://schemas.android.com/apk/res/android", t = "http://schemas.android.com/tools";
+            var doc = XDocument.Parse("<manifest><application /></manifest>");
+            COghePrivacyBuild.ConfigureAndroidManifest(doc, true);
+            var id = doc.Root.Elements("uses-permission").Single(e => (string)e.Attribute(a+"name") == "com.google.android.gms.permission.AD_ID");
+            Assert.IsNull(id.Attribute(t+"node"));
+            Assert.IsTrue(doc.Root.Elements("uses-permission").Where(e => ((string)e.Attribute(a+"name")).Contains("ADSERVICES")).All(e => (string)e.Attribute(t+"node") == "remove"));
+            COghePrivacyBuild.ConfigureAndroidManifest(doc);
+            Assert.AreEqual("remove", (string)doc.Root.Elements("uses-permission").Single(e => (string)e.Attribute(a+"name") == "com.google.android.gms.permission.AD_ID").Attribute(t+"node"));
+        }
+
+        [Test] public void RequiredGoogleDependencyIsNotExcludedAndOldBlockIsRemovedWithoutReplacingBuildConfig()
+        {
+            const string existing = "plugins { id 'com.android.application' version '8.10.0' apply false }\n";
+            const string legacy = @"// Alien Pet: no App Set ID provider in any Android module
+allprojects {
+    configurations.configureEach {
+        exclude group: 'com.google.android.gms', module: 'play-services-appset'
+    }
+}
+";
+            string configured = COghePrivacyBuild.ConfigureAndroidDependencies(existing + legacy);
+            Assert.AreEqual(existing, configured);
+            Assert.AreEqual(existing, COghePrivacyBuild.ConfigureAndroidDependencies(existing));
+            Assert.AreEqual(configured, COghePrivacyBuild.ConfigureAndroidDependencies(configured));
+        }
+
         [TestCase(COghePrivacy.AgeBand.Unknown)]
         [TestCase(COghePrivacy.AgeBand.Under13)]
+        [TestCase(COghePrivacy.AgeBand.Under9)]
         public void UnknownAndChildCannotEnableAnyNetworkService(COghePrivacy.AgeBand age)
         {
             COghePrivacy.SetAgeBand(age);
@@ -29,7 +74,56 @@ namespace GravityBox.Tests
             Assert.IsFalse(COghePrivacy.AnalyticsAllowed);
             Assert.IsFalse(COghePrivacy.AdsAgeEligible);
             Assert.IsFalse(COghePrivacy.CanChooseAnalytics);
-            Assert.AreEqual(age == COghePrivacy.AgeBand.Under13, COghePrivacy.SetupComplete);
+            Assert.AreEqual(age == COghePrivacy.AgeBand.Under9, COghePrivacy.SetupComplete);
+        }
+
+        [Test] public void ChildHasOnlyRestrictedMenuAndHomeBannerAndNoAnalytics()
+        {
+            COghePrivacy.SetAgeBand(COghePrivacy.AgeBand.Age9To12);
+            COghePrivacy.SetAnalyticsChoice(true);
+            Assert.IsTrue(COghePrivacy.SetupComplete);
+            Assert.IsTrue(COghePrivacy.AdsAgeEligible);
+            Assert.IsFalse(COghePrivacy.AnalyticsAllowed);
+            Assert.IsFalse(COghePrivacy.FullScreenAdsEligible);
+            foreach (var placement in new[] { "menu", "mainmenu", "home" })
+                Assert.IsTrue(COghePrivacy.BannerPlacementAllowed(placement));
+            foreach (var placement in new[] { "game", "victory", "intro", "style", "", null })
+                Assert.IsFalse(COghePrivacy.BannerPlacementAllowed(placement));
+            var config = COgheGoogleServices.AdRequestConfiguration();
+            Assert.AreEqual(AgeRestrictedTreatment.Child, config.AgeRestrictedTreatment);
+            Assert.AreEqual("G", config.MaxAdContentRating.Value);
+            Assert.AreEqual(false, config.PublisherFirstPartyIdEnabled);
+            Assert.AreEqual(PublisherPrivacyPersonalizationState.Disabled, config.PublisherPrivacyPersonalizationState);
+        }
+
+        [Test] public void PreInitConfigKeepsChildRestrictionsButDefersOnlyUnsupportedIdSetter()
+        {
+            COghePrivacy.SetAgeBand(COghePrivacy.AgeBand.Age9To12);
+            var config = COgheGoogleServices.AdRequestConfiguration(false);
+            Assert.AreEqual(AgeRestrictedTreatment.Child, config.AgeRestrictedTreatment);
+            Assert.AreEqual("G", config.MaxAdContentRating.Value);
+            Assert.AreEqual(PublisherPrivacyPersonalizationState.Disabled, config.PublisherPrivacyPersonalizationState);
+            Assert.IsNull(config.PublisherFirstPartyIdEnabled);
+            Assert.AreEqual(false, COgheGoogleServices.AdRequestConfiguration(true).PublisherFirstPartyIdEnabled);
+        }
+
+        [Test] public void OldSerializedAgeValuesNeverBecomeNewChildEligibility()
+        {
+            COghePrivacy.LoadChoiceForTests("{\"version\":2,\"age\":1,\"analyticsChoiceMade\":true,\"analytics\":false}");
+            Assert.AreEqual(COghePrivacy.AgeBand.Under13, COghePrivacy.Age);
+            Assert.IsFalse(COghePrivacy.AdsAgeEligible);
+            Assert.AreEqual(4, (int)COghePrivacy.AgeBand.Adult);
+            Assert.AreEqual(2, (int)COghePrivacy.AgeBand.Age13To15);
+        }
+
+        [Test] public void AdultAdPermitCannotSurviveSwitchToChild()
+        {
+            COghePrivacy.ResetForTests(COghePrivacy.AgeBand.Adult, true);
+            int ticket = COghePrivacy.Revision;
+            COghePrivacy.SetAgeBand(COghePrivacy.AgeBand.Age9To12);
+            Assert.IsFalse(COghePrivacy.AdsPermitValid(ticket));
+            Assert.IsFalse(COghePrivacy.AnalyticsPermitValid(ticket));
+            Assert.IsFalse(COghePrivacy.FullScreenAdsEligible);
         }
 
         [TestCase(COghePrivacy.AgeBand.Age13To15)]

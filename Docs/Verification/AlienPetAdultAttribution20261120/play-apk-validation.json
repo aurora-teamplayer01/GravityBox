@@ -1,0 +1,6 @@
+{
+  "certificate_matches_installed": true,
+  "play_certificate_sha256": "340ab8fe7ec24a04292dc9efa82c4e693e76da8291d79e66a12f038d0c0f6c89",
+  "apk_sha256": "d01555e54f5a04ffd4582520dd6ba934b0b82b4cbfc4d632fa38c302133139ad",
+  "identity": "package: name='com.gravityboxlab.venom' versionCode='9' versionName='1.0.8-attribution-qa' platformBuildVersionName='16' platformBuildVersionCode='36' compileSdkVersion='36' compileSdkVersionCodename='16'"
+}

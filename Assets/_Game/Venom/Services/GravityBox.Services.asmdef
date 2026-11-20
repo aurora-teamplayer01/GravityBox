@@ -1,5 +1,8 @@
 {
   "name": "GravityBox.Services",
-  "references": ["GravityBox.Venom"],
+  "references": [
+    "GravityBox.Venom",
+    "TenjinSDK"
+  ],
   "autoReferenced": true
 }

@@ -1,0 +1,16 @@
+version=1.0.6-child-qa
+ageTreatment=Child
+maxAdContentRating=GoogleMobileAds.Api.MaxAdContentRating
+personalization=Disabled
+adsDependencyBlocked=False
+bannerLoaded=True
+analyticsAllowed=False
+firebaseReady=False
+tenjinTransportCount=0
+rewardedReady=False
+interstitialReady=False
+victoryPage=Victory
+victoryBannerHeight=0
+childRewardOfferCount=0
+under9AdsEligible=False
+under9BannerHeight=0

@@ -20,6 +20,19 @@ namespace GravityBox.Editor
         public static void BuildSpatial() => BuildScenes(VenomCampaignBuilder.SpatialScenePaths(),
             "Builds/SpatialLab/Android/COghe-Spatial.apk");
 
+        [MenuItem("Gravity Box/COghe/Build adult attribution QA APK")]
+        public static void BuildAdultAttributionQa()
+        {
+            string version=PlayerSettings.bundleVersion;
+            try
+            {
+                COghePrivacyBuild.AdMeasurementQaBuild=true;
+                PlayerSettings.bundleVersion="1.0.8-attribution-qa";
+                BuildScenes(VenomCampaignBuilder.SpatialScenePaths(), "Builds/AlienPetAttributionQA/AlienPet-attribution-qa.apk");
+            }
+            finally {COghePrivacyBuild.AdMeasurementQaBuild=false;PlayerSettings.bundleVersion=version;}
+        }
+
         [MenuItem("Gravity Box/COghe/NewGraphic/Build Android A-B test APK")]
         public static void BuildNewGraphic() => BuildScenes(VenomCampaignBuilder.ViewCampaignScenePaths(), "Builds/NewGraphic/Android/COghe-NewGraphic.apk");
 
@@ -37,6 +50,7 @@ namespace GravityBox.Editor
             var defines=new System.Collections.Generic.List<string>();
             if(Environment.GetEnvironmentVariable("COGHE_BENCHMARK")=="1")defines.Add("COGHE_MOBILE_BENCHMARK");
             if(Environment.GetEnvironmentVariable("COGHE_STORE")!="1")defines.Add("COGHE_TEST_TOOLS");
+            if(COghePrivacyBuild.AdMeasurementQaBuild)defines.Add("ALIENPET_AD_MEASUREMENT_QA");
             return defines.ToArray();
         }
         private static void BuildScenes(string[] scenes, string output,string bundleId=BundleId,string displayName=GravityBox.Venom.AlienPetBrand.DisplayName)

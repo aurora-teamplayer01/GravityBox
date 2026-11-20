@@ -142,6 +142,7 @@ namespace GravityBox.Venom
         public bool HandleInput()
         {
             if(!started)return true;
+            if(reviewRunning)return true;
             if(Page==COgheProductPage.PrivacySetup)return true;
             var k=Keyboard.current;
             if(Page==COgheProductPage.Intro)
@@ -179,7 +180,7 @@ namespace GravityBox.Venom
         }
         private void SetPaused(bool value){if(Game.Owner.Paused!=value)Game.Owner.TogglePause();Game.CancelProductPointer();}
         public void ShowPopup(COgheProductPopup popup){if(Page==COgheProductPage.PrivacySetup)return;Popup=popup;SetPaused(true);Rebuild();}
-        public void Resume(){if(Page==COgheProductPage.PrivacySetup)return;Popup=COgheProductPopup.None;SetPaused(false);Rebuild();}
+        public void Resume(){if(Page==COgheProductPage.PrivacySetup||reviewRunning)return;Popup=COgheProductPopup.None;SetPaused(false);Rebuild();}
         public void ShowMenu()
         {
             if(Page==COgheProductPage.PrivacySetup)return;

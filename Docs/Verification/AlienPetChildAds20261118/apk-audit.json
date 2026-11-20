@@ -1,0 +1,8 @@
+{
+  "apk": "Builds/SpatialLab/Android/COghe-Spatial-Profiler.apk",
+  "sha256": "9f63972e396888a20ecd304711055c556de95374520d987a76ebec4125109f6e",
+  "forbiddenPermissions": [],
+  "autoInitProviders": [],
+  "googleAppSetClassPresent": true,
+  "nativeFatalErrors": []
+}

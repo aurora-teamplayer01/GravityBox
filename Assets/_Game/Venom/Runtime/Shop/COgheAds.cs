@@ -50,7 +50,7 @@ namespace GravityBox.Venom
         public static Action OpenPrivacy;
         public static string BannerPlacement { get; private set; } = "menu";
         public static bool ForcedAdsAllowed => !COgheEntitlements.AdsRemoved;
-        public static bool RewardAdsAllowed => !COgheEntitlements.HasPlus;
+        public static bool RewardAdsAllowed => COghePrivacy.FullScreenAdsEligible && !COgheEntitlements.HasPlus;
         private static bool bannerWanted; private static ICOgheAdProvider bannerOn;
         private static float lastInterstitial = -1e6f, lastRewarded = -1e6f;
         private static int winsSinceInterstitial, sessionInterstitials;
@@ -63,7 +63,7 @@ namespace GravityBox.Venom
         {
             // Keep the last visible page for SDK events queued while a banner is being hidden.
             if (show && placement != null) BannerPlacement = placement;
-            bool on = show && !COgheEntitlements.AdsRemoved;
+            bool on = show && !COgheEntitlements.AdsRemoved && COghePrivacy.BannerPlacementAllowed(BannerPlacement);
             if (on == bannerWanted && Active == bannerOn) return;
             if (bannerOn != null && bannerOn != Active) bannerOn.SetBanner(false);   // the SDK (or test ads) changed
             bannerWanted = on; bannerOn = Active; Active.SetBanner(on); BannerChanged?.Invoke();
@@ -76,7 +76,7 @@ namespace GravityBox.Venom
 
         // Rewarded ----------------------------------------------------------------------------------------------------------
         /// <summary>Can a reward be offered now (Plus gets it without an ad)?</summary>
-        public static bool RewardedAvailable => COgheEntitlements.InstantRewards || Active.RewardedReady;
+        public static bool RewardedAvailable => COgheEntitlements.InstantRewards || (RewardAdsAllowed && Active.RewardedReady);
         public static void Rewarded(string placement, COgheReward reward, Action<bool> done)
         {
             if (Showing || reward == null || !reward.Available) { done?.Invoke(false); return; }
@@ -85,8 +85,9 @@ namespace GravityBox.Venom
                 bool applied = COgheShop.ApplyReward(reward);
                 COgheAnalytics.Log("ad_rewarded_instant", "placement", placement); done?.Invoke(applied); return;
             }
-            if (Showing || !Active.RewardedReady) { COgheAnalytics.Log("ad_fail", "type", "rewarded", "placement", placement); done?.Invoke(false); return; }
+            if (Showing || !RewardAdsAllowed || !Active.RewardedReady) { COgheAnalytics.Log("ad_fail", "type", "rewarded", "placement", placement); done?.Invoke(false); return; }
             Showing = true;
+            int privacyTicket = COghePrivacy.Revision;
             bool finished = false, earned = false, displayed = false;
             void Shown()
             {
@@ -95,7 +96,7 @@ namespace GravityBox.Venom
             }
             void Earned()
             {
-                if (earned) return;
+                if (earned || privacyTicket != COghePrivacy.Revision || !COghePrivacy.FullScreenAdsEligible) return;
                 // No UI dependency: commit the wallet, ownership and transaction key together before dismissal.
                 earned = COgheShop.ApplyReward(reward);
                 // ad_reward is reserved for automatic AdMob events (Firebase rejects public use).
@@ -119,7 +120,7 @@ namespace GravityBox.Venom
         /// <summary>Is a full-screen ad due after this win (<paramref name="totalWins"/> levels won so far)?</summary>
         public static bool InterstitialDue(int totalWins)
         {
-            if (COgheEntitlements.AdsRemoved) return false;
+            if (!COghePrivacy.FullScreenAdsEligible || COgheEntitlements.AdsRemoved) return false;
             if (totalWins < COgheEconomy.InterstitialFromWin) return false;
             if (winsSinceInterstitial < COgheEconomy.InterstitialMinWins) return false;
             if (Now - lastInterstitial < COgheEconomy.InterstitialMinSeconds) return false;

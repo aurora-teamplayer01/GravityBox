@@ -1,0 +1,21 @@
+11-18 09:21:35.221 20364 20503 D TenjinSDK: Stored initialized_at timestamp: 1794968495221
+11-18 09:21:35.264 20364 20503 I Unity   : AndroidTenjin:SetCacheEventSetting(Boolean)
+11-18 09:21:35.264 20364 20503 I Unity   : GravityBox.Services.COgheAttributionSession:ApplyPrivacy()
+11-18 09:21:35.264 20364 20503 I Unity   : GravityBox.Services.COgheTenjin:Safely(Action)
+11-18 09:21:35.265 20364 20503 D TenjinSDK: Set event cache setting false
+11-18 09:21:35.267 20364 20503 D TenjinSDK: Connecting...
+11-18 09:21:35.268 20364 21542 D TenjinSDK: Starting connect task
+11-18 09:21:35.268 20364 21542 D TenjinSDK: Ready to connect - lock available? false
+11-18 09:21:35.285 20364 21539 D TenjinSDK: AppSetIdProvider: Initializing...
+11-18 09:21:35.285 20364 21539 D TenjinSDK: AppSetIdProvider: AppSet library not available (ClassNotFoundException)
+11-18 09:21:35.296 20364 21537 D TenjinSDK: Releasing startup lock
+11-18 09:21:35.371 20364 21542 D TenjinSDK: Acquired startup lock, sending connect.
+11-18 09:21:35.381 20364 21542 D TenjinSDK: Get customer user id
+11-18 09:21:36.671 20364 21542 D HttpConnection: Tenjin request URL: https://track.tenjin.com/v0/event
+11-18 09:21:36.674 20364 21542 D HttpConnection: Tenjin::connect params-summary: {"fields": ["plugin_version", "app_version", "platform", "analytics_installation_id", "initialized_at", "app_version_code", "retry_enabled", "sdk_version", "referrer_click_ts", "last_session_length", "iap_transaction_count", "first_session_date", "session_id", "limit_ad_tracking", "sent_at", "referrer", "plugin", "average_session_length", "bundle_id", "session_count", "total_session_time", "referrer_install_ts", "current_session_length", "source_app_store", "total_ilrd_revenue_usd", "opt_out_params"], "app_version": "1.0.5-tenjin-test", "referrer_present": true, "referrer_nonempty": true, "advertising_id_present": false, "appset_present": false, "explicit_opt_out_present": true, "event": null, "opt_out_advertising_id": true}
+11-18 09:21:36.675 20364 21542 D HttpConnection: Tenjin::connect response: {"code":200,"success":true}
+11-18 09:21:36.676 20364 20364 D TenjinSDK: Confirmed referral sent
+11-18 09:21:37.253 20364 21542 D TenjinSDK: Get customer user id
+11-18 09:21:37.808 20364 21542 D HttpConnection: Tenjin request URL: https://track.tenjin.com/v0/event
+11-18 09:21:37.808 20364 21542 D HttpConnection: Tenjin::connect params-summary: {"fields": ["plugin_version", "app_version", "platform", "analytics_installation_id", "initialized_at", "app_version_code", "retry_enabled", "sdk_version", "last_session_length", "event", "value", "iap_transaction_count", "first_session_date", "session_id", "limit_ad_tracking", "sent_at", "plugin", "average_session_length", "bundle_id", "session_count", "total_session_time", "current_session_length", "source_app_store", "total_ilrd_revenue_usd", "opt_out_params"], "app_version": "1.0.5-tenjin-test", "referrer_present": false, "referrer_nonempty": false, "advertising_id_present": false, "appset_present": false, "explicit_opt_out_present": true, "event": "level_start", "opt_out_advertising_id": true}
+11-18 09:21:37.808 20364 21542 D HttpConnection: Tenjin::connect response: {"code":200,"success":true}

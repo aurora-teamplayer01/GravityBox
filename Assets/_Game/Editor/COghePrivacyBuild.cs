@@ -15,16 +15,50 @@ namespace GravityBox.Editor
     public sealed class COghePrivacyBuild : IPostGenerateGradleAndroidProject
     {
         public int callbackOrder => 2000;
+        internal static bool AdMeasurementQaBuild { get; set; }
         public void OnPostGenerateGradleAndroidProject(string path)
         {
             if (PlayerSettings.GetApplicationIdentifier(NamedBuildTarget.Android) != COgheAndroidBuilder.BundleId) return;
             string file = Path.Combine(path, "src/main/AndroidManifest.xml");
             var manifest = XDocument.Load(file);
-            ConfigureAndroidManifest(manifest);
+            ConfigureAndroidManifest(manifest, AdMeasurementQaBuild);
+            ConfigureAndroidDeviceFeatures(manifest);
             manifest.Save(file);
+            string rootGradle = Path.Combine(Directory.GetParent(path).FullName, "build.gradle");
+            File.WriteAllText(rootGradle, ConfigureAndroidDependencies(File.ReadAllText(rootGradle)));
         }
 
-        public static void ConfigureAndroidManifest(XDocument manifest)
+        public static void ConfigureAndroidDeviceFeatures(XDocument manifest)
+        {
+            XNamespace android = "http://schemas.android.com/apk/res/android";
+            XNamespace tools = "http://schemas.android.com/tools";
+            var root = manifest.Root;
+            if (root == null || root.Name.LocalName != "manifest") throw new BuildFailedException("Missing Android manifest root.");
+            root.SetAttributeValue(XNamespace.Xmlns + "tools", tools.NamespaceName);
+            // Portrait is a presentation preference, not a hardware requirement. Explicitly
+            // override Play's implicit filter from screenOrientation without changing the activity.
+            const string name = "android.hardware.screen.portrait";
+            foreach (var existing in root.Elements("uses-feature").Where(e => (string)e.Attribute(android + "name") == name).ToArray()) existing.Remove();
+            root.Add(new XElement("uses-feature", new XAttribute(android + "name", name),
+                new XAttribute(android + "required", "false"), new XAttribute(tools + "replace", "android:required")));
+        }
+
+        public static string ConfigureAndroidDependencies(string gradle)
+        {
+            // GMA 25.4 requires this official library even with child treatment. The user
+            // approved restoring it on 18 Nov after the native crash was reproduced.
+            // Tenjin keeps developer_device_id/scope in OptOutParams and stays off for minors.
+            const string previousBlock = @"// Alien Pet: no App Set ID provider in any Android module
+allprojects {
+    configurations.configureEach {
+        exclude group: 'com.google.android.gms', module: 'play-services-appset'
+    }
+}
+";
+            return gradle.Replace(previousBlock, "");
+        }
+
+        public static void ConfigureAndroidManifest(XDocument manifest, bool adultMeasurementQa = false)
         {
             XNamespace android = "http://schemas.android.com/apk/res/android";
             XNamespace tools = "http://schemas.android.com/tools";
@@ -53,11 +87,14 @@ namespace GravityBox.Editor
                 foreach (var existing in app.Elements("provider").Where(e => (string)e.Attribute(android + "name") == name).ToArray()) existing.Remove();
                 app.Add(new XElement("provider", new XAttribute(android + "name", name), new XAttribute(tools + "node", "remove")));
             }
-            // Neither children nor adults need advertising IDs for this game's contextual ads.
+            // Only the isolated attribution QA build declares AD_ID. Production retains its existing protection.
             foreach (string name in new[] { "com.google.android.gms.permission.AD_ID", "android.permission.ACCESS_ADSERVICES_AD_ID", "android.permission.ACCESS_ADSERVICES_ATTRIBUTION", "android.permission.ACCESS_ADSERVICES_TOPICS" })
             {
                 foreach (var existing in root.Elements("uses-permission").Where(e => (string)e.Attribute(android + "name") == name).ToArray()) existing.Remove();
-                root.Add(new XElement("uses-permission", new XAttribute(android + "name", name), new XAttribute(tools + "node", "remove")));
+                var permission = new XElement("uses-permission", new XAttribute(android + "name", name));
+                if (!adultMeasurementQa || name != "com.google.android.gms.permission.AD_ID")
+                    permission.SetAttributeValue(tools + "node", "remove");
+                root.Add(permission);
             }
         }
 
@@ -77,6 +114,11 @@ namespace GravityBox.Editor
         {
             foreach (string key in new[] { "FirebaseDataCollectionDefaultEnabled", "FIREBASE_ANALYTICS_COLLECTION_ENABLED", "GOOGLE_ANALYTICS_IDFA_COLLECTION_ENABLED", "GOOGLE_ANALYTICS_IDFV_COLLECTION_ENABLED", "GOOGLE_ANALYTICS_DEFAULT_ALLOW_ANALYTICS_STORAGE", "GOOGLE_ANALYTICS_DEFAULT_ALLOW_AD_STORAGE", "GOOGLE_ANALYTICS_DEFAULT_ALLOW_AD_USER_DATA", "GOOGLE_ANALYTICS_DEFAULT_ALLOW_AD_PERSONALIZATION_SIGNALS" }) plist.root.SetBoolean(key, false);
             plist.root.SetBoolean("GADDelayAppMeasurementInit", true);
+            // Tenjin is Android-only here. Its package postprocessor adds this unused ATT
+            // description; remove it so iOS retains the existing contextual-ads contract.
+            if (plist.root.values.ContainsKey("NSUserTrackingUsageDescription") &&
+                plist.root["NSUserTrackingUsageDescription"].AsString() == "We request to track data to enhance ad performance and user experience. Your privacy is respected.")
+                plist.root.values.Remove("NSUserTrackingUsageDescription");
             // No ATT request or IDFA-based attribution in this contextual-ads release.
             plist.root.SetBoolean("GOOGLE_ANALYTICS_REGISTRATION_WITH_AD_NETWORK_ENABLED", false);
         }

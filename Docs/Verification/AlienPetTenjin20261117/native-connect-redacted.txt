@@ -1,0 +1,5 @@
+11-17 11:22:18.807  4300  4319 I Unity   : Android Initializing - v1.23.2
+11-17 11:22:18.870  4300  4319 D TenjinSDK: Set event cache setting false
+11-17 11:22:18.898  4300 12364 D TenjinSDK: Starting connect task
+11-17 11:22:21.335  4300 12364 D HttpConnection: Tenjin::connect params: {opt_in_params=referrer,platform,app_version,limit_ad_tracking, app_version=0.1.0, iap_transaction_count=0, first_session_date=2026-11-17T04:22:18Z, session_id=[REDACTED-TEST-ID], limit_ad_tracking=false, platform=android, sent_at=1794889340394, analytics_installation_id=[REDACTED-TEST-ID], initialized_at=1794889338843, average_session_length=1549, bundle_id=com.gravityboxlab.venom, session_count=1, total_session_time=1549, sdk_version=2.0.2-1.23.2u, last_session_length=0, current_session_length=1549, total_ilrd_revenue_usd=0.0}
+11-17 11:22:21.335  4300 12364 D HttpConnection: Tenjin::connect response: {"code":202,"message":"invalid device identifier"}

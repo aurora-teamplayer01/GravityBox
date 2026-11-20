@@ -1,0 +1,25 @@
+{
+  "observed_at": "2026-11-20T10:05:30.905406",
+  "package": "com.gravityboxlab.venom",
+  "versionCode": "9 minSdk=32 targetSdk=36",
+  "versionName": "1.0.8-attribution-qa",
+  "firstInstallTime": "2026-11-02 08:55:28",
+  "lastUpdateTime": "2026-11-20 10:04:43",
+  "installerPackageName": "com.android.vending",
+  "running": true,
+  "tenjin": [
+    {
+      "time": "11-20 10:04:58.839",
+      "error202": false,
+      "optout_notice": false,
+      "exception_notice": false
+    },
+    {
+      "time": "11-20 10:05:00.624",
+      "error202": false,
+      "optout_notice": false,
+      "exception_notice": false
+    }
+  ],
+  "fatal_crash_marker": false
+}

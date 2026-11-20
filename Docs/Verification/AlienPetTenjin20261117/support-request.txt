@@ -1,0 +1,17 @@
+Hello Tenjin Support,
+
+We are integrating Tenjin for Alien Pet: Escape Puzzle (Android package com.gravityboxlab.venom) to measure Unity Ads installs.
+
+Using Unity SDK 1.23.2 / Android SDK 2.0.2, our test connect reaches Tenjin but returns code 202, "invalid device identifier". The Android test was sideloaded, so it had no Play Install Referrer. We have not yet verified a Play install conversion.
+
+We must preserve the game's mixed-audience privacy settings: no Tenjin initialization for unknown ages or anyone under 18; adults must explicitly opt into analytics. AD_ID permission remains removed, and we do not send GAID, App Set ID, hardware IDs or IP fingerprint parameters. The integration permits Install Referrer, platform, app version and tracking-limit status, alongside the SDK's required installation/session fields.
+
+Does Tenjin support Android first-open/custom-event ingestion and Unity Ads attribution using Google Play Install Referrer plus the installation ID, without GAID or fingerprinting? If yes, please provide the exact supported configuration, required parameters and test procedure. If not, please confirm that limitation. Please do not enable additional identifier collection or paid services for the account.
+
+The dashboard currently withholds tracking links until an SDK event is accepted. Please advise how to complete an identifier-free conversion test in this situation.
+
+No API keys, raw device logs or device identifiers are included.
+
+Thank you,
+Kien
+YoloStudioGlobal

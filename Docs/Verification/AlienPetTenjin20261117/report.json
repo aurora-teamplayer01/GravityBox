@@ -1,0 +1,62 @@
+{
+  "date": "2026-11-17",
+  "status": "INCOMPLETE: vendor ingestion blocker; integration disabled by default",
+  "tests": {
+    "editMode": {
+      "passed": 21,
+      "failed": 0,
+      "source": "Artifacts/Tests/Tenjin/results-final.xml"
+    },
+    "androidBuild": "succeeded; ARM64 IL2CPP development with store UI",
+    "existingBuildDiagnostic": "COgheChapterProofGenerator reported missing exact solution coverage for 30–40; build continued and succeeded. Not changed by this service task.",
+    "emulator": {
+      "installed": true,
+      "consentBeforeSdk": true,
+      "requestReachedServer": true,
+      "serverCode": 202,
+      "serverMessage": "invalid device identifier",
+      "acceptedEvent": false,
+      "playReferrer": "unavailable on sideload",
+      "privacyUi": "New Firebase/Tenjin explanation visually fits; user clicked Allow analytics manually after mirror input failed"
+    },
+    "oppo": {
+      "usb": "connected and authorized",
+      "install": "rejected by Android version downgrade (installed code 4; test APK code 1)",
+      "preservedData": true,
+      "note": "Did not uninstall or clear the installed Play build. No real OPPO Tenjin run verified."
+    }
+  },
+  "privacy": {
+    "analytics": "18+ explicit opt-in only; no initialization for unknown/minors/declined",
+    "AD_ID": "remains removed",
+    "allowedOptionalParams": [
+      "referrer",
+      "platform",
+      "app_version",
+      "limit_ad_tracking"
+    ],
+    "customEvents": [
+      "level_start",
+      "level_complete",
+      "level_fail"
+    ],
+    "value": "bounded integer display level only",
+    "reconsent": "old adult affirmative v1 choice requires new disclosure; prior refusal preserved",
+    "iOS": "no Tenjin runtime initialization; not built or tested in this task"
+  },
+  "nativeEvidence": "native-connect-redacted.txt",
+  "apk": {
+    "path": "Builds/SpatialLab/Android/COghe-Spatial-Profiler.apk",
+    "sha256": "186b010477f9d790a8d3e4872c7312b12a9d8e0228c9d042bfed1e5a34f64c2a",
+    "note": "Diagnostic APK built with integration enabled for testing. Repository config subsequently disabled after server rejection. Do not distribute this test APK as production."
+  },
+  "notVerified": [
+    "successful SDK ingestion",
+    "native consent revocation after accepted event",
+    "real Play install attribution",
+    "Unity install postback",
+    "install deduplication",
+    "revenue/ROAS",
+    "iOS SDK integration"
+  ]
+}

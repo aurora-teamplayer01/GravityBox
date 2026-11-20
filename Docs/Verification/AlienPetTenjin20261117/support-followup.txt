@@ -1,0 +1,21 @@
+Hello Tenjin Support,
+
+Following up with the specific documentation we reviewed for Alien Pet: Escape Puzzle (com.gravityboxlab.venom), Unity SDK 1.23.2 / Android SDK 2.0.2:
+
+1. https://tenjin.com/docs/sdk-faq/ associates code 202 with a missing/invalid advertising ID or an incorrect opt-out configuration. The Unity SDK README GDPR section lists advertising_id as mandatory on Android: https://github.com/tenjin/tenjin-unity-sdk#gdpr . Our restricted SDK allowlist omits advertising_id and the connect response is 202, invalid device identifier.
+
+2. https://tenjin.com/docs/server-to-server-s2s-setup/ says advertising_id may be empty or all zeros for opt-out users, and lists analytics_installation_id and referrer. https://tenjin.com/docs/implementing-s2s-tracking-a-no-sdk-guide/ lists Install Referrer for deterministic attribution, but also describes IP-based probabilistic attribution when GAID is unavailable.
+
+Could you clarify the supported implementation for Google Play installs without Advertising ID: can the Unity SDK use a real Play Install Referrer plus its installation-specific ID, or is S2S required? Please provide the exact SDK/API settings and required fields, including whether an absent advertising_id differs from an explicit empty/zero value. We will not fabricate consent or device identifiers.
+
+Please also confirm how to disable IP-based/probabilistic matching. The S2S documentation says the connection IP may still be used when ip_address is omitted; omitting that field alone therefore does not establish that IP-based attribution is disabled.
+
+We are preparing a signed Google Play Internal testing build to distinguish the earlier sideload (no Play referrer) from a real Play install. Please advise how to obtain a test tracking link while the dashboard waits for the first accepted SDK event, and what constitutes a valid install/postback test for Unity Ads, including updates versus clean installs.
+
+Child protections remain unchanged: no Tenjin initialization for unknown age or anyone under 18; adults must explicitly allow analytics. AD_ID remains removed. No GAID, App Set ID, hardware IDs or IP fingerprint parameters are intentionally collected for this integration. The Unity campaign will remain paused until attribution is verified. Please do not enable extra collection or paid services.
+
+This follow-up contains no credentials, raw logs or device identifiers.
+
+Thank you,
+Kien
+YoloStudioGlobal

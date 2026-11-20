@@ -1,0 +1,311 @@
+{
+  "observed_at": "2026-11-20T10:08:43.794268",
+  "package": "com.gravityboxlab.venom",
+  "versionCode": "9 minSdk=32 targetSdk=36",
+  "versionName": "1.0.8-attribution-qa",
+  "firstInstallTime": "2026-11-02 08:55:28",
+  "lastUpdateTime": "2026-11-20 10:04:43",
+  "installerPackageName": "com.android.vending",
+  "running": true,
+  "tenjin": [
+    {
+      "time": "11-20 10:07:34.970",
+      "error202": false,
+      "optout_notice": false,
+      "exception_notice": false
+    },
+    {
+      "time": "11-20 10:07:35.002",
+      "error202": false,
+      "optout_notice": false,
+      "exception_notice": false
+    },
+    {
+      "time": "11-20 10:07:35.003",
+      "error202": false,
+      "optout_notice": false,
+      "exception_notice": false
+    },
+    {
+      "time": "11-20 10:07:35.003",
+      "error202": false,
+      "optout_notice": false,
+      "exception_notice": false
+    },
+    {
+      "time": "11-20 10:07:35.004",
+      "error202": false,
+      "optout_notice": false,
+      "exception_notice": false
+    },
+    {
+      "time": "11-20 10:07:35.006",
+      "error202": false,
+      "optout_notice": false,
+      "exception_notice": false
+    },
+    {
+      "time": "11-20 10:07:35.065",
+      "error202": false,
+      "optout_notice": false,
+      "exception_notice": false
+    },
+    {
+      "time": "11-20 10:07:35.065",
+      "error202": false,
+      "optout_notice": false,
+      "exception_notice": false
+    },
+    {
+      "time": "11-20 10:07:35.065",
+      "error202": false,
+      "optout_notice": false,
+      "exception_notice": false
+    },
+    {
+      "time": "11-20 10:07:35.066",
+      "error202": false,
+      "optout_notice": false,
+      "exception_notice": false
+    },
+    {
+      "time": "11-20 10:07:35.076",
+      "error202": false,
+      "optout_notice": false,
+      "exception_notice": false
+    },
+    {
+      "time": "11-20 10:07:35.080",
+      "error202": false,
+      "optout_notice": false,
+      "exception_notice": false
+    },
+    {
+      "time": "11-20 10:07:35.080",
+      "error202": false,
+      "optout_notice": false,
+      "exception_notice": false
+    },
+    {
+      "time": "11-20 10:07:35.091",
+      "error202": false,
+      "optout_notice": false,
+      "exception_notice": false
+    },
+    {
+      "time": "11-20 10:07:35.091",
+      "error202": false,
+      "optout_notice": false,
+      "exception_notice": false
+    },
+    {
+      "time": "11-20 10:07:35.188",
+      "error202": false,
+      "optout_notice": false,
+      "exception_notice": false
+    },
+    {
+      "time": "11-20 10:07:35.188",
+      "error202": false,
+      "optout_notice": false,
+      "exception_notice": false
+    },
+    {
+      "time": "11-20 10:07:35.188",
+      "error202": false,
+      "optout_notice": false,
+      "exception_notice": false
+    },
+    {
+      "time": "11-20 10:07:35.188",
+      "error202": false,
+      "optout_notice": false,
+      "exception_notice": false
+    },
+    {
+      "time": "11-20 10:07:35.463",
+      "error202": false,
+      "optout_notice": false,
+      "exception_notice": false
+    },
+    {
+      "time": "11-20 10:07:35.463",
+      "error202": false,
+      "optout_notice": false,
+      "exception_notice": false
+    },
+    {
+      "time": "11-20 10:07:35.463",
+      "error202": false,
+      "optout_notice": false,
+      "exception_notice": false
+    },
+    {
+      "time": "11-20 10:07:35.463",
+      "error202": false,
+      "optout_notice": false,
+      "exception_notice": false
+    },
+    {
+      "time": "11-20 10:07:35.487",
+      "error202": false,
+      "optout_notice": false,
+      "exception_notice": false
+    },
+    {
+      "time": "11-20 10:07:35.520",
+      "error202": false,
+      "optout_notice": false,
+      "exception_notice": false
+    },
+    {
+      "time": "11-20 10:07:35.528",
+      "error202": false,
+      "optout_notice": false,
+      "exception_notice": false
+    },
+    {
+      "time": "11-20 10:07:36.782",
+      "error202": false,
+      "optout_notice": false,
+      "exception_notice": false
+    },
+    {
+      "time": "11-20 10:07:36.783",
+      "fields": [
+        "advertising_id",
+        "analytics_installation_id",
+        "app_version",
+        "app_version_code",
+        "average_session_length",
+        "bundle_id",
+        "current_session_length",
+        "first_session_date",
+        "iap_transaction_count",
+        "initialized_at",
+        "last_session_date",
+        "last_session_length",
+        "limit_ad_tracking",
+        "opt_out_params",
+        "platform",
+        "plugin",
+        "plugin_version",
+        "retry_enabled",
+        "sdk_version",
+        "sent_at",
+        "session_count",
+        "session_id",
+        "source_app_store",
+        "total_ilrd_revenue_usd",
+        "total_session_time"
+      ],
+      "version": "1.0.8-attribution-qa",
+      "gaid_present": true,
+      "gaid_nonzero": true,
+      "event": null,
+      "identifier_optouts": {
+        "advertising_id": false,
+        "developer_device_id": true,
+        "developer_device_id_scope": true,
+        "android_id": true,
+        "ip_address": true
+      },
+      "error202": false,
+      "optout_notice": false,
+      "exception_notice": false
+    },
+    {
+      "time": "11-20 10:07:36.783",
+      "response_code": "200",
+      "success": "true",
+      "error202": false,
+      "optout_notice": false,
+      "exception_notice": false
+    },
+    {
+      "time": "11-20 10:07:36.783",
+      "error202": false,
+      "optout_notice": false,
+      "exception_notice": false
+    },
+    {
+      "time": "11-20 10:08:41.142",
+      "error202": false,
+      "optout_notice": false,
+      "exception_notice": false
+    },
+    {
+      "time": "11-20 10:08:41.142",
+      "error202": false,
+      "optout_notice": false,
+      "exception_notice": false
+    },
+    {
+      "time": "11-20 10:08:42.487",
+      "error202": false,
+      "optout_notice": false,
+      "exception_notice": false
+    },
+    {
+      "time": "11-20 10:08:42.488",
+      "fields": [
+        "advertising_id",
+        "analytics_installation_id",
+        "app_version",
+        "app_version_code",
+        "average_session_length",
+        "bundle_id",
+        "current_session_length",
+        "event",
+        "first_session_date",
+        "iap_transaction_count",
+        "initialized_at",
+        "last_session_date",
+        "last_session_length",
+        "limit_ad_tracking",
+        "opt_out_params",
+        "platform",
+        "plugin",
+        "plugin_version",
+        "retry_enabled",
+        "sdk_version",
+        "sent_at",
+        "session_count",
+        "session_id",
+        "source_app_store",
+        "total_ilrd_revenue_usd",
+        "total_session_time",
+        "value"
+      ],
+      "version": "1.0.8-attribution-qa",
+      "gaid_present": true,
+      "gaid_nonzero": true,
+      "event": "level_start",
+      "identifier_optouts": {
+        "advertising_id": false,
+        "developer_device_id": true,
+        "developer_device_id_scope": true,
+        "android_id": true,
+        "ip_address": true
+      },
+      "error202": false,
+      "optout_notice": false,
+      "exception_notice": false
+    },
+    {
+      "time": "11-20 10:08:42.489",
+      "response_code": "200",
+      "success": "true",
+      "error202": false,
+      "optout_notice": false,
+      "exception_notice": false
+    },
+    {
+      "time": "11-20 10:08:42.489",
+      "error202": false,
+      "optout_notice": false,
+      "exception_notice": false
+    }
+  ],
+  "fatal_crash_marker": false
+}

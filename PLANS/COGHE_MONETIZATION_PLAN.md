@@ -1,4 +1,19 @@
 ---
+
+## Cập nhật 18/11/2026 — banner trẻ em Android
+
+Phần này ưu tiên hơn các quy tắc quảng cáo lịch sử bên dưới. Triển khai đang kiểm thử, chưa phát hành app mới.
+
+- Nhóm 9–12 đã chọn rõ: chỉ banner AdMob theo ngữ cảnh ở Main Menu/Home; không banner Victory/gameplay, không rewarded/interstitial/app-open. Nhóm dưới 9, chưa rõ tuổi hoặc lựa chọn Under13 cũ chưa phân định tiếp tục không quảng cáo. iOS chưa mở banner trẻ em.
+- Under13 cũ được hỏi lại **hai nhóm trẻ em**, không tự đổi thành nhóm có quảng cáo. Giá trị enum cũ và tiến trình được giữ nguyên.
+- Dưới 18: Firebase Analytics, Remote Config và Tenjin tắt. Doanh thu banner trẻ em xem báo cáo tổng hợp của ad unit, không gửi event doanh thu từng impression tới Firebase.
+- Child age treatment, Max G, không cá nhân hóa, tắt publisher first-party ID; không mediation mới. Banner riêng `AlienPet_Android_Child9to12_Banner`, ID `ca-app-pub-7806638519709442/6851048953`, bỏ video, refresh 120 giây. QA dùng ID test.
+- Chưa mở rewarded/interstitial cho trẻ em: cần chứng minh đáp ứng chính sách Families về đóng quảng cáo trong 5 giây, không gây áp lực và không gây nhầm lẫn trước khi đề xuất tiếp.
+- User chốt 18/11 sau test native: khôi phục thư viện Google App Set bắt buộc cho AdMob (loại nó làm SDK 25.4 crash). Google có thể xử lý App Set ID; không tuyên bố không có định danh. Tenjin vẫn loại developer_device_id/scope khỏi dữ liệu gửi; dưới 18 vẫn không khởi tạo Firebase/Tenjin. GAID/AdServices permissions tiếp tục bị loại.
+- Chính sách quyền riêng tư được cập nhật có phân biệt phiên bản. SDK và khai báo Play cần đối chiếu lại trước mỗi bản release; kiểm tra kỹ thuật không thay thế chứng nhận pháp lý.
+- Unity UA: đã gửi yêu cầu xác nhận attribution/postback không GAID/IP matching. Chưa bật campaign, chưa coi ingestion Tenjin là đo được CPI từ Unity.
+
+Chi tiết và kết quả: [AlienPetChildAds20261118](../Docs/Verification/AlienPetChildAds20261118/README.md).
 title: "COghe — kế hoạch kiếm tiền chi tiết (đã chốt, chờ tích hợp SDK)"
 tags: [coghe, monetization, ads, iap, economy, plan]
 status: active

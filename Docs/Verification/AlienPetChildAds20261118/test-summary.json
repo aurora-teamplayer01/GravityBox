@@ -1,0 +1,18 @@
+{
+  "privacy-final": {
+    "result": "Passed",
+    "total": "29",
+    "passed": "29",
+    "failed": "0",
+    "start-time": "2026-11-18 03:05:50Z",
+    "end-time": "2026-11-18 03:05:50Z"
+  },
+  "play-final": {
+    "result": "Passed",
+    "total": "16",
+    "passed": "16",
+    "failed": "0",
+    "start-time": "2026-11-18 02:56:23Z",
+    "end-time": "2026-11-18 02:56:32Z"
+  }
+}

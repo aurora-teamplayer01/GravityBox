@@ -1,0 +1,44 @@
+{
+  "version": "1.0.5-tenjin-test",
+  "versionCode": 6,
+  "installedVia": "Google Play Internal testing",
+  "gameDataPreserved": true,
+  "unitTests": {
+    "passed": 22,
+    "failed": 0
+  },
+  "connect": {
+    "code": 200,
+    "success": true
+  },
+  "events": [
+    {
+      "name": "level_start",
+      "value": 14,
+      "code": 200
+    },
+    {
+      "name": "level_complete",
+      "value": 14,
+      "code": 200
+    },
+    {
+      "name": "level_start",
+      "value": 15,
+      "code": 200
+    }
+  ],
+  "dashboard": {
+    "appOpen": "received",
+    "referrerInstall": "received",
+    "customEvent": "received"
+  },
+  "appsetLibraryInFinalBuild": false,
+  "appsetNativeRead": "provider unavailable",
+  "advertisingIdPermission": false,
+  "probabilisticMatching": "off, app and inherited Unity",
+  "campaignEnabledByTask": false,
+  "freshPaidInstallAttributionVerified": false,
+  "consentRestoration": "Visually verified in OPPO Privacy: Analytics: Off \u00b7 turn on. Player age unchanged: 18 or older.",
+  "postRevocationObservation": "No Tenjin lines in available log buffer; limited observation, not a complete network traffic audit."
+}

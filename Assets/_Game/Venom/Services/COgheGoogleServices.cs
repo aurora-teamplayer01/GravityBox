@@ -21,16 +21,17 @@ namespace GravityBox.Services
         public const string AdMobApp = "ca-app-pub-7806638519709442~4983717950";
 #endif
         public static bool Ready { get; private set; }
+        public static bool AdsDependencyBlocked { get; private set; }
         private FirebaseApp firebase;
         private COgheAdMob ads;
-        private bool adsInitializing, firebaseInitializing, dispatcherReady;
+        private bool adsInitializing, adsInitialized, firebaseInitializing, dispatcherReady;
         private int consentRevision = -1;
         private float consentRetryDelay = 15;
 
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
         private static void Boot()
         {
-#if (UNITY_ANDROID || UNITY_IOS) && !UNITY_EDITOR
+#if (UNITY_ANDROID || UNITY_IOS) && !UNITY_EDITOR && !ALIENPET_AD_MEASUREMENT_QA
             if (Application.identifier != AppBundleId || Application.isBatchMode) return;
             var host = new GameObject("COghe Google services");
             DontDestroyOnLoad(host); host.AddComponent<COgheGoogleServices>();
@@ -57,24 +58,45 @@ namespace GravityBox.Services
             ads?.Suspend();
             COgheAds.Provider = new COgheNoAds();
             if (!COghePrivacy.AnalyticsAllowed) StopAnalytics();
-            // A fresh blocked session has no native SDK objects to stop. Age-unknown and under-13
+            // A fresh blocked session has no native SDK objects to stop. Age-unknown, under-9 and legacy under-13
             // users stay on local gameplay; changing a prior choice first suspends existing services.
             if (!COghePrivacy.SetupComplete) return;
             if (COghePrivacy.AnalyticsAllowed) StartAnalytics();
             if (!COghePrivacy.AdsAgeEligible) return;
+            AdsDependencyBlocked = !HasRequiredAdDependencies();
+            if (AdsDependencyBlocked)
+            {
+                // GMA 25.4 dereferences AppSet during native init; excluding it must never crash gameplay.
+                // Keep the provider closed instead of silently restoring a restricted identifier library.
+                Debug.LogWarning("[COghe services] Ads unavailable: required App Set dependency is excluded by the current privacy build.");
+                return;
+            }
             if (!dispatcherReady) { MobileAdsEventExecutor.Initialize(); dispatcherReady = true; }
-            MobileAds.SetRequestConfiguration(AdRequestConfiguration());
+            MobileAds.SetRequestConfiguration(AdRequestConfiguration(adsInitialized));
             RequestConsent();
         }
 
-        public static RequestConfiguration AdRequestConfiguration()
+        private static bool HasRequiredAdDependencies()
+        {
+#if UNITY_ANDROID && !UNITY_EDITOR
+            try { using var required = new AndroidJavaClass("com.google.android.gms.appset.AppSet"); return true; }
+            catch (AndroidJavaException) { return false; }
+#else
+            return true;
+#endif
+        }
+
+        public static RequestConfiguration AdRequestConfiguration(bool sdkInitialized = true)
         {
 #pragma warning disable CS0618 // TFUA is retained as the more conservative under-consent-age signal.
             return new RequestConfiguration
             {
-                AgeRestrictedTreatment = COghePrivacy.IsTeen ? AgeRestrictedTreatment.Teen : AgeRestrictedTreatment.Unspecified,
+                AgeRestrictedTreatment = COghePrivacy.IsChild ? AgeRestrictedTreatment.Child : COghePrivacy.IsTeen ? AgeRestrictedTreatment.Teen : AgeRestrictedTreatment.Unspecified,
                 TagForUnderAgeOfConsent = COghePrivacy.IsTeen ? TagForUnderAgeOfConsent.True : TagForUnderAgeOfConsent.False,
                 MaxAdContentRating = MaxAdContentRating.G,
+                // Android 25.4 throws if this optional setter runs before MobileAds.Initialize.
+                // Age/G/personalization flags still apply before initialization.
+                PublisherFirstPartyIdEnabled = sdkInitialized ? (bool?)false : null,
                 PublisherPrivacyPersonalizationState = PublisherPrivacyPersonalizationState.Disabled
             };
 #pragma warning restore CS0618
@@ -153,7 +175,7 @@ namespace GravityBox.Services
             CancelInvoke(nameof(RetryConsent));
             int ticket = COghePrivacy.Revision;
             consentRevision = ticket;
-            ConsentInformation.Update(new ConsentRequestParameters { TagForUnderAgeOfConsent = COghePrivacy.IsTeen }, error => Main(() =>
+            ConsentInformation.Update(new ConsentRequestParameters { TagForUnderAgeOfConsent = COghePrivacy.IsChild || COghePrivacy.IsTeen }, error => Main(() =>
             {
                 if (this == null || !COghePrivacy.AdsPermitValid(ticket)) return;
                 if (error != null) { ConsentError(error); return; }
@@ -198,6 +220,9 @@ namespace GravityBox.Services
             {
                 adsInitializing = false;
                 if (this == null || status == null) return;
+                adsInitialized = true;
+                // Apply the ID opt-out before constructing any provider or loading an ad.
+                MobileAds.SetRequestConfiguration(AdRequestConfiguration());
                 if (!COghePrivacy.AdsPermitValid(ticket))
                 {
                     if (COghePrivacy.AdsAgeEligible && consentRevision == COghePrivacy.Revision) RequestConsent();

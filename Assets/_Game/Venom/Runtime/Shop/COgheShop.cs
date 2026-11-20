@@ -37,6 +37,9 @@ namespace GravityBox.Venom
             public int LastAbility = -1;
             public List<int> CardsPicked = new List<int>();
             public int UnderstandPacingRevision;
+            // One native review opportunity, tied to the first newly completed interlude.
+            // 0: no opportunity; positive: pending stable bonus ID; -1: already requested.
+            public int ReviewBonus;
             public List<int> SkippedPractices = new List<int>();
             // COghe's energy (COgheEnergy, Mrk 21/10/2026), as the energy used: an old save starts full.
             public int EnergyUsed;
@@ -115,6 +118,25 @@ namespace GravityBox.Venom
         public static bool Understood(string key) => Paid(key) || Current.Understood.Contains(key);
         public static void Understand(string key)
         { if (!Current.Understood.Contains(key)) { Current.Understood.Add(key); Save(); } }
+        public static void CompleteUnderstandBonus(int chapter)
+        {
+            if (COgheBonus.Rounds(chapter) == null || COgheBonus.Done(chapter)) return;
+            bool first = true;
+            for (int c = 1; c <= COgheBonus.MaxChapters; c++)
+            {
+                int practice = COgheBonus.PracticeId(c);
+                if (COgheBonus.Done(c) || practice > 0 && COgheBonus.Done(practice)) { first = false; break; }
+            }
+            if (first && Current.ReviewBonus == 0) Current.ReviewBonus = chapter;
+            Current.Understood.Add(COgheBonus.Key(chapter));
+            Save();
+        }
+        public static bool TakeReviewOpportunity(int chapter)
+        {
+            if (chapter <= 0 || Current.ReviewBonus != chapter || !COgheBonus.Done(chapter)) return false;
+            Current.ReviewBonus = -1; Save(); // persist before any asynchronous store call
+            return true;
+        }
         /// <summary>Introducing the six mid-chapter practices never forces a backlog on an existing player.
         /// Skipped is separate from understood: no retroactive cards, toys or Drops. Boss checkpoints are untouched.</summary>
         public static void MigrateUnderstand(COgheProductCatalog catalog, VenomCampaignSave progress)

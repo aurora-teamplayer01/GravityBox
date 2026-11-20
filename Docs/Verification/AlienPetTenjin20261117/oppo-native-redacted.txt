@@ -1,0 +1,8 @@
+11-17 12:13:42.267 13594 13642 D TenjinSDK: Connecting...
+11-17 12:13:42.268 13594 14716 D TenjinSDK: Starting connect task
+11-17 12:13:42.268 13594 14716 D TenjinSDK: Ready to connect - lock available? true
+11-17 12:13:42.268 13594 14716 D TenjinSDK: Acquired startup lock, sending connect.
+11-17 12:13:42.271 13594 14716 D TenjinSDK: Get customer user id
+11-17 12:13:42.988 13594 14716 D HttpConnection: Tenjin request URL: https://track.tenjin.com/v0/event
+11-17 12:13:42.988 13594 14716 D HttpConnection: Tenjin::connect params-summary: {"fields": ["opt_in_params", "app_version", "iap_transaction_count", "first_session_date", "session_id", "limit_ad_tracking", "platform", "sent_at", "referrer", "analytics_installation_id", "initialized_at", "average_session_length", "bundle_id", "session_count", "total_session_time", "sdk_version", "referrer_click_ts", "referrer_install_ts", "last_session_length", "current_session_length", "total_ilrd_revenue_usd"], "app_version": "1.0.4-tenjin-test", "referrer_present": true, "referrer_nonempty": true, "advertising_id_present": false}
+11-17 12:13:42.988 13594 14716 D HttpConnection: Tenjin::connect response: {"code":202,"message":"invalid device identifier"}

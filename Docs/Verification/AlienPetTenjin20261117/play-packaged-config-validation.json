@@ -1,0 +1,10 @@
+{
+  "bundledConfig": [
+    {
+      "file": "base/assets/bin/Data/ada017cab639d497a8b9027d55403c08",
+      "enabled": true,
+      "keyMatchesRepo": true
+    }
+  ],
+  "repositoryDefaultEnabled": false
+}

@@ -1,0 +1,431 @@
+{
+  "status": "READY_FOR_MANUAL_UPLOAD_EXACT_VERSION_8_ONLY",
+  "prepared_at": "2026-11-18T03:43:27.428052+00:00",
+  "app": "Alien Pet: Escape Puzzle",
+  "version_name": "1.0.7",
+  "version_code": 8,
+  "aab": "/Users/mrk/GravityBox/Builds/AlienPet/GooglePlay/AlienPet-1.0.7-8.aab",
+  "aab_sha256": "e43a4e000f8ecabf1f3030b275fec9cebabaeadf0064b08bf82a08fa779899ba",
+  "abi": "arm64-v8a",
+  "unity": "6000.3.19f1",
+  "format": "Public native symbol table, ABI directory at ZIP root; no full DWARF/file-line guarantee",
+  "symbol_libraries": [
+    {
+      "library": "libil2cpp.so",
+      "source_path": "/Users/mrk/GravityBox/Library/Bee/artifacts/Android/d8kzr/libil2cpp.so",
+      "source_sha256": "e8bb5915421e337441d3b1a691341b29d7300d11a4edd81d49be8c2c8f9df115",
+      "aab_library_sha256": "f37abd113de5dc61d5a59d490eb7b5fda125957a0483cdf4ffd978a7a572785c",
+      "build_id": "ed4ce601186063821820fb80566cf4a4e52e0f52",
+      "code_verification": "Executable .text bytes, virtual address, size and Build ID match AAB",
+      "aab_elf": {
+        "build_id": "ed4ce601186063821820fb80566cf4a4e52e0f52",
+        "architecture": "ELF64 little-endian AArch64",
+        "text_address": 26575600,
+        "text_size": 4020668,
+        "text_sha256": "115dcf30d5bb2fac9ce8f79d46f49a66858ce4134fabec4a1d23719e354e8e08",
+        "symbol_count": 0,
+        "debug_sections": []
+      },
+      "source_elf": {
+        "build_id": "ed4ce601186063821820fb80566cf4a4e52e0f52",
+        "architecture": "ELF64 little-endian AArch64",
+        "text_address": 26575600,
+        "text_size": 4020668,
+        "text_sha256": "115dcf30d5bb2fac9ce8f79d46f49a66858ce4134fabec4a1d23719e354e8e08",
+        "symbol_count": 713278,
+        "debug_sections": [
+          ".debug_loc",
+          ".debug_abbrev",
+          ".debug_info",
+          ".debug_ranges",
+          ".debug_str",
+          ".debug_line"
+        ]
+      },
+      "packaged_elf": {
+        "build_id": "ed4ce601186063821820fb80566cf4a4e52e0f52",
+        "architecture": "ELF64 little-endian AArch64",
+        "text_address": 26575600,
+        "text_size": 4020668,
+        "text_sha256": null,
+        "symbol_count": 709671,
+        "debug_sections": []
+      },
+      "archive_entry": "arm64-v8a/libil2cpp.so",
+      "packaged_sha256": "cd90e9e4f892bd5f659ba82e4b754cded9a4eeb46a2399aa832cc064e30824ed",
+      "packaged_size": 57341192
+    },
+    {
+      "library": "libunity.so",
+      "source_path": "/Users/mrk/GravityBox/Library/Bee/artifacts/Android/libunity/arm64-v8a/unstripped/libunity.so",
+      "source_sha256": "3bf2e832ee3d420b0cc720ba922b68ea0ff0840907d5dc810e895b58eaeedac9",
+      "aab_library_sha256": "75f8dcfb4e4581ec8603c4b452895324fa098c0deb579335e3dc62d10c0401be",
+      "build_id": "c089f6b9436c0adc",
+      "code_verification": "Executable .text bytes, virtual address, size and Build ID match AAB",
+      "aab_elf": {
+        "build_id": "c089f6b9436c0adc",
+        "architecture": "ELF64 little-endian AArch64",
+        "text_address": 5098736,
+        "text_size": 15552320,
+        "text_sha256": "1551c4bfb9719daa52b261452edfdb4e92f195eba9cc86b0d608dceeafd88906",
+        "symbol_count": 0,
+        "debug_sections": []
+      },
+      "source_elf": {
+        "build_id": "c089f6b9436c0adc",
+        "architecture": "ELF64 little-endian AArch64",
+        "text_address": 5098736,
+        "text_size": 15552320,
+        "text_sha256": "1551c4bfb9719daa52b261452edfdb4e92f195eba9cc86b0d608dceeafd88906",
+        "symbol_count": 151062,
+        "debug_sections": [
+          ".debug_abbrev",
+          ".debug_info",
+          ".debug_ranges",
+          ".debug_str",
+          ".debug_line"
+        ]
+      },
+      "packaged_elf": {
+        "build_id": "c089f6b9436c0adc",
+        "architecture": "ELF64 little-endian AArch64",
+        "text_address": 5098736,
+        "text_size": 15552320,
+        "text_sha256": null,
+        "symbol_count": 151006,
+        "debug_sections": []
+      },
+      "archive_entry": "arm64-v8a/libunity.so",
+      "packaged_sha256": "55800c41a1c888cbaaec9f39d9bb07161334d4706f562df5116904452b8fb4b6",
+      "packaged_size": 8514304
+    },
+    {
+      "library": "libmain.so",
+      "source_path": "/Applications/Unity/Hub/Editor/6000.3.19f1/PlaybackEngines/AndroidPlayer/Variations/il2cpp/Release/Symbols/arm64-v8a/libmain.dbg.so",
+      "source_sha256": "b510fbad5acd9af58197c77c3e3d6a8611efd45566f8acd379e91a5c836dbcea",
+      "aab_library_sha256": "88f32dddd4c77224351f645d1aefb3987aefad9bc53b43fcf8e292e61be1bc4d",
+      "build_id": "c5498ab8c791f1473a54c79a9d3c5b738ff6d941",
+      "code_verification": "Editor executable counterpart byte-identical to AAB; symbol .text range and Build ID match",
+      "aab_elf": {
+        "build_id": "c5498ab8c791f1473a54c79a9d3c5b738ff6d941",
+        "architecture": "ELF64 little-endian AArch64",
+        "text_address": 18976,
+        "text_size": 1048,
+        "text_sha256": "43ed83e312ae15fbc05d46034d4b7cc081f60cd6582f3bbc4229cc8374d70f71",
+        "symbol_count": 0,
+        "debug_sections": []
+      },
+      "source_elf": {
+        "build_id": "c5498ab8c791f1473a54c79a9d3c5b738ff6d941",
+        "architecture": "ELF64 little-endian AArch64",
+        "text_address": 18976,
+        "text_size": 1048,
+        "text_sha256": null,
+        "symbol_count": 70,
+        "debug_sections": [
+          ".debug_loc",
+          ".debug_abbrev",
+          ".debug_info",
+          ".debug_ranges",
+          ".debug_str",
+          ".debug_line"
+        ]
+      },
+      "packaged_elf": {
+        "build_id": "c5498ab8c791f1473a54c79a9d3c5b738ff6d941",
+        "architecture": "ELF64 little-endian AArch64",
+        "text_address": 18976,
+        "text_size": 1048,
+        "text_sha256": null,
+        "symbol_count": 55,
+        "debug_sections": []
+      },
+      "archive_entry": "arm64-v8a/libmain.so",
+      "packaged_sha256": "dc5f0f68af8630ecbb588bf68f59136fbd8c574ea799fe64ae4f5f62760abb9f",
+      "packaged_size": 8440
+    },
+    {
+      "library": "lib_burst_generated.so",
+      "source_path": "/Users/mrk/GravityBox/Library/Bee/artifacts/Android/AsyncPluginsFromLinker/arm64-v8a/lib_burst_generated.so",
+      "source_sha256": "04966a520795e8a285d04346a1cd00f0e7681cf43fa6bd6c3bf5ae66d6df2a0a",
+      "aab_library_sha256": "176a49a4b743d8fc45283a85180f326fbe4e4dcc71f01ef8ad62de0405663eb5",
+      "build_id": "46645195a9f8a98a",
+      "code_verification": "Executable .text bytes, virtual address, size and Build ID match AAB",
+      "aab_elf": {
+        "build_id": "46645195a9f8a98a",
+        "architecture": "ELF64 little-endian AArch64",
+        "text_address": 171216,
+        "text_size": 139076,
+        "text_sha256": "1101ad8c89a610bee266ff5adcc165553b4a8867259d4f4548ec6886e26cd2dd",
+        "symbol_count": 0,
+        "debug_sections": []
+      },
+      "source_elf": {
+        "build_id": "46645195a9f8a98a",
+        "architecture": "ELF64 little-endian AArch64",
+        "text_address": 171216,
+        "text_size": 139076,
+        "text_sha256": "1101ad8c89a610bee266ff5adcc165553b4a8867259d4f4548ec6886e26cd2dd",
+        "symbol_count": 888,
+        "debug_sections": []
+      },
+      "packaged_elf": {
+        "build_id": "46645195a9f8a98a",
+        "architecture": "ELF64 little-endian AArch64",
+        "text_address": 171216,
+        "text_size": 139076,
+        "text_sha256": null,
+        "symbol_count": 797,
+        "debug_sections": []
+      },
+      "archive_entry": "arm64-v8a/lib_burst_generated.so",
+      "packaged_sha256": "8b9ef567ec146fbd0189c112b78f47de10d95b8742d2cf41c4c7695d65ef3fd3",
+      "packaged_size": 157096
+    },
+    {
+      "library": "libc++_shared.so",
+      "source_path": "/Applications/Unity/Hub/Editor/6000.3.19f1/PlaybackEngines/AndroidPlayer/NDK/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/aarch64-linux-android/libc++_shared.so",
+      "source_sha256": "f9992c4ba6b7c5a716e3a202fceb1ce029d6a2b0605838ac6b3219f489dd7970",
+      "aab_library_sha256": "4397241b4bd20a8e579bfb41d21107857e12985f6a01ca0c2a5f83380d1270b4",
+      "build_id": "b04675a35ad96f8a9dcaa073e3bd31d4536f00ad",
+      "code_verification": "Executable .text bytes, virtual address, size and Build ID match AAB",
+      "aab_elf": {
+        "build_id": "b04675a35ad96f8a9dcaa073e3bd31d4536f00ad",
+        "architecture": "ELF64 little-endian AArch64",
+        "text_address": 650416,
+        "text_size": 604680,
+        "text_sha256": "3a3f9f661151915bf3070997bb2982c4708a2e749b7618d4957807443ff31c63",
+        "symbol_count": 0,
+        "debug_sections": []
+      },
+      "source_elf": {
+        "build_id": "b04675a35ad96f8a9dcaa073e3bd31d4536f00ad",
+        "architecture": "ELF64 little-endian AArch64",
+        "text_address": 650416,
+        "text_size": 604680,
+        "text_sha256": "3a3f9f661151915bf3070997bb2982c4708a2e749b7618d4957807443ff31c63",
+        "symbol_count": 9236,
+        "debug_sections": []
+      },
+      "packaged_elf": {
+        "build_id": "b04675a35ad96f8a9dcaa073e3bd31d4536f00ad",
+        "architecture": "ELF64 little-endian AArch64",
+        "text_address": 650416,
+        "text_size": 604680,
+        "text_sha256": null,
+        "symbol_count": 9155,
+        "debug_sections": []
+      },
+      "archive_entry": "arm64-v8a/libc++_shared.so",
+      "packaged_sha256": "76e04d92ad3bb64572eb92d64a3f6f651f9d08ce5977db555d4a2ab85c688936",
+      "packaged_size": 508784
+    },
+    {
+      "library": "libgame.so",
+      "source_path": "/Users/mrk/GravityBox/Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/build/intermediates/merged_native_libs/release/mergeReleaseNativeLibs/out/lib/arm64-v8a/libgame.so",
+      "source_sha256": "4f101ec4fbcf58b4c5875d7b531773eeea38fd95024dba62fc28dbce9a4adea1",
+      "aab_library_sha256": "34bc29c669059e5a1007b7c9cc0ee9c6e8243b17fa87414dd0319fef7c8dc479",
+      "build_id": "ed14ce7554bea5751d1c5e96ce849b98ba04f3af",
+      "code_verification": "Executable .text bytes, virtual address, size and Build ID match AAB",
+      "aab_elf": {
+        "build_id": "ed14ce7554bea5751d1c5e96ce849b98ba04f3af",
+        "architecture": "ELF64 little-endian AArch64",
+        "text_address": 72552,
+        "text_size": 68804,
+        "text_sha256": "bea48c42a1f85a513ebbe294505818512a5ea439ab92b3c458344418b837b6bb",
+        "symbol_count": 0,
+        "debug_sections": []
+      },
+      "source_elf": {
+        "build_id": "ed14ce7554bea5751d1c5e96ce849b98ba04f3af",
+        "architecture": "ELF64 little-endian AArch64",
+        "text_address": 72552,
+        "text_size": 68804,
+        "text_sha256": "bea48c42a1f85a513ebbe294505818512a5ea439ab92b3c458344418b837b6bb",
+        "symbol_count": 1296,
+        "debug_sections": [
+          ".debug_loc",
+          ".debug_abbrev",
+          ".debug_info",
+          ".debug_ranges",
+          ".debug_str",
+          ".debug_line"
+        ]
+      },
+      "packaged_elf": {
+        "build_id": "ed14ce7554bea5751d1c5e96ce849b98ba04f3af",
+        "architecture": "ELF64 little-endian AArch64",
+        "text_address": 72552,
+        "text_size": 68804,
+        "text_sha256": null,
+        "symbol_count": 1202,
+        "debug_sections": []
+      },
+      "archive_entry": "arm64-v8a/libgame.so",
+      "packaged_sha256": "be6dbea537c467f40deda5b26464cfae579412066b9f1a186300114a3b8948f6",
+      "packaged_size": 78728
+    },
+    {
+      "library": "libswappywrapper.so",
+      "source_path": "/Users/mrk/GravityBox/Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/build/intermediates/merged_native_libs/release/mergeReleaseNativeLibs/out/lib/arm64-v8a/libswappywrapper.so",
+      "source_sha256": "c6d24f23af65155bf1fc61911ed13129718410eaff97c52c51f5f6c9eccce908",
+      "aab_library_sha256": "7259e2f530595e76f372e0394cf98b7a8e90bcd8856b89ec895eeb2bcaf444c5",
+      "build_id": "7b9eff646c062040812774b14cbec6fb44cfa30e",
+      "code_verification": "Executable .text bytes, virtual address, size and Build ID match AAB",
+      "aab_elf": {
+        "build_id": "7b9eff646c062040812774b14cbec6fb44cfa30e",
+        "architecture": "ELF64 little-endian AArch64",
+        "text_address": 100040,
+        "text_size": 103328,
+        "text_sha256": "3ce5ce84e4de0f36668e058a88b76f1d06bee82725640f18a6c669c857fc8615",
+        "symbol_count": 0,
+        "debug_sections": []
+      },
+      "source_elf": {
+        "build_id": "7b9eff646c062040812774b14cbec6fb44cfa30e",
+        "architecture": "ELF64 little-endian AArch64",
+        "text_address": 100040,
+        "text_size": 103328,
+        "text_sha256": "3ce5ce84e4de0f36668e058a88b76f1d06bee82725640f18a6c669c857fc8615",
+        "symbol_count": 1689,
+        "debug_sections": [
+          ".debug_loc",
+          ".debug_abbrev",
+          ".debug_info",
+          ".debug_ranges",
+          ".debug_str",
+          ".debug_line"
+        ]
+      },
+      "packaged_elf": {
+        "build_id": "7b9eff646c062040812774b14cbec6fb44cfa30e",
+        "architecture": "ELF64 little-endian AArch64",
+        "text_address": 100040,
+        "text_size": 103328,
+        "text_sha256": null,
+        "symbol_count": 1542,
+        "debug_sections": []
+      },
+      "archive_entry": "arm64-v8a/libswappywrapper.so",
+      "packaged_sha256": "89f8b00b9b455a50fe18581864d806ce9c14ca49cceff8502d759dddad1db531",
+      "packaged_size": 122184
+    }
+  ],
+  "libraries_without_verified_symbols": [
+    {
+      "library": "libFirebaseCppAnalytics.so",
+      "aab_elf": {
+        "build_id": null,
+        "architecture": "ELF64 little-endian AArch64",
+        "text_address": 16880,
+        "text_size": 10404,
+        "text_sha256": "6ea9d7510b8d873a6d27b0f967cd516d718dd8ea3dee856b71708d752c85a3b6",
+        "symbol_count": 0,
+        "debug_sections": []
+      },
+      "reason": "Third-party Firebase binary has no GNU Build ID; omitted instead of claiming Build-ID verification"
+    },
+    {
+      "library": "libFirebaseCppApp-13_17_0.so",
+      "aab_elf": {
+        "build_id": null,
+        "architecture": "ELF64 little-endian AArch64",
+        "text_address": 1540912,
+        "text_size": 1872204,
+        "text_sha256": "4a2c6b9f72cf687be327e9b7215f8f155a3ba6297bf61ba611cc2c544155b0ce",
+        "symbol_count": 0,
+        "debug_sections": []
+      },
+      "reason": "Third-party Firebase binary has no GNU Build ID; omitted instead of claiming Build-ID verification"
+    },
+    {
+      "library": "libFirebaseCppRemoteConfig.so",
+      "aab_elf": {
+        "build_id": null,
+        "architecture": "ELF64 little-endian AArch64",
+        "text_address": 26144,
+        "text_size": 21224,
+        "text_sha256": "fbe54ee717e88b21e12c47a1d281b79dd92ab38cad4e3665ccd4f5f880464267",
+        "symbol_count": 0,
+        "debug_sections": []
+      },
+      "reason": "Third-party Firebase binary has no GNU Build ID; omitted instead of claiming Build-ID verification"
+    },
+    {
+      "library": "libdatastore_shared_counter.so",
+      "aab_elf": {
+        "build_id": "17db37bd6770ac00dd2d1d2828839fd23a7959a3",
+        "architecture": "ELF64 little-endian AArch64",
+        "text_address": 3376,
+        "text_size": 908,
+        "text_sha256": "2aa2387ee86b489c1263ae0751adb45bf8c3251cd5d0d1a080419aa8f3e21223",
+        "symbol_count": 0,
+        "debug_sections": []
+      },
+      "reason": "No unstripped/symbol-table candidate found in current release intermediates"
+    }
+  ],
+  "archive": {
+    "path": "/Users/mrk/GravityBox/Artifacts/AlienPetChildAdsProduction20261118/native-symbols/native-symbols.zip",
+    "sha256": "e822e8d0b920fef75786abe6cf1817e3a6c8e3d84662f88fdb301c1c699c31ba",
+    "bytes": 20880114,
+    "entries": [
+      "arm64-v8a/lib_burst_generated.so",
+      "arm64-v8a/libc++_shared.so",
+      "arm64-v8a/libgame.so",
+      "arm64-v8a/libil2cpp.so",
+      "arm64-v8a/libmain.so",
+      "arm64-v8a/libswappywrapper.so",
+      "arm64-v8a/libunity.so"
+    ],
+    "crc_test": "PASS"
+  },
+  "r8": {
+    "applicable": false,
+    "reason": "Release minification disabled; no mapping.txt generated for exact final build",
+    "evidence": [
+      {
+        "line": 24,
+        "text": "versionName \"1.0.7\""
+      },
+      {
+        "line": 27,
+        "text": "versionCode 8"
+      },
+      {
+        "line": 31,
+        "text": "debugSymbolLevel \"none\""
+      },
+      {
+        "line": 61,
+        "text": "minifyEnabled false"
+      },
+      {
+        "line": 68,
+        "text": "minifyEnabled false"
+      },
+      {
+        "line": 293,
+        "text": "AndroidMinifyRelease: 0"
+      },
+      {
+        "line": 294,
+        "text": "AndroidMinifyDebug: 0"
+      }
+    ],
+    "release_mapping_files": []
+  },
+  "limitations": [
+    "No symbols uploaded by this task.",
+    "Only exact AAB above is supported; rebuilds require re-verification.",
+    "Some third-party library native stacks remain unsymbolicated.",
+    "Public symbols resolve function names, not complete source/file-line detail."
+  ],
+  "mutations": [
+    "Created audit, extracted libraries and symbol ZIP in Artifacts only; no Unity build, Assets or PlayerSettings changes."
+  ],
+  "sources": [
+    "https://developer.android.com/build/include-native-symbols",
+    "https://docs.unity.com/en-us/engine/6000.3/manual/platform-specific/android/developing/testing-and-debugging/symbols"
+  ]
+}

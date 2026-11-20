@@ -1,0 +1,171 @@
+{
+  "observed_at": "2026-11-20T10:10:58.911687",
+  "package": "com.gravityboxlab.venom",
+  "versionCode": "9 minSdk=32 targetSdk=36",
+  "versionName": "1.0.8-attribution-qa",
+  "firstInstallTime": "2026-11-02 08:55:28",
+  "lastUpdateTime": "2026-11-20 10:04:43",
+  "installerPackageName": "com.android.vending",
+  "running": true,
+  "tenjin": [
+    {
+      "time": "11-20 10:09:39.320",
+      "error202": false,
+      "optout_notice": false,
+      "exception_notice": false
+    },
+    {
+      "time": "11-20 10:09:39.324",
+      "error202": false,
+      "optout_notice": false,
+      "exception_notice": false
+    },
+    {
+      "time": "11-20 10:09:40.566",
+      "error202": false,
+      "optout_notice": false,
+      "exception_notice": false
+    },
+    {
+      "time": "11-20 10:09:40.566",
+      "fields": [
+        "advertising_id",
+        "analytics_installation_id",
+        "app_version",
+        "app_version_code",
+        "average_session_length",
+        "bundle_id",
+        "current_session_length",
+        "event",
+        "first_session_date",
+        "iap_transaction_count",
+        "initialized_at",
+        "last_session_date",
+        "last_session_length",
+        "limit_ad_tracking",
+        "opt_out_params",
+        "platform",
+        "plugin",
+        "plugin_version",
+        "retry_enabled",
+        "sdk_version",
+        "sent_at",
+        "session_count",
+        "session_id",
+        "source_app_store",
+        "total_ilrd_revenue_usd",
+        "total_session_time",
+        "value"
+      ],
+      "version": "1.0.8-attribution-qa",
+      "gaid_present": true,
+      "gaid_nonzero": true,
+      "event": "level_complete",
+      "level": 17,
+      "identifier_optouts": {
+        "advertising_id": false,
+        "developer_device_id": true,
+        "developer_device_id_scope": true,
+        "android_id": true,
+        "ip_address": true
+      },
+      "error202": false,
+      "optout_notice": false,
+      "exception_notice": false
+    },
+    {
+      "time": "11-20 10:09:40.566",
+      "response_code": "200",
+      "success": "true",
+      "error202": false,
+      "optout_notice": false,
+      "exception_notice": false
+    },
+    {
+      "time": "11-20 10:09:40.566",
+      "error202": false,
+      "optout_notice": false,
+      "exception_notice": false
+    },
+    {
+      "time": "11-20 10:09:43.346",
+      "error202": false,
+      "optout_notice": false,
+      "exception_notice": false
+    },
+    {
+      "time": "11-20 10:09:43.346",
+      "error202": false,
+      "optout_notice": false,
+      "exception_notice": false
+    },
+    {
+      "time": "11-20 10:09:43.955",
+      "error202": false,
+      "optout_notice": false,
+      "exception_notice": false
+    },
+    {
+      "time": "11-20 10:09:43.956",
+      "fields": [
+        "advertising_id",
+        "analytics_installation_id",
+        "app_version",
+        "app_version_code",
+        "average_session_length",
+        "bundle_id",
+        "current_session_length",
+        "event",
+        "first_session_date",
+        "iap_transaction_count",
+        "initialized_at",
+        "last_session_date",
+        "last_session_length",
+        "limit_ad_tracking",
+        "opt_out_params",
+        "platform",
+        "plugin",
+        "plugin_version",
+        "retry_enabled",
+        "sdk_version",
+        "sent_at",
+        "session_count",
+        "session_id",
+        "source_app_store",
+        "total_ilrd_revenue_usd",
+        "total_session_time",
+        "value"
+      ],
+      "version": "1.0.8-attribution-qa",
+      "gaid_present": true,
+      "gaid_nonzero": true,
+      "event": "level_start",
+      "level": 18,
+      "identifier_optouts": {
+        "advertising_id": false,
+        "developer_device_id": true,
+        "developer_device_id_scope": true,
+        "android_id": true,
+        "ip_address": true
+      },
+      "error202": false,
+      "optout_notice": false,
+      "exception_notice": false
+    },
+    {
+      "time": "11-20 10:09:43.956",
+      "response_code": "200",
+      "success": "true",
+      "error202": false,
+      "optout_notice": false,
+      "exception_notice": false
+    },
+    {
+      "time": "11-20 10:09:43.956",
+      "error202": false,
+      "optout_notice": false,
+      "exception_notice": false
+    }
+  ],
+  "fatal_crash_marker": false
+}

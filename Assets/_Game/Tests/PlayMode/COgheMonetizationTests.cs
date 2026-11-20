@@ -22,6 +22,7 @@ namespace GravityBox.Tests
         }
         [SetUp] public void Before()
         {
+            COghePrivacy.ResetForTests(COghePrivacy.AgeBand.Adult, false);
             persistence = VenomCampaignSave.PersistenceEnabled; VenomCampaignSave.PersistenceEnabled = false;
             COgheShop.ResetForTests(new COgheShop.State { Migrated = true }); COgheShop.TestsOwnUnlocked = false;
             COgheEntitlements.ResetForTests(); COgheAds.ResetForTests(); COgheEconomy.ResetForTests();
@@ -31,7 +32,31 @@ namespace GravityBox.Tests
         {
             COgheShop.ResetForTests(); COgheEntitlements.ResetForTests(); COgheAds.ResetForTests(); COgheEconomy.ResetForTests();
             VenomCampaignSave.PersistenceEnabled = persistence;
+            COghePrivacy.ClearTestOverride();
         }
+        [Test] public void ChildCannotUseReadyFullScreenProviderAndOnlySeesMenuHomeBanner()
+        {
+            var ads = new DeferredAds(); COgheAds.Provider = ads;
+            COghePrivacy.SetAgeBand(COghePrivacy.AgeBand.Age9To12);
+            Assert.IsFalse(COgheAds.RewardedAvailable);
+            Assert.IsFalse(COgheAds.InterstitialDue(999));
+            bool completed = true;
+            COgheAds.Rewarded("drops", COgheReward.Shop(), ok => completed = ok);
+            Assert.IsFalse(completed); Assert.IsNull(ads.Earned);
+            Assert.AreEqual(0, COgheShop.Drops);
+        }
+
+        [Test] public void LateAdultRewardCannotPayAfterAgeChangesToChild()
+        {
+            var ads = new DeferredAds(); COgheAds.Provider = ads;
+            COgheAds.Rewarded("drops", COgheReward.Shop(), _ => { });
+            ads.Shown();
+            COghePrivacy.SetAgeBand(COghePrivacy.AgeBand.Age9To12);
+            ads.Earned(); ads.Closed(true);
+            Assert.AreEqual(0, COgheShop.Drops);
+            Assert.IsFalse(COgheAds.Showing);
+        }
+
         [Test] public void NoAdsKeepsOptionalRewardsButPlusNeverRequestsThem()
         {
             COgheEntitlements.Grant(COgheEntitlements.NoAds);

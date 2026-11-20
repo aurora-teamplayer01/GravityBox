@@ -73,6 +73,7 @@ namespace GravityBox.Venom
         private void PayBonusPrize(bool show)
         {
             bonusPaid = true;
+            COgheShop.CompleteUnderstandBonus(bonusChapter);
             bonusDrops = COgheShop.Earn(COgheBonus.Key(bonusChapter), COgheBonus.CompletionReward(bonusChapter), "bonus");
             COgheShop.Understand(COgheBonus.Key(bonusChapter));
             bonusEarned += bonusDrops;
@@ -103,6 +104,18 @@ namespace GravityBox.Venom
             EndBonusSession(); ShowMenu();
         }
         private void FinishBonus()
+        {
+            if (reviewRunning) return;
+            if (COgheStoreReview.RequestFlow != null && COgheShop.TakeReviewOpportunity(bonusChapter))
+            {
+                reviewRunning = true;
+                Rebuild();
+                StartCoroutine(ReviewBeforeBonusContinuation(bonusChapter));
+                return;
+            }
+            FinishBonusContinuation();
+        }
+        private void FinishBonusContinuation()
         {
             Popup = COgheProductPopup.None;
             bool fromVictory = bonusFromVictory; EndBonusSession();
@@ -215,7 +228,7 @@ namespace GravityBox.Venom
                 amount.font = art.BoldFont;
                 if (bonusDrops > 0) COgheCountUp.Run(amount, bonusDrops, "+", " Drops");   // the biggest reward, counted up
                 if (bonusEarned > bonusDrops) art.Label(panel, "Bonus total", "This bonus: +" + bonusEarned + " Drops in all", new Rect(24, 210, w - 48, 22), 12, COgheUIArt.Muted);
-                LabelButton(panel, "Bonus continue", new Rect(24, h - 78, w - 48, 54), COgheIcon.Forward, "Continue", FinishBonus, true);
+                LabelButton(panel, "Bonus continue", new Rect(24, h - 78, w - 48, 54), COgheIcon.Forward, "Continue", FinishBonus, true).interactable = !reviewRunning;
             }
             return true;
         }

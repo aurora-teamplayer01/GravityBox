@@ -17,10 +17,37 @@ namespace GravityBox.Editor
             "ALIEN_PET_KEYSTORE", "ALIEN_PET_KEY_ALIAS", "ALIEN_PET_STORE_PASSWORD", "ALIEN_PET_KEY_PASSWORD"
         };
         private static readonly string[] ForbiddenDefines = {
-            "COGHE_TEST_TOOLS", "COGHE_MOBILE_BENCHMARK", "DEVELOPMENT_BUILD", "UNITY_ASSERTIONS"
+            "COGHE_TEST_TOOLS", "COGHE_MOBILE_BENCHMARK", "DEVELOPMENT_BUILD", "UNITY_ASSERTIONS", "ALIENPET_AD_MEASUREMENT_QA", "ALIENPET_REVIEW_QA"
         };
+        private static bool reviewQaBuild;
+
+        /// <summary>Internal-only native review probe; never promote its test entry point to Production.</summary>
+        public static void BuildReviewInternal()
+        {
+            if (!Required("ALIEN_PET_VERSION").EndsWith("-review-qa", StringComparison.Ordinal))
+                throw new BuildFailedException("Review probe builds require a -review-qa version.");
+            try { reviewQaBuild = true; BuildWithSigning(); }
+            finally { reviewQaBuild = false; }
+        }
 
         public static void Build()
+        {
+            if (COghePrivacyBuild.AdMeasurementQaBuild)
+                throw new BuildFailedException("Adult attribution QA is not approved for production or automatic Play upload.");
+            BuildWithSigning();
+        }
+
+        /// <summary>Explicit Internal-only AAB; never promote this isolated no-ads artifact to Production.</summary>
+        public static void BuildAdultAttributionInternal()
+        {
+            if (!Required("ALIEN_PET_VERSION").EndsWith("-attribution-qa", StringComparison.Ordinal))
+                throw new BuildFailedException("Internal attribution builds require an explicit -attribution-qa version.");
+            bool previous = COghePrivacyBuild.AdMeasurementQaBuild;
+            try { COghePrivacyBuild.AdMeasurementQaBuild = true; BuildWithSigning(); }
+            finally { COghePrivacyBuild.AdMeasurementQaBuild = previous; }
+        }
+
+        private static void BuildWithSigning()
         {
             string keyPath = null, keyAlias = null, storePassword = null, keyPassword = null;
             try
@@ -67,6 +94,14 @@ namespace GravityBox.Editor
             if (!output.EndsWith(".aab", StringComparison.OrdinalIgnoreCase))
                 throw new BuildFailedException("Play output must end in .aab.");
             string version = Required("ALIEN_PET_VERSION");
+            bool childAdsQa = Environment.GetEnvironmentVariable("ALIEN_PET_CHILD_ADS_QA") == "1";
+            bool attributionQa = COghePrivacyBuild.AdMeasurementQaBuild;
+            if (reviewQaBuild && (childAdsQa || attributionQa))
+                throw new BuildFailedException("Review QA must retain the production privacy configuration.");
+            if (childAdsQa && attributionQa)
+                throw new BuildFailedException("Child ad-serving and adult attribution QA must be separate builds.");
+            if (childAdsQa && !version.EndsWith("-child-qa", StringComparison.Ordinal))
+                throw new BuildFailedException("Child ads QA must use an explicitly named internal-test version.");
             if (!int.TryParse(Required("ALIEN_PET_VERSION_CODE"), out int versionCode) || versionCode < 1)
                 throw new BuildFailedException("A positive Play version code is required.");
 
@@ -111,7 +146,7 @@ namespace GravityBox.Editor
                 Directory.CreateDirectory(Path.GetDirectoryName(output));
                 var report = BuildPipeline.BuildPlayer(new BuildPlayerOptions {
                     scenes = scenes, target = BuildTarget.Android, locationPathName = output,
-                    options = BuildOptions.None, extraScriptingDefines = Array.Empty<string>()
+                    options = BuildOptions.None, extraScriptingDefines = reviewQaBuild ? new[] { "ALIENPET_REVIEW_QA" } : attributionQa ? new[] { "ALIENPET_AD_MEASUREMENT_QA" } : childAdsQa ? new[] { "ALIENPET_CHILD_ADS_QA" } : Array.Empty<string>()
                 });
                 if (report.summary.result != BuildResult.Succeeded)
                     throw new BuildFailedException("Play bundle build failed: " + report.summary.result);

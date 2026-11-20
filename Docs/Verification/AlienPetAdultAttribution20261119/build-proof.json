@@ -1,0 +1,32 @@
+{
+  "version": "1.0.8-attribution-qa",
+  "artifact": "Builds/AlienPetAttributionQA/AlienPet-attribution-qa.apk",
+  "bytes": 59241745,
+  "sha256": "8ed1c437c8534ed5c773bf8c2152e65d518bb9f9266dbd514b10085c1d60f4a7",
+  "tests": {
+    "privacy": {
+      "result": "Passed",
+      "total": "34",
+      "passed": "34",
+      "failed": "0",
+      "end-time": "2026-11-19 12:28:37Z"
+    },
+    "ui": {
+      "result": "Passed",
+      "total": "5",
+      "passed": "5",
+      "failed": "0",
+      "end-time": "2026-11-19 12:37:43Z"
+    }
+  },
+  "packaged_checks": {
+    "AD_ID_present_in_isolated_QA": true,
+    "AdServices_absent": true,
+    "Google_auto_init_providers_absent": true,
+    "Firebase_collection_defaults_false": true,
+    "compiled_GoogleServices_Boot_empty": true
+  },
+  "device_install_tested": false,
+  "Unity_postback_verified": false,
+  "campaign_activated": false
+}

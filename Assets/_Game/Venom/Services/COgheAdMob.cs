@@ -23,6 +23,8 @@ namespace GravityBox.Services
         private const string TestInterstitial = "ca-app-pub-3940256099942544/1033173712";
         private const string TestRewarded = "ca-app-pub-3940256099942544/5224354917";
 #endif
+        public const string ChildBannerId = "ca-app-pub-7806638519709442/6851048953";
+        private string CurrentBannerId => COghePrivacy.IsChild ? ChildBannerId : BannerId;
         private BannerView banner;
         private InterstitialAd interstitial;
         private RewardedAd rewarded;
@@ -30,13 +32,20 @@ namespace GravityBox.Services
         private float nextI, nextR, nextB, loadedI, loadedR, tick;
         private int failuresI, failuresR, failuresB, generation, bannerWidth;
         private Action<bool> finishInterstitial, finishRewarded;
-        private static string Unit(string real, string test) => COgheTestTools.LevelSelect || Debug.isDebugBuild ? test : real;
+        private static string Unit(string real, string test)
+        {
+#if UNITY_ANDROID && ALIENPET_CHILD_ADS_QA
+            if (COgheChildAdsProof.Requested) return test;
+#endif
+            return COgheTestTools.LevelSelect || Debug.isDebugBuild ? test : real;
+        }
         private bool ConsentAllowed => COghePrivacy.AdsAgeEligible && !suspended && ConsentInformation.CanRequestAds();
-        private bool ForcedAllowed => ConsentAllowed && COgheAds.ForcedAdsAllowed;
+        private bool ForcedAllowed => ConsentAllowed && COghePrivacy.FullScreenAdsEligible && COgheAds.ForcedAdsAllowed;
+        private bool BannerAllowed => ConsentAllowed && COgheAds.ForcedAdsAllowed && COghePrivacy.BannerPlacementAllowed(COgheAds.BannerPlacement);
         private bool RewardAllowed => ConsentAllowed && COgheAds.RewardAdsAllowed;
         public bool InterstitialReady => ForcedAllowed && interstitial != null && interstitial.CanShowAd();
         public bool RewardedReady => RewardAllowed && rewarded != null && rewarded.CanShowAd();
-        public float BannerHeight => wanted && ForcedAllowed && bannerLoaded && banner != null ? banner.GetHeightInPixels() : 0;
+        public float BannerHeight => wanted && BannerAllowed && bannerLoaded && banner != null ? banner.GetHeightInPixels() : 0;
         private static void Main(Action action) => COgheGoogleServices.Main(action);
 
         private void Update()
@@ -44,7 +53,8 @@ namespace GravityBox.Services
             if (Time.realtimeSinceStartup < tick) return;
             tick = Time.realtimeSinceStartup + 1;
             if (!ForcedAllowed)
-            { if (banner != null) DestroyBanner(); interstitial?.Destroy(); interstitial = null; }
+            { interstitial?.Destroy(); interstitial = null; }
+            if (!BannerAllowed && banner != null) DestroyBanner();
             if (!RewardAllowed) { rewarded?.Destroy(); rewarded = null; }
             if (!ConsentAllowed || COgheAds.Showing) return;
             if (interstitial != null && tick - loadedI > 3500) { interstitial.Destroy(); interstitial = null; }
@@ -52,7 +62,7 @@ namespace GravityBox.Services
             if (ForcedAllowed && interstitial == null && !loadingI && tick >= nextI) LoadInterstitial();
             if (RewardAllowed && rewarded == null && !loadingR && tick >= nextR) LoadRewarded();
             if (wanted && bannerWidth != Screen.width) DestroyBanner();
-            if (ForcedAllowed && wanted && banner == null && tick >= nextB) LoadBanner();
+            if (BannerAllowed && wanted && banner == null && tick >= nextB) LoadBanner();
         }
         private static float Backoff(ref int count) => Mathf.Min(60, 5 * Mathf.Pow(2, Math.Min(count++, 4)));
         private void LoadInterstitial()
@@ -91,6 +101,7 @@ namespace GravityBox.Services
         }
         private static void Paid(AdValue value, string format, string placement, string unit, ResponseInfo response)
         {
+            if (!COghePrivacy.AnalyticsAllowed) return;
             Debug.Log($"COGHE ADMOB paid format={format} micros={value.Value} currency={value.CurrencyCode} precision={value.Precision}");
             // Separate diagnostic event: Firebase/AdMob may auto-collect ad_impression; never duplicate it.
             COgheAnalytics.Log("ad_revenue", "type", format, "placement", placement, "ad_unit_id", unit,
@@ -105,11 +116,12 @@ namespace GravityBox.Services
             {
                 if (finished) return; finished = true; ad.Destroy(); finishInterstitial = null; closed?.Invoke(ok && opened);
             }
+            int ticket = generation;
             finishInterstitial = Finish;
             ad.OnAdFullScreenContentOpened += () => Main(() => { if (finished || opened) return; opened = true; shown?.Invoke(); });
             ad.OnAdFullScreenContentClosed += () => Main(() => Finish(true));
             ad.OnAdFullScreenContentFailed += error => Main(() => { Debug.LogWarning($"COGHE ADMOB show_failed format=interstitial error={error}"); Finish(false); });
-            ad.OnAdPaid += value => Main(() => Paid(value, "interstitial", placement, Unit(InterstitialId, TestInterstitial), response));
+            ad.OnAdPaid += value => Main(() => { if (ticket == generation) Paid(value, "interstitial", placement, Unit(InterstitialId, TestInterstitial), response); });
             try { ad.Show(); } catch (Exception) { Finish(false); }
         }
         public void ShowRewarded(string placement, Action shown, Action earned, Action<bool> closed)
@@ -120,17 +132,18 @@ namespace GravityBox.Services
             {
                 if (finished) return; finished = true; ad.Destroy(); finishRewarded = null; closed?.Invoke(ok && opened);
             }
+            int ticket = generation;
             finishRewarded = Finish;
             ad.OnAdFullScreenContentOpened += () => Main(() => { if (finished || opened) return; opened = true; shown?.Invoke(); });
             ad.OnAdFullScreenContentClosed += () => Main(() => Finish(true));
             ad.OnAdFullScreenContentFailed += error => Main(() => { Debug.LogWarning($"COGHE ADMOB show_failed format=rewarded error={error}"); Finish(false); });
-            ad.OnAdPaid += value => Main(() => Paid(value, "rewarded", placement, Unit(RewardedId, TestRewarded), response));
-            try { ad.Show(reward => Main(() => { if (paid) return; paid = true; earned?.Invoke(); })); } catch (Exception) { Finish(false); }
+            ad.OnAdPaid += value => Main(() => { if (ticket == generation) Paid(value, "rewarded", placement, Unit(RewardedId, TestRewarded), response); });
+            try { ad.Show(reward => Main(() => { if (paid || ticket != generation || !RewardAllowed) return; paid = true; earned?.Invoke(); })); } catch (Exception) { Finish(false); }
         }
         public void SetBanner(bool show)
         {
             wanted = show;
-            if (!show || !ForcedAllowed) { DestroyBanner(); return; }
+            if (!show || !BannerAllowed) { DestroyBanner(); return; }
             if (banner == null && Time.realtimeSinceStartup >= nextB) LoadBanner();
             else if (bannerLoaded) banner.Show();
             COgheAds.NotifyBannerChanged();
@@ -139,13 +152,15 @@ namespace GravityBox.Services
         {
             bannerWidth = Screen.width;
             var size = AdSize.GetCurrentOrientationAnchoredAdaptiveBannerAdSizeWithWidth(AdSize.FullWidth);
-            var current = new BannerView(Unit(BannerId, TestBanner), size, AdPosition.Bottom); banner = current;
+            int ticket = generation;
+            string unit = Unit(CurrentBannerId, TestBanner);
+            var current = new BannerView(unit, size, AdPosition.Bottom); banner = current;
             current.Hide();
             current.OnBannerAdLoaded += () => Main(() =>
             {
                 if (this == null || banner != current) return;
                 bannerLoaded = true; failuresB = 0;
-                if (wanted && ForcedAllowed) current.Show(); else current.Hide();
+                if (wanted && BannerAllowed) current.Show(); else current.Hide();
                 COgheAds.NotifyBannerChanged();
             });
             current.OnBannerAdLoadFailed += error => Main(() =>
@@ -156,13 +171,13 @@ namespace GravityBox.Services
             current.OnAdPaid += value =>
             {
                 string page = COgheAds.BannerPlacement; var response = current.GetResponseInfo();
-                Main(() => Paid(value, "banner", page, Unit(BannerId, TestBanner), response));
+                Main(() => { if (ticket == generation && banner == current) Paid(value, "banner", page, unit, response); });
             };
             current.OnAdImpressionRecorded += () =>
-            { string page = COgheAds.BannerPlacement; Main(() => COgheAnalytics.Log("ad_show", "type", "banner", "placement", page)); };
+            { string page = COgheAds.BannerPlacement; Main(() => { if (ticket == generation && banner == current) COgheAnalytics.Log("ad_show", "type", "banner", "placement", page); }); };
             current.OnAdClicked += () =>
             // ad_click belongs to AdMob's automatic collection. Keep our placement event distinct.
-            { string page = COgheAds.BannerPlacement; Main(() => COgheAnalytics.Log("ad_tap", "type", "banner", "placement", page)); };
+            { string page = COgheAds.BannerPlacement; Main(() => { if (ticket == generation && banner == current) COgheAnalytics.Log("ad_tap", "type", "banner", "placement", page); }); };
             current.LoadAd(new AdRequest());
         }
         private void DestroyBanner() { banner?.Destroy(); banner = null; bannerLoaded = false; COgheAds.NotifyBannerChanged(); }

@@ -1,0 +1,6 @@
+{
+  "name": "GravityBox.PlayReview",
+  "references": ["GravityBox.Venom", "Google.Play.Review", "Google.Play.Common"],
+  "includePlatforms": ["Android", "Editor"],
+  "autoReferenced": true
+}

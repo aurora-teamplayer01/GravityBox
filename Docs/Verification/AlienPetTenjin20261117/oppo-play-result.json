@@ -1,0 +1,33 @@
+{
+  "versionCode": "5 minSdk=32 targetSdk=36",
+  "versionName": "1.0.4-tenjin-test",
+  "firstInstallTime": "2026-11-02 08:55:28",
+  "lastUpdateTime": "2026-11-17 12:08:34",
+  "installerPackageName": "com.android.vending",
+  "update_method": "Google Play Internal Beta Update button",
+  "uninstalled": false,
+  "data_cleared": false,
+  "first_install_time_unchanged": true,
+  "attributed_install_proven": false,
+  "data_preservation_before_play": {
+    "level": 12,
+    "drops": 300
+  },
+  "after_user_play": {
+    "level": 14,
+    "drops": 320
+  },
+  "referrer_present_nonempty": true,
+  "connect_response": {
+    "code": 202,
+    "message": "invalid device identifier"
+  },
+  "tenjin_sending_events": "no",
+  "accepted_gameplay_event_verified": false,
+  "unity_postback_verified": false,
+  "campaign_status": "paused",
+  "app_set_id_local_fetch_observed": true,
+  "app_set_id_in_inspected_connect_payload": false,
+  "analytics_final": "Off, user-confirmed; final Privacy panel not independently observed",
+  "runtime_code_changed_during_physical_test": false
+}
