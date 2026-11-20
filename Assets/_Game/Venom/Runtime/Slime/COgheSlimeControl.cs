@@ -88,7 +88,7 @@ namespace GravityBox.Venom
         public bool AllowsPointer(Vector2 screen)
         {
             var layout=Layout(Area());
-            return layout.Play.Contains(screen)&&!layout.Retry.Contains(screen)&&!layout.Pause.Contains(screen);
+            return layout.Play.Contains(screen)&&!layout.Retry.Contains(screen)&&!layout.Pause.Contains(screen)&&!layout.Rooms.Contains(screen);
         }
         public bool BeginPull(Vector2 screen)
         {
@@ -244,15 +244,24 @@ namespace GravityBox.Venom
         private void Show(string text){Toast=text;toastUntil=Time.unscaledTime+1.6f;}
 
         // ---- layout (pixels, bottom-left origin) -----------------------------------------------------------------
-        public struct HudLayout{public Rect Play,Frame,Retry,Pause,Title,Goal,Message;public float Unit;}
+        public struct HudLayout
+        {
+            public Rect Play,Frame,Retry,Pause,Title,Goal,Message;public float Unit;
+            /// <summary>The room picker strip (S1 S2 S3) between THỬ LẠI and DỪNG.</summary>
+            public Rect Rooms;
+            /// <summary>Button <paramref name="index"/> of <paramref name="count"/> inside <see cref="Rooms"/>.</summary>
+            public Rect Room(int index,int count)
+            {count=Mathf.Max(1,count);float gap=4*Unit,w=(Rooms.width-(count-1)*gap)/count;return new Rect(Rooms.x+index*(w+gap),Rooms.y,w,Rooms.height);}
+        }
         /// <summary>Pixels kept free above the HUD (clip captions; 0 in play).</summary>
         public static float ReservedTop;
         public static HudLayout Layout(Rect area)
         {
             if(ReservedTop>0)area=new Rect(area.x,area.y,area.width,area.height-ReservedTop);
             float u=Mathf.Min(area.width/360f,area.height/640f);var l=new HudLayout{Unit=u};
-            l.Retry=new Rect(area.xMin+14*u,area.yMin+14*u,132*u,44*u);
-            l.Pause=new Rect(area.xMax-14*u-132*u,area.yMin+14*u,132*u,44*u);
+            l.Retry=new Rect(area.xMin+14*u,area.yMin+14*u,96*u,44*u);
+            l.Pause=new Rect(area.xMax-14*u-96*u,area.yMin+14*u,96*u,44*u);
+            l.Rooms=new Rect(area.center.x-64*u,area.yMin+14*u,128*u,44*u);
             l.Title=new Rect(area.xMin+10*u,area.yMax-40*u,area.width-20*u,30*u);
             l.Goal=new Rect(area.xMin+10*u,area.yMax-66*u,area.width-20*u,22*u);
             l.Play=Rect.MinMaxRect(area.xMin,area.yMin+66*u,area.xMax,area.yMax-72*u);
@@ -272,6 +281,8 @@ namespace GravityBox.Venom
         {
             if(game==null)return false;var l=Layout(Area());
             if(l.Retry.Contains(screen)){CancelPull("retry");game.ResetLevel();return true;}
+            int rooms=RoomCount;
+            for(int i=0;i<rooms;i++)if(l.Room(i,rooms).Contains(screen)){CancelPull("room");game.Load(i+1);return true;}   // the digit keys' path
             if(l.Pause.Contains(screen)&&!game.Owner.Completed&&!game.Owner.Lost){CancelPull("pause");game.Owner.TogglePause();return true;}
             return false;
         }
@@ -287,7 +298,11 @@ namespace GravityBox.Venom
         private LineRenderer band,arrow,head,ring,finger;
         private Transform[] dots;private Transform landing;
         private TextMesh powerText,title,goal,message,retryText,pauseText,hintText;
-        private Transform retryBox,pauseBox,messageBox,hud;private float pixelWorld=.001f,hudUnit=2;
+        private Transform retryBox,pauseBox,messageBox,hud;private Transform[] roomBoxes=new Transform[0];private TextMesh[] roomTexts=new TextMesh[0];private string[] roomNames=new string[0];
+        private MaterialPropertyBlock tintBlock;
+        /// <summary>Rooms offered by the picker (the trial's scene sequence; 0 hides it).</summary>
+        public int RoomCount=>roomNames.Length;
+        private static readonly Color RoomIdle=new Color(.10f,.16f,.18f,.82f),RoomHere=new Color(.04f,.60f,.40f,.95f);private float pixelWorld=.001f,hudUnit=2;
         private static readonly Color Ready=new Color(.04f,.60f,.40f),Blocked=new Color(.86f,.22f,.16f),Faint=new Color(.08f,.30f,.36f,.9f);
         private LineRenderer Line(string name,Transform parent,float width,int points)
         {
@@ -325,6 +340,13 @@ namespace GravityBox.Venom
             message=Text("Message",hud,TextAnchor.MiddleCenter,Color.white);hintText=Text("Hint",hud,TextAnchor.MiddleCenter,new Color(.62f,.36f,.02f));
             retryBox=Box("Retry button",hud,new Color(.10f,.16f,.18f,.82f));pauseBox=Box("Pause button",hud,new Color(.10f,.16f,.18f,.82f));
             retryText=Text("Retry label",hud,TextAnchor.MiddleCenter,Color.white);pauseText=Text("Pause label",hud,TextAnchor.MiddleCenter,Color.white);
+            var sequence=game.Definition.SceneSequence;int n=sequence!=null&&sequence.Length>1?sequence.Length:0;
+            roomNames=new string[n];roomBoxes=new Transform[n];roomTexts=new TextMesh[n];
+            for(int i=0;i<n;i++)
+            {
+                roomNames[i]=sequence[i].StartsWith("COgheSlime",System.StringComparison.Ordinal)?sequence[i].Substring("COgheSlime".Length):(i+1).ToString();
+                roomBoxes[i]=Box("Room button "+roomNames[i],hud,RoomIdle);roomTexts[i]=Text("Room label "+roomNames[i],hud,TextAnchor.MiddleCenter,Color.white);
+            }
         }
         private void LateUpdate(){if(game!=null){var a=Area();PlaceHud(a,Screen.width,Screen.height);Present(Time.unscaledTime);}}
         /// <summary>Lays the camera-space HUD out for a <paramref name="width"/>×<paramref name="height"/> target (the clip
@@ -346,6 +368,12 @@ namespace GravityBox.Venom
             Label(hintText,new Rect(l.Goal.x,l.Goal.y-24*l.Unit,l.Goal.width,22*l.Unit),13*l.Unit,"Chạm, kéo lùi rồi thả: slime bật ngược lại",HintVisible);
             Button(retryBox,retryText,l.Retry,"THỬ LẠI");Button(pauseBox,pauseText,l.Pause,game.Owner.Paused?"TIẾP":"DỪNG");
             pauseBox.gameObject.SetActive(!game.Owner.Completed&&!game.Owner.Lost);pauseText.gameObject.SetActive(pauseBox.gameObject.activeSelf);
+            if(tintBlock==null)tintBlock=new MaterialPropertyBlock();
+            for(int i=0;i<roomBoxes.Length;i++)
+            {
+                Button(roomBoxes[i],roomTexts[i],l.Room(i,roomBoxes.Length),roomNames[i]);
+                tintBlock.SetColor("_Color",i+1==game.Definition.Order?RoomHere:RoomIdle);roomBoxes[i].GetComponent<MeshRenderer>().SetPropertyBlock(tintBlock);
+            }
         }
         /// <summary>World-space pull feedback for the current state (also called by the clip recorder per frame).</summary>
         public void Present(float clock)

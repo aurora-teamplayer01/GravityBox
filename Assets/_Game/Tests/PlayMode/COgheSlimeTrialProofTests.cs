@@ -9,7 +9,9 @@ using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.LowLevel;
+using UnityEngine.SceneManagement;
 using UnityEngine.TestTools;
+using Object=UnityEngine.Object;
 
 namespace GravityBox.Tests
 {
@@ -239,12 +241,66 @@ namespace GravityBox.Tests
             Assert.IsTrue(l.Play.Contains(r.min)&&l.Play.Contains(r.max),"the room lies in the pull area: "+info);
             foreach(var ui in new[]{l.Retry,l.Pause,l.Title,l.Goal})Assert.IsFalse(ui.Overlaps(r),"UI does not cover the room: "+info);
             Assert.IsFalse(l.Retry.Overlaps(l.Pause),"buttons apart");
+            // the room picker S1 S2 S3: three separate buttons between THỬ LẠI and DỪNG, on screen, outside the pull area
+            Assert.AreEqual(3,slime.RoomCount,"the picker offers the three rooms");var area=new Rect(0,0,w,h);
+            for(int i=0;i<3;i++)
+            {
+                var b=l.Room(i,3);string at=$" room button {i+1} {b}: "+info;
+                Assert.IsTrue(area.Contains(b.min)&&area.Contains(b.max),"picker on screen"+at);
+                Assert.IsFalse(b.Overlaps(r),"picker does not cover the room"+at);Assert.IsFalse(b.Overlaps(l.Play),"picker outside the pull area"+at);
+                Assert.IsFalse(b.Overlaps(l.Retry)||b.Overlaps(l.Pause),"picker apart from THỬ LẠI/DỪNG"+at);
+                Assert.IsFalse(slime.AllowsPointer(b.center),"a press on the picker never starts a pull"+at);
+                Assert.GreaterOrEqual(b.width,36*l.Unit,"finger-sized"+at);
+                for(int j=i+1;j<3;j++)Assert.IsFalse(b.Overlaps(l.Room(j,3)),"picker buttons apart"+at);
+            }
             Assert.IsTrue(l.Play.Contains(S(slime.Centre()))&&l.Play.Contains(S(game.Owner.Outlet.position)),"slime and door inside the pull area: "+info);
             Assert.Greater(r.width,w*.75f,"the room uses the screen width: "+info);
             Directory.CreateDirectory(Out+"/layout");Frame($"{Out}/layout/{key}-{w}x{h}.png");
         }
         [UnityTest,Timeout(900000)] public IEnumerator SlimeLayout720x1280(){foreach(var k in new[]{"S1","S2","S3"})yield return LayoutCheck(k,720,1280);}
         [UnityTest,Timeout(900000)] public IEnumerator SlimeLayout720x1612(){foreach(var k in new[]{"S1","S2","S3"})yield return LayoutCheck(k,720,1612);}
+
+        // ---- the room picker with real Input System events ----------------------------------------------------------------
+        /// <summary>Waits for the scene the picker loaded and re-attaches the harness (as <see cref="Load"/> does).</summary>
+        private IEnumerator Picked(string key)
+        {
+            void Loaded(Scene s,LoadSceneMode m){game=Object.FindFirstObjectByType<VenomCampaign>();game.AutoAdvance=false;game.Owner.enabled=false;game.Owner.Rotation.enabled=false;}
+            SceneManager.sceneLoaded+=Loaded;
+            try{for(int f=0;f<120&&SceneManager.GetActiveScene().name!="COgheSlime"+key;f++)yield return null;}finally{SceneManager.sceneLoaded-=Loaded;}
+            Assert.AreEqual("COgheSlime"+key,SceneManager.GetActiveScene().name,"the picker loaded "+key);
+            yield return null;Layout(width,height);slime=game.Slime;Assert.IsNotNull(slime);yield return Ticks(.3f);
+        }
+        [UnityTest,Timeout(900000)] public IEnumerator SlimeRoomPickerRealInput()
+        {
+            yield return Load("S1");yield return Settle();var mouse=InputSystem.AddDevice<Mouse>();var touch=InputSystem.AddDevice<Touchscreen>();
+            var log=new StringBuilder();
+            try
+            {
+                // a real mouse click on S3 (screen pixels) from S1: loads S3 through game.Load, no pull, no launch
+                var l=COgheSlimeControl.Layout(new Rect(0,0,width,height));Vector2 p=l.Room(2,3).center;var before=slime;
+                bool loaded=false;void Mark(Scene s,LoadSceneMode m)=>loaded=true;SceneManager.sceneLoaded+=Mark;
+                InputSystem.QueueStateEvent(mouse,new MouseState{position=p});yield return null;
+                InputSystem.QueueStateEvent(mouse,new MouseState{position=p,buttons=1});yield return null;
+                Assert.IsFalse(before.Pulling,"the press on the picker did not start a pull");Assert.AreEqual(0,before.Launches);
+                InputSystem.QueueStateEvent(mouse,new MouseState{position=p});
+                yield return Picked("S3");SceneManager.sceneLoaded-=Mark;Assert.IsTrue(loaded);
+                Assert.AreEqual(3,game.Definition.Order,"S3 is the current room (highlighted)");Assert.AreEqual(0,slime.Launches);Assert.IsFalse(slime.Pulling);log.AppendLine($"mouse {p} -> {SceneManager.GetActiveScene().name}");
+                // a real touch tap on S2 from S3
+                l=COgheSlimeControl.Layout(new Rect(0,0,width,height));p=l.Room(1,3).center;
+                InputSystem.QueueStateEvent(touch,new TouchState{touchId=2,phase=UnityEngine.InputSystem.TouchPhase.Began,position=p});yield return null;
+                InputSystem.QueueStateEvent(touch,new TouchState{touchId=2,phase=UnityEngine.InputSystem.TouchPhase.Ended,position=p});
+                yield return Picked("S2");
+                Assert.AreEqual(2,game.Definition.Order);Assert.AreEqual(0,slime.Launches);Assert.IsFalse(slime.Pulling);log.AppendLine($"touch {p} -> {SceneManager.GetActiveScene().name}");
+                // back to S1 by touch, and the room still plays: a pull from the body launches
+                p=COgheSlimeControl.Layout(new Rect(0,0,width,height)).Room(0,3).center;
+                InputSystem.QueueStateEvent(touch,new TouchState{touchId=3,phase=UnityEngine.InputSystem.TouchPhase.Began,position=p});yield return null;
+                InputSystem.QueueStateEvent(touch,new TouchState{touchId=3,phase=UnityEngine.InputSystem.TouchPhase.Ended,position=p});
+                yield return Picked("S1");yield return Settle();
+                yield return Pull(60,.7f);for(int k=0;k<4;k++)Tick();Assert.AreEqual(1,slime.Launches,"S1 plays after the picker");log.AppendLine($"touch {p} -> S1, launch ok");
+                File.WriteAllText($"{Out}/picker-input.txt",log.ToString());
+            }
+            finally{InputSystem.RemoveDevice(mouse);InputSystem.RemoveDevice(touch);}
+        }
 
         // ---- real Input System events in screen pixels ------------------------------------------------------------------
         [UnityTest,Timeout(900000)] public IEnumerator SlimeRealPointerEvents()
