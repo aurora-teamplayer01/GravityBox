@@ -87,3 +87,22 @@ Nguồn capture đã đọc: `Assets/_Game/Tests/PlayMode/COgheChapterClipRecord
 | Người mới H1–H4 / so bản cũ | Chưa chạy | — |
 
 Kết luận hiện tại: kế hoạch kiểm chứng. Chưa có căn cứ kết luận hướng mới vui hơn hoặc nên pivot.
+
+
+## Cập nhật bằng chứng — 19/11/2026 sau review
+
+Phần bảng “chưa kiểm” phía trên là trạng thái lúc lập kế hoạch; bảng dưới thay thế trạng thái đó. Code review tại `8e5522bc`; `bf41ff3e` chỉ bổ sung hồ sơ. Codex đọc diff và XML, không chạy lại Unity hoặc chơi tay. Gán commit cho các lần chạy theo provenance của Claude (Buzz event `e299ccd16bce99fbe2821d6880f99c6f13890ff8cd553c0b8731e7cc21e1b886`); XML không chứa hash Git. Lượt 30 test kết thúc trước khi commit bản sửa, vì vậy không gọi đây là lần chạy độc lập trên checkout sạch của commit đó.
+
+| Mục | Kết quả quan sát được | Bằng chứng / giới hạn |
+| --- | --- | --- |
+| Compile/suite | EditMode 18/18; full PlayMode 1030 đạt, 1 lỗi, 66 skipped trên 1097; ca lỗi chạy lại đạt | `Artifacts/SlimeTrial/logs/full-edit.xml`, `full-play.xml`, `flower.xml`; suite đầy đủ trước sửa review ở `a1ebb64e`, chưa có full suite trên code cuối. Lỗi là DirectoryNotFoundException khi ghi flower-editor.png. |
+| 3 màn solve/reset/recovery | 30/30 test hồi quy đạt, gồm load mới, retry rồi solve và wander | XML gốc `.scratch/slime-trial/fix1.xml`, bản lưu bền `~/.buzz/WORK_LOGS/SLIME_TRIAL_REVIEW_EVIDENCE_2026_11_19/fix1.xml`; không diễn giải wander hữu hạn thành bảo đảm không bao giờ kẹt. |
+| Hai đường S3 | Solve A/B từ load mới và sau retry đều đạt ở 30/60 FPS | Tám ca AfterRetry bao gồm S1/S2/S3 A/B; đây là bằng chứng tự động. |
+| Input/HUD/portrait | Các ca pointer và layout 720×1280, 720×1612 đạt | Input touch được đưa vào bằng test trong Editor; chưa phải ngón tay trên thiết bị thật. |
+| 30/60 FPS / mobile | Test vận tốc và solve đạt; mobile chưa kiểm | Không suy ra FPS thiết bị từ capture mô phỏng. APK chưa có trong bàn giao này. |
+| Clip | Ba clip mới được Claude gửi Buzz, replay tự động, provenance code `8e5522bc`; clips9.xml 3/3 đạt | Codex đã xem frame bộ cũ `2375844b`, chưa xem lại bộ mới; không gọi kết quả test capture là kiểm tra hình ảnh cuối. |
+| Người mới H1–H4 / so bản cũ | Chưa chạy | Chưa kết luận vui hơn, retention tốt hơn hay nên pivot. |
+
+Review lại: xoá pending/pendingRecord khi huỷ giải quyết P2 cú bật chờ; theo dõi giao điểm qua mặt phẳng khẩu độ giải quyết ngoại lệ vùng 25 cm quá rộng; tám ca retry→solve bổ sung gate còn thiếu. XML regression có cả hai ca sửa và cả tám ca retry đạt. Chấp nhận đóng các finding ban đầu theo diff + bằng chứng được bàn giao; chưa chứng nhận toàn bộ gate phát hành/mobile.
+
+Giới hạn test: `SlimeVentExitVsGlassTunnel` với cú nhanh chỉ assert không thua, chưa assert thắng/đã qua lỗ; test solve riêng chứng minh đường giải khác. Nên thêm assert Completed hoặc EscapedCount cho đúng cú nhanh nếu dùng ca này làm bằng chứng thoát hoàn chỉnh. S2 4/77 là mẫu tìm kiếm góc/lực, không phải tỷ lệ thành công người mới. Cùng input ở clip S2 thắng sau 3 cú còn solve dùng 4 cú theo báo cáo Claude: giữ rủi ro không lặp lại trong thiết kế vùng đáp và phiên thử người.
