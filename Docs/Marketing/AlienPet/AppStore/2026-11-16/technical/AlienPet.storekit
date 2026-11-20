@@ -1,0 +1,49 @@
+{
+  "identifier" : "6F1C2A10-5A1E-4C2B-9E3F-A11E7E7A0001",
+  "nonRenewingSubscriptions" : [ ],
+  "products" : [
+    {
+      "displayPrice" : "5.99",
+      "familyShareable" : false,
+      "internalID" : "6F1C2A10-5A1E-4C2B-9E3F-A11E7E7A0002",
+      "localizations" : [
+        {
+          "description" : "No ads, rewards without watching ads, double Drops and COghe's monster act at Home.",
+          "displayName" : "Alien Pet Plus",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "coghe_plus",
+      "referenceName" : "Alien Pet Plus",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "2.99",
+      "familyShareable" : false,
+      "internalID" : "6F1C2A10-5A1E-4C2B-9E3F-A11E7E7A0003",
+      "localizations" : [
+        {
+          "description" : "Removes banner and full-screen ads.",
+          "displayName" : "No Ads",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "coghe_no_ads",
+      "referenceName" : "No Ads",
+      "type" : "NonConsumable"
+    }
+  ],
+  "settings" : {
+    "_applicationInternalID" : "",
+    "_developerTeamID" : "RPLRU9Q87A",
+    "_failTransactionsEnabled" : false,
+    "_locale" : "en_US",
+    "_storefront" : "USA",
+    "_storeKitErrors" : [ ]
+  },
+  "subscriptionGroups" : [ ],
+  "version" : {
+    "major" : 4,
+    "minor" : 0
+  }
+}

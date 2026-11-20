@@ -13,7 +13,7 @@ This supersedes the initial documentation-only audit at `dec14e929897b4268421553
 | App icon | iOS slots now use approved C source, replacing stale iOS-only icon | Inspect final signed archive icon |
 | Device helper | Finds app by bundle ID, no obsolete COghe.app basename | Actual receiving-machine install/signing |
 | Simulator | Spatial simulator export option added; generic prototype helper is not the game workflow | Simulator execution not tested in this task |
-| IAP | Existing store build does not enable test-store simulation; no real StoreKit provider added | Implement production provider/products/restore, or explicitly agree a release without paid commerce and remove unavailable purchase UI |
+| IAP | Owner chose real commerce (16/11). StoreKit 2 provider for `coghe_plus` / `coghe_no_ads`: purchase, restore, launch re-grant, Ask to Buy, refund revoke; EditMode tests; local `.storekit` config. See [IOS-IAP.md](IOS-IAP.md) | Create both products + Paid Apps Agreement in App Store Connect; sandbox/TestFlight purchase, restore, reinstall and refund on device |
 | Screenshots | Approved icon + 10 draft layouts and capture tooling | Replace Android/Unity sources with actual final iOS captures |
 | Policy/support | Existing URL and contact retained | Update policy for actual iOS SDK use; verify public Safari access (automated fetch previously 403) |
 
