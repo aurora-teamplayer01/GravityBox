@@ -87,6 +87,9 @@ namespace GravityBox.Tests
             // a fast valid entry: the strongest direct S1 shot into the vent is a win, never "out of the box"
             yield return Load("S1");yield return Shoot(new Shot(S1Direct[0].x,1f));yield return Ticks(1);
             Assert.IsFalse(game.Owner.Lost,"a fast entry through the vent is not a failure: "+State());
+            for(int k=0;k<10&&!game.Owner.Completed;k++)yield return Ticks(.5f);   // bounded: at most 5 s more
+            Assert.IsTrue(game.Owner.Completed,"the fast valid entry wins: "+State());
+            Assert.AreEqual(32,game.Matter.EscapedCount,"every particle went through the vent");
             // the detector: a particle put through the glass right beside the hole (test-only placement, not a solution)
             yield return Load("S1");yield return Settle();
             var outlet=game.Owner.Outlet;var body=game.Matter.Bodies[0];
